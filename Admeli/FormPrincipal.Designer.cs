@@ -42,32 +42,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelAside = new System.Windows.Forms.Panel();
             this.panelAsideMain = new System.Windows.Forms.Panel();
-            this.panelAsideLeft = new System.Windows.Forms.Panel();
-            this.btnTools = new System.Windows.Forms.Button();
-            this.btnConfig = new System.Windows.Forms.Button();
-            this.btnAlmacen = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
-            this.btnCompras = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelMainHeader = new System.Windows.Forms.Panel();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btnProductoShorkout = new System.Windows.Forms.ToolStripButton();
+            this.btnCompraShorkout = new System.Windows.Forms.ToolStripButton();
+            this.btnVentaShorkout = new System.Windows.Forms.ToolStripButton();
             this.panelProfile = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panelAside.SuspendLayout();
-            this.panelAsideLeft.SuspendLayout();
+            this.panelAsideMain.SuspendLayout();
             this.panelMainContainer.SuspendLayout();
             this.panelMainHeader.SuspendLayout();
-            this.panelProfile.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            this.panelProfile.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -85,7 +80,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 580);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(946, 22);
             this.panel2.TabIndex = 3;
@@ -204,10 +199,9 @@
             // 
             this.panelAside.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(250)))), ((int)(((byte)(237)))));
             this.panelAside.Controls.Add(this.panelAsideMain);
-            this.panelAside.Controls.Add(this.panelAsideLeft);
             this.panelAside.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAside.Location = new System.Drawing.Point(0, 0);
-            this.panelAside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelAside.Margin = new System.Windows.Forms.Padding(2);
             this.panelAside.Name = "panelAside";
             this.panelAside.Size = new System.Drawing.Size(248, 580);
             this.panelAside.TabIndex = 4;
@@ -215,158 +209,13 @@
             // panelAsideMain
             // 
             this.panelAsideMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.panelAsideMain.Controls.Add(this.flowLayoutPanel1);
             this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAsideMain.Location = new System.Drawing.Point(60, 0);
-            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelAsideMain.Location = new System.Drawing.Point(0, 0);
+            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(188, 580);
+            this.panelAsideMain.Size = new System.Drawing.Size(248, 580);
             this.panelAsideMain.TabIndex = 5;
-            // 
-            // panelAsideLeft
-            // 
-            this.panelAsideLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(179)))));
-            this.panelAsideLeft.Controls.Add(this.btnTools);
-            this.panelAsideLeft.Controls.Add(this.btnConfig);
-            this.panelAsideLeft.Controls.Add(this.btnAlmacen);
-            this.panelAsideLeft.Controls.Add(this.btnProductos);
-            this.panelAsideLeft.Controls.Add(this.button2);
-            this.panelAsideLeft.Controls.Add(this.btnVentas);
-            this.panelAsideLeft.Controls.Add(this.btnCompras);
-            this.panelAsideLeft.Controls.Add(this.panel1);
-            this.panelAsideLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAsideLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelAsideLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelAsideLeft.Name = "panelAsideLeft";
-            this.panelAsideLeft.Size = new System.Drawing.Size(60, 580);
-            this.panelAsideLeft.TabIndex = 4;
-            // 
-            // btnTools
-            // 
-            this.btnTools.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTools.FlatAppearance.BorderSize = 0;
-            this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTools.ForeColor = System.Drawing.Color.White;
-            this.btnTools.Image = ((System.Drawing.Image)(resources.GetObject("btnTools.Image")));
-            this.btnTools.Location = new System.Drawing.Point(0, 525);
-            this.btnTools.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnTools.Name = "btnTools";
-            this.btnTools.Size = new System.Drawing.Size(60, 76);
-            this.btnTools.TabIndex = 9;
-            this.btnTools.Text = "Tools";
-            this.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnTools.UseVisualStyleBackColor = true;
-            this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfig.FlatAppearance.BorderSize = 0;
-            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
-            this.btnConfig.Location = new System.Drawing.Point(0, 449);
-            this.btnConfig.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(60, 76);
-            this.btnConfig.TabIndex = 8;
-            this.btnConfig.Text = "Config";
-            this.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnConfig.UseVisualStyleBackColor = true;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
-            // 
-            // btnAlmacen
-            // 
-            this.btnAlmacen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAlmacen.FlatAppearance.BorderSize = 0;
-            this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlmacen.ForeColor = System.Drawing.Color.White;
-            this.btnAlmacen.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.Image")));
-            this.btnAlmacen.Location = new System.Drawing.Point(0, 373);
-            this.btnAlmacen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(60, 76);
-            this.btnAlmacen.TabIndex = 6;
-            this.btnAlmacen.Text = "Almacén";
-            this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAlmacen.UseVisualStyleBackColor = true;
-            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
-            this.btnProductos.Location = new System.Drawing.Point(0, 297);
-            this.btnProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(60, 76);
-            this.btnProductos.TabIndex = 11;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 221);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 76);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Caja";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnVentas
-            // 
-            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVentas.FlatAppearance.BorderSize = 0;
-            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
-            this.btnVentas.Location = new System.Drawing.Point(0, 145);
-            this.btnVentas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(60, 76);
-            this.btnVentas.TabIndex = 4;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
-            // btnCompras
-            // 
-            this.btnCompras.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCompras.FlatAppearance.BorderSize = 0;
-            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompras.ForeColor = System.Drawing.Color.White;
-            this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
-            this.btnCompras.Location = new System.Drawing.Point(0, 69);
-            this.btnCompras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(60, 76);
-            this.btnCompras.TabIndex = 3;
-            this.btnCompras.Text = "Compras";
-            this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCompras.UseVisualStyleBackColor = true;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(60, 69);
-            this.panel1.TabIndex = 10;
             // 
             // panelMainContainer
             // 
@@ -374,7 +223,7 @@
             this.panelMainContainer.Controls.Add(this.panelMainHeader);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContainer.Location = new System.Drawing.Point(248, 0);
-            this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainContainer.Name = "panelMainContainer";
             this.panelMainContainer.Size = new System.Drawing.Size(698, 580);
             this.panelMainContainer.TabIndex = 5;
@@ -383,7 +232,7 @@
             // 
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 49);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(698, 531);
             this.panelMain.TabIndex = 1;
@@ -394,10 +243,60 @@
             this.panelMainHeader.Controls.Add(this.panelProfile);
             this.panelMainHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMainHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelMainHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMainHeader.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainHeader.Name = "panelMainHeader";
             this.panelMainHeader.Size = new System.Drawing.Size(698, 49);
             this.panelMainHeader.TabIndex = 0;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackColor = System.Drawing.Color.White;
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip2.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnProductoShorkout,
+            this.btnCompraShorkout,
+            this.btnVentaShorkout});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStrip2.Size = new System.Drawing.Size(526, 49);
+            this.toolStrip2.TabIndex = 3;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // btnProductoShorkout
+            // 
+            this.btnProductoShorkout.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductoShorkout.Image = ((System.Drawing.Image)(resources.GetObject("btnProductoShorkout.Image")));
+            this.btnProductoShorkout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProductoShorkout.Name = "btnProductoShorkout";
+            this.btnProductoShorkout.Size = new System.Drawing.Size(63, 46);
+            this.btnProductoShorkout.Text = "Productos";
+            this.btnProductoShorkout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProductoShorkout.Click += new System.EventHandler(this.btnProductoShortcut_Click);
+            // 
+            // btnCompraShorkout
+            // 
+            this.btnCompraShorkout.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompraShorkout.Image = ((System.Drawing.Image)(resources.GetObject("btnCompraShorkout.Image")));
+            this.btnCompraShorkout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCompraShorkout.Name = "btnCompraShorkout";
+            this.btnCompraShorkout.Size = new System.Drawing.Size(54, 46);
+            this.btnCompraShorkout.Text = "Conpras";
+            this.btnCompraShorkout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCompraShorkout.Click += new System.EventHandler(this.btnComprasShortcut_Click);
+            // 
+            // btnVentaShorkout
+            // 
+            this.btnVentaShorkout.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentaShorkout.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaShorkout.Image")));
+            this.btnVentaShorkout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnVentaShorkout.Name = "btnVentaShorkout";
+            this.btnVentaShorkout.Size = new System.Drawing.Size(45, 46);
+            this.btnVentaShorkout.Text = "Ventas";
+            this.btnVentaShorkout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVentaShorkout.Click += new System.EventHandler(this.btnVentaShorkout_Click);
             // 
             // panelProfile
             // 
@@ -405,7 +304,7 @@
             this.panelProfile.Controls.Add(this.label2);
             this.panelProfile.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelProfile.Location = new System.Drawing.Point(526, 0);
-            this.panelProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelProfile.Margin = new System.Windows.Forms.Padding(2);
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(172, 49);
             this.panelProfile.TabIndex = 2;
@@ -433,52 +332,39 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "6195161651";
             // 
-            // toolStrip2
+            // flowLayoutPanel1
             // 
-            this.toolStrip2.BackColor = System.Drawing.Color.White;
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStrip2.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
-            this.toolStripButton2,
-            this.toolStripButton1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip2.Size = new System.Drawing.Size(526, 49);
-            this.toolStrip2.TabIndex = 3;
-            this.toolStrip2.Text = "toolStrip2";
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(179)))));
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(45, 580);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // toolStripButton1
+            // panel1
             // 
-            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(45, 46);
-            this.toolStripButton1.Text = "Ventas";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(45, 82);
+            this.panel1.TabIndex = 0;
             // 
-            // toolStripButton2
+            // button1
             // 
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(54, 46);
-            this.toolStripButton2.Text = "Conpras";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(63, 46);
-            this.toolStripButton3.Text = "Productos";
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(0, 82);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 73);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Venta";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnCaja
             // 
@@ -489,7 +375,7 @@
             this.Controls.Add(this.panelMainContainer);
             this.Controls.Add(this.panelAside);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "btnCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admeli 0.0.0.1";
@@ -498,14 +384,15 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelAside.ResumeLayout(false);
-            this.panelAsideLeft.ResumeLayout(false);
+            this.panelAsideMain.ResumeLayout(false);
             this.panelMainContainer.ResumeLayout(false);
             this.panelMainHeader.ResumeLayout(false);
             this.panelMainHeader.PerformLayout();
-            this.panelProfile.ResumeLayout(false);
-            this.panelProfile.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.panelProfile.ResumeLayout(false);
+            this.panelProfile.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -514,13 +401,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelAside;
-        private System.Windows.Forms.Button btnCompras;
-        private System.Windows.Forms.Panel panelAsideLeft;
-        private System.Windows.Forms.Button btnAlmacen;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Button btnTools;
-        private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Panel panelAsideMain;
         private System.Windows.Forms.Panel panelMainContainer;
         private System.Windows.Forms.Panel panelMainHeader;
@@ -538,11 +418,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelProfile;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton btnVentaShorkout;
+        private System.Windows.Forms.ToolStripButton btnCompraShorkout;
+        private System.Windows.Forms.ToolStripButton btnProductoShorkout;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }
