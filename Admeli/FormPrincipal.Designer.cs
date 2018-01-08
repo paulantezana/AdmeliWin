@@ -41,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelAside = new System.Windows.Forms.Panel();
-            this.panelAsideMain = new System.Windows.Forms.Panel();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelMainHeader = new System.Windows.Forms.Panel();
@@ -55,9 +54,15 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panelAsideMain = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panelAside.SuspendLayout();
-            this.panelAsideMain.SuspendLayout();
             this.panelMainContainer.SuspendLayout();
             this.panelMainHeader.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -79,7 +84,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 580);
+            this.panel2.Location = new System.Drawing.Point(0, 760);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(946, 22);
@@ -199,23 +204,13 @@
             // 
             this.panelAside.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(250)))), ((int)(((byte)(237)))));
             this.panelAside.Controls.Add(this.panelAsideMain);
+            this.panelAside.Controls.Add(this.flowLayoutPanel1);
             this.panelAside.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAside.Location = new System.Drawing.Point(0, 0);
             this.panelAside.Margin = new System.Windows.Forms.Padding(2);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(248, 580);
+            this.panelAside.Size = new System.Drawing.Size(248, 760);
             this.panelAside.TabIndex = 4;
-            // 
-            // panelAsideMain
-            // 
-            this.panelAsideMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.panelAsideMain.Controls.Add(this.flowLayoutPanel1);
-            this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAsideMain.Location = new System.Drawing.Point(0, 0);
-            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
-            this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(248, 580);
-            this.panelAsideMain.TabIndex = 5;
             // 
             // panelMainContainer
             // 
@@ -225,7 +220,7 @@
             this.panelMainContainer.Location = new System.Drawing.Point(248, 0);
             this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(698, 580);
+            this.panelMainContainer.Size = new System.Drawing.Size(698, 760);
             this.panelMainContainer.TabIndex = 5;
             // 
             // panelMain
@@ -234,7 +229,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 49);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(698, 531);
+            this.panelMain.Size = new System.Drawing.Size(698, 711);
             this.panelMain.TabIndex = 1;
             // 
             // panelMainHeader
@@ -337,18 +332,24 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(179)))));
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(45, 580);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(65, 760);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(45, 82);
+            this.panel1.Size = new System.Drawing.Size(65, 82);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -360,18 +361,125 @@
             this.button1.Location = new System.Drawing.Point(0, 82);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 73);
+            this.button1.Size = new System.Drawing.Size(65, 85);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Venta";
+            this.button1.Text = "Compras";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(0, 167);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 85);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Ventas";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(0, 252);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(65, 85);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Caja";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(0, 337);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(65, 85);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Almacen";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnAlmacen_Click);
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(0, 422);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(65, 85);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Productos";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnProductos_Click);
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(0, 507);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(65, 85);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Config";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(0, 592);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(65, 85);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Tools";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnTools_Click);
+            // 
+            // panelAsideMain
+            // 
+            this.panelAsideMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAsideMain.Location = new System.Drawing.Point(65, 0);
+            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelAsideMain.Name = "panelAsideMain";
+            this.panelAsideMain.Size = new System.Drawing.Size(183, 760);
+            this.panelAsideMain.TabIndex = 7;
             // 
             // btnCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(946, 602);
+            this.ClientSize = new System.Drawing.Size(946, 782);
             this.Controls.Add(this.panelMainContainer);
             this.Controls.Add(this.panelAside);
             this.Controls.Add(this.panel2);
@@ -384,7 +492,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelAside.ResumeLayout(false);
-            this.panelAsideMain.ResumeLayout(false);
             this.panelMainContainer.ResumeLayout(false);
             this.panelMainHeader.ResumeLayout(false);
             this.panelMainHeader.PerformLayout();
@@ -401,7 +508,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelAside;
-        private System.Windows.Forms.Panel panelAsideMain;
         private System.Windows.Forms.Panel panelMainContainer;
         private System.Windows.Forms.Panel panelMainHeader;
         private System.Windows.Forms.Label label2;
@@ -422,8 +528,15 @@
         private System.Windows.Forms.ToolStripButton btnVentaShorkout;
         private System.Windows.Forms.ToolStripButton btnCompraShorkout;
         private System.Windows.Forms.ToolStripButton btnProductoShorkout;
+        private System.Windows.Forms.Panel panelAsideMain;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
