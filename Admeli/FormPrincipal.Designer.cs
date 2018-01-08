@@ -1,6 +1,6 @@
 ﻿namespace Admeli
 {
-    partial class btnCaja
+    partial class FormPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnCaja));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -474,7 +474,7 @@
             this.panelAsideMain.Size = new System.Drawing.Size(183, 760);
             this.panelAsideMain.TabIndex = 7;
             // 
-            // btnCaja
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -484,7 +484,7 @@
             this.Controls.Add(this.panelAside);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "btnCaja";
+            this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admeli 0.0.0.1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Admeli
 {
     public partial class FormLogin : Form
     {
+        private PersonalModel personalModel = new PersonalModel();
+
         public FormLogin()
         {
             InitializeComponent();
@@ -26,9 +29,17 @@ namespace Admeli
         {
             if (validarCampos())
             {
-                btnCaja formPrincipal = new btnCaja();
-                formPrincipal.Show();
-                this.Hide();
+                try
+                {
+                    personalModel.loginPersonal(textUsuario.Text, textPassword.Text);
+                    FormPrincipal formPrincipal = new FormPrincipal();
+                    formPrincipal.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Login personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         private bool validarCampos()

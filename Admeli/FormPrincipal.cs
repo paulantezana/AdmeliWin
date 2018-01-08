@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Admeli
 {
-    public partial class btnCaja : Form
+    public partial class FormPrincipal : Form
     {
         private UCComprasNav uCComprasNav;
         private UCVentasNav uCVentasNav;
@@ -31,7 +31,7 @@ namespace Admeli
 
         private int widthPanelAside { get; set; }
 
-        public btnCaja()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
