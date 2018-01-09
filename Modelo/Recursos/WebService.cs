@@ -16,7 +16,8 @@ namespace Modelo.Recursos
 
         public WebService()
         {
-            this.urlBase = "http://www.lineatienda.com";
+            //this.urlBase = "http://www.admeli.com/demo2/";
+            this.urlBase = "http://www.lineatienda.com/services.php";
             //this.urlBase = "http://192.168.1.10/admeli/~admeli";
             //this.urlBase = "http://192.168.1.57:8085/admeli/~admeli";
             //this.urlBase = "http://192.168.1.10/admeli/~admeli_mysql";

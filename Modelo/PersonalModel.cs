@@ -25,7 +25,7 @@ namespace Modelo
             try
             {
                 object[,] variables = new object[,] { { "usuario", usuario }, { "password", password } };
-                dynamic result = await webService.JsonMetodoPost("services.php/personal", "buscar", variables);
+                dynamic result = await webService.JsonMetodoPost("personal", "buscar", variables);
 
                 if (result != null)
                 {
@@ -53,6 +53,53 @@ namespace Modelo
                 throw ex;
             }
         }
+        public void guardar()
+        {
 
+        }
+        public void modificar()
+        {
+
+        }
+        public void eliminar()
+        {
+
+        }
+        public void cambiarClave()
+        {
+
+        }
+        public async Task<List<Personal>> listar()
+        {
+            try
+            {
+                List<Personal> listPersonal = new List<Personal>();
+                dynamic result = await webService.JsonMetodoGet("personales", "estado/2/2");
+                foreach (var item in result.datos)
+                {
+                    Personal personal = new Personal();
+                    personal.idPersonal = item.idPersonal;
+                    personal.nombres = item.nombres;
+                    personal.apellidos = item.apellidos;
+                    personal.tipoDocumento = item.tipoDocumento;
+                    personal.numeroDocumento = item.numeroDocumento;
+                    personal.sexo = item.sexo;
+                    personal.email = item.email;
+                    personal.telefono = item.telefono;
+                    personal.celular = item.celular;
+                    personal.direccion = item.direccion;
+                    personal.estado = item.estado;
+                    personal.idDocumento = item.idDocumento;
+                    personal.usuario = item.usuario;
+
+                    listPersonal.Add(personal);
+                }
+                return listPersonal;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
