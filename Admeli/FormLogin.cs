@@ -25,26 +25,26 @@ namespace Admeli
             this.Close();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            if (validarCampos())
+            try
             {
-                try
+                Cursor.Current = Cursors.WaitCursor;
+                if (validarCampos())
                 {
-                    personalModel.loginPersonal(textUsuario.Text, textPassword.Text);
+                    await personalModel.loginPersonal(textUsuario.Text, textPassword.Text);
                     FormPrincipal formPrincipal = new FormPrincipal();
                     formPrincipal.Show();
                     this.Hide();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Login personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                finally
-                {
-                    Cursor.Current = Cursors.Default;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
             }
         }
         private bool validarCampos()
@@ -56,7 +56,6 @@ namespace Admeli
                 return false;
             }
             errorProvider1.Clear();
-
             if (textPassword.Text == "")
             {
                 errorProvider1.SetError(textPassword, "Debe ingresar una contraseña");

@@ -44,12 +44,13 @@
             // 
             this.btnNotaSalida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNotaSalida.FlatAppearance.BorderSize = 0;
-            this.btnNotaSalida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnNotaSalida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnNotaSalida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnNotaSalida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnNotaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotaSalida.Image = ((System.Drawing.Image)(resources.GetObject("btnNotaSalida.Image")));
             this.btnNotaSalida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotaSalida.Location = new System.Drawing.Point(3, 13);
+            this.btnNotaSalida.Location = new System.Drawing.Point(0, 10);
+            this.btnNotaSalida.Margin = new System.Windows.Forms.Padding(0);
             this.btnNotaSalida.Name = "btnNotaSalida";
             this.btnNotaSalida.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnNotaSalida.Size = new System.Drawing.Size(250, 50);
@@ -64,12 +65,13 @@
             // 
             this.btnNotaEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNotaEntrada.FlatAppearance.BorderSize = 0;
-            this.btnNotaEntrada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnNotaEntrada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnNotaEntrada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnNotaEntrada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnNotaEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotaEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnNotaEntrada.Image")));
             this.btnNotaEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotaEntrada.Location = new System.Drawing.Point(3, 69);
+            this.btnNotaEntrada.Location = new System.Drawing.Point(0, 60);
+            this.btnNotaEntrada.Margin = new System.Windows.Forms.Padding(0);
             this.btnNotaEntrada.Name = "btnNotaEntrada";
             this.btnNotaEntrada.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnNotaEntrada.Size = new System.Drawing.Size(250, 50);
@@ -84,12 +86,13 @@
             // 
             this.btnGuiaRemision.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuiaRemision.FlatAppearance.BorderSize = 0;
-            this.btnGuiaRemision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnGuiaRemision.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnGuiaRemision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnGuiaRemision.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnGuiaRemision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuiaRemision.Image = ((System.Drawing.Image)(resources.GetObject("btnGuiaRemision.Image")));
             this.btnGuiaRemision.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuiaRemision.Location = new System.Drawing.Point(3, 125);
+            this.btnGuiaRemision.Location = new System.Drawing.Point(0, 110);
+            this.btnGuiaRemision.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuiaRemision.Name = "btnGuiaRemision";
             this.btnGuiaRemision.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnGuiaRemision.Size = new System.Drawing.Size(250, 50);

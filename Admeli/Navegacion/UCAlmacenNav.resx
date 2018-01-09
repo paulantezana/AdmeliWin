@@ -149,11 +149,12 @@
   <data name="btnGuiaRemision.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAEOSURBVDhPY6A5qApyl6wI9TgKoqFC5IEyPz/eylDPySAaKkQegBjkca8h1IEHKkQYTJ69SnHS
-        vEX2yLi1ria/PiPuP4hGl5s6dSp2wxeu3Xxg2eYd/2csW0MQz1qx9v+6XfvfN0ybpwTVjgAggzIqm/67
-        RqUQhZPLav9v2nv4a++85VZQIyCAVINAOK6w6v+WA0d/9s5f6gU1hjyDanun/l+/+8DLCbOXiUONIc0g
-        t+jU/1MWrfi/YuvuGw0N8zmgRkDA3FUb1+04fOLn9kPHfsDxwWO/tu4//B9Eo4gfOv5jyYYdZ/bv388C
-        1Y4fVIR4OADT0X8QDRUiD4waRBhUBnuZAw26C6KhQvQADAwAYPwdFCTpzqUAAAAASUVORK5CYII=
+        YQUAAAEjSURBVDhPzZM9SgNRFIVfMaWFWM//TDeNtYgL0MbGdbgJFyA2KbS1snMBuoAEsgkNQhpBsTP6
+        necxJgFhtJoLH/PuufccHjwmDL/atk3zPK+Loqhoky81ViJNM+1YW6+mabKyLEfwBB/fYHzheyt8Xs5A
+        uyN5HRMCwjE8snzYdd2WZd1gDyYw1lmaBtqhP5JHXmmxHDR1u1bo58JtUlXVgc+aTeV12z8oTdMdbnIR
+        B5Q88rrtH8RtzjhfxwElD/w9iO8pPMcBJQ/8K2gXBhSkZ6/rej8OKHnkdds/aLPkkdftMmjGq9zwfYBX
+        nnkOd3BvdJ5rph3vzuAnCPGEpTfEBaz+BuLdbOoLeeR1TLzRdpZljX7IVaSxeAWXv83ldcygKoRPckKG
+        snlIimcAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

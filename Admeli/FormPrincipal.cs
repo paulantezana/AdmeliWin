@@ -225,12 +225,17 @@ namespace Admeli
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            // Open Panel Default
+            togglePanelAside("ventas");
+
+            // Load datas
             lblNombrePersonal.Text = personal.nombres;
             lblApellidoPersonal.Text = personal.apellidos;
             lblDniPersonal.Text = personal.numeroDocumento;
             lblUsuarioPersonal.Text = personal.usuario;
             lblNombrePersonal2.Text = personal.nombres;
             lblDniPersonal2.Text = personal.numeroDocumento;
+
         }
     }
 }

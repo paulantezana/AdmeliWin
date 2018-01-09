@@ -88,15 +88,16 @@
             // 
             this.btnEgresos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEgresos.FlatAppearance.BorderSize = 0;
-            this.btnEgresos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnEgresos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnEgresos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnEgresos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnEgresos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEgresos.Image = ((System.Drawing.Image)(resources.GetObject("btnEgresos.Image")));
             this.btnEgresos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEgresos.Location = new System.Drawing.Point(3, 13);
+            this.btnEgresos.Location = new System.Drawing.Point(0, 10);
+            this.btnEgresos.Margin = new System.Windows.Forms.Padding(0);
             this.btnEgresos.Name = "btnEgresos";
             this.btnEgresos.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnEgresos.Size = new System.Drawing.Size(250, 50);
+            this.btnEgresos.Size = new System.Drawing.Size(247, 50);
             this.btnEgresos.TabIndex = 2;
             this.btnEgresos.Text = " Egresos";
             this.btnEgresos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -108,15 +109,16 @@
             // 
             this.btnIngresos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresos.FlatAppearance.BorderSize = 0;
-            this.btnIngresos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnIngresos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnIngresos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnIngresos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnIngresos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresos.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresos.Image")));
             this.btnIngresos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresos.Location = new System.Drawing.Point(3, 69);
+            this.btnIngresos.Location = new System.Drawing.Point(0, 60);
+            this.btnIngresos.Margin = new System.Windows.Forms.Padding(0);
             this.btnIngresos.Name = "btnIngresos";
             this.btnIngresos.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnIngresos.Size = new System.Drawing.Size(250, 50);
+            this.btnIngresos.Size = new System.Drawing.Size(247, 50);
             this.btnIngresos.TabIndex = 3;
             this.btnIngresos.Text = " Ingresos";
             this.btnIngresos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -128,15 +130,16 @@
             // 
             this.btnIniciarCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIniciarCaja.FlatAppearance.BorderSize = 0;
-            this.btnIniciarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnIniciarCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnIniciarCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnIniciarCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnIniciarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnIniciarCaja.Image")));
             this.btnIniciarCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIniciarCaja.Location = new System.Drawing.Point(3, 125);
+            this.btnIniciarCaja.Location = new System.Drawing.Point(0, 110);
+            this.btnIniciarCaja.Margin = new System.Windows.Forms.Padding(0);
             this.btnIniciarCaja.Name = "btnIniciarCaja";
             this.btnIniciarCaja.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnIniciarCaja.Size = new System.Drawing.Size(250, 50);
+            this.btnIniciarCaja.Size = new System.Drawing.Size(247, 50);
             this.btnIniciarCaja.TabIndex = 4;
             this.btnIniciarCaja.Text = " Iniciar caja";
             this.btnIniciarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -148,15 +151,16 @@
             // 
             this.btnCierreCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCierreCaja.FlatAppearance.BorderSize = 0;
-            this.btnCierreCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnCierreCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnCierreCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCierreCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnCierreCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCierreCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCierreCaja.Image")));
             this.btnCierreCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCierreCaja.Location = new System.Drawing.Point(3, 181);
+            this.btnCierreCaja.Location = new System.Drawing.Point(0, 160);
+            this.btnCierreCaja.Margin = new System.Windows.Forms.Padding(0);
             this.btnCierreCaja.Name = "btnCierreCaja";
             this.btnCierreCaja.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnCierreCaja.Size = new System.Drawing.Size(250, 50);
+            this.btnCierreCaja.Size = new System.Drawing.Size(247, 50);
             this.btnCierreCaja.TabIndex = 5;
             this.btnCierreCaja.Text = " Cierres de caja";
             this.btnCierreCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

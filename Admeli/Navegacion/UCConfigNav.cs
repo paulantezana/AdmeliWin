@@ -48,7 +48,7 @@ namespace Admeli.Navegacion
         private void panelHeader_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelHeader);
+            drawShape.bottomLine(panelHeader,220, 220, 220);
         }
 
         private void panelDivide_Paint(object sender, PaintEventArgs e)

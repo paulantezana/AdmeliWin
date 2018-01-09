@@ -105,22 +105,23 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 467);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 423);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDatoEmpresa
             // 
             this.btnDatoEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDatoEmpresa.FlatAppearance.BorderSize = 0;
-            this.btnDatoEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnDatoEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnDatoEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnDatoEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnDatoEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btnDatoEmpresa.Image")));
             this.btnDatoEmpresa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatoEmpresa.Location = new System.Drawing.Point(3, 13);
+            this.btnDatoEmpresa.Location = new System.Drawing.Point(0, 10);
+            this.btnDatoEmpresa.Margin = new System.Windows.Forms.Padding(0);
             this.btnDatoEmpresa.Name = "btnDatoEmpresa";
             this.btnDatoEmpresa.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnDatoEmpresa.Size = new System.Drawing.Size(250, 50);
+            this.btnDatoEmpresa.Size = new System.Drawing.Size(247, 50);
             this.btnDatoEmpresa.TabIndex = 2;
             this.btnDatoEmpresa.Text = " Datos empresa";
             this.btnDatoEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -132,15 +133,16 @@
             // 
             this.btnSucursales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSucursales.FlatAppearance.BorderSize = 0;
-            this.btnSucursales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnSucursales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnSucursales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnSucursales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSucursales.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursales.Image")));
             this.btnSucursales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSucursales.Location = new System.Drawing.Point(3, 69);
+            this.btnSucursales.Location = new System.Drawing.Point(0, 60);
+            this.btnSucursales.Margin = new System.Windows.Forms.Padding(0);
             this.btnSucursales.Name = "btnSucursales";
             this.btnSucursales.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnSucursales.Size = new System.Drawing.Size(250, 50);
+            this.btnSucursales.Size = new System.Drawing.Size(247, 50);
             this.btnSucursales.TabIndex = 3;
             this.btnSucursales.Text = " Sucursales";
             this.btnSucursales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,15 +154,16 @@
             // 
             this.btnDocumentoIdentificacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDocumentoIdentificacion.FlatAppearance.BorderSize = 0;
-            this.btnDocumentoIdentificacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnDocumentoIdentificacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnDocumentoIdentificacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnDocumentoIdentificacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnDocumentoIdentificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDocumentoIdentificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentoIdentificacion.Image")));
             this.btnDocumentoIdentificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocumentoIdentificacion.Location = new System.Drawing.Point(3, 125);
+            this.btnDocumentoIdentificacion.Location = new System.Drawing.Point(0, 110);
+            this.btnDocumentoIdentificacion.Margin = new System.Windows.Forms.Padding(0);
             this.btnDocumentoIdentificacion.Name = "btnDocumentoIdentificacion";
             this.btnDocumentoIdentificacion.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnDocumentoIdentificacion.Size = new System.Drawing.Size(250, 50);
+            this.btnDocumentoIdentificacion.Size = new System.Drawing.Size(247, 50);
             this.btnDocumentoIdentificacion.TabIndex = 4;
             this.btnDocumentoIdentificacion.Text = " Documentos de identificación";
             this.btnDocumentoIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,15 +175,16 @@
             // 
             this.btnPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPersonal.FlatAppearance.BorderSize = 0;
-            this.btnPersonal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnPersonal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonal.Image")));
             this.btnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonal.Location = new System.Drawing.Point(3, 181);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 160);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(0);
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnPersonal.Size = new System.Drawing.Size(250, 50);
+            this.btnPersonal.Size = new System.Drawing.Size(247, 50);
             this.btnPersonal.TabIndex = 5;
             this.btnPersonal.Text = " Personal";
             this.btnPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -192,15 +196,16 @@
             // 
             this.btnImpuestos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImpuestos.FlatAppearance.BorderSize = 0;
-            this.btnImpuestos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnImpuestos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnImpuestos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnImpuestos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnImpuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImpuestos.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuestos.Image")));
             this.btnImpuestos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpuestos.Location = new System.Drawing.Point(3, 237);
+            this.btnImpuestos.Location = new System.Drawing.Point(0, 210);
+            this.btnImpuestos.Margin = new System.Windows.Forms.Padding(0);
             this.btnImpuestos.Name = "btnImpuestos";
             this.btnImpuestos.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnImpuestos.Size = new System.Drawing.Size(250, 50);
+            this.btnImpuestos.Size = new System.Drawing.Size(247, 50);
             this.btnImpuestos.TabIndex = 7;
             this.btnImpuestos.Text = " Impuestos";
             this.btnImpuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,15 +217,16 @@
             // 
             this.btnGrupoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGrupoCliente.FlatAppearance.BorderSize = 0;
-            this.btnGrupoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnGrupoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnGrupoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnGrupoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnGrupoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrupoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupoCliente.Image")));
             this.btnGrupoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrupoCliente.Location = new System.Drawing.Point(3, 293);
+            this.btnGrupoCliente.Location = new System.Drawing.Point(0, 260);
+            this.btnGrupoCliente.Margin = new System.Windows.Forms.Padding(0);
             this.btnGrupoCliente.Name = "btnGrupoCliente";
             this.btnGrupoCliente.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnGrupoCliente.Size = new System.Drawing.Size(250, 50);
+            this.btnGrupoCliente.Size = new System.Drawing.Size(247, 50);
             this.btnGrupoCliente.TabIndex = 8;
             this.btnGrupoCliente.Text = " Grupo clientes";
             this.btnGrupoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,15 +238,16 @@
             // 
             this.btnCajaInicializada.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCajaInicializada.FlatAppearance.BorderSize = 0;
-            this.btnCajaInicializada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnCajaInicializada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnCajaInicializada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCajaInicializada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnCajaInicializada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCajaInicializada.Image = ((System.Drawing.Image)(resources.GetObject("btnCajaInicializada.Image")));
             this.btnCajaInicializada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCajaInicializada.Location = new System.Drawing.Point(3, 349);
+            this.btnCajaInicializada.Location = new System.Drawing.Point(0, 310);
+            this.btnCajaInicializada.Margin = new System.Windows.Forms.Padding(0);
             this.btnCajaInicializada.Name = "btnCajaInicializada";
             this.btnCajaInicializada.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnCajaInicializada.Size = new System.Drawing.Size(250, 50);
+            this.btnCajaInicializada.Size = new System.Drawing.Size(247, 50);
             this.btnCajaInicializada.TabIndex = 9;
             this.btnCajaInicializada.Text = " Cajas inizializadas";
             this.btnCajaInicializada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,15 +259,16 @@
             // 
             this.btnImpuestoDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImpuestoDocumento.FlatAppearance.BorderSize = 0;
-            this.btnImpuestoDocumento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnImpuestoDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnImpuestoDocumento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnImpuestoDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnImpuestoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImpuestoDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuestoDocumento.Image")));
             this.btnImpuestoDocumento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpuestoDocumento.Location = new System.Drawing.Point(3, 405);
+            this.btnImpuestoDocumento.Location = new System.Drawing.Point(0, 360);
+            this.btnImpuestoDocumento.Margin = new System.Windows.Forms.Padding(0);
             this.btnImpuestoDocumento.Name = "btnImpuestoDocumento";
             this.btnImpuestoDocumento.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnImpuestoDocumento.Size = new System.Drawing.Size(250, 50);
+            this.btnImpuestoDocumento.Size = new System.Drawing.Size(247, 50);
             this.btnImpuestoDocumento.TabIndex = 10;
             this.btnImpuestoDocumento.Text = " Impuesto documento";
             this.btnImpuestoDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,7 +280,7 @@
             // 
             this.panelDivide1.Controls.Add(this.label3);
             this.panelDivide1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDivide1.Location = new System.Drawing.Point(0, 527);
+            this.panelDivide1.Location = new System.Drawing.Point(0, 483);
             this.panelDivide1.Name = "panelDivide1";
             this.panelDivide1.Size = new System.Drawing.Size(250, 47);
             this.panelDivide1.TabIndex = 8;
@@ -293,22 +301,23 @@
             this.flowLayoutPanel2.Controls.Add(this.btnAsignarCorrelativo);
             this.flowLayoutPanel2.Controls.Add(this.btnDisenoPersonalizacion);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 574);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 530);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(250, 194);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(250, 169);
             this.flowLayoutPanel2.TabIndex = 9;
             // 
             // btnListadoDocumento
             // 
             this.btnListadoDocumento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListadoDocumento.FlatAppearance.BorderSize = 0;
-            this.btnListadoDocumento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnListadoDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnListadoDocumento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnListadoDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnListadoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListadoDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoDocumento.Image")));
             this.btnListadoDocumento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoDocumento.Location = new System.Drawing.Point(3, 13);
+            this.btnListadoDocumento.Location = new System.Drawing.Point(0, 10);
+            this.btnListadoDocumento.Margin = new System.Windows.Forms.Padding(0);
             this.btnListadoDocumento.Name = "btnListadoDocumento";
             this.btnListadoDocumento.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnListadoDocumento.Size = new System.Drawing.Size(247, 50);
@@ -323,12 +332,13 @@
             // 
             this.btnAsignarCorrelativo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAsignarCorrelativo.FlatAppearance.BorderSize = 0;
-            this.btnAsignarCorrelativo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnAsignarCorrelativo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnAsignarCorrelativo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnAsignarCorrelativo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnAsignarCorrelativo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarCorrelativo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarCorrelativo.Image")));
             this.btnAsignarCorrelativo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarCorrelativo.Location = new System.Drawing.Point(3, 69);
+            this.btnAsignarCorrelativo.Location = new System.Drawing.Point(0, 60);
+            this.btnAsignarCorrelativo.Margin = new System.Windows.Forms.Padding(0);
             this.btnAsignarCorrelativo.Name = "btnAsignarCorrelativo";
             this.btnAsignarCorrelativo.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnAsignarCorrelativo.Size = new System.Drawing.Size(247, 50);
@@ -343,12 +353,13 @@
             // 
             this.btnDisenoPersonalizacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDisenoPersonalizacion.FlatAppearance.BorderSize = 0;
-            this.btnDisenoPersonalizacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnDisenoPersonalizacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnDisenoPersonalizacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnDisenoPersonalizacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnDisenoPersonalizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisenoPersonalizacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDisenoPersonalizacion.Image")));
             this.btnDisenoPersonalizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDisenoPersonalizacion.Location = new System.Drawing.Point(3, 125);
+            this.btnDisenoPersonalizacion.Location = new System.Drawing.Point(0, 110);
+            this.btnDisenoPersonalizacion.Margin = new System.Windows.Forms.Padding(0);
             this.btnDisenoPersonalizacion.Name = "btnDisenoPersonalizacion";
             this.btnDisenoPersonalizacion.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnDisenoPersonalizacion.Size = new System.Drawing.Size(247, 50);
@@ -365,7 +376,7 @@
             this.flowLayoutPanel3.Controls.Add(this.btnTipoCambio);
             this.flowLayoutPanel3.Controls.Add(this.btnDenominaciones);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 815);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 746);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.flowLayoutPanel3.Size = new System.Drawing.Size(250, 170);
@@ -375,12 +386,13 @@
             // 
             this.btnListadoMoneda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListadoMoneda.FlatAppearance.BorderSize = 0;
-            this.btnListadoMoneda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnListadoMoneda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnListadoMoneda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnListadoMoneda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnListadoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListadoMoneda.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoMoneda.Image")));
             this.btnListadoMoneda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoMoneda.Location = new System.Drawing.Point(3, 13);
+            this.btnListadoMoneda.Location = new System.Drawing.Point(0, 10);
+            this.btnListadoMoneda.Margin = new System.Windows.Forms.Padding(0);
             this.btnListadoMoneda.Name = "btnListadoMoneda";
             this.btnListadoMoneda.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnListadoMoneda.Size = new System.Drawing.Size(247, 50);
@@ -395,12 +407,13 @@
             // 
             this.btnTipoCambio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipoCambio.FlatAppearance.BorderSize = 0;
-            this.btnTipoCambio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnTipoCambio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnTipoCambio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnTipoCambio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnTipoCambio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoCambio.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoCambio.Image")));
             this.btnTipoCambio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTipoCambio.Location = new System.Drawing.Point(3, 69);
+            this.btnTipoCambio.Location = new System.Drawing.Point(0, 60);
+            this.btnTipoCambio.Margin = new System.Windows.Forms.Padding(0);
             this.btnTipoCambio.Name = "btnTipoCambio";
             this.btnTipoCambio.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnTipoCambio.Size = new System.Drawing.Size(247, 50);
@@ -415,12 +428,13 @@
             // 
             this.btnDenominaciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDenominaciones.FlatAppearance.BorderSize = 0;
-            this.btnDenominaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnDenominaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnDenominaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnDenominaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnDenominaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDenominaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnDenominaciones.Image")));
             this.btnDenominaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDenominaciones.Location = new System.Drawing.Point(3, 125);
+            this.btnDenominaciones.Location = new System.Drawing.Point(0, 110);
+            this.btnDenominaciones.Margin = new System.Windows.Forms.Padding(0);
             this.btnDenominaciones.Name = "btnDenominaciones";
             this.btnDenominaciones.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnDenominaciones.Size = new System.Drawing.Size(247, 50);
@@ -435,7 +449,7 @@
             // 
             this.panelDivide2.Controls.Add(this.label4);
             this.panelDivide2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDivide2.Location = new System.Drawing.Point(0, 768);
+            this.panelDivide2.Location = new System.Drawing.Point(0, 699);
             this.panelDivide2.Name = "panelDivide2";
             this.panelDivide2.Size = new System.Drawing.Size(250, 47);
             this.panelDivide2.TabIndex = 10;

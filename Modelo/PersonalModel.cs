@@ -18,9 +18,9 @@ namespace Modelo
 
         /**
          *  Login del usuario
-         *      usuario y contraseña
+         *      Usuario y Contraseña
          * */
-        public async void loginPersonal(string usuario, string password)
+        public async Task loginPersonal(string usuario, string password)
         {
             try
             {
@@ -33,7 +33,6 @@ namespace Modelo
                 }
 
                 Personal user = new Personal();
-
                 user.idPersonal = result[0].idPersonal;
                 user.nombres = result[0].nombres;
                 user.apellidos = result[0].apellidos;
@@ -47,13 +46,11 @@ namespace Modelo
                 user.estado = result[0].estado;
                 user.idDocumento = result[0].idDocumento;
                 user.usuario = result[0].usuario;
-
                 PersonalModel.personal = user;
-
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw ex;
             }
         }
 

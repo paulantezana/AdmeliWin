@@ -88,12 +88,13 @@
             // 
             this.btnOredenCompra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOredenCompra.FlatAppearance.BorderSize = 0;
-            this.btnOredenCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnOredenCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnOredenCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnOredenCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnOredenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOredenCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnOredenCompra.Image")));
             this.btnOredenCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOredenCompra.Location = new System.Drawing.Point(3, 13);
+            this.btnOredenCompra.Location = new System.Drawing.Point(0, 10);
+            this.btnOredenCompra.Margin = new System.Windows.Forms.Padding(0);
             this.btnOredenCompra.Name = "btnOredenCompra";
             this.btnOredenCompra.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnOredenCompra.Size = new System.Drawing.Size(247, 50);
@@ -108,12 +109,13 @@
             // 
             this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompras.FlatAppearance.BorderSize = 0;
-            this.btnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(3, 69);
+            this.btnCompras.Location = new System.Drawing.Point(0, 60);
+            this.btnCompras.Margin = new System.Windows.Forms.Padding(0);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnCompras.Size = new System.Drawing.Size(247, 50);
@@ -128,12 +130,13 @@
             // 
             this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(3, 125);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 110);
+            this.btnProveedores.Margin = new System.Windows.Forms.Padding(0);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnProveedores.Size = new System.Drawing.Size(247, 50);
@@ -148,12 +151,13 @@
             // 
             this.btnCuentaPagar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCuentaPagar.FlatAppearance.BorderSize = 0;
-            this.btnCuentaPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnCuentaPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnCuentaPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCuentaPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnCuentaPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCuentaPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentaPagar.Image")));
             this.btnCuentaPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCuentaPagar.Location = new System.Drawing.Point(3, 181);
+            this.btnCuentaPagar.Location = new System.Drawing.Point(0, 160);
+            this.btnCuentaPagar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCuentaPagar.Name = "btnCuentaPagar";
             this.btnCuentaPagar.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnCuentaPagar.Size = new System.Drawing.Size(247, 50);

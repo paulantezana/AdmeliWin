@@ -88,12 +88,13 @@
             // 
             this.btnListadoProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListadoProductos.FlatAppearance.BorderSize = 0;
-            this.btnListadoProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnListadoProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnListadoProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnListadoProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnListadoProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListadoProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoProductos.Image")));
             this.btnListadoProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoProductos.Location = new System.Drawing.Point(3, 13);
+            this.btnListadoProductos.Location = new System.Drawing.Point(0, 10);
+            this.btnListadoProductos.Margin = new System.Windows.Forms.Padding(0);
             this.btnListadoProductos.Name = "btnListadoProductos";
             this.btnListadoProductos.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnListadoProductos.Size = new System.Drawing.Size(247, 50);
@@ -108,12 +109,13 @@
             // 
             this.btnMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarcas.FlatAppearance.BorderSize = 0;
-            this.btnMarcas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnMarcas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcas.Image = ((System.Drawing.Image)(resources.GetObject("btnMarcas.Image")));
             this.btnMarcas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.Location = new System.Drawing.Point(3, 69);
+            this.btnMarcas.Location = new System.Drawing.Point(0, 60);
+            this.btnMarcas.Margin = new System.Windows.Forms.Padding(0);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnMarcas.Size = new System.Drawing.Size(247, 50);
@@ -128,12 +130,13 @@
             // 
             this.btnUnidadesMedida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUnidadesMedida.FlatAppearance.BorderSize = 0;
-            this.btnUnidadesMedida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnUnidadesMedida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnUnidadesMedida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnUnidadesMedida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnUnidadesMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnidadesMedida.Image = ((System.Drawing.Image)(resources.GetObject("btnUnidadesMedida.Image")));
             this.btnUnidadesMedida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUnidadesMedida.Location = new System.Drawing.Point(3, 125);
+            this.btnUnidadesMedida.Location = new System.Drawing.Point(0, 110);
+            this.btnUnidadesMedida.Margin = new System.Windows.Forms.Padding(0);
             this.btnUnidadesMedida.Name = "btnUnidadesMedida";
             this.btnUnidadesMedida.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnUnidadesMedida.Size = new System.Drawing.Size(247, 50);
@@ -148,12 +151,13 @@
             // 
             this.btnCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategorias.FlatAppearance.BorderSize = 0;
-            this.btnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
-            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
+            this.btnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Image")));
             this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(3, 181);
+            this.btnCategorias.Location = new System.Drawing.Point(0, 160);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(0);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnCategorias.Size = new System.Drawing.Size(247, 50);
