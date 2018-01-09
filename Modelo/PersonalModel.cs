@@ -29,22 +29,26 @@ namespace Modelo
 
                 if (result != null)
                 {
-                    if (result.count == 0) throw new Exception("Usuario o contraseña incorrectos");
+                    if (result.Count == 0) throw new Exception("Usuario o contraseña incorrectos");
                 }
-                
-                personal.idPersonal = result[0].idPersonal;
-                personal.nombres = result[0].nombres;
-                personal.apellidos = result[0].apellidos;
-                personal.tipoDocumento = result[0].tipoDocumento;
-                personal.numeroDocumento = result[0].numeroDocumento;
-                personal.sexo = result[0].sexo;
-                personal.email = result[0].email;
-                personal.telefono = result[0].telefono;
-                personal.celular = result[0].celular;
-                personal.direccion = result[0].direccion;
-                personal.estado = result[0].estado;
-                personal.idDocumento = result[0].idDocumento;
-                personal.usuario = result[0].usuario;
+
+                Personal user = new Personal();
+
+                user.idPersonal = result[0].idPersonal;
+                user.nombres = result[0].nombres;
+                user.apellidos = result[0].apellidos;
+                user.tipoDocumento = result[0].tipoDocumento;
+                user.numeroDocumento = result[0].numeroDocumento;
+                user.sexo = result[0].sexo;
+                user.email = result[0].email;
+                user.telefono = result[0].telefono;
+                user.celular = result[0].celular;
+                user.direccion = result[0].direccion;
+                user.estado = result[0].estado;
+                user.idDocumento = result[0].idDocumento;
+                user.usuario = result[0].usuario;
+
+                PersonalModel.personal = user;
 
             }
             catch (Exception ex)

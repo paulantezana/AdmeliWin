@@ -27,6 +27,7 @@ namespace Admeli
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (validarCampos())
             {
                 try
@@ -39,6 +40,10 @@ namespace Admeli
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message, "Login personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
                 }
             }
         }

@@ -3,6 +3,8 @@ using Admeli.Compras;
 using Admeli.Navegacion;
 using Admeli.Productos;
 using Admeli.Ventas;
+using Entidad;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,11 +31,14 @@ namespace Admeli
         private UCListadoProducto uCListadoProducto;
         private UCCompras uCCompras;
 
+        private Personal personal;
+
         private int widthPanelAside { get; set; }
 
         public FormPrincipal()
         {
             InitializeComponent();
+            this.personal = PersonalModel.personal;
         }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -216,6 +221,16 @@ namespace Admeli
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            lblNombrePersonal.Text = personal.nombres;
+            lblApellidoPersonal.Text = personal.apellidos;
+            lblDniPersonal.Text = personal.numeroDocumento;
+            lblUsuarioPersonal.Text = personal.usuario;
+            lblNombrePersonal2.Text = personal.nombres;
+            lblDniPersonal2.Text = personal.numeroDocumento;
         }
     }
 }
