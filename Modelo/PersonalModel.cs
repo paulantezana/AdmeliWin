@@ -69,32 +69,13 @@ namespace Modelo
         {
 
         }
-        public async Task<List<Personal>> listar()
+        public async Task<dynamic> listar(string from, string items)
         {
             try
             {
                 List<Personal> listPersonal = new List<Personal>();
-                dynamic result = await webService.JsonMetodoGet("personales", "estado/2/2");
-                foreach (var item in result.datos)
-                {
-                    Personal personal = new Personal();
-                    personal.idPersonal = item.idPersonal;
-                    personal.nombres = item.nombres;
-                    personal.apellidos = item.apellidos;
-                    personal.tipoDocumento = item.tipoDocumento;
-                    personal.numeroDocumento = item.numeroDocumento;
-                    personal.sexo = item.sexo;
-                    personal.email = item.email;
-                    personal.telefono = item.telefono;
-                    personal.celular = item.celular;
-                    personal.direccion = item.direccion;
-                    personal.estado = item.estado;
-                    personal.idDocumento = item.idDocumento;
-                    personal.usuario = item.usuario;
-
-                    listPersonal.Add(personal);
-                }
-                return listPersonal;
+                dynamic result = await webService.JsonMetodoGet("personales", String.Format("estado/{0}/{1}", from,items));
+                return result;
             }
             catch (Exception ex)
             {

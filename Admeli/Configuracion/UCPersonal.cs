@@ -21,10 +21,50 @@ namespace Admeli.Configuracion
             InitializeComponent();
         }
 
-        private void UCPersonal_Load(object sender, EventArgs e)
+        private async void UCPersonal_Load(object sender, EventArgs e)
         {
-            Task<List<Personal>> list = Task.Run(()=> ) personalModel.listar();
-            this.personalModel.guardar();
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                dynamic response = await personalModel.listar("1","15");
+
+                List<Personal> listPersonal = new List<Personal>();
+                foreach (var item in response.datos)
+                {
+                    Personal personal = new Personal();
+                    personal.idPersonal = item.idPersonal;
+                    personal.nombres = item.nombres;
+                    personal.apellidos = item.apellidos;
+                    personal.tipoDocumento = item.tipoDocumento;
+                    personal.numeroDocumento = item.numeroDocumento;
+                    personal.sexo = item.sexo;
+                    personal.email = item.email;
+                    personal.telefono = item.telefono;
+                    personal.celular = item.celular;
+                    personal.direccion = item.direccion;
+                    personal.estado = item.estado;
+                    personal.idDocumento = item.idDocumento;
+                    personal.usuario = item.usuario;
+
+                    listPersonal.Add(personal);
+                }
+                personalBindingSource.DataSource = listPersonal;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void dataGridView_SortStringChanged(object sender, EventArgs e)
+        {
+            this.personalBindingSource.Sort = this.dataGridView.SortString;
+        }
+
+        private void dataGridView_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.personalBindingSource.Filter = this.dataGridView.FilterString;
         }
     }
 }
