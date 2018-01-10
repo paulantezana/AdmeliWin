@@ -30,6 +30,14 @@ namespace Admeli.Configuracion
             cargarRegistros();
         }
 
+        private void loadState(bool state)
+        {
+            toolStripNavigation.Enabled = !state;
+            toolStripCrud.Enabled = !state;
+            toolStripTools.Enabled = !state;
+            dataGridView.Enabled = !state;
+        }
+
         private void mostrarPaginado()
         {
             // Cargando el combobox
@@ -46,8 +54,7 @@ namespace Admeli.Configuracion
 
         private async void cargarRegistros()
         {
-            Cursor.Current = Cursors.WaitCursor;
-            toolStripNavigation.Enabled = false;
+            loadState(true);
             try
             {
                 
@@ -91,8 +98,7 @@ namespace Admeli.Configuracion
             }
             finally
             {
-                //Cursor.Current = Cursors.Default;
-                toolStripNavigation.Enabled = true;
+                loadState(false);
             }
         }
 
@@ -152,12 +158,6 @@ namespace Admeli.Configuracion
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
                 cargarRegistros();
             }
-        }
-
-        private void lblCurrentPage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
-            cargarRegistros();
         }
     }
 }

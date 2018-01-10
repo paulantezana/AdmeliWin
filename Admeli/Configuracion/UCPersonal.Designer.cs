@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCPersonal));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,11 +63,11 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripLabel();
             this.lblSteepPages = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripTools = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripLabel();
             this.textBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
@@ -80,8 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalBindingSource)).BeginInit();
             this.toolStripNavigation.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStripTools.SuspendLayout();
+            this.toolStripCrud.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,8 +89,8 @@
             // 
             this.panelContainer.Controls.Add(this.panel1);
             this.panelContainer.Controls.Add(this.toolStripNavigation);
-            this.panelContainer.Controls.Add(this.toolStrip2);
-            this.panelContainer.Controls.Add(this.toolStrip1);
+            this.panelContainer.Controls.Add(this.toolStripTools);
+            this.panelContainer.Controls.Add(this.toolStripCrud);
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(11, 10);
@@ -117,21 +117,21 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.AutoGenerateContextFilters = true;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPersonalDataGridViewTextBoxColumn,
@@ -403,7 +403,6 @@
             this.lblCurrentPage.Name = "lblCurrentPage";
             this.lblCurrentPage.Size = new System.Drawing.Size(40, 28);
             this.lblCurrentPage.Text = "1";
-            this.lblCurrentPage.SelectedIndexChanged += new System.EventHandler(this.lblCurrentPage_SelectedIndexChanged);
             this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
             // 
             // btnNext
@@ -453,23 +452,23 @@
             this.toolStripButton3.Size = new System.Drawing.Size(70, 34);
             this.toolStripButton3.Text = "Registros";
             // 
-            // toolStrip2
+            // toolStripTools
             // 
-            this.toolStrip2.AutoSize = false;
-            this.toolStrip2.BackColor = System.Drawing.Color.White;
-            this.toolStrip2.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTools.AutoSize = false;
+            this.toolStripTools.BackColor = System.Drawing.Color.White;
+            this.toolStripTools.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStripTools.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripTools.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton6,
             this.textBuscar,
             this.btnBuscar});
-            this.toolStrip2.Location = new System.Drawing.Point(1, 98);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(1164, 37);
-            this.toolStrip2.TabIndex = 6;
-            this.toolStrip2.Text = "toolStrip2";
+            this.toolStripTools.Location = new System.Drawing.Point(1, 98);
+            this.toolStripTools.Name = "toolStripTools";
+            this.toolStripTools.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.toolStripTools.Size = new System.Drawing.Size(1164, 37);
+            this.toolStripTools.TabIndex = 6;
+            this.toolStripTools.Text = "toolStrip2";
             // 
             // toolStripButton6
             // 
@@ -499,24 +498,24 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.ToolTipText = "Buscar (Enter)";
             // 
-            // toolStrip1
+            // toolStripCrud
             // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.White;
-            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripCrud.AutoSize = false;
+            this.toolStripCrud.BackColor = System.Drawing.Color.White;
+            this.toolStripCrud.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStripCrud.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripCrud.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnModificar,
             this.btnEliminar,
             this.btnDesactivar,
             this.btnActualizar});
-            this.toolStrip1.Location = new System.Drawing.Point(1, 51);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1164, 47);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripCrud.Location = new System.Drawing.Point(1, 51);
+            this.toolStripCrud.Name = "toolStripCrud";
+            this.toolStripCrud.Size = new System.Drawing.Size(1164, 47);
+            this.toolStripCrud.TabIndex = 5;
+            this.toolStripCrud.Text = "toolStrip1";
             // 
             // btnNuevo
             // 
@@ -614,10 +613,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.personalBindingSource)).EndInit();
             this.toolStripNavigation.ResumeLayout(false);
             this.toolStripNavigation.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStripTools.ResumeLayout(false);
+            this.toolStripTools.PerformLayout();
+            this.toolStripCrud.ResumeLayout(false);
+            this.toolStripCrud.PerformLayout();
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
             this.ResumeLayout(false);
@@ -635,11 +634,11 @@
         private System.Windows.Forms.ToolStripButton btnPrevious;
         private System.Windows.Forms.ToolStripButton btnNext;
         private System.Windows.Forms.ToolStripButton btnLast;
-        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStrip toolStripTools;
         private System.Windows.Forms.ToolStripLabel toolStripButton6;
         private System.Windows.Forms.ToolStripTextBox textBuscar;
         private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStripCrud;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
