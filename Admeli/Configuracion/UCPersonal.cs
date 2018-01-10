@@ -50,6 +50,7 @@ namespace Admeli.Configuracion
 
             // Paginados
             lblPageAllItems.Text = paginacion.itemsCount.ToString();
+            lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
         private async void cargarRegistros()
@@ -120,26 +121,38 @@ namespace Admeli.Configuracion
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            paginacion.nextPage();
-            cargarRegistros();
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.nextPage();
+                cargarRegistros();
+            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            paginacion.previousPage();
-            cargarRegistros();
+            if (lblCurrentPage.Text != "1")
+            {
+                paginacion.previousPage();
+                cargarRegistros();
+            }
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-            paginacion.firstPage();
-            cargarRegistros();
+            if (lblCurrentPage.Text != "1")
+            {
+                paginacion.firstPage();
+                cargarRegistros();
+            }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            paginacion.lastPage();
-            cargarRegistros();
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.lastPage();
+                cargarRegistros();
+            }
         }
 
         private void lblSteepPages_KeyUp(object sender, KeyEventArgs e)

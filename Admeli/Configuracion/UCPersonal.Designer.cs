@@ -75,6 +75,8 @@
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripLabel();
+            this.lblPageCount = new System.Windows.Forms.ToolStripLabel();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -347,6 +349,8 @@
             this.btnFirst,
             this.btnPrevious,
             this.lblCurrentPage,
+            this.toolStripButton2,
+            this.lblPageCount,
             this.btnNext,
             this.btnLast,
             this.toolStripButton1,
@@ -367,6 +371,7 @@
             this.lblPageAllItems.Name = "lblPageAllItems";
             this.lblPageAllItems.Size = new System.Drawing.Size(17, 34);
             this.lblPageAllItems.Text = "0";
+            this.lblPageAllItems.ToolTipText = "Total de registros en el sistema";
             // 
             // toolStripButton5
             // 
@@ -384,7 +389,7 @@
             this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(24, 34);
-            this.btnFirst.Text = "Firts";
+            this.btnFirst.Text = "Primera página";
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
@@ -394,7 +399,7 @@
             this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(24, 34);
-            this.btnPrevious.Text = "Previus";
+            this.btnPrevious.Text = "Anterior página";
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // lblCurrentPage
@@ -403,6 +408,7 @@
             this.lblCurrentPage.Name = "lblCurrentPage";
             this.lblCurrentPage.Size = new System.Drawing.Size(40, 28);
             this.lblCurrentPage.Text = "1";
+            this.lblCurrentPage.ToolTipText = "Página actual (enter)";
             this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
             // 
             // btnNext
@@ -412,7 +418,7 @@
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(24, 34);
-            this.btnNext.Text = "Next";
+            this.btnNext.Text = "Siguiente página";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
@@ -422,7 +428,7 @@
             this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(24, 34);
-            this.btnLast.Text = "Last";
+            this.btnLast.Text = "Ultimo página";
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // toolStripButton1
@@ -441,6 +447,7 @@
             this.lblSteepPages.Size = new System.Drawing.Size(50, 37);
             this.lblSteepPages.Text = "2";
             this.lblSteepPages.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblSteepPages.ToolTipText = "Cantidad de registros a mostrar (enter)";
             this.lblSteepPages.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblSteepPages_KeyUp);
             // 
             // toolStripButton3
@@ -597,6 +604,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PERSONALES";
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(15, 34);
+            this.toolStripButton2.Text = "/";
+            // 
+            // lblPageCount
+            // 
+            this.lblPageCount.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.lblPageCount.Image = ((System.Drawing.Image)(resources.GetObject("lblPageCount.Image")));
+            this.lblPageCount.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.lblPageCount.Name = "lblPageCount";
+            this.lblPageCount.Size = new System.Drawing.Size(17, 34);
+            this.lblPageCount.Text = "1";
+            this.lblPageCount.ToolTipText = "Número total de páginas";
+            // 
             // UCPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -668,5 +694,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripButton3;
         private System.Windows.Forms.ToolStripLabel lblPageAllItems;
         private System.Windows.Forms.ToolStripLabel toolStripButton5;
+        private System.Windows.Forms.ToolStripLabel toolStripButton2;
+        private System.Windows.Forms.ToolStripLabel lblPageCount;
     }
 }

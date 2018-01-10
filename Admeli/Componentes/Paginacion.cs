@@ -29,16 +29,22 @@ namespace Admeli.Componentes
 
         public void nextPage()
         {
-            this.currentPage += 1;
-            this.itemFrom += this.speed;
-            this.reload();
+            if (currentPage < pageCount)
+            {
+                this.currentPage += 1;
+                this.itemFrom += this.speed;
+                this.reload();
+            }
         }
 
         public void previousPage()
         {
-            this.currentPage -= 1;
-            this.itemFrom -= this.speed;
-            this.reload();
+            if (currentPage > 1)
+            {
+                this.currentPage -= 1;
+                this.itemFrom -= this.speed;
+                this.reload();
+            }
         }
 
         public void reloadPage(int currentPage)
