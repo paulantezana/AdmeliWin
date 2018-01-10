@@ -69,12 +69,12 @@ namespace Modelo
         {
 
         }
-        public async Task<dynamic> listar(string from, string items)
+        public async Task<dynamic> listar(string page, string items)
         {
             try
             {
                 List<Personal> listPersonal = new List<Personal>();
-                dynamic result = await webService.JsonMetodoGet("personales", String.Format("estado/{0}/{1}", from,items));
+                dynamic result = await webService.JsonMetodoGet("personales", String.Format("estado/{0}/{1}", page, items));
                 return result;
             }
             catch (Exception ex)

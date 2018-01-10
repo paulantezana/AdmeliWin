@@ -9,25 +9,54 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using Entidad;
+using Newtonsoft.Json;
+using Admeli.Componentes;
 
 namespace Admeli.Configuracion
 {
     public partial class UCPersonal : UserControl
     {
-        PersonalModel personalModel = new PersonalModel();
+        private PersonalModel personalModel = new PersonalModel();
+        private Paginacion paginacion;
 
         public UCPersonal()
         {
             InitializeComponent();
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSteepPages.Text));
         }
 
-        private async void UCPersonal_Load(object sender, EventArgs e)
+        private void UCPersonal_Load(object sender, EventArgs e)
         {
+            cargarRegistros();
+        }
+
+        private void mostrarPaginado()
+        {
+            // Cargando el combobox
+            lblCurrentPage.Items.Clear();
+            for (int i = 1; i <= paginacion.pageCount; i++)
+            {
+               lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
+            }
+            lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
+
+            // Paginados
+            lblPageAllItems.Text = paginacion.itemsCount.ToString();
+        }
+
+        private async void cargarRegistros()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            toolStripNavigation.Enabled = false;
             try
             {
-                Cursor.Current = Cursors.WaitCursor;
-                dynamic response = await personalModel.listar("1","15");
+                
+                dynamic response = await personalModel.listar(paginacion.currentPage.ToString(), paginacion.speed.ToString());
 
+                // Enviando la cantidad de registros al objeto paginacion
+                paginacion.itemsCount = response.nro_registros;
+                paginacion.reload();
+                
                 List<Personal> listPersonal = new List<Personal>();
                 foreach (var item in response.datos)
                 {
@@ -35,25 +64,35 @@ namespace Admeli.Configuracion
                     personal.idPersonal = item.idPersonal;
                     personal.nombres = item.nombres;
                     personal.apellidos = item.apellidos;
+                    personal.fechaNacimiento = item.fechaNacimiento.date;
                     personal.tipoDocumento = item.tipoDocumento;
                     personal.numeroDocumento = item.numeroDocumento;
                     personal.sexo = item.sexo;
                     personal.email = item.email;
                     personal.telefono = item.telefono;
                     personal.celular = item.celular;
+                    personal.usuario = item.usuario;
+                    personal.password = item.password;
                     personal.direccion = item.direccion;
                     personal.estado = item.estado;
+                    personal.idUbicacionGeografica = item.idUbicacionGeografica;
                     personal.idDocumento = item.idDocumento;
-                    personal.usuario = item.usuario;
 
                     listPersonal.Add(personal);
                 }
+                // JsonConvert.DeserializeObject<List<Personal>>(response.datos);
                 personalBindingSource.DataSource = listPersonal;
-                Cursor.Current = Cursors.Default;
+                dataGridView.Refresh();
+                mostrarPaginado();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                //Cursor.Current = Cursors.Default;
+                toolStripNavigation.Enabled = true;
             }
         }
 
@@ -65,6 +104,60 @@ namespace Admeli.Configuracion
         private void dataGridView_FilterStringChanged(object sender, EventArgs e)
         {
             this.personalBindingSource.Filter = this.dataGridView.FilterString;
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            paginacion.nextPage();
+            cargarRegistros();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            paginacion.previousPage();
+            cargarRegistros();
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            paginacion.firstPage();
+            cargarRegistros();
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            paginacion.lastPage();
+            cargarRegistros();
+        }
+
+        private void lblSteepPages_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                paginacion.speed = Convert.ToInt32(lblSteepPages.Text);
+                cargarRegistros();
+            }
+        }
+
+        private void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
+                cargarRegistros();
+            }
+        }
+
+        private void lblCurrentPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
+            cargarRegistros();
         }
     }
 }
