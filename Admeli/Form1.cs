@@ -16,5 +16,10 @@ namespace Admeli
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var cs = dataGridView1.Rows[2].Cells["dd"];
+        }
     }
 }

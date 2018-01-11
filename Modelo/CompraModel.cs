@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class ProductoModel
+    public class CompraModel
     {
-        public static Producto producto { get; set; }
-
         private WebService webService = new WebService();
 
         public void guardar()
@@ -30,19 +28,17 @@ namespace Modelo
         {
 
         }
-       /* public async Task<dynamic> listarPorCategoria(string page, string items)
+        public async Task<RootObject<Compra>> getByPersonalEstado(int idSucursal, int idPersonal, string idEstado, int page, int items)
         {
             try
             {
-
-                /*
-                
-                return result;
+                RootObject<Compra> ordenCompra = await webService.Get<Compra>("compras", String.Format("sucursal/{0}/personal/{1}/estado/{2}/{3}/{4}", idSucursal,idPersonal,idEstado, page, items));
+                return ordenCompra;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }*/
+        }
     }
 }

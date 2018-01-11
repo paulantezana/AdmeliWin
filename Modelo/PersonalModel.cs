@@ -69,13 +69,24 @@ namespace Modelo
         {
 
         }
-        public async Task<dynamic> listar(string page, string items)
+        public async Task<RootObject<Personal>> listar(string page, string items)
         {
             try
             {
-                List<Personal> listPersonal = new List<Personal>();
-                dynamic result = await webService.JsonMetodoGet("personales", String.Format("estado/{0}/{1}", page, items));
-                return result;
+                RootObject<Personal> personales = await webService.Get<Personal>("personales", String.Format("estado/{0}/{1}", page, items));
+                return personales;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<List<Personal>> listarPersonalCompras(int idSucursal)
+        {
+            try
+            {
+                List<Personal> list = await webService.getLis<Personal>("listarpersonalcompras", String.Format("sucursal/{0}",idSucursal));
+                return list;
             }
             catch (Exception ex)
             {

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class ProductoModel
+    public class SucursalModel
     {
-        public static Producto producto { get; set; }
-
         private WebService webService = new WebService();
+
+        public static Sucursal sucursal { get; set; }
 
         public void guardar()
         {
@@ -26,23 +26,18 @@ namespace Modelo
         {
 
         }
-        public void cambiarClave()
-        {
 
-        }
-       /* public async Task<dynamic> listarPorCategoria(string page, string items)
+        public async Task sucursalesPersonal(int idPersonal)
         {
             try
             {
-
-                /*
-                
-                return result;
+                List<Sucursal> listSucursal = await webService.getLis<Sucursal>("sucursalespersonal", idPersonal.ToString());
+                SucursalModel.sucursal = listSucursal[0];
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }*/
+        }
     }
 }

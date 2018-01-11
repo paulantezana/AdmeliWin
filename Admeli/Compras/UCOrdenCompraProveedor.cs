@@ -20,6 +20,7 @@ namespace Admeli.Compras
         private OrdenCompraModel ordenCompraModel = new OrdenCompraModel();
         private Paginacion paginacion;
 
+        #region ==================== Constructor and methods windows form ====================
         public UCOrdenCompraProveedor()
         {
             InitializeComponent();
@@ -32,17 +33,19 @@ namespace Admeli.Compras
             drawShape.lineBorder(panelContainer);
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            FormCompraProveedorNuevo compraProveedorNuevo = new FormCompraProveedorNuevo();
-            compraProveedorNuevo.ShowDialog();
-        }
-
         private void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
         {
             cargarRegistros();
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FormCompraProveedorNuevo compraProveedorNuevo = new FormCompraProveedorNuevo();
+            compraProveedorNuevo.ShowDialog();
+        }
+        #endregion
+
+        #region =========================== Estados ===========================
         private void loadState(bool state)
         {
             toolStripNavigation.Enabled = !state;
@@ -50,66 +53,23 @@ namespace Admeli.Compras
             toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
+        #endregion
 
-        private void mostrarPaginado()
-        {
-            // Cargando el combobox
-            lblCurrentPage.Items.Clear();
-            for (int i = 1; i <= paginacion.pageCount; i++)
-            {
-                lblCurrentPage.Items.AddRange(new object[] { i.ToString(), i.ToString() });
-            }
-            lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
-
-            // Paginados
-            lblPageAllItems.Text = paginacion.itemsCount.ToString();
-            lblPageCount.Text = paginacion.pageCount.ToString();
-        }
-
+        #region ======================= Loads =======================
         private async void cargarRegistros()
         {
             loadState(true);
             try
             {
 
-                dynamic response = await ordenCompraModel.getData(paginacion.currentPage.ToString(), paginacion.speed.ToString());
+                RootObject<OrdenCompra> ordenCompra = await ordenCompraModel.getData(paginacion.currentPage.ToString(), paginacion.speed.ToString());
 
-                // Enviando la cantidad de registros al objeto paginacion
-                paginacion.itemsCount = response.nro_registros;
+                // actualizando datos de páginacón
+                paginacion.itemsCount = ordenCompra.nro_registros;
                 paginacion.reload();
 
-                List<OrdenCompra> listOrdenCompra = new List<OrdenCompra>();
-                //List<OrdenCompra> list =  JsonConvert.DeserializeObject<List<OrdenCompra>>(response.datos);
-                
-                foreach (var item in response.datos)
-                {
-                    OrdenCompra ordenCompra = new OrdenCompra();
-                    ordenCompra.idOrdenCompra = item.idOrdenCompra;
-                    ordenCompra.serie = item.serie;
-                    ordenCompra.correlativo = item.correlativo;
-                    ordenCompra.nombreProveedor = item.nombreProveedor;
-                    ordenCompra.rucDni = item.rucDni;
-                    ordenCompra.direccionProveedor = item.direccionProveedor;
-                    ordenCompra.moneda = item.moneda;
-                    //ordenCompra.fecha = item.idOrdenCompra;
-                    //ordenCompra.plazoEntrega = item.idOrdenCompra;
-                    ordenCompra.observacion = item.observacion;
-                    ordenCompra.direccion = item.direccion;
-                    ordenCompra.estado = item.estado;
-                    ordenCompra.idUbicacionGeografica = item.idUbicacionGeografica;
-                    ordenCompra.idTipoDocumento = item.idTipoDocumento;
-                    ordenCompra.idCompra = item.idCompra;
-                    ordenCompra.subTotal = item.subTotal;
-                    ordenCompra.total = item.total;
-                    ordenCompra.idPago = item.idPago;
-                    ordenCompra.idProveedor = item.idProveedor;
-                    ordenCompra.estadoCompra = item.estadoCompra;
-                    ordenCompra.nombres = item.nombres;
-
-                    listOrdenCompra.Add(ordenCompra);
-                }
-                //JsonConvert.DeserializeObject<List<Personal>>(response.datos);
-                ordenCompraBindingSource.DataSource = listOrdenCompra;
+                // Ingresando
+                ordenCompraBindingSource.DataSource = ordenCompra.datos;
                 dataGridView.Refresh();
                 mostrarPaginado();
             }
@@ -121,7 +81,78 @@ namespace Admeli.Compras
             {
                 loadState(false);
             }
+        } 
+        #endregion
+
+        #region ===================== Eventos Páginación =====================
+        private void mostrarPaginado()
+        {
+            // Cargando el combobox
+            lblCurrentPage.Items.Clear();
+            for (int i = 1; i <= paginacion.pageCount; i++)
+            {
+                lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
+            }
+            lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
+
+            // Paginados
+            lblPageAllItems.Text = paginacion.itemsCount.ToString();
+            lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (lblCurrentPage.Text != "1")
+            {
+                paginacion.previousPage();
+                cargarRegistros();
+            }
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            if (lblCurrentPage.Text != "1")
+            {
+                paginacion.firstPage();
+                cargarRegistros();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.nextPage();
+                cargarRegistros();
+            }
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.lastPage();
+                cargarRegistros();
+            }
+        }
+
+        private void lblSteepPages_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                paginacion.speed = Convert.ToInt32(lblSteepPages.Text);
+                cargarRegistros();
+            }
+        }
+
+        private void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
+                cargarRegistros();
+            }
+        } 
+        #endregion
     }
 }

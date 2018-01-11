@@ -28,13 +28,12 @@ namespace Modelo
         {
 
         }
-        public async Task<dynamic> getData(string page, string items)
+        public async Task<RootObject<OrdenCompra>> getData(string page, string items)
         {
             try
             {
-                List<OrdenCompra> listPersonal = new List<OrdenCompra>();
-                dynamic result = await webService.JsonMetodoGet("ocompras", String.Format("suc/1/per/0/{0}/{1}", page, items));
-                return result;
+                RootObject<OrdenCompra> ordenCompra = await webService.Get<OrdenCompra>("ocompras", String.Format("suc/1/per/0/{0}/{1}", page, items));
+                return ordenCompra;
             }
             catch (Exception ex)
             {

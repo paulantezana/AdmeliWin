@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidad.Fechas
+namespace Entidad.Util
 {
-    public class PlazoEntrega
+    public class Fecha
     {
-        public string date { get; set; }
+        public DateTime date { get; set; }
         public int timezone_type { get; set; }
         public string timezone { get; set; }
+        public override string ToString()
+        {
+            return date.ToString();
+        }
     }
 }

@@ -44,7 +44,7 @@ namespace Admeli.Configuracion
             lblCurrentPage.Items.Clear();
             for (int i = 1; i <= paginacion.pageCount; i++)
             {
-               lblCurrentPage.Items.AddRange(new object[] { i.ToString(), i.ToString() });
+               lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
             }
             lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
 
@@ -59,13 +59,13 @@ namespace Admeli.Configuracion
             try
             {
                 
-                dynamic response = await personalModel.listar(paginacion.currentPage.ToString(), paginacion.speed.ToString());
+                RootObject<Personal>  personales = await personalModel.listar(paginacion.currentPage.ToString(), paginacion.speed.ToString());
 
                 // Enviando la cantidad de registros al objeto paginacion
-                paginacion.itemsCount = response.nro_registros;
+                paginacion.itemsCount = personales.nro_registros;
                 paginacion.reload();
                 
-                List<Personal> listPersonal = new List<Personal>();
+               /* List<Personal> listPersonal = new List<Personal>();
                 foreach (var item in response.datos)
                 {
                     Personal personal = new Personal();
@@ -87,9 +87,9 @@ namespace Admeli.Configuracion
                     personal.idDocumento = item.idDocumento;
 
                     listPersonal.Add(personal);
-                }
+                }*/
                 // JsonConvert.DeserializeObject<List<Personal>>(response.datos);
-                personalBindingSource.DataSource = listPersonal;
+                personalBindingSource.DataSource = personales.datos;
                 dataGridView.Refresh();
                 mostrarPaginado();
             }

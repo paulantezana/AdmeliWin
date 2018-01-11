@@ -40,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fechas\Fecha.cs" />
-    <Compile Include="Fechas\PlazoEntrega.cs" />
+    <Compile Include="Compra.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootObject.cs" />
+    <Compile Include="Sucursal.cs" />
+    <Compile Include="Util\Fecha.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

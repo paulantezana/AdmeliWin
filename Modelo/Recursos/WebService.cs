@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Entidad;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,111 +29,8 @@ namespace Modelo.Recursos
          *      servicio
          *      metodo
          * */
-        public async Task<dynamic> MetodoGet(string servicio, string metodo)
-        {
-            try
-            {
-                HttpClient client = new HttpClient();
-                string url = string.Format("{0}/{1}/{2}", this.urlBase, servicio, metodo);
-                string contenido;// = "{\"mensaje:error\"}";
-                dynamic datosTabla;// = JsonConvert.DeserializeObject(contenido);
-                var cliente = new HttpClient();
-                var message = await cliente.GetAsync(url);
-                if (message.StatusCode == HttpStatusCode.OK)
-                {
-                    contenido = await message.Content.ReadAsStringAsync();
-                    datosTabla = JsonConvert.DeserializeObject(contenido);
-                }
-                else
-                {
-                    datosTabla = message.StatusCode.ToString();// devolvería un string?
-                }
-                return datosTabla;
-            }
-            catch (Exception e)
-            {
-                string a = e.ToString();
-                throw;
-            }
-        }
-        // USADO PARA: Llamar servicios web, que nos devuelva si tabla de datos
-        public async Task<dynamic> MetodoGet(string servicio, string metodo, object[,] variables)
-        {
-            try
-            {
-                HttpClient client = new HttpClient();
-                string url = string.Format("{0}/{1}/{2}", this.urlBase, servicio, metodo);
-                for (int i = 0; i < variables.Length / 2; i++)
-                {
-                    if (i == 0)
-                        url += "?" + variables[i, 0].ToString() + "=" + variables[i, 1].ToString();
-                    else
-                        url += "&" + variables[i, 0].ToString() + "=" + variables[i, 1].ToString();
-                }
-                string contenido;
-                dynamic datosTabla;
-                var cliente = new HttpClient();
-                var message = await cliente.GetAsync(url);
-                if (message.StatusCode == HttpStatusCode.OK)
-                {
-                    contenido = await message.Content.ReadAsStringAsync();
-                    //intento deserealizar si es un json si no se puede debe ser un texto sin formato json y eso lo muestro
-                    try
-                    {
-                        //[{"idUsuario": 3}], [], mensaje de error de la base de datos u otro error
-                        datosTabla = JsonConvert.DeserializeObject(contenido);
-                    }
-                    catch
-                    {
-                        datosTabla = null;
-                    }
-                }
-                else
-                {
-                    datosTabla = null;// mensaje de error
-                }
-                return datosTabla;
-            }
-            catch (Exception ex)
-            {
-                string aux = ex.ToString();
-                throw;
-            }
-        }
-        // USADO PARA: Llamar servicios web y que esperamos un mensaje de respuesta
-        public async Task<string> MetodoGetString(string servicio, string metodo, object[,] variables)
-        {
-            try
-            {
-                HttpClient client = new HttpClient();
-                string url = string.Format("{0}/{1}/{2}", this.urlBase, servicio, metodo);
-                for (int i = 0; i < variables.Length / 2; i++)
-                {
-                    if (i == 0)
-                        url += "?" + variables[i, 0].ToString() + "=" + variables[i, 1].ToString();
-                    else
-                        url += "&" + variables[i, 0].ToString() + "=" + variables[i, 1].ToString();
-                }
-                string contenido;
-                var cliente = new HttpClient();
-                var message = await cliente.GetAsync(url);
-                if (message.StatusCode == HttpStatusCode.OK)
-                {
-                    var json = await message.Content.ReadAsStringAsync();
-                    contenido = Convert.ToString(json);
-                }
-                else
-                {
-                    contenido = message.ReasonPhrase.ToString();
-                }
-                return contenido;
-            }
-            catch (Exception ex)
-            {
-                string aux = ex.ToString();
-                throw;
-            }
-        }
+      
+        
 
         public async Task<dynamic> MetodoPost(string servicio, string metodo, object[,] variables)
         {
@@ -215,46 +113,7 @@ namespace Modelo.Recursos
             }
         }
 
-        //Nuevos servicios que no son Async
-        public async Task<dynamic> JsonMetodoGet(string servicio, string metodo)
-        {
-            try
-            {
-                string url = string.Format("{0}/{1}/{2}", this.urlBase, servicio, metodo);
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-                httpWebRequest.Method = "GET";
-                var httpResponse = await httpWebRequest.GetResponseAsync();
-                //var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-
-                //Si la respuesta es correcta 
-                //if (httpResponse.StatusCode == HttpStatusCode.OK)
-                //{
-
-                //}
-                Stream receiveStream = httpResponse.GetResponseStream();
-                // Pipes the stream to a higher level stream reader with the required encoding format. 
-                StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
-                var result = readStream.ReadToEnd();
-                //Devolvemos el resultado al cookie
-                //Agregar los cookies obtenidos al CookieContainer
-                //foreach (Cookie unacookie in httpResponse.Cookies)
-                //{
-                //    cookies.Add(unacookie);
-                //}
-                //---------------------
-                //result = result.Trim(' ','\n');
-                dynamic datosTabla;
-                //result =JsonConvert.SerializeObject(result, Formatting.Indented);
-                datosTabla = JsonConvert.DeserializeObject(result);
-                return datosTabla;
-            }
-            catch (Exception e)
-            {
-                string a = e.ToString();
-                throw;
-            }
-        }
-
+        
         public async Task<dynamic> JsonMetodoPost(string servicio, string metodo, object[,] variables)
         {
             try
@@ -310,27 +169,53 @@ namespace Modelo.Recursos
         }
 
 
-        //////// ======================================================== CRETE ADMELI =================
-
-        public async Task<dynamic> JsonMetodoPost22(string servicio, string metodo, object[,] paramn)
+        //////// ================================== CRETE ADMELI ==================================
+        public async Task<List<T>> getLis<T>(string servicio, string metodo)
         {
             try
             {
-                string request = JsonConvert.SerializeObject(paramn);
-                StringContent body  = new StringContent(request, Encoding.UTF8, "application/json");
-                string url = string.Format("{0}/{1}/{2}", this.urlBase, servicio, metodo);
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://www.lineatienda.com");
+                string url = string.Format("services.php/{0}/{1}", servicio, metodo);
+                HttpResponseMessage response = await client.GetAsync(url);
 
-                var cliente = new HttpClient();
-                var result = await cliente.PostAsync(url, body);
-                return result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.ToString());
+                }
 
+                string result = await response.Content.ReadAsStringAsync();
+                List<T> list = JsonConvert.DeserializeObject<List<T>>(result);
+                return list;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            
+        }
 
+
+        public async Task<RootObject<T>> Get<T>(string servicio, string metodo)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://www.lineatienda.com");
+                string url = string.Format("services.php/{0}/{1}", servicio, metodo);
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.ToString());
+                }
+                string result = await response.Content.ReadAsStringAsync();
+                RootObject<T> rootObject = JsonConvert.DeserializeObject<RootObject<T>>(result);
+                return rootObject;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 

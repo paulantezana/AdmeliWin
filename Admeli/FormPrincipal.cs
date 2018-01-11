@@ -31,14 +31,13 @@ namespace Admeli
         private UCListadoProducto uCListadoProducto;
         private UCCompras uCCompras;
 
-        private Personal personal;
+        private SucursalModel sucursalModel = new SucursalModel();
 
         private int widthPanelAside { get; set; }
 
         public FormPrincipal()
         {
             InitializeComponent();
-            this.personal = PersonalModel.personal;
         }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -56,6 +55,16 @@ namespace Admeli
             this.togglePanelAside("compras");
         }
 
+
+        #region ===================== Paint =====================
+        private void panelProfile_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.bottomLine(panelProfile);
+        } 
+        #endregion
+
+        #region ===================== Toogle panel navegations =====================
         private void togglePanelAside(string panelName)
         {
             this.panelAsideMain.Controls.Clear();
@@ -129,7 +138,6 @@ namespace Admeli
             }
         }
 
-
         private void togglePanelMain(string panelName)
         {
             this.panelMain.Controls.Clear();
@@ -166,7 +174,9 @@ namespace Admeli
                     break;
             }
         }
+        #endregion
 
+        #region ======================== Evnetos ========================
         private void btnVentas_Click(object sender, EventArgs e)
         {
             togglePanelAside("ventas");
@@ -197,12 +207,6 @@ namespace Admeli
             togglePanelAside("productos");
         }
 
-        private void panelProfile_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelProfile);
-        }
-
         private void btnVentaShorkout_Click(object sender, EventArgs e)
         {
             togglePanelMain("ventas");
@@ -218,10 +222,7 @@ namespace Admeli
             togglePanelMain("compras");
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        #endregion
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
@@ -229,13 +230,29 @@ namespace Admeli
             togglePanelAside("ventas");
 
             // Load datas
-            lblNombrePersonal.Text = personal.nombres;
-            lblApellidoPersonal.Text = personal.apellidos;
-            lblDniPersonal.Text = personal.numeroDocumento;
-            lblUsuarioPersonal.Text = personal.usuario;
-            lblNombrePersonal2.Text = personal.nombres;
-            lblDniPersonal2.Text = personal.numeroDocumento;
+            lblNombrePersonal.Text = PersonalModel.personal.nombres;
+            lblApellidoPersonal.Text = PersonalModel.personal.apellidos;
+            lblDniPersonal.Text = PersonalModel.personal.numeroDocumento;
+            lblUsuarioPersonal.Text = PersonalModel.personal.usuario;
+            lblNombrePersonal2.Text = PersonalModel.personal.nombres;
+            lblDniPersonal2.Text = PersonalModel.personal.numeroDocumento;
+
+            // Cargando los componentes necesarios para el funcionamiento de todo el sistema
+            cargarComponente();
 
         }
+
+        private async void cargarComponente()
+        {
+            try
+            {
+                await sucursalModel.sucursalesPersonal(PersonalModel.personal.idPersonal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

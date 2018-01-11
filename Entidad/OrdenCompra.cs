@@ -1,4 +1,4 @@
-﻿using Entidad.Fechas;
+﻿using Entidad.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace Entidad
         public string direccionProveedor { get; set; }
         public string moneda { get; set; }
         public Fecha fecha { get; set; }
-        public PlazoEntrega plazoEntrega { get; set; }
+        public Fecha plazoEntrega { get; set; }
         public string observacion { get; set; }
         public string direccion { get; set; }
         public int estado { get; set; }
