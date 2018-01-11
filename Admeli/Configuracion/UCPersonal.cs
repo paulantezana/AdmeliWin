@@ -44,7 +44,7 @@ namespace Admeli.Configuracion
             lblCurrentPage.Items.Clear();
             for (int i = 1; i <= paginacion.pageCount; i++)
             {
-               lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
+               lblCurrentPage.Items.AddRange(new object[] { i.ToString(), i.ToString() });
             }
             lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
 

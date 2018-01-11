@@ -308,6 +308,30 @@ namespace Modelo.Recursos
                 throw;
             }
         }
+
+
+        //////// ======================================================== CRETE ADMELI =================
+
+        public async Task<dynamic> JsonMetodoPost22(string servicio, string metodo, object[,] paramn)
+        {
+            try
+            {
+                string request = JsonConvert.SerializeObject(paramn);
+                StringContent body  = new StringContent(request, Encoding.UTF8, "application/json");
+                string url = string.Format("{0}/{1}/{2}", this.urlBase, servicio, metodo);
+
+                var cliente = new HttpClient();
+                var result = await cliente.PostAsync(url, body);
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+
+        }
     }
 
 }

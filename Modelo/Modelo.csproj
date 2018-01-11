@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crud.cs" />
+    <Compile Include="Cruds.cs" />
+    <Compile Include="OrdenCompraModel.cs" />
     <Compile Include="PersonalModel.cs" />
+    <Compile Include="ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursos\WebService.cs" />
   </ItemGroup>
