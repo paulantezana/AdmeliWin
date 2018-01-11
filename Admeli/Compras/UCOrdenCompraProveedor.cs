@@ -24,7 +24,7 @@ namespace Admeli.Compras
         public UCOrdenCompraProveedor()
         {
             InitializeComponent();
-            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSteepPages.Text));
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -35,8 +35,11 @@ namespace Admeli.Compras
 
         private void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
         {
+            cargarComponentes();
             cargarRegistros();
         }
+
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -56,6 +59,10 @@ namespace Admeli.Compras
         #endregion
 
         #region ======================= Loads =======================
+        private void cargarComponentes()
+        {
+            lblSpeedPages.Text = ConfigModel.config.itemPorPagina.ToString();
+        }
         private async void cargarRegistros()
         {
             loadState(true);
@@ -140,7 +147,7 @@ namespace Admeli.Compras
         {
             if (e.KeyCode == Keys.Enter)
             {
-                paginacion.speed = Convert.ToInt32(lblSteepPages.Text);
+                paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
                 cargarRegistros();
             }
         }

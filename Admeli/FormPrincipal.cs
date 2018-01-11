@@ -32,6 +32,7 @@ namespace Admeli
         private UCCompras uCCompras;
 
         private SucursalModel sucursalModel = new SucursalModel();
+        private ConfigModel configModel = new ConfigModel();
 
         private int widthPanelAside { get; set; }
 
@@ -71,7 +72,7 @@ namespace Admeli
             switch (panelName)
             {
                 case "compras":
-                    this.uCComprasNav = new Admeli.Navegacion.UCComprasNav(this.panelMain);
+                    this.uCComprasNav = new Admeli.Navegacion.UCComprasNav(this);
                     this.panelAsideMain.Controls.Add(uCComprasNav);
                     this.uCComprasNav.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCComprasNav.Location = new System.Drawing.Point(0, 0);
@@ -153,7 +154,7 @@ namespace Admeli
                     this.uCVentas.TabIndex = 0;
                     break;
                 case "compras":
-                    this.uCCompras = new Admeli.Compras.UCCompras();
+                    this.uCCompras = new Admeli.Compras.UCCompras(this);
                     this.panelMain.Controls.Add(uCCompras);
                     this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCompras.Location = new System.Drawing.Point(0, 0);
@@ -239,18 +240,35 @@ namespace Admeli
 
             // Cargando los componentes necesarios para el funcionamiento de todo el sistema
             cargarComponente();
+        }
 
+        public void appLoadState(bool state)
+        {
+            if (state)
+            {
+                progressBarApp.Style = ProgressBarStyle.Marquee;
+            }
+            else
+            {
+                progressBarApp.Style = ProgressBarStyle.Blocks;
+            }
         }
 
         private async void cargarComponente()
         {
             try
             {
+                this.appLoadState(true);
                 await sucursalModel.sucursalesPersonal(PersonalModel.personal.idPersonal);
+                await configModel.configeneral();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                this.appLoadState(false);
             }
         }
 

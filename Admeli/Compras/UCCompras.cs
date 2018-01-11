@@ -19,10 +19,18 @@ namespace Admeli.Compras
         private CompraModel compraModel = new CompraModel();
         private PersonalModel personalModel = new PersonalModel();
         private Paginacion paginacion;
+        private FormPrincipal formPrincipal;
 
         public UCCompras()
         {
             InitializeComponent();
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+        }
+
+        public UCCompras(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
@@ -46,9 +54,10 @@ namespace Admeli.Compras
         }
         private void decorationDataGridView()
         {
-            /*for (int i = 0; i < dataGridView.Rows.Count; i++)
+            /*
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
-                var estado = dataGridView.Rows[i].Cells["estado"].Value.ToString();
+                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
                 dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
             }*/
         }
@@ -57,6 +66,8 @@ namespace Admeli.Compras
 
         private async Task cargarComponentes()
         {
+            // Cargando el combobox de personales
+            formPrincipal.appLoadState(true);
             loadState(true);
             try
             {
@@ -70,7 +81,7 @@ namespace Admeli.Compras
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
+            // Cargando el combobox ce estados
             DataTable table = new DataTable();
             table.Columns.Add("idEstado", typeof(string));
             table.Columns.Add("estado", typeof(string));
@@ -84,11 +95,16 @@ namespace Admeli.Compras
             cbxEstados.ComboBox.ValueMember = "idEstado";
             cbxEstados.ComboBox.SelectedIndex = 0;
 
+            // Cargando item por pagina a mostra desde las configuraciones generales
+            lblSpeedPages.Text = ConfigModel.config.itemPorPagina.ToString();
+
+            // Estado cargar en falso
             loadState(false);
         }
 
         private async Task cargarRegistros()
         {
+            formPrincipal.appLoadState(true);
             loadState(true);
             try
             {
@@ -114,6 +130,7 @@ namespace Admeli.Compras
             finally
             {
                 loadState(false);
+                formPrincipal.appLoadState(false);
             }
         }
         #endregion
@@ -200,6 +217,11 @@ namespace Admeli.Compras
         #endregion
 
         private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }

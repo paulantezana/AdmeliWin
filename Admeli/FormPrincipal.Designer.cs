@@ -61,6 +61,7 @@
             this.panelProfile = new System.Windows.Forms.Panel();
             this.lblNombrePersonal2 = new System.Windows.Forms.Label();
             this.lblDniPersonal2 = new System.Windows.Forms.Label();
+            this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.panel2.SuspendLayout();
             this.panelAside.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -206,10 +207,10 @@
             this.panelAside.Controls.Add(this.panelAsideMain);
             this.panelAside.Controls.Add(this.flowLayoutPanel1);
             this.panelAside.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAside.Location = new System.Drawing.Point(0, 0);
+            this.panelAside.Location = new System.Drawing.Point(0, 4);
             this.panelAside.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(331, 929);
+            this.panelAside.Size = new System.Drawing.Size(331, 925);
             this.panelAside.TabIndex = 4;
             // 
             // panelAsideMain
@@ -219,7 +220,7 @@
             this.panelAsideMain.Location = new System.Drawing.Point(87, 0);
             this.panelAsideMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(244, 929);
+            this.panelAsideMain.Size = new System.Drawing.Size(244, 925);
             this.panelAsideMain.TabIndex = 7;
             // 
             // flowLayoutPanel1
@@ -235,9 +236,9 @@
             this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(87, 929);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(87, 925);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // panel1
@@ -365,10 +366,10 @@
             this.panelMainContainer.Controls.Add(this.panelMain);
             this.panelMainContainer.Controls.Add(this.panelMainHeader);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(331, 0);
+            this.panelMainContainer.Location = new System.Drawing.Point(331, 4);
             this.panelMainContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(930, 929);
+            this.panelMainContainer.Size = new System.Drawing.Size(930, 925);
             this.panelMainContainer.TabIndex = 5;
             // 
             // panelMain
@@ -377,7 +378,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 60);
             this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(930, 869);
+            this.panelMain.Size = new System.Drawing.Size(930, 865);
             this.panelMain.TabIndex = 1;
             // 
             // panelMainHeader
@@ -474,6 +475,19 @@
             this.lblDniPersonal2.TabIndex = 1;
             this.lblDniPersonal2.Text = "6195161651";
             // 
+            // progressBarApp
+            // 
+            this.progressBarApp.BackColor = System.Drawing.Color.White;
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
+            this.progressBarApp.MarqueeAnimationSpeed = 10;
+            this.progressBarApp.Maximum = 200;
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.RightToLeftLayout = true;
+            this.progressBarApp.Size = new System.Drawing.Size(1261, 4);
+            this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBarApp.TabIndex = 0;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -483,6 +497,7 @@
             this.Controls.Add(this.panelMainContainer);
             this.Controls.Add(this.panelAside);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.progressBarApp);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -524,7 +539,6 @@
         private System.Windows.Forms.Label lblApellidoPersonal;
         private System.Windows.Forms.Label lblNombrePersonal;
         private System.Windows.Forms.Panel panelProfile;
-        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton btnVentaShorkout;
         private System.Windows.Forms.ToolStripButton btnCompraShorkout;
@@ -539,5 +553,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        public System.Windows.Forms.Panel panelMain;
+        protected System.Windows.Forms.ProgressBar progressBarApp;
     }
 }

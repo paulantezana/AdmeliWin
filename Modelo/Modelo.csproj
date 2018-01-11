@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompraModel.cs" />
+    <Compile Include="ConfigModel.cs" />
     <Compile Include="Crud.cs" />
     <Compile Include="Cruds.cs" />
     <Compile Include="OrdenCompraModel.cs" />

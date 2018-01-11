@@ -194,6 +194,30 @@ namespace Modelo.Recursos
             }
         }
 
+        public async Task<List<T>> getLis<T>(string servicio)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://www.lineatienda.com");
+                string url = string.Format("services.php/{0}", servicio);
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.ToString());
+                }
+
+                string result = await response.Content.ReadAsStringAsync();
+                List<T> list = JsonConvert.DeserializeObject<List<T>>(result);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public async Task<RootObject<T>> Get<T>(string servicio, string metodo)
         {

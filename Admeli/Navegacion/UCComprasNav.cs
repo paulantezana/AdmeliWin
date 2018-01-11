@@ -22,17 +22,17 @@ namespace Admeli.Navegacion
 
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
 
-        private Panel panelMain;
+        private FormPrincipal formPrincipal;
 
         public UCComprasNav()
         {
             InitializeComponent();
         }
 
-        public UCComprasNav(Panel panelMain)
+        public UCComprasNav(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.panelMain = panelMain;
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
@@ -43,13 +43,13 @@ namespace Admeli.Navegacion
 
         private void togglePanelMain(string panelName)
         {
-            this.panelMain.Controls.Clear();
+            this.formPrincipal.panelMain.Controls.Clear();
             btnColor();
             switch (panelName)
             {
                 case "compras":
-                    this.uCCompras = new Admeli.Compras.UCCompras();
-                    this.panelMain.Controls.Add(uCCompras);
+                    this.uCCompras = new Admeli.Compras.UCCompras(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCCompras);
                     this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCompras.Location = new System.Drawing.Point(0, 0);
                     this.uCCompras.Name = "uCCompras";
@@ -58,7 +58,7 @@ namespace Admeli.Navegacion
                     break;
                 case "cuentaPagar":
                     this.uCCuentaPagar = new Admeli.Compras.UCCuentaPagar();
-                    this.panelMain.Controls.Add(uCCuentaPagar);
+                    this.formPrincipal.panelMain.Controls.Add(uCCuentaPagar);
                     this.uCCuentaPagar.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCuentaPagar.Location = new System.Drawing.Point(0, 0);
                     this.uCCuentaPagar.Name = "uCCuentaPagar";
@@ -67,7 +67,7 @@ namespace Admeli.Navegacion
                     break;
                 case "ordenCompraProveedor":
                     this.uCOrdenCompraProveedor = new Admeli.Compras.UCOrdenCompraProveedor();
-                    this.panelMain.Controls.Add(uCOrdenCompraProveedor);
+                    this.formPrincipal.panelMain.Controls.Add(uCOrdenCompraProveedor);
                     this.uCOrdenCompraProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCOrdenCompraProveedor.Location = new System.Drawing.Point(0, 0);
                     this.uCOrdenCompraProveedor.Name = "uCOrdenCompraProveedor";
@@ -76,7 +76,7 @@ namespace Admeli.Navegacion
                     break;
                 case "proveedores":
                     this.uCProveedores = new Admeli.Compras.UCProveedores();
-                    this.panelMain.Controls.Add(uCProveedores);
+                    this.formPrincipal.panelMain.Controls.Add(uCProveedores);
                     this.uCProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCProveedores.Location = new System.Drawing.Point(0, 0);
                     this.uCProveedores.Name = "uCProveedores";

@@ -8,7 +8,11 @@ namespace Admeli.Componentes
 {
     public class Paginacion
     {
-        public int currentPage { get; set; }
+        public int currentPage
+        {
+            get { return (currentPage == 0) ? 1 : currentPage;}
+            set { currentPage = value; }
+        }
         public int pageCount { get; set; }
         public int pageInterval { get; set; }
         public int itemsCount { get; set; }
@@ -19,12 +23,15 @@ namespace Admeli.Componentes
         {
             this.currentPage = currentPage;
             this.speed = steep;
-            itemFrom = 1;
+
+            this.itemsCount = 1;
+            this.itemFrom = 1;
             reload();
         }
         public void reload()
         {
             pageCount = Convert.ToInt32(Math.Ceiling(itemsCount / (decimal)speed));
+            if (itemsCount == 0) currentPage = 0;
         }
 
         public void nextPage()
