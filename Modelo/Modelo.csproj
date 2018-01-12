@@ -51,6 +51,7 @@
     <Compile Include="PersonalModel.cs" />
     <Compile Include="ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorModel.cs" />
     <Compile Include="Recursos\WebService.cs" />
     <Compile Include="SucursalModel.cs" />
   </ItemGroup>

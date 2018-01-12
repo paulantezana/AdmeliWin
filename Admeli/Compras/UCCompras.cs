@@ -16,11 +16,14 @@ namespace Admeli.Compras
 {
     public partial class UCCompras : UserControl
     {
+        #region ===================== Metodos =====================
         private CompraModel compraModel = new CompraModel();
         private PersonalModel personalModel = new PersonalModel();
         private Paginacion paginacion;
-        private FormPrincipal formPrincipal;
+        private FormPrincipal formPrincipal; 
+        #endregion
 
+        #region ========================== Constructor ==========================
         public UCCompras()
         {
             InitializeComponent();
@@ -33,25 +36,26 @@ namespace Admeli.Compras
             this.formPrincipal = formPrincipal;
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
+        #endregion
 
+        #region ======================= Paint =======================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
+        #endregion
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();
-        }
-
-        private async  void UCCompras_Load(object sender, EventArgs e)
+        #region ============================= root load =============================
+        private async void UCCompras_Load(object sender, EventArgs e)
         {
             await cargarComponentes();
             await cargarRegistros();
             decorationDataGridView();
-        }
+        } 
+        #endregion
+
+        #region =========================== Decoration ===========================
         private void decorationDataGridView()
         {
             /*
@@ -60,10 +64,10 @@ namespace Admeli.Compras
                 var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
                 dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
             }*/
-        }
+        } 
+        #endregion
 
         #region ======================= Loads =======================
-
         private async Task cargarComponentes()
         {
             // Cargando el combobox de personales
@@ -159,71 +163,78 @@ namespace Admeli.Compras
             lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
+        private async void btnPrevious_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.previousPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void btnFirst_Click(object sender, EventArgs e)
+        private async void btnFirst_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.firstPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private async void btnNext_Click(object sender, EventArgs e)
         {
             if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.nextPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void btnLast_Click(object sender, EventArgs e)
+        private async void btnLast_Click(object sender, EventArgs e)
         {
             if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.lastPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
+        private async void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
+        private async void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
         #endregion
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        #region ==================== CRUD ====================
+        private async void btnConsultar_Click(object sender, EventArgs e)
         {
-            cargarRegistros();
+            await cargarRegistros();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private async void btnActualizar_Click(object sender, EventArgs e)
         {
-            cargarRegistros();
+            await cargarRegistros();
         }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FormComprarNuevo comprarNuevo = new FormComprarNuevo();
+            comprarNuevo.ShowDialog();
+        } 
+        #endregion
     }
 }

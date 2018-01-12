@@ -30,6 +30,7 @@ namespace Admeli
         private UCVentas uCVentas;
         private UCListadoProducto uCListadoProducto;
         private UCCompras uCCompras;
+        private UCHome uCHome;
 
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
@@ -139,6 +140,23 @@ namespace Admeli
             }
         }
 
+        private void toggleHome()
+        {
+            this.panelMain.Controls.Clear();
+
+            // Mostar Panel Home
+            this.uCHome = new Admeli.UCHome();
+            this.panelMain.Controls.Add(uCHome);
+            this.uCHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uCHome.Location = new System.Drawing.Point(0, 0);
+            this.uCHome.Name = "uCHome";
+            this.uCHome.Size = new System.Drawing.Size(250, 776);
+            this.uCHome.TabIndex = 0;
+
+            // mostrar panel lateral (Aside)
+            togglePanelAside("ventas");
+        }
+
         private void togglePanelMain(string panelName)
         {
             this.panelMain.Controls.Clear();
@@ -223,12 +241,16 @@ namespace Admeli
             togglePanelMain("compras");
         }
 
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            toggleHome();
+        }
+
         #endregion
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            // Open Panel Default
-            togglePanelAside("ventas");
+            
 
             // Load datas
             lblNombrePersonal.Text = PersonalModel.personal.nombres;
@@ -240,6 +262,9 @@ namespace Admeli
 
             // Cargando los componentes necesarios para el funcionamiento de todo el sistema
             cargarComponente();
+
+            // Open Panel Default
+            
         }
 
         public void appLoadState(bool state)
@@ -271,6 +296,9 @@ namespace Admeli
 
                 // Mostrando la interfas de usuario
                 appLoadInciComponents();
+
+                // Mostrando los paneles principales
+                toggleHome();
             }
             catch (Exception ex)
             {
@@ -281,6 +309,5 @@ namespace Admeli
                 this.appLoadState(false);
             }
         }
-
     }
 }

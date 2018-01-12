@@ -24,10 +24,6 @@ namespace Modelo
         {
 
         }
-        public void cambiarClave()
-        {
-
-        }
         public async Task<RootObject<Compra>> getByPersonalEstado(int idSucursal, int idPersonal, string idEstado, int page, int items)
         {
             try
