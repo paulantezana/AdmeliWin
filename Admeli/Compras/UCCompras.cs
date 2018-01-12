@@ -154,7 +154,7 @@ namespace Admeli.Compras
             {
                 lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
             }
-            lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
+            if(paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
 
             // Paginados
             lblPageAllItems.Text = paginacion.itemsCount.ToString();
@@ -181,6 +181,7 @@ namespace Admeli.Compras
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.nextPage();
@@ -190,6 +191,7 @@ namespace Admeli.Compras
 
         private void btnLast_Click(object sender, EventArgs e)
         {
+            if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.lastPage();
