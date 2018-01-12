@@ -14,8 +14,16 @@ namespace Admeli.Compras
 {
     public partial class UCProveedores : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCProveedores()
         {
+            InitializeComponent();
+        }
+
+        public UCProveedores(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
             InitializeComponent();
         }
 

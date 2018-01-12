@@ -28,11 +28,11 @@ namespace Modelo
         {
 
         }
-        public async Task<RootObject<OrdenCompra>> getData(string page, string items)
+        public async Task<RootObject<OrdenCompra>> ocompras(int idSucursal, int idPersonal, int page, int items)
         {
             try
             {
-                RootObject<OrdenCompra> ordenCompra = await webService.Get<OrdenCompra>("ocompras", String.Format("suc/1/per/0/{0}/{1}", page, items));
+                RootObject<OrdenCompra> ordenCompra = await webService.Get<OrdenCompra>("ocompras", String.Format("suc/{0}/per/{1}/{2}/{3}", idSucursal, idPersonal, page, items));
                 return ordenCompra;
             }
             catch (Exception ex)

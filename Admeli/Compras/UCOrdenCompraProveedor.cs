@@ -18,12 +18,21 @@ namespace Admeli.Compras
     public partial class UCOrdenCompraProveedor : UserControl
     {
         private OrdenCompraModel ordenCompraModel = new OrdenCompraModel();
+        private PersonalModel personalModel = new PersonalModel();
         private Paginacion paginacion;
+        private FormPrincipal formPrincipal;
 
         #region ==================== Constructor and methods windows form ====================
         public UCOrdenCompraProveedor()
         {
             InitializeComponent();
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+        }
+
+        public UCOrdenCompraProveedor(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
@@ -33,13 +42,11 @@ namespace Admeli.Compras
             drawShape.lineBorder(panelContainer);
         }
 
-        private void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
+        private async void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            await cargarComponentes();
+            await cargarRegistros();
         }
-
-
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -59,17 +66,40 @@ namespace Admeli.Compras
         #endregion
 
         #region ======================= Loads =======================
-        private void cargarComponentes()
+        private async Task cargarComponentes()
         {
+            // Cargando el combobox de personales
+            formPrincipal.appLoadState(true);
+            loadState(true);
+            try
+            {
+                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(SucursalModel.sucursal.idSucursal);
+                cbxPersonales.ComboBox.DisplayMember = "nombres";
+                cbxPersonales.ComboBox.ValueMember = "idPersonal";
+                cbxPersonales.ComboBox.SelectedValue = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // Cargando item por pagina a mostra desde las configuraciones generales
             lblSpeedPages.Text = ConfigModel.config.itemPorPagina.ToString();
+
+            // Estado cargar en falso
+            loadState(false);
         }
-        private async void cargarRegistros()
+        private async Task cargarRegistros()
         {
+            formPrincipal.appLoadState(true);
             loadState(true);
             try
             {
 
-                RootObject<OrdenCompra> ordenCompra = await ordenCompraModel.getData(paginacion.currentPage.ToString(), paginacion.speed.ToString());
+                RootObject<OrdenCompra> ordenCompra = await ordenCompraModel.ocompras( SucursalModel.sucursal.idSucursal,
+                                                                                      Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue),
+                                                                                      paginacion.currentPage, 
+                                                                                      paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = ordenCompra.nro_registros;
@@ -87,6 +117,7 @@ namespace Admeli.Compras
             finally
             {
                 loadState(false);
+                formPrincipal.appLoadState(false);
             }
         } 
         #endregion
@@ -100,66 +131,78 @@ namespace Admeli.Compras
             {
                 lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
             }
-            lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
+            if (paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
 
             // Paginados
             lblPageAllItems.Text = paginacion.itemsCount.ToString();
             lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
+        private async void btnPrevious_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.previousPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void btnFirst_Click(object sender, EventArgs e)
+        private async void btnFirst_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.firstPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private async void btnNext_Click(object sender, EventArgs e)
         {
+            if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.nextPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void btnLast_Click(object sender, EventArgs e)
+        private async void btnLast_Click(object sender, EventArgs e)
         {
+            if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.lastPage();
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void lblSteepPages_KeyUp(object sender, KeyEventArgs e)
+        private async void lblSteepPages_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
-                cargarRegistros();
+                await cargarRegistros();
             }
         }
 
-        private void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
+        private async void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
-                cargarRegistros();
+                await cargarRegistros();
             }
-        } 
+        }
         #endregion
+
+        private async void btnConsultar_Click(object sender, EventArgs e)
+        {
+            await cargarRegistros();
+        }
+
+        private async void btnActualizar_Click(object sender, EventArgs e)
+        {
+            await cargarRegistros();
+        }
     }
 }

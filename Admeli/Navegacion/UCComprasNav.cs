@@ -57,7 +57,7 @@ namespace Admeli.Navegacion
                     this.uCCompras.TabIndex = 0;
                     break;
                 case "cuentaPagar":
-                    this.uCCuentaPagar = new Admeli.Compras.UCCuentaPagar();
+                    this.uCCuentaPagar = new Admeli.Compras.UCCuentaPagar(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCCuentaPagar);
                     this.uCCuentaPagar.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCuentaPagar.Location = new System.Drawing.Point(0, 0);
@@ -66,7 +66,7 @@ namespace Admeli.Navegacion
                     this.uCCuentaPagar.TabIndex = 0;
                     break;
                 case "ordenCompraProveedor":
-                    this.uCOrdenCompraProveedor = new Admeli.Compras.UCOrdenCompraProveedor();
+                    this.uCOrdenCompraProveedor = new Admeli.Compras.UCOrdenCompraProveedor(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCOrdenCompraProveedor);
                     this.uCOrdenCompraProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCOrdenCompraProveedor.Location = new System.Drawing.Point(0, 0);
@@ -75,7 +75,7 @@ namespace Admeli.Navegacion
                     this.uCOrdenCompraProveedor.TabIndex = 0;
                     break;
                 case "proveedores":
-                    this.uCProveedores = new Admeli.Compras.UCProveedores();
+                    this.uCProveedores = new Admeli.Compras.UCProveedores(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCProveedores);
                     this.uCProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCProveedores.Location = new System.Drawing.Point(0, 0);

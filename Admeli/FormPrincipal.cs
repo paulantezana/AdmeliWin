@@ -254,6 +254,13 @@ namespace Admeli
             }
         }
 
+        public void appLoadInciComponents()
+        {
+            panelAside.Visible = true;
+            panelMainHeader.Visible = true;
+            panelFooter.Visible = true;
+        }
+
         private async void cargarComponente()
         {
             try
@@ -261,6 +268,9 @@ namespace Admeli
                 this.appLoadState(true);
                 await sucursalModel.sucursalesPersonal(PersonalModel.personal.idPersonal);
                 await configModel.configeneral();
+
+                // Mostrando la interfas de usuario
+                appLoadInciComponents();
             }
             catch (Exception ex)
             {

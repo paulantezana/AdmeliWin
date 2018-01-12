@@ -67,7 +67,6 @@ namespace Admeli.Compras
         private async Task cargarComponentes()
         {
             // Cargando el combobox de personales
-            formPrincipal.appLoadState(true);
             loadState(true);
             try
             {
@@ -104,7 +103,6 @@ namespace Admeli.Compras
 
         private async Task cargarRegistros()
         {
-            formPrincipal.appLoadState(true);
             loadState(true);
             try
             {
@@ -130,7 +128,6 @@ namespace Admeli.Compras
             finally
             {
                 loadState(false);
-                formPrincipal.appLoadState(false);
             }
         }
         #endregion
@@ -138,6 +135,7 @@ namespace Admeli.Compras
         #region =========================== Estados ===========================
         private void loadState(bool state)
         {
+            formPrincipal.appLoadState(state);
             toolStripNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
             toolStripTools.Enabled = !state;

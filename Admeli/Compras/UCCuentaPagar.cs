@@ -14,9 +14,17 @@ namespace Admeli.Compras
 {
     public partial class UCCuentaPagar : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCCuentaPagar()
         {
             InitializeComponent();
+        }
+
+        public UCCuentaPagar(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

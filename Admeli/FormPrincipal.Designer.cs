@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelFooter = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.lblUsuarioPersonal = new System.Windows.Forms.Label();
             this.lblDniPersonal = new System.Windows.Forms.Label();
@@ -53,6 +53,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMainHeader = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnProductoShorkout = new System.Windows.Forms.ToolStripButton();
@@ -62,34 +65,37 @@
             this.lblNombrePersonal2 = new System.Windows.Forms.Label();
             this.lblDniPersonal2 = new System.Windows.Forms.Label();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
-            this.panel2.SuspendLayout();
+            this.panelFooter.SuspendLayout();
             this.panelAside.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelMainContainer.SuspendLayout();
+            this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMainHeader.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panelProfile.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // panelFooter
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(198)))), ((int)(((byte)(62)))));
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.lblUsuarioPersonal);
-            this.panel2.Controls.Add(this.lblDniPersonal);
-            this.panel2.Controls.Add(this.lblApellidoPersonal);
-            this.panel2.Controls.Add(this.lblNombrePersonal);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 929);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1261, 33);
-            this.panel2.TabIndex = 3;
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(198)))), ((int)(((byte)(62)))));
+            this.panelFooter.Controls.Add(this.label12);
+            this.panelFooter.Controls.Add(this.lblUsuarioPersonal);
+            this.panelFooter.Controls.Add(this.lblDniPersonal);
+            this.panelFooter.Controls.Add(this.lblApellidoPersonal);
+            this.panelFooter.Controls.Add(this.lblNombrePersonal);
+            this.panelFooter.Controls.Add(this.label7);
+            this.panelFooter.Controls.Add(this.label6);
+            this.panelFooter.Controls.Add(this.label5);
+            this.panelFooter.Controls.Add(this.label4);
+            this.panelFooter.Controls.Add(this.label3);
+            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelFooter.Location = new System.Drawing.Point(0, 929);
+            this.panelFooter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelFooter.Name = "panelFooter";
+            this.panelFooter.Size = new System.Drawing.Size(1261, 33);
+            this.panelFooter.TabIndex = 3;
+            this.panelFooter.Visible = false;
             // 
             // label12
             // 
@@ -212,6 +218,7 @@
             this.panelAside.Name = "panelAside";
             this.panelAside.Size = new System.Drawing.Size(331, 925);
             this.panelAside.TabIndex = 4;
+            this.panelAside.Visible = false;
             // 
             // panelAsideMain
             // 
@@ -374,12 +381,51 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.label2);
+            this.panelMain.Controls.Add(this.pictureBox1);
+            this.panelMain.Controls.Add(this.label1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 60);
             this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(930, 865);
             this.panelMain.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Location = new System.Drawing.Point(351, 563);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "punto de venta y tienda en linea";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(375, 344);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(179)))));
+            this.label1.Location = new System.Drawing.Point(357, 524);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "admeli";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelMainHeader
             // 
@@ -391,6 +437,7 @@
             this.panelMainHeader.Name = "panelMainHeader";
             this.panelMainHeader.Size = new System.Drawing.Size(930, 60);
             this.panelMainHeader.TabIndex = 0;
+            this.panelMainHeader.Visible = false;
             // 
             // toolStrip2
             // 
@@ -496,7 +543,7 @@
             this.ClientSize = new System.Drawing.Size(1261, 962);
             this.Controls.Add(this.panelMainContainer);
             this.Controls.Add(this.panelAside);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.progressBarApp);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPrincipal";
@@ -505,11 +552,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelFooter.ResumeLayout(false);
+            this.panelFooter.PerformLayout();
             this.panelAside.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelMainContainer.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMainHeader.ResumeLayout(false);
             this.panelMainHeader.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
@@ -522,7 +571,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panelAside;
         private System.Windows.Forms.Panel panelMainContainer;
         private System.Windows.Forms.Panel panelMainHeader;
@@ -555,5 +604,8 @@
         private System.Windows.Forms.Button button7;
         public System.Windows.Forms.Panel panelMain;
         protected System.Windows.Forms.ProgressBar progressBarApp;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
