@@ -20,11 +20,6 @@ namespace Admeli
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -49,7 +44,7 @@ namespace Admeli
         }
         private bool validarCampos()
         {
-            if(textUsuario.Text == "")
+            if (textUsuario.Text == "")
             {
                 errorProvider1.SetError(textUsuario, "Debe ingresar un nombre de usuario");
                 textUsuario.Focus();
@@ -64,6 +59,11 @@ namespace Admeli
             }
             errorProvider1.Clear();
             return true;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
