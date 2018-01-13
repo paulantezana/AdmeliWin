@@ -13,9 +13,16 @@ namespace Admeli.Almacen
 {
     public partial class UCGuiaRemision : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCGuiaRemision()
         {
             InitializeComponent();
+        }
+
+        public UCGuiaRemision(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

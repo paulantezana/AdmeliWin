@@ -12,9 +12,16 @@ namespace Admeli.Configuracion
 {
     public partial class UCListadoMoneda : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCListadoMoneda()
         {
             InitializeComponent();
+        }
+
+        public UCListadoMoneda(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
     }
 }

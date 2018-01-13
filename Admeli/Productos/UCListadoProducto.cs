@@ -17,11 +17,17 @@ namespace Admeli.Productos
     {
         private ProductoModel productoModel = new ProductoModel();
         private Paginacion paginacion;
+        private FormPrincipal formPrincipal;
 
         public UCListadoProducto()
         {
             InitializeComponent();
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSteepPages.Text));
+        }
+
+        public UCListadoProducto(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

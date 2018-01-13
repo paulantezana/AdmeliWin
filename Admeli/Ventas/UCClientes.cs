@@ -14,9 +14,25 @@ namespace Admeli.Ventas
 {
     public partial class UCClientes : UserControl
     {
+        /**
+         *  Web services
+         *   http://www.lineatienda.com/services.php/clientes/estado/1/100
+         * 
+         * 
+         * 
+         * */
+        private Paginacion paginacion;
+        private FormPrincipal formPrincipal;
+
         public UCClientes()
         {
             InitializeComponent();
+        }
+
+        public UCClientes(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

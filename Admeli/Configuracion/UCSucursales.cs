@@ -12,9 +12,16 @@ namespace Admeli.Configuracion
 {
     public partial class UCSucursales : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCSucursales()
         {
             InitializeComponent();
+        }
+
+        public UCSucursales(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
     }
 }

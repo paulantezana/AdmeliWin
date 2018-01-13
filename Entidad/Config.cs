@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidad.Configuracion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,17 @@ namespace Entidad
 {
     public class Config
     {
-        public int idConfiguracionGeneral { get; set; }
-        public int numeroDecimales { get; set; }
-        public int itemPorPagina { get; set; }
-        public string porcentajeUtilidad { get; set; }
-        public string imagenPorDefecto { get; set; }
-        public string logoImpresion { get; set; }
-        public int idDatosGenerales { get; set; }
-        public int estado { get; set; }
-        public bool arquearMarcador { get; set; }
+        // DATOS GENERALES
+        // SUCURSALES PERSONA
+        // ASIGNACION PERSONAL
+        // CONFIGURACION GENERAL
+        // MONEDAS
+        // TIPOS DE CAMBIOS
+        public DatosGenerales datosGenerales { get; set; }
+        public Sucursal sucursal { get; set; }
+        public AsignacionPersonal asignacionPersonal { get; set; }
+        public ConfiguracionGeneral configuracionGeneral { get; set; }
+        public List<Moneda> monedas { get; set; }
+        public List<TipoCambioMoneda> tipoCambioMoneda { get; set; }
     }
 }

@@ -84,7 +84,7 @@ namespace Admeli.Compras
             }
 
             // Cargando item por pagina a mostra desde las configuraciones generales
-            lblSpeedPages.Text = ConfigModel.config.itemPorPagina.ToString();
+            lblSpeedPages.Text = ConfigModel.config.configuracionGeneral.itemPorPagina.ToString();
 
             // Estado cargar en falso
             loadState(false);

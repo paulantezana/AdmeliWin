@@ -19,18 +19,18 @@ namespace Admeli.Navegacion
         private UCCuentaCobrar uCCuentaCobrar;
         private UCVentas uCVentas;
 
-        private Panel panelMain;
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
+        private FormPrincipal formPrincipal;
 
         public UCVentasNav()
         {
             InitializeComponent();
         }
 
-        public UCVentasNav(Panel panelMain)
+        public UCVentasNav(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.panelMain = panelMain;
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
@@ -41,13 +41,13 @@ namespace Admeli.Navegacion
 
         private void togglePanelMain(string panelName)
         {
-            this.panelMain.Controls.Clear();
+            this.formPrincipal.panelMain.Controls.Clear();
             btnColor();
             switch (panelName)
             {
                 case "clientes":
-                    this.uCClientes = new Admeli.Ventas.UCClientes();
-                    this.panelMain.Controls.Add(uCClientes);
+                    this.uCClientes = new Admeli.Ventas.UCClientes(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCClientes);
                     this.uCClientes.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCClientes.Location = new System.Drawing.Point(0, 0);
                     this.uCClientes.Name = "uCClientes";
@@ -55,8 +55,8 @@ namespace Admeli.Navegacion
                     this.uCClientes.TabIndex = 0;
                     break;
                 case "contizacionCliente":
-                    this.uCCotizacionCliente = new Admeli.Ventas.UCCotizacionCliente();
-                    this.panelMain.Controls.Add(uCCotizacionCliente);
+                    this.uCCotizacionCliente = new Admeli.Ventas.UCCotizacionCliente(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCCotizacionCliente);
                     this.uCCotizacionCliente.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCotizacionCliente.Location = new System.Drawing.Point(0, 0);
                     this.uCCotizacionCliente.Name = "uCCotizacionCliente";
@@ -64,8 +64,8 @@ namespace Admeli.Navegacion
                     this.uCCotizacionCliente.TabIndex = 0;
                     break;
                 case "cuentaCobrar":
-                    this.uCCuentaCobrar = new Admeli.Ventas.UCCuentaCobrar();
-                    this.panelMain.Controls.Add(uCCuentaCobrar);
+                    this.uCCuentaCobrar = new Admeli.Ventas.UCCuentaCobrar(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCCuentaCobrar);
                     this.uCCuentaCobrar.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCuentaCobrar.Location = new System.Drawing.Point(0, 0);
                     this.uCCuentaCobrar.Name = "uCCuentaCobrar";
@@ -73,8 +73,8 @@ namespace Admeli.Navegacion
                     this.uCCuentaCobrar.TabIndex = 0;
                     break;
                 case "ventas":
-                    this.uCVentas = new Admeli.Ventas.UCVentas();
-                    this.panelMain.Controls.Add(uCVentas);
+                    this.uCVentas = new Admeli.Ventas.UCVentas(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCVentas);
                     this.uCVentas.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCVentas.Location = new System.Drawing.Point(0, 0);
                     this.uCVentas.Name = "uCVentas";

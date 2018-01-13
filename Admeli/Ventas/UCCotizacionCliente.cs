@@ -14,9 +14,25 @@ namespace Admeli.Ventas
 {
     public partial class UCCotizacionCliente : UserControl
     {
+        /**
+         *  Web services
+         * 
+         * 
+         * 
+         * 
+         * */
+        private Paginacion paginacion;
+        private FormPrincipal formPrincipal;
+
         public UCCotizacionCliente()
         {
             InitializeComponent();
+        }
+
+        public UCCotizacionCliente(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

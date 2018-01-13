@@ -13,9 +13,16 @@ namespace Admeli.Caja
 {
     public partial class UCIngresos : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCIngresos()
         {
             InitializeComponent();
+        }
+
+        public UCIngresos(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

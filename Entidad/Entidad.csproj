@@ -40,8 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Configuracion\AsignacionPersonal.cs" />
+    <Compile Include="Configuracion\ConfiguracionGeneral.cs" />
+    <Compile Include="Configuracion\DatosGenerales.cs" />
+    <Compile Include="Configuracion\Moneda.cs" />
+    <Compile Include="Configuracion\TipoCambioMoneda.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Producto.cs" />
@@ -50,6 +56,8 @@
     <Compile Include="RootObject.cs" />
     <Compile Include="Sucursal.cs" />
     <Compile Include="Util\Fecha.cs" />
+    <Compile Include="Venta.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

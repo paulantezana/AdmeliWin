@@ -20,19 +20,18 @@ namespace Admeli.Navegacion
         private UCUnidadesMedida uCUnidadesMedida;
         private UCCategorias uCCategorias;
 
-        private Panel panelMain;
-
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
+        private FormPrincipal formPrincipal;
 
         public UCProductosNav()
         {
             InitializeComponent();
         }
 
-        public UCProductosNav(Panel panelMain)
+        public UCProductosNav(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.panelMain = panelMain;
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
@@ -43,13 +42,13 @@ namespace Admeli.Navegacion
 
         private void togglePanelMain(string panelName)
         {
-            this.panelMain.Controls.Clear();
+            this.formPrincipal.panelMain.Controls.Clear();
             btnColor();
             switch (panelName)
             {
                 case "listadoProducto":
-                    this.uCListadoProducto = new Admeli.Productos.UCListadoProducto();
-                    this.panelMain.Controls.Add(uCListadoProducto);
+                    this.uCListadoProducto = new Admeli.Productos.UCListadoProducto(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCListadoProducto);
                     this.uCListadoProducto.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCListadoProducto.Location = new System.Drawing.Point(0, 0);
                     this.uCListadoProducto.Name = "uCListadoProducto";
@@ -57,8 +56,8 @@ namespace Admeli.Navegacion
                     this.uCListadoProducto.TabIndex = 0;
                     break;
                 case "marcas":
-                    this.uCMarcas = new Admeli.Productos.UCMarcas();
-                    this.panelMain.Controls.Add(uCMarcas);
+                    this.uCMarcas = new Admeli.Productos.UCMarcas(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCMarcas);
                     this.uCMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCMarcas.Location = new System.Drawing.Point(0, 0);
                     this.uCMarcas.Name = "uCMarcas";
@@ -66,8 +65,8 @@ namespace Admeli.Navegacion
                     this.uCMarcas.TabIndex = 0;
                     break;
                 case "unidadesMedida":
-                    this.uCUnidadesMedida = new Admeli.Productos.UCUnidadesMedida();
-                    this.panelMain.Controls.Add(uCUnidadesMedida);
+                    this.uCUnidadesMedida = new Admeli.Productos.UCUnidadesMedida(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCUnidadesMedida);
                     this.uCUnidadesMedida.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCUnidadesMedida.Location = new System.Drawing.Point(0, 0);
                     this.uCUnidadesMedida.Name = "uCUnidadesMedida";
@@ -75,8 +74,8 @@ namespace Admeli.Navegacion
                     this.uCUnidadesMedida.TabIndex = 0;
                     break;
                 case "categorias":
-                    this.uCCategorias = new Admeli.Productos.UCCategorias();
-                    this.panelMain.Controls.Add(uCCategorias);
+                    this.uCCategorias = new Admeli.Productos.UCCategorias(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCCategorias);
                     this.uCCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCategorias.Location = new System.Drawing.Point(0, 0);
                     this.uCCategorias.Name = "uCCategorias";

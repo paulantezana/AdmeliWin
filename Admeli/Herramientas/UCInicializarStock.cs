@@ -13,9 +13,16 @@ namespace Admeli.Herramientas
 {
     public partial class UCInicializarStock : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCInicializarStock()
         {
             InitializeComponent();
+        }
+
+        public UCInicializarStock(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

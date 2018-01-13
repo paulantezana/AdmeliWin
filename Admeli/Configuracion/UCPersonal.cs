@@ -18,11 +18,17 @@ namespace Admeli.Configuracion
     {
         private PersonalModel personalModel = new PersonalModel();
         private Paginacion paginacion;
+        private FormPrincipal formPrincipal;
 
         public UCPersonal()
         {
             InitializeComponent();
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSteepPages.Text));
+        }
+
+        public UCPersonal(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void UCPersonal_Load(object sender, EventArgs e)

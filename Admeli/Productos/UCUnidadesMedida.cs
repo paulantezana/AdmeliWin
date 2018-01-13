@@ -14,9 +14,16 @@ namespace Admeli.Productos
 {
     public partial class UCUnidadesMedida : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCUnidadesMedida()
         {
             InitializeComponent();
+        }
+
+        public UCUnidadesMedida(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

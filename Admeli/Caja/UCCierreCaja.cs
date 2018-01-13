@@ -13,9 +13,16 @@ namespace Admeli.Caja
 {
     public partial class UCCierreCaja : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCCierreCaja()
         {
             InitializeComponent();
+        }
+
+        public UCCierreCaja(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

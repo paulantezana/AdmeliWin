@@ -13,9 +13,16 @@ namespace Admeli.Herramientas
 {
     public partial class UCAsignarImpuesto : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCAsignarImpuesto()
         {
             InitializeComponent();
+        }
+
+        public UCAsignarImpuesto(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

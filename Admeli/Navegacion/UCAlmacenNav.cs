@@ -20,17 +20,17 @@ namespace Admeli.Navegacion
 
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
 
-        private Panel panelMain;
+        private FormPrincipal formPrincipal;
 
         public UCAlmacenNav()
         {
             InitializeComponent();
         }
 
-        public UCAlmacenNav(Panel panelMain)
+        public UCAlmacenNav(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.panelMain = panelMain;
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
@@ -45,13 +45,13 @@ namespace Admeli.Navegacion
         }
         private void togglePanelMain(string panelName)
         {
-            this.panelMain.Controls.Clear();
+            this.formPrincipal.panelMain.Controls.Clear();
             btnColor();
             switch (panelName)
             {
                 case "guiaRemision":
-                    this.uCGuiaRemision = new Admeli.Almacen.UCGuiaRemision();
-                    this.panelMain.Controls.Add(uCGuiaRemision);
+                    this.uCGuiaRemision = new Admeli.Almacen.UCGuiaRemision(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCGuiaRemision);
                     this.uCGuiaRemision.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCGuiaRemision.Location = new System.Drawing.Point(0, 0);
                     this.uCGuiaRemision.Name = "uCGuiaRemision";
@@ -59,8 +59,8 @@ namespace Admeli.Navegacion
                     this.uCGuiaRemision.TabIndex = 0;
                     break;
                 case "notaSalida":
-                    this.uCNotaSalida = new Admeli.Almacen.UCNotaSalida();
-                    this.panelMain.Controls.Add(uCNotaSalida);
+                    this.uCNotaSalida = new Admeli.Almacen.UCNotaSalida(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCNotaSalida);
                     this.uCNotaSalida.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCNotaSalida.Location = new System.Drawing.Point(0, 0);
                     this.uCNotaSalida.Name = "uCVentasNav";
@@ -68,8 +68,8 @@ namespace Admeli.Navegacion
                     this.uCNotaSalida.TabIndex = 0;
                     break;
                 case "notaEntrada":
-                    this.uCNotaEntrada = new Admeli.Almacen.UCNotaEntrada();
-                    this.panelMain.Controls.Add(uCNotaEntrada);
+                    this.uCNotaEntrada = new Admeli.Almacen.UCNotaEntrada(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCNotaEntrada);
                     this.uCNotaEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCNotaEntrada.Location = new System.Drawing.Point(0, 0);
                     this.uCNotaEntrada.Name = "uCNotaEntrada";

@@ -13,9 +13,16 @@ namespace Admeli.Herramientas
 {
     public partial class UCAsignarCategorias : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCAsignarCategorias()
         {
             InitializeComponent();
+        }
+
+        public UCAsignarCategorias(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

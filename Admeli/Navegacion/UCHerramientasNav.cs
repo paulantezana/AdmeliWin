@@ -19,17 +19,17 @@ namespace Admeli.Navegacion
         private UCInicializarStock uCInicializarStock;
 
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
-        private Panel panelMain;
+        private FormPrincipal formPrincipal;
 
         public UCHerramientasNav()
         {
             InitializeComponent();
         }
 
-        public UCHerramientasNav(Panel panelMain)
+        public UCHerramientasNav(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.panelMain = panelMain;
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
@@ -40,13 +40,13 @@ namespace Admeli.Navegacion
 
         private void togglePanelMain(string panelName)
         {
-            this.panelMain.Controls.Clear();
+            this.formPrincipal.panelMain.Controls.Clear();
             btnColor();
             switch (panelName)
             {
                 case "asignarCategoria":
-                    this.uCAsignarCategorias = new Admeli.Herramientas.UCAsignarCategorias();
-                    this.panelMain.Controls.Add(uCAsignarCategorias);
+                    this.uCAsignarCategorias = new Admeli.Herramientas.UCAsignarCategorias(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCAsignarCategorias);
                     this.uCAsignarCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCAsignarCategorias.Location = new System.Drawing.Point(0, 0);
                     this.uCAsignarCategorias.Name = "uCAsignarCategorias";
@@ -54,8 +54,8 @@ namespace Admeli.Navegacion
                     this.uCAsignarCategorias.TabIndex = 0;
                     break;
                 case "asignarImpuesto":
-                    this.UCAsignarImpuesto = new Admeli.Herramientas.UCAsignarImpuesto();
-                    this.panelMain.Controls.Add(UCAsignarImpuesto);
+                    this.UCAsignarImpuesto = new Admeli.Herramientas.UCAsignarImpuesto(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(UCAsignarImpuesto);
                     this.UCAsignarImpuesto.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.UCAsignarImpuesto.Location = new System.Drawing.Point(0, 0);
                     this.UCAsignarImpuesto.Name = "uCCotizacionCliente";
@@ -63,8 +63,8 @@ namespace Admeli.Navegacion
                     this.UCAsignarImpuesto.TabIndex = 0;
                     break;
                 case "inicializarStock":
-                    this.uCInicializarStock = new Admeli.Herramientas.UCInicializarStock();
-                    this.panelMain.Controls.Add(uCInicializarStock);
+                    this.uCInicializarStock = new Admeli.Herramientas.UCInicializarStock(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCInicializarStock);
                     this.uCInicializarStock.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCInicializarStock.Location = new System.Drawing.Point(0, 0);
                     this.uCInicializarStock.Name = "uCInicializarStock";

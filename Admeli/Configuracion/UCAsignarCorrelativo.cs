@@ -12,9 +12,16 @@ namespace Admeli.Configuracion
 {
     public partial class UCAsignarCorrelativo : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCAsignarCorrelativo()
         {
             InitializeComponent();
+        }
+
+        public UCAsignarCorrelativo(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
     }
 }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
     <Compile Include="Crud.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="ProveedorModel.cs" />
     <Compile Include="Recursos\WebService.cs" />
     <Compile Include="SucursalModel.cs" />
+    <Compile Include="VentaModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidad\Entidad.csproj">

@@ -14,9 +14,16 @@ namespace Admeli.Productos
 {
     public partial class UCMarcas : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCMarcas()
         {
             InitializeComponent();
+        }
+
+        public UCMarcas(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

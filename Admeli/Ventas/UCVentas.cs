@@ -14,9 +14,26 @@ namespace Admeli.Ventas
 {
     public partial class UCVentas : UserControl
     {
+        /**
+         *  Web services
+         *  http://www.lineatienda.com/services.php/ventas/sucursal/1/puntoventa/0/per/0/estado/todos/1/100
+         * 
+         * 
+         * 
+         * */
+
+        private Paginacion paginacion;
+        private FormPrincipal formPrincipal;
+
         public UCVentas()
         {
             InitializeComponent();
+        }
+
+        public UCVentas(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

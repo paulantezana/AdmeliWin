@@ -14,9 +14,16 @@ namespace Admeli.Almacen
 {
     public partial class UCNotaSalida : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCNotaSalida()
         {
             InitializeComponent();
+        }
+
+        public UCNotaSalida(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

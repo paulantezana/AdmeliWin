@@ -12,9 +12,16 @@ namespace Admeli.Configuracion
 {
     public partial class UCTipoCambio : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCTipoCambio()
         {
             InitializeComponent();
+        }
+
+        public UCTipoCambio(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
     }
 }

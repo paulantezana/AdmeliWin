@@ -31,18 +31,18 @@ namespace Admeli.Navegacion
         private UCSucursales uCSucursales;
         private UCTipoCambio uCTipoCambio;
 
-        private Panel panelMain;
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
+        private FormPrincipal formPrincipal;
 
         public UCConfigNav()
         {
             InitializeComponent();
         }
 
-        public UCConfigNav(Panel panelMain)
+        public UCConfigNav(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.panelMain = panelMain;
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
@@ -66,13 +66,13 @@ namespace Admeli.Navegacion
 
         private void togglePanelMain(string panelName)
         {
-            this.panelMain.Controls.Clear();
+            this.formPrincipal.panelMain.Controls.Clear();
             btnColor();
             switch (panelName)
             {
                 case "alamacenes":
-                    this.uCAlmacenes = new Admeli.Configuracion.UCAlmacenes();
-                    this.panelMain.Controls.Add(uCAlmacenes);
+                    this.uCAlmacenes = new Admeli.Configuracion.UCAlmacenes(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCAlmacenes);
                     this.uCAlmacenes.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCAlmacenes.Location = new System.Drawing.Point(0, 0);
                     this.uCAlmacenes.Name = "uCAlmacenes";
@@ -80,8 +80,8 @@ namespace Admeli.Navegacion
                     this.uCAlmacenes.TabIndex = 0;
                     break;
                 case "asignarCorrelativo":
-                    this.uCAsignarCorrelativo = new Admeli.Configuracion.UCAsignarCorrelativo();
-                    this.panelMain.Controls.Add(uCAsignarCorrelativo);
+                    this.uCAsignarCorrelativo = new Admeli.Configuracion.UCAsignarCorrelativo(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCAsignarCorrelativo);
                     this.uCAsignarCorrelativo.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCAsignarCorrelativo.Location = new System.Drawing.Point(0, 0);
                     this.uCAsignarCorrelativo.Name = "uCAsignarCorrelativo";
@@ -89,8 +89,8 @@ namespace Admeli.Navegacion
                     this.uCAsignarCorrelativo.TabIndex = 0;
                     break;
                 case "cajasInicializadas":
-                    this.uCCajasInicializadas = new Admeli.Configuracion.UCCajasInicializadas();
-                    this.panelMain.Controls.Add(uCCajasInicializadas);
+                    this.uCCajasInicializadas = new Admeli.Configuracion.UCCajasInicializadas(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCCajasInicializadas);
                     this.uCCajasInicializadas.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCajasInicializadas.Location = new System.Drawing.Point(0, 0);
                     this.uCCajasInicializadas.Name = "uCCajasInicializadas";
@@ -99,7 +99,7 @@ namespace Admeli.Navegacion
                     break;
                 case "datosEmpresa":
                     this.uCDatosEmpresa = new Admeli.Configuracion.UCDatosEmpresa();
-                    this.panelMain.Controls.Add(uCDatosEmpresa);
+                    this.formPrincipal.panelMain.Controls.Add(uCDatosEmpresa);
                     this.uCDatosEmpresa.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCDatosEmpresa.Location = new System.Drawing.Point(0, 0);
                     this.uCDatosEmpresa.Name = "uCDatosEmpresa";
@@ -107,8 +107,8 @@ namespace Admeli.Navegacion
                     this.uCDatosEmpresa.TabIndex = 0;
                     break;
                 case "denominaciones":
-                    this.uCDenominaciones = new Admeli.Configuracion.UCDenominaciones();
-                    this.panelMain.Controls.Add(uCDenominaciones);
+                    this.uCDenominaciones = new Admeli.Configuracion.UCDenominaciones(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCDenominaciones);
                     this.uCDenominaciones.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCDenominaciones.Location = new System.Drawing.Point(0, 0);
                     this.uCDenominaciones.Name = "uCDenominaciones";
@@ -116,8 +116,8 @@ namespace Admeli.Navegacion
                     this.uCDenominaciones.TabIndex = 0;
                     break;
                 case "disenoPersonalizacion":
-                    this.uCDisenoPersonalizacion = new Admeli.Configuracion.UCDisenoPersonalizacion();
-                    this.panelMain.Controls.Add(uCDisenoPersonalizacion);
+                    this.uCDisenoPersonalizacion = new Admeli.Configuracion.UCDisenoPersonalizacion(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCDisenoPersonalizacion);
                     this.uCDisenoPersonalizacion.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCDisenoPersonalizacion.Location = new System.Drawing.Point(0, 0);
                     this.uCDisenoPersonalizacion.Name = "uCDisenoPersonalizacion";
@@ -125,8 +125,8 @@ namespace Admeli.Navegacion
                     this.uCDisenoPersonalizacion.TabIndex = 0;
                     break;
                 case "documentoIdentificacion":
-                    this.uCDocumentoIdentificacion = new Admeli.Configuracion.UCDocumentoIdentificacion();
-                    this.panelMain.Controls.Add(uCDocumentoIdentificacion);
+                    this.uCDocumentoIdentificacion = new Admeli.Configuracion.UCDocumentoIdentificacion(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCDocumentoIdentificacion);
                     this.uCDocumentoIdentificacion.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCDocumentoIdentificacion.Location = new System.Drawing.Point(0, 0);
                     this.uCDocumentoIdentificacion.Name = "uCDocumentoIdentificacion";
@@ -134,8 +134,8 @@ namespace Admeli.Navegacion
                     this.uCDocumentoIdentificacion.TabIndex = 0;
                     break;
                 case "grupoClientes":
-                    this.uCGrupoClientes = new Admeli.Configuracion.UCGrupoClientes();
-                    this.panelMain.Controls.Add(uCGrupoClientes);
+                    this.uCGrupoClientes = new Admeli.Configuracion.UCGrupoClientes(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCGrupoClientes);
                     this.uCGrupoClientes.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCGrupoClientes.Location = new System.Drawing.Point(0, 0);
                     this.uCGrupoClientes.Name = "uCGrupoClientes";
@@ -143,8 +143,8 @@ namespace Admeli.Navegacion
                     this.uCGrupoClientes.TabIndex = 0;
                     break;
                 case "impuestoDocumento":
-                    this.uCImpuestoDocumento = new Admeli.Configuracion.UCImpuestoDocumento();
-                    this.panelMain.Controls.Add(uCImpuestoDocumento);
+                    this.uCImpuestoDocumento = new Admeli.Configuracion.UCImpuestoDocumento(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCImpuestoDocumento);
                     this.uCImpuestoDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCImpuestoDocumento.Location = new System.Drawing.Point(0, 0);
                     this.uCImpuestoDocumento.Name = "uCImpuestoDocumento";
@@ -153,7 +153,7 @@ namespace Admeli.Navegacion
                     break;
                 case "impuestos":
                     this.uCImpuestos = new Admeli.Configuracion.UCImpuestos();
-                    this.panelMain.Controls.Add(uCImpuestos);
+                    this.formPrincipal.panelMain.Controls.Add(uCImpuestos);
                     this.uCImpuestos.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCImpuestos.Location = new System.Drawing.Point(0, 0);
                     this.uCImpuestos.Name = "uCImpuestos";
@@ -161,8 +161,8 @@ namespace Admeli.Navegacion
                     this.uCImpuestos.TabIndex = 0;
                     break;
                 case "listadoDocumento":
-                    this.uCListadoDocumentos = new Admeli.Configuracion.UCListadoDocumentos();
-                    this.panelMain.Controls.Add(uCListadoDocumentos);
+                    this.uCListadoDocumentos = new Admeli.Configuracion.UCListadoDocumentos(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCListadoDocumentos);
                     this.uCListadoDocumentos.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCListadoDocumentos.Location = new System.Drawing.Point(0, 0);
                     this.uCListadoDocumentos.Name = "uCListadoDocumentos";
@@ -170,8 +170,8 @@ namespace Admeli.Navegacion
                     this.uCListadoDocumentos.TabIndex = 0;
                     break;
                 case "listadoMoneda":
-                    this.uCListadoMoneda = new Admeli.Configuracion.UCListadoMoneda();
-                    this.panelMain.Controls.Add(uCListadoMoneda);
+                    this.uCListadoMoneda = new Admeli.Configuracion.UCListadoMoneda(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCListadoMoneda);
                     this.uCListadoMoneda.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCListadoMoneda.Location = new System.Drawing.Point(0, 0);
                     this.uCListadoMoneda.Name = "uCListadoMoneda";
@@ -179,8 +179,8 @@ namespace Admeli.Navegacion
                     this.uCListadoMoneda.TabIndex = 0;
                     break;
                 case "personal":
-                    this.uCPersonal = new Admeli.Configuracion.UCPersonal();
-                    this.panelMain.Controls.Add(uCPersonal);
+                    this.uCPersonal = new Admeli.Configuracion.UCPersonal(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCPersonal);
                     this.uCPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCPersonal.Location = new System.Drawing.Point(0, 0);
                     this.uCPersonal.Name = "uCPersonal";
@@ -188,8 +188,8 @@ namespace Admeli.Navegacion
                     this.uCPersonal.TabIndex = 0;
                     break;
                 case "sucursales":
-                    this.uCSucursales = new Admeli.Configuracion.UCSucursales();
-                    this.panelMain.Controls.Add(uCSucursales);
+                    this.uCSucursales = new Admeli.Configuracion.UCSucursales(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCSucursales);
                     this.uCSucursales.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCSucursales.Location = new System.Drawing.Point(0, 0);
                     this.uCSucursales.Name = "uCSucursales";
@@ -197,8 +197,8 @@ namespace Admeli.Navegacion
                     this.uCSucursales.TabIndex = 0;
                     break;
                 case "tipoCambio":
-                    this.uCTipoCambio = new Admeli.Configuracion.UCTipoCambio();
-                    this.panelMain.Controls.Add(uCTipoCambio);
+                    this.uCTipoCambio = new Admeli.Configuracion.UCTipoCambio(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCTipoCambio);
                     this.uCTipoCambio.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCTipoCambio.Location = new System.Drawing.Point(0, 0);
                     this.uCTipoCambio.Name = "uCTipoCambio";

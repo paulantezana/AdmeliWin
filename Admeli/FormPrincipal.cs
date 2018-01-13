@@ -82,7 +82,7 @@ namespace Admeli
                     this.uCComprasNav.TabIndex = 0;
                     break;
                 case "ventas":
-                    this.uCVentasNav = new Admeli.Navegacion.UCVentasNav(this.panelMain);
+                    this.uCVentasNav = new Admeli.Navegacion.UCVentasNav(this);
                     this.panelAsideMain.Controls.Add(uCVentasNav);
                     this.uCVentasNav.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCVentasNav.Location = new System.Drawing.Point(0, 0);
@@ -91,7 +91,7 @@ namespace Admeli
                     this.uCVentasNav.TabIndex = 0;
                     break;
                 case "caja":
-                    this.uCCajaNav = new Admeli.Navegacion.UCCajaNav(this.panelMain);
+                    this.uCCajaNav = new Admeli.Navegacion.UCCajaNav(this);
                     this.panelAsideMain.Controls.Add(uCCajaNav);
                     this.uCCajaNav.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCajaNav.Location = new System.Drawing.Point(0, 0);
@@ -100,7 +100,7 @@ namespace Admeli
                     this.uCCajaNav.TabIndex = 0;
                     break;
                 case "almacen":
-                    this.UCAlmacenNav = new Admeli.Navegacion.UCAlmacenNav(this.panelMain);
+                    this.UCAlmacenNav = new Admeli.Navegacion.UCAlmacenNav(this);
                     this.panelAsideMain.Controls.Add(UCAlmacenNav);
                     this.UCAlmacenNav.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.UCAlmacenNav.Location = new System.Drawing.Point(0, 0);
@@ -109,7 +109,7 @@ namespace Admeli
                     this.UCAlmacenNav.TabIndex = 0;
                     break;
                 case "productos":
-                    this.uCProductosNav = new Admeli.Navegacion.UCProductosNav(this.panelMain);
+                    this.uCProductosNav = new Admeli.Navegacion.UCProductosNav(this);
                     this.panelAsideMain.Controls.Add(uCProductosNav);
                     this.uCProductosNav.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCProductosNav.Location = new System.Drawing.Point(0, 0);
@@ -118,7 +118,7 @@ namespace Admeli
                     this.uCProductosNav.TabIndex = 0;
                     break;
                 case "configuracion":
-                    this.uCConfigNav = new Admeli.Navegacion.UCConfigNav(this.panelMain);
+                    this.uCConfigNav = new Admeli.Navegacion.UCConfigNav(this);
                     this.panelAsideMain.Controls.Add(uCConfigNav);
                     this.uCConfigNav.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCConfigNav.Location = new System.Drawing.Point(0, 0);
@@ -127,7 +127,7 @@ namespace Admeli
                     this.uCConfigNav.TabIndex = 0;
                     break;
                 case "herramientas":
-                    this.uCHerramientasNav = new Admeli.Navegacion.UCHerramientasNav(this.panelMain);
+                    this.uCHerramientasNav = new Admeli.Navegacion.UCHerramientasNav(this);
                     this.panelAsideMain.Controls.Add(uCHerramientasNav);
                     this.uCHerramientasNav.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCHerramientasNav.Location = new System.Drawing.Point(0, 0);
@@ -292,10 +292,23 @@ namespace Admeli
             {
                 this.appLoadState(true);
                 await sucursalModel.sucursalesPersonal(PersonalModel.personal.idPersonal);
-                await configModel.configeneral();
+
+                // DATOS GENERALES
+                // SUCURSALES PERSONA
+                // ASIGNACION PERSONAL
+                // CONFIGURACION GENERAL
+                // MONEDAS
+                // TIPOS DE CAMBIOS
+                await configModel.datosGenerales();
+                await configModel.sucursalPersonal(PersonalModel.personal.idPersonal);
+                configModel.asignacionPersonal(PersonalModel.personal.idPersonal, ConfigModel.config.sucursal.idSucursal);
+                configModel.monedas();
+                configModel.tiposCambio();
 
                 // Mostrando la interfas de usuario
                 appLoadInciComponents();
+
+                lblDniPersonal2.Text = ConfigModel.config.configuracionGeneral.itemPorPagina.ToString() + ":::::" +ConfigModel.config.asignacionPersonal.idAsignarPuntoVenta.ToString();
 
                 // Mostrando los paneles principales
                 toggleHome();

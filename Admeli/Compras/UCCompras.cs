@@ -16,6 +16,12 @@ namespace Admeli.Compras
 {
     public partial class UCCompras : UserControl
     {
+        /*
+         * SERVICIOS QUE SE ESTAN CONSUMIENDO
+         *  http://www.lineatienda.com/services.php/listarpersonalcompras/sucursal/1
+         *  http://www.lineatienda.com/services.php/compras/sucursal/1/personal/0/estado/todos/1/100
+         * */
+
         #region ===================== Metodos =====================
         private CompraModel compraModel = new CompraModel();
         private PersonalModel personalModel = new PersonalModel();
@@ -77,7 +83,7 @@ namespace Admeli.Compras
                 cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(SucursalModel.sucursal.idSucursal);
                 cbxPersonales.ComboBox.DisplayMember = "nombres";
                 cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = 0;
+                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
             }
             catch (Exception ex)
             {
@@ -99,7 +105,7 @@ namespace Admeli.Compras
             cbxEstados.ComboBox.SelectedIndex = 0;
 
             // Cargando item por pagina a mostra desde las configuraciones generales
-            lblSpeedPages.Text = ConfigModel.config.itemPorPagina.ToString();
+            lblSpeedPages.Text = ConfigModel.config.configuracionGeneral.itemPorPagina.ToString();
 
             // Estado cargar en falso
             loadState(false);

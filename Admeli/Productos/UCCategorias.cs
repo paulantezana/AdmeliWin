@@ -14,9 +14,16 @@ namespace Admeli.Productos
 {
     public partial class UCCategorias : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCCategorias()
         {
             InitializeComponent();
+        }
+
+        public UCCategorias(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

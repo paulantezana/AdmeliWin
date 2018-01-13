@@ -20,18 +20,18 @@ namespace Admeli.Navegacion
         private UCIngresos uCIngresos;
         private UCIniciarCaja uCIniciarCaja;
 
-        private Panel panelMain;
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
+        private FormPrincipal formPrincipal;
 
         public UCCajaNav()
         {
             InitializeComponent();
         }
 
-        public UCCajaNav(Panel panelMain)
+        public UCCajaNav(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.panelMain = panelMain;
+            this.formPrincipal = formPrincipal;
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
@@ -42,13 +42,13 @@ namespace Admeli.Navegacion
 
         private void togglePanelMain(string panelName)
         {
-            this.panelMain.Controls.Clear();
+            this.formPrincipal.panelMain.Controls.Clear();
             btnColor();
             switch (panelName)
             {
                 case "cierreCaja":
-                    this.uCCierreCaja = new Admeli.Caja.UCCierreCaja();
-                    this.panelMain.Controls.Add(uCCierreCaja);
+                    this.uCCierreCaja = new Admeli.Caja.UCCierreCaja(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCCierreCaja);
                     this.uCCierreCaja.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCierreCaja.Location = new System.Drawing.Point(0, 0);
                     this.uCCierreCaja.Name = "uCCierreCaja";
@@ -56,8 +56,8 @@ namespace Admeli.Navegacion
                     this.uCCierreCaja.TabIndex = 0;
                     break;
                 case "egresos":
-                    this.uCEgresos = new Admeli.Caja.UCEgresos();
-                    this.panelMain.Controls.Add(uCEgresos);
+                    this.uCEgresos = new Admeli.Caja.UCEgresos(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCEgresos);
                     this.uCEgresos.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCEgresos.Location = new System.Drawing.Point(0, 0);
                     this.uCEgresos.Name = "uCEgresos";
@@ -65,8 +65,8 @@ namespace Admeli.Navegacion
                     this.uCEgresos.TabIndex = 0;
                     break;
                 case "ingresos":
-                    this.uCIngresos = new Admeli.Caja.UCIngresos();
-                    this.panelMain.Controls.Add(uCIngresos);
+                    this.uCIngresos = new Admeli.Caja.UCIngresos(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCIngresos);
                     this.uCIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCIngresos.Location = new System.Drawing.Point(0, 0);
                     this.uCIngresos.Name = "uCIngresos";
@@ -74,8 +74,8 @@ namespace Admeli.Navegacion
                     this.uCIngresos.TabIndex = 0;
                     break;
                 case "iniciarCaja":
-                    this.uCIniciarCaja = new Admeli.Caja.UCIniciarCaja();
-                    this.panelMain.Controls.Add(uCIniciarCaja);
+                    this.uCIniciarCaja = new Admeli.Caja.UCIniciarCaja(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCIniciarCaja);
                     this.uCIniciarCaja.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCIniciarCaja.Location = new System.Drawing.Point(0, 0);
                     this.uCIniciarCaja.Name = "uCIniciarCaja";

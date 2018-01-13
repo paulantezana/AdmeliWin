@@ -14,14 +14,16 @@ namespace Modelo.Recursos
     public class WebService
     {
         public string urlBase { get; set; }
+        public string domainName { get; set; }
+        public string directory { get; set; }
 
         public WebService()
         {
-            //this.urlBase = "http://www.admeli.com/demo2/";
-            this.urlBase = "http://www.lineatienda.com/services.php";
-            //this.urlBase = "http://192.168.1.10/admeli/~admeli";
-            //this.urlBase = "http://192.168.1.57:8085/admeli/~admeli";
-            //this.urlBase = "http://192.168.1.10/admeli/~admeli_mysql";
+            this.domainName = "http://www.lineatienda.com";
+            this.directory = "services.php";
+
+
+            this.urlBase = String.Format("{0}/{1}", domainName, directory);
         }
 
         /**
@@ -175,8 +177,8 @@ namespace Modelo.Recursos
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://www.lineatienda.com");
-                string url = string.Format("services.php/{0}/{1}", servicio, metodo);
+                client.BaseAddress = new Uri(this.domainName);
+                string url = string.Format("{0}/{1}/{2}", this.directory, servicio, metodo);
                 HttpResponseMessage response = await client.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)
@@ -199,8 +201,8 @@ namespace Modelo.Recursos
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://www.lineatienda.com");
-                string url = string.Format("services.php/{0}", servicio);
+                client.BaseAddress = new Uri(this.domainName);
+                string url = string.Format("{0}/{1}", this.directory, servicio);
                 HttpResponseMessage response = await client.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)
@@ -224,8 +226,8 @@ namespace Modelo.Recursos
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://www.lineatienda.com");
-                string url = string.Format("services.php/{0}/{1}", servicio, metodo);
+                client.BaseAddress = new Uri(this.domainName);
+                string url = string.Format("{0}/{1}/{2}", this.directory, servicio, metodo);
                 HttpResponseMessage response = await client.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)
@@ -241,6 +243,29 @@ namespace Modelo.Recursos
                 throw ex;
             }
         }
-    }
 
+        public async Task<T> getObject<T>(string servicio, string metodo)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(this.domainName);
+                string url = string.Format("{0}/{1}/{2}", this.directory, servicio, metodo);
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.ToString());
+                }
+                string result = await response.Content.ReadAsStringAsync();
+                T objeto = JsonConvert.DeserializeObject<T>(result);
+                return objeto;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+    }
 }

@@ -12,9 +12,16 @@ namespace Admeli.Configuracion
 {
     public partial class UCImpuestoDocumento : UserControl
     {
+        private FormPrincipal formPrincipal;
+
         public UCImpuestoDocumento()
         {
             InitializeComponent();
+        }
+
+        public UCImpuestoDocumento(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
         }
     }
 }
