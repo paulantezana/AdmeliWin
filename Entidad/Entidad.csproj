@@ -40,14 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacen.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Compra.cs" />
-    <Compile Include="Config.cs" />
     <Compile Include="Configuracion\AsignacionPersonal.cs" />
     <Compile Include="Configuracion\ConfiguracionGeneral.cs" />
     <Compile Include="Configuracion\DatosGenerales.cs" />
     <Compile Include="Configuracion\Moneda.cs" />
+    <Compile Include="Configuracion\PuntoDeVenta.cs" />
     <Compile Include="Configuracion\TipoCambioMoneda.cs" />
+    <Compile Include="Configuracion\TipoDocumento.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Producto.cs" />

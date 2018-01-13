@@ -105,7 +105,7 @@ namespace Admeli.Compras
             cbxEstados.ComboBox.SelectedIndex = 0;
 
             // Cargando item por pagina a mostra desde las configuraciones generales
-            lblSpeedPages.Text = ConfigModel.config.configuracionGeneral.itemPorPagina.ToString();
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();
 
             // Estado cargar en falso
             loadState(false);

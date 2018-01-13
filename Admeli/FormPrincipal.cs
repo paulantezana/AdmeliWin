@@ -30,7 +30,9 @@ namespace Admeli
         private UCVentas uCVentas;
         private UCListadoProducto uCListadoProducto;
         private UCCompras uCCompras;
+
         private UCHome uCHome;
+        private UCIniciar uCIniciar;
 
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
@@ -59,11 +61,11 @@ namespace Admeli
 
 
         #region ===================== Paint =====================
-        private void panelProfile_Paint(object sender, PaintEventArgs e)
+        private void panelMainHeader_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelProfile);
-        } 
+            drawShape.bottomLine(panelMainHeader);
+        }
         #endregion
 
         #region ===================== Toogle panel navegations =====================
@@ -140,7 +142,7 @@ namespace Admeli
             }
         }
 
-        private void toggleHome()
+        public void toggleHome()
         {
             this.panelMain.Controls.Clear();
 
@@ -157,9 +159,24 @@ namespace Admeli
             togglePanelAside("ventas");
         }
 
+        private void toggleConfiguracionInicial()
+        {
+            this.panelMain.Controls.Clear();
+
+            // Mostar Panel Home
+            this.uCIniciar = new Admeli.UCIniciar(this);
+            this.panelMain.Controls.Add(uCIniciar);
+            this.uCIniciar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uCIniciar.Location = new System.Drawing.Point(0, 0);
+            this.uCIniciar.Name = "uCIniciar";
+            this.uCIniciar.Size = new System.Drawing.Size(250, 776);
+            this.uCIniciar.TabIndex = 0;
+        }
+
         private void togglePanelMain(string panelName)
         {
             this.panelMain.Controls.Clear();
+            btnColorShorCout();
             switch (panelName)
             {
                 case "ventas":
@@ -229,16 +246,19 @@ namespace Admeli
         private void btnVentaShorkout_Click(object sender, EventArgs e)
         {
             togglePanelMain("ventas");
+            btnVentaShorkout.BackColor = Color.FromArgb(243, 243, 243); ;
         }
 
         private void btnProductoShortcut_Click(object sender, EventArgs e)
         {
             togglePanelMain("productos");
+            btnProductoShortcut.BackColor = Color.FromArgb(243, 243, 243);
         }
 
         private void btnComprasShortcut_Click(object sender, EventArgs e)
         {
             togglePanelMain("compras");
+            btnComprasShortcut.BackColor = Color.FromArgb(243, 243, 243);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -247,6 +267,13 @@ namespace Admeli
         }
 
         #endregion
+
+        private void btnColorShorCout()
+        {
+            btnComprasShortcut.BackColor = Color.White;
+            btnVentaShorkout.BackColor = Color.White;
+            btnProductoShortcut.BackColor = Color.White;
+        }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
@@ -258,7 +285,6 @@ namespace Admeli
             lblDniPersonal.Text = PersonalModel.personal.numeroDocumento;
             lblUsuarioPersonal.Text = PersonalModel.personal.usuario;
             lblNombrePersonal2.Text = PersonalModel.personal.nombres;
-            lblDniPersonal2.Text = PersonalModel.personal.numeroDocumento;
 
             // Cargando los componentes necesarios para el funcionamiento de todo el sistema
             cargarComponente();
@@ -299,19 +325,35 @@ namespace Admeli
                 // CONFIGURACION GENERAL
                 // MONEDAS
                 // TIPOS DE CAMBIOS
-                await configModel.datosGenerales();
-                await configModel.sucursalPersonal(PersonalModel.personal.idPersonal);
-                configModel.asignacionPersonal(PersonalModel.personal.idPersonal, ConfigModel.config.sucursal.idSucursal);
-                configModel.monedas();
-                configModel.tiposCambio();
 
-                // Mostrando la interfas de usuario
-                appLoadInciComponents();
+                // TIPOS DE DOCUMENTO
+                // ALMACENES
+                // ASIGNACION PERSONAL PUNTO DE VENTA
+                // CAJA SECION
+                await configModel.loadDatosGenerales();
+                await configModel.loadSucursalPersonal(PersonalModel.personal.idPersonal);
+                await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+                await configModel.loadConfiGeneral();
+                configModel.loadMonedas();
+                configModel.loadTipoCambioMonedas();
 
-                lblDniPersonal2.Text = ConfigModel.config.configuracionGeneral.itemPorPagina.ToString() + ":::::" +ConfigModel.config.asignacionPersonal.idAsignarPuntoVenta.ToString();
+                configModel.loadTipoDocumento();
+                await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+                await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
 
-                // Mostrando los paneles principales
-                toggleHome();
+
+                // Eligiendo el puntode venta y almacen
+                if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
+                {
+                    toggleConfiguracionInicial();
+                    ConfigModel.currentIdAlmacen = ConfigModel.alamacenes[0].idAlmacen;
+                    ConfigModel.currentPuntoVenta = ConfigModel.puntosDeVenta[1].idAsignarPuntoVenta;
+                }
+                else
+                {
+                    appLoadInciComponents();
+                    toggleHome();
+                }
             }
             catch (Exception ex)
             {

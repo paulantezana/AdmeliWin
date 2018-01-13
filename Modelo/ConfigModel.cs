@@ -12,7 +12,31 @@ namespace Modelo
     public class ConfigModel
     {
         private WebService webService = new WebService();
-        public static Config config { get; set; }
+
+        public static DatosGenerales datosGenerales { get; set; }
+        public static Sucursal sucursal { get; set; }
+        public static AsignacionPersonal asignacionPersonal { get; set; }
+        public static ConfiguracionGeneral configuracionGeneral { get; set; }
+        public static List<Moneda> monedas { get; set; }
+        public static List<TipoCambioMoneda> tipoCambioMonedas { get; set; }
+
+
+        // TIPOS DE DOCUMENTO       www.lineatienda.com/services.php/tipodoc21/estado/1
+        // ALMACENES                www.lineatienda.com/services.php/personalalmacenes/per/8/suc/1
+        // ASIGNACION PERSONAL      www.lineatienda.com/services.php/asignarpuntoventas/sucursal/1/personal/8
+        // CAJA SECION  
+        public static List<TipoDocumento> tipoDocumento { get; set; }
+        public static List<Almacen> alamacenes { get; set; }
+        public static List<PuntoDeVenta> puntosDeVenta { get; set; }
+
+
+        /**
+         * OTROS PARAMETROS
+         * estas configuraciones se deben establecer al inicial la aplicacion
+         * segun el numero de almacenes y puntos de venta
+         * */
+        public static int currentIdAlmacen { get; set; }
+        public static int currentPuntoVenta { get; set; }
 
         public void guardar()
         {
@@ -33,52 +57,52 @@ namespace Modelo
         // CONFIGURACION GENERAL
         // MONEDAS
         // TIPOS DE CAMBIOS
-        public async Task datosGenerales()
+        public async Task loadDatosGenerales()
         {
             try
             {
                 // www.lineatienda.com/services.php/generales
-                List<DatosGenerales> datosGenerales = await webService.getLis<DatosGenerales>("generales");
-                config.datosGenerales = datosGenerales[0];
+                List<DatosGenerales> list = await webService.getLis<DatosGenerales>("generales");
+                datosGenerales = list[0];
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public async Task sucursalPersonal(int idPersonal)
+        public async Task loadSucursalPersonal(int idPersonal)
         {
             try
             {
                 // www.lineatienda.com/services.php/sucursalespersonal/8
-                List<Sucursal> sucursal = await webService.getLis<Sucursal>("sucursalespersonal",idPersonal.ToString());
-                config.sucursal = sucursal[0];
+                List<Sucursal> list = await webService.getLis<Sucursal>("sucursalespersonal",idPersonal.ToString());
+                sucursal = list[0];
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public async Task asignacionPersonal(int idPersonal, int idSucursal)
+        public async Task loadAsignacionPersonales(int idPersonal, int idSucursal)
         {
             try
             {
                 // www.lineatienda.com/services.php/personales/asignacionpersonal/per/8/suc/1
-                AsignacionPersonal asignacionPersonal = await webService.getObject<AsignacionPersonal>("personales", String.Format("asignacionpersonal/per/{0}/suc/{1}", idPersonal, idSucursal));
-                config.asignacionPersonal = asignacionPersonal;
+                AsignacionPersonal datos = await webService.getObject<AsignacionPersonal>("personales", String.Format("asignacionpersonal/per/{0}/suc/{1}", idPersonal, idSucursal));
+                asignacionPersonal = datos;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public async Task confiGeneral()
+        public async Task loadConfiGeneral()
         {
             try
             {
                 // www.lineatienda.com/services.php/configeneral
-                List<ConfiguracionGeneral> configuracionGeneral = await webService.getLis<ConfiguracionGeneral>("configeneral");
-                config.configuracionGeneral = configuracionGeneral[0];
+                List<ConfiguracionGeneral> list = await webService.getLis<ConfiguracionGeneral>("configeneral");
+                configuracionGeneral = list[0];
             }
             catch (Exception ex)
             {
@@ -86,13 +110,13 @@ namespace Modelo
             }
         }
 
-        public async Task monedas()
+        public async Task loadMonedas()
         {
             try
             {
                 // www.lineatienda.com/services.php/monedas/estado/1
-                List<Moneda> monedas = await webService.getLis<Moneda>("monedas", "estado/1");
-                config.monedas = monedas;
+                List<Moneda> list = await webService.getLis<Moneda>("monedas", "estado/1");
+                monedas = list;
             }
             catch (Exception ex)
             {
@@ -100,18 +124,64 @@ namespace Modelo
             }
         }
 
-        public async Task tiposCambio()
+        public async Task loadTipoCambioMonedas()
         {
             try
             {
                 // www.lineatienda.com/services.php/tipocambiotodasmonedas/hoy
-                List<TipoCambioMoneda> tipoCambioMoneda = await webService.getLis<TipoCambioMoneda>("tipocambiotodasmonedas", "hoy");
-                config.tipoCambioMoneda = tipoCambioMoneda;
+                List<TipoCambioMoneda> list = await webService.getLis<TipoCambioMoneda>("tipocambiotodasmonedas", "hoy");
+                tipoCambioMonedas = list;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        // TIPOS DE DOCUMENTO       www.lineatienda.com/services.php/tipodoc21/estado/1
+        // ALMACENES                www.lineatienda.com/services.php/personalalmacenes/per/8/suc/1
+        // ASIGNACION PERSONAL      www.lineatienda.com/services.php/asignarpuntoventas/sucursal/1/personal/8
+        // CAJA SECION              www.lineatienda.com/services.php/cajasesion/idasignarcaja/8
+
+        public async Task loadTipoDocumento()
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/tipodoc21/estado/1
+                List<TipoDocumento> list = await webService.getLis<TipoDocumento>("tipodoc21", "estado/1");
+                tipoDocumento = list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task loadAlmacenes(int idPersonal, int idSucursal)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/personalalmacenes/per/8/suc/1
+                List<Almacen> list = await webService.getLis<Almacen>("personalalmacenes", String.Format("per/{0}/suc/{1}",idPersonal,idSucursal));
+                alamacenes = list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task loadPuntoDeVenta(int idPersonal, int idSucursal)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/asignarpuntoventas/sucursal/1/personal/8
+                List<PuntoDeVenta> list = await webService.getLis<PuntoDeVenta>("asignarpuntoventas", String.Format("sucursal/{0}/personal/{1}",idSucursal,idPersonal));
+                puntosDeVenta = list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
