@@ -65,7 +65,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UCHome";
-            this.Size = new System.Drawing.Size(1087, 640);
+            this.Size = new System.Drawing.Size(1087, 470);
             this.ResumeLayout(false);
 
         }

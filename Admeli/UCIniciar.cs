@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
+using Admeli.Componentes;
 
 namespace Admeli
 {
@@ -61,6 +62,12 @@ namespace Admeli
             // Mostrando Todo Los Elementos
             formPrincipal.appLoadInciComponents();
             formPrincipal.toggleHome();
+        }
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContent, 243, 243, 243);
         }
     }
 }

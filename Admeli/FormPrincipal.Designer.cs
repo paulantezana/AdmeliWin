@@ -53,25 +53,32 @@
             this.button7 = new System.Windows.Forms.Button();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMainHeader = new System.Windows.Forms.Panel();
             this.btnProductoShortcut = new System.Windows.Forms.Button();
             this.btnVentaShorkout = new System.Windows.Forms.Button();
             this.btnComprasShortcut = new System.Windows.Forms.Button();
-            this.lblNombrePersonal2 = new System.Windows.Forms.Label();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblNombrePersonal2 = new System.Windows.Forms.Label();
+            this.lblSucursal = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFooter.SuspendLayout();
             this.panelAside.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelMainContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMainHeader.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -98,110 +105,110 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(816, 4);
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(736, 4);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 20);
+            this.label12.Size = new System.Drawing.Size(77, 20);
             this.label12.TabIndex = 19;
             this.label12.Text = "dolares 1.00";
             // 
             // lblNombrePersonal
             // 
             this.lblNombrePersonal.AutoSize = true;
-            this.lblNombrePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombrePersonal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNombrePersonal.Location = new System.Drawing.Point(91, 4);
+            this.lblNombrePersonal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombrePersonal.ForeColor = System.Drawing.Color.Black;
+            this.lblNombrePersonal.Location = new System.Drawing.Point(69, 4);
             this.lblNombrePersonal.Name = "lblNombrePersonal";
-            this.lblNombrePersonal.Size = new System.Drawing.Size(103, 20);
+            this.lblNombrePersonal.Size = new System.Drawing.Size(81, 20);
             this.lblNombrePersonal.TabIndex = 15;
             this.lblNombrePersonal.Text = "juan juancho";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(11, 4);
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(4, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Nombres:";
             // 
             // lblUsuarioPersonal
             // 
             this.lblUsuarioPersonal.AutoSize = true;
-            this.lblUsuarioPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioPersonal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsuarioPersonal.Location = new System.Drawing.Point(597, 2);
+            this.lblUsuarioPersonal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioPersonal.ForeColor = System.Drawing.Color.Black;
+            this.lblUsuarioPersonal.Location = new System.Drawing.Point(553, 2);
             this.lblUsuarioPersonal.Name = "lblUsuarioPersonal";
-            this.lblUsuarioPersonal.Size = new System.Drawing.Size(54, 20);
+            this.lblUsuarioPersonal.Size = new System.Drawing.Size(44, 20);
             this.lblUsuarioPersonal.TabIndex = 18;
             this.lblUsuarioPersonal.Text = "admin";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(682, 4);
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(632, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 20);
+            this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "Tipo de cambio:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(220, 4);
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(188, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Apellidos:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(527, 2);
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(494, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 20);
+            this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "Usuario:";
             // 
             // lblApellidoPersonal
             // 
             this.lblApellidoPersonal.AutoSize = true;
-            this.lblApellidoPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoPersonal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblApellidoPersonal.Location = new System.Drawing.Point(299, 4);
+            this.lblApellidoPersonal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoPersonal.ForeColor = System.Drawing.Color.Black;
+            this.lblApellidoPersonal.Location = new System.Drawing.Point(256, 4);
             this.lblApellidoPersonal.Name = "lblApellidoPersonal";
-            this.lblApellidoPersonal.Size = new System.Drawing.Size(51, 20);
+            this.lblApellidoPersonal.Size = new System.Drawing.Size(39, 20);
             this.lblApellidoPersonal.TabIndex = 16;
             this.lblApellidoPersonal.Text = "perez";
             // 
             // lblDniPersonal
             // 
             this.lblDniPersonal.AutoSize = true;
-            this.lblDniPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDniPersonal.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDniPersonal.Location = new System.Drawing.Point(421, 2);
+            this.lblDniPersonal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDniPersonal.ForeColor = System.Drawing.Color.Black;
+            this.lblDniPersonal.Location = new System.Drawing.Point(412, 2);
             this.lblDniPersonal.Name = "lblDniPersonal";
-            this.lblDniPersonal.Size = new System.Drawing.Size(90, 20);
+            this.lblDniPersonal.Size = new System.Drawing.Size(72, 20);
             this.lblDniPersonal.TabIndex = 17;
             this.lblDniPersonal.Text = "951951652";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(380, 2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 20);
+            this.label5.Size = new System.Drawing.Size(35, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "DNI:";
             // 
@@ -391,28 +398,39 @@
             this.panelMain.Size = new System.Drawing.Size(1214, 871);
             this.panelMain.TabIndex = 1;
             // 
-            // label2
+            // panel1
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Location = new System.Drawing.Point(72, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(393, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "punto de venta y tienda en linea";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(339, 306);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(536, 258);
+            this.panel1.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(99, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(99, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(338, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Location = new System.Drawing.Point(72, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(393, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "punto de venta y tienda en linea";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -420,7 +438,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(179)))));
-            this.label1.Location = new System.Drawing.Point(78, 184);
+            this.label1.Location = new System.Drawing.Point(78, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(381, 36);
             this.label1.TabIndex = 0;
@@ -429,7 +447,9 @@
             // 
             // panelMainHeader
             // 
-            this.panelMainHeader.Controls.Add(this.lblNombrePersonal2);
+            this.panelMainHeader.Controls.Add(this.pictureBox3);
+            this.panelMainHeader.Controls.Add(this.panel3);
+            this.panelMainHeader.Controls.Add(this.lblSucursal);
             this.panelMainHeader.Controls.Add(this.btnProductoShortcut);
             this.panelMainHeader.Controls.Add(this.btnVentaShorkout);
             this.panelMainHeader.Controls.Add(this.btnComprasShortcut);
@@ -455,7 +475,7 @@
             this.btnProductoShortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductoShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnProductoShortcut.Image")));
             this.btnProductoShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductoShortcut.Location = new System.Drawing.Point(876, 10);
+            this.btnProductoShortcut.Location = new System.Drawing.Point(872, 10);
             this.btnProductoShortcut.Margin = new System.Windows.Forms.Padding(0);
             this.btnProductoShortcut.Name = "btnProductoShortcut";
             this.btnProductoShortcut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -477,7 +497,7 @@
             this.btnVentaShorkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentaShorkout.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaShorkout.Image")));
             this.btnVentaShorkout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaShorkout.Location = new System.Drawing.Point(731, 10);
+            this.btnVentaShorkout.Location = new System.Drawing.Point(727, 10);
             this.btnVentaShorkout.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentaShorkout.Name = "btnVentaShorkout";
             this.btnVentaShorkout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -499,7 +519,7 @@
             this.btnComprasShortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprasShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnComprasShortcut.Image")));
             this.btnComprasShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprasShortcut.Location = new System.Drawing.Point(586, 10);
+            this.btnComprasShortcut.Location = new System.Drawing.Point(582, 10);
             this.btnComprasShortcut.Margin = new System.Windows.Forms.Padding(0);
             this.btnComprasShortcut.Name = "btnComprasShortcut";
             this.btnComprasShortcut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -508,21 +528,6 @@
             this.btnComprasShortcut.Text = "Compra";
             this.btnComprasShortcut.UseVisualStyleBackColor = false;
             this.btnComprasShortcut.Click += new System.EventHandler(this.btnComprasShortcut_Click);
-            // 
-            // lblNombrePersonal2
-            // 
-            this.lblNombrePersonal2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNombrePersonal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.lblNombrePersonal2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNombrePersonal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombrePersonal2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
-            this.lblNombrePersonal2.Location = new System.Drawing.Point(1021, 10);
-            this.lblNombrePersonal2.Name = "lblNombrePersonal2";
-            this.lblNombrePersonal2.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.lblNombrePersonal2.Size = new System.Drawing.Size(181, 40);
-            this.lblNombrePersonal2.TabIndex = 0;
-            this.lblNombrePersonal2.Text = "Nombre de usuario";
-            this.lblNombrePersonal2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // progressBarApp
             // 
@@ -537,18 +542,57 @@
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 0;
             // 
-            // panel1
+            // panel3
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(339, 313);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(536, 244);
-            this.panel1.TabIndex = 3;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.lblNombrePersonal2);
+            this.panel3.Location = new System.Drawing.Point(1017, 10);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(185, 40);
+            this.panel3.TabIndex = 8;
+            // 
+            // lblNombrePersonal2
+            // 
+            this.lblNombrePersonal2.AutoSize = true;
+            this.lblNombrePersonal2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
+            this.lblNombrePersonal2.Location = new System.Drawing.Point(42, 12);
+            this.lblNombrePersonal2.Name = "lblNombrePersonal2";
+            this.lblNombrePersonal2.Size = new System.Drawing.Size(46, 17);
+            this.lblNombrePersonal2.TabIndex = 0;
+            this.lblNombrePersonal2.Text = "label9";
+            // 
+            // lblSucursal
+            // 
+            this.lblSucursal.AutoSize = true;
+            this.lblSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
+            this.lblSucursal.Location = new System.Drawing.Point(50, 21);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(46, 17);
+            this.lblSucursal.TabIndex = 1;
+            this.lblSucursal.Text = "label9";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(17, 17);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(23, 21);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -574,9 +618,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelMainContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMainHeader.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panelMainHeader.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -587,7 +636,6 @@
         private System.Windows.Forms.Panel panelAside;
         private System.Windows.Forms.Panel panelMainContainer;
         private System.Windows.Forms.Panel panelMainHeader;
-        private System.Windows.Forms.Label lblNombrePersonal2;
         private System.Windows.Forms.Panel panelAsideMain;
         public System.Windows.Forms.Panel panelMain;
         protected System.Windows.Forms.ProgressBar progressBarApp;
@@ -617,5 +665,10 @@
         private System.Windows.Forms.Button btnVentaShorkout;
         private System.Windows.Forms.Button btnComprasShortcut;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblNombrePersonal2;
+        private System.Windows.Forms.Label lblSucursal;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
