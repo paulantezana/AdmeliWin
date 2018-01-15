@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Admeli.Almacen.Nuevo
+namespace Admeli.AlmacenBox.Nuevo
 {
     public partial class FormNotaEntradaNuevo : Form
     {

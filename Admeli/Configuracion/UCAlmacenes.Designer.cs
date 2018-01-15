@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAlmacenes));
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.panelHeaderItem1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.idAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.principalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPersonalAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripLabel();
@@ -48,25 +58,20 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripLabel();
             this.lblSpeedPages = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTools = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripLabel();
-            this.textBuscar = new System.Windows.Forms.ToolStripTextBox();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnAnular = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.cbxPersonales = new System.Windows.Forms.ToolStripComboBox();
-            this.cbxEstados = new System.Windows.Forms.ToolStripComboBox();
-            this.btnConsultar = new System.Windows.Forms.ToolStripButton();
+            this.panelHeaderItem1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
-            this.panelHeaderItem1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
             this.toolStripNavigation.SuspendLayout();
-            this.toolStripTools.SuspendLayout();
             this.toolStripCrud.SuspendLayout();
+            this.panelHeaderItem1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -74,7 +79,6 @@
             this.panelContainer.BackColor = System.Drawing.Color.White;
             this.panelContainer.Controls.Add(this.panel1);
             this.panelContainer.Controls.Add(this.toolStripNavigation);
-            this.panelContainer.Controls.Add(this.toolStripTools);
             this.panelContainer.Controls.Add(this.toolStripCrud);
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,35 +90,15 @@
             this.panelContainer.TabIndex = 7;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
-            // panelHeaderItem1
-            // 
-            this.panelHeaderItem1.Controls.Add(this.label1);
-            this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(1171, 50);
-            this.panelHeaderItem1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MANTENIMIENTO ALMACEN";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 161);
+            this.panel1.Location = new System.Drawing.Point(1, 106);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel1.Size = new System.Drawing.Size(1171, 478);
+            this.panel1.Size = new System.Drawing.Size(1171, 533);
             this.panel1.TabIndex = 20;
             // 
             // dataGridView
@@ -122,19 +106,32 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.AutoGenerateContextFilters = true;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeight = 40;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAlmacenDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.principalDataGridViewCheckBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.idSucursalDataGridViewTextBoxColumn,
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn,
+            this.nombreSucursalDataGridViewTextBoxColumn,
+            this.tieneRegistrosDataGridViewTextBoxColumn,
+            this.idPersonalAlmacenDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.almacenBindingSource;
             this.dataGridView.DateWithTime = false;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
@@ -143,9 +140,113 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(1145, 454);
+            this.dataGridView.Size = new System.Drawing.Size(1145, 509);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
+            // 
+            // idAlmacenDataGridViewTextBoxColumn
+            // 
+            this.idAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idAlmacen";
+            this.idAlmacenDataGridViewTextBoxColumn.HeaderText = "idAlmacen";
+            this.idAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idAlmacenDataGridViewTextBoxColumn.Name = "idAlmacenDataGridViewTextBoxColumn";
+            this.idAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idAlmacenDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
+            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.direccionDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // principalDataGridViewCheckBoxColumn
+            // 
+            this.principalDataGridViewCheckBoxColumn.DataPropertyName = "principal";
+            this.principalDataGridViewCheckBoxColumn.HeaderText = "principal";
+            this.principalDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.principalDataGridViewCheckBoxColumn.Name = "principalDataGridViewCheckBoxColumn";
+            this.principalDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.principalDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.principalDataGridViewCheckBoxColumn.Width = 90;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idSucursalDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // idUbicacionGeograficaDataGridViewTextBoxColumn
+            // 
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.DataPropertyName = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.HeaderText = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // nombreSucursalDataGridViewTextBoxColumn
+            // 
+            this.nombreSucursalDataGridViewTextBoxColumn.DataPropertyName = "nombreSucursal";
+            this.nombreSucursalDataGridViewTextBoxColumn.HeaderText = "nombreSucursal";
+            this.nombreSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreSucursalDataGridViewTextBoxColumn.Name = "nombreSucursalDataGridViewTextBoxColumn";
+            this.nombreSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreSucursalDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 128;
+            // 
+            // idPersonalAlmacenDataGridViewTextBoxColumn
+            // 
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idPersonalAlmacen";
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.HeaderText = "idPersonalAlmacen";
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.Name = "idPersonalAlmacenDataGridViewTextBoxColumn";
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.Width = 158;
+            // 
+            // almacenBindingSource
+            // 
+            this.almacenBindingSource.DataSource = typeof(Entidad.Almacen);
             // 
             // toolStripNavigation
             // 
@@ -202,6 +303,7 @@
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(24, 34);
             this.btnFirst.Text = "Primera página";
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
@@ -211,6 +313,7 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(24, 34);
             this.btnPrevious.Text = "Anterior página";
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // lblCurrentPage
             // 
@@ -219,6 +322,7 @@
             this.lblCurrentPage.Size = new System.Drawing.Size(40, 28);
             this.lblCurrentPage.Text = "1";
             this.lblCurrentPage.ToolTipText = "Página actual (enter)";
+            this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
             // 
             // toolStripButton2
             // 
@@ -247,6 +351,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(24, 34);
             this.btnNext.Text = "Siguiente página";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -256,6 +361,7 @@
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(24, 34);
             this.btnLast.Text = "Ultimo página";
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // toolStripButton1
             // 
@@ -274,6 +380,7 @@
             this.lblSpeedPages.Text = "50";
             this.lblSpeedPages.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lblSpeedPages.ToolTipText = "Cantidad de registros a mostrar (enter)";
+            this.lblSpeedPages.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblSpeedPages_KeyUp);
             // 
             // toolStripButton3
             // 
@@ -283,52 +390,6 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(70, 34);
             this.toolStripButton3.Text = "Registros";
-            // 
-            // toolStripTools
-            // 
-            this.toolStripTools.AutoSize = false;
-            this.toolStripTools.BackColor = System.Drawing.Color.White;
-            this.toolStripTools.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStripTools.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripTools.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton6,
-            this.textBuscar,
-            this.btnBuscar});
-            this.toolStripTools.Location = new System.Drawing.Point(1, 106);
-            this.toolStripTools.Name = "toolStripTools";
-            this.toolStripTools.Padding = new System.Windows.Forms.Padding(10);
-            this.toolStripTools.Size = new System.Drawing.Size(1171, 55);
-            this.toolStripTools.TabIndex = 18;
-            this.toolStripTools.Text = "toolStrip2";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(52, 32);
-            this.toolStripButton6.Text = "Buscar:";
-            // 
-            // textBuscar
-            // 
-            this.textBuscar.AutoSize = false;
-            this.textBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(399, 26);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(73, 32);
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.ToolTipText = "Buscar (Enter)";
             // 
             // toolStripCrud
             // 
@@ -341,10 +402,7 @@
             this.btnNuevo,
             this.btnModificar,
             this.btnAnular,
-            this.btnActualizar,
-            this.cbxPersonales,
-            this.cbxEstados,
-            this.btnConsultar});
+            this.btnActualizar});
             this.toolStripCrud.Location = new System.Drawing.Point(1, 51);
             this.toolStripCrud.Name = "toolStripCrud";
             this.toolStripCrud.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
@@ -363,6 +421,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNuevo.ToolTipText = "Agregar un nuevo registro (F3)";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -399,32 +458,27 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // cbxPersonales
+            // panelHeaderItem1
             // 
-            this.cbxPersonales.AutoSize = false;
-            this.cbxPersonales.BackColor = System.Drawing.Color.Gainsboro;
-            this.cbxPersonales.Name = "cbxPersonales";
-            this.cbxPersonales.Size = new System.Drawing.Size(200, 28);
+            this.panelHeaderItem1.Controls.Add(this.label1);
+            this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelHeaderItem1.Name = "panelHeaderItem1";
+            this.panelHeaderItem1.Size = new System.Drawing.Size(1171, 50);
+            this.panelHeaderItem1.TabIndex = 0;
             // 
-            // cbxEstados
+            // label1
             // 
-            this.cbxEstados.AutoSize = false;
-            this.cbxEstados.BackColor = System.Drawing.Color.Gainsboro;
-            this.cbxEstados.Name = "cbxEstados";
-            this.cbxEstados.Size = new System.Drawing.Size(200, 28);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.AutoSize = false;
-            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(79, 37);
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnConsultar.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(233, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MANTENIMIENTO ALMACEN";
             // 
             // UCAlmacenes
             // 
@@ -435,17 +489,17 @@
             this.Name = "UCAlmacenes";
             this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.Size = new System.Drawing.Size(1195, 697);
+            this.Load += new System.EventHandler(this.UCAlmacenes_Load);
             this.panelContainer.ResumeLayout(false);
-            this.panelHeaderItem1.ResumeLayout(false);
-            this.panelHeaderItem1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
             this.toolStripNavigation.ResumeLayout(false);
             this.toolStripNavigation.PerformLayout();
-            this.toolStripTools.ResumeLayout(false);
-            this.toolStripTools.PerformLayout();
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
+            this.panelHeaderItem1.ResumeLayout(false);
+            this.panelHeaderItem1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -470,17 +524,21 @@
         private System.Windows.Forms.ToolStripLabel toolStripButton1;
         private System.Windows.Forms.ToolStripTextBox lblSpeedPages;
         private System.Windows.Forms.ToolStripLabel toolStripButton3;
-        private System.Windows.Forms.ToolStrip toolStripTools;
-        private System.Windows.Forms.ToolStripLabel toolStripButton6;
-        private System.Windows.Forms.ToolStripTextBox textBuscar;
-        private System.Windows.Forms.ToolStripButton btnBuscar;
         private System.Windows.Forms.ToolStrip toolStripCrud;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnAnular;
         private System.Windows.Forms.ToolStripButton btnActualizar;
-        private System.Windows.Forms.ToolStripComboBox cbxPersonales;
-        private System.Windows.Forms.ToolStripComboBox cbxEstados;
-        private System.Windows.Forms.ToolStripButton btnConsultar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAlmacenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn principalDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacionGeograficaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tieneRegistrosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPersonalAlmacenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource almacenBindingSource;
     }
 }

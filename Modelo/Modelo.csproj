@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlmacenModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />

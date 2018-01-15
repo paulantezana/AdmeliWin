@@ -180,6 +180,7 @@ namespace Admeli.Compras
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
+                paginacion.currentPage = 1;
                 await cargarRegistros();
             }
         }

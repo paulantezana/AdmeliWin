@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Admeli.Almacen.Nuevo
+namespace Admeli.AlmacenBox.Nuevo
 {
-    public partial class FormGuiaSalidaNuevo : Form
+    public partial class FormNotaSalidaNuevo : Form
     {
-        public FormGuiaSalidaNuevo()
+        public FormNotaSalidaNuevo()
         {
             InitializeComponent();
         }

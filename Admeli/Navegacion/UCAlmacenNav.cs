@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Admeli.Componentes;
-using Admeli.Almacen;
+using Admeli.AlmacenBox;
 
 namespace Admeli.Navegacion
 {
@@ -50,7 +50,7 @@ namespace Admeli.Navegacion
             switch (panelName)
             {
                 case "guiaRemision":
-                    this.uCGuiaRemision = new Admeli.Almacen.UCGuiaRemision(this.formPrincipal);
+                    this.uCGuiaRemision = new Admeli.AlmacenBox.UCGuiaRemision(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCGuiaRemision);
                     this.uCGuiaRemision.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCGuiaRemision.Location = new System.Drawing.Point(0, 0);
@@ -59,7 +59,7 @@ namespace Admeli.Navegacion
                     this.uCGuiaRemision.TabIndex = 0;
                     break;
                 case "notaSalida":
-                    this.uCNotaSalida = new Admeli.Almacen.UCNotaSalida(this.formPrincipal);
+                    this.uCNotaSalida = new Admeli.AlmacenBox.UCNotaSalida(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCNotaSalida);
                     this.uCNotaSalida.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCNotaSalida.Location = new System.Drawing.Point(0, 0);
@@ -68,7 +68,7 @@ namespace Admeli.Navegacion
                     this.uCNotaSalida.TabIndex = 0;
                     break;
                 case "notaEntrada":
-                    this.uCNotaEntrada = new Admeli.Almacen.UCNotaEntrada(this.formPrincipal);
+                    this.uCNotaEntrada = new Admeli.AlmacenBox.UCNotaEntrada(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCNotaEntrada);
                     this.uCNotaEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCNotaEntrada.Location = new System.Drawing.Point(0, 0);

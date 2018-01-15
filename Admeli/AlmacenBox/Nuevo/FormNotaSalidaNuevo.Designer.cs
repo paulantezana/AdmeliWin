@@ -1,6 +1,6 @@
-﻿namespace Admeli.Almacen.Nuevo
+﻿namespace Admeli.AlmacenBox.Nuevo
 {
-    partial class FormGuiaSalidaNuevo
+    partial class FormNotaSalidaNuevo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FormGuiaSalidaNuevo
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 593);
-            this.Name = "FormGuiaSalidaNuevo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormGuiaSalidaNuevo";
-            this.ResumeLayout(false);
-
+            this.Text = "FormNotaSalidaNuevo";
         }
 
         #endregion

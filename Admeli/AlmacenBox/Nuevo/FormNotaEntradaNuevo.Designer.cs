@@ -1,4 +1,4 @@
-﻿namespace Admeli.Almacen.Nuevo
+﻿namespace Admeli.AlmacenBox.Nuevo
 {
     partial class FormNotaEntradaNuevo
     {

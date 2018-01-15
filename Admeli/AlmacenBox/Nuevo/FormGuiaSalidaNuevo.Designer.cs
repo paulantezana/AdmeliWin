@@ -1,6 +1,6 @@
-﻿namespace Admeli.Almacen.Nuevo
+﻿namespace Admeli.AlmacenBox.Nuevo
 {
-    partial class FormNotaSalidaNuevo
+    partial class FormGuiaSalidaNuevo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "FormNotaSalidaNuevo";
+            this.Text = "FormGuiaSalidaNuevo";
         }
 
         #endregion

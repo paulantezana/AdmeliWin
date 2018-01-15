@@ -72,40 +72,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Almacen\Nuevo\FormGuiaSalidaNuevo.cs">
+    <Compile Include="AlmacenBox\Nuevo\FormGuiaSalidaNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\Nuevo\FormGuiaSalidaNuevo.Designer.cs">
+    <Compile Include="AlmacenBox\Nuevo\FormGuiaSalidaNuevo.Designer.cs">
       <DependentUpon>FormGuiaSalidaNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\Nuevo\FormNotaEntradaNuevo.cs">
+    <Compile Include="AlmacenBox\Nuevo\FormNotaEntradaNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\Nuevo\FormNotaEntradaNuevo.Designer.cs">
+    <Compile Include="AlmacenBox\Nuevo\FormNotaEntradaNuevo.Designer.cs">
       <DependentUpon>FormNotaEntradaNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\Nuevo\FormNotaSalidaNuevo.cs">
+    <Compile Include="AlmacenBox\Nuevo\FormNotaSalidaNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\Nuevo\FormNotaSalidaNuevo.Designer.cs">
+    <Compile Include="AlmacenBox\Nuevo\FormNotaSalidaNuevo.Designer.cs">
       <DependentUpon>FormNotaSalidaNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\UCGuiaRemision.cs">
+    <Compile Include="AlmacenBox\UCGuiaRemision.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Almacen\UCGuiaRemision.Designer.cs">
+    <Compile Include="AlmacenBox\UCGuiaRemision.Designer.cs">
       <DependentUpon>UCGuiaRemision.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\UCNotaEntrada.cs">
+    <Compile Include="AlmacenBox\UCNotaEntrada.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Almacen\UCNotaEntrada.Designer.cs">
+    <Compile Include="AlmacenBox\UCNotaEntrada.Designer.cs">
       <DependentUpon>UCNotaEntrada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\UCNotaSalida.cs">
+    <Compile Include="AlmacenBox\UCNotaSalida.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Almacen\UCNotaSalida.Designer.cs">
+    <Compile Include="AlmacenBox\UCNotaSalida.Designer.cs">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
     </Compile>
     <Compile Include="Caja\UCCierreCaja.cs">
@@ -479,16 +479,13 @@
     <Compile Include="Ventas\UCVentas.Designer.cs">
       <DependentUpon>UCVentas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Almacen\Nuevo\FormGuiaSalidaNuevo.resx">
-      <DependentUpon>FormGuiaSalidaNuevo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\UCGuiaRemision.resx">
+    <EmbeddedResource Include="AlmacenBox\UCGuiaRemision.resx">
       <DependentUpon>UCGuiaRemision.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\UCNotaEntrada.resx">
+    <EmbeddedResource Include="AlmacenBox\UCNotaEntrada.resx">
       <DependentUpon>UCNotaEntrada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\UCNotaSalida.resx">
+    <EmbeddedResource Include="AlmacenBox\UCNotaSalida.resx">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\UCCierreCaja.resx">
@@ -685,6 +682,7 @@
       <DependentUpon>UCVentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.PuntoDeVenta.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />

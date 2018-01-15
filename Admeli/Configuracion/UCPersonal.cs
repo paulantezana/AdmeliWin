@@ -164,6 +164,7 @@ namespace Admeli.Configuracion
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
+                paginacion.currentPage = 1;
                 cargarRegistros();
             }
         }
