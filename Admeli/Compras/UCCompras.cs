@@ -18,8 +18,8 @@ namespace Admeli.Compras
     {
         /*
          * SERVICIOS QUE SE ESTAN CONSUMIENDO
-         *  http://www.lineatienda.com/services.php/listarpersonalcompras/sucursal/1
-         *  http://www.lineatienda.com/services.php/compras/sucursal/1/personal/0/estado/todos/1/100
+         *  www.lineatienda.com/services.php/listarpersonalcompras/sucursal/1
+         *  www.lineatienda.com/services.php/compras/sucursal/1/personal/0/estado/todos/1/100
          * */
 
         #region ===================== Metodos =====================
@@ -33,6 +33,8 @@ namespace Admeli.Compras
         public UCCompras()
         {
             InitializeComponent();
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
+
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
@@ -40,6 +42,8 @@ namespace Admeli.Compras
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
         #endregion
@@ -104,9 +108,6 @@ namespace Admeli.Compras
             cbxEstados.ComboBox.ValueMember = "idEstado";
             cbxEstados.ComboBox.SelectedIndex = 0;
 
-            // Cargando item por pagina a mostra desde las configuraciones generales
-            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();
-
             // Estado cargar en falso
             loadState(false);
         }
@@ -119,8 +120,7 @@ namespace Admeli.Compras
                 RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado( SucursalModel.sucursal.idSucursal,
                                                                                         Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue),
                                                                                         cbxEstados.ComboBox.SelectedValue.ToString(),
-                                                                                        paginacion.currentPage,
-                                                                                        paginacion.speed);
+                                                                                        paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = ordenCompra.nro_registros;
