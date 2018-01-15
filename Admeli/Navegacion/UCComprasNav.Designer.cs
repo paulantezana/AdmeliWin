@@ -47,17 +47,19 @@
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(250, 60);
+            this.panelHeader.Size = new System.Drawing.Size(188, 49);
             this.panelHeader.TabIndex = 6;
             this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 33);
+            this.label2.Location = new System.Drawing.Point(12, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 17);
+            this.label2.Size = new System.Drawing.Size(149, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Administración de las compras";
             // 
@@ -65,9 +67,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 15);
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.Size = new System.Drawing.Size(59, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Compras";
             // 
@@ -78,10 +81,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btnProveedores);
             this.flowLayoutPanel1.Controls.Add(this.btnCuentaPagar);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 49);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 597);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(188, 485);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnOredenCompra
@@ -93,11 +97,11 @@
             this.btnOredenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOredenCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnOredenCompra.Image")));
             this.btnOredenCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOredenCompra.Location = new System.Drawing.Point(0, 10);
+            this.btnOredenCompra.Location = new System.Drawing.Point(0, 8);
             this.btnOredenCompra.Margin = new System.Windows.Forms.Padding(0);
             this.btnOredenCompra.Name = "btnOredenCompra";
-            this.btnOredenCompra.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnOredenCompra.Size = new System.Drawing.Size(247, 50);
+            this.btnOredenCompra.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnOredenCompra.Size = new System.Drawing.Size(185, 41);
             this.btnOredenCompra.TabIndex = 2;
             this.btnOredenCompra.Text = " Orden de compra proveedor";
             this.btnOredenCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,11 +118,11 @@
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(0, 60);
+            this.btnCompras.Location = new System.Drawing.Point(0, 49);
             this.btnCompras.Margin = new System.Windows.Forms.Padding(0);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnCompras.Size = new System.Drawing.Size(247, 50);
+            this.btnCompras.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnCompras.Size = new System.Drawing.Size(185, 41);
             this.btnCompras.TabIndex = 3;
             this.btnCompras.Text = " Compras";
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,11 +139,11 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 110);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 90);
             this.btnProveedores.Margin = new System.Windows.Forms.Padding(0);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(247, 50);
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(185, 41);
             this.btnProveedores.TabIndex = 4;
             this.btnProveedores.Text = " Proveedores";
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,11 +160,11 @@
             this.btnCuentaPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCuentaPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentaPagar.Image")));
             this.btnCuentaPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCuentaPagar.Location = new System.Drawing.Point(0, 160);
+            this.btnCuentaPagar.Location = new System.Drawing.Point(0, 131);
             this.btnCuentaPagar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCuentaPagar.Name = "btnCuentaPagar";
-            this.btnCuentaPagar.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnCuentaPagar.Size = new System.Drawing.Size(247, 50);
+            this.btnCuentaPagar.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnCuentaPagar.Size = new System.Drawing.Size(185, 41);
             this.btnCuentaPagar.TabIndex = 5;
             this.btnCuentaPagar.Text = " Cuentas por pagar";
             this.btnCuentaPagar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,13 +174,14 @@
             // 
             // UCComprasNav
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelHeader);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCComprasNav";
-            this.Size = new System.Drawing.Size(250, 657);
+            this.Size = new System.Drawing.Size(188, 534);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

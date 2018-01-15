@@ -67,17 +67,19 @@
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(250, 60);
+            this.panelHeader.Size = new System.Drawing.Size(188, 49);
             this.panelHeader.TabIndex = 6;
             this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 33);
+            this.label2.Location = new System.Drawing.Point(12, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 17);
+            this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Configuración del sistema";
             // 
@@ -85,9 +87,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 15);
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 18);
+            this.label1.Size = new System.Drawing.Size(86, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Configuración";
             // 
@@ -102,10 +105,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCajaInicializada);
             this.flowLayoutPanel1.Controls.Add(this.btnImpuestoDocumento);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 49);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 423);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(188, 344);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDatoEmpresa
@@ -117,11 +121,11 @@
             this.btnDatoEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btnDatoEmpresa.Image")));
             this.btnDatoEmpresa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatoEmpresa.Location = new System.Drawing.Point(0, 10);
+            this.btnDatoEmpresa.Location = new System.Drawing.Point(0, 8);
             this.btnDatoEmpresa.Margin = new System.Windows.Forms.Padding(0);
             this.btnDatoEmpresa.Name = "btnDatoEmpresa";
-            this.btnDatoEmpresa.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnDatoEmpresa.Size = new System.Drawing.Size(247, 50);
+            this.btnDatoEmpresa.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnDatoEmpresa.Size = new System.Drawing.Size(185, 41);
             this.btnDatoEmpresa.TabIndex = 2;
             this.btnDatoEmpresa.Text = " Datos empresa";
             this.btnDatoEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,11 +142,11 @@
             this.btnSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSucursales.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursales.Image")));
             this.btnSucursales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSucursales.Location = new System.Drawing.Point(0, 60);
+            this.btnSucursales.Location = new System.Drawing.Point(0, 49);
             this.btnSucursales.Margin = new System.Windows.Forms.Padding(0);
             this.btnSucursales.Name = "btnSucursales";
-            this.btnSucursales.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnSucursales.Size = new System.Drawing.Size(247, 50);
+            this.btnSucursales.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnSucursales.Size = new System.Drawing.Size(185, 41);
             this.btnSucursales.TabIndex = 3;
             this.btnSucursales.Text = " Sucursales";
             this.btnSucursales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,11 +163,11 @@
             this.btnDocumentoIdentificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDocumentoIdentificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDocumentoIdentificacion.Image")));
             this.btnDocumentoIdentificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocumentoIdentificacion.Location = new System.Drawing.Point(0, 110);
+            this.btnDocumentoIdentificacion.Location = new System.Drawing.Point(0, 90);
             this.btnDocumentoIdentificacion.Margin = new System.Windows.Forms.Padding(0);
             this.btnDocumentoIdentificacion.Name = "btnDocumentoIdentificacion";
-            this.btnDocumentoIdentificacion.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnDocumentoIdentificacion.Size = new System.Drawing.Size(247, 50);
+            this.btnDocumentoIdentificacion.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnDocumentoIdentificacion.Size = new System.Drawing.Size(185, 41);
             this.btnDocumentoIdentificacion.TabIndex = 4;
             this.btnDocumentoIdentificacion.Text = " Documentos de identificación";
             this.btnDocumentoIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,11 +184,11 @@
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonal.Image")));
             this.btnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonal.Location = new System.Drawing.Point(0, 160);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 131);
             this.btnPersonal.Margin = new System.Windows.Forms.Padding(0);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnPersonal.Size = new System.Drawing.Size(247, 50);
+            this.btnPersonal.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnPersonal.Size = new System.Drawing.Size(185, 41);
             this.btnPersonal.TabIndex = 5;
             this.btnPersonal.Text = " Personal";
             this.btnPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -201,11 +205,11 @@
             this.btnImpuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImpuestos.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuestos.Image")));
             this.btnImpuestos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpuestos.Location = new System.Drawing.Point(0, 210);
+            this.btnImpuestos.Location = new System.Drawing.Point(0, 172);
             this.btnImpuestos.Margin = new System.Windows.Forms.Padding(0);
             this.btnImpuestos.Name = "btnImpuestos";
-            this.btnImpuestos.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnImpuestos.Size = new System.Drawing.Size(247, 50);
+            this.btnImpuestos.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnImpuestos.Size = new System.Drawing.Size(185, 41);
             this.btnImpuestos.TabIndex = 7;
             this.btnImpuestos.Text = " Impuestos";
             this.btnImpuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -222,11 +226,11 @@
             this.btnGrupoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrupoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupoCliente.Image")));
             this.btnGrupoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrupoCliente.Location = new System.Drawing.Point(0, 260);
+            this.btnGrupoCliente.Location = new System.Drawing.Point(0, 213);
             this.btnGrupoCliente.Margin = new System.Windows.Forms.Padding(0);
             this.btnGrupoCliente.Name = "btnGrupoCliente";
-            this.btnGrupoCliente.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnGrupoCliente.Size = new System.Drawing.Size(247, 50);
+            this.btnGrupoCliente.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnGrupoCliente.Size = new System.Drawing.Size(185, 41);
             this.btnGrupoCliente.TabIndex = 8;
             this.btnGrupoCliente.Text = " Grupo clientes";
             this.btnGrupoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,11 +247,11 @@
             this.btnCajaInicializada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCajaInicializada.Image = ((System.Drawing.Image)(resources.GetObject("btnCajaInicializada.Image")));
             this.btnCajaInicializada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCajaInicializada.Location = new System.Drawing.Point(0, 310);
+            this.btnCajaInicializada.Location = new System.Drawing.Point(0, 254);
             this.btnCajaInicializada.Margin = new System.Windows.Forms.Padding(0);
             this.btnCajaInicializada.Name = "btnCajaInicializada";
-            this.btnCajaInicializada.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnCajaInicializada.Size = new System.Drawing.Size(247, 50);
+            this.btnCajaInicializada.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnCajaInicializada.Size = new System.Drawing.Size(185, 41);
             this.btnCajaInicializada.TabIndex = 9;
             this.btnCajaInicializada.Text = " Cajas inizializadas";
             this.btnCajaInicializada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,11 +268,11 @@
             this.btnImpuestoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImpuestoDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuestoDocumento.Image")));
             this.btnImpuestoDocumento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpuestoDocumento.Location = new System.Drawing.Point(0, 360);
+            this.btnImpuestoDocumento.Location = new System.Drawing.Point(0, 295);
             this.btnImpuestoDocumento.Margin = new System.Windows.Forms.Padding(0);
             this.btnImpuestoDocumento.Name = "btnImpuestoDocumento";
-            this.btnImpuestoDocumento.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnImpuestoDocumento.Size = new System.Drawing.Size(247, 50);
+            this.btnImpuestoDocumento.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnImpuestoDocumento.Size = new System.Drawing.Size(185, 41);
             this.btnImpuestoDocumento.TabIndex = 10;
             this.btnImpuestoDocumento.Text = " Impuesto documento";
             this.btnImpuestoDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,18 +284,20 @@
             // 
             this.panelDivide1.Controls.Add(this.label3);
             this.panelDivide1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDivide1.Location = new System.Drawing.Point(0, 483);
+            this.panelDivide1.Location = new System.Drawing.Point(0, 393);
+            this.panelDivide1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDivide1.Name = "panelDivide1";
-            this.panelDivide1.Size = new System.Drawing.Size(250, 47);
+            this.panelDivide1.Size = new System.Drawing.Size(188, 38);
             this.panelDivide1.TabIndex = 8;
             this.panelDivide1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDivide_Paint);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 15);
+            this.label3.Location = new System.Drawing.Point(12, 12);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 17);
+            this.label3.Size = new System.Drawing.Size(126, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Documentos comerciales";
             // 
@@ -301,10 +307,11 @@
             this.flowLayoutPanel2.Controls.Add(this.btnAsignarCorrelativo);
             this.flowLayoutPanel2.Controls.Add(this.btnDisenoPersonalizacion);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 530);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 431);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(250, 169);
+            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(188, 137);
             this.flowLayoutPanel2.TabIndex = 9;
             // 
             // btnListadoDocumento
@@ -316,11 +323,11 @@
             this.btnListadoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListadoDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoDocumento.Image")));
             this.btnListadoDocumento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoDocumento.Location = new System.Drawing.Point(0, 10);
+            this.btnListadoDocumento.Location = new System.Drawing.Point(0, 8);
             this.btnListadoDocumento.Margin = new System.Windows.Forms.Padding(0);
             this.btnListadoDocumento.Name = "btnListadoDocumento";
-            this.btnListadoDocumento.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnListadoDocumento.Size = new System.Drawing.Size(247, 50);
+            this.btnListadoDocumento.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnListadoDocumento.Size = new System.Drawing.Size(185, 41);
             this.btnListadoDocumento.TabIndex = 2;
             this.btnListadoDocumento.Text = " Listado documentos";
             this.btnListadoDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -337,11 +344,11 @@
             this.btnAsignarCorrelativo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarCorrelativo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarCorrelativo.Image")));
             this.btnAsignarCorrelativo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarCorrelativo.Location = new System.Drawing.Point(0, 60);
+            this.btnAsignarCorrelativo.Location = new System.Drawing.Point(0, 49);
             this.btnAsignarCorrelativo.Margin = new System.Windows.Forms.Padding(0);
             this.btnAsignarCorrelativo.Name = "btnAsignarCorrelativo";
-            this.btnAsignarCorrelativo.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnAsignarCorrelativo.Size = new System.Drawing.Size(247, 50);
+            this.btnAsignarCorrelativo.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnAsignarCorrelativo.Size = new System.Drawing.Size(185, 41);
             this.btnAsignarCorrelativo.TabIndex = 3;
             this.btnAsignarCorrelativo.Text = " Asignar correlativos";
             this.btnAsignarCorrelativo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -358,11 +365,11 @@
             this.btnDisenoPersonalizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisenoPersonalizacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDisenoPersonalizacion.Image")));
             this.btnDisenoPersonalizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDisenoPersonalizacion.Location = new System.Drawing.Point(0, 110);
+            this.btnDisenoPersonalizacion.Location = new System.Drawing.Point(0, 90);
             this.btnDisenoPersonalizacion.Margin = new System.Windows.Forms.Padding(0);
             this.btnDisenoPersonalizacion.Name = "btnDisenoPersonalizacion";
-            this.btnDisenoPersonalizacion.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnDisenoPersonalizacion.Size = new System.Drawing.Size(247, 50);
+            this.btnDisenoPersonalizacion.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnDisenoPersonalizacion.Size = new System.Drawing.Size(185, 41);
             this.btnDisenoPersonalizacion.TabIndex = 4;
             this.btnDisenoPersonalizacion.Text = " Diseño y personalizacion";
             this.btnDisenoPersonalizacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,10 +383,11 @@
             this.flowLayoutPanel3.Controls.Add(this.btnTipoCambio);
             this.flowLayoutPanel3.Controls.Add(this.btnDenominaciones);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 746);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 606);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(250, 170);
+            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(188, 138);
             this.flowLayoutPanel3.TabIndex = 11;
             // 
             // btnListadoMoneda
@@ -391,11 +399,11 @@
             this.btnListadoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListadoMoneda.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoMoneda.Image")));
             this.btnListadoMoneda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoMoneda.Location = new System.Drawing.Point(0, 10);
+            this.btnListadoMoneda.Location = new System.Drawing.Point(0, 8);
             this.btnListadoMoneda.Margin = new System.Windows.Forms.Padding(0);
             this.btnListadoMoneda.Name = "btnListadoMoneda";
-            this.btnListadoMoneda.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnListadoMoneda.Size = new System.Drawing.Size(247, 50);
+            this.btnListadoMoneda.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnListadoMoneda.Size = new System.Drawing.Size(185, 41);
             this.btnListadoMoneda.TabIndex = 2;
             this.btnListadoMoneda.Text = " Listado de monedas";
             this.btnListadoMoneda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -412,11 +420,11 @@
             this.btnTipoCambio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoCambio.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoCambio.Image")));
             this.btnTipoCambio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTipoCambio.Location = new System.Drawing.Point(0, 60);
+            this.btnTipoCambio.Location = new System.Drawing.Point(0, 49);
             this.btnTipoCambio.Margin = new System.Windows.Forms.Padding(0);
             this.btnTipoCambio.Name = "btnTipoCambio";
-            this.btnTipoCambio.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnTipoCambio.Size = new System.Drawing.Size(247, 50);
+            this.btnTipoCambio.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnTipoCambio.Size = new System.Drawing.Size(185, 41);
             this.btnTipoCambio.TabIndex = 3;
             this.btnTipoCambio.Text = " Tipo cambio";
             this.btnTipoCambio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -433,11 +441,11 @@
             this.btnDenominaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDenominaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnDenominaciones.Image")));
             this.btnDenominaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDenominaciones.Location = new System.Drawing.Point(0, 110);
+            this.btnDenominaciones.Location = new System.Drawing.Point(0, 90);
             this.btnDenominaciones.Margin = new System.Windows.Forms.Padding(0);
             this.btnDenominaciones.Name = "btnDenominaciones";
-            this.btnDenominaciones.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnDenominaciones.Size = new System.Drawing.Size(247, 50);
+            this.btnDenominaciones.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnDenominaciones.Size = new System.Drawing.Size(185, 41);
             this.btnDenominaciones.TabIndex = 4;
             this.btnDenominaciones.Text = " Denominciones";
             this.btnDenominaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -449,35 +457,38 @@
             // 
             this.panelDivide2.Controls.Add(this.label4);
             this.panelDivide2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDivide2.Location = new System.Drawing.Point(0, 699);
+            this.panelDivide2.Location = new System.Drawing.Point(0, 568);
+            this.panelDivide2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDivide2.Name = "panelDivide2";
-            this.panelDivide2.Size = new System.Drawing.Size(250, 47);
+            this.panelDivide2.Size = new System.Drawing.Size(188, 38);
             this.panelDivide2.TabIndex = 10;
             this.panelDivide2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDivide2_Paint);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 15);
+            this.label4.Location = new System.Drawing.Point(12, 12);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 17);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Monedas";
             // 
             // UCConfigNav
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.panelDivide2);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panelDivide1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelHeader);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCConfigNav";
-            this.Size = new System.Drawing.Size(250, 1189);
+            this.Size = new System.Drawing.Size(188, 966);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
