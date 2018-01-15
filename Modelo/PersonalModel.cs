@@ -24,29 +24,12 @@ namespace Modelo
         {
             try
             {
-                object[,] variables = new object[,] { { "usuario", usuario }, { "password", password } };
-                dynamic result = await webService.JsonMetodoPost("personal", "buscar", variables);
+                Personal personal = new Personal();
+                personal.usuario = usuario;
+                personal.password = password;
 
-                if (result != null)
-                {
-                    if (result.Count == 0) throw new Exception("Usuario o contraseña incorrectos");
-                }
-
-                Personal user = new Personal();
-                user.idPersonal = result[0].idPersonal;
-                user.nombres = result[0].nombres;
-                user.apellidos = result[0].apellidos;
-                user.tipoDocumento = result[0].tipoDocumento;
-                user.numeroDocumento = result[0].numeroDocumento;
-                user.sexo = result[0].sexo;
-                user.email = result[0].email;
-                user.telefono = result[0].telefono;
-                user.celular = result[0].celular;
-                user.direccion = result[0].direccion;
-                user.estado = result[0].estado;
-                user.idDocumento = result[0].idDocumento;
-                user.usuario = result[0].usuario;
-                PersonalModel.personal = user;
+                List<Personal> user =  await  webService.POSTList<Personal>("personal", "buscar", personal);
+                PersonalModel.personal = user[0];
             }
             catch (Exception ex)
             {
@@ -73,7 +56,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<Personal> personales = await webService.Get<Personal>("personales", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Personal> personales = await webService.GETRoot<Personal>("personales", String.Format("estado/{0}/{1}", page, items));
                 return personales;
             }
             catch (Exception ex)
@@ -85,7 +68,7 @@ namespace Modelo
         {
             try
             {
-                List<Personal> list = await webService.getLis<Personal>("listarpersonalcompras", String.Format("sucursal/{0}",idSucursal));
+                List<Personal> list = await webService.GETLis<Personal>("listarpersonalcompras", String.Format("sucursal/{0}",idSucursal));
                 return list;
             }
             catch (Exception ex)

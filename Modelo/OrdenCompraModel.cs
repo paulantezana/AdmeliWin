@@ -32,7 +32,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<OrdenCompra> ordenCompra = await webService.Get<OrdenCompra>("ocompras", String.Format("suc/{0}/per/{1}/{2}/{3}", idSucursal, idPersonal, page, items));
+                RootObject<OrdenCompra> ordenCompra = await webService.GETRoot<OrdenCompra>("ocompras", String.Format("suc/{0}/per/{1}/{2}/{3}", idSucursal, idPersonal, page, items));
                 return ordenCompra;
             }
             catch (Exception ex)

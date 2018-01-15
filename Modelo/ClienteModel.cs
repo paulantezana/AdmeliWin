@@ -28,7 +28,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<Cliente> clientes = await webService.Get<Cliente>("clientes", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Cliente> clientes = await webService.GETRoot<Cliente>("clientes", String.Format("estado/{0}/{1}", page, items));
                 return clientes;
             }
             catch (Exception ex)

@@ -28,7 +28,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<Compra> ordenCompra = await webService.Get<Compra>("compras", String.Format("sucursal/{0}/personal/{1}/estado/{2}/{3}/{4}", idSucursal,idPersonal,idEstado, page, items));
+                RootObject<Compra> ordenCompra = await webService.GETRoot<Compra>("compras", String.Format("sucursal/{0}/personal/{1}/estado/{2}/{3}/{4}", idSucursal,idPersonal,idEstado, page, items));
                 return ordenCompra;
             }
             catch (Exception ex)

@@ -31,7 +31,7 @@ namespace Modelo
         {
             try
             {
-                List<Sucursal> listSucursal = await webService.getLis<Sucursal>("sucursalespersonal", idPersonal.ToString());
+                List<Sucursal> listSucursal = await webService.GETLis<Sucursal>("sucursalespersonal", idPersonal.ToString());
                 SucursalModel.sucursal = listSucursal[0];
             }
             catch (Exception ex)
