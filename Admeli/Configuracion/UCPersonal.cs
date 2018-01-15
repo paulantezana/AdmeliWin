@@ -20,43 +20,47 @@ namespace Admeli.Configuracion
         private Paginacion paginacion;
         private FormPrincipal formPrincipal;
 
+        #region ========================== Constructor ==========================
         public UCPersonal()
         {
             InitializeComponent();
-            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSteepPages.Text));
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
         public UCPersonal(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
+        #endregion
 
+        #region ======================= Load Root =======================
         private void UCPersonal_Load(object sender, EventArgs e)
         {
+            cargarComponentes();
             cargarRegistros();
-        }
+        } 
+        #endregion
 
-        private void loadState(bool state)
+        #region ======================= Paint =======================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
-            toolStripNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
-            dataGridView.Enabled = !state;
-        }
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        } 
+        #endregion
 
-        private void mostrarPaginado()
+        #region ======================= Loads =======================
+        private async void cargarComponentes()
         {
-            // Cargando el combobox
-            lblCurrentPage.Items.Clear();
-            for (int i = 1; i <= paginacion.pageCount; i++)
-            {
-               lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
-            }
-            lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
+            // Cargando el combobox de personales
+            // loadState(true);
 
-            // Paginados
-            lblPageAllItems.Text = paginacion.itemsCount.ToString();
-            lblPageCount.Text = paginacion.pageCount.ToString();
+            // Estado cargar en falso
+            // loadState(false);
         }
 
         private async void cargarRegistros()
@@ -64,38 +68,18 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                
-                RootObject<Personal>  personales = await personalModel.listar(paginacion.currentPage.ToString(), paginacion.speed.ToString());
 
-                // Enviando la cantidad de registros al objeto paginacion
-                paginacion.itemsCount = personales.nro_registros;
+                //int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
+                //string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
+
+                RootObject<Personal> personal = await personalModel.listar(paginacion.currentPage, paginacion.speed);
+
+                // actualizando datos de páginacón
+                paginacion.itemsCount = personal.nro_registros;
                 paginacion.reload();
-                
-               /* List<Personal> listPersonal = new List<Personal>();
-                foreach (var item in response.datos)
-                {
-                    Personal personal = new Personal();
-                    personal.idPersonal = item.idPersonal;
-                    personal.nombres = item.nombres;
-                    personal.apellidos = item.apellidos;
-                    personal.fechaNacimiento = item.fechaNacimiento.date;
-                    personal.tipoDocumento = item.tipoDocumento;
-                    personal.numeroDocumento = item.numeroDocumento;
-                    personal.sexo = item.sexo;
-                    personal.email = item.email;
-                    personal.telefono = item.telefono;
-                    personal.celular = item.celular;
-                    personal.usuario = item.usuario;
-                    personal.password = item.password;
-                    personal.direccion = item.direccion;
-                    personal.estado = item.estado;
-                    personal.idUbicacionGeografica = item.idUbicacionGeografica;
-                    personal.idDocumento = item.idDocumento;
 
-                    listPersonal.Add(personal);
-                }*/
-                // JsonConvert.DeserializeObject<List<Personal>>(response.datos);
-                personalBindingSource.DataSource = personales.datos;
+                // Ingresando
+                personalBindingSource.DataSource = personal.datos;
                 dataGridView.Refresh();
                 mostrarPaginado();
             }
@@ -108,30 +92,33 @@ namespace Admeli.Configuracion
                 loadState(false);
             }
         }
+        #endregion
 
-        private void dataGridView_SortStringChanged(object sender, EventArgs e)
+        #region =========================== Estados ===========================
+        private void loadState(bool state)
         {
-            this.personalBindingSource.Sort = this.dataGridView.SortString;
+            formPrincipal.appLoadState(state);
+            toolStripNavigation.Enabled = !state;
+            toolStripCrud.Enabled = !state;
+            toolStripTools.Enabled = !state;
+            dataGridView.Enabled = !state;
         }
+        #endregion
 
-        private void dataGridView_FilterStringChanged(object sender, EventArgs e)
+        #region ===================== Eventos Páginación =====================
+        private void mostrarPaginado()
         {
-            this.personalBindingSource.Filter = this.dataGridView.FilterString;
-        }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer);
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (lblPageCount.Text != lblCurrentPage.Text)
+            // Cargando el combobox
+            lblCurrentPage.Items.Clear();
+            for (int i = 1; i <= paginacion.pageCount; i++)
             {
-                paginacion.nextPage();
-                cargarRegistros();
+                lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
             }
+            if (paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
+
+            // Paginados
+            lblPageAllItems.Text = paginacion.itemsCount.ToString();
+            lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -152,8 +139,19 @@ namespace Admeli.Configuracion
             }
         }
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (lblPageCount.Text == "0") return;
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.nextPage();
+                cargarRegistros();
+            }
+        }
+
         private void btnLast_Click(object sender, EventArgs e)
         {
+            if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.lastPage();
@@ -161,11 +159,11 @@ namespace Admeli.Configuracion
             }
         }
 
-        private void lblSteepPages_KeyUp(object sender, KeyEventArgs e)
+        private void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                paginacion.speed = Convert.ToInt32(lblSteepPages.Text);
+                paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
                 cargarRegistros();
             }
         }
@@ -178,5 +176,19 @@ namespace Admeli.Configuracion
                 cargarRegistros();
             }
         }
+        #endregion
+
+        #region ==================== CRUD ====================
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
+            comprarNuevo.ShowDialog();*/
+        }
+        #endregion
+
     }
 }

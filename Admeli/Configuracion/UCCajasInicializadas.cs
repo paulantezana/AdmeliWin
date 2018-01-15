@@ -19,6 +19,7 @@ namespace Admeli.Configuracion
 
         public UCCajasInicializadas(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
         }
     }
 }

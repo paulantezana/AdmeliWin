@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCImpuestoDocumento(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

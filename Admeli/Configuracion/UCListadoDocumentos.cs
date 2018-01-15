@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCListadoDocumentos(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

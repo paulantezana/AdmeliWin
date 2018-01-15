@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCDocumentoIdentificacion(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

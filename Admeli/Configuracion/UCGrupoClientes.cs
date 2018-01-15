@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCGrupoClientes(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

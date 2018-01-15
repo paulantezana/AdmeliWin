@@ -7,37 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Admeli.Componentes;
-using Admeli.Compras.Nuevo;
-using Entidad;
 using Modelo;
+using Admeli.Componentes;
+using Entidad;
+using Entidad.Configuracion;
 
-namespace Admeli.Compras
+namespace Admeli.Configuracion
 {
-    public partial class UCCompras : UserControl
+    public partial class UCPuntoDeVenta : UserControl
     {
-        /*
-         * SERVICIOS QUE SE ESTAN CONSUMIENDO
-         *  www.lineatienda.com/services.php/listarpersonalcompras/sucursal/1
-         *  www.lineatienda.com/services.php/compras/sucursal/1/personal/0/estado/todos/1/100
-         * */
-
-        #region ===================== Metodos =====================
-        private CompraModel compraModel = new CompraModel();
-        private PersonalModel personalModel = new PersonalModel();
+        private FormPrincipal formPrincipal;
         private Paginacion paginacion;
-        private FormPrincipal formPrincipal; 
-        #endregion
+        private PuntoVentaModel puntoVentaModel = new PuntoVentaModel();
+        private SucursalModel sucursalModel = new SucursalModel();
 
-        #region ========================== Constructor ==========================
-        public UCCompras()
+        public UCPuntoDeVenta()
         {
             InitializeComponent();
+
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
-        public UCCompras(FormPrincipal formPrincipal)
+        public UCPuntoDeVenta(FormPrincipal formPrincipal)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
@@ -45,24 +37,12 @@ namespace Admeli.Compras
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
-        #endregion
 
-        #region ======================= Paint =======================
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer);
-        }
-        #endregion
-
-        #region ============================= root load =============================
-        private void UCCompras_Load(object sender, EventArgs e)
+        private void UCPuntoDeVenta_Load(object sender, EventArgs e)
         {
             cargarComponentes();
             cargarRegistros();
-            decorationDataGridView();
-        } 
-        #endregion
+        }
 
         #region =========================== Decoration ===========================
         private void decorationDataGridView()
@@ -73,7 +53,7 @@ namespace Admeli.Compras
                 var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
                 dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
             }*/
-        } 
+        }
         #endregion
 
         #region ======================= Loads =======================
@@ -97,10 +77,10 @@ namespace Admeli.Compras
             loadState(true);
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(SucursalModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
+                cbxSucursales.ComboBox.DisplayMember = "nombre";
+                cbxSucursales.ComboBox.ValueMember = "idSucursal";
+                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
             }
             catch (Exception ex)
             {
@@ -117,17 +97,17 @@ namespace Admeli.Compras
             try
             {
 
-                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
+                int sucursaId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
 
-                RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado(SucursalModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<PuntoDeVenta> puntoVenta = await puntoVentaModel.puntoventas(SucursalModel.sucursal.idSucursal, estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ordenCompra.nro_registros;
+                paginacion.itemsCount = puntoVenta.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                compraBindingSource.DataSource = ordenCompra.datos;
+                puntoDeVentaBindingSource.DataSource = puntoVenta.datos;
                 dataGridView.Refresh();
                 mostrarPaginado();
             }
@@ -148,7 +128,6 @@ namespace Admeli.Compras
             formPrincipal.appLoadState(state);
             toolStripNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion
@@ -162,7 +141,7 @@ namespace Admeli.Compras
             {
                 lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
             }
-            if(paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
+            if (paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
 
             // Paginados
             lblPageAllItems.Text = paginacion.itemsCount.ToString();
@@ -238,9 +217,9 @@ namespace Admeli.Compras
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();
-        } 
+            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
+            comprarNuevo.ShowDialog();*/
+        }
         #endregion
     }
 }

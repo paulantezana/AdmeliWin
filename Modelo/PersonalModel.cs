@@ -52,7 +52,7 @@ namespace Modelo
         {
 
         }
-        public async Task<RootObject<Personal>> listar(string page, string items)
+        public async Task<RootObject<Personal>> listar(int page, int items)
         {
             try
             {

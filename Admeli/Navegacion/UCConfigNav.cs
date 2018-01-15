@@ -29,6 +29,7 @@ namespace Admeli.Navegacion
         private UCListadoMoneda uCListadoMoneda;
         private UCPersonal uCPersonal;
         private UCSucursales uCSucursales;
+        private UCPuntoDeVenta uCPuntoDeVenta;
         private UCTipoCambio uCTipoCambio;
 
         private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
@@ -98,7 +99,7 @@ namespace Admeli.Navegacion
                     this.uCCajasInicializadas.TabIndex = 0;
                     break;
                 case "datosEmpresa":
-                    this.uCDatosEmpresa = new Admeli.Configuracion.UCDatosEmpresa();
+                    this.uCDatosEmpresa = new Admeli.Configuracion.UCDatosEmpresa(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCDatosEmpresa);
                     this.uCDatosEmpresa.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCDatosEmpresa.Location = new System.Drawing.Point(0, 0);
@@ -152,7 +153,7 @@ namespace Admeli.Navegacion
                     this.uCImpuestoDocumento.TabIndex = 0;
                     break;
                 case "impuestos":
-                    this.uCImpuestos = new Admeli.Configuracion.UCImpuestos();
+                    this.uCImpuestos = new Admeli.Configuracion.UCImpuestos(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCImpuestos);
                     this.uCImpuestos.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCImpuestos.Location = new System.Drawing.Point(0, 0);
@@ -187,6 +188,7 @@ namespace Admeli.Navegacion
                     this.uCPersonal.Size = new System.Drawing.Size(250, 776);
                     this.uCPersonal.TabIndex = 0;
                     break;
+                    
                 case "sucursales":
                     this.uCSucursales = new Admeli.Configuracion.UCSucursales(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCSucursales);
@@ -195,6 +197,15 @@ namespace Admeli.Navegacion
                     this.uCSucursales.Name = "uCSucursales";
                     this.uCSucursales.Size = new System.Drawing.Size(250, 776);
                     this.uCSucursales.TabIndex = 0;
+                    break;
+                case "puntodeventa":
+                    this.uCPuntoDeVenta = new Admeli.Configuracion.UCPuntoDeVenta(this.formPrincipal);
+                    this.formPrincipal.panelMain.Controls.Add(uCPuntoDeVenta);
+                    this.uCPuntoDeVenta.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.uCPuntoDeVenta.Location = new System.Drawing.Point(0, 0);
+                    this.uCPuntoDeVenta.Name = "uCPuntoDeVenta";
+                    this.uCPuntoDeVenta.Size = new System.Drawing.Size(250, 776);
+                    this.uCPuntoDeVenta.TabIndex = 0;
                     break;
                 case "tipoCambio":
                     this.uCTipoCambio = new Admeli.Configuracion.UCTipoCambio(this.formPrincipal);
@@ -310,6 +321,18 @@ namespace Admeli.Navegacion
         {
             togglePanelMain("documentoIdentificacion");
             btnDocumentoIdentificacion.BackColor = this.colorActive;
+        }
+
+        private void btnPuntoVenta_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("puntodeventa");
+            btnPuntoVenta.BackColor = this.colorActive;
+        }
+
+        private void btnAlmacenes_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("alamacenes");
+            btnAlmacenes.BackColor = this.colorActive;
         }
     }
 }

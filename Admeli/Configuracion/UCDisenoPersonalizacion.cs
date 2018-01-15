@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCDisenoPersonalizacion(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

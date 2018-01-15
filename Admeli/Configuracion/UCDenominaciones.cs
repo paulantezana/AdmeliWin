@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCDenominaciones(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

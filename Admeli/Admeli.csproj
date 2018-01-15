@@ -261,6 +261,12 @@
     <Compile Include="Configuracion\UCPersonal.Designer.cs">
       <DependentUpon>UCPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\UCPuntoDeVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuracion\UCPuntoDeVenta.Designer.cs">
+      <DependentUpon>UCPuntoDeVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\UCSucursales.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -560,6 +566,9 @@
     <EmbeddedResource Include="Configuracion\UCPersonal.resx">
       <DependentUpon>UCPersonal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\UCPuntoDeVenta.resx">
+      <DependentUpon>UCPuntoDeVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\UCSucursales.resx">
       <DependentUpon>UCSucursales.cs</DependentUpon>
     </EmbeddedResource>
@@ -677,9 +686,11 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />
+    <None Include="Properties\DataSources\Entidad.Configuracion.PuntoDeVenta.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />
+    <None Include="Properties\DataSources\Entidad.Sucursal.datasource" />
     <None Include="Properties\DataSources\Modelo.PersonalModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

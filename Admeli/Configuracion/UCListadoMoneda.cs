@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCListadoMoneda(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

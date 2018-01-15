@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCTipoCambio(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }

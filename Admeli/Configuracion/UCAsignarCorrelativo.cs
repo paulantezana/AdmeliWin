@@ -21,6 +21,7 @@ namespace Admeli.Configuracion
 
         public UCAsignarCorrelativo(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
     }
