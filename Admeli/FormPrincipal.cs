@@ -26,6 +26,7 @@ namespace Admeli
         private UCConfigNav uCConfigNav;
         private UCHerramientasNav uCHerramientasNav;
         private UCProductosNav uCProductosNav;
+        private UCHomeNav uCHomeNav;
 
         private UCVentas uCVentas;
         private UCListadoProducto uCListadoProducto;
@@ -137,40 +138,18 @@ namespace Admeli
                     this.uCHerramientasNav.Size = new System.Drawing.Size(250, 776);
                     this.uCHerramientasNav.TabIndex = 0;
                     break;
+                case "home":
+                    this.uCHomeNav = new Admeli.Navegacion.UCHomeNav(this);
+                    this.panelAsideMain.Controls.Add(uCHomeNav);
+                    this.uCHomeNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.uCHomeNav.Location = new System.Drawing.Point(0, 0);
+                    this.uCHomeNav.Name = "uCHomeNav";
+                    this.uCHomeNav.Size = new System.Drawing.Size(250, 776);
+                    this.uCHomeNav.TabIndex = 0;
+                    break;
                 default:
                     break;
             }
-        }
-
-        public void toggleHome()
-        {
-            this.panelMain.Controls.Clear();
-
-            // Mostar Panel Home
-            this.uCHome = new Admeli.UCHome();
-            this.panelMain.Controls.Add(uCHome);
-            this.uCHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uCHome.Location = new System.Drawing.Point(0, 0);
-            this.uCHome.Name = "uCHome";
-            this.uCHome.Size = new System.Drawing.Size(250, 776);
-            this.uCHome.TabIndex = 0;
-
-            // mostrar panel lateral (Aside)
-            togglePanelAside("ventas");
-        }
-
-        private void toggleConfiguracionInicial()
-        {
-            this.panelMain.Controls.Clear();
-
-            // Mostar Panel Home
-            this.uCIniciar = new Admeli.UCIniciar(this);
-            this.panelMain.Controls.Add(uCIniciar);
-            this.uCIniciar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uCIniciar.Location = new System.Drawing.Point(0, 0);
-            this.uCIniciar.Name = "uCIniciar";
-            this.uCIniciar.Size = new System.Drawing.Size(250, 776);
-            this.uCIniciar.TabIndex = 0;
         }
 
         private void togglePanelMain(string panelName)
@@ -206,9 +185,39 @@ namespace Admeli
                     this.uCListadoProducto.Size = new System.Drawing.Size(250, 776);
                     this.uCListadoProducto.TabIndex = 0;
                     break;
+                case "home":
+                    this.uCHome = new Admeli.UCHome(this);
+                    this.panelMain.Controls.Add(uCHome);
+                    this.uCHome.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.uCHome.Location = new System.Drawing.Point(0, 0);
+                    this.uCHome.Name = "uCHome";
+                    this.uCHome.Size = new System.Drawing.Size(250, 776);
+                    this.uCHome.TabIndex = 0;
+                    break;
+                case "iniciar":
+                    this.uCIniciar = new Admeli.UCIniciar(this);
+                    this.panelMain.Controls.Add(uCIniciar);
+                    this.uCIniciar.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.uCIniciar.Location = new System.Drawing.Point(0, 0);
+                    this.uCIniciar.Name = "uCIniciar";
+                    this.uCIniciar.Size = new System.Drawing.Size(250, 776);
+                    this.uCIniciar.TabIndex = 0;
+                    break;
                 default:
                     break;
             }
+        }
+
+        public void toggleHome()
+        {
+            togglePanelAside("home");
+            togglePanelMain("home");
+        }
+        private void toggleConfiguracionInicial()
+        {
+            togglePanelMain("iniciar");
+            lblSucursal.Text = ConfigModel.sucursal.nombre;
+            
         }
         #endregion
 
@@ -277,11 +286,7 @@ namespace Admeli
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            
-
             // Load datas
-            lblNombrePersonal.Text = PersonalModel.personal.nombres;
-            lblApellidoPersonal.Text = PersonalModel.personal.apellidos;
             lblDniPersonal.Text = PersonalModel.personal.numeroDocumento;
             lblUsuarioPersonal.Text = PersonalModel.personal.usuario;
             lblNombrePersonal2.Text = PersonalModel.personal.nombres;

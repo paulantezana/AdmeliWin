@@ -30,6 +30,11 @@ namespace Modelo
         public static List<PuntoDeVenta> puntosDeVenta { get; set; }
 
 
+        // www.lineatienda.com/services.php/cierrecajaingresomenosegreso/mediopago/1/cajasesion/62
+        public static List<Moneda> cierreIngresoEgreso { get; set; }
+
+
+
         /**
          * OTROS PARAMETROS
          * estas configuraciones se deben establecer al inicial la aplicacion

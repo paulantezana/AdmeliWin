@@ -32,10 +32,12 @@ namespace Admeli
             cbxAlmacenes.DataSource = ConfigModel.alamacenes;
             cbxAlmacenes.DisplayMember = "nombre";
             cbxAlmacenes.ValueMember = "idAlmacen";
+            cbxAlmacenes.SelectedIndex = 0;
 
             cbxPuntosVenta.DataSource = ConfigModel.puntosDeVenta;
             cbxPuntosVenta.DisplayMember = "nombre";
             cbxPuntosVenta.ValueMember = "idPuntoVenta";
+            cbxPuntosVenta.SelectedIndex = 0;
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)

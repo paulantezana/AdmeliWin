@@ -339,6 +339,12 @@
     <Compile Include="Navegacion\UCHerramientasNav.Designer.cs">
       <DependentUpon>UCHerramientasNav.cs</DependentUpon>
     </Compile>
+    <Compile Include="Navegacion\UCHomeNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navegacion\UCHomeNav.Designer.cs">
+      <DependentUpon>UCHomeNav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Navegacion\UCProductosNav.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -592,6 +598,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Navegacion\UCHerramientasNav.resx">
       <DependentUpon>UCHerramientasNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navegacion\UCHomeNav.resx">
+      <DependentUpon>UCHomeNav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Navegacion\UCProductosNav.resx">
       <DependentUpon>UCProductosNav.cs</DependentUpon>
