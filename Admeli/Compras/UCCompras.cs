@@ -57,10 +57,10 @@ namespace Admeli.Compras
         #endregion
 
         #region ============================= root load =============================
-        private async void UCCompras_Load(object sender, EventArgs e)
+        private void UCCompras_Load(object sender, EventArgs e)
         {
-            await cargarComponentes();
-            await cargarRegistros();
+            cargarComponentes();
+            cargarRegistros();
             decorationDataGridView();
         } 
         #endregion
@@ -78,22 +78,8 @@ namespace Admeli.Compras
         #endregion
 
         #region ======================= Loads =======================
-        private async Task cargarComponentes()
+        private async void cargarComponentes()
         {
-            // Cargando el combobox de personales
-            loadState(true);
-            try
-            {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(SucursalModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
             // Cargando el combobox ce estados
             DataTable table = new DataTable();
             table.Columns.Add("idEstado", typeof(string));
@@ -108,19 +94,34 @@ namespace Admeli.Compras
             cbxEstados.ComboBox.ValueMember = "idEstado";
             cbxEstados.ComboBox.SelectedIndex = 0;
 
+            // Cargando el combobox de personales
+            loadState(true);
+            try
+            {
+                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(SucursalModel.sucursal.idSucursal);
+                cbxPersonales.ComboBox.DisplayMember = "nombres";
+                cbxPersonales.ComboBox.ValueMember = "idPersonal";
+                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             // Estado cargar en falso
             loadState(false);
         }
 
-        private async Task cargarRegistros()
+        private async void cargarRegistros()
         {
             loadState(true);
             try
             {
-                RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado( SucursalModel.sucursal.idSucursal,
-                                                                                        Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue),
-                                                                                        cbxEstados.ComboBox.SelectedValue.ToString(),
-                                                                                        paginacion.currentPage, paginacion.speed);
+
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
+                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
+
+                RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado(SucursalModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = ordenCompra.nro_registros;
@@ -169,50 +170,50 @@ namespace Admeli.Compras
             lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
-        private async void btnPrevious_Click(object sender, EventArgs e)
+        private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.previousPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
-        private async void btnFirst_Click(object sender, EventArgs e)
+        private void btnFirst_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.firstPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
-        private async void btnNext_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.nextPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
-        private async void btnLast_Click(object sender, EventArgs e)
+        private void btnLast_Click(object sender, EventArgs e)
         {
             if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.lastPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
-        private async void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
+        private void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
@@ -221,20 +222,20 @@ namespace Admeli.Compras
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
         #endregion
 
         #region ==================== CRUD ====================
-        private async void btnConsultar_Click(object sender, EventArgs e)
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
-            await cargarRegistros();
+            cargarRegistros();
         }
 
-        private async void btnActualizar_Click(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            await cargarRegistros();
+            cargarRegistros();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {

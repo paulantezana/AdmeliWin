@@ -399,6 +399,7 @@
             // 
             // panelMainHeader
             // 
+            this.panelMainHeader.BackColor = System.Drawing.Color.White;
             this.panelMainHeader.Controls.Add(this.pictureBox3);
             this.panelMainHeader.Controls.Add(this.panel3);
             this.panelMainHeader.Controls.Add(this.lblSucursal);
@@ -554,7 +555,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1363, 912);
             this.Controls.Add(this.panelMainContainer);
             this.Controls.Add(this.panelAside);
