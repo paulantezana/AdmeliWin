@@ -41,5 +41,21 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<PuntoDeVenta>> puntoVentasyTodos(int idSucursal)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/puntoventasytodos/suc/0
+                List<PuntoDeVenta> puntoVenta = await webService.GETLis<PuntoDeVenta>("puntoventasytodos", String.Format("suc/{0}", idSucursal));
+                return puntoVenta;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

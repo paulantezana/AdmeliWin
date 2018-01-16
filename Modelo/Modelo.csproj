@@ -48,6 +48,8 @@
     <Compile Include="ClienteModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
+    <Compile Include="CotizacionModel.cs" />
+    <Compile Include="DescuentoModel.cs" />
     <Compile Include="DocCorrelativoModel.cs" />
     <Compile Include="DocumentoIdentificacionModel.cs" />
     <Compile Include="EgresoModel.cs" />

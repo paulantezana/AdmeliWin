@@ -683,11 +683,13 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
+    <None Include="Properties\DataSources\Entidad.Cliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.CajaSesion.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.Moneda.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.PuntoDeVenta.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.TipoDocumento.datasource" />
+    <None Include="Properties\DataSources\Entidad.Cotizacion.datasource" />
     <None Include="Properties\DataSources\Entidad.DocCorrelativo.datasource" />
     <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Egreso.datasource" />
@@ -700,6 +702,7 @@
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />
     <None Include="Properties\DataSources\Entidad.Sucursal.datasource" />
     <None Include="Properties\DataSources\Entidad.UnidadMedida.datasource" />
+    <None Include="Properties\DataSources\Entidad.Venta.datasource" />
     <None Include="Properties\DataSources\Modelo.PersonalModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class VentaModel
+    public class CotizacionModel
     {
         private WebService webService = new WebService();
 
@@ -27,13 +27,13 @@ namespace Modelo
 
         }
 
-        public async Task<RootObject<Venta>> ventas(int idSucursal, int idPuntoVenta, int idPersonal, string idEstado, int page, int items)
+        public async Task<RootObject<Cotizacion>> cotizaciones(int idSucursal, int idPersonal, int page, int items)
         {
             try
             {
-                // www.lineatienda.com/services.php/ventas/sucursal/0/puntoventa/0/per/0/estado/todos/1/100
-                RootObject<Venta> ventas = await webService.GETRoot<Venta>("ventas", String.Format("sucursal/{0}/puntoventa/{1}/per/{2}/estado/{3}/{4}/{5}", idSucursal, idPuntoVenta, idPersonal, idEstado, page, items));
-                return ventas;
+                // www.lineatienda.com/services.php/cotizaciones/suc/0/per/0/1/100
+                RootObject<Cotizacion> almacenes = await webService.GETRoot<Cotizacion>("cotizaciones", String.Format("suc/{0}/per/{1}/{2}/{3}", idSucursal, idPersonal, page, items));
+                return almacenes;
             }
             catch (Exception ex)
             {

@@ -24,10 +24,11 @@ namespace Modelo
         {
 
         }
-        public async Task<RootObject<Cliente>> getByPersonalEstado(int page, int items)
+        public async Task<RootObject<Cliente>> clientes(int page, int items)
         {
             try
             {
+                // www.lineatienda.com/services.php/clientes/estado/1/100
                 RootObject<Cliente> clientes = await webService.GETRoot<Cliente>("clientes", String.Format("estado/{0}/{1}", page, items));
                 return clientes;
             }
