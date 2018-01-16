@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlmacenModel.cs" />
+    <Compile Include="CajaSesionModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
+    <Compile Include="DocCorrelativoModel.cs" />
     <Compile Include="DocumentoIdentificacionModel.cs" />
     <Compile Include="GrupoClienteModel.cs" />
     <Compile Include="ImpuestoModel.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="PuntoVentaModel.cs" />
     <Compile Include="Recursos\WebService.cs" />
     <Compile Include="SucursalModel.cs" />
+    <Compile Include="TipoDocumentoModel.cs" />
     <Compile Include="VentaModel.cs" />
   </ItemGroup>
   <ItemGroup>

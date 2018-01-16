@@ -136,12 +136,22 @@ namespace Admeli.Configuracion
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            if (lblPageCount.Text == "0") return;
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.nextPage();
+                cargarRegistros();
+            }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-
+            if (lblPageCount.Text == "0") return;
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.lastPage();
+                cargarRegistros();
+            }
         }
 
         private void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)

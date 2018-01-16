@@ -28,52 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAsignarCorrelativo));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
+            this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripLabel();
             this.btnFirst = new System.Windows.Forms.ToolStripButton();
             this.btnPrevious = new System.Windows.Forms.ToolStripButton();
-            this.textCurrentPage = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripLabel();
-            this.textTotalPage = new System.Windows.Forms.ToolStripTextBox();
+            this.lblCurrentPage = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripLabel();
+            this.lblPageCount = new System.Windows.Forms.ToolStripLabel();
             this.btnNext = new System.Windows.Forms.ToolStripButton();
             this.btnLast = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripLabel();
-            this.textBuscar = new System.Windows.Forms.ToolStripTextBox();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripLabel();
+            this.lblSpeedPages = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnDesactivar = new System.Windows.Forms.ToolStripButton();
+            this.btnAnular = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.docCorrelativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreLabelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCorrelativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correlativoInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correlativoFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correlativoActualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOperacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.toolStrip3.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.toolStripNavigation.SuspendLayout();
+            this.toolStripCrud.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.docCorrelativoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
+            this.panelContainer.BackColor = System.Drawing.Color.White;
             this.panelContainer.Controls.Add(this.panel1);
-            this.panelContainer.Controls.Add(this.toolStrip3);
-            this.panelContainer.Controls.Add(this.toolStrip2);
-            this.panelContainer.Controls.Add(this.toolStrip1);
+            this.panelContainer.Controls.Add(this.toolStripNavigation);
+            this.panelContainer.Controls.Add(this.toolStripCrud);
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(8, 8);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelContainer.Location = new System.Drawing.Point(11, 10);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(883, 546);
+            this.panelContainer.Size = new System.Drawing.Size(1177, 672);
             this.panelContainer.TabIndex = 7;
             // 
             // panelHeaderItem1
@@ -81,62 +100,126 @@
             this.panelHeaderItem1.Controls.Add(this.label1);
             this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(881, 41);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(1175, 50);
             this.panelHeaderItem1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(428, 17);
+            this.label1.Size = new System.Drawing.Size(523, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "MANTENIMIENTO CORRELATIVO DOCUMENTOS COMERCIALES";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 110);
+            this.panel1.Location = new System.Drawing.Point(1, 106);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(881, 405);
-            this.panel1.TabIndex = 8;
+            this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.panel1.Size = new System.Drawing.Size(1175, 528);
+            this.panel1.TabIndex = 20;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(861, 385);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.AutoGenerateContextFilters = true;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.ColumnHeadersHeight = 40;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.areaDataGridViewTextBoxColumn,
+            this.idSucursalDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.nombreLabelDataGridViewTextBoxColumn,
+            this.idCorrelativoDataGridViewTextBoxColumn,
+            this.serieDataGridViewTextBoxColumn,
+            this.correlativoInicioDataGridViewTextBoxColumn,
+            this.correlativoFinDataGridViewTextBoxColumn,
+            this.correlativoActualDataGridViewTextBoxColumn,
+            this.finDataGridViewCheckBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.idDocumentoDataGridViewTextBoxColumn,
+            this.operacionDataGridViewTextBoxColumn,
+            this.idOperacionDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.docCorrelativoBindingSource;
+            this.dataGridView.DateWithTime = false;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView.Location = new System.Drawing.Point(13, 12);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView.RowTemplate.Height = 27;
+            this.dataGridView.Size = new System.Drawing.Size(1149, 504);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.TimeFilter = false;
             // 
-            // toolStrip3
+            // toolStripNavigation
             // 
-            this.toolStrip3.AutoSize = false;
-            this.toolStrip3.BackColor = System.Drawing.Color.White;
-            this.toolStrip3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip3.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip3.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripNavigation.AutoSize = false;
+            this.toolStripNavigation.BackColor = System.Drawing.Color.White;
+            this.toolStripNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStripNavigation.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStripNavigation.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripNavigation.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripNavigation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblPageAllItems,
+            this.toolStripButton5,
             this.btnFirst,
             this.btnPrevious,
-            this.textCurrentPage,
-            this.toolStripButton12,
-            this.textTotalPage,
+            this.lblCurrentPage,
+            this.toolStripButton2,
+            this.lblPageCount,
             this.btnNext,
-            this.btnLast});
-            this.toolStrip3.Location = new System.Drawing.Point(1, 515);
-            this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(881, 30);
-            this.toolStrip3.TabIndex = 7;
-            this.toolStrip3.Text = "toolStrip3";
+            this.btnLast,
+            this.toolStripButton1,
+            this.lblSpeedPages,
+            this.toolStripButton3});
+            this.toolStripNavigation.Location = new System.Drawing.Point(1, 634);
+            this.toolStripNavigation.Name = "toolStripNavigation";
+            this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.toolStripNavigation.Size = new System.Drawing.Size(1175, 37);
+            this.toolStripNavigation.TabIndex = 19;
+            this.toolStripNavigation.Text = "toolStrip3";
+            // 
+            // lblPageAllItems
+            // 
+            this.lblPageAllItems.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.lblPageAllItems.Image = ((System.Drawing.Image)(resources.GetObject("lblPageAllItems.Image")));
+            this.lblPageAllItems.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.lblPageAllItems.Name = "lblPageAllItems";
+            this.lblPageAllItems.Size = new System.Drawing.Size(17, 34);
+            this.lblPageAllItems.Text = "0";
+            this.lblPageAllItems.ToolTipText = "Total de registros en el sistema";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(70, 34);
+            this.toolStripButton5.Text = "Registros";
             // 
             // btnFirst
             // 
@@ -144,8 +227,9 @@
             this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
             this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(23, 27);
-            this.btnFirst.Text = "Firts";
+            this.btnFirst.Size = new System.Drawing.Size(24, 34);
+            this.btnFirst.Text = "Primera página";
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
@@ -153,35 +237,37 @@
             this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
             this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(23, 27);
-            this.btnPrevious.Text = "Previus";
+            this.btnPrevious.Size = new System.Drawing.Size(24, 34);
+            this.btnPrevious.Text = "Anterior página";
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // textCurrentPage
+            // lblCurrentPage
             // 
-            this.textCurrentPage.AutoSize = false;
-            this.textCurrentPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textCurrentPage.Name = "textCurrentPage";
-            this.textCurrentPage.Size = new System.Drawing.Size(30, 23);
-            this.textCurrentPage.Text = "1";
-            this.textCurrentPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblCurrentPage.AutoSize = false;
+            this.lblCurrentPage.Name = "lblCurrentPage";
+            this.lblCurrentPage.Size = new System.Drawing.Size(40, 28);
+            this.lblCurrentPage.Text = "1";
+            this.lblCurrentPage.ToolTipText = "Página actual (enter)";
+            this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
             // 
-            // toolStripButton12
+            // toolStripButton2
             // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(28, 27);
-            this.toolStripButton12.Text = "de /";
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(15, 34);
+            this.toolStripButton2.Text = "/";
             // 
-            // textTotalPage
+            // lblPageCount
             // 
-            this.textTotalPage.AutoSize = false;
-            this.textTotalPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textTotalPage.Name = "textTotalPage";
-            this.textTotalPage.Size = new System.Drawing.Size(30, 23);
-            this.textTotalPage.Text = "100";
-            this.textTotalPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblPageCount.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.lblPageCount.Image = ((System.Drawing.Image)(resources.GetObject("lblPageCount.Image")));
+            this.lblPageCount.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.lblPageCount.Name = "lblPageCount";
+            this.lblPageCount.Size = new System.Drawing.Size(17, 34);
+            this.lblPageCount.Text = "1";
+            this.lblPageCount.ToolTipText = "Número total de páginas";
             // 
             // btnNext
             // 
@@ -189,8 +275,9 @@
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(23, 27);
-            this.btnNext.Text = "Next";
+            this.btnNext.Size = new System.Drawing.Size(24, 34);
+            this.btnNext.Text = "Siguiente página";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -198,70 +285,56 @@
             this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
             this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(23, 27);
-            this.btnLast.Text = "Last";
+            this.btnLast.Size = new System.Drawing.Size(24, 34);
+            this.btnLast.Text = "Ultimo página";
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
-            // toolStrip2
+            // toolStripButton1
             // 
-            this.toolStrip2.AutoSize = false;
-            this.toolStrip2.BackColor = System.Drawing.Color.White;
-            this.toolStrip2.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton6,
-            this.textBuscar,
-            this.btnBuscar});
-            this.toolStrip2.Location = new System.Drawing.Point(1, 80);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(881, 30);
-            this.toolStrip2.TabIndex = 6;
-            this.toolStrip2.Text = "toolStrip2";
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(96, 34);
+            this.toolStripButton1.Text = "Mostrar cada";
             // 
-            // toolStripButton6
+            // lblSpeedPages
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(44, 27);
-            this.toolStripButton6.Text = "Buscar:";
+            this.lblSpeedPages.AutoSize = false;
+            this.lblSpeedPages.Name = "lblSpeedPages";
+            this.lblSpeedPages.Size = new System.Drawing.Size(50, 37);
+            this.lblSpeedPages.Text = "50";
+            this.lblSpeedPages.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblSpeedPages.ToolTipText = "Cantidad de registros a mostrar (enter)";
+            this.lblSpeedPages.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblSpeedPages_KeyUp);
             // 
-            // textBuscar
+            // toolStripButton3
             // 
-            this.textBuscar.AutoSize = false;
-            this.textBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(300, 22);
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(70, 34);
+            this.toolStripButton3.Text = "Registros";
             // 
-            // btnBuscar
+            // toolStripCrud
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(61, 27);
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.ToolTipText = "Buscar (Enter)";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.White;
-            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripCrud.AutoSize = false;
+            this.toolStripCrud.BackColor = System.Drawing.Color.White;
+            this.toolStripCrud.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStripCrud.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripCrud.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnModificar,
-            this.btnEliminar,
-            this.btnDesactivar,
+            this.btnAnular,
             this.btnActualizar});
-            this.toolStrip1.Location = new System.Drawing.Point(1, 42);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(881, 38);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripCrud.Location = new System.Drawing.Point(1, 51);
+            this.toolStripCrud.Name = "toolStripCrud";
+            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.toolStripCrud.Size = new System.Drawing.Size(1175, 55);
+            this.toolStripCrud.TabIndex = 17;
+            this.toolStripCrud.Text = "toolStrip1";
             // 
             // btnNuevo
             // 
@@ -274,6 +347,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNuevo.ToolTipText = "Agregar un nuevo registro (F3)";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -287,29 +361,17 @@
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
             // 
-            // btnEliminar
+            // btnAnular
             // 
-            this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
-            // 
-            // btnDesactivar
-            // 
-            this.btnDesactivar.AutoSize = false;
-            this.btnDesactivar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesactivar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesactivar.Image")));
-            this.btnDesactivar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(73, 37);
-            this.btnDesactivar.Text = "Desactivar";
-            this.btnDesactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDesactivar.ToolTipText = "Desactivar (F7)";
+            this.btnAnular.AutoSize = false;
+            this.btnAnular.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(73, 37);
+            this.btnAnular.Text = "Anular";
+            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAnular.ToolTipText = "Anular(F7)";
             // 
             // btnActualizar
             // 
@@ -322,27 +384,190 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // docCorrelativoBindingSource
+            // 
+            this.docCorrelativoBindingSource.DataSource = typeof(Entidad.DocCorrelativo);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idDataGridViewTextBoxColumn.Width = 48;
+            // 
+            // areaDataGridViewTextBoxColumn
+            // 
+            this.areaDataGridViewTextBoxColumn.DataPropertyName = "area";
+            this.areaDataGridViewTextBoxColumn.HeaderText = "area";
+            this.areaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
+            this.areaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.areaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.areaDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idSucursalDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // nombreLabelDataGridViewTextBoxColumn
+            // 
+            this.nombreLabelDataGridViewTextBoxColumn.DataPropertyName = "nombreLabel";
+            this.nombreLabelDataGridViewTextBoxColumn.HeaderText = "nombreLabel";
+            this.nombreLabelDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreLabelDataGridViewTextBoxColumn.Name = "nombreLabelDataGridViewTextBoxColumn";
+            this.nombreLabelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreLabelDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreLabelDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // idCorrelativoDataGridViewTextBoxColumn
+            // 
+            this.idCorrelativoDataGridViewTextBoxColumn.DataPropertyName = "idCorrelativo";
+            this.idCorrelativoDataGridViewTextBoxColumn.HeaderText = "idCorrelativo";
+            this.idCorrelativoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idCorrelativoDataGridViewTextBoxColumn.Name = "idCorrelativoDataGridViewTextBoxColumn";
+            this.idCorrelativoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCorrelativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idCorrelativoDataGridViewTextBoxColumn.Width = 116;
+            // 
+            // serieDataGridViewTextBoxColumn
+            // 
+            this.serieDataGridViewTextBoxColumn.DataPropertyName = "serie";
+            this.serieDataGridViewTextBoxColumn.HeaderText = "serie";
+            this.serieDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
+            this.serieDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serieDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.serieDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // correlativoInicioDataGridViewTextBoxColumn
+            // 
+            this.correlativoInicioDataGridViewTextBoxColumn.DataPropertyName = "correlativoInicio";
+            this.correlativoInicioDataGridViewTextBoxColumn.HeaderText = "correlativoInicio";
+            this.correlativoInicioDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.correlativoInicioDataGridViewTextBoxColumn.Name = "correlativoInicioDataGridViewTextBoxColumn";
+            this.correlativoInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.correlativoInicioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.correlativoInicioDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // correlativoFinDataGridViewTextBoxColumn
+            // 
+            this.correlativoFinDataGridViewTextBoxColumn.DataPropertyName = "correlativoFin";
+            this.correlativoFinDataGridViewTextBoxColumn.HeaderText = "correlativoFin";
+            this.correlativoFinDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.correlativoFinDataGridViewTextBoxColumn.Name = "correlativoFinDataGridViewTextBoxColumn";
+            this.correlativoFinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.correlativoFinDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.correlativoFinDataGridViewTextBoxColumn.Width = 122;
+            // 
+            // correlativoActualDataGridViewTextBoxColumn
+            // 
+            this.correlativoActualDataGridViewTextBoxColumn.DataPropertyName = "correlativoActual";
+            this.correlativoActualDataGridViewTextBoxColumn.HeaderText = "correlativoActual";
+            this.correlativoActualDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.correlativoActualDataGridViewTextBoxColumn.Name = "correlativoActualDataGridViewTextBoxColumn";
+            this.correlativoActualDataGridViewTextBoxColumn.ReadOnly = true;
+            this.correlativoActualDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.correlativoActualDataGridViewTextBoxColumn.Width = 142;
+            // 
+            // finDataGridViewCheckBoxColumn
+            // 
+            this.finDataGridViewCheckBoxColumn.DataPropertyName = "fin";
+            this.finDataGridViewCheckBoxColumn.HeaderText = "fin";
+            this.finDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.finDataGridViewCheckBoxColumn.Name = "finDataGridViewCheckBoxColumn";
+            this.finDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.finDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.finDataGridViewCheckBoxColumn.Width = 52;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // idDocumentoDataGridViewTextBoxColumn
+            // 
+            this.idDocumentoDataGridViewTextBoxColumn.DataPropertyName = "idDocumento";
+            this.idDocumentoDataGridViewTextBoxColumn.HeaderText = "idDocumento";
+            this.idDocumentoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idDocumentoDataGridViewTextBoxColumn.Name = "idDocumentoDataGridViewTextBoxColumn";
+            this.idDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDocumentoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idDocumentoDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // operacionDataGridViewTextBoxColumn
+            // 
+            this.operacionDataGridViewTextBoxColumn.DataPropertyName = "operacion";
+            this.operacionDataGridViewTextBoxColumn.HeaderText = "operacion";
+            this.operacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.operacionDataGridViewTextBoxColumn.Name = "operacionDataGridViewTextBoxColumn";
+            this.operacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.operacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idOperacion";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idOperacion";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn1.Width = 114;
+            // 
+            // idOperacionDataGridViewTextBoxColumn
+            // 
+            this.idOperacionDataGridViewTextBoxColumn.DataPropertyName = "idOperacion";
+            this.idOperacionDataGridViewTextBoxColumn.HeaderText = "idOperacion";
+            this.idOperacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idOperacionDataGridViewTextBoxColumn.Name = "idOperacionDataGridViewTextBoxColumn";
+            this.idOperacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idOperacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idOperacionDataGridViewTextBoxColumn.Width = 114;
             // 
             // UCAsignarCorrelativo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCAsignarCorrelativo";
-            this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.Size = new System.Drawing.Size(899, 562);
+            this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.Size = new System.Drawing.Size(1199, 692);
+            this.Load += new System.EventHandler(this.UCAsignarCorrelativo_Load);
             this.panelContainer.ResumeLayout(false);
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.toolStrip3.ResumeLayout(false);
-            this.toolStrip3.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.toolStripNavigation.ResumeLayout(false);
+            this.toolStripNavigation.PerformLayout();
+            this.toolStripCrud.ResumeLayout(false);
+            this.toolStripCrud.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.docCorrelativoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,24 +578,41 @@
         private System.Windows.Forms.Panel panelHeaderItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStrip toolStrip3;
+        private ADGV.AdvancedDataGridView dataGridView;
+        private System.Windows.Forms.ToolStrip toolStripNavigation;
+        private System.Windows.Forms.ToolStripLabel lblPageAllItems;
+        private System.Windows.Forms.ToolStripLabel toolStripButton5;
         private System.Windows.Forms.ToolStripButton btnFirst;
         private System.Windows.Forms.ToolStripButton btnPrevious;
-        private System.Windows.Forms.ToolStripTextBox textCurrentPage;
-        private System.Windows.Forms.ToolStripLabel toolStripButton12;
-        private System.Windows.Forms.ToolStripTextBox textTotalPage;
+        private System.Windows.Forms.ToolStripComboBox lblCurrentPage;
+        private System.Windows.Forms.ToolStripLabel toolStripButton2;
+        private System.Windows.Forms.ToolStripLabel lblPageCount;
         private System.Windows.Forms.ToolStripButton btnNext;
         private System.Windows.Forms.ToolStripButton btnLast;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripLabel toolStripButton6;
-        private System.Windows.Forms.ToolStripTextBox textBuscar;
-        private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripButton1;
+        private System.Windows.Forms.ToolStripTextBox lblSpeedPages;
+        private System.Windows.Forms.ToolStripLabel toolStripButton3;
+        private System.Windows.Forms.ToolStrip toolStripCrud;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnModificar;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.ToolStripButton btnDesactivar;
+        private System.Windows.Forms.ToolStripButton btnAnular;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn areaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreLabelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCorrelativoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correlativoInicioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correlativoFinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correlativoActualDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn finDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDocumentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOperacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource docCorrelativoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

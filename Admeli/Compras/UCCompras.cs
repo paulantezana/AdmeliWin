@@ -97,7 +97,7 @@ namespace Admeli.Compras
             loadState(true);
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(SucursalModel.sucursal.idSucursal);
+                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
                 cbxPersonales.ComboBox.DisplayMember = "nombres";
                 cbxPersonales.ComboBox.ValueMember = "idPersonal";
                 cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;

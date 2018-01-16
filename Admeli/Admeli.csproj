@@ -684,7 +684,10 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />
+    <None Include="Properties\DataSources\Entidad.Configuracion.CajaSesion.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.PuntoDeVenta.datasource" />
+    <None Include="Properties\DataSources\Entidad.Configuracion.TipoDocumento.datasource" />
+    <None Include="Properties\DataSources\Entidad.DocCorrelativo.datasource" />
     <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />
     <None Include="Properties\DataSources\Entidad.GrupoCliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Impuesto.datasource" />
