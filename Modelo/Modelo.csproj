@@ -48,6 +48,7 @@
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
     <Compile Include="DocumentoIdentificacionModel.cs" />
+    <Compile Include="GrupoClienteModel.cs" />
     <Compile Include="ImpuestoModel.cs" />
     <Compile Include="OrdenCompraModel.cs" />
     <Compile Include="PersonalModel.cs" />
