@@ -685,6 +685,8 @@
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.PuntoDeVenta.datasource" />
+    <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />
+    <None Include="Properties\DataSources\Entidad.Impuesto.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />

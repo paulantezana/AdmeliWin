@@ -50,6 +50,8 @@
     <Compile Include="Configuracion\PuntoDeVenta.cs" />
     <Compile Include="Configuracion\TipoCambioMoneda.cs" />
     <Compile Include="Configuracion\TipoDocumento.cs" />
+    <Compile Include="DocumentoIdentificacion.cs" />
+    <Compile Include="Impuesto.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Producto.cs" />
