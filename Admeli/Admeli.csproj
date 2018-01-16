@@ -108,28 +108,28 @@
     <Compile Include="AlmacenBox\UCNotaSalida.Designer.cs">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Caja\UCCierreCaja.cs">
+    <Compile Include="CajaBox\UCCierreCaja.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Caja\UCCierreCaja.Designer.cs">
+    <Compile Include="CajaBox\UCCierreCaja.Designer.cs">
       <DependentUpon>UCCierreCaja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Caja\UCEgresos.cs">
+    <Compile Include="CajaBox\UCEgresos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Caja\UCEgresos.Designer.cs">
+    <Compile Include="CajaBox\UCEgresos.Designer.cs">
       <DependentUpon>UCEgresos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Caja\UCIngresos.cs">
+    <Compile Include="CajaBox\UCIngresos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Caja\UCIngresos.Designer.cs">
+    <Compile Include="CajaBox\UCIngresos.Designer.cs">
       <DependentUpon>UCIngresos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Caja\UCIniciarCaja.cs">
+    <Compile Include="CajaBox\UCIniciarCaja.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Caja\UCIniciarCaja.Designer.cs">
+    <Compile Include="CajaBox\UCIniciarCaja.Designer.cs">
       <DependentUpon>UCIniciarCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Componentes\DrawShape.cs" />
@@ -488,16 +488,16 @@
     <EmbeddedResource Include="AlmacenBox\UCNotaSalida.resx">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Caja\UCCierreCaja.resx">
+    <EmbeddedResource Include="CajaBox\UCCierreCaja.resx">
       <DependentUpon>UCCierreCaja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Caja\UCEgresos.resx">
+    <EmbeddedResource Include="CajaBox\UCEgresos.resx">
       <DependentUpon>UCEgresos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Caja\UCIngresos.resx">
+    <EmbeddedResource Include="CajaBox\UCIngresos.resx">
       <DependentUpon>UCIngresos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Caja\UCIniciarCaja.resx">
+    <EmbeddedResource Include="CajaBox\UCIniciarCaja.resx">
       <DependentUpon>UCIniciarCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\Modificar\FormCuentaPagarModificar.resx">

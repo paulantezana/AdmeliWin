@@ -7,28 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Admeli.Componentes;
 
-namespace Admeli.Caja
+namespace Admeli.CajaBox
 {
-    public partial class UCIngresos : UserControl
+    public partial class UCIniciarCaja : UserControl
     {
         private FormPrincipal formPrincipal;
 
-        public UCIngresos()
+        public UCIniciarCaja()
         {
             InitializeComponent();
         }
 
-        public UCIngresos(FormPrincipal formPrincipal)
+        public UCIniciarCaja(FormPrincipal formPrincipal)
         {
             this.formPrincipal = formPrincipal;
-        }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer);
+            InitializeComponent();
         }
     }
 }

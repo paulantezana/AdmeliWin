@@ -53,8 +53,10 @@
     <Compile Include="Configuracion\TipoDocumento.cs" />
     <Compile Include="DocCorrelativo.cs" />
     <Compile Include="DocumentoIdentificacion.cs" />
+    <Compile Include="Egreso.cs" />
     <Compile Include="GrupoCliente.cs" />
     <Compile Include="Impuesto.cs" />
+    <Compile Include="Ingreso.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Personal.cs" />

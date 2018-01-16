@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Admeli.Componentes;
-using Admeli.Caja;
+using Admeli.CajaBox;
 
 namespace Admeli.Navegacion
 {
@@ -47,7 +47,7 @@ namespace Admeli.Navegacion
             switch (panelName)
             {
                 case "cierreCaja":
-                    this.uCCierreCaja = new Admeli.Caja.UCCierreCaja(this.formPrincipal);
+                    this.uCCierreCaja = new Admeli.CajaBox.UCCierreCaja(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCCierreCaja);
                     this.uCCierreCaja.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCCierreCaja.Location = new System.Drawing.Point(0, 0);
@@ -56,7 +56,7 @@ namespace Admeli.Navegacion
                     this.uCCierreCaja.TabIndex = 0;
                     break;
                 case "egresos":
-                    this.uCEgresos = new Admeli.Caja.UCEgresos(this.formPrincipal);
+                    this.uCEgresos = new Admeli.CajaBox.UCEgresos(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCEgresos);
                     this.uCEgresos.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCEgresos.Location = new System.Drawing.Point(0, 0);
@@ -65,7 +65,7 @@ namespace Admeli.Navegacion
                     this.uCEgresos.TabIndex = 0;
                     break;
                 case "ingresos":
-                    this.uCIngresos = new Admeli.Caja.UCIngresos(this.formPrincipal);
+                    this.uCIngresos = new Admeli.CajaBox.UCIngresos(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCIngresos);
                     this.uCIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCIngresos.Location = new System.Drawing.Point(0, 0);
@@ -74,7 +74,7 @@ namespace Admeli.Navegacion
                     this.uCIngresos.TabIndex = 0;
                     break;
                 case "iniciarCaja":
-                    this.uCIniciarCaja = new Admeli.Caja.UCIniciarCaja(this.formPrincipal);
+                    this.uCIniciarCaja = new Admeli.CajaBox.UCIniciarCaja(this.formPrincipal);
                     this.formPrincipal.panelMain.Controls.Add(uCIniciarCaja);
                     this.uCIniciarCaja.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCIniciarCaja.Location = new System.Drawing.Point(0, 0);

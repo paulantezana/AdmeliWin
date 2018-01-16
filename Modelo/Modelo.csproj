@@ -50,8 +50,10 @@
     <Compile Include="ConfigModel.cs" />
     <Compile Include="DocCorrelativoModel.cs" />
     <Compile Include="DocumentoIdentificacionModel.cs" />
+    <Compile Include="EgresoModel.cs" />
     <Compile Include="GrupoClienteModel.cs" />
     <Compile Include="ImpuestoModel.cs" />
+    <Compile Include="IngresoModel.cs" />
     <Compile Include="MarcaModel.cs" />
     <Compile Include="MonedaModel.cs" />
     <Compile Include="OrdenCompraModel.cs" />
