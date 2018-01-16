@@ -692,10 +692,12 @@
     <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />
     <None Include="Properties\DataSources\Entidad.GrupoCliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Impuesto.datasource" />
+    <None Include="Properties\DataSources\Entidad.Marca.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />
     <None Include="Properties\DataSources\Entidad.Sucursal.datasource" />
+    <None Include="Properties\DataSources\Entidad.UnidadMedida.datasource" />
     <None Include="Properties\DataSources\Modelo.PersonalModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

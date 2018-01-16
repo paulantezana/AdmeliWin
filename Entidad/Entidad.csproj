@@ -55,6 +55,7 @@
     <Compile Include="DocumentoIdentificacion.cs" />
     <Compile Include="GrupoCliente.cs" />
     <Compile Include="Impuesto.cs" />
+    <Compile Include="Marca.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Producto.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="RootObject.cs" />
     <Compile Include="Sucursal.cs" />
+    <Compile Include="UnidadMedida.cs" />
     <Compile Include="Util\Fecha.cs" />
     <Compile Include="Venta.cs" />
   </ItemGroup>

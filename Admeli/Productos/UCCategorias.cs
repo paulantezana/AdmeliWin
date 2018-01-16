@@ -23,6 +23,7 @@ namespace Admeli.Productos
 
         public UCCategorias(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
 
