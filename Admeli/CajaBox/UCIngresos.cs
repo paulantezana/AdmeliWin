@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Admeli.Componentes;
 using Modelo;
+using Entidad;
 
 namespace Admeli.CajaBox
 {
@@ -18,6 +19,7 @@ namespace Admeli.CajaBox
         private Paginacion paginacion;
         private IngresoModel ingresoModel = new IngresoModel();
         private PersonalModel personalModel = new PersonalModel();
+        private SucursalModel sucursalModel = new SucursalModel();
 
         public UCIngresos()
         {
@@ -39,6 +41,7 @@ namespace Admeli.CajaBox
         private void UCIngresos_Load(object sender, EventArgs e)
         {
             cargarComponentes();
+            cargarComponentesSecond();
             cargarRegistros();
         }
 
@@ -57,6 +60,8 @@ namespace Admeli.CajaBox
         #region ======================= Loads =======================
         private async void cargarComponentes()
         {
+            loadState(true);
+
             // Cargando el combobox ce estados
             DataTable table = new DataTable();
             table.Columns.Add("idEstado", typeof(string));
@@ -71,22 +76,37 @@ namespace Admeli.CajaBox
             cbxEstados.ComboBox.ValueMember = "idEstado";
             cbxEstados.ComboBox.SelectedIndex = 0;
 
-            // Cargando el combobox de personales
-            loadState(true);
             try
             {
+                // Cargando el combobox de personales
                 cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
                 cbxPersonales.ComboBox.DisplayMember = "nombres";
                 cbxPersonales.ComboBox.ValueMember = "idPersonal";
                 cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+
+              
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
 
-            // Estado cargar en falso
-            loadState(false);
+        private async void cargarComponentesSecond()
+        {
+            // cargando los sucursales activos
+            loadState(true);
+            try
+            {
+                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
+                cbxSucursales.ComboBox.DisplayMember = "nombre";
+                cbxSucursales.ComboBox.ValueMember = "idSucursal";
+                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void cargarRegistros()
@@ -94,18 +114,19 @@ namespace Admeli.CajaBox
             loadState(true);
             try
             {
-
                 int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal: Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
+                int idCajaSesion = 0;// ConfigModel.cajaSesion.idCajaSesion;
 
-               /* RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado(SucursalModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<Ingreso> ingresos = await ingresoModel.ingresos(sucursalId,personalId,idCajaSesion,estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ordenCompra.nro_registros;
+                paginacion.itemsCount = ingresos.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                compraBindingSource.DataSource = ordenCompra.datos;*/
+                ingresoBindingSource.DataSource = ingresos.datos;
                 dataGridView.Refresh();
                 mostrarPaginado();
             }

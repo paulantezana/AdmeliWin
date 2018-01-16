@@ -690,8 +690,10 @@
     <None Include="Properties\DataSources\Entidad.Configuracion.TipoDocumento.datasource" />
     <None Include="Properties\DataSources\Entidad.DocCorrelativo.datasource" />
     <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />
+    <None Include="Properties\DataSources\Entidad.Egreso.datasource" />
     <None Include="Properties\DataSources\Entidad.GrupoCliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Impuesto.datasource" />
+    <None Include="Properties\DataSources\Entidad.Ingreso.datasource" />
     <None Include="Properties\DataSources\Entidad.Marca.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />

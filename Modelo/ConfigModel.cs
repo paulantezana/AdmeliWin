@@ -24,10 +24,11 @@ namespace Modelo
         // TIPOS DE DOCUMENTO       www.lineatienda.com/services.php/tipodoc21/estado/1
         // ALMACENES                www.lineatienda.com/services.php/personalalmacenes/per/8/suc/1
         // ASIGNACION PERSONAL      www.lineatienda.com/services.php/asignarpuntoventas/sucursal/1/personal/8
-        // CAJA SECION  
+        // CAJA SECION              www.lineatienda.com/services.php/cajasesion/idasignarcaja/3
         public static List<TipoDocumento> tipoDocumento { get; set; }
         public static List<Almacen> alamacenes { get; set; }
         public static List<PuntoDeVenta> puntosDeVenta { get; set; }
+        public static CajaSesion cajaSesion { get; set; }
 
 
         // www.lineatienda.com/services.php/cierrecajaingresomenosegreso/mediopago/1/cajasesion/62
@@ -181,6 +182,20 @@ namespace Modelo
                 // www.lineatienda.com/services.php/asignarpuntoventas/sucursal/1/personal/8
                 List<PuntoDeVenta> list = await webService.GETLis<PuntoDeVenta>("asignarpuntoventas", String.Format("sucursal/{0}/personal/{1}",idSucursal,idPersonal));
                 puntosDeVenta = list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task loadCajaSesion(int idAsignarCaja)
+        {
+            try
+            {
+                
+                // www.lineatienda.com/services.php/cajasesion/idasignarcaja/3
+                List<CajaSesion> list = await webService.GETLis<CajaSesion>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
+                cajaSesion = list[0];
             }
             catch (Exception ex)
             {

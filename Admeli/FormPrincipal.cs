@@ -345,7 +345,7 @@ namespace Admeli
                 configModel.loadTipoDocumento();
                 await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-
+                configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
 
                 // Eligiendo el puntode venta y almacen
                 if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
