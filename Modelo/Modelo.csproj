@@ -52,6 +52,7 @@
     <Compile Include="DocumentoIdentificacionModel.cs" />
     <Compile Include="GrupoClienteModel.cs" />
     <Compile Include="ImpuestoModel.cs" />
+    <Compile Include="MonedaModel.cs" />
     <Compile Include="OrdenCompraModel.cs" />
     <Compile Include="PersonalModel.cs" />
     <Compile Include="ProductoModel.cs" />
