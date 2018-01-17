@@ -9,8 +9,8 @@ namespace Entidad
     public class Producto
     {
         public int idProducto { get; set; }
-        public string codigoProducto { get; set; }
         public string nombreProducto { get; set; }
+        public string codigoProducto { get; set; }
         public string descripcionCorta { get; set; }
         public string precioCompra { get; set; }
         public int estado { get; set; }
