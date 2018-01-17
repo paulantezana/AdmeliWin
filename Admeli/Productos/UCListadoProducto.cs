@@ -91,35 +91,42 @@ namespace Admeli.Productos
         private async void cargarComponentesSecond()
         {
             loadState(true);
-            // Cargando las categorias desde el webservice
-            List<Categoria> categoriaList = await categoriaModel.categoriasTodo();
-            Categoria lastCategori = categoriaList.Last();
-            categoriaList.Remove(lastCategori);
-
-            // Cargando
-            treeViewCategoria.Nodes.Clear(); // limpiando
-            treeViewCategoria.Nodes.Add(lastCategori.idCategoria.ToString(), lastCategori.nombreCategoria); // Cargando categoria raiz
-
-            categoriaList.ForEach(categoria =>
+            try
             {
-                if (categoria.padre == null)
-                {
-                    // Cargando categorias padre
-                    treeViewCategoria.Nodes[0].ImageIndex = 1;
-                    treeViewCategoria.Nodes[0].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
-                }
-                else
-                {
-                    // Cargando subcategorias
-                    int nodeIndex = treeViewCategoria.Nodes[0].Nodes.IndexOfKey(categoria.idPadreCategoria.ToString());
-                    treeViewCategoria.Nodes[0].Nodes[nodeIndex].ImageIndex = 1;
-                    treeViewCategoria.Nodes[0].Nodes[nodeIndex].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
-                }
-            });
+                // Cargando las categorias desde el webservice
+                List<Categoria> categoriaList = await categoriaModel.categoriasTodo();
+                Categoria lastCategori = categoriaList.Last();
+                categoriaList.Remove(lastCategori);
 
-            // Estableciendo valores por defecto
-            treeViewCategoria.Nodes[0].ExpandAll();
-            treeViewCategoria.Nodes[0].Checked = true;
+                // Cargando
+                treeViewCategoria.Nodes.Clear(); // limpiando
+                treeViewCategoria.Nodes.Add(lastCategori.idCategoria.ToString(), lastCategori.nombreCategoria); // Cargando categoria raiz
+
+                categoriaList.ForEach(categoria =>
+                {
+                    if (categoria.padre == null)
+                    {
+                        // Cargando categorias padre
+                        treeViewCategoria.Nodes[0].ImageIndex = 1;
+                        treeViewCategoria.Nodes[0].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
+                    }
+                    else
+                    {
+                        // Cargando subcategorias
+                        int nodeIndex = treeViewCategoria.Nodes[0].Nodes.IndexOfKey(categoria.idPadreCategoria.ToString());
+                        treeViewCategoria.Nodes[0].Nodes[nodeIndex].ImageIndex = 1;
+                        treeViewCategoria.Nodes[0].Nodes[nodeIndex].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
+                    }
+                });
+
+                // Estableciendo valores por defecto
+                treeViewCategoria.Nodes[0].ExpandAll();
+                treeViewCategoria.Nodes[0].Checked = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             loadState(false);
         }
 
@@ -150,6 +157,35 @@ namespace Admeli.Productos
                 Dictionary<string, int> sendList = (itemSeleccionado.Count == 0) ? list : itemSeleccionado;
 
                 RootObject<Producto> productos = await productoModel.productosPorCategoria(sendList, paginacion.currentPage, paginacion.speed);
+
+                // actualizando datos de páginacón
+                paginacion.itemsCount = productos.nro_registros;
+                paginacion.reload();
+
+                // Ingresando
+                productoBindingSource.DataSource = productos.datos;
+                dataGridView.Refresh();
+                mostrarPaginado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
+        private async void cargarRegistrosBuscar()
+        {
+            loadState(true);
+            try
+            {
+                Dictionary<string, int> list = new Dictionary<string, int>();
+                list.Add("id0", 0);
+                Dictionary<string, int> sendList = (itemSeleccionado.Count == 0) ? list : itemSeleccionado;
+
+                RootObject<Producto> productos = await productoModel.productosPorCategoriaBuscar(sendList, textBuscar.Text, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = productos.nro_registros;
@@ -271,8 +307,24 @@ namespace Admeli.Productos
             FormProductoNuevo productoNuevo = new FormProductoNuevo();
             productoNuevo.ShowDialog();
         }
+
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && textBuscar.Text != "")
+            {
+                cargarRegistrosBuscar();
+            }
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (textBuscar.Text != "")
+            {
+                cargarRegistrosBuscar();
+            }
+        }
         #endregion
 
+        #region ======================== Treeview control checked ========================
         private int itemNumber { get; set; }
 
         private void treeViewCategoria_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -298,5 +350,27 @@ namespace Admeli.Productos
                 getRecursiveNodes(subNode);
             }
         }
+        #endregion
+
+        #region ======================= Control de isChecked en el treeview =======================
+        private void CheckTreeViewNode(TreeNode node, Boolean isChecked)
+        {
+            foreach (TreeNode item in node.Nodes)
+            {
+                item.Checked = isChecked;
+
+                if (item.Nodes.Count > 0)
+                {
+                    this.CheckTreeViewNode(item, isChecked);
+                }
+            }
+        }
+
+        private void treeViewCategoria_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            CheckTreeViewNode(e.Node, e.Node.Checked);
+        }
+        #endregion
+
     }
 }
