@@ -145,20 +145,20 @@ namespace Admeli.Productos
             loadState(true);
             try
             {
+                Dictionary<string, int> list = new Dictionary<string, int>();
+                list.Add("id0", 0);
+                Dictionary<string, int> sendList = (itemSeleccionado.Count == 0) ? list : itemSeleccionado;
 
-                /*int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
-
-                RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado(SucursalModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<Producto> productos = await productoModel.productosPorCategoria(sendList, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ordenCompra.nro_registros;
+                paginacion.itemsCount = productos.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                compraBindingSource.DataSource = ordenCompra.datos;
+                productoBindingSource.DataSource = productos.datos;
                 dataGridView.Refresh();
-                mostrarPaginado();*/
+                mostrarPaginado();
             }
             catch (Exception ex)
             {
@@ -280,11 +280,11 @@ namespace Admeli.Productos
             // OBteniendo los datos seleccionados del treeView y almacenando en un diccionary
             TreeNode mainNode = treeViewCategoria.Nodes[0];
             itemNumber = 0;
+            itemSeleccionado.Clear();
             getRecursiveNodes(mainNode);
 
-            // Serializando
-            string json = JsonConvert.SerializeObject(itemSeleccionado, Formatting.Indented);
-            Console.WriteLine(json);
+            // cargando los registros
+            cargarRegistros();
         }
         public void getRecursiveNodes(TreeNode parentNode)
         {

@@ -1,5 +1,6 @@
 ﻿using Entidad;
 using Modelo.Recursos;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,13 +31,15 @@ namespace Modelo
         {
 
         }
-        public async Task<dynamic> listarPorCategoria(string page, string items, Dictionary<string, int> dictionary)
+        public async Task<RootObject<Producto>> productosPorCategoria(Dictionary<string, int> dictionary, int page, int items)
         {
             try
             {
                 // www.lineatienda.com/services.php/productos/categoria/1/100
                 // string json = 
-                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/{0}/{1}",page,items), "");
+                string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
+                json = String.Format("[\r\n{0}\r\n]", json);
+                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/{0}/{1}",page,items), json);
                 return productos;
             }
             catch (Exception ex)
