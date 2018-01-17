@@ -34,6 +34,38 @@ namespace Modelo.Recursos
 
 
         //////// ================================== CRETE ADMELI ==================================
+
+        public async Task<RootObject<T>> POSTRoot<T>(string servicio, string metodo, string jsonString)
+        {
+            try
+            {
+                // creando el contenido apartir de un jsonString
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+                // Creando un nuevo cliente
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(this.domainName);
+                string url = string.Format("{0}/{1}/{2}", this.directory, servicio, metodo);
+                HttpResponseMessage response = await client.PostAsync(url, content);
+
+                // Validando la respuesta
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.ToString());
+                }
+                string result = await response.Content.ReadAsStringAsync();
+
+                // retornando los valores en una lista de objetos
+                RootObject<T> list = JsonConvert.DeserializeObject<RootObject<T>>(result);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public async Task<List<T>> POSTList<T>(string servicio, string metodo, T param)
         {
             try

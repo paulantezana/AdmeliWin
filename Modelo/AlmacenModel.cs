@@ -40,5 +40,19 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Almacen>> almacenesProducto()
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/almacenes/id/nombre/estado/1
+                List<Almacen> almacenes = await webService.GETLis<Almacen>("almacenes", "id/nombre/estado/1");
+                return almacenes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

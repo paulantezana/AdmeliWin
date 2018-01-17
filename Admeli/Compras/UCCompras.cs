@@ -120,7 +120,7 @@ namespace Admeli.Compras
                 int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
 
-                RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado(SucursalModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado(ConfigModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = ordenCompra.nro_registros;

@@ -322,7 +322,7 @@ namespace Admeli
             try
             {
                 this.appLoadState(true);
-                await sucursalModel.sucursalesPersonal(PersonalModel.personal.idPersonal);
+                //await sucursalModel.sucursalesPersonal(PersonalModel.personal.idPersonal);
 
                 // DATOS GENERALES
                 // SUCURSALES PERSONA

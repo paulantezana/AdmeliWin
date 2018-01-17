@@ -10,14 +10,22 @@ using System.Windows.Forms;
 using Admeli.Componentes;
 using Admeli.Productos.Nuevo;
 using Modelo;
+using Entidad;
+using Newtonsoft.Json;
 
 namespace Admeli.Productos
 {
     public partial class UCListadoProducto : UserControl
     {
         private ProductoModel productoModel = new ProductoModel();
+        private CategoriaModel categoriaModel = new CategoriaModel();
+        private SucursalModel sucursalModel = new SucursalModel();
+        private AlmacenModel almacenModel = new AlmacenModel();
+
         private Paginacion paginacion;
         private FormPrincipal formPrincipal;
+
+        private Dictionary<string, int> itemSeleccionado = new Dictionary<string, int>();
 
         public UCListadoProducto()
         {
@@ -44,7 +52,10 @@ namespace Admeli.Productos
 
         private void UCListadoProducto_Load(object sender, EventArgs e)
         {
-            
+            cargarComponentes();
+            cargarComponentesSecond();
+            cargarComponentesThird();
+            cargarRegistros();
         }
 
         #region =========================== Decoration ===========================
@@ -62,36 +73,71 @@ namespace Admeli.Productos
         #region ======================= Loads =======================
         private async void cargarComponentes()
         {
-            // Cargando el combobox ce estados
-           /* DataTable table = new DataTable();
-            table.Columns.Add("idEstado", typeof(string));
-            table.Columns.Add("estado", typeof(string));
-
-            table.Rows.Add("todos", "Todos los estados");
-            table.Rows.Add("0", "Anulados");
-            table.Rows.Add("1", "Activos");
-
-            cbxEstados.ComboBox.DataSource = table;
-            cbxEstados.ComboBox.DisplayMember = "estado";
-            cbxEstados.ComboBox.ValueMember = "idEstado";
-            cbxEstados.ComboBox.SelectedIndex = 0;
-
             // Cargando el combobox de personales
             loadState(true);
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+                cbxSucursales.ComboBox.DataSource = await sucursalModel.sucursalesProducto();
+                cbxSucursales.ComboBox.DisplayMember = "nombre";
+                cbxSucursales.ComboBox.ValueMember = "idSucursal";
+                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            */
-            // Estado cargar en falso
+        }
+
+        private async void cargarComponentesSecond()
+        {
+            loadState(true);
+            // Cargando las categorias desde el webservice
+            List<Categoria> categoriaList = await categoriaModel.categoriasTodo();
+            Categoria lastCategori = categoriaList.Last();
+            categoriaList.Remove(lastCategori);
+
+            // Cargando
+            treeViewCategoria.Nodes.Clear(); // limpiando
+            treeViewCategoria.Nodes.Add(lastCategori.idCategoria.ToString(), lastCategori.nombreCategoria); // Cargando categoria raiz
+
+            categoriaList.ForEach(categoria =>
+            {
+                if (categoria.padre == null)
+                {
+                    // Cargando categorias padre
+                    treeViewCategoria.Nodes[0].ImageIndex = 1;
+                    treeViewCategoria.Nodes[0].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
+                }
+                else
+                {
+                    // Cargando subcategorias
+                    int nodeIndex = treeViewCategoria.Nodes[0].Nodes.IndexOfKey(categoria.idPadreCategoria.ToString());
+                    treeViewCategoria.Nodes[0].Nodes[nodeIndex].ImageIndex = 1;
+                    treeViewCategoria.Nodes[0].Nodes[nodeIndex].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
+                }
+            });
+
+            // Estableciendo valores por defecto
+            treeViewCategoria.Nodes[0].ExpandAll();
+            treeViewCategoria.Nodes[0].Checked = true;
             loadState(false);
+        }
+
+        private async void cargarComponentesThird()
+        {
+            // Cargando el combobox de personales
+            loadState(true);
+            try
+            {
+                cbxAlmacenes.ComboBox.DataSource = await almacenModel.almacenesProducto();
+                cbxAlmacenes.ComboBox.DisplayMember = "nombre";
+                cbxAlmacenes.ComboBox.ValueMember = "idAlmacen";
+                cbxAlmacenes.ComboBox.SelectedValue = ConfigModel.currentIdAlmacen;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void cargarRegistros()
@@ -227,5 +273,30 @@ namespace Admeli.Productos
         }
         #endregion
 
+        private int itemNumber { get; set; }
+
+        private void treeViewCategoria_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            // OBteniendo los datos seleccionados del treeView y almacenando en un diccionary
+            TreeNode mainNode = treeViewCategoria.Nodes[0];
+            itemNumber = 0;
+            getRecursiveNodes(mainNode);
+
+            // Serializando
+            string json = JsonConvert.SerializeObject(itemSeleccionado, Formatting.Indented);
+            Console.WriteLine(json);
+        }
+        public void getRecursiveNodes(TreeNode parentNode)
+        {
+            if (parentNode.Checked)
+            {
+                itemSeleccionado.Add("id" + itemNumber.ToString(), Convert.ToInt32(parentNode.Name));
+                itemNumber++;
+            }
+            foreach (TreeNode subNode in parentNode.Nodes)
+            {
+                getRecursiveNodes(subNode);
+            }
+        }
     }
 }

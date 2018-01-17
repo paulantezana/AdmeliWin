@@ -12,7 +12,6 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public static Sucursal sucursal { get; set; }
 
         public void guardar()
         {
@@ -55,12 +54,13 @@ namespace Modelo
             }
         }
 
-        public async Task sucursalesPersonal(int idPersonal)
+        public async Task<List<Sucursal>> sucursalesProducto()
         {
             try
             {
-                List<Sucursal> listSucursal = await webService.GETLis<Sucursal>("sucursalespersonal", idPersonal.ToString());
-                SucursalModel.sucursal = listSucursal[0];
+                // www.lineatienda.com/services.php/sucursales/id/nombre/estado/1
+                List<Sucursal> listSucursal = await webService.GETLis<Sucursal>("sucursales", "id/nombre/estado/1");
+                return listSucursal;
             }
             catch (Exception ex)
             {

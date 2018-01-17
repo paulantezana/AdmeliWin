@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AlmacenModel.cs" />
     <Compile Include="CajaSesionModel.cs" />
+    <Compile Include="CategoriaModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />

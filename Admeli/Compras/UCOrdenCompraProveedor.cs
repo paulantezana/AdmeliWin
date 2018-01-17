@@ -72,7 +72,7 @@ namespace Admeli.Compras
             loadState(true);
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(SucursalModel.sucursal.idSucursal);
+                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
                 cbxPersonales.ComboBox.DisplayMember = "nombres";
                 cbxPersonales.ComboBox.ValueMember = "idPersonal";
                 cbxPersonales.ComboBox.SelectedValue = 0;
@@ -95,10 +95,9 @@ namespace Admeli.Compras
             try
             {
 
-                RootObject<OrdenCompra> ordenCompra = await ordenCompraModel.ocompras( SucursalModel.sucursal.idSucursal,
+                RootObject<OrdenCompra> ordenCompra = await ordenCompraModel.ocompras(ConfigModel.sucursal.idSucursal,
                                                                                       Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue),
-                                                                                      paginacion.currentPage, 
-                                                                                      paginacion.speed);
+                                                                                      paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = ordenCompra.nro_registros;

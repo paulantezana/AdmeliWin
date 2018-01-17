@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCListadoProducto));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,22 +52,24 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.textBuscar = new System.Windows.Forms.ToolStripTextBox();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.cbxSucursales = new System.Windows.Forms.ToolStripComboBox();
+            this.cbxAlmacenes = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnAnular = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.cbxPersonales = new System.Windows.Forms.ToolStripComboBox();
-            this.cbxEstados = new System.Windows.Forms.ToolStripComboBox();
-            this.btnConsultar = new System.Windows.Forms.ToolStripButton();
+            this.btnImportar = new System.Windows.Forms.ToolStripButton();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelHeaderItem1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.treeViewCategoria = new System.Windows.Forms.TreeView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.panelHeaderItem1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,8 +78,9 @@
             this.toolStripTools.SuspendLayout();
             this.toolStripCrud.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelHeaderItem1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.panelHeaderItem1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -91,7 +95,7 @@
             this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(1125, 549);
+            this.panelContainer.Size = new System.Drawing.Size(1492, 549);
             this.panelContainer.TabIndex = 7;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -102,10 +106,10 @@
             this.panel2.Controls.Add(this.toolStripTools);
             this.panel2.Controls.Add(this.toolStripCrud);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(305, 51);
+            this.panel2.Location = new System.Drawing.Point(355, 51);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(819, 497);
+            this.panel2.Size = new System.Drawing.Size(1136, 497);
             this.panel2.TabIndex = 5;
             // 
             // panel3
@@ -116,7 +120,7 @@
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel3.Size = new System.Drawing.Size(819, 350);
+            this.panel3.Size = new System.Drawing.Size(1136, 350);
             this.panel3.TabIndex = 20;
             // 
             // dataGridView
@@ -128,14 +132,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.DateWithTime = false;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,7 +149,7 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(793, 326);
+            this.dataGridView.Size = new System.Drawing.Size(1110, 326);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             // 
@@ -173,7 +177,7 @@
             this.toolStripNavigation.Location = new System.Drawing.Point(0, 460);
             this.toolStripNavigation.Name = "toolStripNavigation";
             this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.toolStripNavigation.Size = new System.Drawing.Size(819, 37);
+            this.toolStripNavigation.Size = new System.Drawing.Size(1136, 37);
             this.toolStripNavigation.TabIndex = 19;
             this.toolStripNavigation.Text = "toolStrip3";
             // 
@@ -296,11 +300,13 @@
             this.toolStripTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.textBuscar,
-            this.btnBuscar});
+            this.btnBuscar,
+            this.cbxSucursales,
+            this.cbxAlmacenes});
             this.toolStripTools.Location = new System.Drawing.Point(0, 55);
             this.toolStripTools.Name = "toolStripTools";
             this.toolStripTools.Padding = new System.Windows.Forms.Padding(10);
-            this.toolStripTools.Size = new System.Drawing.Size(819, 55);
+            this.toolStripTools.Size = new System.Drawing.Size(1136, 55);
             this.toolStripTools.TabIndex = 18;
             this.toolStripTools.Text = "toolStrip2";
             // 
@@ -332,6 +338,20 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.ToolTipText = "Buscar (Enter)";
             // 
+            // cbxSucursales
+            // 
+            this.cbxSucursales.AutoSize = false;
+            this.cbxSucursales.BackColor = System.Drawing.Color.Gainsboro;
+            this.cbxSucursales.Name = "cbxSucursales";
+            this.cbxSucursales.Size = new System.Drawing.Size(200, 28);
+            // 
+            // cbxAlmacenes
+            // 
+            this.cbxAlmacenes.AutoSize = false;
+            this.cbxAlmacenes.BackColor = System.Drawing.Color.Gainsboro;
+            this.cbxAlmacenes.Name = "cbxAlmacenes";
+            this.cbxAlmacenes.Size = new System.Drawing.Size(200, 28);
+            // 
             // toolStripCrud
             // 
             this.toolStripCrud.AutoSize = false;
@@ -342,15 +362,13 @@
             this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnModificar,
-            this.btnAnular,
+            this.btnEliminar,
             this.btnActualizar,
-            this.cbxPersonales,
-            this.cbxEstados,
-            this.btnConsultar});
+            this.btnImportar});
             this.toolStripCrud.Location = new System.Drawing.Point(0, 0);
             this.toolStripCrud.Name = "toolStripCrud";
             this.toolStripCrud.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.toolStripCrud.Size = new System.Drawing.Size(819, 55);
+            this.toolStripCrud.Size = new System.Drawing.Size(1136, 55);
             this.toolStripCrud.TabIndex = 17;
             this.toolStripCrud.Text = "toolStrip1";
             // 
@@ -378,17 +396,17 @@
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
             // 
-            // btnAnular
+            // btnEliminar
             // 
-            this.btnAnular.AutoSize = false;
-            this.btnAnular.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
-            this.btnAnular.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(73, 37);
-            this.btnAnular.Text = "Anular";
-            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAnular.ToolTipText = "Anular(F7)";
+            this.btnEliminar.AutoSize = false;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
             // 
             // btnActualizar
             // 
@@ -402,36 +420,22 @@
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
             // 
-            // cbxPersonales
+            // btnImportar
             // 
-            this.cbxPersonales.AutoSize = false;
-            this.cbxPersonales.BackColor = System.Drawing.Color.Gainsboro;
-            this.cbxPersonales.Name = "cbxPersonales";
-            this.cbxPersonales.Size = new System.Drawing.Size(200, 28);
-            // 
-            // cbxEstados
-            // 
-            this.cbxEstados.AutoSize = false;
-            this.cbxEstados.BackColor = System.Drawing.Color.Gainsboro;
-            this.cbxEstados.Name = "cbxEstados";
-            this.cbxEstados.Size = new System.Drawing.Size(200, 28);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.AutoSize = false;
-            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(79, 37);
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnConsultar.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.btnImportar.AutoSize = false;
+            this.btnImportar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Image = ((System.Drawing.Image)(resources.GetObject("btnImportar.Image")));
+            this.btnImportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(79, 37);
+            this.btnImportar.Text = "Importar";
+            this.btnImportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnImportar.ToolTipText = "Actualizar registros (F5)\r\n";
             // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.LightGray;
-            this.splitter1.Location = new System.Drawing.Point(301, 51);
+            this.splitter1.Location = new System.Drawing.Point(351, 51);
             this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(4, 497);
@@ -440,41 +444,47 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.toolStrip1);
-            this.panel1.Controls.Add(this.treeView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(1, 51);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 497);
+            this.panel1.Size = new System.Drawing.Size(350, 497);
             this.panel1.TabIndex = 3;
             // 
-            // panelHeaderItem1
+            // panel4
             // 
-            this.panelHeaderItem1.Controls.Add(this.label1);
-            this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(1123, 50);
-            this.panelHeaderItem1.TabIndex = 0;
+            this.panel4.Controls.Add(this.treeViewCategoria);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 55);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(10);
+            this.panel4.Size = new System.Drawing.Size(350, 442);
+            this.panel4.TabIndex = 19;
             // 
-            // label1
+            // treeViewCategoria
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MATENIMIENTO PRODUCTO";
+            this.treeViewCategoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeViewCategoria.CheckBoxes = true;
+            this.treeViewCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewCategoria.ImageIndex = 0;
+            this.treeViewCategoria.ImageList = this.imageList;
+            this.treeViewCategoria.ItemHeight = 25;
+            this.treeViewCategoria.Location = new System.Drawing.Point(10, 10);
+            this.treeViewCategoria.Name = "treeViewCategoria";
+            this.treeViewCategoria.SelectedImageIndex = 0;
+            this.treeViewCategoria.ShowNodeToolTips = true;
+            this.treeViewCategoria.Size = new System.Drawing.Size(330, 422);
+            this.treeViewCategoria.TabIndex = 9;
+            this.treeViewCategoria.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeViewCategoria_NodeMouseClick);
             // 
-            // treeView1
+            // imageList
             // 
-            this.treeView1.Location = new System.Drawing.Point(16, 85);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(245, 340);
-            this.treeView1.TabIndex = 8;
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "label_icon.png");
+            this.imageList.Images.SetKeyName(1, "open_icon.png");
             // 
             // toolStrip1
             // 
@@ -489,7 +499,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.toolStrip1.Size = new System.Drawing.Size(300, 55);
+            this.toolStrip1.Size = new System.Drawing.Size(350, 55);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -517,6 +527,26 @@
             this.toolStripButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton8.ToolTipText = "Actualizar registros (F5)\r\n";
             // 
+            // panelHeaderItem1
+            // 
+            this.panelHeaderItem1.Controls.Add(this.label1);
+            this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelHeaderItem1.Name = "panelHeaderItem1";
+            this.panelHeaderItem1.Size = new System.Drawing.Size(1490, 50);
+            this.panelHeaderItem1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MATENIMIENTO PRODUCTO";
+            // 
             // UCListadoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -525,7 +555,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCListadoProducto";
             this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.Size = new System.Drawing.Size(1147, 569);
+            this.Size = new System.Drawing.Size(1514, 569);
             this.Load += new System.EventHandler(this.UCListadoProducto_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -538,10 +568,11 @@
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panelHeaderItem1.ResumeLayout(false);
-            this.panelHeaderItem1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panelHeaderItem1.ResumeLayout(false);
+            this.panelHeaderItem1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -576,14 +607,16 @@
         private System.Windows.Forms.ToolStrip toolStripCrud;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnModificar;
-        private System.Windows.Forms.ToolStripButton btnAnular;
         private System.Windows.Forms.ToolStripButton btnActualizar;
-        private System.Windows.Forms.ToolStripComboBox cbxPersonales;
-        private System.Windows.Forms.ToolStripComboBox cbxEstados;
-        private System.Windows.Forms.ToolStripButton btnConsultar;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TreeView treeViewCategoria;
+        private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
+        private System.Windows.Forms.ToolStripComboBox cbxSucursales;
+        private System.Windows.Forms.ToolStripComboBox cbxAlmacenes;
+        private System.Windows.Forms.ToolStripButton btnImportar;
     }
 }
