@@ -159,7 +159,7 @@ namespace Admeli
             switch (panelName)
             {
                 case "ventas":
-                    this.uCVentas = new Admeli.Ventas.UCVentas();
+                    this.uCVentas = new Admeli.Ventas.UCVentas(this);
                     this.panelMain.Controls.Add(uCVentas);
                     this.uCVentas.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCVentas.Location = new System.Drawing.Point(0, 0);
@@ -177,7 +177,7 @@ namespace Admeli
                     this.uCCompras.TabIndex = 0;
                     break;
                 case "productos":
-                    this.uCListadoProducto = new Admeli.Productos.UCListadoProducto();
+                    this.uCListadoProducto = new Admeli.Productos.UCListadoProducto(this);
                     this.panelMain.Controls.Add(uCListadoProducto);
                     this.uCListadoProducto.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.uCListadoProducto.Location = new System.Drawing.Point(0, 0);

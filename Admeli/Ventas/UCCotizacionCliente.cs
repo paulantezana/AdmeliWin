@@ -143,7 +143,6 @@ namespace Admeli.Ventas
             formPrincipal.appLoadState(state);
             toolStripNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

@@ -24,12 +24,27 @@ namespace Modelo
         {
 
         }
+
         public async Task<RootObject<Cliente>> clientes(int page, int items)
         {
             try
             {
                 // www.lineatienda.com/services.php/clientes/estado/1/100
                 RootObject<Cliente> clientes = await webService.GETRoot<Cliente>("clientes", String.Format("estado/{0}/{1}", page, items));
+                return clientes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<RootObject<Cliente>> buscarClientesLike(string like, int page, int items)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/buscarclienteslike/nombre/Jhon/1/100
+                RootObject<Cliente> clientes = await webService.GETRoot<Cliente>("buscarclienteslike", String.Format("nombre/{0}/{1}/{2}",like, page, items));
                 return clientes;
             }
             catch (Exception ex)

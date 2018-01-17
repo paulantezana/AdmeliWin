@@ -105,9 +105,6 @@ namespace Admeli.Ventas
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            // Estado cargar en falso
-            loadState(false);
         }
 
 
@@ -278,6 +275,10 @@ namespace Admeli.Ventas
         {
             FormVentaNuevo ventaNuevo = new FormVentaNuevo();
             ventaNuevo.ShowDialog();
+        }
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            //
         }
         #endregion
     }

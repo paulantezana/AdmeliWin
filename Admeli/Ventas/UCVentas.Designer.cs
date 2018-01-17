@@ -92,6 +92,7 @@
             this.btnConsultar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -643,8 +644,8 @@
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(52, 32);
-            this.toolStripButton6.Text = "Buscar:";
+            this.toolStripButton6.Size = new System.Drawing.Size(105, 32);
+            this.toolStripButton6.Text = "Nombre cliente:";
             // 
             // textBuscar
             // 
@@ -653,6 +654,7 @@
             this.textBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(399, 26);
+            this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // btnBuscar
             // 
@@ -675,6 +677,7 @@
             this.btnNuevo,
             this.btnModificar,
             this.btnAnular,
+            this.btnEliminar,
             this.btnActualizar,
             this.cbxSucursales,
             this.cbxPersonales,
@@ -799,6 +802,18 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "VENTAS";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AutoSize = false;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
+            // 
             // UCVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -888,5 +903,6 @@
         private System.Windows.Forms.BindingSource ventaBindingSource;
         private System.Windows.Forms.ToolStripComboBox cbxSucursales;
         private System.Windows.Forms.ToolStripComboBox cbxPuntosVenta;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }

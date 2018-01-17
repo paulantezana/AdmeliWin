@@ -99,6 +99,32 @@ namespace Admeli.Ventas
                 loadState(false);
             }
         }
+        private async void cargarRegistrosBuscar()
+        {
+            loadState(true);
+            try
+            {
+
+                RootObject<Cliente> clientes = await clienteModel.buscarClientesLike(textBuscar.Text, paginacion.currentPage, paginacion.speed);
+
+                // actualizando datos de páginacón
+                paginacion.itemsCount = clientes.nro_registros;
+                paginacion.reload();
+
+                // Ingresando
+                clienteBindingSource.DataSource = clientes.datos;
+                dataGridView.Refresh();
+                mostrarPaginado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
         #endregion
 
         #region =========================== Estados ===========================
@@ -210,6 +236,21 @@ namespace Admeli.Ventas
             if (dialog == DialogResult.No) return;
         }
 
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && textBuscar.Text != "")
+            {
+                cargarRegistrosBuscar();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (textBuscar.Text != "")
+            {
+                cargarRegistrosBuscar();
+            }
+        }
         #endregion
     }
 }
