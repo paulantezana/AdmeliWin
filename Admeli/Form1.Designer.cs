@@ -54,6 +54,7 @@
             this.btnNextNav = new System.Windows.Forms.ToolStripButton();
             this.btnLastNav = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.tlsHeader.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -71,10 +72,10 @@
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 41);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 50);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(6, 0, 1, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(754, 41);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(8, 0, 1, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1005, 50);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -83,7 +84,7 @@
             this.toolStripButton1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripButton1.Size = new System.Drawing.Size(108, 41);
+            this.toolStripButton1.Size = new System.Drawing.Size(93, 50);
             // 
             // toolStripButton2
             // 
@@ -100,7 +101,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(24, 38);
+            this.toolStripButton3.Size = new System.Drawing.Size(24, 47);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
             // tlsHeader
@@ -127,7 +128,7 @@
             this.tlsHeader.Location = new System.Drawing.Point(0, 0);
             this.tlsHeader.Name = "tlsHeader";
             this.tlsHeader.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tlsHeader.Size = new System.Drawing.Size(754, 41);
+            this.tlsHeader.Size = new System.Drawing.Size(1005, 50);
             this.tlsHeader.TabIndex = 5;
             this.tlsHeader.Text = "toolStrip1";
             // 
@@ -189,7 +190,7 @@
             // toolStripButton11
             // 
             this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(6, 41);
+            this.toolStripButton11.Size = new System.Drawing.Size(6, 50);
             // 
             // btnImportar
             // 
@@ -216,13 +217,13 @@
             // toolStripButton16
             // 
             this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(6, 41);
+            this.toolStripButton16.Size = new System.Drawing.Size(6, 50);
             // 
             // toolStripButton9
             // 
             this.toolStripButton9.AutoSize = false;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(61, 23);
+            this.toolStripButton9.Size = new System.Drawing.Size(80, 28);
             this.toolStripButton9.Text = "Tool1";
             this.toolStripButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -252,9 +253,9 @@
             this.lblTotalPages,
             this.btnNextNav,
             this.btnLastNav});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 354);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 436);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(754, 41);
+            this.toolStrip2.Size = new System.Drawing.Size(1005, 50);
             this.toolStrip2.TabIndex = 7;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -283,7 +284,7 @@
             // 
             this.textCurentPage.AutoSize = false;
             this.textCurentPage.Name = "textCurentPage";
-            this.textCurentPage.Size = new System.Drawing.Size(27, 23);
+            this.textCurentPage.Size = new System.Drawing.Size(35, 27);
             this.textCurentPage.Text = "10";
             this.textCurentPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -293,7 +294,7 @@
             this.lblPageSeparator.Image = ((System.Drawing.Image)(resources.GetObject("lblPageSeparator.Image")));
             this.lblPageSeparator.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lblPageSeparator.Name = "lblPageSeparator";
-            this.lblPageSeparator.Size = new System.Drawing.Size(31, 38);
+            this.lblPageSeparator.Size = new System.Drawing.Size(40, 47);
             this.lblPageSeparator.Text = "de  /";
             // 
             // lblTotalPages
@@ -302,7 +303,7 @@
             this.lblTotalPages.Image = ((System.Drawing.Image)(resources.GetObject("lblTotalPages.Image")));
             this.lblTotalPages.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lblTotalPages.Name = "lblTotalPages";
-            this.lblTotalPages.Size = new System.Drawing.Size(25, 38);
+            this.lblTotalPages.Size = new System.Drawing.Size(33, 47);
             this.lblTotalPages.Text = "100";
             // 
             // btnNextNav
@@ -328,21 +329,34 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(185, 170);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(247, 209);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(180, 122);
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(618, 209);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(98, 21);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 395);
+            this.ClientSize = new System.Drawing.Size(1005, 486);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tlsHeader);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -354,6 +368,7 @@
             this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -384,5 +399,6 @@
         private System.Windows.Forms.ToolStripButton btnNextNav;
         private System.Windows.Forms.ToolStripButton btnLastNav;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

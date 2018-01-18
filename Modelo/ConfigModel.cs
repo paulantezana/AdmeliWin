@@ -43,6 +43,7 @@ namespace Modelo
          * */
         public static int currentIdAlmacen { get; set; }
         public static int currentPuntoVenta { get; set; }
+        public static Dictionary<string, int> currentProductoCategory = new Dictionary<string, int>();
 
         public void guardar()
         {

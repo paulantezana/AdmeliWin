@@ -62,5 +62,37 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<RootObject<Producto>> productosStock(Dictionary<string, int> dictionary, string like, int idAlmacen, int idSucursal, int page, int items)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/productos/categoria/stock/1/100/1/1
+                string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
+                json = String.Format("[\r\n{0}\r\n]", json);
+                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/stock/{0}/{1}/{2}/{3}", page, items, idAlmacen, idSucursal), json);
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<RootObject<Producto>> productosStockLike(Dictionary<string, int> dictionary, string like, int idAlmacen, int idSucursal, int page, int items)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/productos/categoria/stock/1/100/1/1
+                // www.lineatienda.com/services.php/productos/categoria/stock/1/100/pantalla/1/1
+                string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
+                json = String.Format("[\r\n{0}\r\n]", json);
+                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/stock/{0}/{1}/{2}/{3}/{4}", page, items, like, idAlmacen, idSucursal), json);
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

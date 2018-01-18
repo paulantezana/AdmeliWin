@@ -21,5 +21,10 @@ namespace Admeli
         {
             var cs = dataGridView1.Rows[2].Cells["dd"];
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

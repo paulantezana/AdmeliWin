@@ -25,7 +25,9 @@ namespace Admeli.Productos
         private Paginacion paginacion;
         private FormPrincipal formPrincipal;
 
-        private Dictionary<string, int> itemSeleccionado = new Dictionary<string, int>();
+        private bool verStock { get; set; }
+
+        
 
         public UCListadoProducto()
         {
@@ -52,6 +54,10 @@ namespace Admeli.Productos
 
         private void UCListadoProducto_Load(object sender, EventArgs e)
         {
+            // agregando un checkbox en toostriptools
+            addCheckBox();
+
+            // load data
             cargarComponentes();
             cargarComponentesSecond();
             cargarComponentesThird();
@@ -120,7 +126,14 @@ namespace Admeli.Productos
                 });
 
                 // Estableciendo valores por defecto
-                treeViewCategoria.Nodes[0].ExpandAll();
+                if (ConfigModel.currentProductoCategory.Count > 0)
+                {
+                    recuperarCatSeleccionado();
+                }
+                else
+                {
+                    treeViewCategoria.Nodes[0].ExpandAll();
+                }
                 treeViewCategoria.Nodes[0].Checked = true;
             }
             catch (Exception ex)
@@ -154,7 +167,7 @@ namespace Admeli.Productos
             {
                 Dictionary<string, int> list = new Dictionary<string, int>();
                 list.Add("id0", 0);
-                Dictionary<string, int> sendList = (itemSeleccionado.Count == 0) ? list : itemSeleccionado;
+                Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
 
                 RootObject<Producto> productos = await productoModel.productosPorCategoria(sendList, paginacion.currentPage, paginacion.speed);
 
@@ -183,9 +196,75 @@ namespace Admeli.Productos
             {
                 Dictionary<string, int> list = new Dictionary<string, int>();
                 list.Add("id0", 0);
-                Dictionary<string, int> sendList = (itemSeleccionado.Count == 0) ? list : itemSeleccionado;
+                Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
 
                 RootObject<Producto> productos = await productoModel.productosPorCategoriaBuscar(sendList, textBuscar.Text, paginacion.currentPage, paginacion.speed);
+
+                // actualizando datos de páginacón
+                paginacion.itemsCount = productos.nro_registros;
+                paginacion.reload();
+
+                // Ingresando
+                productoBindingSource.DataSource = productos.datos;
+                dataGridView.Refresh();
+                mostrarPaginado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
+
+        private async void cargarRegistrosStock()
+        {
+            loadState(true);
+            try
+            {
+                Dictionary<string, int> list = new Dictionary<string, int>();
+                list.Add("id0", 0);
+                Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
+
+                int idAlmacen = Convert.ToInt32(cbxAlmacenes.ComboBox.SelectedValue);
+                int idSucursal = Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+
+                RootObject<Producto> productos = await productoModel.productosStock(sendList, textBuscar.Text, idAlmacen, idSucursal, paginacion.currentPage, paginacion.speed);
+
+                // actualizando datos de páginacón
+                paginacion.itemsCount = productos.nro_registros;
+                paginacion.reload();
+
+                // Ingresando
+                productoBindingSource.DataSource = productos.datos;
+                dataGridView.Refresh();
+                mostrarPaginado();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
+
+        private async void cargarRegistrosStockLike()
+        {
+            loadState(true);
+            try
+            {
+                Dictionary<string, int> list = new Dictionary<string, int>();
+                list.Add("id0", 0);
+                Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
+
+                int idAlmacen = Convert.ToInt32(cbxAlmacenes.ComboBox.SelectedValue);
+                int idSucursal = Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+
+                RootObject<Producto> productos = await productoModel.productosStock(sendList, textBuscar.Text, idAlmacen, idSucursal, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = productos.nro_registros;
@@ -215,6 +294,12 @@ namespace Admeli.Productos
             toolStripCrud.Enabled = !state;
             toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
+        }
+
+        private void stateCombobox(bool state)
+        {
+            cbxAlmacenes.Enabled = state;
+            cbxSucursales.Enabled = state;
         }
         #endregion
 
@@ -312,7 +397,14 @@ namespace Admeli.Productos
         {
             if (e.KeyCode == Keys.Enter && textBuscar.Text != "")
             {
-                cargarRegistrosBuscar();
+                if (verStock)
+                {
+                    cargarRegistrosStockLike();
+                }
+                else
+                {
+                    cargarRegistrosBuscar();
+                }
             }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -325,6 +417,17 @@ namespace Admeli.Productos
         #endregion
 
         #region ======================== Treeview control checked ========================
+
+        private void recuperarCatSeleccionado()
+        {
+            foreach (var item in ConfigModel.currentProductoCategory)
+            {
+
+                int nodeIndex = treeViewCategoria.Nodes[0].Nodes.IndexOfKey(item.Value.ToString());
+            }
+        }
+
+
         private int itemNumber { get; set; }
 
         private void treeViewCategoria_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -332,7 +435,7 @@ namespace Admeli.Productos
             // OBteniendo los datos seleccionados del treeView y almacenando en un diccionary
             TreeNode mainNode = treeViewCategoria.Nodes[0];
             itemNumber = 0;
-            itemSeleccionado.Clear();
+            ConfigModel.currentProductoCategory.Clear();
             getRecursiveNodes(mainNode);
 
             // cargando los registros
@@ -342,7 +445,7 @@ namespace Admeli.Productos
         {
             if (parentNode.Checked)
             {
-                itemSeleccionado.Add("id" + itemNumber.ToString(), Convert.ToInt32(parentNode.Name));
+                ConfigModel.currentProductoCategory.Add("id" + itemNumber.ToString(), Convert.ToInt32(parentNode.Name));
                 itemNumber++;
             }
             foreach (TreeNode subNode in parentNode.Nodes)
@@ -369,6 +472,32 @@ namespace Admeli.Productos
         private void treeViewCategoria_AfterCheck(object sender, TreeViewEventArgs e)
         {
             CheckTreeViewNode(e.Node, e.Node.Checked);
+        }
+        #endregion
+
+        #region ========================= Agregando un nuevo checkbox =========================
+        private void addCheckBox()
+        {
+            CheckBox cb = new CheckBox();
+            cb.Text = "Ver Stock";
+            //cb.CheckStateChanged += (s, ex) =&gt; this.Text = cb.CheckState.ToString();
+            cb.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            ToolStripControlHost host = new ToolStripControlHost(cb);
+            toolStripTools.Items.Insert(3,host);
+
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            verStock = ((CheckBox)sender).Checked;
+            if (verStock)
+            {
+                cargarRegistrosStock();
+            }
+            else
+            {
+                cargarRegistros();
+            }
+            stateCombobox(verStock);
         }
         #endregion
 
