@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelFooter = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -54,6 +55,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMainHeader = new System.Windows.Forms.Panel();
+            this.btnToggleAsideMenu = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -400,6 +403,7 @@
             // panelMainHeader
             // 
             this.panelMainHeader.BackColor = System.Drawing.Color.White;
+            this.panelMainHeader.Controls.Add(this.btnToggleAsideMenu);
             this.panelMainHeader.Controls.Add(this.pictureBox3);
             this.panelMainHeader.Controls.Add(this.panel3);
             this.panelMainHeader.Controls.Add(this.lblSucursal);
@@ -416,10 +420,37 @@
             this.panelMainHeader.Visible = false;
             this.panelMainHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMainHeader_Paint);
             // 
+            // btnToggleAsideMenu
+            // 
+            this.btnToggleAsideMenu.BackColor = System.Drawing.Color.White;
+            this.btnToggleAsideMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToggleAsideMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnToggleAsideMenu.FlatAppearance.BorderSize = 0;
+            this.btnToggleAsideMenu.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnToggleAsideMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnToggleAsideMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnToggleAsideMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToggleAsideMenu.ImageIndex = 0;
+            this.btnToggleAsideMenu.ImageList = this.imageList1;
+            this.btnToggleAsideMenu.Location = new System.Drawing.Point(3, 10);
+            this.btnToggleAsideMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.btnToggleAsideMenu.Name = "btnToggleAsideMenu";
+            this.btnToggleAsideMenu.Size = new System.Drawing.Size(57, 40);
+            this.btnToggleAsideMenu.TabIndex = 10;
+            this.btnToggleAsideMenu.UseVisualStyleBackColor = false;
+            this.btnToggleAsideMenu.Click += new System.EventHandler(this.btnToggleAsideMenu_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "back_icon.png");
+            this.imageList1.Images.SetKeyName(1, "next_icon.png");
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(23, 21);
+            this.pictureBox3.Location = new System.Drawing.Point(72, 20);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(18, 18);
@@ -465,7 +496,7 @@
             this.lblSucursal.AutoSize = true;
             this.lblSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
-            this.lblSucursal.Location = new System.Drawing.Point(51, 21);
+            this.lblSucursal.Location = new System.Drawing.Point(100, 20);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(53, 20);
             this.lblSucursal.TabIndex = 1;
@@ -591,7 +622,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelFooter;
-        private System.Windows.Forms.Panel panelAside;
         private System.Windows.Forms.Panel panelMainContainer;
         private System.Windows.Forms.Panel panelMainHeader;
         private System.Windows.Forms.Panel panelAsideMain;
@@ -624,5 +654,8 @@
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnToggleAsideMenu;
+        public System.Windows.Forms.Panel panelAside;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -369,5 +369,19 @@ namespace Admeli
                 this.appLoadState(false);
             }
         }
+
+        private void btnToggleAsideMenu_Click(object sender, EventArgs e)
+        {
+            if (panelAside.Size.Width < 1)
+            {
+                panelAside.Size = new Size(250, 881);
+                btnToggleAsideMenu.ImageIndex = 0;
+            }
+            else
+            {
+                panelAside.Size = new Size(0, 0);
+                btnToggleAsideMenu.ImageIndex = 1;
+            }
+        }
     }
 }

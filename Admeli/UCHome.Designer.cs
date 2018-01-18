@@ -30,14 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.panelItem1 = new System.Windows.Forms.Panel();
             this.cardContainer6 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.montoPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorPagadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saldoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDocumentoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.simboloDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monedaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cobroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel13 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.cardContainer5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorPagadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saldoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDocumentoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.simboloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monedaDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel10 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.cardContainer4 = new System.Windows.Forms.Panel();
@@ -48,20 +64,6 @@
             this.cardContainer3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cardContainer2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cardContainer1 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cardHeader1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idNotaEntradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroDocumentoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +71,11 @@
             this.numeroDocumentoCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProveedorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaEntradaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cardContainer2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +86,7 @@
             this.formaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subTotalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +105,12 @@
             this.vendedorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guiaRemisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentoIdentificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cardContainer1 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroOrdenCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,31 +136,24 @@
             this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cardHeader1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cobroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorPagadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saldoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDocumentoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.simboloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monedaDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoPagarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorPagadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saldoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDocumentoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.simboloDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monedaDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelItem2 = new System.Windows.Forms.Panel();
             this.panelContainer.SuspendLayout();
+            this.panelItem1.SuspendLayout();
             this.cardContainer6.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cobroBindingSource)).BeginInit();
             this.panel13.SuspendLayout();
             this.cardContainer5.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagoBindingSource)).BeginInit();
             this.panel10.SuspendLayout();
             this.cardContainer4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -155,43 +162,54 @@
             this.cardContainer3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notaEntradaBindingSource)).BeginInit();
             this.panel6.SuspendLayout();
             this.cardContainer2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.cardContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.cardHeader1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notaEntradaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cobroBindingSource)).BeginInit();
+            this.cardHeader1.SuspendLayout();
+            this.panelItem2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
-            this.panelContainer.AutoScroll = true;
-            this.panelContainer.Controls.Add(this.cardContainer6);
-            this.panelContainer.Controls.Add(this.cardContainer5);
-            this.panelContainer.Controls.Add(this.cardContainer4);
-            this.panelContainer.Controls.Add(this.cardContainer3);
-            this.panelContainer.Controls.Add(this.cardContainer2);
-            this.panelContainer.Controls.Add(this.cardContainer1);
+            this.panelContainer.Controls.Add(this.panelItem2);
+            this.panelContainer.Controls.Add(this.panelItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 10);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1139, 1067);
+            this.panelContainer.Size = new System.Drawing.Size(1104, 1067);
             this.panelContainer.TabIndex = 0;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
+            // 
+            // panelItem1
+            // 
+            this.panelItem1.AutoScroll = true;
+            this.panelItem1.BackColor = System.Drawing.Color.White;
+            this.panelItem1.Controls.Add(this.cardContainer1);
+            this.panelItem1.Controls.Add(this.cardContainer3);
+            this.panelItem1.Controls.Add(this.cardContainer5);
+            this.panelItem1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelItem1.Location = new System.Drawing.Point(0, 0);
+            this.panelItem1.Name = "panelItem1";
+            this.panelItem1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.panelItem1.Size = new System.Drawing.Size(552, 1067);
+            this.panelItem1.TabIndex = 6;
             // 
             // cardContainer6
             // 
+            this.cardContainer6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cardContainer6.BackColor = System.Drawing.Color.White;
             this.cardContainer6.Controls.Add(this.panel12);
             this.cardContainer6.Controls.Add(this.panel13);
-            this.cardContainer6.Location = new System.Drawing.Point(558, 671);
+            this.cardContainer6.Location = new System.Drawing.Point(11, 649);
             this.cardContainer6.Name = "cardContainer6";
             this.cardContainer6.Padding = new System.Windows.Forms.Padding(1);
             this.cardContainer6.Size = new System.Drawing.Size(525, 309);
@@ -237,6 +255,52 @@
             this.dataGridView6.Size = new System.Drawing.Size(503, 242);
             this.dataGridView6.TabIndex = 2;
             // 
+            // montoPagarDataGridViewTextBoxColumn
+            // 
+            this.montoPagarDataGridViewTextBoxColumn.DataPropertyName = "montoPagar";
+            this.montoPagarDataGridViewTextBoxColumn.HeaderText = "Monto Pagar";
+            this.montoPagarDataGridViewTextBoxColumn.Name = "montoPagarDataGridViewTextBoxColumn";
+            this.montoPagarDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorPagadoDataGridViewTextBoxColumn1
+            // 
+            this.valorPagadoDataGridViewTextBoxColumn1.DataPropertyName = "valorPagado";
+            this.valorPagadoDataGridViewTextBoxColumn1.HeaderText = "Valor Pagado";
+            this.valorPagadoDataGridViewTextBoxColumn1.Name = "valorPagadoDataGridViewTextBoxColumn1";
+            this.valorPagadoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // saldoDataGridViewTextBoxColumn1
+            // 
+            this.saldoDataGridViewTextBoxColumn1.DataPropertyName = "saldo";
+            this.saldoDataGridViewTextBoxColumn1.HeaderText = "Saldo";
+            this.saldoDataGridViewTextBoxColumn1.Name = "saldoDataGridViewTextBoxColumn1";
+            this.saldoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // numeroDocumentoDataGridViewTextBoxColumn3
+            // 
+            this.numeroDocumentoDataGridViewTextBoxColumn3.DataPropertyName = "numeroDocumento";
+            this.numeroDocumentoDataGridViewTextBoxColumn3.HeaderText = "Numero Documento";
+            this.numeroDocumentoDataGridViewTextBoxColumn3.Name = "numeroDocumentoDataGridViewTextBoxColumn3";
+            this.numeroDocumentoDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // simboloDataGridViewTextBoxColumn1
+            // 
+            this.simboloDataGridViewTextBoxColumn1.DataPropertyName = "simbolo";
+            this.simboloDataGridViewTextBoxColumn1.HeaderText = "Simbolo";
+            this.simboloDataGridViewTextBoxColumn1.Name = "simboloDataGridViewTextBoxColumn1";
+            this.simboloDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // monedaDataGridViewTextBoxColumn3
+            // 
+            this.monedaDataGridViewTextBoxColumn3.DataPropertyName = "moneda";
+            this.monedaDataGridViewTextBoxColumn3.HeaderText = "Moneda";
+            this.monedaDataGridViewTextBoxColumn3.Name = "monedaDataGridViewTextBoxColumn3";
+            this.monedaDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // cobroBindingSource
+            // 
+            this.cobroBindingSource.DataSource = typeof(Entidad.Cobro);
+            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -259,10 +323,12 @@
             // 
             // cardContainer5
             // 
+            this.cardContainer5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cardContainer5.BackColor = System.Drawing.Color.White;
             this.cardContainer5.Controls.Add(this.panel9);
             this.cardContainer5.Controls.Add(this.panel10);
-            this.cardContainer5.Location = new System.Drawing.Point(14, 672);
+            this.cardContainer5.Location = new System.Drawing.Point(17, 650);
             this.cardContainer5.Name = "cardContainer5";
             this.cardContainer5.Padding = new System.Windows.Forms.Padding(1);
             this.cardContainer5.Size = new System.Drawing.Size(525, 309);
@@ -309,6 +375,59 @@
             this.dataGridView5.Size = new System.Drawing.Size(503, 242);
             this.dataGridView5.TabIndex = 2;
             // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "valorTotal";
+            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
+            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorPagadoDataGridViewTextBoxColumn
+            // 
+            this.valorPagadoDataGridViewTextBoxColumn.DataPropertyName = "valorPagado";
+            this.valorPagadoDataGridViewTextBoxColumn.HeaderText = "Valor Pagado";
+            this.valorPagadoDataGridViewTextBoxColumn.Name = "valorPagadoDataGridViewTextBoxColumn";
+            this.valorPagadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // saldoDataGridViewTextBoxColumn
+            // 
+            this.saldoDataGridViewTextBoxColumn.DataPropertyName = "saldo";
+            this.saldoDataGridViewTextBoxColumn.HeaderText = "Saldo";
+            this.saldoDataGridViewTextBoxColumn.Name = "saldoDataGridViewTextBoxColumn";
+            this.saldoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // motivoDataGridViewTextBoxColumn
+            // 
+            this.motivoDataGridViewTextBoxColumn.DataPropertyName = "motivo";
+            this.motivoDataGridViewTextBoxColumn.HeaderText = "Motivo";
+            this.motivoDataGridViewTextBoxColumn.Name = "motivoDataGridViewTextBoxColumn";
+            this.motivoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroDocumentoDataGridViewTextBoxColumn2
+            // 
+            this.numeroDocumentoDataGridViewTextBoxColumn2.DataPropertyName = "numeroDocumento";
+            this.numeroDocumentoDataGridViewTextBoxColumn2.HeaderText = "Numero Documento";
+            this.numeroDocumentoDataGridViewTextBoxColumn2.Name = "numeroDocumentoDataGridViewTextBoxColumn2";
+            this.numeroDocumentoDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // simboloDataGridViewTextBoxColumn
+            // 
+            this.simboloDataGridViewTextBoxColumn.DataPropertyName = "simbolo";
+            this.simboloDataGridViewTextBoxColumn.HeaderText = "Simbolo";
+            this.simboloDataGridViewTextBoxColumn.Name = "simboloDataGridViewTextBoxColumn";
+            this.simboloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // monedaDataGridViewTextBoxColumn2
+            // 
+            this.monedaDataGridViewTextBoxColumn2.DataPropertyName = "moneda";
+            this.monedaDataGridViewTextBoxColumn2.HeaderText = "Moneda";
+            this.monedaDataGridViewTextBoxColumn2.Name = "monedaDataGridViewTextBoxColumn2";
+            this.monedaDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // pagoBindingSource
+            // 
+            this.pagoBindingSource.DataSource = typeof(Entidad.Pago);
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -331,10 +450,12 @@
             // 
             // cardContainer4
             // 
+            this.cardContainer4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cardContainer4.BackColor = System.Drawing.Color.White;
             this.cardContainer4.Controls.Add(this.panel7);
             this.cardContainer4.Controls.Add(this.panel8);
-            this.cardContainer4.Location = new System.Drawing.Point(557, 342);
+            this.cardContainer4.Location = new System.Drawing.Point(11, 325);
             this.cardContainer4.Name = "cardContainer4";
             this.cardContainer4.Padding = new System.Windows.Forms.Padding(1);
             this.cardContainer4.Size = new System.Drawing.Size(525, 309);
@@ -393,10 +514,12 @@
             // 
             // cardContainer3
             // 
+            this.cardContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cardContainer3.BackColor = System.Drawing.Color.White;
             this.cardContainer3.Controls.Add(this.panel5);
             this.cardContainer3.Controls.Add(this.panel6);
-            this.cardContainer3.Location = new System.Drawing.Point(13, 343);
+            this.cardContainer3.Location = new System.Drawing.Point(17, 326);
             this.cardContainer3.Name = "cardContainer3";
             this.cardContainer3.Padding = new System.Windows.Forms.Padding(1);
             this.cardContainer3.Size = new System.Drawing.Size(525, 309);
@@ -442,6 +565,54 @@
             this.dataGridView3.Size = new System.Drawing.Size(503, 242);
             this.dataGridView3.TabIndex = 2;
             // 
+            // idNotaEntradaDataGridViewTextBoxColumn
+            // 
+            this.idNotaEntradaDataGridViewTextBoxColumn.DataPropertyName = "idNotaEntrada";
+            this.idNotaEntradaDataGridViewTextBoxColumn.HeaderText = "idNotaEntrada";
+            this.idNotaEntradaDataGridViewTextBoxColumn.Name = "idNotaEntradaDataGridViewTextBoxColumn";
+            this.idNotaEntradaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idNotaEntradaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaDataGridViewTextBoxColumn1
+            // 
+            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
+            this.fechaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // numeroDocumentoDataGridViewTextBoxColumn1
+            // 
+            this.numeroDocumentoDataGridViewTextBoxColumn1.DataPropertyName = "numeroDocumento";
+            this.numeroDocumentoDataGridViewTextBoxColumn1.HeaderText = "Numero Documento";
+            this.numeroDocumentoDataGridViewTextBoxColumn1.Name = "numeroDocumentoDataGridViewTextBoxColumn1";
+            this.numeroDocumentoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nombreAlmacenDataGridViewTextBoxColumn
+            // 
+            this.nombreAlmacenDataGridViewTextBoxColumn.DataPropertyName = "nombreAlmacen";
+            this.nombreAlmacenDataGridViewTextBoxColumn.HeaderText = "Nombre Almacen";
+            this.nombreAlmacenDataGridViewTextBoxColumn.Name = "nombreAlmacenDataGridViewTextBoxColumn";
+            this.nombreAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreAlmacenDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // numeroDocumentoCompraDataGridViewTextBoxColumn
+            // 
+            this.numeroDocumentoCompraDataGridViewTextBoxColumn.DataPropertyName = "numeroDocumentoCompra";
+            this.numeroDocumentoCompraDataGridViewTextBoxColumn.HeaderText = "Documento Compra";
+            this.numeroDocumentoCompraDataGridViewTextBoxColumn.Name = "numeroDocumentoCompraDataGridViewTextBoxColumn";
+            this.numeroDocumentoCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreProveedorDataGridViewTextBoxColumn1
+            // 
+            this.nombreProveedorDataGridViewTextBoxColumn1.DataPropertyName = "nombreProveedor";
+            this.nombreProveedorDataGridViewTextBoxColumn1.HeaderText = "Nombre Proveedor";
+            this.nombreProveedorDataGridViewTextBoxColumn1.Name = "nombreProveedorDataGridViewTextBoxColumn1";
+            this.nombreProveedorDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // notaEntradaBindingSource
+            // 
+            this.notaEntradaBindingSource.DataSource = typeof(Entidad.NotaEntrada);
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -464,10 +635,12 @@
             // 
             // cardContainer2
             // 
+            this.cardContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cardContainer2.BackColor = System.Drawing.Color.White;
             this.cardContainer2.Controls.Add(this.panel3);
             this.cardContainer2.Controls.Add(this.panel4);
-            this.cardContainer2.Location = new System.Drawing.Point(556, 13);
+            this.cardContainer2.Location = new System.Drawing.Point(11, 2);
             this.cardContainer2.Name = "cardContainer2";
             this.cardContainer2.Padding = new System.Windows.Forms.Padding(1);
             this.cardContainer2.Size = new System.Drawing.Size(525, 309);
@@ -535,174 +708,6 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(503, 242);
             this.dataGridView2.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(1, 1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(523, 45);
-            this.panel4.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 18);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "ULTIMAS VENTAS";
-            // 
-            // cardContainer1
-            // 
-            this.cardContainer1.BackColor = System.Drawing.Color.White;
-            this.cardContainer1.Controls.Add(this.panel1);
-            this.cardContainer1.Controls.Add(this.cardHeader1);
-            this.cardContainer1.Location = new System.Drawing.Point(12, 12);
-            this.cardContainer1.Name = "cardContainer1";
-            this.cardContainer1.Padding = new System.Windows.Forms.Padding(1);
-            this.cardContainer1.Size = new System.Drawing.Size(525, 309);
-            this.cardContainer1.TabIndex = 0;
-            this.cardContainer1.Paint += new System.Windows.Forms.PaintEventHandler(this.cardContainer1_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 46);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(523, 262);
-            this.panel1.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCompraDataGridViewTextBoxColumn,
-            this.numeroDocumentoDataGridViewTextBoxColumn,
-            this.nroOrdenCompraDataGridViewTextBoxColumn,
-            this.nombreProveedorDataGridViewTextBoxColumn,
-            this.rucDniDataGridViewTextBoxColumn,
-            this.direccionDataGridViewTextBoxColumn,
-            this.formaPagoDataGridViewTextBoxColumn,
-            this.monedaDataGridViewTextBoxColumn,
-            this.fechaFacturacionDataGridViewTextBoxColumn,
-            this.fechaPagoDataGridViewTextBoxColumn,
-            this.descuentoDataGridViewTextBoxColumn,
-            this.tipoCompraDataGridViewTextBoxColumn,
-            this.tipoCambioDataGridViewTextBoxColumn,
-            this.subTotalDataGridViewTextBoxColumn,
-            this.totalDataGridViewTextBoxColumn,
-            this.observacionDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
-            this.idProveedorDataGridViewTextBoxColumn,
-            this.idPagoDataGridViewTextBoxColumn,
-            this.idPersonalDataGridViewTextBoxColumn,
-            this.idTipoDocumentoDataGridViewTextBoxColumn,
-            this.nombreLabelDataGridViewTextBoxColumn,
-            this.idSucursalDataGridViewTextBoxColumn,
-            this.vendedorDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.compraBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(503, 242);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // cardHeader1
-            // 
-            this.cardHeader1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cardHeader1.Controls.Add(this.label1);
-            this.cardHeader1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cardHeader1.Location = new System.Drawing.Point(1, 1);
-            this.cardHeader1.Name = "cardHeader1";
-            this.cardHeader1.Size = new System.Drawing.Size(523, 45);
-            this.cardHeader1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ULTIMAS COMPRAS";
-            // 
-            // numeroDocumento
-            // 
-            this.numeroDocumento.DataPropertyName = "numeroDocumento";
-            this.numeroDocumento.HeaderText = "Numero Documento";
-            this.numeroDocumento.Name = "numeroDocumento";
-            this.numeroDocumento.ReadOnly = true;
-            // 
-            // ventaBindingSource
-            // 
-            this.ventaBindingSource.DataSource = typeof(Entidad.Venta);
-            // 
-            // idNotaEntradaDataGridViewTextBoxColumn
-            // 
-            this.idNotaEntradaDataGridViewTextBoxColumn.DataPropertyName = "idNotaEntrada";
-            this.idNotaEntradaDataGridViewTextBoxColumn.HeaderText = "idNotaEntrada";
-            this.idNotaEntradaDataGridViewTextBoxColumn.Name = "idNotaEntradaDataGridViewTextBoxColumn";
-            this.idNotaEntradaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idNotaEntradaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaDataGridViewTextBoxColumn1
-            // 
-            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
-            this.fechaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // numeroDocumentoDataGridViewTextBoxColumn1
-            // 
-            this.numeroDocumentoDataGridViewTextBoxColumn1.DataPropertyName = "numeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn1.HeaderText = "Numero Documento";
-            this.numeroDocumentoDataGridViewTextBoxColumn1.Name = "numeroDocumentoDataGridViewTextBoxColumn1";
-            this.numeroDocumentoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // nombreAlmacenDataGridViewTextBoxColumn
-            // 
-            this.nombreAlmacenDataGridViewTextBoxColumn.DataPropertyName = "nombreAlmacen";
-            this.nombreAlmacenDataGridViewTextBoxColumn.HeaderText = "Nombre Almacen";
-            this.nombreAlmacenDataGridViewTextBoxColumn.Name = "nombreAlmacenDataGridViewTextBoxColumn";
-            this.nombreAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreAlmacenDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // numeroDocumentoCompraDataGridViewTextBoxColumn
-            // 
-            this.numeroDocumentoCompraDataGridViewTextBoxColumn.DataPropertyName = "numeroDocumentoCompra";
-            this.numeroDocumentoCompraDataGridViewTextBoxColumn.HeaderText = "Documento Compra";
-            this.numeroDocumentoCompraDataGridViewTextBoxColumn.Name = "numeroDocumentoCompraDataGridViewTextBoxColumn";
-            this.numeroDocumentoCompraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreProveedorDataGridViewTextBoxColumn1
-            // 
-            this.nombreProveedorDataGridViewTextBoxColumn1.DataPropertyName = "nombreProveedor";
-            this.nombreProveedorDataGridViewTextBoxColumn1.HeaderText = "Nombre Proveedor";
-            this.nombreProveedorDataGridViewTextBoxColumn1.Name = "nombreProveedorDataGridViewTextBoxColumn1";
-            this.nombreProveedorDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // notaEntradaBindingSource
-            // 
-            this.notaEntradaBindingSource.DataSource = typeof(Entidad.NotaEntrada);
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -782,6 +787,13 @@
             this.fechaVentaDataGridViewTextBoxColumn.HeaderText = "Fecha Venta";
             this.fechaVentaDataGridViewTextBoxColumn.Name = "fechaVentaDataGridViewTextBoxColumn";
             this.fechaVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroDocumento
+            // 
+            this.numeroDocumento.DataPropertyName = "numeroDocumento";
+            this.numeroDocumento.HeaderText = "Numero Documento";
+            this.numeroDocumento.Name = "numeroDocumento";
+            this.numeroDocumento.ReadOnly = true;
             // 
             // nombreClienteDataGridViewTextBoxColumn
             // 
@@ -924,6 +936,101 @@
             this.documentoIdentificacionDataGridViewTextBoxColumn.Name = "documentoIdentificacionDataGridViewTextBoxColumn";
             this.documentoIdentificacionDataGridViewTextBoxColumn.ReadOnly = true;
             this.documentoIdentificacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ventaBindingSource
+            // 
+            this.ventaBindingSource.DataSource = typeof(Entidad.Venta);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(1, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(523, 45);
+            this.panel4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ULTIMAS VENTAS";
+            // 
+            // cardContainer1
+            // 
+            this.cardContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardContainer1.BackColor = System.Drawing.Color.White;
+            this.cardContainer1.Controls.Add(this.panel1);
+            this.cardContainer1.Controls.Add(this.cardHeader1);
+            this.cardContainer1.Location = new System.Drawing.Point(17, 2);
+            this.cardContainer1.Name = "cardContainer1";
+            this.cardContainer1.Padding = new System.Windows.Forms.Padding(1);
+            this.cardContainer1.Size = new System.Drawing.Size(525, 309);
+            this.cardContainer1.TabIndex = 0;
+            this.cardContainer1.Paint += new System.Windows.Forms.PaintEventHandler(this.cardContainer1_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(1, 46);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(523, 262);
+            this.panel1.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCompraDataGridViewTextBoxColumn,
+            this.numeroDocumentoDataGridViewTextBoxColumn,
+            this.nroOrdenCompraDataGridViewTextBoxColumn,
+            this.nombreProveedorDataGridViewTextBoxColumn,
+            this.rucDniDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.formaPagoDataGridViewTextBoxColumn,
+            this.monedaDataGridViewTextBoxColumn,
+            this.fechaFacturacionDataGridViewTextBoxColumn,
+            this.fechaPagoDataGridViewTextBoxColumn,
+            this.descuentoDataGridViewTextBoxColumn,
+            this.tipoCompraDataGridViewTextBoxColumn,
+            this.tipoCambioDataGridViewTextBoxColumn,
+            this.subTotalDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn,
+            this.observacionDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.idProveedorDataGridViewTextBoxColumn,
+            this.idPagoDataGridViewTextBoxColumn,
+            this.idPersonalDataGridViewTextBoxColumn,
+            this.idTipoDocumentoDataGridViewTextBoxColumn,
+            this.nombreLabelDataGridViewTextBoxColumn,
+            this.idSucursalDataGridViewTextBoxColumn,
+            this.vendedorDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.compraBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(503, 242);
+            this.dataGridView1.TabIndex = 2;
             // 
             // idCompraDataGridViewTextBoxColumn
             // 
@@ -1117,6 +1224,26 @@
             // 
             this.compraBindingSource.DataSource = typeof(Entidad.Compra);
             // 
+            // cardHeader1
+            // 
+            this.cardHeader1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cardHeader1.Controls.Add(this.label1);
+            this.cardHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cardHeader1.Location = new System.Drawing.Point(1, 1);
+            this.cardHeader1.Name = "cardHeader1";
+            this.cardHeader1.Size = new System.Drawing.Size(523, 45);
+            this.cardHeader1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ULTIMAS COMPRAS";
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "numeroDocumentoCompra";
@@ -1133,104 +1260,35 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // pagoBindingSource
+            // dataGridViewTextBoxColumn3
             // 
-            this.pagoBindingSource.DataSource = typeof(Entidad.Pago);
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "numeroDocumentoCompra";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Documento Compra";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 126;
             // 
-            // cobroBindingSource
+            // dataGridViewTextBoxColumn4
             // 
-            this.cobroBindingSource.DataSource = typeof(Entidad.Cobro);
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "nombreProveedor";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre Proveedor";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
-            // valorTotalDataGridViewTextBoxColumn
+            // panelItem2
             // 
-            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "valorTotal";
-            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor Total";
-            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
-            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valorPagadoDataGridViewTextBoxColumn
-            // 
-            this.valorPagadoDataGridViewTextBoxColumn.DataPropertyName = "valorPagado";
-            this.valorPagadoDataGridViewTextBoxColumn.HeaderText = "Valor Pagado";
-            this.valorPagadoDataGridViewTextBoxColumn.Name = "valorPagadoDataGridViewTextBoxColumn";
-            this.valorPagadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // saldoDataGridViewTextBoxColumn
-            // 
-            this.saldoDataGridViewTextBoxColumn.DataPropertyName = "saldo";
-            this.saldoDataGridViewTextBoxColumn.HeaderText = "Saldo";
-            this.saldoDataGridViewTextBoxColumn.Name = "saldoDataGridViewTextBoxColumn";
-            this.saldoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // motivoDataGridViewTextBoxColumn
-            // 
-            this.motivoDataGridViewTextBoxColumn.DataPropertyName = "motivo";
-            this.motivoDataGridViewTextBoxColumn.HeaderText = "Motivo";
-            this.motivoDataGridViewTextBoxColumn.Name = "motivoDataGridViewTextBoxColumn";
-            this.motivoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroDocumentoDataGridViewTextBoxColumn2
-            // 
-            this.numeroDocumentoDataGridViewTextBoxColumn2.DataPropertyName = "numeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn2.HeaderText = "Numero Documento";
-            this.numeroDocumentoDataGridViewTextBoxColumn2.Name = "numeroDocumentoDataGridViewTextBoxColumn2";
-            this.numeroDocumentoDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // simboloDataGridViewTextBoxColumn
-            // 
-            this.simboloDataGridViewTextBoxColumn.DataPropertyName = "simbolo";
-            this.simboloDataGridViewTextBoxColumn.HeaderText = "Simbolo";
-            this.simboloDataGridViewTextBoxColumn.Name = "simboloDataGridViewTextBoxColumn";
-            this.simboloDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // monedaDataGridViewTextBoxColumn2
-            // 
-            this.monedaDataGridViewTextBoxColumn2.DataPropertyName = "moneda";
-            this.monedaDataGridViewTextBoxColumn2.HeaderText = "Moneda";
-            this.monedaDataGridViewTextBoxColumn2.Name = "monedaDataGridViewTextBoxColumn2";
-            this.monedaDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // montoPagarDataGridViewTextBoxColumn
-            // 
-            this.montoPagarDataGridViewTextBoxColumn.DataPropertyName = "montoPagar";
-            this.montoPagarDataGridViewTextBoxColumn.HeaderText = "Monto Pagar";
-            this.montoPagarDataGridViewTextBoxColumn.Name = "montoPagarDataGridViewTextBoxColumn";
-            this.montoPagarDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valorPagadoDataGridViewTextBoxColumn1
-            // 
-            this.valorPagadoDataGridViewTextBoxColumn1.DataPropertyName = "valorPagado";
-            this.valorPagadoDataGridViewTextBoxColumn1.HeaderText = "Valor Pagado";
-            this.valorPagadoDataGridViewTextBoxColumn1.Name = "valorPagadoDataGridViewTextBoxColumn1";
-            this.valorPagadoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // saldoDataGridViewTextBoxColumn1
-            // 
-            this.saldoDataGridViewTextBoxColumn1.DataPropertyName = "saldo";
-            this.saldoDataGridViewTextBoxColumn1.HeaderText = "Saldo";
-            this.saldoDataGridViewTextBoxColumn1.Name = "saldoDataGridViewTextBoxColumn1";
-            this.saldoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // numeroDocumentoDataGridViewTextBoxColumn3
-            // 
-            this.numeroDocumentoDataGridViewTextBoxColumn3.DataPropertyName = "numeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn3.HeaderText = "Numero Documento";
-            this.numeroDocumentoDataGridViewTextBoxColumn3.Name = "numeroDocumentoDataGridViewTextBoxColumn3";
-            this.numeroDocumentoDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // simboloDataGridViewTextBoxColumn1
-            // 
-            this.simboloDataGridViewTextBoxColumn1.DataPropertyName = "simbolo";
-            this.simboloDataGridViewTextBoxColumn1.HeaderText = "Simbolo";
-            this.simboloDataGridViewTextBoxColumn1.Name = "simboloDataGridViewTextBoxColumn1";
-            this.simboloDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // monedaDataGridViewTextBoxColumn3
-            // 
-            this.monedaDataGridViewTextBoxColumn3.DataPropertyName = "moneda";
-            this.monedaDataGridViewTextBoxColumn3.HeaderText = "Moneda";
-            this.monedaDataGridViewTextBoxColumn3.Name = "monedaDataGridViewTextBoxColumn3";
-            this.monedaDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.panelItem2.AutoScroll = true;
+            this.panelItem2.BackColor = System.Drawing.Color.White;
+            this.panelItem2.Controls.Add(this.cardContainer2);
+            this.panelItem2.Controls.Add(this.cardContainer4);
+            this.panelItem2.Controls.Add(this.cardContainer6);
+            this.panelItem2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelItem2.Location = new System.Drawing.Point(552, 0);
+            this.panelItem2.Name = "panelItem2";
+            this.panelItem2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.panelItem2.Size = new System.Drawing.Size(552, 1067);
+            this.panelItem2.TabIndex = 8;
             // 
             // UCHome
             // 
@@ -1239,17 +1297,20 @@
             this.Controls.Add(this.panelContainer);
             this.Name = "UCHome";
             this.Padding = new System.Windows.Forms.Padding(0, 10, 10, 10);
-            this.Size = new System.Drawing.Size(1149, 1087);
+            this.Size = new System.Drawing.Size(1114, 1087);
             this.Load += new System.EventHandler(this.UCHome_Load);
             this.panelContainer.ResumeLayout(false);
+            this.panelItem1.ResumeLayout(false);
             this.cardContainer6.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cobroBindingSource)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.cardContainer5.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagoBindingSource)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.cardContainer4.ResumeLayout(false);
@@ -1260,23 +1321,22 @@
             this.cardContainer3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notaEntradaBindingSource)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.cardContainer2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.cardContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
             this.cardHeader1.ResumeLayout(false);
             this.cardHeader1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notaEntradaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cobroBindingSource)).EndInit();
+            this.panelItem2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1393,5 +1453,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn simboloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monedaDataGridViewTextBoxColumn2;
         private System.Windows.Forms.BindingSource pagoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Panel panelItem1;
+        private System.Windows.Forms.Panel panelItem2;
     }
 }

@@ -105,5 +105,13 @@ namespace Admeli
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(cardContainer6);
         }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            int sizeW = panelContainer.Size.Width;
+            int sizeH = panelContainer.Size.Height;
+            sizeW = sizeW / 2;
+            panelItem1.Size = new Size(sizeW, sizeH);
+        }
     }
 }
