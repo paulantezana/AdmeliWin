@@ -23,5 +23,8 @@ namespace Entidad
         public int orden { get; set; }
         public int estado { get; set; }
         public int mostrarWeb { get; set; }
+
+        public string tieneRegistros { get; set; }
+
     }
 }

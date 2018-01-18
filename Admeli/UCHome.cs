@@ -44,17 +44,23 @@ namespace Admeli
 
         private async void cargarRegistros1()
         {
+            this.formPrincipal.appLoadState(true);
             compraBindingSource.DataSource = await compraModel.comprasUltimas(PersonalModel.personal.idPersonal,ConfigModel.sucursal.idSucursal,1,1);
+            this.formPrincipal.appLoadState(false);
         }
 
         private async void cargarRegistros2()
         {
+            this.formPrincipal.appLoadState(true);
             ventaBindingSource.DataSource = await ventaModel.ventasUltimas(PersonalModel.personal.idPersonal,ConfigModel.sucursal.idSucursal,1,1);
+            this.formPrincipal.appLoadState(false);
         }
 
         private async void cargarRegistros3()
         {
+            this.formPrincipal.appLoadState(true);
             notaEntradaBindingSource.DataSource = await notaEntradaModel.nEntradaPendientes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal, 1, 1);
+            this.formPrincipal.appLoadState(false);
         }
 
         private void cargarRegistros4()
@@ -63,11 +69,15 @@ namespace Admeli
         }
         private async void cargarRegistros5()
         {
+            this.formPrincipal.appLoadState(true);
             cobroBindingSource.DataSource = await cobroModel.porCobrar(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal, ConfigModel.asignacionPersonal.idAsignarCaja, 1, 1);
+            this.formPrincipal.appLoadState(false);
         }
         private async void cargarRegistros6()
         {
+            this.formPrincipal.appLoadState(true);
             pagoBindingSource.DataSource = await pagoModel.porPagar(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal, ConfigModel.asignacionPersonal.idAsignarCaja, 1, 1);
+            this.formPrincipal.appLoadState(false);
         }
 
         private void cardContainer1_Paint(object sender, PaintEventArgs e)

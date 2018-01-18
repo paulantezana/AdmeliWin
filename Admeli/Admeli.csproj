@@ -683,6 +683,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
+    <None Include="Properties\DataSources\Entidad.Categoria.datasource" />
     <None Include="Properties\DataSources\Entidad.Cliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Cobro.datasource" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />

@@ -40,5 +40,19 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<RootObject<Categoria>> categoriastree()
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/categoriastree
+                RootObject<Categoria> categorias = await webService.GETRoot<Categoria>("categoriastree");
+                return categorias;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
