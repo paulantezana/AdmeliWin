@@ -500,6 +500,5 @@ namespace Admeli.Productos
             stateCombobox(verStock);
         }
         #endregion
-
     }
 }

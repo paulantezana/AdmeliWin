@@ -40,5 +40,20 @@ namespace Modelo
                 throw ex;
             }
         }
+        
+        public async Task<List<Venta>> ventasUltimas(int idPersonal, int idSucursal, int todos, int gerente)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/ventasultimas/3/1/1/1
+                List<Venta> ventasultimas = await webService.GETLis<Venta>("ventasultimas", String.Format("{0}/{1}/{2}/{3}",idPersonal,idSucursal,todos,gerente));
+                return ventasultimas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

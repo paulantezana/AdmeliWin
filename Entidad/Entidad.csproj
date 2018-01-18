@@ -43,6 +43,7 @@
     <Compile Include="Almacen.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Cobro.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Configuracion\AsignacionPersonal.cs" />
     <Compile Include="Configuracion\CajaSesion.cs" />
@@ -61,7 +62,9 @@
     <Compile Include="Impuesto.cs" />
     <Compile Include="Ingreso.cs" />
     <Compile Include="Marca.cs" />
+    <Compile Include="NotaEntrada.cs" />
     <Compile Include="OrdenCompra.cs" />
+    <Compile Include="Pago.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

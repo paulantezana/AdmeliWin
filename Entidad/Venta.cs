@@ -37,5 +37,8 @@ namespace Entidad
         public string vendedor { get; set; }
         public string guiaRemision { get; set; }
         public string documentoIdentificacion { get; set; }
+
+        public string numeroDocumento { get; set; }
+
     }
 }

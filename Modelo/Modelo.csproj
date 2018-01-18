@@ -47,6 +47,7 @@
     <Compile Include="CajaSesionModel.cs" />
     <Compile Include="CategoriaModel.cs" />
     <Compile Include="ClienteModel.cs" />
+    <Compile Include="CobroModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
     <Compile Include="CotizacionModel.cs" />
@@ -59,7 +60,9 @@
     <Compile Include="IngresoModel.cs" />
     <Compile Include="MarcaModel.cs" />
     <Compile Include="MonedaModel.cs" />
+    <Compile Include="NotaEntradaModel.cs" />
     <Compile Include="OrdenCompraModel.cs" />
+    <Compile Include="PagoModel.cs" />
     <Compile Include="PersonalModel.cs" />
     <Compile Include="ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

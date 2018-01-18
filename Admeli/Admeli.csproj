@@ -684,6 +684,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
     <None Include="Properties\DataSources\Entidad.Cliente.datasource" />
+    <None Include="Properties\DataSources\Entidad.Cobro.datasource" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.CajaSesion.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.Moneda.datasource" />
@@ -697,7 +698,9 @@
     <None Include="Properties\DataSources\Entidad.Impuesto.datasource" />
     <None Include="Properties\DataSources\Entidad.Ingreso.datasource" />
     <None Include="Properties\DataSources\Entidad.Marca.datasource" />
+    <None Include="Properties\DataSources\Entidad.NotaEntrada.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
+    <None Include="Properties\DataSources\Entidad.Pago.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />
     <None Include="Properties\DataSources\Entidad.Producto.datasource" />
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />

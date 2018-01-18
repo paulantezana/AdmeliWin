@@ -10,7 +10,7 @@ namespace Admeli.Componentes
 {
     public class DrawShape
     {
-        public void lineBorder(Panel panel, int red = 240, int green = 240, int blue = 240, int width = 1)
+        public void lineBorder(Panel panel, int red = 223, int green = 230, int blue = 241, int width = 1)
         {
             Graphics line = panel.CreateGraphics();
 
