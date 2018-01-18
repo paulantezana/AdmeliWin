@@ -16,5 +16,15 @@ namespace Admeli.Productos.Nuevo
         {
             InitializeComponent();
         }
+
+        private void FormCategoriaNuevo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
