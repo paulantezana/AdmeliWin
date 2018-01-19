@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoriaNuevo));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnClose = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textNombreCat = new System.Windows.Forms.TextBox();
+            this.cbxCatPadre = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkActivoCat = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
@@ -48,22 +48,22 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbxMostrarEn = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.chkMostrarWeb = new System.Windows.Forms.CheckBox();
+            this.textPieCat = new System.Windows.Forms.TextBox();
+            this.textCabeceraTag = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textOrden = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textTagCat = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textUrlCat = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textTituloCat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxOrdenVisual = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textNumeroColumna = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -89,8 +89,8 @@
             this.toolStripCrud.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripCrud.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevo,
-            this.btnModificar});
+            this.btnGuardar,
+            this.btnClose});
             this.toolStripCrud.Location = new System.Drawing.Point(0, 532);
             this.toolStripCrud.Name = "toolStripCrud";
             this.toolStripCrud.Padding = new System.Windows.Forms.Padding(10);
@@ -98,29 +98,31 @@
             this.toolStripCrud.TabIndex = 0;
             this.toolStripCrud.Text = "toolStrip1";
             // 
-            // btnNuevo
+            // btnGuardar
             // 
-            this.btnNuevo.AutoSize = false;
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(120, 37);
-            this.btnNuevo.Text = "Guardar y salir";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevo.ToolTipText = "Guardar registro (Enter)";
+            this.btnGuardar.AutoSize = false;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(120, 37);
+            this.btnGuardar.Text = "Guardar y salir";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardar.ToolTipText = "Guardar registro (Enter)";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnModificar
+            // btnClose
             // 
-            this.btnModificar.AutoSize = false;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(78, 37);
-            this.btnModificar.Text = "Cerrar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnModificar.ToolTipText = "Cerrar ventan";
+            this.btnClose.AutoSize = false;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(78, 37);
+            this.btnClose.Text = "Cerrar";
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClose.ToolTipText = "Cerrar ventan";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tabControl1
             // 
@@ -140,10 +142,10 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.textNombreCat);
+            this.tabPage1.Controls.Add(this.cbxCatPadre);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.checkBox1);
+            this.tabPage1.Controls.Add(this.chkActivoCat);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.ImageIndex = 0;
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
@@ -163,22 +165,22 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Si está desmarcado, no se podrá hacer operaciones con esta categoría.";
             // 
-            // textBox1
+            // textNombreCat
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(157, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 24);
-            this.textBox1.TabIndex = 1;
+            this.textNombreCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombreCat.Location = new System.Drawing.Point(157, 23);
+            this.textNombreCat.Name = "textNombreCat";
+            this.textNombreCat.Size = new System.Drawing.Size(248, 24);
+            this.textNombreCat.TabIndex = 1;
             // 
-            // comboBox1
+            // cbxCatPadre
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(158, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 26);
-            this.comboBox1.TabIndex = 5;
+            this.cbxCatPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCatPadre.FormattingEnabled = true;
+            this.cbxCatPadre.Location = new System.Drawing.Point(158, 89);
+            this.cbxCatPadre.Name = "cbxCatPadre";
+            this.cbxCatPadre.Size = new System.Drawing.Size(247, 26);
+            this.cbxCatPadre.TabIndex = 5;
             // 
             // label2
             // 
@@ -189,15 +191,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre Categoría:";
             // 
-            // checkBox1
+            // chkActivoCat
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(157, 59);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(68, 21);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkActivoCat.AutoSize = true;
+            this.chkActivoCat.Location = new System.Drawing.Point(157, 59);
+            this.chkActivoCat.Name = "chkActivoCat";
+            this.chkActivoCat.Size = new System.Drawing.Size(68, 21);
+            this.chkActivoCat.TabIndex = 2;
+            this.chkActivoCat.Text = "Activo";
+            this.chkActivoCat.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -215,22 +217,22 @@
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.comboBox3);
+            this.tabPage2.Controls.Add(this.cbxMostrarEn);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.checkBox2);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.chkMostrarWeb);
+            this.tabPage2.Controls.Add(this.textPieCat);
+            this.tabPage2.Controls.Add(this.textCabeceraTag);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.textBox7);
+            this.tabPage2.Controls.Add(this.textOrden);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.textTagCat);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.textUrlCat);
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.textTituloCat);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.comboBox2);
+            this.tabPage2.Controls.Add(this.cbxOrdenVisual);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.textNumeroColumna);
             this.tabPage2.Controls.Add(this.label7);
@@ -242,7 +244,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos para mostrar en Web";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label18
             // 
@@ -285,14 +286,14 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Mostrar Productos En:";
             // 
-            // comboBox3
+            // cbxMostrarEn
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(791, 322);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(210, 26);
-            this.comboBox3.TabIndex = 19;
+            this.cbxMostrarEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMostrarEn.FormattingEnabled = true;
+            this.cbxMostrarEn.Location = new System.Drawing.Point(791, 322);
+            this.cbxMostrarEn.Name = "cbxMostrarEn";
+            this.cbxMostrarEn.Size = new System.Drawing.Size(210, 26);
+            this.cbxMostrarEn.TabIndex = 19;
             // 
             // label14
             // 
@@ -303,35 +304,35 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "Si está desmarcado, esta categoría no se mostrara en la web.";
             // 
-            // checkBox2
+            // chkMostrarWeb
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(791, 219);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(111, 21);
-            this.checkBox2.TabIndex = 14;
-            this.checkBox2.Text = "Mostrar Web";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkMostrarWeb.AutoSize = true;
+            this.chkMostrarWeb.Location = new System.Drawing.Point(791, 219);
+            this.chkMostrarWeb.Name = "chkMostrarWeb";
+            this.chkMostrarWeb.Size = new System.Drawing.Size(111, 21);
+            this.chkMostrarWeb.TabIndex = 14;
+            this.chkMostrarWeb.Text = "Mostrar Web";
+            this.chkMostrarWeb.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // textPieCat
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(792, 36);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox9.Size = new System.Drawing.Size(395, 78);
-            this.textBox9.TabIndex = 11;
+            this.textPieCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPieCat.Location = new System.Drawing.Point(792, 36);
+            this.textPieCat.Multiline = true;
+            this.textPieCat.Name = "textPieCat";
+            this.textPieCat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textPieCat.Size = new System.Drawing.Size(395, 78);
+            this.textPieCat.TabIndex = 11;
             // 
-            // textBox6
+            // textCabeceraTag
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(161, 349);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox6.Size = new System.Drawing.Size(369, 78);
-            this.textBox6.TabIndex = 9;
+            this.textCabeceraTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCabeceraTag.Location = new System.Drawing.Point(161, 349);
+            this.textCabeceraTag.Multiline = true;
+            this.textCabeceraTag.Name = "textCabeceraTag";
+            this.textCabeceraTag.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textCabeceraTag.Size = new System.Drawing.Size(369, 78);
+            this.textCabeceraTag.TabIndex = 9;
             // 
             // label13
             // 
@@ -342,13 +343,13 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Orden:";
             // 
-            // textBox7
+            // textOrden
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(792, 179);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(209, 24);
-            this.textBox7.TabIndex = 13;
+            this.textOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textOrden.Location = new System.Drawing.Point(792, 179);
+            this.textOrden.Name = "textOrden";
+            this.textOrden.Size = new System.Drawing.Size(209, 24);
+            this.textOrden.TabIndex = 13;
             // 
             // label12
             // 
@@ -368,15 +369,15 @@
             this.label11.TabIndex = 8;
             this.label11.Text = "Cabecera Página:";
             // 
-            // textBox5
+            // textTagCat
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(161, 206);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(369, 78);
-            this.textBox5.TabIndex = 7;
+            this.textTagCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTagCat.Location = new System.Drawing.Point(161, 206);
+            this.textTagCat.Multiline = true;
+            this.textTagCat.Name = "textTagCat";
+            this.textTagCat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textTagCat.Size = new System.Drawing.Size(369, 78);
+            this.textTagCat.TabIndex = 7;
             // 
             // label10
             // 
@@ -387,13 +388,13 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "Meta Tags Seo:";
             // 
-            // textBox4
+            // textUrlCat
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(160, 141);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(369, 24);
-            this.textBox4.TabIndex = 5;
+            this.textUrlCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUrlCat.Location = new System.Drawing.Point(160, 141);
+            this.textUrlCat.Name = "textUrlCat";
+            this.textUrlCat.Size = new System.Drawing.Size(369, 24);
+            this.textUrlCat.TabIndex = 5;
             // 
             // label9
             // 
@@ -404,14 +405,14 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "Url Categoría Seo:";
             // 
-            // textBox3
+            // textTituloCat
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(161, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(369, 24);
-            this.textBox3.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.textBox3, "Título de la página de la Categoría");
+            this.textTituloCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTituloCat.Location = new System.Drawing.Point(161, 76);
+            this.textTituloCat.Name = "textTituloCat";
+            this.textTituloCat.Size = new System.Drawing.Size(369, 24);
+            this.textTituloCat.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.textTituloCat, "Título de la página de la Categoría");
             // 
             // label5
             // 
@@ -422,14 +423,14 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Título Categoría Seo:";
             // 
-            // comboBox2
+            // cbxOrdenVisual
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(791, 280);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(210, 26);
-            this.comboBox2.TabIndex = 17;
+            this.cbxOrdenVisual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxOrdenVisual.FormattingEnabled = true;
+            this.cbxOrdenVisual.Location = new System.Drawing.Point(791, 280);
+            this.cbxOrdenVisual.Name = "cbxOrdenVisual";
+            this.cbxOrdenVisual.Size = new System.Drawing.Size(210, 26);
+            this.cbxOrdenVisual.TabIndex = 17;
             // 
             // label6
             // 
@@ -489,33 +490,33 @@
         #endregion
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStrip toolStripCrud;
-        private System.Windows.Forms.ToolStripButton btnNuevo;
-        private System.Windows.Forms.ToolStripButton btnModificar;
+        private System.Windows.Forms.ToolStripButton btnGuardar;
+        private System.Windows.Forms.ToolStripButton btnClose;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textNombreCat;
+        private System.Windows.Forms.ComboBox cbxCatPadre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkActivoCat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbxMostrarEn;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.CheckBox chkMostrarWeb;
+        private System.Windows.Forms.TextBox textPieCat;
+        private System.Windows.Forms.TextBox textCabeceraTag;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textOrden;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textTagCat;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textUrlCat;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textTituloCat;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxOrdenVisual;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textNumeroColumna;
         private System.Windows.Forms.Label label7;

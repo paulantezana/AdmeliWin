@@ -184,6 +184,7 @@ namespace Admeli.Productos
         {
             FormCategoriaNuevo formCategoria = new FormCategoriaNuevo();
             formCategoria.ShowDialog();
+            cargarRegistros();
         }
         #endregion
 

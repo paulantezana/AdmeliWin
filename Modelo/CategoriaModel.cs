@@ -12,9 +12,17 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async  Task<Response> guardar(Categoria param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/categorias/guardar
+                return await webService.POSTSend("categorias", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void modificar()
@@ -54,5 +62,20 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Categoria>> categorias21(int estado = 1)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/categorias21/-1
+                List<Categoria> categorias = await webService.GETLis<Categoria>("categorias21", "-1");
+                return categorias;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
