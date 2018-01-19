@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Admeli.Componentes;
+using Entidad;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ namespace Admeli.Productos.Nuevo
             cbxCatPadre.DataSource = await categoriaModel.categorias21();
             cbxCatPadre.DisplayMember = "nombreCategoria";
             cbxCatPadre.ValueMember = "idCategoria";
+            cbxCatPadre.SelectedValue = 0;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -43,7 +45,29 @@ namespace Admeli.Productos.Nuevo
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             cargarObjeto();
-            guardar();
+            if (validarCampos())
+            {
+                guardar();
+            }
+        }
+
+        private bool validarCampos()
+        {
+            if (textNombreCat.Text == "")
+            {
+                errorProvider1.SetError(textNombreCat,"Rellene este campo");
+                textNombreCat.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+            if (cbxCatPadre.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(cbxCatPadre, "Elija almenos uno");
+                cbxCatPadre.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+            return true;
         }
 
         private async void guardar()
@@ -68,6 +92,16 @@ namespace Admeli.Productos.Nuevo
             categoria.orden = (textOrden.Text != "") ? Convert.ToInt32(textOrden.Text) : 0;
             categoria.estado = Convert.ToInt32(chkActivoCat.Checked);
             categoria.mostrarWeb = Convert.ToInt32(chkMostrarWeb.Checked);
+        }
+
+        private void textNumeroColumna_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void textOrden_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Admeli.Productos
 
             // load data
             cargarComponentes();
-            cargarComponentesSecond();
+            cargarCategorias();
             cargarComponentesThird();
             cargarRegistros();
         }
@@ -94,7 +94,7 @@ namespace Admeli.Productos
             }
         }
 
-        private async void cargarComponentesSecond()
+        private async void cargarCategorias()
         {
             loadState(true);
             try
@@ -108,7 +108,7 @@ namespace Admeli.Productos
                 treeViewCategoria.Nodes.Clear(); // limpiando
                 treeViewCategoria.Nodes.Add(lastCategori.idCategoria.ToString(), lastCategori.nombreCategoria); // Cargando categoria raiz
 
-                categoriaList.ForEach(categoria =>
+                foreach (Categoria categoria in categoriaList)
                 {
                     if (categoria.padre == null)
                     {
@@ -120,10 +120,12 @@ namespace Admeli.Productos
                     {
                         // Cargando subcategorias
                         int nodeIndex = treeViewCategoria.Nodes[0].Nodes.IndexOfKey(categoria.idPadreCategoria.ToString());
+                       /* string parent = categoria.idPadreCategoria.ToString();
+                        var node = treeViewCategoria.Nodes.Cast<TreeNode>().Where(r => r.Name == parent);*/
                         treeViewCategoria.Nodes[0].Nodes[nodeIndex].ImageIndex = 1;
                         treeViewCategoria.Nodes[0].Nodes[nodeIndex].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
                     }
-                });
+                }
 
                 // Estableciendo valores por defecto
                 if (ConfigModel.currentProductoCategory.Count > 0)
@@ -142,6 +144,19 @@ namespace Admeli.Productos
             }
             loadState(false);
         }
+        /*
+        private void treeNodeAddRecursive(TreeNode node, Boolean isChecked)
+        {
+            foreach (TreeNode item in node.Nodes)
+            {
+                item.Checked = isChecked;
+
+                if (item.Nodes.Count > 0)
+                {
+                    this.CheckTreeViewNode(item, isChecked);
+                }
+            }
+        }*/
 
         private async void cargarComponentesThird()
         {
@@ -414,6 +429,16 @@ namespace Admeli.Productos
                 cargarRegistrosBuscar();
             }
         }
+        private void btnNuevoCategoria_Click(object sender, EventArgs e)
+        {
+            FormCategoriaNuevo formCategoria = new FormCategoriaNuevo();
+            formCategoria.ShowDialog();
+            cargarCategorias();
+        }
+        private void btnActualizarCategoria_Click(object sender, EventArgs e)
+        {
+            cargarCategorias();
+        }
         #endregion
 
         #region ======================== Treeview control checked ========================
@@ -475,7 +500,7 @@ namespace Admeli.Productos
         }
         #endregion
 
-        #region ========================= Agregando un nuevo checkbox =========================
+        #region ======= Agregando un nuevo checkbox a las herramientas en toolstrip =========
         private void addCheckBox()
         {
             CheckBox cb = new CheckBox();
@@ -500,5 +525,6 @@ namespace Admeli.Productos
             stateCombobox(verStock);
         }
         #endregion
+
     }
 }

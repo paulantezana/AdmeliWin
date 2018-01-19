@@ -107,7 +107,6 @@ namespace Admeli.Productos
             formPrincipal.appLoadState(state);
             toolStripNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion
@@ -200,6 +199,7 @@ namespace Admeli.Productos
         {
             FormUnidadMedidaNuevo unidadMedidaNuevo = new FormUnidadMedidaNuevo();
             unidadMedidaNuevo.ShowDialog();
+            cargarRegistros();
         }
         #endregion
 

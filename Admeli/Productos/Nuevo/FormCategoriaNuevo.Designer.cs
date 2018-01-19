@@ -68,10 +68,12 @@
             this.textNumeroColumna = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStripCrud.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -350,6 +352,7 @@
             this.textOrden.Name = "textOrden";
             this.textOrden.Size = new System.Drawing.Size(209, 24);
             this.textOrden.TabIndex = 13;
+            this.textOrden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textOrden_KeyPress);
             // 
             // label12
             // 
@@ -448,6 +451,7 @@
             this.textNumeroColumna.Name = "textNumeroColumna";
             this.textNumeroColumna.Size = new System.Drawing.Size(147, 24);
             this.textNumeroColumna.TabIndex = 1;
+            this.textNumeroColumna.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNumeroColumna_KeyPress);
             // 
             // label7
             // 
@@ -462,6 +466,10 @@
             // 
             this.toolTip1.ShowAlways = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormCategoriaNuevo
             // 
@@ -483,6 +491,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +535,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

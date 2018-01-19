@@ -12,9 +12,17 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(UnidadMedida param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/unimed/guardar
+                return await webService.POSTSend("unimed", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void modificar()

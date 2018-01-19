@@ -188,5 +188,23 @@ namespace Admeli.Productos
         }
         #endregion
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView.CurrentRow.Index;
+            int idCategoria = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+            try
+            {
+                await categoriaModel.eliminar(idCategoria);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -37,6 +37,45 @@ namespace Modelo.Recursos
 
 
         //////// ================================== CRETE ADMELI ==================================
+        public async Task<Response> DELETE<T>(string servicio, string metodo, T param)
+        {
+            try
+            {
+                // creando el contenido apartir de un jsonString
+                string json = JsonConvert.SerializeObject(param);
+                string url = string.Format("{0}/{1}/{2}", this.urlBase, servicio, metodo);
+
+                HttpRequestMessage request = new HttpRequestMessage
+                {
+                    Content = new StringContent(json, Encoding.UTF8, "application/json"),
+                    Method = HttpMethod.Delete,
+                    RequestUri = new Uri(url)
+                };
+
+                HttpClient client = new HttpClient();
+                HttpResponseMessage responseMessage = await client.SendAsync(request);
+
+                // Validando la respuesta
+                if (!responseMessage.IsSuccessStatusCode)
+                {
+                    throw new Exception(responseMessage.ToString());
+                }
+                string result = await responseMessage.Content.ReadAsStringAsync();
+
+                // retornando los valores en una lista de objetos
+                Response res = JsonConvert.DeserializeObject<Response>(result);
+                return res;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
         public async Task<Response> POSTSend<T>(string servicio, string metodo, T param)
         {
             try
