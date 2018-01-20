@@ -30,14 +30,12 @@ namespace Modelo
 
         }
 
-        public async Task<Response> eliminar(int IDCategoria)
+        public async Task<Response> eliminar(Categoria param)
         {
             try
             {
-                Categoria cat = new Categoria();
-                cat.idCategoria = IDCategoria;
                 // localhost:8080/admeli/xcore2/xcore/services.php/categorias/eliminar
-                return await webService.DELETE("categorias", "eliminar", cat);
+                return await webService.POSTSend("categorias", "eliminar", param);
             }
             catch (Exception ex)
             {

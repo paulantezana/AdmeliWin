@@ -186,6 +186,34 @@ namespace Admeli.Productos
             formCategoria.ShowDialog();
             cargarRegistros();
         }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+            int index = dataGridView.CurrentRow.Index;
+            int idCategoria = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+            try
+            {
+                loadState(true);
+                Categoria categoria = new Categoria();
+                categoria.idCategoria = idCategoria;
+                Response response = await categoriaModel.eliminar(categoria);
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
+
         #endregion
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -193,18 +221,6 @@ namespace Admeli.Productos
 
         }
 
-        private async void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int index = dataGridView.CurrentRow.Index;
-            int idCategoria = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-            try
-            {
-                await categoriaModel.eliminar(idCategoria);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+
     }
 }
