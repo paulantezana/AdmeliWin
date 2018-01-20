@@ -25,9 +25,30 @@ namespace Modelo
             }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(Categoria param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/categorias/modificar
+                return await webService.POSTSend("categorias", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> desactivar(Categoria param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/categoria/desactivar
+                return await webService.POSTSend("categoria", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<Response> eliminar(Categoria param)

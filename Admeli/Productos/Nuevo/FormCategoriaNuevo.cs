@@ -16,17 +16,47 @@ namespace Admeli.Productos.Nuevo
     public partial class FormCategoriaNuevo : Form
     {
         private CategoriaModel categoriaModel = new CategoriaModel();
-        private Categoria categoria = new Categoria();
+        private Categoria categoria { get; set; }
+        private int currentIdCategoria { get; set; }
+        private bool nuevo { get; set; }
 
         public FormCategoriaNuevo()
         {
             InitializeComponent();
+            nuevo = true;
+        }
+
+        public FormCategoriaNuevo(Categoria categoria)
+        {
+            InitializeComponent();
+            this.categoria = categoria;
+            this.nuevo = false;
+            this.btnAceptar.Text = "Guardar cambios";
+            this.cargarRegistrosModificar();
         }
 
         private void FormCategoriaNuevo_Load(object sender, EventArgs e)
         {
             cargarComponentes1();
             chkActivoCat.Checked = true;
+        }
+
+        private void cargarRegistrosModificar()
+        {
+            textNombreCat.Text = categoria.nombreCategoria;
+            cbxCatPadre.SelectedValue = categoria.idPadreCategoria;
+            cbxCatPadre.SelectedText = categoria.padre;
+            cbxOrdenVisual.SelectedValue = categoria.ordenVisualizacionProductos;
+            cbxMostrarEn.SelectedValue = categoria.mostrarProductosEn;
+            textNumeroColumna.Text = categoria.numeroColumnas.ToString();
+            textTituloCat.Text = categoria.tituloCategoriaSeo;
+            textUrlCat.Text = categoria.urlCategoriaSeo;
+            textTagCat.Text = categoria.metaTagsSeo;
+            textCabeceraTag.Text = categoria.cabeceraPagina;
+            textPieCat.Text = categoria.piePagina;
+            textOrden.Text = categoria.orden.ToString();
+            chkActivoCat.Checked = Convert.ToBoolean(categoria.estado);
+            chkMostrarWeb.Checked = Convert.ToBoolean(categoria.mostrarWeb);
         }
 
         private async void cargarComponentes1()
@@ -72,12 +102,22 @@ namespace Admeli.Productos.Nuevo
 
         private async void guardar()
         {
-            await categoriaModel.guardar(categoria);
+            if (nuevo)
+            {
+                await categoriaModel.guardar(categoria);
+            }
+            else
+            {
+                await categoriaModel.modificar(categoria);
+            }
             this.Close();
         }
 
         private void cargarObjeto()
         {
+            categoria = new Categoria(); // crea una nueva instancia de la categoria
+            if (!nuevo) categoria.idCategoria = currentIdCategoria; // Llenar el id categoria cuando este en esdo modificar
+
             categoria.nombreCategoria = textNombreCat.Text;
             categoria.idPadreCategoria = Convert.ToInt32(cbxCatPadre.SelectedValue);
             categoria.padre = cbxCatPadre.SelectedText;

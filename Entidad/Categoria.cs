@@ -8,6 +8,8 @@ namespace Entidad
 {
     public class Categoria
     {
+
+
         public int idCategoria { get; set; }
         public string nombreCategoria { get; set; }
         public int idPadreCategoria { get; set; }
@@ -25,6 +27,7 @@ namespace Entidad
         public int mostrarWeb { get; set; }
 
         public string tieneRegistros { get; set; }
+
 
     }
 }

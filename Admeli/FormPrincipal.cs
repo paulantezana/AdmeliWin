@@ -83,6 +83,8 @@ namespace Admeli
                     this.uCComprasNav.Name = "uCComprasNav";
                     this.uCComprasNav.Size = new System.Drawing.Size(250, 776);
                     this.uCComprasNav.TabIndex = 0;
+                    this.uCComprasNav.Hide();
+                    this.transition1.ShowSync(this.uCComprasNav);
                     break;
                 case "ventas":
                     this.uCVentasNav = new Admeli.Navegacion.UCVentasNav(this);
@@ -92,6 +94,8 @@ namespace Admeli
                     this.uCVentasNav.Name = "uCVentasNav";
                     this.uCVentasNav.Size = new System.Drawing.Size(250, 776);
                     this.uCVentasNav.TabIndex = 0;
+                    this.uCVentasNav.Hide();
+                    this.transition1.ShowSync(this.uCVentasNav);
                     break;
                 case "caja":
                     this.uCCajaNav = new Admeli.Navegacion.UCCajaNav(this);
@@ -101,6 +105,8 @@ namespace Admeli
                     this.uCCajaNav.Name = "uCCajaNav";
                     this.uCCajaNav.Size = new System.Drawing.Size(250, 776);
                     this.uCCajaNav.TabIndex = 0;
+                    this.uCCajaNav.Hide();
+                    this.transition1.ShowSync(this.uCCajaNav);
                     break;
                 case "almacen":
                     this.UCAlmacenNav = new Admeli.Navegacion.UCAlmacenNav(this);
@@ -110,6 +116,8 @@ namespace Admeli
                     this.UCAlmacenNav.Name = "UCAlmacenNav";
                     this.UCAlmacenNav.Size = new System.Drawing.Size(250, 776);
                     this.UCAlmacenNav.TabIndex = 0;
+                    this.UCAlmacenNav.Hide();
+                    this.transition1.ShowSync(this.UCAlmacenNav);
                     break;
                 case "productos":
                     this.uCProductosNav = new Admeli.Navegacion.UCProductosNav(this);
@@ -119,6 +127,8 @@ namespace Admeli
                     this.uCProductosNav.Name = "uCProductosNav";
                     this.uCProductosNav.Size = new System.Drawing.Size(250, 776);
                     this.uCProductosNav.TabIndex = 0;
+                    this.uCProductosNav.Hide();
+                    this.transition1.ShowSync(this.uCProductosNav);
                     break;
                 case "configuracion":
                     this.uCConfigNav = new Admeli.Navegacion.UCConfigNav(this);
@@ -128,6 +138,8 @@ namespace Admeli
                     this.uCConfigNav.Name = "uCConfigNav";
                     this.uCConfigNav.Size = new System.Drawing.Size(250, 776);
                     this.uCConfigNav.TabIndex = 0;
+                    this.uCConfigNav.Hide();
+                    this.transition1.ShowSync(this.uCConfigNav);
                     break;
                 case "herramientas":
                     this.uCHerramientasNav = new Admeli.Navegacion.UCHerramientasNav(this);
@@ -137,6 +149,8 @@ namespace Admeli
                     this.uCHerramientasNav.Name = "uCHerramientasNav";
                     this.uCHerramientasNav.Size = new System.Drawing.Size(250, 776);
                     this.uCHerramientasNav.TabIndex = 0;
+                    this.uCHerramientasNav.Hide();
+                    this.transition1.ShowSync(this.uCHerramientasNav);
                     break;
                 case "home":
                     this.uCHomeNav = new Admeli.Navegacion.UCHomeNav(this);
@@ -146,6 +160,8 @@ namespace Admeli
                     this.uCHomeNav.Name = "uCHomeNav";
                     this.uCHomeNav.Size = new System.Drawing.Size(250, 776);
                     this.uCHomeNav.TabIndex = 0;
+                    this.uCHomeNav.Hide();
+                    this.transition1.ShowSync(this.uCHomeNav);
                     break;
                 default:
                     break;
@@ -382,6 +398,11 @@ namespace Admeli
                 panelAside.Size = new Size(0, 0);
                 btnToggleAsideMenu.ImageIndex = 1;
             }
+        }
+
+        private void FormPrincipal_KeyUp(object sender, KeyEventArgs e)
+        {
+           
         }
     }
 }
