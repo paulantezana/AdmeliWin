@@ -25,14 +25,43 @@ namespace Modelo
             }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(UnidadMedida param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/unimed/modificar
+                return await webService.POSTSend("unimed", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
+        public async Task<Response> desactivar(UnidadMedida param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/unimed/desactivar
+                return await webService.POSTSend("unimed", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> eliminar(UnidadMedida param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/unimed/eliminar
+                return await webService.POSTSend("unimed", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<UnidadMedida>> unimedidas(int page, int items)

@@ -34,11 +34,6 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.idUnidadMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreUnidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.simboloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadMedidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
@@ -60,6 +55,11 @@
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.idUnidadMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreUnidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.simboloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -103,7 +103,7 @@
             this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.AutoGenerateContextFilters = true;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -133,56 +133,6 @@
             this.dataGridView.Size = new System.Drawing.Size(1094, 377);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
-            // 
-            // idUnidadMedidaDataGridViewTextBoxColumn
-            // 
-            this.idUnidadMedidaDataGridViewTextBoxColumn.DataPropertyName = "idUnidadMedida";
-            this.idUnidadMedidaDataGridViewTextBoxColumn.HeaderText = "idUnidadMedida";
-            this.idUnidadMedidaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idUnidadMedidaDataGridViewTextBoxColumn.Name = "idUnidadMedidaDataGridViewTextBoxColumn";
-            this.idUnidadMedidaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idUnidadMedidaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idUnidadMedidaDataGridViewTextBoxColumn.Width = 139;
-            // 
-            // nombreUnidadDataGridViewTextBoxColumn
-            // 
-            this.nombreUnidadDataGridViewTextBoxColumn.DataPropertyName = "nombreUnidad";
-            this.nombreUnidadDataGridViewTextBoxColumn.HeaderText = "nombreUnidad";
-            this.nombreUnidadDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreUnidadDataGridViewTextBoxColumn.Name = "nombreUnidadDataGridViewTextBoxColumn";
-            this.nombreUnidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreUnidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreUnidadDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // simboloDataGridViewTextBoxColumn
-            // 
-            this.simboloDataGridViewTextBoxColumn.DataPropertyName = "simbolo";
-            this.simboloDataGridViewTextBoxColumn.HeaderText = "simbolo";
-            this.simboloDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.simboloDataGridViewTextBoxColumn.Name = "simboloDataGridViewTextBoxColumn";
-            this.simboloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.simboloDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.simboloDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // tieneRegistrosDataGridViewTextBoxColumn
-            // 
-            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
-            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 128;
             // 
             // unidadMedidaBindingSource
             // 
@@ -368,6 +318,7 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnDesactivar
             // 
@@ -380,6 +331,7 @@
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDesactivar.ToolTipText = "Anular(F7)";
+            this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // btnActualizar
             // 
@@ -413,6 +365,53 @@
             this.label1.Size = new System.Drawing.Size(346, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "MANTENIMIENTO DE UNIDAD DE MEDIDA";
+            // 
+            // idUnidadMedidaDataGridViewTextBoxColumn
+            // 
+            this.idUnidadMedidaDataGridViewTextBoxColumn.DataPropertyName = "idUnidadMedida";
+            this.idUnidadMedidaDataGridViewTextBoxColumn.HeaderText = "idUnidadMedida";
+            this.idUnidadMedidaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idUnidadMedidaDataGridViewTextBoxColumn.Name = "idUnidadMedidaDataGridViewTextBoxColumn";
+            this.idUnidadMedidaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUnidadMedidaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idUnidadMedidaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreUnidadDataGridViewTextBoxColumn
+            // 
+            this.nombreUnidadDataGridViewTextBoxColumn.DataPropertyName = "nombreUnidad";
+            this.nombreUnidadDataGridViewTextBoxColumn.HeaderText = "Nombre Unidad";
+            this.nombreUnidadDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreUnidadDataGridViewTextBoxColumn.Name = "nombreUnidadDataGridViewTextBoxColumn";
+            this.nombreUnidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreUnidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // simboloDataGridViewTextBoxColumn
+            // 
+            this.simboloDataGridViewTextBoxColumn.DataPropertyName = "simbolo";
+            this.simboloDataGridViewTextBoxColumn.HeaderText = "Símbolo";
+            this.simboloDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.simboloDataGridViewTextBoxColumn.Name = "simboloDataGridViewTextBoxColumn";
+            this.simboloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.simboloDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "Tiene Registros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // UCUnidadesMedida
             // 
@@ -463,11 +462,11 @@
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnDesactivar;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.BindingSource unidadMedidaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUnidadMedidaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUnidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn simboloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tieneRegistrosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource unidadMedidaBindingSource;
     }
 }

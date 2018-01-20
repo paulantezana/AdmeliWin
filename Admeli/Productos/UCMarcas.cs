@@ -19,6 +19,8 @@ namespace Admeli.Productos
         private FormPrincipal formPrincipal;
         private Paginacion paginacion;
         private MarcaModel marcaModel = new MarcaModel();
+        private Marca currentMarca { get; set; }
+        private List<Marca> marcas { get; set; }
 
         public UCMarcas()
         {
@@ -41,6 +43,13 @@ namespace Admeli.Productos
         {
             cargarComponentes();
             cargarRegistros();
+
+            // Escuchando los eventos del formulario padre
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -49,15 +58,47 @@ namespace Admeli.Productos
             drawShape.lineBorder(panelContainer);
         }
 
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
         #region =========================== Decoration ===========================
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idMarca = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                Marca categoria = marcas.Find(x => x.idMarca == idMarca); // Buscando la categoria en las lista de categorias
+                if (categoria.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
         }
         #endregion
 
@@ -78,16 +119,22 @@ namespace Admeli.Productos
             try
             {
 
-                RootObject<Marca> marcas = await marcaModel.marcas(paginacion.currentPage, paginacion.speed);
+                RootObject<Marca> marcasRoot = await marcaModel.marcas(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = marcas.nro_registros;
+                paginacion.itemsCount = marcasRoot.nro_registros;
                 paginacion.reload();
 
-                // Ingresando
-                marcaBindingSource.DataSource = marcas.datos;
-                dataGridView.Refresh();
+                // cargando datos
+                marcas = marcasRoot.datos;
+                marcaBindingSource.DataSource = marcas;
+                dataGridView.Refresh(); // refrescar la tabla
+
+                // Mostrando la paginacion
                 mostrarPaginado();
+
+                // formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -185,21 +232,86 @@ namespace Admeli.Productos
         #endregion
 
         #region ==================== CRUD ====================
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            cargarRegistros();
-        }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormMarcaNuevo marcaNuevo = new FormMarcaNuevo();
-            marcaNuevo.ShowDialog();
+            executeNuevo();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormMarcaNuevo formCategoria = new FormMarcaNuevo();
+            formCategoria.ShowDialog();
             cargarRegistros();
         }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idMarca = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            Marca marca = marcas.Find(x => x.idMarca == idMarca); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormMarcaNuevo formCategoria = new FormMarcaNuevo(marca);
+            formCategoria.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+        
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentMarca = new Marca(); //creando una instancia del objeto correspondiente
+                currentMarca.idMarca = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (marcas.Find(x => x.idMarca == currentMarca.idMarca).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                Response response = await marcaModel.desactivar(currentMarca);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         #endregion
     }
 }

@@ -34,14 +34,6 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sitioWebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ubicacionLogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.captionImagenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
@@ -59,10 +51,18 @@
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnAnular = new System.Windows.Forms.ToolStripButton();
+            this.btnDesactivar = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.idMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sitioWebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubicacionLogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.captionImagenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -106,7 +106,7 @@
             this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.AutoGenerateContextFilters = true;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -139,86 +139,6 @@
             this.dataGridView.Size = new System.Drawing.Size(1121, 397);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
-            // 
-            // idMarcaDataGridViewTextBoxColumn
-            // 
-            this.idMarcaDataGridViewTextBoxColumn.DataPropertyName = "idMarca";
-            this.idMarcaDataGridViewTextBoxColumn.HeaderText = "idMarca";
-            this.idMarcaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
-            this.idMarcaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idMarcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idMarcaDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // nombreMarcaDataGridViewTextBoxColumn
-            // 
-            this.nombreMarcaDataGridViewTextBoxColumn.DataPropertyName = "nombreMarca";
-            this.nombreMarcaDataGridViewTextBoxColumn.HeaderText = "nombreMarca";
-            this.nombreMarcaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreMarcaDataGridViewTextBoxColumn.Name = "nombreMarcaDataGridViewTextBoxColumn";
-            this.nombreMarcaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreMarcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreMarcaDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descripcionDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // sitioWebDataGridViewTextBoxColumn
-            // 
-            this.sitioWebDataGridViewTextBoxColumn.DataPropertyName = "sitioWeb";
-            this.sitioWebDataGridViewTextBoxColumn.HeaderText = "sitioWeb";
-            this.sitioWebDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.sitioWebDataGridViewTextBoxColumn.Name = "sitioWebDataGridViewTextBoxColumn";
-            this.sitioWebDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sitioWebDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.sitioWebDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // ubicacionLogoDataGridViewTextBoxColumn
-            // 
-            this.ubicacionLogoDataGridViewTextBoxColumn.DataPropertyName = "ubicacionLogo";
-            this.ubicacionLogoDataGridViewTextBoxColumn.HeaderText = "ubicacionLogo";
-            this.ubicacionLogoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.ubicacionLogoDataGridViewTextBoxColumn.Name = "ubicacionLogoDataGridViewTextBoxColumn";
-            this.ubicacionLogoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ubicacionLogoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ubicacionLogoDataGridViewTextBoxColumn.Width = 129;
-            // 
-            // captionImagenDataGridViewTextBoxColumn
-            // 
-            this.captionImagenDataGridViewTextBoxColumn.DataPropertyName = "captionImagen";
-            this.captionImagenDataGridViewTextBoxColumn.HeaderText = "captionImagen";
-            this.captionImagenDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.captionImagenDataGridViewTextBoxColumn.Name = "captionImagenDataGridViewTextBoxColumn";
-            this.captionImagenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.captionImagenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.captionImagenDataGridViewTextBoxColumn.Width = 129;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // tieneRegistrosDataGridViewTextBoxColumn
-            // 
-            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
-            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 128;
             // 
             // marcaBindingSource
             // 
@@ -371,7 +291,7 @@
             this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnModificar,
-            this.btnAnular,
+            this.btnDesactivar,
             this.btnActualizar});
             this.toolStripCrud.Location = new System.Drawing.Point(1, 51);
             this.toolStripCrud.Name = "toolStripCrud";
@@ -404,18 +324,20 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // btnAnular
+            // btnDesactivar
             // 
-            this.btnAnular.AutoSize = false;
-            this.btnAnular.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
-            this.btnAnular.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(73, 37);
-            this.btnAnular.Text = "Anular";
-            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAnular.ToolTipText = "Anular(F7)";
+            this.btnDesactivar.AutoSize = false;
+            this.btnDesactivar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesactivar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesactivar.Image")));
+            this.btnDesactivar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDesactivar.Name = "btnDesactivar";
+            this.btnDesactivar.Size = new System.Drawing.Size(73, 37);
+            this.btnDesactivar.Text = "Desactivar";
+            this.btnDesactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDesactivar.ToolTipText = "Anular(F7)";
+            this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // btnActualizar
             // 
@@ -449,6 +371,80 @@
             this.label1.Size = new System.Drawing.Size(223, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "MANTENIMIENTO MARCAS";
+            // 
+            // idMarcaDataGridViewTextBoxColumn
+            // 
+            this.idMarcaDataGridViewTextBoxColumn.DataPropertyName = "idMarca";
+            this.idMarcaDataGridViewTextBoxColumn.HeaderText = "idMarca";
+            this.idMarcaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
+            this.idMarcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idMarcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idMarcaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreMarcaDataGridViewTextBoxColumn
+            // 
+            this.nombreMarcaDataGridViewTextBoxColumn.DataPropertyName = "nombreMarca";
+            this.nombreMarcaDataGridViewTextBoxColumn.HeaderText = "Nombre Marca";
+            this.nombreMarcaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreMarcaDataGridViewTextBoxColumn.Name = "nombreMarcaDataGridViewTextBoxColumn";
+            this.nombreMarcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreMarcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // sitioWebDataGridViewTextBoxColumn
+            // 
+            this.sitioWebDataGridViewTextBoxColumn.DataPropertyName = "sitioWeb";
+            this.sitioWebDataGridViewTextBoxColumn.HeaderText = "Sitio Web";
+            this.sitioWebDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.sitioWebDataGridViewTextBoxColumn.Name = "sitioWebDataGridViewTextBoxColumn";
+            this.sitioWebDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sitioWebDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ubicacionLogoDataGridViewTextBoxColumn
+            // 
+            this.ubicacionLogoDataGridViewTextBoxColumn.DataPropertyName = "ubicacionLogo";
+            this.ubicacionLogoDataGridViewTextBoxColumn.HeaderText = "Ubicacion Logo";
+            this.ubicacionLogoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.ubicacionLogoDataGridViewTextBoxColumn.Name = "ubicacionLogoDataGridViewTextBoxColumn";
+            this.ubicacionLogoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ubicacionLogoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // captionImagenDataGridViewTextBoxColumn
+            // 
+            this.captionImagenDataGridViewTextBoxColumn.DataPropertyName = "captionImagen";
+            this.captionImagenDataGridViewTextBoxColumn.HeaderText = "Caption Imagen";
+            this.captionImagenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.captionImagenDataGridViewTextBoxColumn.Name = "captionImagenDataGridViewTextBoxColumn";
+            this.captionImagenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.captionImagenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "Tiene Registros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // UCMarcas
             // 
@@ -497,16 +493,16 @@
         private System.Windows.Forms.ToolStrip toolStripCrud;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnModificar;
-        private System.Windows.Forms.ToolStripButton btnAnular;
+        private System.Windows.Forms.ToolStripButton btnDesactivar;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.BindingSource marcaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMarcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreMarcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sitioWebDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionLogoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn captionImagenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tieneRegistrosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource marcaBindingSource;
     }
 }

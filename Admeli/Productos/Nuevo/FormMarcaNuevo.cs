@@ -22,6 +22,12 @@ namespace Admeli.Productos.Nuevo
             InitializeComponent();
         }
 
+        public FormMarcaNuevo(Marca marca)
+        {
+            InitializeComponent();
+            this.marca = marca;
+        }
+
         private void FormMarcaNuevo_Load(object sender, EventArgs e)
         {
             chkActivoMarca.Checked = true;

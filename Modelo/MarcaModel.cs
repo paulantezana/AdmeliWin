@@ -25,14 +25,43 @@ namespace Modelo
             }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(Marca param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/marca/modificar
+                return await webService.POSTSend("marca", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
+        public async Task<Response> desactivar(Marca param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/marca/desactivar
+                return await webService.POSTSend("marca", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> eliminar(Marca param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/marca/eliminar
+                return await webService.POSTSend("marca", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<Marca>> marcas(int page, int items)

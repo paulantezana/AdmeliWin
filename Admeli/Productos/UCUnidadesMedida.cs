@@ -19,6 +19,8 @@ namespace Admeli.Productos
         private FormPrincipal formPrincipal;
         private Paginacion paginacion;
         private UnidadMedidaModel unidadMedidaModel = new UnidadMedidaModel();
+        private UnidadMedida currentUnidadMedida { get; set; }
+        private List<UnidadMedida> unidadesDeMedida { get; set; }
 
         public UCUnidadesMedida()
         {
@@ -47,18 +49,57 @@ namespace Admeli.Productos
         {
             cargarComponentes();
             cargarRegistros();
+
+            // Escuchando los eventos del formulario padre
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
 
         #region =========================== Decoration ===========================
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idUnidadMedida = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                UnidadMedida unidadMedida = unidadesDeMedida.Find(x => x.idUnidadMedida == idUnidadMedida); // Buscando la categoria en las lista de categorias
+                if (unidadMedida.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
         }
         #endregion
 
@@ -79,16 +120,22 @@ namespace Admeli.Productos
             loadState(true);
             try
             {
-                RootObject<UnidadMedida> unidadesMedida = await unidadMedidaModel.unimedidas(paginacion.currentPage, paginacion.speed);
+                RootObject<UnidadMedida> unidadesMedidaRoot = await unidadMedidaModel.unimedidas(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = unidadesMedida.nro_registros;
+                paginacion.itemsCount = unidadesMedidaRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                unidadMedidaBindingSource.DataSource = unidadesMedida.datos;
+                unidadesDeMedida = unidadesMedidaRoot.datos;
+                unidadMedidaBindingSource.DataSource = unidadesDeMedida;
                 dataGridView.Refresh();
+
+                // Mostrando la paginacion
                 mostrarPaginado();
+
+                // descoraciones
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -186,21 +233,122 @@ namespace Admeli.Productos
         #endregion
 
         #region ==================== CRUD ====================
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            cargarRegistros();
-        }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormUnidadMedidaNuevo unidadMedidaNuevo = new FormUnidadMedidaNuevo();
-            unidadMedidaNuevo.ShowDialog();
+            executeNuevo();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormUnidadMedidaNuevo formUnidadMedida = new FormUnidadMedidaNuevo();
+            formUnidadMedida.ShowDialog();
             cargarRegistros();
         }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idUnidadMedida = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            UnidadMedida unidad = unidadesDeMedida.Find(x => x.idUnidadMedida == idUnidadMedida); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormUnidadMedidaNuevo formCategoria = new FormUnidadMedidaNuevo(unidad);
+            formCategoria.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentUnidadMedida = new UnidadMedida(); //creando una instancia del objeto categoria
+                currentUnidadMedida.idUnidadMedida = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await unidadMedidaModel.eliminar(currentUnidadMedida); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentUnidadMedida = new UnidadMedida(); //creando una instancia del objeto correspondiente
+                currentUnidadMedida.idUnidadMedida = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (unidadesDeMedida.Find(x => x.idUnidadMedida == currentUnidadMedida.idUnidadMedida).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                Response response = await unidadMedidaModel.desactivar(currentUnidadMedida);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         #endregion
 
     }

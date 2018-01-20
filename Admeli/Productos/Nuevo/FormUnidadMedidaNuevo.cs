@@ -16,11 +16,18 @@ namespace Admeli.Productos.Nuevo
     {
         private UnidadMedidaModel unidadMedidaModel = new UnidadMedidaModel();
         private UnidadMedida unidadMedida = new UnidadMedida();
+        private UnidadMedida unidad;
 
         public FormUnidadMedidaNuevo()
         {
             InitializeComponent();
         }
+
+        public FormUnidadMedidaNuevo(UnidadMedida unidad)
+        {
+            this.unidad = unidad;
+        }
+
         private void FormUnidadMedidaNuevo_Load(object sender, EventArgs e)
         {
             chkActivoUM.Checked = true;

@@ -18,7 +18,6 @@ namespace Admeli.Productos
     {
         private FormPrincipal formPrincipal;
         private CategoriaModel categoriaModel = new CategoriaModel();
-
         private Paginacion paginacion { get; set; }
         private List<Categoria> categorias { get; set; }
         private Categoria currentCategoria { get; set; }
@@ -127,9 +126,11 @@ namespace Admeli.Productos
                 categorias = rootCategorias.datos;
                 categoriaBindingSource.DataSource = rootCategorias.datos;
                 dataGridView.Refresh();
+
+                // cargando la paginacion
                 mostrarPaginado();
 
-                //
+                // formato de celadas
                 decorationDataGridView();
             }
             catch (Exception ex)
@@ -351,9 +352,5 @@ namespace Admeli.Productos
 
         #endregion
 
-        private void dataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            decorationDataGridView();
-        }
     }
 }
