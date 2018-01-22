@@ -21,18 +21,23 @@ namespace Admeli.Ventas
          * 
          * 
          * */
-        private Paginacion paginacion;
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
+        private Paginacion paginacion;
 
         public UCCuentaCobrar()
         {
             InitializeComponent();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCCuentaCobrar(FormPrincipal formPrincipal)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -45,6 +50,13 @@ namespace Admeli.Ventas
         {
             FormCuentaPagarModificar cuentaPagarModificar = new FormCuentaPagarModificar();
             cuentaPagarModificar.ShowDialog();
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
     }
 }

@@ -19,7 +19,8 @@ namespace Admeli.Compras
         #region ===================== Metodos =====================
         private ProveedorModel proveedorModel = new ProveedorModel();
         private FormPrincipal formPrincipal;
-        private Paginacion paginacion; 
+        private Paginacion paginacion;
+        public bool lisenerKeyEvents { get; set; }
         #endregion
 
         #region ======================= Constructor =======================
@@ -27,6 +28,8 @@ namespace Admeli.Compras
         {
             InitializeComponent();
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCProveedores(FormPrincipal formPrincipal)
@@ -34,6 +37,8 @@ namespace Admeli.Compras
             InitializeComponent();
             this.formPrincipal = formPrincipal;
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 
@@ -156,6 +161,13 @@ namespace Admeli.Compras
             // Paginados
             lblPageAllItems.Text = paginacion.itemsCount.ToString();
             lblPageCount.Text = paginacion.pageCount.ToString();
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private async void btnPrevious_Click(object sender, EventArgs e)

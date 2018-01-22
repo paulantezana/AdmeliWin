@@ -16,6 +16,7 @@ namespace Admeli.Configuracion
     public partial class UCAsignarCorrelativo : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         public DocCorrelativoModel docCorrelativoModel = new DocCorrelativoModel();
         private Paginacion paginacion;
 
@@ -25,6 +26,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCAsignarCorrelativo(FormPrincipal formPrincipal)
@@ -34,6 +37,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCAsignarCorrelativo_Load(object sender, EventArgs e)
@@ -125,6 +130,13 @@ namespace Admeli.Configuracion
                 paginacion.previousPage();
                 cargarRegistros();
             }
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void btnFirst_Click(object sender, EventArgs e)

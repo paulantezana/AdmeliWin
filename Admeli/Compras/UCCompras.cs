@@ -26,7 +26,8 @@ namespace Admeli.Compras
         private CompraModel compraModel = new CompraModel();
         private PersonalModel personalModel = new PersonalModel();
         private Paginacion paginacion;
-        private FormPrincipal formPrincipal; 
+        private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         #endregion
 
         #region ========================== Constructor ==========================
@@ -35,6 +36,8 @@ namespace Admeli.Compras
             InitializeComponent();
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCCompras(FormPrincipal formPrincipal)
@@ -44,6 +47,8 @@ namespace Admeli.Compras
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 
@@ -61,7 +66,15 @@ namespace Admeli.Compras
             cargarComponentes();
             cargarRegistros();
             decorationDataGridView();
-        } 
+        }
+
+        internal void reLoad()
+        {
+            cargarComponentes();
+            cargarRegistros();
+            decorationDataGridView();
+            lisenerKeyEvents = true; // Active lisener key events
+        }
         #endregion
 
         #region =========================== Decoration ===========================

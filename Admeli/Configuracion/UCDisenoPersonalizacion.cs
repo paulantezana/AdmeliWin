@@ -15,17 +15,22 @@ namespace Admeli.Configuracion
     public partial class UCDisenoPersonalizacion : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
 
         public UCDisenoPersonalizacion()
         {
             InitializeComponent();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCDisenoPersonalizacion(FormPrincipal formPrincipal)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCDisenoPersonalizacion_Load(object sender, EventArgs e)
@@ -112,6 +117,13 @@ namespace Admeli.Configuracion
         {
             /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
             comprarNuevo.ShowDialog();*/
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
     }

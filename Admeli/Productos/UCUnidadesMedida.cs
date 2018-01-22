@@ -22,12 +22,16 @@ namespace Admeli.Productos
         private UnidadMedida currentUnidadMedida { get; set; }
         private List<UnidadMedida> unidadesDeMedida { get; set; }
 
+        public bool lisenerKeyEvents { get; set; }
+
         public UCUnidadesMedida()
         {
             InitializeComponent();
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCUnidadesMedida(FormPrincipal formPrincipal)
@@ -37,6 +41,8 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -62,6 +68,7 @@ namespace Admeli.Productos
         #region ======================== KEYBOARD ========================
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
+            if (!lisenerKeyEvents) return;
             switch (e.KeyCode)
             {
                 case Keys.F3:
@@ -145,6 +152,13 @@ namespace Admeli.Productos
             {
                 loadState(false);
             }
+        }
+
+        internal void reLoad()
+        {
+            cargarComponentes();
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

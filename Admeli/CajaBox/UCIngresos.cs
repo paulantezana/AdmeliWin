@@ -16,6 +16,7 @@ namespace Admeli.CajaBox
     public partial class UCIngresos : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
         private IngresoModel ingresoModel = new IngresoModel();
         private PersonalModel personalModel = new PersonalModel();
@@ -27,6 +28,8 @@ namespace Admeli.CajaBox
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCIngresos(FormPrincipal formPrincipal)
@@ -36,6 +39,8 @@ namespace Admeli.CajaBox
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCIngresos_Load(object sender, EventArgs e)
@@ -107,6 +112,14 @@ namespace Admeli.CajaBox
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        internal void reLoad()
+        {
+            cargarComponentes();
+            cargarComponentesSecond();
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private async void cargarRegistros()

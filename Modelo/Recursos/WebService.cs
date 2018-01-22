@@ -19,22 +19,14 @@ namespace Modelo.Recursos
 
         public WebService()
         {
-            // this.domainName = "http://www.lineatienda.com";
+            //this.domainName = "http://www.lineatienda.com";
             this.domainName = "http://localhost:8080";
 
             //this.directory = "services.php";
             this.directory = "admeli/xcore2/xcore/services.php";
 
-
             this.urlBase = String.Format("{0}/{1}", domainName, directory);
         }
-
-        /**
-         *  MetodoGet
-         *      servicio
-         *      metodo
-         * */
-
 
         //////// ================================== CRETE ADMELI ==================================
         public async Task<Response> DELETE<T>(string servicio, string metodo, T param)
@@ -72,10 +64,6 @@ namespace Modelo.Recursos
             }
         }
 
-
-
-
-
         public async Task<Response> POSTSend<T>(string servicio, string metodo, T param)
         {
             try
@@ -107,8 +95,6 @@ namespace Modelo.Recursos
             }
         }
 
-
-
         public async Task<RootObject<T>> POSTRoot<T>(string servicio, string metodo, string jsonString)
         {
             try
@@ -138,7 +124,6 @@ namespace Modelo.Recursos
                 throw ex;
             }
         }
-
 
         public async Task<List<T>> POSTList<T>(string servicio, string metodo, T param)
         {
@@ -171,7 +156,6 @@ namespace Modelo.Recursos
             }
         }
 
-
         #region ============= Metodo GET que retorna un objeto RootObjet =============
         public async Task<RootObject<T>> GETRoot<T>(string servicio, string metodo)
         {
@@ -195,6 +179,7 @@ namespace Modelo.Recursos
                 throw ex;
             }
         }
+
         public async Task<RootObject<T>> GETRoot<T>(string servicio)
         {
             try

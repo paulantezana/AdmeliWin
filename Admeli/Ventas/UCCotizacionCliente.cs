@@ -23,8 +23,9 @@ namespace Admeli.Ventas
          * 
          * 
          * */
-        private Paginacion paginacion;
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
+        private Paginacion paginacion;
         private CotizacionModel cotizacionModel = new CotizacionModel();
         private PersonalModel personalModel = new PersonalModel();
         private SucursalModel sucursalModel = new SucursalModel();
@@ -35,6 +36,8 @@ namespace Admeli.Ventas
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCCotizacionCliente(FormPrincipal formPrincipal)
@@ -44,6 +47,8 @@ namespace Admeli.Ventas
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCCotizacionCliente_Load(object sender, EventArgs e)
@@ -87,6 +92,14 @@ namespace Admeli.Ventas
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        internal void reLoad()
+        {
+            cargarComponentes();
+            cargarComponentesSecond();
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private async void cargarComponentesSecond()

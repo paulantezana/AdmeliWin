@@ -25,6 +25,8 @@ namespace Admeli.Productos
         private Paginacion paginacion;
         private FormPrincipal formPrincipal;
 
+        public bool lisenerKeyEvents { get; set; }
+
         private bool verStock { get; set; }
 
         
@@ -35,6 +37,8 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCListadoProducto(FormPrincipal formPrincipal)
@@ -44,6 +48,8 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -62,6 +68,16 @@ namespace Admeli.Productos
             cargarCategorias();
             cargarComponentesThird();
             cargarRegistros();
+        }
+
+        internal void reLoad(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
+        }
+
+        internal void reLoad()
+        {
+            
         }
 
         #region =========================== Decoration ===========================

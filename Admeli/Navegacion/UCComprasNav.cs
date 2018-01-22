@@ -48,40 +48,73 @@ namespace Admeli.Navegacion
             switch (panelName)
             {
                 case "compras":
-                    this.uCCompras = new Admeli.Compras.UCCompras(this.formPrincipal);
-                    this.formPrincipal.panelMain.Controls.Add(uCCompras);
-                    this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCCompras.Location = new System.Drawing.Point(0, 0);
-                    this.uCCompras.Name = "uCCompras";
-                    this.uCCompras.Size = new System.Drawing.Size(250, 776);
-                    this.uCCompras.TabIndex = 0;
+                    if (uCCompras == null)
+                    {
+                        this.uCCompras = new Admeli.Compras.UCCompras(this.formPrincipal);
+                        this.formPrincipal.panelMain.Controls.Add(uCCompras);
+                        this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCCompras.Location = new System.Drawing.Point(0, 0);
+                        this.uCCompras.Name = "uCCompras";
+                        this.uCCompras.Size = new System.Drawing.Size(250, 776);
+                        this.uCCompras.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.formPrincipal.panelMain.Controls.Add(uCCompras);
+                        this.uCCompras.reLoad();
+                    }
                     break;
                 case "cuentaPagar":
-                    this.uCCuentaPagar = new Admeli.Compras.UCCuentaPagar(this.formPrincipal);
-                    this.formPrincipal.panelMain.Controls.Add(uCCuentaPagar);
-                    this.uCCuentaPagar.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCCuentaPagar.Location = new System.Drawing.Point(0, 0);
-                    this.uCCuentaPagar.Name = "uCCuentaPagar";
-                    this.uCCuentaPagar.Size = new System.Drawing.Size(250, 776);
-                    this.uCCuentaPagar.TabIndex = 0;
+                    if (uCCuentaPagar == null)
+                    {
+                        this.uCCuentaPagar = new Admeli.Compras.UCCuentaPagar(this.formPrincipal);
+                        this.formPrincipal.panelMain.Controls.Add(uCCuentaPagar);
+                        this.uCCuentaPagar.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCCuentaPagar.Location = new System.Drawing.Point(0, 0);
+                        this.uCCuentaPagar.Name = "uCCuentaPagar";
+                        this.uCCuentaPagar.Size = new System.Drawing.Size(250, 776);
+                        this.uCCuentaPagar.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.formPrincipal.panelMain.Controls.Add(uCCuentaPagar);
+                        this.uCCuentaPagar.reLoad();
+                    }
                     break;
                 case "ordenCompraProveedor":
-                    this.uCOrdenCompraProveedor = new Admeli.Compras.UCOrdenCompraProveedor(this.formPrincipal);
-                    this.formPrincipal.panelMain.Controls.Add(uCOrdenCompraProveedor);
-                    this.uCOrdenCompraProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCOrdenCompraProveedor.Location = new System.Drawing.Point(0, 0);
-                    this.uCOrdenCompraProveedor.Name = "uCOrdenCompraProveedor";
-                    this.uCOrdenCompraProveedor.Size = new System.Drawing.Size(250, 776);
-                    this.uCOrdenCompraProveedor.TabIndex = 0;
+                    if (uCOrdenCompraProveedor == null)
+                    {
+                        this.uCOrdenCompraProveedor = new Admeli.Compras.UCOrdenCompraProveedor(this.formPrincipal);
+                        this.formPrincipal.panelMain.Controls.Add(uCOrdenCompraProveedor);
+                        this.uCOrdenCompraProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCOrdenCompraProveedor.Location = new System.Drawing.Point(0, 0);
+                        this.uCOrdenCompraProveedor.Name = "uCOrdenCompraProveedor";
+                        this.uCOrdenCompraProveedor.Size = new System.Drawing.Size(250, 776);
+                        this.uCOrdenCompraProveedor.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.formPrincipal.panelMain.Controls.Add(uCOrdenCompraProveedor);
+                        this.uCOrdenCompraProveedor.reLoad();
+                    }
                     break;
                 case "proveedores":
-                    this.uCProveedores = new Admeli.Compras.UCProveedores(this.formPrincipal);
-                    this.formPrincipal.panelMain.Controls.Add(uCProveedores);
-                    this.uCProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCProveedores.Location = new System.Drawing.Point(0, 0);
-                    this.uCProveedores.Name = "uCProveedores";
-                    this.uCProveedores.Size = new System.Drawing.Size(250, 776);
-                    this.uCProveedores.TabIndex = 0;
+                    if (uCProveedores == null)
+                    {
+                        this.uCProveedores = new Admeli.Compras.UCProveedores(this.formPrincipal);
+                        this.formPrincipal.panelMain.Controls.Add(uCProveedores);
+                        this.uCProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCProveedores.Location = new System.Drawing.Point(0, 0);
+                        this.uCProveedores.Name = "uCProveedores";
+                        this.uCProveedores.Size = new System.Drawing.Size(250, 776);
+                        this.uCProveedores.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.formPrincipal.panelMain.Controls.Add(uCProveedores);
+                        this.uCProveedores.reLoad();
+                    }
+
                     break;
                 default:
                     break;

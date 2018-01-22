@@ -13,15 +13,27 @@ namespace Admeli.AlmacenBox
     public partial class UCNotaSalida : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
 
         public UCNotaSalida()
         {
             InitializeComponent();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCNotaSalida(FormPrincipal formPrincipal)
         {
             this.formPrincipal = formPrincipal;
+
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Admeli.Configuracion
     public partial class UCPuntoDeVenta : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
         private PuntoVentaModel puntoVentaModel = new PuntoVentaModel();
         private SucursalModel sucursalModel = new SucursalModel();
@@ -27,6 +28,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCPuntoDeVenta(FormPrincipal formPrincipal)
@@ -36,6 +39,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCPuntoDeVenta_Load(object sender, EventArgs e)
@@ -220,6 +225,13 @@ namespace Admeli.Configuracion
         {
             /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
             comprarNuevo.ShowDialog();*/
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
     }

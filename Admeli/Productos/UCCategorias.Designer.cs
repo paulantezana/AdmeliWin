@@ -29,10 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCategorias));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCategorias));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.idCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPadreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.padreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mostrarProductosEnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroColumnasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urlCategoriaSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metaTagsSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cabeceraPaginaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.piePaginaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mostrarWebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripLabel();
@@ -54,31 +72,13 @@
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mostrarWebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ordenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.piePaginaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cabeceraPaginaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metaTagsSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urlCategoriaSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroColumnasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mostrarProductosEnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.padreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPadreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView = new ADGV.AdvancedDataGridView();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.toolStripNavigation.SuspendLayout();
             this.toolStripCrud.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -92,7 +92,7 @@
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(870, 450);
+            this.panelContainer.Size = new System.Drawing.Size(1098, 539);
             this.panelContainer.TabIndex = 7;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -103,8 +103,223 @@
             this.panel1.Location = new System.Drawing.Point(1, 87);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(868, 332);
+            this.panel1.Size = new System.Drawing.Size(1096, 421);
             this.panel1.TabIndex = 20;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.AutoGenerateContextFilters = true;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.ColumnHeadersHeight = 40;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCategoriaDataGridViewTextBoxColumn,
+            this.nombreCategoriaDataGridViewTextBoxColumn,
+            this.idPadreCategoriaDataGridViewTextBoxColumn,
+            this.padreDataGridViewTextBoxColumn,
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn,
+            this.mostrarProductosEnDataGridViewTextBoxColumn,
+            this.numeroColumnasDataGridViewTextBoxColumn,
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn,
+            this.urlCategoriaSeoDataGridViewTextBoxColumn,
+            this.metaTagsSeoDataGridViewTextBoxColumn,
+            this.cabeceraPaginaDataGridViewTextBoxColumn,
+            this.piePaginaDataGridViewTextBoxColumn,
+            this.ordenDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.mostrarWebDataGridViewTextBoxColumn,
+            this.tieneRegistrosDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.categoriaBindingSource;
+            this.dataGridView.DateWithTime = false;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView.RowTemplate.Height = 27;
+            this.dataGridView.Size = new System.Drawing.Size(1076, 401);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.TimeFilter = false;
+            // 
+            // idCategoriaDataGridViewTextBoxColumn
+            // 
+            this.idCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.HeaderText = "idCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idCategoriaDataGridViewTextBoxColumn.Name = "idCategoriaDataGridViewTextBoxColumn";
+            this.idCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idCategoriaDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // nombreCategoriaDataGridViewTextBoxColumn
+            // 
+            this.nombreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "nombreCategoria";
+            this.nombreCategoriaDataGridViewTextBoxColumn.HeaderText = "nombreCategoria";
+            this.nombreCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreCategoriaDataGridViewTextBoxColumn.Name = "nombreCategoriaDataGridViewTextBoxColumn";
+            this.nombreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreCategoriaDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // idPadreCategoriaDataGridViewTextBoxColumn
+            // 
+            this.idPadreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idPadreCategoria";
+            this.idPadreCategoriaDataGridViewTextBoxColumn.HeaderText = "idPadreCategoria";
+            this.idPadreCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idPadreCategoriaDataGridViewTextBoxColumn.Name = "idPadreCategoriaDataGridViewTextBoxColumn";
+            this.idPadreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPadreCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idPadreCategoriaDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // padreDataGridViewTextBoxColumn
+            // 
+            this.padreDataGridViewTextBoxColumn.DataPropertyName = "padre";
+            this.padreDataGridViewTextBoxColumn.HeaderText = "padre";
+            this.padreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.padreDataGridViewTextBoxColumn.Name = "padreDataGridViewTextBoxColumn";
+            this.padreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.padreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.padreDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // ordenVisualizacionProductosDataGridViewTextBoxColumn
+            // 
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.DataPropertyName = "ordenVisualizacionProductos";
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.HeaderText = "ordenVisualizacionProductos";
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Name = "ordenVisualizacionProductosDataGridViewTextBoxColumn";
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Width = 168;
+            // 
+            // mostrarProductosEnDataGridViewTextBoxColumn
+            // 
+            this.mostrarProductosEnDataGridViewTextBoxColumn.DataPropertyName = "mostrarProductosEn";
+            this.mostrarProductosEnDataGridViewTextBoxColumn.HeaderText = "mostrarProductosEn";
+            this.mostrarProductosEnDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.mostrarProductosEnDataGridViewTextBoxColumn.Name = "mostrarProductosEnDataGridViewTextBoxColumn";
+            this.mostrarProductosEnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mostrarProductosEnDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.mostrarProductosEnDataGridViewTextBoxColumn.Width = 127;
+            // 
+            // numeroColumnasDataGridViewTextBoxColumn
+            // 
+            this.numeroColumnasDataGridViewTextBoxColumn.DataPropertyName = "numeroColumnas";
+            this.numeroColumnasDataGridViewTextBoxColumn.HeaderText = "numeroColumnas";
+            this.numeroColumnasDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.numeroColumnasDataGridViewTextBoxColumn.Name = "numeroColumnasDataGridViewTextBoxColumn";
+            this.numeroColumnasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroColumnasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.numeroColumnasDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // tituloCategoriaSeoDataGridViewTextBoxColumn
+            // 
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "tituloCategoriaSeo";
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "tituloCategoriaSeo";
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Name = "tituloCategoriaSeoDataGridViewTextBoxColumn";
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // urlCategoriaSeoDataGridViewTextBoxColumn
+            // 
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "urlCategoriaSeo";
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "urlCategoriaSeo";
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.Name = "urlCategoriaSeoDataGridViewTextBoxColumn";
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // metaTagsSeoDataGridViewTextBoxColumn
+            // 
+            this.metaTagsSeoDataGridViewTextBoxColumn.DataPropertyName = "metaTagsSeo";
+            this.metaTagsSeoDataGridViewTextBoxColumn.HeaderText = "metaTagsSeo";
+            this.metaTagsSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.metaTagsSeoDataGridViewTextBoxColumn.Name = "metaTagsSeoDataGridViewTextBoxColumn";
+            this.metaTagsSeoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.metaTagsSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.metaTagsSeoDataGridViewTextBoxColumn.Width = 98;
+            // 
+            // cabeceraPaginaDataGridViewTextBoxColumn
+            // 
+            this.cabeceraPaginaDataGridViewTextBoxColumn.DataPropertyName = "cabeceraPagina";
+            this.cabeceraPaginaDataGridViewTextBoxColumn.HeaderText = "cabeceraPagina";
+            this.cabeceraPaginaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.cabeceraPaginaDataGridViewTextBoxColumn.Name = "cabeceraPaginaDataGridViewTextBoxColumn";
+            this.cabeceraPaginaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cabeceraPaginaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.cabeceraPaginaDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // piePaginaDataGridViewTextBoxColumn
+            // 
+            this.piePaginaDataGridViewTextBoxColumn.DataPropertyName = "piePagina";
+            this.piePaginaDataGridViewTextBoxColumn.HeaderText = "piePagina";
+            this.piePaginaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.piePaginaDataGridViewTextBoxColumn.Name = "piePaginaDataGridViewTextBoxColumn";
+            this.piePaginaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.piePaginaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.piePaginaDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // ordenDataGridViewTextBoxColumn
+            // 
+            this.ordenDataGridViewTextBoxColumn.DataPropertyName = "orden";
+            this.ordenDataGridViewTextBoxColumn.HeaderText = "orden";
+            this.ordenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.ordenDataGridViewTextBoxColumn.Name = "ordenDataGridViewTextBoxColumn";
+            this.ordenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ordenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ordenDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // mostrarWebDataGridViewTextBoxColumn
+            // 
+            this.mostrarWebDataGridViewTextBoxColumn.DataPropertyName = "mostrarWeb";
+            this.mostrarWebDataGridViewTextBoxColumn.HeaderText = "mostrarWeb";
+            this.mostrarWebDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.mostrarWebDataGridViewTextBoxColumn.Name = "mostrarWebDataGridViewTextBoxColumn";
+            this.mostrarWebDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mostrarWebDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.mostrarWebDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataSource = typeof(Entidad.Categoria);
             // 
             // toolStripNavigation
             // 
@@ -127,10 +342,10 @@
             this.toolStripButton1,
             this.lblSpeedPages,
             this.toolStripButton3});
-            this.toolStripNavigation.Location = new System.Drawing.Point(1, 419);
+            this.toolStripNavigation.Location = new System.Drawing.Point(1, 508);
             this.toolStripNavigation.Name = "toolStripNavigation";
             this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.toolStripNavigation.Size = new System.Drawing.Size(868, 30);
+            this.toolStripNavigation.Size = new System.Drawing.Size(1096, 30);
             this.toolStripNavigation.TabIndex = 19;
             this.toolStripNavigation.Text = "toolStrip3";
             // 
@@ -265,7 +480,7 @@
             this.toolStripCrud.Location = new System.Drawing.Point(1, 42);
             this.toolStripCrud.Name = "toolStripCrud";
             this.toolStripCrud.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.toolStripCrud.Size = new System.Drawing.Size(868, 45);
+            this.toolStripCrud.Size = new System.Drawing.Size(1096, 45);
             this.toolStripCrud.TabIndex = 17;
             this.toolStripCrud.Text = "toolStrip1";
             // 
@@ -341,7 +556,7 @@
             this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
             this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(868, 41);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(1096, 41);
             this.panelHeaderItem1.TabIndex = 0;
             // 
             // label1
@@ -355,221 +570,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "MANTENIMIENTO CATEGORIA";
             // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataSource = typeof(Entidad.Categoria);
-            // 
-            // tieneRegistrosDataGridViewTextBoxColumn
-            // 
-            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
-            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 99;
-            // 
-            // mostrarWebDataGridViewTextBoxColumn
-            // 
-            this.mostrarWebDataGridViewTextBoxColumn.DataPropertyName = "mostrarWeb";
-            this.mostrarWebDataGridViewTextBoxColumn.HeaderText = "mostrarWeb";
-            this.mostrarWebDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.mostrarWebDataGridViewTextBoxColumn.Name = "mostrarWebDataGridViewTextBoxColumn";
-            this.mostrarWebDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mostrarWebDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.mostrarWebDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // ordenDataGridViewTextBoxColumn
-            // 
-            this.ordenDataGridViewTextBoxColumn.DataPropertyName = "orden";
-            this.ordenDataGridViewTextBoxColumn.HeaderText = "orden";
-            this.ordenDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.ordenDataGridViewTextBoxColumn.Name = "ordenDataGridViewTextBoxColumn";
-            this.ordenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ordenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ordenDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // piePaginaDataGridViewTextBoxColumn
-            // 
-            this.piePaginaDataGridViewTextBoxColumn.DataPropertyName = "piePagina";
-            this.piePaginaDataGridViewTextBoxColumn.HeaderText = "piePagina";
-            this.piePaginaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.piePaginaDataGridViewTextBoxColumn.Name = "piePaginaDataGridViewTextBoxColumn";
-            this.piePaginaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.piePaginaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.piePaginaDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // cabeceraPaginaDataGridViewTextBoxColumn
-            // 
-            this.cabeceraPaginaDataGridViewTextBoxColumn.DataPropertyName = "cabeceraPagina";
-            this.cabeceraPaginaDataGridViewTextBoxColumn.HeaderText = "cabeceraPagina";
-            this.cabeceraPaginaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.cabeceraPaginaDataGridViewTextBoxColumn.Name = "cabeceraPaginaDataGridViewTextBoxColumn";
-            this.cabeceraPaginaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cabeceraPaginaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cabeceraPaginaDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // metaTagsSeoDataGridViewTextBoxColumn
-            // 
-            this.metaTagsSeoDataGridViewTextBoxColumn.DataPropertyName = "metaTagsSeo";
-            this.metaTagsSeoDataGridViewTextBoxColumn.HeaderText = "metaTagsSeo";
-            this.metaTagsSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.metaTagsSeoDataGridViewTextBoxColumn.Name = "metaTagsSeoDataGridViewTextBoxColumn";
-            this.metaTagsSeoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.metaTagsSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.metaTagsSeoDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // urlCategoriaSeoDataGridViewTextBoxColumn
-            // 
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "urlCategoriaSeo";
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "urlCategoriaSeo";
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.Name = "urlCategoriaSeoDataGridViewTextBoxColumn";
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // tituloCategoriaSeoDataGridViewTextBoxColumn
-            // 
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "tituloCategoriaSeo";
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "tituloCategoriaSeo";
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Name = "tituloCategoriaSeoDataGridViewTextBoxColumn";
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // numeroColumnasDataGridViewTextBoxColumn
-            // 
-            this.numeroColumnasDataGridViewTextBoxColumn.DataPropertyName = "numeroColumnas";
-            this.numeroColumnasDataGridViewTextBoxColumn.HeaderText = "numeroColumnas";
-            this.numeroColumnasDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.numeroColumnasDataGridViewTextBoxColumn.Name = "numeroColumnasDataGridViewTextBoxColumn";
-            this.numeroColumnasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroColumnasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.numeroColumnasDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // mostrarProductosEnDataGridViewTextBoxColumn
-            // 
-            this.mostrarProductosEnDataGridViewTextBoxColumn.DataPropertyName = "mostrarProductosEn";
-            this.mostrarProductosEnDataGridViewTextBoxColumn.HeaderText = "mostrarProductosEn";
-            this.mostrarProductosEnDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.mostrarProductosEnDataGridViewTextBoxColumn.Name = "mostrarProductosEnDataGridViewTextBoxColumn";
-            this.mostrarProductosEnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mostrarProductosEnDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.mostrarProductosEnDataGridViewTextBoxColumn.Width = 127;
-            // 
-            // ordenVisualizacionProductosDataGridViewTextBoxColumn
-            // 
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.DataPropertyName = "ordenVisualizacionProductos";
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.HeaderText = "ordenVisualizacionProductos";
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Name = "ordenVisualizacionProductosDataGridViewTextBoxColumn";
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Width = 168;
-            // 
-            // padreDataGridViewTextBoxColumn
-            // 
-            this.padreDataGridViewTextBoxColumn.DataPropertyName = "padre";
-            this.padreDataGridViewTextBoxColumn.HeaderText = "padre";
-            this.padreDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.padreDataGridViewTextBoxColumn.Name = "padreDataGridViewTextBoxColumn";
-            this.padreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.padreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.padreDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // idPadreCategoriaDataGridViewTextBoxColumn
-            // 
-            this.idPadreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idPadreCategoria";
-            this.idPadreCategoriaDataGridViewTextBoxColumn.HeaderText = "idPadreCategoria";
-            this.idPadreCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idPadreCategoriaDataGridViewTextBoxColumn.Name = "idPadreCategoriaDataGridViewTextBoxColumn";
-            this.idPadreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPadreCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idPadreCategoriaDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // nombreCategoriaDataGridViewTextBoxColumn
-            // 
-            this.nombreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "nombreCategoria";
-            this.nombreCategoriaDataGridViewTextBoxColumn.HeaderText = "nombreCategoria";
-            this.nombreCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreCategoriaDataGridViewTextBoxColumn.Name = "nombreCategoriaDataGridViewTextBoxColumn";
-            this.nombreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreCategoriaDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // idCategoriaDataGridViewTextBoxColumn
-            // 
-            this.idCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idCategoria";
-            this.idCategoriaDataGridViewTextBoxColumn.HeaderText = "idCategoria";
-            this.idCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idCategoriaDataGridViewTextBoxColumn.Name = "idCategoriaDataGridViewTextBoxColumn";
-            this.idCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idCategoriaDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.AutoGenerateContextFilters = true;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.ColumnHeadersHeight = 40;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCategoriaDataGridViewTextBoxColumn,
-            this.nombreCategoriaDataGridViewTextBoxColumn,
-            this.idPadreCategoriaDataGridViewTextBoxColumn,
-            this.padreDataGridViewTextBoxColumn,
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn,
-            this.mostrarProductosEnDataGridViewTextBoxColumn,
-            this.numeroColumnasDataGridViewTextBoxColumn,
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn,
-            this.urlCategoriaSeoDataGridViewTextBoxColumn,
-            this.metaTagsSeoDataGridViewTextBoxColumn,
-            this.cabeceraPaginaDataGridViewTextBoxColumn,
-            this.piePaginaDataGridViewTextBoxColumn,
-            this.ordenDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
-            this.mostrarWebDataGridViewTextBoxColumn,
-            this.tieneRegistrosDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.categoriaBindingSource;
-            this.dataGridView.DateWithTime = false;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(848, 312);
-            this.dataGridView.TabIndex = 0;
-            this.dataGridView.TimeFilter = false;
-            // 
             // UCCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,18 +578,18 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCCategorias";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(886, 466);
+            this.Size = new System.Drawing.Size(1114, 555);
             this.Load += new System.EventHandler(this.UCCategorias_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.toolStripNavigation.ResumeLayout(false);
             this.toolStripNavigation.PerformLayout();
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

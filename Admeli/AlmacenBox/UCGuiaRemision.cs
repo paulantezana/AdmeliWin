@@ -13,15 +13,26 @@ namespace Admeli.AlmacenBox
     public partial class UCGuiaRemision : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
 
         public UCGuiaRemision()
         {
             InitializeComponent();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCGuiaRemision(FormPrincipal formPrincipal)
         {
             this.formPrincipal = formPrincipal;
+
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+
+        internal void reLoad()
+        {
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
     }
 }

@@ -16,8 +16,9 @@ namespace Admeli.Ventas
 {
     public partial class UCClientes : UserControl
     {
-        private Paginacion paginacion;
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
+        private Paginacion paginacion;
         private PersonalModel personalModel = new PersonalModel();
         private ClienteModel clienteModel = new ClienteModel();
 
@@ -27,6 +28,8 @@ namespace Admeli.Ventas
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCClientes(FormPrincipal formPrincipal)
@@ -36,6 +39,8 @@ namespace Admeli.Ventas
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
 
@@ -60,6 +65,13 @@ namespace Admeli.Ventas
                 var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
                 dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
             }*/
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

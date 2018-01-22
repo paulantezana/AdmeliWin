@@ -24,6 +24,7 @@ namespace Admeli.Productos.Nuevo
         {
             InitializeComponent();
             nuevo = true;
+            chkActivoCat.Checked = true;
         }
 
         public FormCategoriaNuevo(Categoria categoria)
@@ -38,7 +39,7 @@ namespace Admeli.Productos.Nuevo
         private void FormCategoriaNuevo_Load(object sender, EventArgs e)
         {
             cargarComponentes1();
-            chkActivoCat.Checked = true;
+            
         }
 
         private void cargarRegistrosModificar()

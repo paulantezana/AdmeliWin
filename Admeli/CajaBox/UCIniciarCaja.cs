@@ -13,16 +13,28 @@ namespace Admeli.CajaBox
     public partial class UCIniciarCaja : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
 
         public UCIniciarCaja()
         {
             InitializeComponent();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCIniciarCaja(FormPrincipal formPrincipal)
         {
-            this.formPrincipal = formPrincipal;
             InitializeComponent();
+            this.formPrincipal = formPrincipal;
+
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
     }
 }

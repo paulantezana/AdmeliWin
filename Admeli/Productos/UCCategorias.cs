@@ -17,6 +17,7 @@ namespace Admeli.Productos
     public partial class UCCategorias : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         private CategoriaModel categoriaModel = new CategoriaModel();
         private Paginacion paginacion { get; set; }
         private List<Categoria> categorias { get; set; }
@@ -29,6 +30,8 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCCategorias(FormPrincipal formPrincipal)
@@ -38,6 +41,8 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 
@@ -60,12 +65,19 @@ namespace Admeli.Productos
                 (TopLevelControl as Form).KeyPreview = true;
                 TopLevelControl.KeyUp += TopLevelControl_KeyUp;
             }
-        } 
+        }
+
+        internal void reLoad()
+        {
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
+        }
         #endregion
 
         #region ======================== KEYBOARD ========================
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
+            if (!lisenerKeyEvents) return;
             switch (e.KeyCode)
             {
                 case Keys.F3:
@@ -142,6 +154,7 @@ namespace Admeli.Productos
                 loadState(false);
             }
         }
+
         #endregion
 
         #region =========================== Estados ===========================

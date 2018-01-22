@@ -17,6 +17,7 @@ namespace Admeli.Configuracion
     public partial class UCListadoMoneda : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
         private MonedaModel monedaModel = new MonedaModel();
 
@@ -26,6 +27,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCListadoMoneda(FormPrincipal formPrincipal)
@@ -35,6 +38,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCListadoMoneda_Load(object sender, EventArgs e)
@@ -193,6 +198,13 @@ namespace Admeli.Configuracion
         {
             /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
             comprarNuevo.ShowDialog();*/
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

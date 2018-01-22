@@ -18,12 +18,15 @@ namespace Admeli.Configuracion
         private FormPrincipal formPrincipal;
         private Paginacion paginacion;
         private AlmacenModel almacenModel = new AlmacenModel();
+        public bool lisenerKeyEvents { get; set; }
 
         public UCAlmacenes()
         {
             InitializeComponent();
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCAlmacenes(FormPrincipal formPrincipal)
@@ -32,6 +35,8 @@ namespace Admeli.Configuracion
             this.formPrincipal = formPrincipal;
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCAlmacenes_Load(object sender, EventArgs e)
@@ -93,6 +98,13 @@ namespace Admeli.Configuracion
             {
                 loadState(false);
             }
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

@@ -17,6 +17,7 @@ namespace Admeli.Productos
     public partial class UCMarcas : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
         private MarcaModel marcaModel = new MarcaModel();
         private Marca currentMarca { get; set; }
@@ -28,6 +29,8 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCMarcas(FormPrincipal formPrincipal)
@@ -37,6 +40,8 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCMarcas_Load(object sender, EventArgs e)
@@ -61,6 +66,7 @@ namespace Admeli.Productos
         #region ======================== KEYBOARD ========================
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
+            if (!lisenerKeyEvents) return;
             switch (e.KeyCode)
             {
                 case Keys.F3:
@@ -99,6 +105,13 @@ namespace Admeli.Productos
                     row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
                 }
             }
+        }
+
+        internal void reLoad()
+        {
+            cargarComponentes();
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

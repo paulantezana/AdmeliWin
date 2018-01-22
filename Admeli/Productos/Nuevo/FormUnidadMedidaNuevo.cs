@@ -15,22 +15,38 @@ namespace Admeli.Productos.Nuevo
     public partial class FormUnidadMedidaNuevo : Form
     {
         private UnidadMedidaModel unidadMedidaModel = new UnidadMedidaModel();
-        private UnidadMedida unidadMedida = new UnidadMedida();
+        private UnidadMedida unidadMedida { get; set; }
         private UnidadMedida unidad;
+        private int currentIdUnidadMedida { get; set; }
+        private bool nuevo { get; set; }
 
         public FormUnidadMedidaNuevo()
         {
             InitializeComponent();
+            nuevo = true;
+            chkActivoUM.Checked = true;
         }
 
         public FormUnidadMedidaNuevo(UnidadMedida unidad)
         {
+            InitializeComponent();
             this.unidad = unidad;
+            this.nuevo = false;
+            btnAceptar.Text = "Guardar cambios";
+            this.cargarRegistrosModificar();
+        }
+
+        private void cargarRegistrosModificar()
+        {
+            currentIdUnidadMedida = unidad.idUnidadMedida;
+            textNombreUM.Text = unidad.nombreUnidad;
+            textSimboloUM.Text = unidad.simbolo;
+            chkActivoUM.Checked = Convert.ToBoolean(unidad.estado);
         }
 
         private void FormUnidadMedidaNuevo_Load(object sender, EventArgs e)
         {
-            chkActivoUM.Checked = true;
+            
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -62,8 +78,16 @@ namespace Admeli.Productos.Nuevo
         {
             try
             {
-                Response response = await unidadMedidaModel.guardar(unidadMedida);
-                MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (nuevo)
+                {
+                    Response response = await unidadMedidaModel.guardar(unidadMedida);
+                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Response response = await unidadMedidaModel.modificar(unidadMedida);
+                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 this.Close();
             }
             catch (Exception ex)
@@ -74,6 +98,9 @@ namespace Admeli.Productos.Nuevo
 
         private void cargarObjeto()
         {
+            unidadMedida = new UnidadMedida();
+            if (!nuevo) unidadMedida.idUnidadMedida = currentIdUnidadMedida; // Llenar el id categoria cuando este en esdo modificar
+
             unidadMedida.nombreUnidad = textNombreUM.Text;
             unidadMedida.simbolo = textSimboloUM.Text;
             unidadMedida.estado = Convert.ToInt32(chkActivoUM.Checked);

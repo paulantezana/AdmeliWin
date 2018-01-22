@@ -17,6 +17,7 @@ namespace Admeli.Configuracion
     public partial class UCCajasInicializadas : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
         private CajaSesionModel cajaSesionModel = new CajaSesionModel();
         private SucursalModel sucursalModel = new SucursalModel();
@@ -26,6 +27,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCCajasInicializadas(FormPrincipal formPrincipal)
@@ -35,6 +38,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCCajasInicializadas_Load(object sender, EventArgs e)
@@ -149,6 +154,13 @@ namespace Admeli.Configuracion
                 paginacion.firstPage();
                 cargarRegistros();
             }
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void btnNext_Click(object sender, EventArgs e)

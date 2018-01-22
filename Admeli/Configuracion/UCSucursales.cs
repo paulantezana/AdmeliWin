@@ -16,6 +16,7 @@ namespace Admeli.Configuracion
     public partial class UCSucursales : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
         private SucursalModel sucursalModel = new SucursalModel();
 
@@ -25,6 +26,8 @@ namespace Admeli.Configuracion
             InitializeComponent();
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCSucursales(FormPrincipal formPrincipal)
@@ -34,6 +37,8 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
+            lisenerKeyEvents = true; // Active lisener key events
         } 
         #endregion
 
@@ -195,6 +200,11 @@ namespace Admeli.Configuracion
         {
             /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
             comprarNuevo.ShowDialog();*/
+        }
+
+        internal void reLoad()
+        {
+            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
     }

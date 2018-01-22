@@ -14,23 +14,39 @@ namespace Admeli.Productos.Nuevo
 {
     public partial class FormMarcaNuevo : Form
     {
-        private Marca marca = new Marca();
+        private Marca marca { get; set; }
         private MarcaModel marcaModel = new MarcaModel();
+        private int currentIdMarca { get; set; }
+        private bool nuevo { get; set; }
 
         public FormMarcaNuevo()
         {
             InitializeComponent();
+            chkActivoMarca.Checked = true;
+            nuevo = true;
         }
 
         public FormMarcaNuevo(Marca marca)
         {
             InitializeComponent();
             this.marca = marca;
+            this.currentIdMarca = marca.idMarca;
+            this.nuevo = false;
+            this.btnAceptar.Text = "Guardar cambios";
+            this.cargarRegistrosModificar();
+        }
+
+        private void cargarRegistrosModificar()
+        {
+            textNombreMarca.Text = marca.nombreMarca;
+            textWebMarca.Text = marca.sitioWeb;
+            textDescripcionMarca.Text = marca.descripcion;
+            chkActivoMarca.Checked = Convert.ToBoolean(marca.estado);
         }
 
         private void FormMarcaNuevo_Load(object sender, EventArgs e)
         {
-            chkActivoMarca.Checked = true;
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -57,8 +73,16 @@ namespace Admeli.Productos.Nuevo
         {
             try
             {
-                Response response = await marcaModel.guardar(marca);
-                MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (nuevo)
+                {
+                    Response response = await marcaModel.guardar(marca);
+                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Response response = await marcaModel.modificar(marca);
+                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 this.Close();
             }
             catch (Exception ex)
@@ -69,6 +93,9 @@ namespace Admeli.Productos.Nuevo
 
         private void cargarObjeto()
         {
+            marca = new Marca();
+            if (!nuevo) marca.idMarca = currentIdMarca; // Llenar el id categoria cuando este en esdo modificar
+
             marca.nombreMarca = textNombreMarca.Text;
             marca.sitioWeb = textWebMarca.Text;
             marca.descripcion = textDescripcionMarca.Text;

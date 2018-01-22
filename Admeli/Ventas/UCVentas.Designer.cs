@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCVentas));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -84,6 +84,7 @@
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnAnular = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.cbxSucursales = new System.Windows.Forms.ToolStripComboBox();
             this.cbxPersonales = new System.Windows.Forms.ToolStripComboBox();
@@ -92,7 +93,6 @@
             this.btnConsultar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -112,11 +112,11 @@
             this.panelContainer.Controls.Add(this.toolStripCrud);
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(11, 10);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContainer.Location = new System.Drawing.Point(8, 8);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(1147, 556);
+            this.panelContainer.Size = new System.Drawing.Size(861, 452);
             this.panelContainer.TabIndex = 5;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -124,11 +124,10 @@
             // 
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 161);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(1, 132);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel1.Size = new System.Drawing.Size(1145, 357);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel1.Size = new System.Drawing.Size(859, 289);
             this.panel1.TabIndex = 20;
             // 
             // dataGridView
@@ -141,14 +140,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaDataGridViewTextBoxColumn,
@@ -183,12 +182,13 @@
             this.dataGridView.DateWithTime = false;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView.Location = new System.Drawing.Point(13, 12);
+            this.dataGridView.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(1119, 333);
+            this.dataGridView.Size = new System.Drawing.Size(839, 269);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             // 
@@ -200,7 +200,7 @@
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.fechaDataGridViewTextBoxColumn.Width = 72;
+            this.fechaDataGridViewTextBoxColumn.Width = 59;
             // 
             // idVentaDataGridViewTextBoxColumn
             // 
@@ -210,7 +210,7 @@
             this.idVentaDataGridViewTextBoxColumn.Name = "idVentaDataGridViewTextBoxColumn";
             this.idVentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idVentaDataGridViewTextBoxColumn.Width = 85;
+            this.idVentaDataGridViewTextBoxColumn.Width = 68;
             // 
             // serieDataGridViewTextBoxColumn
             // 
@@ -220,7 +220,7 @@
             this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
             this.serieDataGridViewTextBoxColumn.ReadOnly = true;
             this.serieDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.serieDataGridViewTextBoxColumn.Width = 68;
+            this.serieDataGridViewTextBoxColumn.Width = 54;
             // 
             // correlativoDataGridViewTextBoxColumn
             // 
@@ -230,7 +230,7 @@
             this.correlativoDataGridViewTextBoxColumn.Name = "correlativoDataGridViewTextBoxColumn";
             this.correlativoDataGridViewTextBoxColumn.ReadOnly = true;
             this.correlativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.correlativoDataGridViewTextBoxColumn.Width = 103;
+            this.correlativoDataGridViewTextBoxColumn.Width = 81;
             // 
             // nombreClienteDataGridViewTextBoxColumn
             // 
@@ -240,7 +240,7 @@
             this.nombreClienteDataGridViewTextBoxColumn.Name = "nombreClienteDataGridViewTextBoxColumn";
             this.nombreClienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreClienteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreClienteDataGridViewTextBoxColumn.Width = 128;
+            this.nombreClienteDataGridViewTextBoxColumn.Width = 99;
             // 
             // rucDniDataGridViewTextBoxColumn
             // 
@@ -250,7 +250,7 @@
             this.rucDniDataGridViewTextBoxColumn.Name = "rucDniDataGridViewTextBoxColumn";
             this.rucDniDataGridViewTextBoxColumn.ReadOnly = true;
             this.rucDniDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.rucDniDataGridViewTextBoxColumn.Width = 78;
+            this.rucDniDataGridViewTextBoxColumn.Width = 63;
             // 
             // direccionDataGridViewTextBoxColumn
             // 
@@ -260,7 +260,7 @@
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
             this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.direccionDataGridViewTextBoxColumn.Width = 94;
+            this.direccionDataGridViewTextBoxColumn.Width = 75;
             // 
             // idGrupoClienteDataGridViewTextBoxColumn
             // 
@@ -270,7 +270,7 @@
             this.idGrupoClienteDataGridViewTextBoxColumn.Name = "idGrupoClienteDataGridViewTextBoxColumn";
             this.idGrupoClienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.idGrupoClienteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idGrupoClienteDataGridViewTextBoxColumn.Width = 131;
+            this.idGrupoClienteDataGridViewTextBoxColumn.Width = 101;
             // 
             // formaPagoDataGridViewTextBoxColumn
             // 
@@ -280,7 +280,7 @@
             this.formaPagoDataGridViewTextBoxColumn.Name = "formaPagoDataGridViewTextBoxColumn";
             this.formaPagoDataGridViewTextBoxColumn.ReadOnly = true;
             this.formaPagoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.formaPagoDataGridViewTextBoxColumn.Width = 106;
+            this.formaPagoDataGridViewTextBoxColumn.Width = 83;
             // 
             // fechaPagoDataGridViewTextBoxColumn
             // 
@@ -290,7 +290,7 @@
             this.fechaPagoDataGridViewTextBoxColumn.Name = "fechaPagoDataGridViewTextBoxColumn";
             this.fechaPagoDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechaPagoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.fechaPagoDataGridViewTextBoxColumn.Width = 105;
+            this.fechaPagoDataGridViewTextBoxColumn.Width = 84;
             // 
             // fechaVentaDataGridViewTextBoxColumn
             // 
@@ -300,7 +300,7 @@
             this.fechaVentaDataGridViewTextBoxColumn.Name = "fechaVentaDataGridViewTextBoxColumn";
             this.fechaVentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechaVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.fechaVentaDataGridViewTextBoxColumn.Width = 109;
+            this.fechaVentaDataGridViewTextBoxColumn.Width = 87;
             // 
             // observacionDataGridViewTextBoxColumn
             // 
@@ -310,7 +310,7 @@
             this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
             this.observacionDataGridViewTextBoxColumn.ReadOnly = true;
             this.observacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.observacionDataGridViewTextBoxColumn.Width = 114;
+            this.observacionDataGridViewTextBoxColumn.Width = 90;
             // 
             // subTotalDataGridViewTextBoxColumn
             // 
@@ -320,7 +320,7 @@
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
             this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
             this.subTotalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.subTotalDataGridViewTextBoxColumn.Width = 92;
+            this.subTotalDataGridViewTextBoxColumn.Width = 73;
             // 
             // totalDataGridViewTextBoxColumn
             // 
@@ -330,7 +330,7 @@
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
             this.totalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.totalDataGridViewTextBoxColumn.Width = 64;
+            this.totalDataGridViewTextBoxColumn.Width = 52;
             // 
             // descuentoDataGridViewTextBoxColumn
             // 
@@ -340,7 +340,7 @@
             this.descuentoDataGridViewTextBoxColumn.Name = "descuentoDataGridViewTextBoxColumn";
             this.descuentoDataGridViewTextBoxColumn.ReadOnly = true;
             this.descuentoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descuentoDataGridViewTextBoxColumn.Width = 103;
+            this.descuentoDataGridViewTextBoxColumn.Width = 82;
             // 
             // tipoVentaDataGridViewTextBoxColumn
             // 
@@ -350,7 +350,7 @@
             this.tipoVentaDataGridViewTextBoxColumn.Name = "tipoVentaDataGridViewTextBoxColumn";
             this.tipoVentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tipoVentaDataGridViewTextBoxColumn.Width = 97;
+            this.tipoVentaDataGridViewTextBoxColumn.Width = 77;
             // 
             // monedaDataGridViewTextBoxColumn
             // 
@@ -360,7 +360,7 @@
             this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
             this.monedaDataGridViewTextBoxColumn.ReadOnly = true;
             this.monedaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.monedaDataGridViewTextBoxColumn.Width = 88;
+            this.monedaDataGridViewTextBoxColumn.Width = 70;
             // 
             // tipoCambioDataGridViewTextBoxColumn
             // 
@@ -370,7 +370,7 @@
             this.tipoCambioDataGridViewTextBoxColumn.Name = "tipoCambioDataGridViewTextBoxColumn";
             this.tipoCambioDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoCambioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tipoCambioDataGridViewTextBoxColumn.Width = 107;
+            this.tipoCambioDataGridViewTextBoxColumn.Width = 84;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
@@ -380,7 +380,7 @@
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 80;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
             // 
             // idClienteDataGridViewTextBoxColumn
             // 
@@ -390,7 +390,7 @@
             this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
             this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.idClienteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idClienteDataGridViewTextBoxColumn.Width = 91;
+            this.idClienteDataGridViewTextBoxColumn.Width = 72;
             // 
             // idCobroDataGridViewTextBoxColumn
             // 
@@ -400,7 +400,7 @@
             this.idCobroDataGridViewTextBoxColumn.Name = "idCobroDataGridViewTextBoxColumn";
             this.idCobroDataGridViewTextBoxColumn.ReadOnly = true;
             this.idCobroDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idCobroDataGridViewTextBoxColumn.Width = 86;
+            this.idCobroDataGridViewTextBoxColumn.Width = 68;
             // 
             // idAsignarPuntoVentaDataGridViewTextBoxColumn
             // 
@@ -410,7 +410,7 @@
             this.idAsignarPuntoVentaDataGridViewTextBoxColumn.Name = "idAsignarPuntoVentaDataGridViewTextBoxColumn";
             this.idAsignarPuntoVentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idAsignarPuntoVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.Width = 170;
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.Width = 131;
             // 
             // idTipoDocumentoDataGridViewTextBoxColumn
             // 
@@ -420,7 +420,7 @@
             this.idTipoDocumentoDataGridViewTextBoxColumn.Name = "idTipoDocumentoDataGridViewTextBoxColumn";
             this.idTipoDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
             this.idTipoDocumentoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idTipoDocumentoDataGridViewTextBoxColumn.Width = 148;
+            this.idTipoDocumentoDataGridViewTextBoxColumn.Width = 116;
             // 
             // nombreLabelDataGridViewTextBoxColumn
             // 
@@ -430,7 +430,7 @@
             this.nombreLabelDataGridViewTextBoxColumn.Name = "nombreLabelDataGridViewTextBoxColumn";
             this.nombreLabelDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreLabelDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreLabelDataGridViewTextBoxColumn.Width = 120;
+            this.nombreLabelDataGridViewTextBoxColumn.Width = 93;
             // 
             // notaSalidaDataGridViewTextBoxColumn
             // 
@@ -440,7 +440,7 @@
             this.notaSalidaDataGridViewTextBoxColumn.Name = "notaSalidaDataGridViewTextBoxColumn";
             this.notaSalidaDataGridViewTextBoxColumn.ReadOnly = true;
             this.notaSalidaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.notaSalidaDataGridViewTextBoxColumn.Width = 104;
+            this.notaSalidaDataGridViewTextBoxColumn.Width = 82;
             // 
             // vendedorDataGridViewTextBoxColumn
             // 
@@ -450,7 +450,7 @@
             this.vendedorDataGridViewTextBoxColumn.Name = "vendedorDataGridViewTextBoxColumn";
             this.vendedorDataGridViewTextBoxColumn.ReadOnly = true;
             this.vendedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.vendedorDataGridViewTextBoxColumn.Width = 97;
+            this.vendedorDataGridViewTextBoxColumn.Width = 77;
             // 
             // guiaRemisionDataGridViewTextBoxColumn
             // 
@@ -460,7 +460,7 @@
             this.guiaRemisionDataGridViewTextBoxColumn.Name = "guiaRemisionDataGridViewTextBoxColumn";
             this.guiaRemisionDataGridViewTextBoxColumn.ReadOnly = true;
             this.guiaRemisionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.guiaRemisionDataGridViewTextBoxColumn.Width = 122;
+            this.guiaRemisionDataGridViewTextBoxColumn.Width = 95;
             // 
             // documentoIdentificacionDataGridViewTextBoxColumn
             // 
@@ -470,7 +470,7 @@
             this.documentoIdentificacionDataGridViewTextBoxColumn.Name = "documentoIdentificacionDataGridViewTextBoxColumn";
             this.documentoIdentificacionDataGridViewTextBoxColumn.ReadOnly = true;
             this.documentoIdentificacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.documentoIdentificacionDataGridViewTextBoxColumn.Width = 189;
+            this.documentoIdentificacionDataGridViewTextBoxColumn.Width = 148;
             // 
             // ventaBindingSource
             // 
@@ -497,10 +497,10 @@
             this.toolStripButton1,
             this.lblSpeedPages,
             this.toolStripButton3});
-            this.toolStripNavigation.Location = new System.Drawing.Point(1, 518);
+            this.toolStripNavigation.Location = new System.Drawing.Point(1, 421);
             this.toolStripNavigation.Name = "toolStripNavigation";
-            this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.toolStripNavigation.Size = new System.Drawing.Size(1145, 37);
+            this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.toolStripNavigation.Size = new System.Drawing.Size(859, 30);
             this.toolStripNavigation.TabIndex = 19;
             this.toolStripNavigation.Text = "toolStrip3";
             // 
@@ -510,7 +510,7 @@
             this.lblPageAllItems.Image = ((System.Drawing.Image)(resources.GetObject("lblPageAllItems.Image")));
             this.lblPageAllItems.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lblPageAllItems.Name = "lblPageAllItems";
-            this.lblPageAllItems.Size = new System.Drawing.Size(17, 34);
+            this.lblPageAllItems.Size = new System.Drawing.Size(13, 27);
             this.lblPageAllItems.Text = "0";
             this.lblPageAllItems.ToolTipText = "Total de registros en el sistema";
             // 
@@ -520,7 +520,7 @@
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(70, 34);
+            this.toolStripButton5.Size = new System.Drawing.Size(55, 27);
             this.toolStripButton5.Text = "Registros";
             // 
             // btnFirst
@@ -529,7 +529,7 @@
             this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
             this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(24, 34);
+            this.btnFirst.Size = new System.Drawing.Size(24, 27);
             this.btnFirst.Text = "Primera página";
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
@@ -539,7 +539,7 @@
             this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
             this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(24, 34);
+            this.btnPrevious.Size = new System.Drawing.Size(24, 27);
             this.btnPrevious.Text = "Anterior página";
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
@@ -547,7 +547,7 @@
             // 
             this.lblCurrentPage.AutoSize = false;
             this.lblCurrentPage.Name = "lblCurrentPage";
-            this.lblCurrentPage.Size = new System.Drawing.Size(40, 28);
+            this.lblCurrentPage.Size = new System.Drawing.Size(31, 23);
             this.lblCurrentPage.Text = "1";
             this.lblCurrentPage.ToolTipText = "Página actual (enter)";
             this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
@@ -558,7 +558,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(15, 34);
+            this.toolStripButton2.Size = new System.Drawing.Size(12, 27);
             this.toolStripButton2.Text = "/";
             // 
             // lblPageCount
@@ -567,7 +567,7 @@
             this.lblPageCount.Image = ((System.Drawing.Image)(resources.GetObject("lblPageCount.Image")));
             this.lblPageCount.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lblPageCount.Name = "lblPageCount";
-            this.lblPageCount.Size = new System.Drawing.Size(17, 34);
+            this.lblPageCount.Size = new System.Drawing.Size(13, 27);
             this.lblPageCount.Text = "1";
             this.lblPageCount.ToolTipText = "Número total de páginas";
             // 
@@ -577,7 +577,7 @@
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(24, 34);
+            this.btnNext.Size = new System.Drawing.Size(24, 27);
             this.btnNext.Text = "Siguiente página";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -587,7 +587,7 @@
             this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
             this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(24, 34);
+            this.btnLast.Size = new System.Drawing.Size(24, 27);
             this.btnLast.Text = "Ultimo página";
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
@@ -597,14 +597,14 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(96, 34);
+            this.toolStripButton1.Size = new System.Drawing.Size(76, 27);
             this.toolStripButton1.Text = "Mostrar cada";
             // 
             // lblSpeedPages
             // 
             this.lblSpeedPages.AutoSize = false;
             this.lblSpeedPages.Name = "lblSpeedPages";
-            this.lblSpeedPages.Size = new System.Drawing.Size(50, 37);
+            this.lblSpeedPages.Size = new System.Drawing.Size(38, 23);
             this.lblSpeedPages.Text = "50";
             this.lblSpeedPages.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lblSpeedPages.ToolTipText = "Cantidad de registros a mostrar (enter)";
@@ -616,7 +616,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(70, 34);
+            this.toolStripButton3.Size = new System.Drawing.Size(55, 27);
             this.toolStripButton3.Text = "Registros";
             // 
             // toolStripTools
@@ -630,10 +630,10 @@
             this.toolStripButton6,
             this.textBuscar,
             this.btnBuscar});
-            this.toolStripTools.Location = new System.Drawing.Point(1, 106);
+            this.toolStripTools.Location = new System.Drawing.Point(1, 87);
             this.toolStripTools.Name = "toolStripTools";
-            this.toolStripTools.Padding = new System.Windows.Forms.Padding(10);
-            this.toolStripTools.Size = new System.Drawing.Size(1145, 55);
+            this.toolStripTools.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.toolStripTools.Size = new System.Drawing.Size(859, 45);
             this.toolStripTools.TabIndex = 18;
             this.toolStripTools.Text = "toolStrip2";
             // 
@@ -644,7 +644,7 @@
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(105, 32);
+            this.toolStripButton6.Size = new System.Drawing.Size(88, 26);
             this.toolStripButton6.Text = "Nombre cliente:";
             // 
             // textBuscar
@@ -653,7 +653,7 @@
             this.textBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(399, 26);
+            this.textBuscar.Size = new System.Drawing.Size(300, 22);
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // btnBuscar
@@ -662,7 +662,7 @@
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(73, 32);
+            this.btnBuscar.Size = new System.Drawing.Size(65, 26);
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.ToolTipText = "Buscar (Enter)";
             // 
@@ -684,10 +684,10 @@
             this.cbxPuntosVenta,
             this.cbxEstados,
             this.btnConsultar});
-            this.toolStripCrud.Location = new System.Drawing.Point(1, 51);
+            this.toolStripCrud.Location = new System.Drawing.Point(1, 42);
             this.toolStripCrud.Name = "toolStripCrud";
-            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.toolStripCrud.Size = new System.Drawing.Size(1145, 55);
+            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
+            this.toolStripCrud.Size = new System.Drawing.Size(859, 45);
             this.toolStripCrud.TabIndex = 17;
             this.toolStripCrud.Text = "toolStrip1";
             // 
@@ -728,6 +728,18 @@
             this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAnular.ToolTipText = "Anular(F7)";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AutoSize = false;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
+            // 
             // btnActualizar
             // 
             this.btnActualizar.AutoSize = false;
@@ -746,28 +758,28 @@
             this.cbxSucursales.AutoSize = false;
             this.cbxSucursales.BackColor = System.Drawing.Color.Gainsboro;
             this.cbxSucursales.Name = "cbxSucursales";
-            this.cbxSucursales.Size = new System.Drawing.Size(200, 28);
+            this.cbxSucursales.Size = new System.Drawing.Size(151, 23);
             // 
             // cbxPersonales
             // 
             this.cbxPersonales.AutoSize = false;
             this.cbxPersonales.BackColor = System.Drawing.Color.Gainsboro;
             this.cbxPersonales.Name = "cbxPersonales";
-            this.cbxPersonales.Size = new System.Drawing.Size(200, 28);
+            this.cbxPersonales.Size = new System.Drawing.Size(151, 23);
             // 
             // cbxPuntosVenta
             // 
             this.cbxPuntosVenta.AutoSize = false;
             this.cbxPuntosVenta.BackColor = System.Drawing.Color.Gainsboro;
             this.cbxPuntosVenta.Name = "cbxPuntosVenta";
-            this.cbxPuntosVenta.Size = new System.Drawing.Size(200, 28);
+            this.cbxPuntosVenta.Size = new System.Drawing.Size(151, 23);
             // 
             // cbxEstados
             // 
             this.cbxEstados.AutoSize = false;
             this.cbxEstados.BackColor = System.Drawing.Color.Gainsboro;
             this.cbxEstados.Name = "cbxEstados";
-            this.cbxEstados.Size = new System.Drawing.Size(200, 28);
+            this.cbxEstados.Size = new System.Drawing.Size(200, 23);
             // 
             // btnConsultar
             // 
@@ -787,42 +799,31 @@
             this.panelHeaderItem1.Controls.Add(this.lblTitle);
             this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(1145, 50);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(859, 41);
             this.panelHeaderItem1.TabIndex = 0;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(12, 15);
+            this.lblTitle.Location = new System.Drawing.Point(9, 12);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(75, 20);
+            this.lblTitle.Size = new System.Drawing.Size(63, 17);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "VENTAS";
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
-            // 
             // UCVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCVentas";
-            this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.Size = new System.Drawing.Size(1169, 576);
+            this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Size = new System.Drawing.Size(877, 468);
             this.Load += new System.EventHandler(this.UCVentas_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

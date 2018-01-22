@@ -13,16 +13,28 @@ namespace Admeli.Configuracion
     public partial class UCImpuestoDocumento : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
 
         public UCImpuestoDocumento()
         {
             InitializeComponent();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCImpuestoDocumento(FormPrincipal formPrincipal)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+
+        internal void reLoad()
+        {
+
+
+            lisenerKeyEvents = true; // Active lisener key eventss
         }
     }
 }
