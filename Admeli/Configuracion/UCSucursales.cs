@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Admeli.Componentes;
 using Entidad;
+using Admeli.Configuracion.Nuevo;
 
 namespace Admeli.Configuracion
 {
@@ -19,6 +20,7 @@ namespace Admeli.Configuracion
         public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
         private SucursalModel sucursalModel = new SucursalModel();
+        private List<Sucursal> sucursales { get; set; }
 
         #region =========================== Constructores ===========================
         public UCSucursales()
@@ -85,14 +87,15 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                RootObject<Sucursal> sucursales = await sucursalModel.sucursales(paginacion.currentPage, paginacion.speed);
+                RootObject<Sucursal> sucursalesRoot = await sucursalModel.sucursales(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = sucursales.nro_registros;
+                paginacion.itemsCount = sucursalesRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                sucursalBindingSource.DataSource = sucursales.datos;
+                sucursales = sucursalesRoot.datos;
+                sucursalBindingSource.DataSource = sucursales;
                 dataGridView.Refresh();
                 mostrarPaginado();
             }
@@ -198,8 +201,8 @@ namespace Admeli.Configuracion
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
+            FormSucursalNuevo sucursalNuevo = new FormSucursalNuevo();
+            sucursalNuevo.ShowDialog();
         }
 
         internal void reLoad()

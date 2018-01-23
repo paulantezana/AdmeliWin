@@ -27,12 +27,26 @@ namespace Modelo
 
         }
 
-        public async Task<UbicacionGeografica> ubicacionGeografica(int page, int items)
+        public async Task<List<LabelUbicacion>> labelUbicacion(int idPais)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/lubicacion/pais/26
+                List<LabelUbicacion> data = await webService.GETLis<LabelUbicacion>("lubicacion",String.Format("pais/{0}",idPais));
+                return data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<UbicacionGeografica> ubicacionGeografica(int idSucursal)
         {
             try
             {
                 // www.lineatienda.com/services.php/ubigeoAtrib/2
-                List<UbicacionGeografica> data = await webService.GETLis<UbicacionGeografica>("ubigeoAtrib/2");
+                List<UbicacionGeografica> data = await webService.GETLis<UbicacionGeografica>("ubigeoAtrib",String.Format("{0}",idSucursal));
                 return data[0];
             }
             catch (Exception ex)
@@ -41,7 +55,7 @@ namespace Modelo
             }
         }
 
-        public async Task<List<Pais>> paises(int page, int items)
+        public async Task<List<Pais>> paises()
         {
             try
             {

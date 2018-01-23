@@ -34,15 +34,9 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textNombreCat = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textNombreSucursal = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbxPaises = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.chkActivoCat = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -50,7 +44,7 @@
             this.bunifuMetroTextbox6 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupDatoSucursales = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.bunifuCheckbox6 = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -65,7 +59,7 @@
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupDatoSucursales.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,24 +140,24 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Mantenimiento Sucursal";
             // 
-            // textNombreCat
+            // textNombreSucursal
             // 
-            this.textNombreCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textNombreCat.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textNombreCat.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textNombreCat.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textNombreCat.BorderThickness = 1;
-            this.textNombreCat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textNombreCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombreCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textNombreCat.isPassword = false;
-            this.textNombreCat.Location = new System.Drawing.Point(20, 45);
-            this.textNombreCat.Margin = new System.Windows.Forms.Padding(4);
-            this.textNombreCat.Name = "textNombreCat";
-            this.textNombreCat.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textNombreCat.Size = new System.Drawing.Size(328, 35);
-            this.textNombreCat.TabIndex = 31;
-            this.textNombreCat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNombreSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textNombreSucursal.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textNombreSucursal.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textNombreSucursal.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textNombreSucursal.BorderThickness = 1;
+            this.textNombreSucursal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textNombreSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombreSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textNombreSucursal.isPassword = false;
+            this.textNombreSucursal.Location = new System.Drawing.Point(20, 45);
+            this.textNombreSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreSucursal.Name = "textNombreSucursal";
+            this.textNombreSucursal.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textNombreSucursal.Size = new System.Drawing.Size(328, 35);
+            this.textNombreSucursal.TabIndex = 31;
+            this.textNombreSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
             // 
@@ -177,81 +171,16 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Nombres*";
             // 
-            // comboBox6
+            // cbxPaises
             // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(20, 280);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(330, 24);
-            this.comboBox6.TabIndex = 46;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label14.Location = new System.Drawing.Point(19, 261);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 16);
-            this.label14.TabIndex = 45;
-            this.label14.Text = "Distrito";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(22, 223);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(328, 24);
-            this.comboBox5.TabIndex = 44;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label13.Location = new System.Drawing.Point(19, 204);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 16);
-            this.label13.TabIndex = 43;
-            this.label13.Text = "Provincia";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(20, 165);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(328, 24);
-            this.comboBox4.TabIndex = 42;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label12.Location = new System.Drawing.Point(17, 146);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 16);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Departamento";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(20, 108);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(328, 24);
-            this.comboBox3.TabIndex = 40;
+            this.cbxPaises.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPaises.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPaises.FormattingEnabled = true;
+            this.cbxPaises.Location = new System.Drawing.Point(20, 108);
+            this.cbxPaises.Name = "cbxPaises";
+            this.cbxPaises.Size = new System.Drawing.Size(328, 24);
+            this.cbxPaises.TabIndex = 40;
+            this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -344,30 +273,24 @@
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 51;
             // 
-            // groupBox1
+            // groupDatoSucursales
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textNombreCat);
-            this.groupBox1.Controls.Add(this.bunifuCheckbox1);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.chkActivoCat);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.bunifuMetroTextbox6);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.comboBox6);
-            this.groupBox1.Controls.Add(this.comboBox5);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Location = new System.Drawing.Point(12, 48);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 434);
-            this.groupBox1.TabIndex = 53;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos sucursal.";
+            this.groupDatoSucursales.Controls.Add(this.label2);
+            this.groupDatoSucursales.Controls.Add(this.label1);
+            this.groupDatoSucursales.Controls.Add(this.textNombreSucursal);
+            this.groupDatoSucursales.Controls.Add(this.bunifuCheckbox1);
+            this.groupDatoSucursales.Controls.Add(this.label11);
+            this.groupDatoSucursales.Controls.Add(this.label16);
+            this.groupDatoSucursales.Controls.Add(this.cbxPaises);
+            this.groupDatoSucursales.Controls.Add(this.chkActivoCat);
+            this.groupDatoSucursales.Controls.Add(this.label15);
+            this.groupDatoSucursales.Controls.Add(this.bunifuMetroTextbox6);
+            this.groupDatoSucursales.Location = new System.Drawing.Point(12, 48);
+            this.groupDatoSucursales.Name = "groupDatoSucursales";
+            this.groupDatoSucursales.Size = new System.Drawing.Size(376, 434);
+            this.groupDatoSucursales.TabIndex = 53;
+            this.groupDatoSucursales.TabStop = false;
+            this.groupDatoSucursales.Text = "Datos sucursal.";
             // 
             // groupBox2
             // 
@@ -514,17 +437,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 547);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupDatoSucursales);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panel2);
             this.Name = "FormSucursalNuevo";
             this.Text = "FormSucursalNuevo";
+            this.Load += new System.EventHandler(this.FormSucursalNuevo_Load);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupDatoSucursales.ResumeLayout(false);
+            this.groupDatoSucursales.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -539,15 +463,9 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textNombreCat;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textNombreSucursal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbxPaises;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
         private Bunifu.Framework.UI.BunifuCheckbox chkActivoCat;
@@ -555,7 +473,7 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox6;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupDatoSucursales;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
