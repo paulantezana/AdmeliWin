@@ -393,6 +393,42 @@
     <Compile Include="Productos\Nuevo\FormUnidadMedidaNuevo.Designer.cs">
       <DependentUpon>FormUnidadMedidaNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCAdicionalPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCAdicionalPD.Designer.cs">
+      <DependentUpon>UCAdicionalPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCDescuentosPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCDescuentosPD.Designer.cs">
+      <DependentUpon>UCDescuentosPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCGeneralesPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCGeneralesPD.Designer.cs">
+      <DependentUpon>UCGeneralesPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCImpuestoPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCImpuestoPD.Designer.cs">
+      <DependentUpon>UCImpuestoPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCStockPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCStockPD.Designer.cs">
+      <DependentUpon>UCStockPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCTiendaOnlinePD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\UCTiendaOnlinePD.Designer.cs">
+      <DependentUpon>UCTiendaOnlinePD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\UCCategorias.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -634,6 +670,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\FormUnidadMedidaNuevo.resx">
       <DependentUpon>FormUnidadMedidaNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCAdicionalPD.resx">
+      <DependentUpon>UCAdicionalPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCDescuentosPD.resx">
+      <DependentUpon>UCDescuentosPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCGeneralesPD.resx">
+      <DependentUpon>UCGeneralesPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCImpuestoPD.resx">
+      <DependentUpon>UCImpuestoPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCStockPD.resx">
+      <DependentUpon>UCStockPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCTiendaOnlinePD.resx">
+      <DependentUpon>UCTiendaOnlinePD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\UCCategorias.resx">
       <DependentUpon>UCCategorias.cs</DependentUpon>
