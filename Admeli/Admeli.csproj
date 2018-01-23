@@ -189,6 +189,18 @@
     <Compile Include="Compras\UCProveedores.Designer.cs">
       <DependentUpon>UCProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Nuevo\FormPersonalNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormPersonalNuevo.Designer.cs">
+      <DependentUpon>FormPersonalNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormSucursalNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormSucursalNuevo.Designer.cs">
+      <DependentUpon>FormSucursalNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\UCAlmacenes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -568,6 +580,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\UCProveedores.resx">
       <DependentUpon>UCProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormPersonalNuevo.resx">
+      <DependentUpon>FormPersonalNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormSucursalNuevo.resx">
+      <DependentUpon>FormSucursalNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\UCAlmacenes.resx">
       <DependentUpon>UCAlmacenes.cs</DependentUpon>

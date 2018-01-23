@@ -58,6 +58,7 @@
     <Compile Include="GrupoClienteModel.cs" />
     <Compile Include="ImpuestoModel.cs" />
     <Compile Include="IngresoModel.cs" />
+    <Compile Include="LocationModel.cs" />
     <Compile Include="MarcaModel.cs" />
     <Compile Include="MonedaModel.cs" />
     <Compile Include="NotaEntradaModel.cs" />
