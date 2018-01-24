@@ -76,92 +76,167 @@ namespace Admeli
             switch (panelName)
             {
                 case "compras":
-                    this.uCComprasNav = new Admeli.Navegacion.UCComprasNav(this);
-                    this.panelAsideMain.Controls.Add(uCComprasNav);
-                    this.uCComprasNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCComprasNav.Location = new System.Drawing.Point(0, 0);
-                    this.uCComprasNav.Name = "uCComprasNav";
-                    this.uCComprasNav.Size = new System.Drawing.Size(250, 776);
-                    this.uCComprasNav.TabIndex = 0;
-                    this.uCComprasNav.Hide();
-                    this.transition1.ShowSync(this.uCComprasNav);
+                    if (this.uCComprasNav == null)
+                    {
+                        this.uCComprasNav = new Admeli.Navegacion.UCComprasNav(this);
+                        this.panelAsideMain.Controls.Add(uCComprasNav);
+                        this.uCComprasNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCComprasNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCComprasNav.Name = "uCComprasNav";
+                        this.uCComprasNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCComprasNav.TabIndex = 0;
+                        this.uCComprasNav.Hide();
+                        this.transition1.ShowSync(this.uCComprasNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCComprasNav);
+                        this.uCComprasNav.Hide();
+                        this.transition1.ShowSync(this.uCComprasNav);
+                    }
                     break;
                 case "ventas":
-                    this.uCVentasNav = new Admeli.Navegacion.UCVentasNav(this);
-                    this.panelAsideMain.Controls.Add(uCVentasNav);
-                    this.uCVentasNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCVentasNav.Location = new System.Drawing.Point(0, 0);
-                    this.uCVentasNav.Name = "uCVentasNav";
-                    this.uCVentasNav.Size = new System.Drawing.Size(250, 776);
-                    this.uCVentasNav.TabIndex = 0;
-                    this.uCVentasNav.Hide();
-                    this.transition1.ShowSync(this.uCVentasNav);
+                    if (this.uCVentasNav == null)
+                    {
+                        this.uCVentasNav = new Admeli.Navegacion.UCVentasNav(this);
+                        this.panelAsideMain.Controls.Add(uCVentasNav);
+                        this.uCVentasNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCVentasNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCVentasNav.Name = "uCVentasNav";
+                        this.uCVentasNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCVentasNav.TabIndex = 0;
+                        this.uCVentasNav.Hide();
+                        this.transition1.ShowSync(this.uCVentasNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCVentasNav);
+                        this.uCVentasNav.Hide();
+                        this.transition1.ShowSync(this.uCVentasNav);
+                    }
+
                     break;
                 case "caja":
-                    this.uCCajaNav = new Admeli.Navegacion.UCCajaNav(this);
-                    this.panelAsideMain.Controls.Add(uCCajaNav);
-                    this.uCCajaNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCCajaNav.Location = new System.Drawing.Point(0, 0);
-                    this.uCCajaNav.Name = "uCCajaNav";
-                    this.uCCajaNav.Size = new System.Drawing.Size(250, 776);
-                    this.uCCajaNav.TabIndex = 0;
-                    this.uCCajaNav.Hide();
-                    this.transition1.ShowSync(this.uCCajaNav);
+                    if (this.uCVentasNav == null)
+                    {
+                        this.uCCajaNav = new Admeli.Navegacion.UCCajaNav(this);
+                        this.panelAsideMain.Controls.Add(uCCajaNav);
+                        this.uCCajaNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCCajaNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCCajaNav.Name = "uCCajaNav";
+                        this.uCCajaNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCCajaNav.TabIndex = 0;
+                        this.uCCajaNav.Hide();
+                        this.transition1.ShowSync(this.uCCajaNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCCajaNav);
+                        this.uCCajaNav.Hide();
+                        this.transition1.ShowSync(this.uCCajaNav);
+                    }
                     break;
                 case "almacen":
-                    this.UCAlmacenNav = new Admeli.Navegacion.UCAlmacenNav(this);
-                    this.panelAsideMain.Controls.Add(UCAlmacenNav);
-                    this.UCAlmacenNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.UCAlmacenNav.Location = new System.Drawing.Point(0, 0);
-                    this.UCAlmacenNav.Name = "UCAlmacenNav";
-                    this.UCAlmacenNav.Size = new System.Drawing.Size(250, 776);
-                    this.UCAlmacenNav.TabIndex = 0;
-                    this.UCAlmacenNav.Hide();
-                    this.transition1.ShowSync(this.UCAlmacenNav);
+                    if (this.uCVentasNav == null)
+                    {
+                        this.UCAlmacenNav = new Admeli.Navegacion.UCAlmacenNav(this);
+                        this.panelAsideMain.Controls.Add(UCAlmacenNav);
+                        this.UCAlmacenNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.UCAlmacenNav.Location = new System.Drawing.Point(0, 0);
+                        this.UCAlmacenNav.Name = "UCAlmacenNav";
+                        this.UCAlmacenNav.Size = new System.Drawing.Size(250, 776);
+                        this.UCAlmacenNav.TabIndex = 0;
+                        this.UCAlmacenNav.Hide();
+                        this.transition1.ShowSync(this.UCAlmacenNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(UCAlmacenNav);
+                        this.UCAlmacenNav.Hide();
+                        this.transition1.ShowSync(this.UCAlmacenNav);
+                    }
                     break;
                 case "productos":
-                    this.uCProductosNav = new Admeli.Navegacion.UCProductosNav(this);
-                    this.panelAsideMain.Controls.Add(uCProductosNav);
-                    this.uCProductosNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCProductosNav.Location = new System.Drawing.Point(0, 0);
-                    this.uCProductosNav.Name = "uCProductosNav";
-                    this.uCProductosNav.Size = new System.Drawing.Size(250, 776);
-                    this.uCProductosNav.TabIndex = 0;
-                    this.uCProductosNav.Hide();
-                    this.transition1.ShowSync(this.uCProductosNav);
+                    if (this.uCProductosNav == null)
+                    {
+                        this.uCProductosNav = new Admeli.Navegacion.UCProductosNav(this);
+                        this.panelAsideMain.Controls.Add(uCProductosNav);
+                        this.uCProductosNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCProductosNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCProductosNav.Name = "uCProductosNav";
+                        this.uCProductosNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCProductosNav.TabIndex = 0;
+                        this.uCProductosNav.Hide();
+                        this.transition1.ShowSync(this.uCProductosNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCProductosNav);
+                        this.uCProductosNav.Hide();
+                        this.transition1.ShowSync(this.uCProductosNav);
+                    }
+
                     break;
                 case "configuracion":
-                    this.uCConfigNav = new Admeli.Navegacion.UCConfigNav(this);
-                    this.panelAsideMain.Controls.Add(uCConfigNav);
-                    this.uCConfigNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCConfigNav.Location = new System.Drawing.Point(0, 0);
-                    this.uCConfigNav.Name = "uCConfigNav";
-                    this.uCConfigNav.Size = new System.Drawing.Size(250, 776);
-                    this.uCConfigNav.TabIndex = 0;
-                    this.uCConfigNav.Hide();
-                    this.transition1.ShowSync(this.uCConfigNav);
+                    if (this.uCConfigNav == null)
+                    {
+                        this.uCConfigNav = new Admeli.Navegacion.UCConfigNav(this);
+                        this.panelAsideMain.Controls.Add(uCConfigNav);
+                        this.uCConfigNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCConfigNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCConfigNav.Name = "uCConfigNav";
+                        this.uCConfigNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCConfigNav.TabIndex = 0;
+                        this.uCConfigNav.Hide();
+                        this.transition1.ShowSync(this.uCConfigNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCConfigNav);
+                        this.uCConfigNav.Hide();
+                        this.transition1.ShowSync(this.uCConfigNav);
+                    }
+                    
                     break;
                 case "herramientas":
-                    this.uCHerramientasNav = new Admeli.Navegacion.UCHerramientasNav(this);
-                    this.panelAsideMain.Controls.Add(uCHerramientasNav);
-                    this.uCHerramientasNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCHerramientasNav.Location = new System.Drawing.Point(0, 0);
-                    this.uCHerramientasNav.Name = "uCHerramientasNav";
-                    this.uCHerramientasNav.Size = new System.Drawing.Size(250, 776);
-                    this.uCHerramientasNav.TabIndex = 0;
-                    this.uCHerramientasNav.Hide();
-                    this.transition1.ShowSync(this.uCHerramientasNav);
+                    if (this.uCHerramientasNav == null)
+                    {
+                        this.uCHerramientasNav = new Admeli.Navegacion.UCHerramientasNav(this);
+                        this.panelAsideMain.Controls.Add(uCHerramientasNav);
+                        this.uCHerramientasNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCHerramientasNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCHerramientasNav.Name = "uCHerramientasNav";
+                        this.uCHerramientasNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCHerramientasNav.TabIndex = 0;
+                        this.uCHerramientasNav.Hide();
+                        this.transition1.ShowSync(this.uCHerramientasNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCHerramientasNav);
+                        this.uCHerramientasNav.Hide();
+                        this.transition1.ShowSync(this.uCHerramientasNav);
+                    }
                     break;
                 case "home":
-                    this.uCHomeNav = new Admeli.Navegacion.UCHomeNav(this);
-                    this.panelAsideMain.Controls.Add(uCHomeNav);
-                    this.uCHomeNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCHomeNav.Location = new System.Drawing.Point(0, 0);
-                    this.uCHomeNav.Name = "uCHomeNav";
-                    this.uCHomeNav.Size = new System.Drawing.Size(250, 776);
-                    this.uCHomeNav.TabIndex = 0;
-                    this.uCHomeNav.Hide();
-                    this.transition1.ShowSync(this.uCHomeNav);
+                    if (this.uCHomeNav == null)
+                    {
+                        this.uCHomeNav = new Admeli.Navegacion.UCHomeNav(this);
+                        this.panelAsideMain.Controls.Add(uCHomeNav);
+                        this.uCHomeNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCHomeNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCHomeNav.Name = "uCHomeNav";
+                        this.uCHomeNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCHomeNav.TabIndex = 0;
+                        this.uCHomeNav.Hide();
+                        this.transition1.ShowSync(this.uCHomeNav);
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCHomeNav);
+                        this.uCHomeNav.Hide();
+                        this.transition1.ShowSync(this.uCHomeNav);
+                    }
                     break;
                 default:
                     break;
@@ -175,49 +250,89 @@ namespace Admeli
             switch (panelName)
             {
                 case "ventas":
-                    this.uCVentas = new Admeli.Ventas.UCVentas(this);
-                    this.panelMain.Controls.Add(uCVentas);
-                    this.uCVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCVentas.Location = new System.Drawing.Point(0, 0);
-                    this.uCVentas.Name = "uCVentas";
-                    this.uCVentas.Size = new System.Drawing.Size(250, 776);
-                    this.uCVentas.TabIndex = 0;
+                    if (this.uCVentas == null)
+                    {
+                        this.uCVentas = new Admeli.Ventas.UCVentas(this);
+                        this.panelMain.Controls.Add(uCVentas);
+                        this.uCVentas.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCVentas.Location = new System.Drawing.Point(0, 0);
+                        this.uCVentas.Name = "uCVentas";
+                        this.uCVentas.Size = new System.Drawing.Size(250, 776);
+                        this.uCVentas.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCVentas);
+                    }
+
                     break;
                 case "compras":
-                    this.uCCompras = new Admeli.Compras.UCCompras(this);
-                    this.panelMain.Controls.Add(uCCompras);
-                    this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCCompras.Location = new System.Drawing.Point(0, 0);
-                    this.uCCompras.Name = "uCCompras";
-                    this.uCCompras.Size = new System.Drawing.Size(250, 776);
-                    this.uCCompras.TabIndex = 0;
+                    if (this.uCVentas == null)
+                    {
+                        this.uCCompras = new Admeli.Compras.UCCompras(this);
+                        this.panelMain.Controls.Add(uCCompras);
+                        this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCCompras.Location = new System.Drawing.Point(0, 0);
+                        this.uCCompras.Name = "uCCompras";
+                        this.uCCompras.Size = new System.Drawing.Size(250, 776);
+                        this.uCCompras.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCCompras);
+                    }
+
                     break;
                 case "productos":
-                    this.uCListadoProducto = new Admeli.Productos.UCListadoProducto(this);
-                    this.panelMain.Controls.Add(uCListadoProducto);
-                    this.uCListadoProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCListadoProducto.Location = new System.Drawing.Point(0, 0);
-                    this.uCListadoProducto.Name = "uCListadoProducto";
-                    this.uCListadoProducto.Size = new System.Drawing.Size(250, 776);
-                    this.uCListadoProducto.TabIndex = 0;
+                    if (this.uCVentas == null)
+                    {
+                        this.uCListadoProducto = new Admeli.Productos.UCListadoProducto(this);
+                        this.panelMain.Controls.Add(uCListadoProducto);
+                        this.uCListadoProducto.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCListadoProducto.Location = new System.Drawing.Point(0, 0);
+                        this.uCListadoProducto.Name = "uCListadoProducto";
+                        this.uCListadoProducto.Size = new System.Drawing.Size(250, 776);
+                        this.uCListadoProducto.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCListadoProducto);
+                    }
+
                     break;
                 case "home":
-                    this.uCHome = new Admeli.UCHome(this);
-                    this.panelMain.Controls.Add(uCHome);
-                    this.uCHome.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCHome.Location = new System.Drawing.Point(0, 0);
-                    this.uCHome.Name = "uCHome";
-                    this.uCHome.Size = new System.Drawing.Size(250, 776);
-                    this.uCHome.TabIndex = 0;
+                    if (this.uCHome == null)
+                    {
+                        this.uCHome = new Admeli.UCHome(this);
+                        this.panelMain.Controls.Add(uCHome);
+                        this.uCHome.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCHome.Location = new System.Drawing.Point(0, 0);
+                        this.uCHome.Name = "uCHome";
+                        this.uCHome.Size = new System.Drawing.Size(250, 776);
+                        this.uCHome.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCHome);
+                    }
+
                     break;
                 case "iniciar":
-                    this.uCIniciar = new Admeli.UCIniciar(this);
-                    this.panelMain.Controls.Add(uCIniciar);
-                    this.uCIniciar.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCIniciar.Location = new System.Drawing.Point(0, 0);
-                    this.uCIniciar.Name = "uCIniciar";
-                    this.uCIniciar.Size = new System.Drawing.Size(250, 776);
-                    this.uCIniciar.TabIndex = 0;
+                    if (this.uCIniciar == null)
+                    {
+                        this.uCIniciar = new Admeli.UCIniciar(this);
+                        this.panelMain.Controls.Add(uCIniciar);
+                        this.uCIniciar.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCIniciar.Location = new System.Drawing.Point(0, 0);
+                        this.uCIniciar.Name = "uCIniciar";
+                        this.uCIniciar.Size = new System.Drawing.Size(250, 776);
+                        this.uCIniciar.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCIniciar);
+                    }
+                    
                     break;
                 default:
                     break;

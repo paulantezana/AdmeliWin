@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -65,11 +66,21 @@
             this.label7 = new System.Windows.Forms.Label();
             this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
+            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupDatoSucursales.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -300,12 +311,16 @@
             // 
             // cbxNivel4
             // 
+            this.cbxNivel4.DataSource = this.nivel4BindingSource;
+            this.cbxNivel4.DisplayMember = "nombre";
+            this.cbxNivel4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNivel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNivel4.FormattingEnabled = true;
             this.cbxNivel4.Location = new System.Drawing.Point(20, 336);
             this.cbxNivel4.Name = "cbxNivel4";
             this.cbxNivel4.Size = new System.Drawing.Size(328, 24);
             this.cbxNivel4.TabIndex = 61;
+            this.cbxNivel4.ValueMember = "idNivel4";
             this.cbxNivel4.Visible = false;
             // 
             // lblNivel4
@@ -323,12 +338,16 @@
             // 
             // cbxNivel3
             // 
+            this.cbxNivel3.DataSource = this.nivel3BindingSource;
+            this.cbxNivel3.DisplayMember = "nombre";
+            this.cbxNivel3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNivel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNivel3.FormattingEnabled = true;
             this.cbxNivel3.Location = new System.Drawing.Point(19, 277);
             this.cbxNivel3.Name = "cbxNivel3";
             this.cbxNivel3.Size = new System.Drawing.Size(328, 24);
             this.cbxNivel3.TabIndex = 59;
+            this.cbxNivel3.ValueMember = "idNivel3";
             this.cbxNivel3.Visible = false;
             this.cbxNivel3.SelectedIndexChanged += new System.EventHandler(this.cbxNivel3_SelectedIndexChanged);
             // 
@@ -347,12 +366,16 @@
             // 
             // cbxNivel2
             // 
+            this.cbxNivel2.DataSource = this.nivel2BindingSource;
+            this.cbxNivel2.DisplayMember = "nombre";
+            this.cbxNivel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNivel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNivel2.FormattingEnabled = true;
             this.cbxNivel2.Location = new System.Drawing.Point(20, 218);
             this.cbxNivel2.Name = "cbxNivel2";
             this.cbxNivel2.Size = new System.Drawing.Size(328, 24);
             this.cbxNivel2.TabIndex = 57;
+            this.cbxNivel2.ValueMember = "idNivel2";
             this.cbxNivel2.Visible = false;
             this.cbxNivel2.SelectedIndexChanged += new System.EventHandler(this.cbxNivel2_SelectedIndexChanged);
             // 
@@ -371,12 +394,16 @@
             // 
             // cbxNivel1
             // 
+            this.cbxNivel1.DataSource = this.nivel1BindingSource;
+            this.cbxNivel1.DisplayMember = "nombre";
+            this.cbxNivel1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNivel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNivel1.FormattingEnabled = true;
             this.cbxNivel1.Location = new System.Drawing.Point(19, 166);
             this.cbxNivel1.Name = "cbxNivel1";
             this.cbxNivel1.Size = new System.Drawing.Size(328, 24);
             this.cbxNivel1.TabIndex = 55;
+            this.cbxNivel1.ValueMember = "idNivel1";
             this.cbxNivel1.Visible = false;
             this.cbxNivel1.SelectedIndexChanged += new System.EventHandler(this.cbxNivel1_SelectedIndexChanged);
             // 
@@ -395,6 +422,8 @@
             // 
             // cbxPaises
             // 
+            this.cbxPaises.DataSource = this.paisBindingSource;
+            this.cbxPaises.DisplayMember = "nombre";
             this.cbxPaises.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPaises.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPaises.FormattingEnabled = true;
@@ -402,6 +431,7 @@
             this.cbxPaises.Name = "cbxPaises";
             this.cbxPaises.Size = new System.Drawing.Size(328, 24);
             this.cbxPaises.TabIndex = 53;
+            this.cbxPaises.ValueMember = "idPais";
             this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
             // 
             // groupBox2
@@ -557,10 +587,31 @@
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 55;
             // 
+            // nivel1BindingSource
+            // 
+            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
+            // 
+            // nivel2BindingSource
+            // 
+            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
+            // 
+            // nivel3BindingSource
+            // 
+            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
+            // 
+            // nivel4BindingSource
+            // 
+            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
+            // 
             // FormSucursalNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(795, 608);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupDatoSucursales);
@@ -579,6 +630,11 @@
             this.groupDatoSucursales.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -622,5 +678,10 @@
         private System.Windows.Forms.Label lblNivel3;
         private System.Windows.Forms.ComboBox cbxNivel4;
         private System.Windows.Forms.Label lblNivel4;
+        private System.Windows.Forms.BindingSource nivel1BindingSource;
+        private System.Windows.Forms.BindingSource nivel4BindingSource;
+        private System.Windows.Forms.BindingSource nivel3BindingSource;
+        private System.Windows.Forms.BindingSource nivel2BindingSource;
+        private System.Windows.Forms.BindingSource paisBindingSource;
     }
 }

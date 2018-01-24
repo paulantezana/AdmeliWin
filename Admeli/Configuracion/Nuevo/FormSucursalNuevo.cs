@@ -17,6 +17,7 @@ namespace Admeli.Configuracion.Nuevo
     {
 
         private LocationModel locationModel = new LocationModel();
+        private List<LabelUbicacion> labelUbicaciones { get; set; }
         private UbicacionGeografica ubicacionGeografica { get; set; }
 
         private Pais currentPais { get; set; }
@@ -41,9 +42,7 @@ namespace Admeli.Configuracion.Nuevo
         private async Task cargarPaises()
         {
             // cargando los paises
-            cbxPaises.DataSource = await locationModel.paises();
-            cbxPaises.DisplayMember = "nombre";
-            cbxPaises.ValueMember = "idPais";
+            paisBindingSource.DataSource = await locationModel.paises();
 
             // cargando la ubicacion geografica por defecto
             ubicacionGeografica = await locationModel.ubicacionGeografica(ConfigModel.sucursal.idUbicacionGeografica);
@@ -56,7 +55,7 @@ namespace Admeli.Configuracion.Nuevo
             try
             {
                 loadStateApp(true);
-                List<LabelUbicacion> labelUbicaciones = await locationModel.labelUbicacion(Convert.ToInt32(cbxPaises.SelectedValue));
+                labelUbicaciones = await locationModel.labelUbicacion(Convert.ToInt32(cbxPaises.SelectedValue));
                 ocultarNiveles(); // Ocultando todo los niveles
 
                 // Mostrando los niveles uno por uno
@@ -128,67 +127,91 @@ namespace Admeli.Configuracion.Nuevo
         {
             try
             {
-                loadStateApp(true);
-                cbxNivel1.SelectedIndexChanged -= new EventHandler(cbxNivel1_SelectedIndexChanged);
-                cbxNivel1.DataSource = await locationModel.nivel1(Convert.ToInt32(cbxPaises.SelectedValue));
-                cbxNivel1.ValueMember = "idNivel1";
-                cbxNivel1.DisplayMember = "nombre";
-                cbxNivel1.SelectedIndexChanged += new EventHandler(cbxNivel1_SelectedIndexChanged);
-                loadStateApp(false);
+                // No cargar directo al comobobox esto causara que el evento SelectedIndexChange de forma automatica
+                if (labelUbicaciones.Count < 1) return;
+                loadStateApp(true);        
+                nivel1BindingSource.DataSource = await locationModel.nivel1(Convert.ToInt32(cbxPaises.SelectedValue));
+                cbxNivel1.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally{
+                loadStateApp(false);
+                desactivarNivelDesde(2);
+            }
         }
+
         private async void cargarNivel2()
         {
             try
             {
+                if (labelUbicaciones.Count < 2) return;
                 loadStateApp(true);
-                cbxNivel2.SelectedIndexChanged -= new EventHandler(cbxNivel2_SelectedIndexChanged);
-                cbxNivel2.DataSource = await locationModel.nivel2(Convert.ToInt32(cbxNivel1.SelectedValue));
-                cbxNivel2.DisplayMember = "nombre";
-                cbxNivel2.ValueMember = "idNivel2";
-                cbxNivel2.SelectedIndexChanged += new EventHandler(cbxNivel2_SelectedIndexChanged);
-                loadStateApp(false);
+                nivel2BindingSource.DataSource = await locationModel.nivel2(Convert.ToInt32(cbxNivel1.SelectedValue));
+                cbxNivel2.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally{
+                desactivarNivelDesde(3);
+                loadStateApp(false);
+            }
         }
+
         private async void cargarNivel3()
         {
             try
             {
+                if (labelUbicaciones.Count < 3) return;
                 loadStateApp(true);
-                cbxNivel3.DataSource = await locationModel.nivel3(Convert.ToInt32(cbxNivel2.SelectedValue));
-                cbxNivel3.DisplayMember = "nombre";
-                cbxNivel3.ValueMember = "idNivel3";
-                loadStateApp(false);
+                nivel3BindingSource.DataSource = await locationModel.nivel3(Convert.ToInt32(cbxNivel2.SelectedValue));
+                cbxNivel3.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadStateApp(false);
+                desactivarNivelDesde(4);
             }
         }
         private async void cargarNivel4()
         {
             try
             {
+                if (labelUbicaciones.Count < 4) return;
                 loadStateApp(true);
-                cbxNivel4.DataSource = await locationModel.nivel4(Convert.ToInt32(cbxNivel3.SelectedValue));
-                cbxNivel4.DisplayMember = "nombre";
-                cbxNivel4.ValueMember = "idNivel4";
-                loadStateApp(false);
+                nivel4BindingSource.DataSource = await locationModel.nivel4(Convert.ToInt32(cbxNivel3.SelectedValue));
+                cbxNivel4.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally
+            {
+                loadStateApp(false);
+            }
         }
 
+        private void desactivarNivelDesde(int n)
+        {
+            cbxNivel1.Enabled = true;
+            cbxNivel2.Enabled = true;
+            cbxNivel3.Enabled = true;
+            cbxNivel4.Enabled = true;
+
+            if (n < 2) cbxNivel1.Enabled = false;
+            if (n < 3) cbxNivel2.Enabled = false;
+            if (n < 4) cbxNivel3.Enabled = false;
+            if (n < 5) cbxNivel4.Enabled = false;
+        }
         #endregion
 
 
@@ -197,9 +220,11 @@ namespace Admeli.Configuracion.Nuevo
             if (state)
             {
                 progressBarApp.Style = ProgressBarStyle.Marquee;
+                Cursor.Current = Cursors.WaitCursor;
             }
             else{
                 progressBarApp.Style = ProgressBarStyle.Blocks;
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -222,7 +247,5 @@ namespace Admeli.Configuracion.Nuevo
         {
             cargarNivel4();
         }
-
-
     }
 }

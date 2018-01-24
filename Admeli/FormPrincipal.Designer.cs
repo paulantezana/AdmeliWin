@@ -456,6 +456,7 @@
             // 
             // btnToggleAsideMenu
             // 
+            this.btnToggleAsideMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.transition1.SetDecoration(this.btnToggleAsideMenu, BunifuAnimatorNS.DecorationType.None);
             this.btnToggleAsideMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnToggleAsideMenu.FlatAppearance.BorderSize = 0;
@@ -636,7 +637,7 @@
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));

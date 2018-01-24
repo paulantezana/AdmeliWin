@@ -779,6 +779,11 @@
     <None Include="Properties\DataSources\Entidad.GrupoCliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Impuesto.datasource" />
     <None Include="Properties\DataSources\Entidad.Ingreso.datasource" />
+    <None Include="Properties\DataSources\Entidad.Location.Nivel1.datasource" />
+    <None Include="Properties\DataSources\Entidad.Location.Nivel2.datasource" />
+    <None Include="Properties\DataSources\Entidad.Location.Nivel3.datasource" />
+    <None Include="Properties\DataSources\Entidad.Location.Nivel4.datasource" />
+    <None Include="Properties\DataSources\Entidad.Location.Pais.datasource" />
     <None Include="Properties\DataSources\Entidad.Marca.datasource" />
     <None Include="Properties\DataSources\Entidad.NotaEntrada.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
