@@ -55,9 +55,9 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(186, 0);
+            this.panel1.Location = new System.Drawing.Point(186, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 49);
+            this.panel1.Size = new System.Drawing.Size(402, 48);
             this.panel1.TabIndex = 6;
             // 
             // btnAceptar
