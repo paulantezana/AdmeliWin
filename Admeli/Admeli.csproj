@@ -189,17 +189,53 @@
     <Compile Include="Compras\UCProveedores.Designer.cs">
       <DependentUpon>UCProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Nuevo\FormAlmacenNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormAlmacenNuevo.Designer.cs">
+      <DependentUpon>FormAlmacenNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormDocumentoIdetificaionNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormDocumentoIdetificaionNuevo.Designer.cs">
+      <DependentUpon>FormDocumentoIdetificaionNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormImpuestoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormImpuestoNuevo.Designer.cs">
+      <DependentUpon>FormImpuestoNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormMonedaNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormMonedaNuevo.Designer.cs">
+      <DependentUpon>FormMonedaNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Nuevo\FormPersonalNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Configuracion\Nuevo\FormPersonalNuevo.Designer.cs">
       <DependentUpon>FormPersonalNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Nuevo\FormPuntoVentaNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormPuntoVentaNuevo.Designer.cs">
+      <DependentUpon>FormPuntoVentaNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Nuevo\FormSucursalNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Configuracion\Nuevo\FormSucursalNuevo.Designer.cs">
       <DependentUpon>FormSucursalNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormGrupoClienteNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormGrupoClienteNuevo.Designer.cs">
+      <DependentUpon>FormGrupoClienteNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuracion\UCAlmacenes.cs">
       <SubType>UserControl</SubType>
@@ -581,11 +617,29 @@
     <EmbeddedResource Include="Compras\UCProveedores.resx">
       <DependentUpon>UCProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormAlmacenNuevo.resx">
+      <DependentUpon>FormAlmacenNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormDocumentoIdetificaionNuevo.resx">
+      <DependentUpon>FormDocumentoIdetificaionNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormImpuestoNuevo.resx">
+      <DependentUpon>FormImpuestoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormMonedaNuevo.resx">
+      <DependentUpon>FormMonedaNuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Nuevo\FormPersonalNuevo.resx">
       <DependentUpon>FormPersonalNuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormPuntoVentaNuevo.resx">
+      <DependentUpon>FormPuntoVentaNuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Nuevo\FormSucursalNuevo.resx">
       <DependentUpon>FormSucursalNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormGrupoClienteNuevo.resx">
+      <DependentUpon>FormGrupoClienteNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\UCAlmacenes.resx">
       <DependentUpon>UCAlmacenes.cs</DependentUpon>

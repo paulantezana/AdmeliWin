@@ -13,13 +13,29 @@ namespace Modelo
         private WebService webService = new WebService();
 
 
-        public void guardar()
+        public async Task<Response> guardar(Sucursal param)
         {
-
+            try
+            {
+                // localhost/admeli/xcore2/xcore/services.php/sucursal/guardar
+                return await webService.POSTSend("sucursal", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public void modificar()
+        public async Task<Response> modificar(Sucursal param)
         {
-
+            try
+            {
+                // localhost/admeli/xcore2/xcore/services.php/sucursal/modificar
+                return await webService.POSTSend("sucursal", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public void eliminar()
         {

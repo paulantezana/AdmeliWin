@@ -11,23 +11,23 @@ using System.Windows.Forms;
 
 namespace Admeli.Configuracion.Nuevo
 {
-    public partial class FormPersonalNuevo : Form
+    public partial class FormImpuestoNuevo : Form
     {
-        public FormPersonalNuevo()
+        public FormImpuestoNuevo()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panel2);
         }
 
         private void panelFooter_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.topLine(panelFooter);
+            drawShape.bottomLine(panelFooter);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.topLine(panel2);
         }
     }
 }

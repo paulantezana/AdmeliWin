@@ -39,48 +39,50 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.chkActivoCat = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkPrincipalSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label15 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox6 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textDirecionSucursal = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkActivoSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.groupDatoSucursales = new System.Windows.Forms.GroupBox();
             this.cbxNivel4 = new System.Windows.Forms.ComboBox();
+            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel4 = new System.Windows.Forms.Label();
             this.cbxNivel3 = new System.Windows.Forms.ComboBox();
+            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel3 = new System.Windows.Forms.Label();
             this.cbxNivel2 = new System.Windows.Forms.ComboBox();
+            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel2 = new System.Windows.Forms.Label();
             this.cbxNivel1 = new System.Windows.Forms.ComboBox();
+            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel1 = new System.Windows.Forms.Label();
             this.cbxPaises = new System.Windows.Forms.ComboBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox6 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkCompraSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label6 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox5 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkVentaSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkCajaSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkAdministracionSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label7 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkGerenciaSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
-            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupDatoSucursales.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -92,6 +94,7 @@
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(795, 49);
             this.panelFooter.TabIndex = 29;
+            this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
             // panel1
             // 
@@ -119,6 +122,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -147,6 +151,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(795, 42);
             this.panel2.TabIndex = 28;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label4
             // 
@@ -215,17 +220,17 @@
             this.label16.TabIndex = 50;
             this.label16.Text = "Principal";
             // 
-            // chkActivoCat
+            // chkPrincipalSucursal
             // 
-            this.chkActivoCat.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoCat.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkActivoCat.Checked = true;
-            this.chkActivoCat.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoCat.ForeColor = System.Drawing.Color.White;
-            this.chkActivoCat.Location = new System.Drawing.Point(24, 446);
-            this.chkActivoCat.Name = "chkActivoCat";
-            this.chkActivoCat.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoCat.TabIndex = 49;
+            this.chkPrincipalSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkPrincipalSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkPrincipalSucursal.Checked = true;
+            this.chkPrincipalSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkPrincipalSucursal.ForeColor = System.Drawing.Color.White;
+            this.chkPrincipalSucursal.Location = new System.Drawing.Point(24, 446);
+            this.chkPrincipalSucursal.Name = "chkPrincipalSucursal";
+            this.chkPrincipalSucursal.Size = new System.Drawing.Size(20, 20);
+            this.chkPrincipalSucursal.TabIndex = 49;
             // 
             // label15
             // 
@@ -239,24 +244,24 @@
             this.label15.TabIndex = 48;
             this.label15.Text = "Dirección";
             // 
-            // bunifuMetroTextbox6
+            // textDirecionSucursal
             // 
-            this.bunifuMetroTextbox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox6.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox6.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox6.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox6.BorderThickness = 1;
-            this.bunifuMetroTextbox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox6.isPassword = false;
-            this.bunifuMetroTextbox6.Location = new System.Drawing.Point(20, 395);
-            this.bunifuMetroTextbox6.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox6.Name = "bunifuMetroTextbox6";
-            this.bunifuMetroTextbox6.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox6.Size = new System.Drawing.Size(330, 35);
-            this.bunifuMetroTextbox6.TabIndex = 47;
-            this.bunifuMetroTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textDirecionSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textDirecionSucursal.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textDirecionSucursal.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textDirecionSucursal.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textDirecionSucursal.BorderThickness = 1;
+            this.textDirecionSucursal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textDirecionSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDirecionSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textDirecionSucursal.isPassword = false;
+            this.textDirecionSucursal.Location = new System.Drawing.Point(20, 395);
+            this.textDirecionSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textDirecionSucursal.Name = "textDirecionSucursal";
+            this.textDirecionSucursal.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textDirecionSucursal.Size = new System.Drawing.Size(330, 35);
+            this.textDirecionSucursal.TabIndex = 47;
+            this.textDirecionSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
             // 
@@ -270,17 +275,17 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Activo *";
             // 
-            // bunifuCheckbox1
+            // chkActivoSucursal
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(151, 444);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 51;
+            this.chkActivoSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkActivoSucursal.Checked = true;
+            this.chkActivoSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoSucursal.ForeColor = System.Drawing.Color.White;
+            this.chkActivoSucursal.Location = new System.Drawing.Point(151, 444);
+            this.chkActivoSucursal.Name = "chkActivoSucursal";
+            this.chkActivoSucursal.Size = new System.Drawing.Size(20, 20);
+            this.chkActivoSucursal.TabIndex = 51;
             // 
             // groupDatoSucursales
             // 
@@ -296,12 +301,12 @@
             this.groupDatoSucursales.Controls.Add(this.label2);
             this.groupDatoSucursales.Controls.Add(this.label1);
             this.groupDatoSucursales.Controls.Add(this.textNombreSucursal);
-            this.groupDatoSucursales.Controls.Add(this.bunifuCheckbox1);
+            this.groupDatoSucursales.Controls.Add(this.chkActivoSucursal);
             this.groupDatoSucursales.Controls.Add(this.label11);
             this.groupDatoSucursales.Controls.Add(this.label16);
-            this.groupDatoSucursales.Controls.Add(this.chkActivoCat);
+            this.groupDatoSucursales.Controls.Add(this.chkPrincipalSucursal);
             this.groupDatoSucursales.Controls.Add(this.label15);
-            this.groupDatoSucursales.Controls.Add(this.bunifuMetroTextbox6);
+            this.groupDatoSucursales.Controls.Add(this.textDirecionSucursal);
             this.groupDatoSucursales.Location = new System.Drawing.Point(12, 51);
             this.groupDatoSucursales.Name = "groupDatoSucursales";
             this.groupDatoSucursales.Size = new System.Drawing.Size(371, 490);
@@ -322,6 +327,10 @@
             this.cbxNivel4.TabIndex = 61;
             this.cbxNivel4.ValueMember = "idNivel4";
             this.cbxNivel4.Visible = false;
+            // 
+            // nivel4BindingSource
+            // 
+            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
             // 
             // lblNivel4
             // 
@@ -351,6 +360,10 @@
             this.cbxNivel3.Visible = false;
             this.cbxNivel3.SelectedIndexChanged += new System.EventHandler(this.cbxNivel3_SelectedIndexChanged);
             // 
+            // nivel3BindingSource
+            // 
+            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
+            // 
             // lblNivel3
             // 
             this.lblNivel3.AutoSize = true;
@@ -378,6 +391,10 @@
             this.cbxNivel2.ValueMember = "idNivel2";
             this.cbxNivel2.Visible = false;
             this.cbxNivel2.SelectedIndexChanged += new System.EventHandler(this.cbxNivel2_SelectedIndexChanged);
+            // 
+            // nivel2BindingSource
+            // 
+            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
             // 
             // lblNivel2
             // 
@@ -407,6 +424,10 @@
             this.cbxNivel1.Visible = false;
             this.cbxNivel1.SelectedIndexChanged += new System.EventHandler(this.cbxNivel1_SelectedIndexChanged);
             // 
+            // nivel1BindingSource
+            // 
+            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
+            // 
             // lblNivel1
             // 
             this.lblNivel1.AutoSize = true;
@@ -434,18 +455,22 @@
             this.cbxPaises.ValueMember = "idPais";
             this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
             // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox6);
+            this.groupBox2.Controls.Add(this.chkCompraSucursal);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox5);
+            this.groupBox2.Controls.Add(this.chkVentaSucursal);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox4);
+            this.groupBox2.Controls.Add(this.chkCajaSucursal);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox2);
+            this.groupBox2.Controls.Add(this.chkAdministracionSucursal);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.bunifuCheckbox3);
+            this.groupBox2.Controls.Add(this.chkGerenciaSucursal);
             this.groupBox2.Location = new System.Drawing.Point(403, 51);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(376, 490);
@@ -465,17 +490,17 @@
             this.label8.TabIndex = 58;
             this.label8.Text = "Compra";
             // 
-            // bunifuCheckbox6
+            // chkCompraSucursal
             // 
-            this.bunifuCheckbox6.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox6.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox6.Checked = true;
-            this.bunifuCheckbox6.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox6.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox6.Location = new System.Drawing.Point(29, 217);
-            this.bunifuCheckbox6.Name = "bunifuCheckbox6";
-            this.bunifuCheckbox6.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox6.TabIndex = 57;
+            this.chkCompraSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkCompraSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkCompraSucursal.Checked = true;
+            this.chkCompraSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkCompraSucursal.ForeColor = System.Drawing.Color.White;
+            this.chkCompraSucursal.Location = new System.Drawing.Point(29, 217);
+            this.chkCompraSucursal.Name = "chkCompraSucursal";
+            this.chkCompraSucursal.Size = new System.Drawing.Size(20, 20);
+            this.chkCompraSucursal.TabIndex = 57;
             // 
             // label6
             // 
@@ -489,17 +514,17 @@
             this.label6.TabIndex = 56;
             this.label6.Text = "Venta";
             // 
-            // bunifuCheckbox5
+            // chkVentaSucursal
             // 
-            this.bunifuCheckbox5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox5.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox5.Checked = true;
-            this.bunifuCheckbox5.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox5.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox5.Location = new System.Drawing.Point(29, 173);
-            this.bunifuCheckbox5.Name = "bunifuCheckbox5";
-            this.bunifuCheckbox5.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox5.TabIndex = 55;
+            this.chkVentaSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkVentaSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkVentaSucursal.Checked = true;
+            this.chkVentaSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkVentaSucursal.ForeColor = System.Drawing.Color.White;
+            this.chkVentaSucursal.Location = new System.Drawing.Point(29, 173);
+            this.chkVentaSucursal.Name = "chkVentaSucursal";
+            this.chkVentaSucursal.Size = new System.Drawing.Size(20, 20);
+            this.chkVentaSucursal.TabIndex = 55;
             // 
             // label3
             // 
@@ -513,17 +538,17 @@
             this.label3.TabIndex = 54;
             this.label3.Text = "Caja";
             // 
-            // bunifuCheckbox4
+            // chkCajaSucursal
             // 
-            this.bunifuCheckbox4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox4.Checked = true;
-            this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox4.Location = new System.Drawing.Point(29, 129);
-            this.bunifuCheckbox4.Name = "bunifuCheckbox4";
-            this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox4.TabIndex = 53;
+            this.chkCajaSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkCajaSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkCajaSucursal.Checked = true;
+            this.chkCajaSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkCajaSucursal.ForeColor = System.Drawing.Color.White;
+            this.chkCajaSucursal.Location = new System.Drawing.Point(29, 129);
+            this.chkCajaSucursal.Name = "chkCajaSucursal";
+            this.chkCajaSucursal.Size = new System.Drawing.Size(20, 20);
+            this.chkCajaSucursal.TabIndex = 53;
             // 
             // label5
             // 
@@ -537,17 +562,17 @@
             this.label5.TabIndex = 52;
             this.label5.Text = "Administración";
             // 
-            // bunifuCheckbox2
+            // chkAdministracionSucursal
             // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.Checked = true;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(29, 85);
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox2.TabIndex = 51;
+            this.chkAdministracionSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkAdministracionSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkAdministracionSucursal.Checked = true;
+            this.chkAdministracionSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkAdministracionSucursal.ForeColor = System.Drawing.Color.White;
+            this.chkAdministracionSucursal.Location = new System.Drawing.Point(29, 85);
+            this.chkAdministracionSucursal.Name = "chkAdministracionSucursal";
+            this.chkAdministracionSucursal.Size = new System.Drawing.Size(20, 20);
+            this.chkAdministracionSucursal.TabIndex = 51;
             // 
             // label7
             // 
@@ -561,17 +586,17 @@
             this.label7.TabIndex = 50;
             this.label7.Text = "Gerencia";
             // 
-            // bunifuCheckbox3
+            // chkGerenciaSucursal
             // 
-            this.bunifuCheckbox3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox3.Checked = true;
-            this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox3.Location = new System.Drawing.Point(29, 41);
-            this.bunifuCheckbox3.Name = "bunifuCheckbox3";
-            this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox3.TabIndex = 49;
+            this.chkGerenciaSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkGerenciaSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkGerenciaSucursal.Checked = true;
+            this.chkGerenciaSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkGerenciaSucursal.ForeColor = System.Drawing.Color.White;
+            this.chkGerenciaSucursal.Location = new System.Drawing.Point(29, 41);
+            this.chkGerenciaSucursal.Name = "chkGerenciaSucursal";
+            this.chkGerenciaSucursal.Size = new System.Drawing.Size(20, 20);
+            this.chkGerenciaSucursal.TabIndex = 49;
             // 
             // progressBarApp
             // 
@@ -587,25 +612,9 @@
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 55;
             // 
-            // nivel1BindingSource
+            // errorProvider1
             // 
-            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
-            // 
-            // nivel2BindingSource
-            // 
-            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
-            // 
-            // nivel3BindingSource
-            // 
-            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
-            // 
-            // nivel4BindingSource
-            // 
-            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
-            // 
-            // paisBindingSource
-            // 
-            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormSucursalNuevo
             // 
@@ -628,13 +637,14 @@
             this.panel2.PerformLayout();
             this.groupDatoSucursales.ResumeLayout(false);
             this.groupDatoSucursales.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -651,23 +661,23 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
-        private Bunifu.Framework.UI.BunifuCheckbox chkActivoCat;
+        private Bunifu.Framework.UI.BunifuCheckbox chkPrincipalSucursal;
         private System.Windows.Forms.Label label15;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox6;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textDirecionSucursal;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuCheckbox chkActivoSucursal;
         private System.Windows.Forms.GroupBox groupDatoSucursales;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private Bunifu.Framework.UI.BunifuCheckbox chkAdministracionSucursal;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
+        private Bunifu.Framework.UI.BunifuCheckbox chkGerenciaSucursal;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox4;
+        private Bunifu.Framework.UI.BunifuCheckbox chkCajaSucursal;
         private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox5;
+        private Bunifu.Framework.UI.BunifuCheckbox chkVentaSucursal;
         private System.Windows.Forms.Label label8;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox6;
+        private Bunifu.Framework.UI.BunifuCheckbox chkCompraSucursal;
         private System.Windows.Forms.ComboBox cbxPaises;
         protected System.Windows.Forms.ProgressBar progressBarApp;
         private System.Windows.Forms.ComboBox cbxNivel1;
@@ -683,5 +693,6 @@
         private System.Windows.Forms.BindingSource nivel3BindingSource;
         private System.Windows.Forms.BindingSource nivel2BindingSource;
         private System.Windows.Forms.BindingSource paisBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

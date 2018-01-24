@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Admeli.Componentes;
 using Entidad;
+using Admeli.Configuracion.Nuevo;
 
 namespace Admeli.Configuracion
 {
@@ -191,8 +192,8 @@ namespace Admeli.Configuracion
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
+            FormGrupoClienteNuevo clienteNuevo = new FormGrupoClienteNuevo();
+            clienteNuevo.ShowDialog();
         }
 
         internal void reLoad()

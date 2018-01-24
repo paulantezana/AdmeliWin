@@ -11,6 +11,7 @@ using Modelo;
 using Entidad;
 using Newtonsoft.Json;
 using Admeli.Componentes;
+using Admeli.Configuracion.Nuevo;
 
 namespace Admeli.Configuracion
 {
@@ -191,8 +192,8 @@ namespace Admeli.Configuracion
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
+            FormPersonalNuevo personalNuevo = new FormPersonalNuevo();
+            personalNuevo.ShowDialog();
         }
 
         internal void reLoad()

@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Admeli.Componentes;
+using Entidad;
 using Entidad.Location;
 using Modelo;
 using System;
@@ -17,15 +18,21 @@ namespace Admeli.Configuracion.Nuevo
     {
 
         private LocationModel locationModel = new LocationModel();
+        private SucursalModel sucursalModel = new SucursalModel();
+
         private List<LabelUbicacion> labelUbicaciones { get; set; }
         private UbicacionGeografica ubicacionGeografica { get; set; }
 
         private Pais currentPais { get; set; }
         private int currentIDPais { get; set; }
+        private bool nuevo { get; set; }
+
+        private Sucursal currentSucursal { get; set; }
 
         public FormSucursalNuevo()
         {
             InitializeComponent();
+            nuevo = true;
         }
 
         private  void FormSucursalNuevo_Load(object sender, EventArgs e)
@@ -49,7 +56,7 @@ namespace Admeli.Configuracion.Nuevo
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
         }
 
-        #region ======================== Formando los niveles de cada pais ========================
+        #region ================== Formando los niveles de cada pais ==================
         private async void crearNivelesPais()
         {
             try
@@ -214,7 +221,7 @@ namespace Admeli.Configuracion.Nuevo
         }
         #endregion
 
-
+        #region ==================== Estados =====================
         private void loadStateApp(bool state)
         {
             if (state)
@@ -222,12 +229,15 @@ namespace Admeli.Configuracion.Nuevo
                 progressBarApp.Style = ProgressBarStyle.Marquee;
                 Cursor.Current = Cursors.WaitCursor;
             }
-            else{
+            else
+            {
                 progressBarApp.Style = ProgressBarStyle.Blocks;
                 Cursor.Current = Cursors.Default;
             }
-        }
+        } 
+        #endregion
 
+        #region ====================== Niveles localizacion eventos =====================
         private void cbxPaises_SelectedIndexChanged(object sender, EventArgs e)
         {
             crearNivelesPais();
@@ -246,6 +256,142 @@ namespace Admeli.Configuracion.Nuevo
         private void cbxNivel3_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarNivel4();
+        } 
+        #endregion
+
+        #region ========================== SAVE AND UPDATE ===========================
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            guardarSucursal();
+        } 
+
+        private async void guardarSucursal()
+        {
+            if (!validarCampos()) return;
+            try
+            {
+                crearObjetoSucursal();
+                if (nuevo)
+                {
+                    Response response = await sucursalModel.guardar(currentSucursal);
+                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Response response = await sucursalModel.modificar(currentSucursal);
+                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void crearObjetoSucursal()
+        {
+            currentSucursal = new Sucursal();
+
+            currentSucursal.nombre = textNombreSucursal.Text;
+            currentSucursal.principal = chkPrincipalSucursal.Checked;
+            currentSucursal.estado = Convert.ToInt32(chkActivoSucursal.Checked);
+            currentSucursal.direccion = textDirecionSucursal.Text;
+            currentSucursal.tieneRegistros = "0";
+
+            switch (labelUbicaciones.Count)
+            {
+                case 1:
+                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel1.SelectedValue);
+                    break;
+                case 2:
+                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel2.SelectedValue);
+                    break;
+                case 3:
+                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel3.SelectedValue);
+                    break;
+                case 4:
+                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel4.SelectedValue);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private bool validarCampos()
+        {
+            if (textNombreSucursal.Text == "")
+            {
+                errorProvider1.SetError(textNombreSucursal, "Este campo esta bacía");
+                textNombreSucursal.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            switch (labelUbicaciones.Count)
+            {
+                case 1:
+                    if (cbxNivel1.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel1, "No se seleccionó ningún elemento");
+                        cbxNivel1.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                case 2:
+                    if (cbxNivel2.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel2, "No se seleccionó ningún elemento");
+                        cbxNivel2.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                case 3:
+                    if (cbxNivel3.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel3, "No se seleccionó ningún elemento");
+                        cbxNivel3.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                case 4:
+                    if (cbxNivel4.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel4, "No se seleccionó ningún elemento");
+                        cbxNivel4.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                default:
+                    break;
+            }
+
+            if (textDirecionSucursal.Text == "")
+            {
+                errorProvider1.SetError(textDirecionSucursal, "Este campo esta bacía");
+                textDirecionSucursal.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+            return true;
+        }
+
+        #endregion
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.bottomLine(panel2);
+        }
+
+        private void panelFooter_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.topLine(panelFooter);
         }
     }
 }

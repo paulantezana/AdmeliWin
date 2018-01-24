@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Admeli.Configuracion.Nuevo
 {
-    public partial class FormPersonalNuevo : Form
+    public partial class FormMonedaNuevo : Form
     {
-        public FormPersonalNuevo()
+        public FormMonedaNuevo()
         {
             InitializeComponent();
         }

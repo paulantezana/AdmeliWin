@@ -78,6 +78,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(745, 42);
             this.panel2.TabIndex = 13;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label4
             // 
@@ -315,6 +316,7 @@
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(745, 49);
             this.panelFooter.TabIndex = 27;
+            this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
             // panel1
             // 
@@ -544,6 +546,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(745, 739);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.chkActivoCat);
@@ -578,6 +581,7 @@
             this.Controls.Add(this.textNombreCat);
             this.Controls.Add(this.label2);
             this.Name = "FormPersonalNuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPersonalNuevo";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

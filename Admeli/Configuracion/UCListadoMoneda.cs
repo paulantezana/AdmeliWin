@@ -11,6 +11,7 @@ using Modelo;
 using Admeli.Componentes;
 using Entidad.Configuracion;
 using Entidad;
+using Admeli.Configuracion.Nuevo;
 
 namespace Admeli.Configuracion
 {
@@ -196,8 +197,8 @@ namespace Admeli.Configuracion
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
+            FormMonedaNuevo monedaNuevo = new FormMonedaNuevo();
+            monedaNuevo.ShowDialog();
         }
 
         internal void reLoad()
