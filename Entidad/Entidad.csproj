@@ -62,6 +62,10 @@
     <Compile Include="Impuesto.cs" />
     <Compile Include="Ingreso.cs" />
     <Compile Include="Location\LabelUbicacion.cs" />
+    <Compile Include="Location\Nivel1.cs" />
+    <Compile Include="Location\Nivel2.cs" />
+    <Compile Include="Location\Nivel3.cs" />
+    <Compile Include="Location\Nivel4.cs" />
     <Compile Include="Location\Pais.cs" />
     <Compile Include="Location\UbicacionGeografica.cs" />
     <Compile Include="Marca.cs" />

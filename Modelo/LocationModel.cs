@@ -27,6 +27,59 @@ namespace Modelo
 
         }
 
+        public async Task<List<Nivel1>>  nivel1(int idPais)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/pais/21/nivel1
+                List<Nivel1> data = await webService.GETLis<Nivel1>("pais", String.Format("{0}/nivel1", idPais));
+                return data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<List<Nivel2>> nivel2(int idNivel1)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/nivel1/482/nivel2
+                List<Nivel2> data = await webService.GETLis<Nivel2>("nivel1", String.Format("{0}/nivel2", idNivel1));
+                return data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<List<Nivel3>> nivel3(int idNivel2)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/nivel2/66153/nivel3
+                List<Nivel3> data = await webService.GETLis<Nivel3>("nivel2", String.Format("{0}/nivel3", idNivel2));
+                return data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<List<Nivel4>> nivel4(int idNivel3)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/nivel2/66153/nivel4
+                List<Nivel4> data = await webService.GETLis<Nivel4>("nivel3", String.Format("{0}/nivel4", idNivel3));
+                return data;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<LabelUbicacion>> labelUbicacion(int idPais)
         {
             try
