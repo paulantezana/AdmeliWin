@@ -243,9 +243,9 @@
             // 
             // chkDefaultImpuesto
             // 
-            this.chkDefaultImpuesto.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkDefaultImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkDefaultImpuesto.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkDefaultImpuesto.Checked = true;
+            this.chkDefaultImpuesto.Checked = false;
             this.chkDefaultImpuesto.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.chkDefaultImpuesto.ForeColor = System.Drawing.Color.White;
             this.chkDefaultImpuesto.Location = new System.Drawing.Point(19, 298);

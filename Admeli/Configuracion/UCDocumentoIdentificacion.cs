@@ -361,6 +361,9 @@ namespace Admeli.Configuracion
                     return;
                 }
 
+                currentDocumento = documentos.Find(x => x.idDocumento == currentDocumento.idDocumento);
+                currentDocumento.estado = 0;
+
                 // Procediendo con las desactivacion
                 Response response = await documentoModel.desactivar(currentDocumento);
                 MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -72,6 +72,14 @@ namespace Admeli.Configuracion.Nuevo
                 return false;
             }
             errorProvider1.Clear();
+
+            if (cbxTipoDocumento.Text == "")
+            {
+                errorProvider1.SetError(cbxTipoDocumento, "Alija almenos una");
+                cbxTipoDocumento.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
             return true;
         }
 
@@ -104,15 +112,15 @@ namespace Admeli.Configuracion.Nuevo
 
             documentoIdentificacion.nombre = textNombreDocumentoIdenti.Text;
             documentoIdentificacion.numeroDigitos = Convert.ToInt32(textDigitosDocumentoIdenti.Text);
-            documentoIdentificacion.tipoDocumento = cbxTipoDocumento.SelectedText;
+            documentoIdentificacion.tipoDocumento = cbxTipoDocumento.Text;
             documentoIdentificacion.estado = Convert.ToInt32(chkActivoDI.Checked);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            crearObjeto();
             if (validarCampos())
             {
+                crearObjeto();
                 guardar();
             }
         }

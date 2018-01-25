@@ -43,9 +43,8 @@ namespace Modelo
         {
             try
             {
-                // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/desactivar
-                // return await webService.POSTSend("almacen", "desactivar", param);
-                return null;
+                // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/modificar
+                return await webService.POSTSend("documentoidentificacion", "modificar", param);
             }
             catch (Exception ex)
             {

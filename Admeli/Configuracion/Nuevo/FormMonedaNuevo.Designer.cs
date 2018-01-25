@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -42,9 +43,11 @@
             this.chkActivo = new Bunifu.Framework.UI.BunifuCheckbox();
             this.labelfc = new System.Windows.Forms.Label();
             this.chkDefaultImpuesto = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -84,6 +87,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -102,6 +106,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -227,15 +232,19 @@
             // 
             // chkDefaultImpuesto
             // 
-            this.chkDefaultImpuesto.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkDefaultImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkDefaultImpuesto.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkDefaultImpuesto.Checked = true;
+            this.chkDefaultImpuesto.Checked = false;
             this.chkDefaultImpuesto.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.chkDefaultImpuesto.ForeColor = System.Drawing.Color.White;
             this.chkDefaultImpuesto.Location = new System.Drawing.Point(19, 202);
             this.chkDefaultImpuesto.Name = "chkDefaultImpuesto";
             this.chkDefaultImpuesto.Size = new System.Drawing.Size(20, 20);
             this.chkDefaultImpuesto.TabIndex = 98;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormMonedaNuevo
             // 
@@ -260,6 +269,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,5 +291,6 @@
         private Bunifu.Framework.UI.BunifuCheckbox chkActivo;
         private System.Windows.Forms.Label labelfc;
         private Bunifu.Framework.UI.BunifuCheckbox chkDefaultImpuesto;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
