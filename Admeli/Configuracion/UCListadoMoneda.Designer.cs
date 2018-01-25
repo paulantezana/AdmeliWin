@@ -29,24 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCListadoMoneda));
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.idMonedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.simboloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porDefectoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoCambioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPersonalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
@@ -64,9 +53,20 @@
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnAnular = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.idMonedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.simboloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porDefectoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tipoCambioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPersonalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelHeaderItem1.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -133,14 +133,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idMonedaDataGridViewTextBoxColumn,
@@ -167,116 +167,6 @@
             this.dataGridView.Size = new System.Drawing.Size(848, 406);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
-            // 
-            // idMonedaDataGridViewTextBoxColumn
-            // 
-            this.idMonedaDataGridViewTextBoxColumn.DataPropertyName = "idMoneda";
-            this.idMonedaDataGridViewTextBoxColumn.HeaderText = "idMoneda";
-            this.idMonedaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idMonedaDataGridViewTextBoxColumn.Name = "idMonedaDataGridViewTextBoxColumn";
-            this.idMonedaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idMonedaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idMonedaDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // monedaDataGridViewTextBoxColumn
-            // 
-            this.monedaDataGridViewTextBoxColumn.DataPropertyName = "moneda";
-            this.monedaDataGridViewTextBoxColumn.HeaderText = "moneda";
-            this.monedaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
-            this.monedaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.monedaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.monedaDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // simboloDataGridViewTextBoxColumn
-            // 
-            this.simboloDataGridViewTextBoxColumn.DataPropertyName = "simbolo";
-            this.simboloDataGridViewTextBoxColumn.HeaderText = "simbolo";
-            this.simboloDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.simboloDataGridViewTextBoxColumn.Name = "simboloDataGridViewTextBoxColumn";
-            this.simboloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.simboloDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.simboloDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // porDefectoDataGridViewCheckBoxColumn
-            // 
-            this.porDefectoDataGridViewCheckBoxColumn.DataPropertyName = "porDefecto";
-            this.porDefectoDataGridViewCheckBoxColumn.HeaderText = "porDefecto";
-            this.porDefectoDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.porDefectoDataGridViewCheckBoxColumn.Name = "porDefectoDataGridViewCheckBoxColumn";
-            this.porDefectoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.porDefectoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.porDefectoDataGridViewCheckBoxColumn.Width = 85;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // tipoCambioDataGridViewTextBoxColumn
-            // 
-            this.tipoCambioDataGridViewTextBoxColumn.DataPropertyName = "tipoCambio";
-            this.tipoCambioDataGridViewTextBoxColumn.HeaderText = "tipoCambio";
-            this.tipoCambioDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tipoCambioDataGridViewTextBoxColumn.Name = "tipoCambioDataGridViewTextBoxColumn";
-            this.tipoCambioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoCambioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tipoCambioDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // fechaCreacionDataGridViewTextBoxColumn
-            // 
-            this.fechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "fechaCreacion";
-            this.fechaCreacionDataGridViewTextBoxColumn.HeaderText = "fechaCreacion";
-            this.fechaCreacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaCreacionDataGridViewTextBoxColumn.Name = "fechaCreacionDataGridViewTextBoxColumn";
-            this.fechaCreacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaCreacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.fechaCreacionDataGridViewTextBoxColumn.Width = 101;
-            // 
-            // idPersonalDataGridViewTextBoxColumn
-            // 
-            this.idPersonalDataGridViewTextBoxColumn.DataPropertyName = "idPersonal";
-            this.idPersonalDataGridViewTextBoxColumn.HeaderText = "idPersonal";
-            this.idPersonalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idPersonalDataGridViewTextBoxColumn.Name = "idPersonalDataGridViewTextBoxColumn";
-            this.idPersonalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPersonalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idPersonalDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // nombresDataGridViewTextBoxColumn
-            // 
-            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "nombres";
-            this.nombresDataGridViewTextBoxColumn.HeaderText = "nombres";
-            this.nombresDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
-            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombresDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombresDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.apellidosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.apellidosDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // tieneRegistrosDataGridViewTextBoxColumn
-            // 
-            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
-            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 99;
             // 
             // monedaBindingSource
             // 
@@ -471,6 +361,19 @@
             this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AutoSize = false;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // btnAnular
             // 
             this.btnAnular.AutoSize = false;
@@ -497,18 +400,121 @@
             this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnEliminar
+            // idMonedaDataGridViewTextBoxColumn
             // 
-            this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.idMonedaDataGridViewTextBoxColumn.DataPropertyName = "idMoneda";
+            this.idMonedaDataGridViewTextBoxColumn.HeaderText = "idMoneda";
+            this.idMonedaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idMonedaDataGridViewTextBoxColumn.Name = "idMonedaDataGridViewTextBoxColumn";
+            this.idMonedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idMonedaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idMonedaDataGridViewTextBoxColumn.Visible = false;
+            this.idMonedaDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // monedaDataGridViewTextBoxColumn
+            // 
+            this.monedaDataGridViewTextBoxColumn.DataPropertyName = "moneda";
+            this.monedaDataGridViewTextBoxColumn.HeaderText = "Moneda";
+            this.monedaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
+            this.monedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monedaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.monedaDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // simboloDataGridViewTextBoxColumn
+            // 
+            this.simboloDataGridViewTextBoxColumn.DataPropertyName = "simbolo";
+            this.simboloDataGridViewTextBoxColumn.HeaderText = "Simbolo";
+            this.simboloDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.simboloDataGridViewTextBoxColumn.Name = "simboloDataGridViewTextBoxColumn";
+            this.simboloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.simboloDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.simboloDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // porDefectoDataGridViewCheckBoxColumn
+            // 
+            this.porDefectoDataGridViewCheckBoxColumn.DataPropertyName = "porDefecto";
+            this.porDefectoDataGridViewCheckBoxColumn.HeaderText = "porDefecto";
+            this.porDefectoDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.porDefectoDataGridViewCheckBoxColumn.Name = "porDefectoDataGridViewCheckBoxColumn";
+            this.porDefectoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.porDefectoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.porDefectoDataGridViewCheckBoxColumn.Width = 85;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // tipoCambioDataGridViewTextBoxColumn
+            // 
+            this.tipoCambioDataGridViewTextBoxColumn.DataPropertyName = "tipoCambio";
+            this.tipoCambioDataGridViewTextBoxColumn.HeaderText = "Tipo Cambio";
+            this.tipoCambioDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tipoCambioDataGridViewTextBoxColumn.Name = "tipoCambioDataGridViewTextBoxColumn";
+            this.tipoCambioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoCambioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tipoCambioDataGridViewTextBoxColumn.Width = 84;
+            // 
+            // fechaCreacionDataGridViewTextBoxColumn
+            // 
+            this.fechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "fechaCreacion";
+            this.fechaCreacionDataGridViewTextBoxColumn.HeaderText = "Fecha Creacion";
+            this.fechaCreacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaCreacionDataGridViewTextBoxColumn.Name = "fechaCreacionDataGridViewTextBoxColumn";
+            this.fechaCreacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaCreacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.fechaCreacionDataGridViewTextBoxColumn.Width = 98;
+            // 
+            // idPersonalDataGridViewTextBoxColumn
+            // 
+            this.idPersonalDataGridViewTextBoxColumn.DataPropertyName = "idPersonal";
+            this.idPersonalDataGridViewTextBoxColumn.HeaderText = "idPersonal";
+            this.idPersonalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idPersonalDataGridViewTextBoxColumn.Name = "idPersonalDataGridViewTextBoxColumn";
+            this.idPersonalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPersonalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idPersonalDataGridViewTextBoxColumn.Visible = false;
+            this.idPersonalDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // nombresDataGridViewTextBoxColumn
+            // 
+            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "nombres";
+            this.nombresDataGridViewTextBoxColumn.HeaderText = "nombres";
+            this.nombresDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
+            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombresDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombresDataGridViewTextBoxColumn.Visible = false;
+            this.nombresDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apellidosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.apellidosDataGridViewTextBoxColumn.Visible = false;
+            this.apellidosDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "Tiene Registros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 97;
             // 
             // UCListadoMoneda
             // 
@@ -559,18 +565,18 @@
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnAnular;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.BindingSource monedaBindingSource;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMonedaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monedaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn simboloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn porDefectoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoCambioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCreacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPersonalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tieneRegistrosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource monedaBindingSource;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }

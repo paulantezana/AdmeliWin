@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -40,9 +41,13 @@
             this.textPuntoVenta = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.cbxSucursalPV = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -82,6 +87,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -100,6 +106,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -181,6 +188,8 @@
             // 
             // cbxSucursalPV
             // 
+            this.cbxSucursalPV.DataSource = this.sucursalBindingSource;
+            this.cbxSucursalPV.DisplayMember = "nombre";
             this.cbxSucursalPV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSucursalPV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSucursalPV.FormattingEnabled = true;
@@ -188,6 +197,7 @@
             this.cbxSucursalPV.Name = "cbxSucursalPV";
             this.cbxSucursalPV.Size = new System.Drawing.Size(330, 24);
             this.cbxSucursalPV.TabIndex = 111;
+            this.cbxSucursalPV.ValueMember = "idSucursal";
             // 
             // label12
             // 
@@ -201,11 +211,21 @@
             this.label12.TabIndex = 110;
             this.label12.Text = "Sucursal :";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
+            // 
             // FormPuntoVentaNuevo
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(372, 387);
             this.Controls.Add(this.cbxSucursalPV);
             this.Controls.Add(this.label12);
@@ -218,10 +238,13 @@
             this.Name = "FormPuntoVentaNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPuntoVentaNuevo";
+            this.Load += new System.EventHandler(this.FormPuntoVentaNuevo_Load);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +264,7 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox textPuntoVenta;
         private System.Windows.Forms.ComboBox cbxSucursalPV;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
     }
 }

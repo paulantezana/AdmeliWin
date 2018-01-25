@@ -19,10 +19,15 @@ namespace Admeli.Configuracion
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private List<PuntoDeVenta> puntosDeVenta { get; set; }
+        private PuntoDeVenta currentPuntoDeVenta { get; set; }
+
         private Paginacion paginacion;
         private PuntoVentaModel puntoVentaModel = new PuntoVentaModel();
         private SucursalModel sucursalModel = new SucursalModel();
 
+        #region =========================== Constructor ===========================
         public UCPuntoDeVenta()
         {
             InitializeComponent();
@@ -42,23 +47,82 @@ namespace Admeli.Configuracion
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
 
             lisenerKeyEvents = true; // Active lisener key events
+        } 
+        #endregion
+
+        private void panelContainer_Paint_1(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
         }
 
+        #region ====================== Root Load ======================
         private void UCPuntoDeVenta_Load(object sender, EventArgs e)
+        {
+            reLoad();
+
+            // Atajos de teclados
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
+        }
+
+        internal void reLoad()
         {
             cargarComponentes();
             cargarRegistros();
+        } 
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
         }
+        #endregion
 
         #region =========================== Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idPuntoVenta = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentPuntoDeVenta = puntosDeVenta.Find(x => x.idPuntoVenta == idPuntoVenta); // Buscando la categoria en las lista de categorias
+                if (currentPuntoDeVenta.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
         }
         #endregion
 
@@ -106,16 +170,22 @@ namespace Admeli.Configuracion
                 int sucursaId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
 
-                RootObject<PuntoDeVenta> puntoVenta = await puntoVentaModel.puntoventas(ConfigModel.sucursal.idSucursal, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<PuntoDeVenta> puntoVentaRoot = await puntoVentaModel.puntoventas(ConfigModel.sucursal.idSucursal, estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = puntoVenta.nro_registros;
+                paginacion.itemsCount = puntoVentaRoot.nro_registros;
                 paginacion.reload();
 
-                // Ingresando
-                puntoDeVentaBindingSource.DataSource = puntoVenta.datos;
+                // Ingresandocu
+                puntosDeVenta = puntoVentaRoot.datos;
+                puntoDeVentaBindingSource.DataSource = puntosDeVenta;
                 dataGridView.Refresh();
+
+                // cargar paginacion de los registros
                 mostrarPaginado();
+
+                // formato de celdas del datagridview
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -224,15 +294,118 @@ namespace Admeli.Configuracion
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormPuntoVentaNuevo puntoVentaNuevo = new FormPuntoVentaNuevo();
-            puntoVentaNuevo.ShowDialog();
+            executeNuevo();
         }
 
-        internal void reLoad()
+        private void btnModificar_Click(object sender, EventArgs e)
         {
+            executeModificar();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormPuntoVentaNuevo clienteNuevo = new FormPuntoVentaNuevo();
+            clienteNuevo.ShowDialog();
+            this.reLoad();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idPuntoVenta = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentPuntoDeVenta = puntosDeVenta.Find(x => x.idPuntoVenta == idPuntoVenta); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormPuntoVentaNuevo formPuntoVenta = new FormPuntoVentaNuevo(currentPuntoDeVenta);
+            formPuntoVenta.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
 
 
-            lisenerKeyEvents = true; // Active lisener key events
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentPuntoDeVenta = new PuntoDeVenta(); //creando una instancia del objeto categoria
+                currentPuntoDeVenta.idPuntoVenta = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await puntoVentaModel.eliminar(currentPuntoDeVenta); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                loadState(true);
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentPuntoDeVenta = new PuntoDeVenta(); //creando una instancia del objeto correspondiente
+                currentPuntoDeVenta.idPuntoVenta = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (puntosDeVenta.Find(x => x.idPuntoVenta == currentPuntoDeVenta.idPuntoVenta).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                Response response = await puntoVentaModel.anular(currentPuntoDeVenta);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
         }
         #endregion
     }
