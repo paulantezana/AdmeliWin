@@ -13,19 +13,56 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(TipoDocumento param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/guardar
+                return await webService.POSTSend("tipodoc", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(TipoDocumento param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/modificar
+                return await webService.POSTSend("tipodoc", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
-        public void eliminar()
+        /*
+        public async Task<Response> desactivar(Marca param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/marca/desactivar
+                return await webService.POSTSend("marca", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }*/
 
+        public async Task<Response> eliminar(TipoDocumento param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/eliminar
+                return await webService.POSTSend("tipodoc", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<TipoDocumento>> tipodocumentos(int page, int items)

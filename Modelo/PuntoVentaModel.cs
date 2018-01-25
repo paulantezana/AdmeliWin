@@ -13,19 +13,56 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(PuntoDeVenta param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/guardar
+                return await webService.POSTSend("puntoventa", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(PuntoDeVenta param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/modificar
+                return await webService.POSTSend("puntoventa", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
+        public async Task<Response> anular(PuntoDeVenta param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/anular
+                return await webService.POSTSend("puntoventa", "anular", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> eliminar(PuntoDeVenta param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/eliminar
+                return await webService.POSTSend("puntoventa", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<PuntoDeVenta>> puntoventas(int idSucursal, string idEstado, int page, int items)

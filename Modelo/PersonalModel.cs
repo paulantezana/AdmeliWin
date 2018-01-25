@@ -36,17 +36,57 @@ namespace Modelo
                 throw ex;
             }
         }
-        public void guardar()
-        {
 
+        public async Task<Response> guardar(Personal param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/personal/guardar
+                return await webService.POSTSend("personal", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public void modificar()
-        {
 
+        public async Task<Response> modificar(Personal param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/personal/modificar
+                return await webService.POSTSend("personal", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public void eliminar()
+        /*
+        public async Task<Response> desactivar(Marca param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/marca/desactivar
+                return await webService.POSTSend("marca", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        */
+        public async Task<Response> eliminar(Personal param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/personal/eliminar
+                return await webService.POSTSend("personal", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public void cambiarClave()
         {

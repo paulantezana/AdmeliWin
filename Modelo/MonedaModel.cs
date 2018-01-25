@@ -13,19 +13,56 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(Moneda param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/moneda/guardar
+                return await webService.POSTSend("moneda", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(Moneda param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/moneda/modificar
+                return await webService.POSTSend("moneda", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
+        public async Task<Response> desactivar(Moneda param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/moneda/desactivar
+                return await webService.POSTSend("moneda", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> eliminar(Moneda param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/moneda/eliminar
+                return await webService.POSTSend("moneda", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<Moneda>> monedas(int page, int items)

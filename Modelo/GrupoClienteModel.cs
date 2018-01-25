@@ -12,19 +12,56 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(GrupoCliente param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/guardar
+                return await webService.POSTSend("gcliente", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(GrupoCliente param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/modificar
+                return await webService.POSTSend("gcliente", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
+        public async Task<Response> desactivar(GrupoCliente param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/desactivar
+                return await webService.POSTSend("gcliente", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> eliminar(GrupoCliente param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/eliminar
+                return await webService.POSTSend("gcliente", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<GrupoCliente>> gclientes(int page, int items)

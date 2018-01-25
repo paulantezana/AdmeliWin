@@ -21,13 +21,13 @@ namespace Admeli.Configuracion.Nuevo
         private void panelFooter_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelFooter);
+            drawShape.topLine(panelFooter);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.topLine(panel2);
+            drawShape.bottomLine(panel2);
         }
     }
 }

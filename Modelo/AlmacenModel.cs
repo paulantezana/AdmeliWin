@@ -12,19 +12,56 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(Almacen param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/almacen/guardar
+                return await webService.POSTSend("almacen", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(Almacen param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/almacen/modificar
+                return await webService.POSTSend("almacen", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
-        public void eliminar()
+        
+        public async Task<Response> desactivar(Almacen param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/almacen/desactivar
+                return await webService.POSTSend("almacen", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
+        public async Task<Response> eliminar(Almacen param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/almacen/eliminar
+                return await webService.POSTSend("almacen", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<Almacen>> almacenes(int page, int items)

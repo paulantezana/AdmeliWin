@@ -12,19 +12,56 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(Impuesto param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/impuesto/guardar
+                return await webService.POSTSend("impuesto", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(Impuesto param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/impuesto/modificar
+                return await webService.POSTSend("impuesto", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
+        public async Task<Response> desactivar(Impuesto param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/impuesto/desactivar
+                return await webService.POSTSend("impuesto", "desactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> eliminar(Impuesto param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/impuesto/eliminar
+                return await webService.POSTSend("impuesto", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<Impuesto>> impuestos(int page, int items)

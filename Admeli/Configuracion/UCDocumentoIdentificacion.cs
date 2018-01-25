@@ -42,6 +42,12 @@ namespace Admeli.Configuracion
             lisenerKeyEvents = true; // Active lisener key events
         }
 
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void UCDocumentoIdentificacion_Load(object sender, EventArgs e)
         {
             cargarComponentes();
