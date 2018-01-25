@@ -8,10 +8,10 @@ namespace Entidad
 {
     public class DocumentoIdentificacion
     {
+        public int idDocumento { get; set; }
         public string nombre { get; set; }
         public int numeroDigitos { get; set; }
         public string tipoDocumento { get; set; }
         public int estado { get; set; }
-        public int idDocumento { get; set; }
     }
 }

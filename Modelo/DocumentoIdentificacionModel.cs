@@ -12,21 +12,60 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(DocumentoIdentificacion param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/guardar
+                return await webService.POSTSend("documentoidentificacion", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(DocumentoIdentificacion param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/modificar
+                return await webService.POSTSend("documentoidentificacion", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
-        {
 
+        public async Task<Response> desactivar(DocumentoIdentificacion param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/desactivar
+                // return await webService.POSTSend("almacen", "desactivar", param);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        public async Task<Response> eliminar(DocumentoIdentificacion param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/eliminar
+                return await webService.POSTSend("documentoidentificacion", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
         public async Task<RootObject<DocumentoIdentificacion>> documentoidentificaciones(int page, int items)
         {
             try

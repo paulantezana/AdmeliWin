@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -35,16 +36,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.texNombreDocumentoIdenti = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textNombreDocumentoIdenti = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.nDigitosDocumentoIdenti = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textDigitosDocumentoIdenti = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.chkActivoSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkActivoDI = new Bunifu.Framework.UI.BunifuCheckbox();
             this.cbxTipoDocumento = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -84,6 +87,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -102,6 +106,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -138,24 +143,24 @@
             this.label2.TabIndex = 64;
             this.label2.Text = "Nombres*";
             // 
-            // texNombreDocumentoIdenti
+            // textNombreDocumentoIdenti
             // 
-            this.texNombreDocumentoIdenti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.texNombreDocumentoIdenti.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.texNombreDocumentoIdenti.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.texNombreDocumentoIdenti.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.texNombreDocumentoIdenti.BorderThickness = 1;
-            this.texNombreDocumentoIdenti.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.texNombreDocumentoIdenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.texNombreDocumentoIdenti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.texNombreDocumentoIdenti.isPassword = false;
-            this.texNombreDocumentoIdenti.Location = new System.Drawing.Point(19, 81);
-            this.texNombreDocumentoIdenti.Margin = new System.Windows.Forms.Padding(4);
-            this.texNombreDocumentoIdenti.Name = "texNombreDocumentoIdenti";
-            this.texNombreDocumentoIdenti.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.texNombreDocumentoIdenti.Size = new System.Drawing.Size(330, 35);
-            this.texNombreDocumentoIdenti.TabIndex = 65;
-            this.texNombreDocumentoIdenti.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNombreDocumentoIdenti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textNombreDocumentoIdenti.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textNombreDocumentoIdenti.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textNombreDocumentoIdenti.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textNombreDocumentoIdenti.BorderThickness = 1;
+            this.textNombreDocumentoIdenti.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textNombreDocumentoIdenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombreDocumentoIdenti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textNombreDocumentoIdenti.isPassword = false;
+            this.textNombreDocumentoIdenti.Location = new System.Drawing.Point(19, 81);
+            this.textNombreDocumentoIdenti.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreDocumentoIdenti.Name = "textNombreDocumentoIdenti";
+            this.textNombreDocumentoIdenti.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textNombreDocumentoIdenti.Size = new System.Drawing.Size(330, 35);
+            this.textNombreDocumentoIdenti.TabIndex = 65;
+            this.textNombreDocumentoIdenti.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
             // 
@@ -169,24 +174,25 @@
             this.label1.TabIndex = 66;
             this.label1.Text = "Número de Dígitos";
             // 
-            // nDigitosDocumentoIdenti
+            // textDigitosDocumentoIdenti
             // 
-            this.nDigitosDocumentoIdenti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.nDigitosDocumentoIdenti.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.nDigitosDocumentoIdenti.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.nDigitosDocumentoIdenti.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.nDigitosDocumentoIdenti.BorderThickness = 1;
-            this.nDigitosDocumentoIdenti.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nDigitosDocumentoIdenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nDigitosDocumentoIdenti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nDigitosDocumentoIdenti.isPassword = false;
-            this.nDigitosDocumentoIdenti.Location = new System.Drawing.Point(19, 147);
-            this.nDigitosDocumentoIdenti.Margin = new System.Windows.Forms.Padding(4);
-            this.nDigitosDocumentoIdenti.Name = "nDigitosDocumentoIdenti";
-            this.nDigitosDocumentoIdenti.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.nDigitosDocumentoIdenti.Size = new System.Drawing.Size(330, 35);
-            this.nDigitosDocumentoIdenti.TabIndex = 67;
-            this.nDigitosDocumentoIdenti.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textDigitosDocumentoIdenti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textDigitosDocumentoIdenti.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textDigitosDocumentoIdenti.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textDigitosDocumentoIdenti.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textDigitosDocumentoIdenti.BorderThickness = 1;
+            this.textDigitosDocumentoIdenti.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textDigitosDocumentoIdenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDigitosDocumentoIdenti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textDigitosDocumentoIdenti.isPassword = false;
+            this.textDigitosDocumentoIdenti.Location = new System.Drawing.Point(19, 147);
+            this.textDigitosDocumentoIdenti.Margin = new System.Windows.Forms.Padding(4);
+            this.textDigitosDocumentoIdenti.Name = "textDigitosDocumentoIdenti";
+            this.textDigitosDocumentoIdenti.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textDigitosDocumentoIdenti.Size = new System.Drawing.Size(330, 35);
+            this.textDigitosDocumentoIdenti.TabIndex = 67;
+            this.textDigitosDocumentoIdenti.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textDigitosDocumentoIdenti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDigitosDocumentoIdenti_KeyPress);
             // 
             // label3
             // 
@@ -200,17 +206,17 @@
             this.label3.TabIndex = 87;
             this.label3.Text = "Activo *";
             // 
-            // chkActivoSucursal
+            // chkActivoDI
             // 
-            this.chkActivoSucursal.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkActivoSucursal.Checked = true;
-            this.chkActivoSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoSucursal.ForeColor = System.Drawing.Color.White;
-            this.chkActivoSucursal.Location = new System.Drawing.Point(19, 255);
-            this.chkActivoSucursal.Name = "chkActivoSucursal";
-            this.chkActivoSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoSucursal.TabIndex = 86;
+            this.chkActivoDI.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoDI.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkActivoDI.Checked = true;
+            this.chkActivoDI.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoDI.ForeColor = System.Drawing.Color.White;
+            this.chkActivoDI.Location = new System.Drawing.Point(19, 255);
+            this.chkActivoDI.Name = "chkActivoDI";
+            this.chkActivoDI.Size = new System.Drawing.Size(20, 20);
+            this.chkActivoDI.TabIndex = 86;
             // 
             // cbxTipoDocumento
             // 
@@ -218,6 +224,9 @@
             this.cbxTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoDocumento.FormattingEnabled = true;
+            this.cbxTipoDocumento.Items.AddRange(new object[] {
+            "Jurídico",
+            "Natural"});
             this.cbxTipoDocumento.Location = new System.Drawing.Point(19, 215);
             this.cbxTipoDocumento.Name = "cbxTipoDocumento";
             this.cbxTipoDocumento.Size = new System.Drawing.Size(330, 24);
@@ -236,29 +245,37 @@
             this.label11.TabIndex = 82;
             this.label11.Text = "Tipo Documento :";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormDocumentoIdetificaionNuevo
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(375, 342);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.chkActivoSucursal);
+            this.Controls.Add(this.chkActivoDI);
             this.Controls.Add(this.cbxTipoDocumento);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.nDigitosDocumentoIdenti);
+            this.Controls.Add(this.textDigitosDocumentoIdenti);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.texNombreDocumentoIdenti);
+            this.Controls.Add(this.textNombreDocumentoIdenti);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panel2);
             this.Name = "FormDocumentoIdetificaionNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocumentoIdetificaionNuevo";
+            this.Load += new System.EventHandler(this.FormDocumentoIdetificaionNuevo_Load);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,12 +290,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox texNombreDocumentoIdenti;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textNombreDocumentoIdenti;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox nDigitosDocumentoIdenti;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textDigitosDocumentoIdenti;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuCheckbox chkActivoSucursal;
+        private Bunifu.Framework.UI.BunifuCheckbox chkActivoDI;
         private System.Windows.Forms.ComboBox cbxTipoDocumento;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
