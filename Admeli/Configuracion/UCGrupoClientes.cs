@@ -335,6 +335,7 @@ namespace Admeli.Configuracion
 
             try
             {
+                loadState(true);
                 int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
                 currentGrupoCliente = new GrupoCliente(); //creando una instancia del objeto correspondiente
                 currentGrupoCliente.idGrupoCliente = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
@@ -354,6 +355,10 @@ namespace Admeli.Configuracion
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
             }
         }
         #endregion

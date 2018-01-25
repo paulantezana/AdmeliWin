@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -46,9 +47,11 @@
             this.chkPorcentualImpuesto = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label6 = new System.Windows.Forms.Label();
             this.chkActivo = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -85,9 +88,10 @@
             this.btnAceptar.Location = new System.Drawing.Point(58, 6);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(152, 36);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -103,9 +107,10 @@
             this.btnClose.Location = new System.Drawing.Point(230, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 36);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -139,7 +144,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 16);
-            this.label1.TabIndex = 84;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Nombre Impuesto";
             // 
             // textNombreImpuesto
@@ -158,7 +163,7 @@
             this.textNombreImpuesto.Name = "textNombreImpuesto";
             this.textNombreImpuesto.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textNombreImpuesto.Size = new System.Drawing.Size(330, 35);
-            this.textNombreImpuesto.TabIndex = 85;
+            this.textNombreImpuesto.TabIndex = 1;
             this.textNombreImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
@@ -170,7 +175,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 16);
-            this.label2.TabIndex = 88;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Siglas Impuesto";
             // 
             // textSiglasImpuesto
@@ -189,7 +194,7 @@
             this.textSiglasImpuesto.Name = "textSiglasImpuesto";
             this.textSiglasImpuesto.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textSiglasImpuesto.Size = new System.Drawing.Size(330, 35);
-            this.textSiglasImpuesto.TabIndex = 89;
+            this.textSiglasImpuesto.TabIndex = 3;
             this.textSiglasImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label3
@@ -201,7 +206,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 16);
-            this.label3.TabIndex = 90;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Valor Impuesto";
             // 
             // textValorImpuesto
@@ -220,8 +225,9 @@
             this.textValorImpuesto.Name = "textValorImpuesto";
             this.textValorImpuesto.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textValorImpuesto.Size = new System.Drawing.Size(330, 35);
-            this.textValorImpuesto.TabIndex = 91;
+            this.textValorImpuesto.TabIndex = 7;
             this.textValorImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textValorImpuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textValorImpuesto_KeyPress);
             // 
             // labelfc
             // 
@@ -232,7 +238,7 @@
             this.labelfc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelfc.Name = "labelfc";
             this.labelfc.Size = new System.Drawing.Size(76, 16);
-            this.labelfc.TabIndex = 95;
+            this.labelfc.TabIndex = 9;
             this.labelfc.Text = "Por Defecto";
             // 
             // chkDefaultImpuesto
@@ -245,7 +251,7 @@
             this.chkDefaultImpuesto.Location = new System.Drawing.Point(19, 298);
             this.chkDefaultImpuesto.Name = "chkDefaultImpuesto";
             this.chkDefaultImpuesto.Size = new System.Drawing.Size(20, 20);
-            this.chkDefaultImpuesto.TabIndex = 94;
+            this.chkDefaultImpuesto.TabIndex = 8;
             // 
             // label16
             // 
@@ -256,7 +262,7 @@
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(70, 16);
-            this.label16.TabIndex = 93;
+            this.label16.TabIndex = 5;
             this.label16.Text = "Porcentual";
             // 
             // chkPorcentualImpuesto
@@ -269,7 +275,7 @@
             this.chkPorcentualImpuesto.Location = new System.Drawing.Point(19, 190);
             this.chkPorcentualImpuesto.Name = "chkPorcentualImpuesto";
             this.chkPorcentualImpuesto.Size = new System.Drawing.Size(20, 20);
-            this.chkPorcentualImpuesto.TabIndex = 92;
+            this.chkPorcentualImpuesto.TabIndex = 4;
             // 
             // label6
             // 
@@ -280,7 +286,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 16);
-            this.label6.TabIndex = 97;
+            this.label6.TabIndex = 11;
             this.label6.Text = "Activo";
             // 
             // chkActivo
@@ -293,13 +299,19 @@
             this.chkActivo.Location = new System.Drawing.Point(19, 333);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(20, 20);
-            this.chkActivo.TabIndex = 96;
+            this.chkActivo.TabIndex = 10;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormImpuestoNuevo
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(379, 437);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.chkActivo);
@@ -322,6 +334,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +360,6 @@
         private Bunifu.Framework.UI.BunifuCheckbox chkPorcentualImpuesto;
         private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuCheckbox chkActivo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
