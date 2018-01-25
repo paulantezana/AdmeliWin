@@ -44,31 +44,31 @@
             this.cbxSucursal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxNivel4 = new System.Windows.Forms.ComboBox();
+            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel4 = new System.Windows.Forms.Label();
             this.cbxNivel3 = new System.Windows.Forms.ComboBox();
+            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel3 = new System.Windows.Forms.Label();
             this.cbxNivel2 = new System.Windows.Forms.ComboBox();
+            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel2 = new System.Windows.Forms.Label();
             this.cbxNivel1 = new System.Windows.Forms.ComboBox();
+            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel1 = new System.Windows.Forms.Label();
             this.cbxPaises = new System.Windows.Forms.ComboBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.textNombreAlmacen = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.textDirecionAlmacen = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -268,6 +268,10 @@
             this.cbxNivel4.ValueMember = "idNivel4";
             this.cbxNivel4.Visible = false;
             // 
+            // nivel4BindingSource
+            // 
+            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
+            // 
             // lblNivel4
             // 
             this.lblNivel4.AutoSize = true;
@@ -294,6 +298,11 @@
             this.cbxNivel3.TabIndex = 95;
             this.cbxNivel3.ValueMember = "idNivel3";
             this.cbxNivel3.Visible = false;
+            this.cbxNivel3.SelectedIndexChanged += new System.EventHandler(this.cbxNivel3_SelectedIndexChanged);
+            // 
+            // nivel3BindingSource
+            // 
+            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
             // 
             // lblNivel3
             // 
@@ -321,6 +330,11 @@
             this.cbxNivel2.TabIndex = 93;
             this.cbxNivel2.ValueMember = "idNivel2";
             this.cbxNivel2.Visible = false;
+            this.cbxNivel2.SelectedIndexChanged += new System.EventHandler(this.cbxNivel2_SelectedIndexChanged);
+            // 
+            // nivel2BindingSource
+            // 
+            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
             // 
             // lblNivel2
             // 
@@ -348,6 +362,11 @@
             this.cbxNivel1.TabIndex = 91;
             this.cbxNivel1.ValueMember = "idNivel1";
             this.cbxNivel1.Visible = false;
+            this.cbxNivel1.SelectedIndexChanged += new System.EventHandler(this.cbxNivel1_SelectedIndexChanged);
+            // 
+            // nivel1BindingSource
+            // 
+            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
             // 
             // lblNivel1
             // 
@@ -374,6 +393,11 @@
             this.cbxPaises.Size = new System.Drawing.Size(330, 24);
             this.cbxPaises.TabIndex = 89;
             this.cbxPaises.ValueMember = "idPais";
+            this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
             // 
             // label2
             // 
@@ -449,26 +473,6 @@
             this.textDirecionAlmacen.TabIndex = 87;
             this.textDirecionAlmacen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // nivel1BindingSource
-            // 
-            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
-            // 
-            // nivel2BindingSource
-            // 
-            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
-            // 
-            // nivel3BindingSource
-            // 
-            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
-            // 
-            // nivel4BindingSource
-            // 
-            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
-            // 
-            // paisBindingSource
-            // 
-            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
-            // 
             // FormAlmacenNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,10 +511,10 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

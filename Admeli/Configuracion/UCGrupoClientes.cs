@@ -18,9 +18,15 @@ namespace Admeli.Configuracion
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private List<GrupoCliente> grupoClientes { get; set; }
+        private GrupoCliente currentGrupoCliente { get; set; }
+
         private Paginacion paginacion;
         private GrupoClienteModel grupoClienteModel = new GrupoClienteModel();
 
+
+        #region ============================= Constructor =============================
         public UCGrupoClientes()
         {
             InitializeComponent();
@@ -40,50 +46,101 @@ namespace Admeli.Configuracion
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
 
             lisenerKeyEvents = true; // Active lisener key events
-        }
+        } 
+        #endregion
 
+        #region ============================= Root Load =============================
         private void UCGrupoClientes_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            reLoad();
+
+            // Escuchando los eventos del formulario padre
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
+        internal void reLoad()
+        {
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
+        } 
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
         #region =========================== Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idGrupoCliente = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentGrupoCliente = grupoClientes.Find(x => x.idGrupoCliente == idGrupoCliente); // Buscando la categoria en las lista de categorias
+                if (currentGrupoCliente.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
         }
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
-        {
-            // Cargando el combobox de personales
-            // loadState(true);
-            // Estado cargar en falso
-            // loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);
             try
             {
-                RootObject<GrupoCliente> grupoClientes = await grupoClienteModel.gclientes(paginacion.currentPage, paginacion.speed);
+                RootObject<GrupoCliente> grupoClientesRoot = await grupoClienteModel.gclientes(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = grupoClientes.nro_registros;
+                paginacion.itemsCount = grupoClientesRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                grupoClienteBindingSource.DataSource = grupoClientes.datos;
+                grupoClientes = grupoClientesRoot.datos;
+                grupoClienteBindingSource.DataSource = grupoClientes;
                 dataGridView.Refresh();
+
+                // Mostrar paginacion
                 mostrarPaginado();
+
+                // descoraciones
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -192,15 +249,112 @@ namespace Admeli.Configuracion
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormGrupoClienteNuevo clienteNuevo = new FormGrupoClienteNuevo();
-            clienteNuevo.ShowDialog();
+            executeNuevo();
         }
 
-        internal void reLoad()
+        private void btnModificar_Click(object sender, EventArgs e)
         {
+            executeModificar();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormGrupoClienteNuevo clienteNuevo = new FormGrupoClienteNuevo();
+            clienteNuevo.ShowDialog();
+            this.reLoad();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idGrupoCliente = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentGrupoCliente = grupoClientes.Find(x => x.idGrupoCliente == idGrupoCliente); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormGrupoClienteNuevo formGrupoCliente = new FormGrupoClienteNuevo(currentGrupoCliente);
+            formGrupoCliente.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
 
 
-            lisenerKeyEvents = true; // Active lisener key events
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentGrupoCliente = new GrupoCliente(); //creando una instancia del objeto categoria
+                currentGrupoCliente.idGrupoCliente = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await grupoClienteModel.eliminar(currentGrupoCliente); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentGrupoCliente = new GrupoCliente(); //creando una instancia del objeto correspondiente
+                currentGrupoCliente.idGrupoCliente = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (grupoClientes.Find(x => x.idGrupoCliente == currentGrupoCliente.idGrupoCliente).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                Response response = await grupoClienteModel.desactivar(currentGrupoCliente);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         #endregion
     }

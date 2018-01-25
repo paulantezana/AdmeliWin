@@ -16,9 +16,9 @@ namespace Admeli.Configuracion.Nuevo
     public partial class FormAlmacenNuevo : Form
     {
         private SucursalModel sucursalModel = new SucursalModel();
+        private LocationModel locationModel = new LocationModel();
 
         private List<LabelUbicacion> labelUbicaciones { get; set; }
-        private LocationModel locationModel { get; set; }
         private UbicacionGeografica ubicacionGeografica { get; set; }
 
         public FormAlmacenNuevo()
@@ -40,9 +40,10 @@ namespace Admeli.Configuracion.Nuevo
         } 
         #endregion
 
-        private async void cargarComponentes1()
+        #region ======================== Load Root ========================
+        private void FormAlmacenNuevo_Load(object sender, EventArgs e)
         {
-            cbxSucursal.DataSource = await sucursalModel.sucursalesProducto();
+            loadRootData();
         }
 
         private async void loadRootData()
@@ -50,6 +51,13 @@ namespace Admeli.Configuracion.Nuevo
             cargarComponentes1();
             await cargarPaises();
             crearNivelesPais();
+        }
+        #endregion
+
+        #region =========================== Load ===========================
+        private async void cargarComponentes1()
+        {
+            cbxSucursal.DataSource = await sucursalModel.sucursalesProducto();
         }
 
         private async Task cargarPaises()
@@ -60,7 +68,8 @@ namespace Admeli.Configuracion.Nuevo
             // cargando la ubicacion geografica por defecto
             ubicacionGeografica = await locationModel.ubicacionGeografica(ConfigModel.sucursal.idUbicacionGeografica);
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
-        }
+        } 
+        #endregion
 
         #region ================== Formando los niveles de cada pais ==================
         private async void crearNivelesPais()
@@ -245,9 +254,24 @@ namespace Admeli.Configuracion.Nuevo
         }
         #endregion
 
-        private void FormAlmacenNuevo_Load(object sender, EventArgs e)
+        private void cbxNivel1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadRootData();
+            cargarNivel2();
+        }
+
+        private void cbxNivel2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarNivel3();
+        }
+
+        private void cbxNivel3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarNivel4();
+        }
+
+        private void cbxPaises_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            crearNivelesPais();
         }
     }
 }
