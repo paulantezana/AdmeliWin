@@ -273,7 +273,7 @@ namespace Admeli.Configuracion.Nuevo
                 crearObjetoSucursal();
                 if (nuevo)
                 {
-                    Response response = await sucursalModel.guardar(currentSucursal);
+                    Response response = await sucursalModel.guardar(ubicacionGeografica, currentSucursal);
                     MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -299,23 +299,19 @@ namespace Admeli.Configuracion.Nuevo
             currentSucursal.direccion = textDirecionSucursal.Text;
             currentSucursal.tieneRegistros = "0";
 
-            switch (labelUbicaciones.Count)
-            {
-                case 1:
-                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel1.SelectedValue);
-                    break;
-                case 2:
-                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel2.SelectedValue);
-                    break;
-                case 3:
-                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel3.SelectedValue);
-                    break;
-                case 4:
-                    currentSucursal.idUbicacionGeografica = Convert.ToInt32(cbxNivel4.SelectedValue);
-                    break;
-                default:
-                    break;
-            }
+            // Cargando estados
+            currentSucursal.estados = "";
+            currentSucursal.estados = Convert.ToInt32(chkGerenciaSucursal.Checked) + ",";
+            currentSucursal.estados = Convert.ToInt32(chkAdministracionSucursal.Checked) + ",";
+            currentSucursal.estados = Convert.ToInt32(chkCajaSucursal.Checked) + ",";
+            currentSucursal.estados = Convert.ToInt32(chkVentaSucursal.Checked) + ",";
+            currentSucursal.estados = Convert.ToInt32(chkCompraSucursal.Checked).ToString();
+
+            // Ubicacion geografica
+            ubicacionGeografica.idPais = (cbxPaises.SelectedIndex == -1) ? ubicacionGeografica.idPais : Convert.ToInt32(cbxPaises.SelectedValue);
+            ubicacionGeografica.idNivel1 = (cbxNivel1.SelectedIndex == -1) ? ubicacionGeografica.idNivel1 : Convert.ToInt32(cbxNivel1.SelectedValue);
+            ubicacionGeografica.idNivel2 = (cbxNivel2.SelectedIndex == -1) ? ubicacionGeografica.idNivel2 : Convert.ToInt32(cbxNivel2.SelectedValue);
+            ubicacionGeografica.idNivel3 = (cbxNivel3.SelectedIndex == -1) ? ubicacionGeografica.idNivel3 : Convert.ToInt32(cbxNivel3.SelectedValue);
         }
 
         private bool validarCampos()

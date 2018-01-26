@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using Entidad.Location;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,17 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
+        private LocationModel locationModel = new LocationModel();
 
-        public async Task<Response> guardar(Sucursal param)
+
+        public async Task<Response> guardar(UbicacionGeografica ubicacionGeografica, Sucursal param)
         {
             try
             {
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                param.idUbicacionGeografica = res.id;
+
                 // localhost/admeli/xcore2/xcore/services.php/sucursal/guardar
                 return await webService.POSTSend("sucursal", "guardar", param);
             }
