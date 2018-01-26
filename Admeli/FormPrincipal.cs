@@ -117,7 +117,7 @@ namespace Admeli
 
                     break;
                 case "caja":
-                    if (this.uCVentasNav == null)
+                    if (this.uCCajaNav == null)
                     {
                         this.uCCajaNav = new Admeli.Navegacion.UCCajaNav(this);
                         this.panelAsideMain.Controls.Add(uCCajaNav);
@@ -137,7 +137,7 @@ namespace Admeli
                     }
                     break;
                 case "almacen":
-                    if (this.uCVentasNav == null)
+                    if (this.UCAlmacenNav == null)
                     {
                         this.UCAlmacenNav = new Admeli.Navegacion.UCAlmacenNav(this);
                         this.panelAsideMain.Controls.Add(UCAlmacenNav);
@@ -267,7 +267,7 @@ namespace Admeli
 
                     break;
                 case "compras":
-                    if (this.uCVentas == null)
+                    if (this.uCCompras == null)
                     {
                         this.uCCompras = new Admeli.Compras.UCCompras(this);
                         this.panelMain.Controls.Add(uCCompras);
@@ -284,7 +284,7 @@ namespace Admeli
 
                     break;
                 case "productos":
-                    if (this.uCVentas == null)
+                    if (this.uCListadoProducto == null)
                     {
                         this.uCListadoProducto = new Admeli.Productos.UCListadoProducto(this);
                         this.panelMain.Controls.Add(uCListadoProducto);

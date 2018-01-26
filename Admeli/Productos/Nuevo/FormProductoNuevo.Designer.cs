@@ -61,7 +61,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 70, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(60, 745);
+            this.panel1.Size = new System.Drawing.Size(60, 568);
             this.panel1.TabIndex = 6;
             // 
             // btnWeb
@@ -177,7 +177,7 @@
             this.panelMainNP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainNP.Location = new System.Drawing.Point(60, 0);
             this.panelMainNP.Name = "panelMainNP";
-            this.panelMainNP.Size = new System.Drawing.Size(1036, 745);
+            this.panelMainNP.Size = new System.Drawing.Size(1036, 568);
             this.panelMainNP.TabIndex = 7;
             // 
             // FormProductoNuevo
@@ -185,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1096, 745);
+            this.ClientSize = new System.Drawing.Size(1096, 568);
             this.Controls.Add(this.panelMainNP);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
