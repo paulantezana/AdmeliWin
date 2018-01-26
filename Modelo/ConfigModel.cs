@@ -1,5 +1,6 @@
 ﻿using Entidad;
 using Entidad.Configuracion;
+using Entidad.Location;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace Modelo
 {
     public class ConfigModel
     {
+
+        private LocationModel locationModel = new LocationModel();
         private WebService webService = new WebService();
 
         public static DatosGenerales datosGenerales { get; set; }
@@ -41,9 +44,33 @@ namespace Modelo
         public static int currentPuntoVenta { get; set; }
         public static Dictionary<string, int> currentProductoCategory = new Dictionary<string, int>();
 
-        public void guardar()
+        public async Task<Response> guardarDatosGenerales(UbicacionGeografica ubicacionGeografica, DatosGenerales datosGenerales)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/datosgenerales/modificar
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                datosGenerales.idUbicacionGeografica = res.id;
+                
+                return await webService.POSTSend("datosgenerales", "modificar", datosGenerales);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public async Task<Response> guardarConfigGeneral(ConfiguracionGeneral configGeneral)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/configuraciongeneral/modificar
+                return await webService.POSTSend("configuraciongeneral", "modificar", configGeneral);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void modificar()

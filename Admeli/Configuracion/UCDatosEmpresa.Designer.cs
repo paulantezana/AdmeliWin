@@ -49,18 +49,23 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.cbxPaises = new System.Windows.Forms.ComboBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblNivel1 = new System.Windows.Forms.Label();
             this.cbxNivel1 = new System.Windows.Forms.ComboBox();
+            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblNivel2 = new System.Windows.Forms.Label();
             this.cbxNivel2 = new System.Windows.Forms.ComboBox();
+            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblNivel3 = new System.Windows.Forms.Label();
             this.cbxNivel3 = new System.Windows.Forms.ComboBox();
+            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblNivel4 = new System.Windows.Forms.Label();
             this.cbxNivel4 = new System.Windows.Forms.ComboBox();
+            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel11 = new System.Windows.Forms.Panel();
             this.textDireccion = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label6 = new System.Windows.Forms.Label();
@@ -85,11 +90,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelFooter.SuspendLayout();
@@ -100,10 +100,15 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.tabConfiguraciones.SuspendLayout();
@@ -113,11 +118,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHeaderItem1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -180,6 +180,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // tabControl1
             // 
@@ -370,6 +371,10 @@
             this.cbxPaises.ValueMember = "idPais";
             this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
             // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.lblNivel1);
@@ -408,6 +413,10 @@
             this.cbxNivel1.ValueMember = "idNivel1";
             this.cbxNivel1.Visible = false;
             this.cbxNivel1.SelectedIndexChanged += new System.EventHandler(this.cbxNivel1_SelectedIndexChanged);
+            // 
+            // nivel1BindingSource
+            // 
+            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
             // 
             // panel8
             // 
@@ -448,6 +457,10 @@
             this.cbxNivel2.Visible = false;
             this.cbxNivel2.SelectedIndexChanged += new System.EventHandler(this.cbxNivel2_SelectedIndexChanged);
             // 
+            // nivel2BindingSource
+            // 
+            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.lblNivel3);
@@ -487,6 +500,10 @@
             this.cbxNivel3.Visible = false;
             this.cbxNivel3.SelectedIndexChanged += new System.EventHandler(this.cbxNivel3_SelectedIndexChanged);
             // 
+            // nivel3BindingSource
+            // 
+            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.lblNivel4);
@@ -524,6 +541,10 @@
             this.cbxNivel4.TabIndex = 99;
             this.cbxNivel4.ValueMember = "idNivel4";
             this.cbxNivel4.Visible = false;
+            // 
+            // nivel4BindingSource
+            // 
+            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
             // 
             // panel11
             // 
@@ -831,26 +852,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DATOS EMPRESA";
             // 
-            // paisBindingSource
-            // 
-            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
-            // 
-            // nivel1BindingSource
-            // 
-            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
-            // 
-            // nivel2BindingSource
-            // 
-            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
-            // 
-            // nivel3BindingSource
-            // 
-            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
-            // 
-            // nivel4BindingSource
-            // 
-            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
-            // 
             // UCDatosEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -874,14 +875,19 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -898,11 +904,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

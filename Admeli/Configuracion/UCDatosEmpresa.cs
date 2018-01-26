@@ -34,6 +34,16 @@ namespace Admeli.Configuracion
             reLoad();
         }
 
+        private async Task cargarPaises()
+        {
+            // cargando los paises
+            paisBindingSource.DataSource = await locationModel.paises();
+
+            // cargando la ubicacion geografica por defecto
+            ubicacionGeografica = await locationModel.ubicacionGeografica(ConfigModel.sucursal.idUbicacionGeografica);
+            cbxPaises.SelectedValue = ubicacionGeografica.idPais;
+        }
+
         internal async void reLoad()
         {
             await cargarPaises();
@@ -65,16 +75,6 @@ namespace Admeli.Configuracion
         }
         #endregion
 
-        private async Task cargarPaises()
-        {
-            // cargando los paises
-            paisBindingSource.DataSource = await locationModel.paises();
-
-            // cargando la ubicacion geografica por defecto
-            ubicacionGeografica = await locationModel.ubicacionGeografica(ConfigModel.sucursal.idUbicacionGeografica);
-            cbxPaises.SelectedValue = ubicacionGeografica.idPais;
-        }
-
         #region ================== Formando los niveles de cada pais ==================
         private async void crearNivelesPais()
         {
@@ -89,7 +89,6 @@ namespace Admeli.Configuracion
                 {
                     lblNivel1.Visible = true;
                     lblNivel1.Text = labelUbicaciones[0].denominacion;
-
                     cbxNivel1.Visible = true;
                 }
 
@@ -97,7 +96,6 @@ namespace Admeli.Configuracion
                 {
                     lblNivel2.Visible = true;
                     lblNivel2.Text = labelUbicaciones[1].denominacion;
-
                     cbxNivel2.Visible = true;
                 }
 
@@ -105,7 +103,6 @@ namespace Admeli.Configuracion
                 {
                     lblNivel3.Visible = true;
                     lblNivel3.Text = labelUbicaciones[2].denominacion;
-
                     cbxNivel3.Visible = true;
                 }
 
@@ -113,13 +110,11 @@ namespace Admeli.Configuracion
                 {
                     lblNivel4.Visible = true;
                     lblNivel4.Text = labelUbicaciones[3].denominacion;
-
                     cbxNivel4.Visible = true;
                 }
 
                 // Cargar el primer nivel de la localizacion
                 cargarNivel1();
-
             }
             catch (Exception)
             {
@@ -211,7 +206,7 @@ namespace Admeli.Configuracion
         private async void cargarNivel3()
         {
             try
-            {
+            { 
                 if (labelUbicaciones.Count < 3) return;
                 loadStateApp(true);
                 nivel3BindingSource.DataSource = await locationModel.nivel3(Convert.ToInt32(cbxNivel2.SelectedValue));
@@ -312,7 +307,7 @@ namespace Admeli.Configuracion
         }
         #endregion
 
-        #region ===================== Eventos Para carcar paise y niveles =====================
+        #region ===================== Eventos Para cargar paise y niveles =====================
         private void cbxPaises_SelectedIndexChanged(object sender, EventArgs e)
         {
             crearNivelesPais();
@@ -331,6 +326,52 @@ namespace Admeli.Configuracion
         private void cbxNivel3_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarNivel4();
+        }
+        #endregion
+
+        #region ============================ Guardar ============================
+        private void actualizarObejeto()
+        {
+            // Actualizando los datos generales
+            datosGenerales.razonSocial = textNombreEmpresa.Text;
+            datosGenerales.ruc = textNumeroIdentificacion.Text;
+            datosGenerales.email = textEmail.Text;
+            datosGenerales.direccion = textDireccion.Text;
+            datosGenerales.cuentaBancaria = textFormaDePago.Text;
+
+            // Actualizando las configuraciones generales
+            configuracionGeneral.numeroDecimales = Convert.ToInt32(textNumeroDigitos.Text);
+            configuracionGeneral.itemPorPagina = Convert.ToInt32(textItemPagina.Text);
+            configuracionGeneral.porcentajeUtilidad = textPorcentajeUtilidad.Text;
+            configuracionGeneral.arquearMarcador = chkArquearMarcador.Checked;
+
+            // Ubicacion geografica
+            ubicacionGeografica.idPais = (cbxPaises.SelectedIndex == -1) ? ubicacionGeografica.idPais : Convert.ToInt32(cbxPaises.SelectedValue);
+            ubicacionGeografica.idNivel1 = (cbxNivel1.SelectedIndex == -1) ? ubicacionGeografica.idNivel1 : Convert.ToInt32(cbxNivel1.SelectedValue);
+            ubicacionGeografica.idNivel2 = (cbxNivel2.SelectedIndex == -1) ? ubicacionGeografica.idNivel2 : Convert.ToInt32(cbxNivel2.SelectedValue);
+            ubicacionGeografica.idNivel3 = (cbxNivel3.SelectedIndex == -1) ? ubicacionGeografica.idNivel3 : Convert.ToInt32(cbxNivel3.SelectedValue);
+        }
+
+        private bool validarCampos()
+        {
+            return true;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (validarCampos())
+            {
+                executeGuardar();
+            }
+        }
+
+        private async void executeGuardar()
+        {
+            loadStateApp(true);
+            actualizarObejeto();
+            await configModel.guardarConfigGeneral(configuracionGeneral);
+            await configModel.guardarDatosGenerales(ubicacionGeografica, datosGenerales);
+            loadStateApp(false);
         }
         #endregion
 

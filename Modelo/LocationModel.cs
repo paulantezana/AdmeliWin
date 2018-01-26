@@ -1,4 +1,5 @@
-﻿using Entidad.Location;
+﻿using Entidad;
+using Entidad.Location;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,18 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardarUbigeo(UbicacionGeografica param)
         {
-
+            try
+            {
+                // www.admeli.com/demo2/services.php/ubigeo
+                Response response = await webService.POSTSend<UbicacionGeografica>("ubigeo",param);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void modificar()
