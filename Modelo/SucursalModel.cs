@@ -32,10 +32,14 @@ namespace Modelo
                 throw ex;
             }
         }
-        public async Task<Response> modificar(Sucursal param)
+        public async Task<Response> modificar(UbicacionGeografica ubicacionGeografica, Sucursal param)
         {
             try
             {
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                param.idUbicacionGeografica = res.id;
+
                 // localhost/admeli/xcore2/xcore/services.php/sucursal/modificar
                 return await webService.POSTSend("sucursal", "modificar", param);
             }

@@ -222,9 +222,9 @@
             // 
             // chkPrincipalSucursal
             // 
-            this.chkPrincipalSucursal.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkPrincipalSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.chkPrincipalSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkPrincipalSucursal.Checked = true;
+            this.chkPrincipalSucursal.Checked = false;
             this.chkPrincipalSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.chkPrincipalSucursal.ForeColor = System.Drawing.Color.White;
             this.chkPrincipalSucursal.Location = new System.Drawing.Point(24, 446);

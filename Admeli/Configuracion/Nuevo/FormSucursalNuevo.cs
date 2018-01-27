@@ -1,5 +1,6 @@
 ﻿using Admeli.Componentes;
 using Entidad;
+using Entidad.Configuracion;
 using Entidad.Location;
 using Modelo;
 using System;
@@ -16,15 +17,20 @@ namespace Admeli.Configuracion.Nuevo
 {
     public partial class FormSucursalNuevo : Form
     {
-
         private LocationModel locationModel = new LocationModel();
         private SucursalModel sucursalModel = new SucursalModel();
+        private PuntoModel puntoModel = new PuntoModel();
 
         private List<LabelUbicacion> labelUbicaciones { get; set; }
         private UbicacionGeografica ubicacionGeografica { get; set; }
 
-        private Pais currentPais { get; set; }
-        private int currentIDPais { get; set; }
+        private PuntoAdministracion puntoAdministracion { get; set; }
+        private PuntoCompra puntoCompra { get; set; }
+        private List<PuntoDeVenta> puntosDeVenta { get; set; }
+        private List<Caja> cajas { get; set; }
+        private PuntoGerencia puntoGerencia { get; set; }
+
+        private int currentIDSucursal { get; set; }
         private bool nuevo { get; set; }
         private Sucursal currentSucursal { get; set; }
 
@@ -38,8 +44,9 @@ namespace Admeli.Configuracion.Nuevo
         public FormSucursalNuevo(Sucursal currentSucursal)
         {
             InitializeComponent();
-            this.mostrarDatosModificar();
             this.currentSucursal = currentSucursal;
+            this.currentIDSucursal = currentSucursal.idSucursal;
+            this.mostrarDatosModificar();
             this.nuevo = false;
         }
         #endregion
@@ -55,19 +62,47 @@ namespace Admeli.Configuracion.Nuevo
         {
             DrawShape drawShape = new DrawShape();
             drawShape.topLine(panelFooter);
-        } 
+        }
         #endregion
 
-        private async void mostrarDatosModificar()
+        #region ========================== Load ==========================
+        private void mostrarDatosModificar()
         {
             textNombreSucursal.Text = currentSucursal.nombre;
+            textDirecionSucursal.Text = currentSucursal.direccion;
             chkPrincipalSucursal.Checked = currentSucursal.principal;
             chkActivoSucursal.Checked = Convert.ToBoolean(currentSucursal.estado);
 
-            ubicacionGeografica = await locationModel.ubigeoActual(currentSucursal.idUbicacionGeografica);
+            /*loadPuntoAdministracion();
+            loadPuntoCompra();
+            loadPuntoVenta();
+            loadCajas();
+            loadPuntoGerencia();*/
         }
 
-        private  void FormSucursalNuevo_Load(object sender, EventArgs e)
+        /*
+        private async void loadPuntoAdministracion(){
+            puntoAdministracion = await puntoModel.puntoAdministracion(currentSucursal.idSucursal);
+            chkAdministracionSucursal.Checked = Convert.ToBoolean(puntoAdministracion.estado);
+        }
+        private async void loadPuntoCompra() {
+            puntoCompra = await puntoModel.puntoCompra(currentSucursal.idSucursal);
+            chkCompraSucursal.Checked = Convert.ToBoolean(puntoCompra.estado);
+        }
+        private async void loadPuntoVenta() {
+            puntosDeVenta = await puntoModel.puntoVentas(currentSucursal.idSucursal);
+            chkVentaSucursal.Checked = Convert.ToBoolean((puntosDeVenta.Count > 0) ? puntosDeVenta[0].estado : 0);
+        }
+        private async void loadCajas() {
+            cajas = await puntoModel.cajas(currentSucursal.idSucursal);
+            chkCajaSucursal.Checked = Convert.ToBoolean(cajas[0].estado);
+        }
+        private async void loadPuntoGerencia() {
+            puntoGerencia = await puntoModel.puntoGerencia(currentSucursal.idSucursal);
+            chkGerenciaSucursal.Checked = Convert.ToBoolean(puntoGerencia.estado);
+        }*/
+
+        private void FormSucursalNuevo_Load(object sender, EventArgs e)
         {
             loadRootData();
         }
@@ -84,9 +119,17 @@ namespace Admeli.Configuracion.Nuevo
             paisBindingSource.DataSource = await locationModel.paises();
 
             // cargando la ubicacion geografica por defecto
-            ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.sucursal.idUbicacionGeografica);
+            if (nuevo)
+            {
+                ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.sucursal.idUbicacionGeografica);
+            }
+            else
+            {
+                ubicacionGeografica = await locationModel.ubigeoActual(currentSucursal.idUbicacionGeografica);
+            }
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
-        }
+        } 
+        #endregion
 
         #region ================== Formando los niveles de cada pais ==================
         private async void crearNivelesPais()
@@ -170,7 +213,15 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 1) return;
                 loadStateApp(true);        
                 nivel1BindingSource.DataSource = await locationModel.nivel1(Convert.ToInt32(cbxPaises.SelectedValue));
-                cbxNivel1.SelectedIndex = -1;
+                // seleccionando el valor por defecto
+                if (ubicacionGeografica.idNivel1 > 0)
+                {
+                    cbxNivel1.SelectedValue = ubicacionGeografica.idNivel1;
+                }
+                else
+                {
+                    cbxNivel1.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
@@ -189,12 +240,14 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 2) return;
                 loadStateApp(true);
                 nivel2BindingSource.DataSource = await locationModel.nivel2(Convert.ToInt32(cbxNivel1.SelectedValue));
-                /*if (true)
+                if (ubicacionGeografica.idNivel2 > 0)
                 {
-
-                }*/
-
-                cbxNivel2.SelectedIndex = -1;
+                    cbxNivel2.SelectedValue = ubicacionGeografica.idNivel2;
+                }
+                else
+                {
+                    cbxNivel2.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
@@ -213,7 +266,14 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 3) return;
                 loadStateApp(true);
                 nivel3BindingSource.DataSource = await locationModel.nivel3(Convert.ToInt32(cbxNivel2.SelectedValue));
-                cbxNivel3.SelectedIndex = -1;
+                if (ubicacionGeografica.idNivel3 > 0)
+                {
+                    cbxNivel3.SelectedValue = ubicacionGeografica.idNivel3;
+                }
+                else
+                {
+                    cbxNivel3.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
@@ -232,6 +292,14 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 4) return;
                 loadStateApp(true);
                 nivel4BindingSource.DataSource = await locationModel.nivel4(Convert.ToInt32(cbxNivel3.SelectedValue));
+                /*if (ubicacionGeografica.idNivel4 > 0)
+                {
+                    cbxNivel4.SelectedValue = ubicacionGeografica.idNivel4;
+                }
+                else
+                {
+                    cbxNivel4.SelectedIndex = -1;
+                }*/
                 cbxNivel4.SelectedIndex = -1;
             }
             catch (Exception ex)
@@ -315,7 +383,7 @@ namespace Admeli.Configuracion.Nuevo
                 }
                 else
                 {
-                    Response response = await sucursalModel.modificar(currentSucursal);
+                    Response response = await sucursalModel.modificar(ubicacionGeografica, currentSucursal);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Close();
@@ -329,6 +397,8 @@ namespace Admeli.Configuracion.Nuevo
         private void crearObjetoSucursal()
         {
             currentSucursal = new Sucursal();
+
+            if (!nuevo) currentSucursal.idSucursal = currentIDSucursal; // Llenar el id categoria cuando este en esdo modificar
 
             currentSucursal.nombre = textNombreSucursal.Text;
             currentSucursal.principal = chkPrincipalSucursal.Checked;
