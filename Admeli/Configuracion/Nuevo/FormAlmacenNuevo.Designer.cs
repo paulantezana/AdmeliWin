@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlmacenNuevo));
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSucursalNuevo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.chkActivoSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkActivoAlmacen = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label16 = new System.Windows.Forms.Label();
-            this.chkPrincipalSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkPrincipalAlmacen = new Bunifu.Framework.UI.BunifuCheckbox();
             this.cbxSucursal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxNivel4 = new System.Windows.Forms.ComboBox();
@@ -62,14 +63,18 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.textDirecionAlmacen = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -109,6 +114,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -127,17 +133,18 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel2
+            // panelHeader
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(720, 42);
-            this.panel2.TabIndex = 30;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.panelHeader.Controls.Add(this.label4);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 3);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(720, 42);
+            this.panelHeader.TabIndex = 30;
+            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label4
             // 
@@ -165,22 +172,25 @@
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 83;
             // 
-            // button4
+            // btnSucursalNuevo
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(236, 80);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 24);
-            this.button4.TabIndex = 104;
-            this.button4.Text = "+";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSucursalNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnSucursalNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnSucursalNuevo.FlatAppearance.BorderSize = 0;
+            this.btnSucursalNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnSucursalNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnSucursalNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSucursalNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSucursalNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnSucursalNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursalNuevo.Image")));
+            this.btnSucursalNuevo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSucursalNuevo.Location = new System.Drawing.Point(236, 80);
+            this.btnSucursalNuevo.Name = "btnSucursalNuevo";
+            this.btnSucursalNuevo.Size = new System.Drawing.Size(40, 24);
+            this.btnSucursalNuevo.TabIndex = 104;
+            this.btnSucursalNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSucursalNuevo.UseVisualStyleBackColor = false;
+            this.btnSucursalNuevo.Click += new System.EventHandler(this.btnSucursalNuevo_Click);
             // 
             // label3
             // 
@@ -194,17 +204,17 @@
             this.label3.TabIndex = 103;
             this.label3.Text = "Activo *";
             // 
-            // chkActivoSucursal
+            // chkActivoAlmacen
             // 
-            this.chkActivoSucursal.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkActivoSucursal.Checked = true;
-            this.chkActivoSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoSucursal.ForeColor = System.Drawing.Color.White;
-            this.chkActivoSucursal.Location = new System.Drawing.Point(146, 192);
-            this.chkActivoSucursal.Name = "chkActivoSucursal";
-            this.chkActivoSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoSucursal.TabIndex = 102;
+            this.chkActivoAlmacen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoAlmacen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkActivoAlmacen.Checked = true;
+            this.chkActivoAlmacen.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoAlmacen.ForeColor = System.Drawing.Color.White;
+            this.chkActivoAlmacen.Location = new System.Drawing.Point(146, 192);
+            this.chkActivoAlmacen.Name = "chkActivoAlmacen";
+            this.chkActivoAlmacen.Size = new System.Drawing.Size(20, 20);
+            this.chkActivoAlmacen.TabIndex = 102;
             // 
             // label16
             // 
@@ -218,20 +228,21 @@
             this.label16.TabIndex = 101;
             this.label16.Text = "Principal";
             // 
-            // chkPrincipalSucursal
+            // chkPrincipalAlmacen
             // 
-            this.chkPrincipalSucursal.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkPrincipalSucursal.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkPrincipalSucursal.Checked = true;
-            this.chkPrincipalSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkPrincipalSucursal.ForeColor = System.Drawing.Color.White;
-            this.chkPrincipalSucursal.Location = new System.Drawing.Point(19, 190);
-            this.chkPrincipalSucursal.Name = "chkPrincipalSucursal";
-            this.chkPrincipalSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkPrincipalSucursal.TabIndex = 100;
+            this.chkPrincipalAlmacen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkPrincipalAlmacen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkPrincipalAlmacen.Checked = true;
+            this.chkPrincipalAlmacen.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkPrincipalAlmacen.ForeColor = System.Drawing.Color.White;
+            this.chkPrincipalAlmacen.Location = new System.Drawing.Point(19, 190);
+            this.chkPrincipalAlmacen.Name = "chkPrincipalAlmacen";
+            this.chkPrincipalAlmacen.Size = new System.Drawing.Size(20, 20);
+            this.chkPrincipalAlmacen.TabIndex = 100;
             // 
             // cbxSucursal
             // 
+            this.cbxSucursal.DataSource = this.sucursalBindingSource;
             this.cbxSucursal.DisplayMember = "nombre";
             this.cbxSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,7 +251,7 @@
             this.cbxSucursal.Name = "cbxSucursal";
             this.cbxSucursal.Size = new System.Drawing.Size(217, 24);
             this.cbxSucursal.TabIndex = 99;
-            this.cbxSucursal.ValueMember = "idPais";
+            this.cbxSucursal.ValueMember = "idSucursal";
             // 
             // label1
             // 
@@ -473,17 +484,25 @@
             this.textDirecionAlmacen.TabIndex = 87;
             this.textDirecionAlmacen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
+            // 
             // FormAlmacenNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(720, 406);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnSucursalNuevo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.chkActivoSucursal);
+            this.Controls.Add(this.chkActivoAlmacen);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.chkPrincipalSucursal);
+            this.Controls.Add(this.chkPrincipalAlmacen);
             this.Controls.Add(this.cbxSucursal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxNivel4);
@@ -501,7 +520,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textDirecionAlmacen);
             this.Controls.Add(this.panelFooter);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.progressBarApp);
             this.Name = "FormAlmacenNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -509,13 +528,15 @@
             this.Load += new System.EventHandler(this.FormAlmacenNuevo_Load);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,14 +548,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label label4;
         protected System.Windows.Forms.ProgressBar progressBarApp;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSucursalNuevo;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuCheckbox chkActivoSucursal;
+        private Bunifu.Framework.UI.BunifuCheckbox chkActivoAlmacen;
         private System.Windows.Forms.Label label16;
-        private Bunifu.Framework.UI.BunifuCheckbox chkPrincipalSucursal;
+        private Bunifu.Framework.UI.BunifuCheckbox chkPrincipalAlmacen;
         private System.Windows.Forms.ComboBox cbxSucursal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxNivel4;
@@ -556,5 +577,7 @@
         private System.Windows.Forms.BindingSource nivel2BindingSource;
         private System.Windows.Forms.BindingSource nivel1BindingSource;
         private System.Windows.Forms.BindingSource paisBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
     }
 }

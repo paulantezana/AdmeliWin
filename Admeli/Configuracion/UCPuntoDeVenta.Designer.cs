@@ -29,18 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCPuntoDeVenta));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.idPuntoVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventaWebDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntoDeVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
@@ -65,6 +58,13 @@
             this.btnConsultar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.idPuntoVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventaWebDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -83,7 +83,7 @@
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(8, 8);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
             this.panelContainer.Size = new System.Drawing.Size(921, 481);
@@ -96,7 +96,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 87);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(919, 363);
             this.panel1.TabIndex = 16;
             // 
@@ -110,14 +110,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPuntoVentaDataGridViewTextBoxColumn,
@@ -132,7 +132,7 @@
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridView.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -140,73 +140,6 @@
             this.dataGridView.Size = new System.Drawing.Size(899, 343);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
-            // 
-            // idPuntoVentaDataGridViewTextBoxColumn
-            // 
-            this.idPuntoVentaDataGridViewTextBoxColumn.DataPropertyName = "idPuntoVenta";
-            this.idPuntoVentaDataGridViewTextBoxColumn.HeaderText = "idPuntoVenta";
-            this.idPuntoVentaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idPuntoVentaDataGridViewTextBoxColumn.Name = "idPuntoVentaDataGridViewTextBoxColumn";
-            this.idPuntoVentaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPuntoVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idPuntoVentaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ventaWebDataGridViewCheckBoxColumn
-            // 
-            this.ventaWebDataGridViewCheckBoxColumn.DataPropertyName = "ventaWeb";
-            this.ventaWebDataGridViewCheckBoxColumn.HeaderText = "ventaWeb";
-            this.ventaWebDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.ventaWebDataGridViewCheckBoxColumn.Name = "ventaWebDataGridViewCheckBoxColumn";
-            this.ventaWebDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.ventaWebDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idSucursalDataGridViewTextBoxColumn
-            // 
-            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
-            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sucursalDataGridViewTextBoxColumn
-            // 
-            this.sucursalDataGridViewTextBoxColumn.DataPropertyName = "sucursal";
-            this.sucursalDataGridViewTextBoxColumn.HeaderText = "sucursal";
-            this.sucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.sucursalDataGridViewTextBoxColumn.Name = "sucursalDataGridViewTextBoxColumn";
-            this.sucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idAsignarPuntoVentaDataGridViewTextBoxColumn
-            // 
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.DataPropertyName = "idAsignarPuntoVenta";
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.HeaderText = "idAsignarPuntoVenta";
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.Name = "idAsignarPuntoVentaDataGridViewTextBoxColumn";
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.Visible = false;
             // 
             // puntoDeVentaBindingSource
             // 
@@ -461,7 +394,7 @@
             this.panelHeaderItem1.Controls.Add(this.label1);
             this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
             this.panelHeaderItem1.Size = new System.Drawing.Size(919, 41);
             this.panelHeaderItem1.TabIndex = 0;
@@ -477,14 +410,81 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "MANTENIMIENTO PUNTO DE VENTA";
             // 
+            // idPuntoVentaDataGridViewTextBoxColumn
+            // 
+            this.idPuntoVentaDataGridViewTextBoxColumn.DataPropertyName = "idPuntoVenta";
+            this.idPuntoVentaDataGridViewTextBoxColumn.HeaderText = "idPuntoVenta";
+            this.idPuntoVentaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idPuntoVentaDataGridViewTextBoxColumn.Name = "idPuntoVentaDataGridViewTextBoxColumn";
+            this.idPuntoVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPuntoVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idPuntoVentaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ventaWebDataGridViewCheckBoxColumn
+            // 
+            this.ventaWebDataGridViewCheckBoxColumn.DataPropertyName = "ventaWeb";
+            this.ventaWebDataGridViewCheckBoxColumn.HeaderText = "Venta Web";
+            this.ventaWebDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.ventaWebDataGridViewCheckBoxColumn.Name = "ventaWebDataGridViewCheckBoxColumn";
+            this.ventaWebDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.ventaWebDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sucursalDataGridViewTextBoxColumn
+            // 
+            this.sucursalDataGridViewTextBoxColumn.DataPropertyName = "sucursal";
+            this.sucursalDataGridViewTextBoxColumn.HeaderText = "Sucursal";
+            this.sucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.sucursalDataGridViewTextBoxColumn.Name = "sucursalDataGridViewTextBoxColumn";
+            this.sucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // idAsignarPuntoVentaDataGridViewTextBoxColumn
+            // 
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.DataPropertyName = "idAsignarPuntoVenta";
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.HeaderText = "idAsignarPuntoVenta";
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.Name = "idAsignarPuntoVentaDataGridViewTextBoxColumn";
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idAsignarPuntoVentaDataGridViewTextBoxColumn.Visible = false;
+            // 
             // UCPuntoDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCPuntoDeVenta";
-            this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Padding = new System.Windows.Forms.Padding(8);
             this.Size = new System.Drawing.Size(937, 497);
             this.Load += new System.EventHandler(this.UCPuntoDeVenta_Load);
             this.panelContainer.ResumeLayout(false);

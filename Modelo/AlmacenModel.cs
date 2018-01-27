@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using Entidad.Location;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,17 @@ namespace Modelo
     public class AlmacenModel
     {
         private WebService webService = new WebService();
+        private LocationModel locationModel = new LocationModel();
 
-        public async Task<Response> guardar(Almacen param)
+        public async Task<Response> guardar(UbicacionGeografica ubicacionGeografica, Almacen param)
         {
             try
             {
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                param.idUbicacionGeografica = res.id;
+
+
                 // localhost:8080/admeli/xcore2/xcore/services.php/almacen/guardar
                 return await webService.POSTSend("almacen", "guardar", param);
             }
@@ -25,10 +32,14 @@ namespace Modelo
             }
         }
 
-        public async Task<Response> modificar(Almacen param)
+        public async Task<Response> modificar(UbicacionGeografica ubicacionGeografica, Almacen param)
         {
             try
             {
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                param.idUbicacionGeografica = res.id;
+
                 // localhost:8080/admeli/xcore2/xcore/services.php/almacen/modificar
                 return await webService.POSTSend("almacen", "modificar", param);
             }

@@ -170,7 +170,7 @@ namespace Admeli.Configuracion
                 int sucursaId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
 
-                RootObject<PuntoDeVenta> puntoVentaRoot = await puntoVentaModel.puntoventas(ConfigModel.sucursal.idSucursal, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<PuntoDeVenta> puntoVentaRoot = await puntoVentaModel.puntoventas(sucursaId, estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = puntoVentaRoot.nro_registros;
@@ -311,7 +311,7 @@ namespace Admeli.Configuracion
         {
             FormPuntoVentaNuevo clienteNuevo = new FormPuntoVentaNuevo();
             clienteNuevo.ShowDialog();
-            this.reLoad();
+            cargarRegistros();
         }
 
         private void executeModificar()

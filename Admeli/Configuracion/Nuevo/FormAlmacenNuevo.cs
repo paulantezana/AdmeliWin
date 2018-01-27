@@ -1,4 +1,5 @@
 ﻿using Admeli.Componentes;
+using Entidad;
 using Entidad.Location;
 using Modelo;
 using System;
@@ -16,21 +17,45 @@ namespace Admeli.Configuracion.Nuevo
     public partial class FormAlmacenNuevo : Form
     {
         private SucursalModel sucursalModel = new SucursalModel();
+        private AlmacenModel almacenModel = new AlmacenModel();
         private LocationModel locationModel = new LocationModel();
 
         private List<LabelUbicacion> labelUbicaciones { get; set; }
         private UbicacionGeografica ubicacionGeografica { get; set; }
 
+        private int currentIDAlmacen { get; set; }
+        private bool nuevo { get; set; }
+        private Almacen currentAlmacen { get; set; }
+
+
         public FormAlmacenNuevo()
         {
             InitializeComponent();
+            this.nuevo = true;
+        }
+
+        public FormAlmacenNuevo(Almacen currentAlmacen)
+        {
+            InitializeComponent();
+            this.currentAlmacen = currentAlmacen;
+            this.currentIDAlmacen = currentAlmacen.idAlmacen;
+            this.nuevo = false;
+            mostrarDatosModificar();
+        }
+
+        private void mostrarDatosModificar()
+        {
+            textNombreAlmacen.Text = currentAlmacen.nombre;
+            textDirecionAlmacen.Text = currentAlmacen.direccion;
+            chkPrincipalAlmacen.Checked = currentAlmacen.principal;
+            chkActivoAlmacen.Checked = currentAlmacen.principal;
         }
 
         #region ======================= Paint =======================
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panel2);
+            drawShape.bottomLine(panelHeader);
         }
 
         private void panelFooter_Paint(object sender, PaintEventArgs e)
@@ -57,7 +82,7 @@ namespace Admeli.Configuracion.Nuevo
         #region =========================== Load ===========================
         private async void cargarComponentes1()
         {
-            cbxSucursal.DataSource = await sucursalModel.sucursalesProducto();
+            sucursalBindingSource.DataSource = await sucursalModel.sucursalesProducto();
         }
 
         private async Task cargarPaises()
@@ -66,7 +91,14 @@ namespace Admeli.Configuracion.Nuevo
             paisBindingSource.DataSource = await locationModel.paises();
 
             // cargando la ubicacion geografica por defecto
-            ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.sucursal.idUbicacionGeografica);
+            if (nuevo)
+            {
+                ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.sucursal.idUbicacionGeografica);
+            }
+            else
+            {
+                ubicacionGeografica = await locationModel.ubigeoActual(currentAlmacen.idUbicacionGeografica);
+            }
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
         } 
         #endregion
@@ -153,7 +185,14 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 1) return;
                 loadStateApp(true);
                 nivel1BindingSource.DataSource = await locationModel.nivel1(Convert.ToInt32(cbxPaises.SelectedValue));
-                cbxNivel1.SelectedIndex = -1;
+                if (ubicacionGeografica.idNivel1 > 0)
+                {
+                    cbxNivel1.SelectedValue = ubicacionGeografica.idNivel1;
+                }
+                else
+                {
+                    cbxNivel1.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
@@ -173,7 +212,14 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 2) return;
                 loadStateApp(true);
                 nivel2BindingSource.DataSource = await locationModel.nivel2(Convert.ToInt32(cbxNivel1.SelectedValue));
-                cbxNivel2.SelectedIndex = -1;
+                if (ubicacionGeografica.idNivel2 > 0)
+                {
+                    cbxNivel2.SelectedValue = ubicacionGeografica.idNivel2;
+                }
+                else
+                {
+                    cbxNivel2.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
@@ -193,7 +239,14 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 3) return;
                 loadStateApp(true);
                 nivel3BindingSource.DataSource = await locationModel.nivel3(Convert.ToInt32(cbxNivel2.SelectedValue));
-                cbxNivel3.SelectedIndex = -1;
+                if (ubicacionGeografica.idNivel3 > 0)
+                {
+                    cbxNivel3.SelectedValue = ubicacionGeografica.idNivel3;
+                }
+                else
+                {
+                    cbxNivel3.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
@@ -213,6 +266,14 @@ namespace Admeli.Configuracion.Nuevo
                 loadStateApp(true);
                 nivel4BindingSource.DataSource = await locationModel.nivel4(Convert.ToInt32(cbxNivel3.SelectedValue));
                 cbxNivel4.SelectedIndex = -1;
+                /*if (ubicacionGeografica.idNivel4 > 0)
+                {
+                    cbxNivel4.SelectedValue = ubicacionGeografica.idNivel4;
+                }
+                else
+                {
+                    cbxNivel4.SelectedIndex = -1;
+                }*/
             }
             catch (Exception ex)
             {
@@ -254,6 +315,7 @@ namespace Admeli.Configuracion.Nuevo
         }
         #endregion
 
+        #region  ======================= Eventos cargar paises =======================
         private void cbxNivel1_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarNivel2();
@@ -272,6 +334,135 @@ namespace Admeli.Configuracion.Nuevo
         private void cbxPaises_SelectedIndexChanged(object sender, EventArgs e)
         {
             crearNivelesPais();
+        } 
+        #endregion
+
+        private void btnSucursalNuevo_Click(object sender, EventArgs e)
+        {
+            FormSucursalNuevo sucursalNuevo = new FormSucursalNuevo();
+            sucursalNuevo.ShowDialog();
+            cargarComponentes1();
         }
+
+        #region ========================== SAVE AND UPDATE ===========================
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            guardarSucursal();
+        }
+
+        private async void guardarSucursal()
+        {
+            if (!validarCampos()) return;
+            try
+            {
+                crearObjetoSucursal();
+                if (nuevo)
+                {
+                    Response response = await almacenModel.guardar(ubicacionGeografica, currentAlmacen);
+                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Response response = await almacenModel.modificar(ubicacionGeografica, currentAlmacen);
+                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void crearObjetoSucursal()
+        {
+            currentAlmacen = new Almacen();
+
+            if (!nuevo) currentAlmacen.idAlmacen = currentIDAlmacen; // Llenar el id categoria cuando este en esdo modificar
+
+            currentAlmacen.idSucursal = Convert.ToInt32(cbxSucursal.SelectedValue);
+            currentAlmacen.nombreSucursal = cbxSucursal.Text;
+            currentAlmacen.nombre = textNombreAlmacen.Text;
+            currentAlmacen.direccion = textDirecionAlmacen.Text;
+            currentAlmacen.principal = chkPrincipalAlmacen.Checked;
+            currentAlmacen.principal = chkActivoAlmacen.Checked;
+            currentAlmacen.tieneRegistros = "0";
+
+
+
+            // Ubicacion geografica
+            ubicacionGeografica.idPais = (cbxPaises.SelectedIndex == -1) ? ubicacionGeografica.idPais : Convert.ToInt32(cbxPaises.SelectedValue);
+            ubicacionGeografica.idNivel1 = (cbxNivel1.SelectedIndex == -1) ? ubicacionGeografica.idNivel1 : Convert.ToInt32(cbxNivel1.SelectedValue);
+            ubicacionGeografica.idNivel2 = (cbxNivel2.SelectedIndex == -1) ? ubicacionGeografica.idNivel2 : Convert.ToInt32(cbxNivel2.SelectedValue);
+            ubicacionGeografica.idNivel3 = (cbxNivel3.SelectedIndex == -1) ? ubicacionGeografica.idNivel3 : Convert.ToInt32(cbxNivel3.SelectedValue);
+        }
+
+        private bool validarCampos()
+        {
+            if (textNombreAlmacen.Text == "")
+            {
+                errorProvider1.SetError(textNombreAlmacen, "Este campo esta bacía");
+                textNombreAlmacen.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            switch (labelUbicaciones.Count)
+            {
+                case 1:
+                    if (cbxNivel1.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel1, "No se seleccionó ningún elemento");
+                        cbxNivel1.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                case 2:
+                    if (cbxNivel2.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel2, "No se seleccionó ningún elemento");
+                        cbxNivel2.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                case 3:
+                    if (cbxNivel3.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel3, "No se seleccionó ningún elemento");
+                        cbxNivel3.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                case 4:
+                    if (cbxNivel4.SelectedIndex == -1)
+                    {
+                        errorProvider1.SetError(cbxNivel4, "No se seleccionó ningún elemento");
+                        cbxNivel4.Focus();
+                        return false;
+                    }
+                    errorProvider1.Clear();
+                    break;
+                default:
+                    break;
+            }
+
+            if (textDirecionAlmacen.Text == "")
+            {
+                errorProvider1.SetError(textDirecionAlmacen, "Este campo esta bacía");
+                textDirecionAlmacen.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+            return true;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }

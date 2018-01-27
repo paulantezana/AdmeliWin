@@ -17,9 +17,13 @@ namespace Admeli.Configuracion
     public partial class UCAlmacenes : UserControl
     {
         private FormPrincipal formPrincipal;
+        public bool lisenerKeyEvents { get; set; }
+
+        private List<Almacen> almacenes { get; set; }
+        private Almacen currentAlmacen { get; set; }
+
         private Paginacion paginacion;
         private AlmacenModel almacenModel = new AlmacenModel();
-        public bool lisenerKeyEvents { get; set; }
 
         public UCAlmacenes()
         {
@@ -46,26 +50,58 @@ namespace Admeli.Configuracion
             cargarRegistros();
         }
 
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
+        #region =========================== Decoration ===========================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
 
-        #region =========================== Decoration ===========================
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idAlmacen = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentAlmacen = almacenes.Find(x => x.idAlmacen == idAlmacen); // Buscando la categoria en las lista de categorias
+                if (currentAlmacen.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
         }
         #endregion
 
         #region ======================= Loads =======================
-        private  void cargarComponentes()
+        private void cargarComponentes()
         {
             // Cargando el combobox ce estados
             
@@ -80,16 +116,22 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                RootObject<Almacen> almacenes = await almacenModel.almacenes(paginacion.currentPage, paginacion.speed);
+                RootObject<Almacen> almacenesRoot = await almacenModel.almacenes(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = almacenes.nro_registros;
+                paginacion.itemsCount = almacenesRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                almacenBindingSource.DataSource = almacenes.datos;
+                almacenes = almacenesRoot.datos;
+                almacenBindingSource.DataSource = almacenes;
                 dataGridView.Refresh();
+
+                // Mostrando la páginacion del datagridvew
                 mostrarPaginado();
+
+                // Formato de celdas en el datagridview
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -194,14 +236,134 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            executeNuevo();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            executeEliminar();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
             FormAlmacenNuevo almacenNuevo = new FormAlmacenNuevo();
             almacenNuevo.ShowDialog();
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idAlmacen = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentAlmacen = almacenes.Find(x => x.idAlmacen == idAlmacen); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormAlmacenNuevo formAlmacen = new FormAlmacenNuevo(currentAlmacen);
+            formAlmacen.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentAlmacen = new Almacen(); //creando una instancia del objeto categoria
+                currentAlmacen.idAlmacen = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await almacenModel.eliminar(currentAlmacen); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                loadState(true);
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentAlmacen = new Almacen(); //creando una instancia del objeto correspondiente
+                currentAlmacen.idAlmacen = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (almacenes.Find(x => x.idAlmacen == currentAlmacen.idAlmacen).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                Response response = await almacenModel.desactivar(currentAlmacen);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
         }
         #endregion
 
