@@ -104,12 +104,12 @@ namespace Modelo
             }
         }
 
-        public async Task<UbicacionGeografica> ubicacionGeografica(int idSucursal)
+        public async Task<UbicacionGeografica> ubigeoActual(int idUbicacionGeografica)
         {
             try
             {
                 // www.lineatienda.com/services.php/ubigeoAtrib/2
-                List<UbicacionGeografica> data = await webService.GETLis<UbicacionGeografica>("ubigeoAtrib",String.Format("{0}",idSucursal));
+                List<UbicacionGeografica> data = await webService.GETLis<UbicacionGeografica>("ubigeoAtrib",String.Format("{0}", idUbicacionGeografica));
                 return data[0];
             }
             catch (Exception ex)

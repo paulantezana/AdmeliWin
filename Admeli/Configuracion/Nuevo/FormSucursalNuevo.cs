@@ -26,13 +26,45 @@ namespace Admeli.Configuracion.Nuevo
         private Pais currentPais { get; set; }
         private int currentIDPais { get; set; }
         private bool nuevo { get; set; }
-
         private Sucursal currentSucursal { get; set; }
 
+        #region ========================= Constructor =========================
         public FormSucursalNuevo()
         {
             InitializeComponent();
-            nuevo = true;
+            this.nuevo = true;
+        }
+
+        public FormSucursalNuevo(Sucursal currentSucursal)
+        {
+            InitializeComponent();
+            this.mostrarDatosModificar();
+            this.currentSucursal = currentSucursal;
+            this.nuevo = false;
+        }
+        #endregion
+
+        #region ========================= Paint =========================
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.bottomLine(panel2);
+        }
+
+        private void panelFooter_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.topLine(panelFooter);
+        } 
+        #endregion
+
+        private async void mostrarDatosModificar()
+        {
+            textNombreSucursal.Text = currentSucursal.nombre;
+            chkPrincipalSucursal.Checked = currentSucursal.principal;
+            chkActivoSucursal.Checked = Convert.ToBoolean(currentSucursal.estado);
+
+            ubicacionGeografica = await locationModel.ubigeoActual(currentSucursal.idUbicacionGeografica);
         }
 
         private  void FormSucursalNuevo_Load(object sender, EventArgs e)
@@ -52,7 +84,7 @@ namespace Admeli.Configuracion.Nuevo
             paisBindingSource.DataSource = await locationModel.paises();
 
             // cargando la ubicacion geografica por defecto
-            ubicacionGeografica = await locationModel.ubicacionGeografica(ConfigModel.sucursal.idUbicacionGeografica);
+            ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.sucursal.idUbicacionGeografica);
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
         }
 
@@ -157,6 +189,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (labelUbicaciones.Count < 2) return;
                 loadStateApp(true);
                 nivel2BindingSource.DataSource = await locationModel.nivel2(Convert.ToInt32(cbxNivel1.SelectedValue));
+                /*if (true)
+                {
+
+                }*/
+
                 cbxNivel2.SelectedIndex = -1;
             }
             catch (Exception ex)
@@ -378,16 +415,5 @@ namespace Admeli.Configuracion.Nuevo
 
         #endregion
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panel2);
-        }
-
-        private void panelFooter_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.topLine(panelFooter);
-        }
     }
 }

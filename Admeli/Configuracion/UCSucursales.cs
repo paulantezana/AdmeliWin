@@ -18,9 +18,12 @@ namespace Admeli.Configuracion
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private Sucursal currentSucursal { get; set; }
+        private List<Sucursal> sucursales { get; set; }
+
         private Paginacion paginacion;
         private SucursalModel sucursalModel = new SucursalModel();
-        private List<Sucursal> sucursales { get; set; }
 
         #region =========================== Constructores ===========================
         public UCSucursales()
@@ -47,9 +50,15 @@ namespace Admeli.Configuracion
         #region ================ Root load ================
         private void UCSucursales_Load(object sender, EventArgs e)
         {
+            reLoad();
+        }
+
+        internal void reLoad()
+        {
             cargarRegistros();
             cargarComponentes();
         }
+
         #endregion
 
         #region ===================== Paint =====================
@@ -195,19 +204,135 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormSucursalNuevo sucursalNuevo = new FormSucursalNuevo();
-            sucursalNuevo.ShowDialog();
+            executeNuevo();
         }
 
-        internal void reLoad()
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            lisenerKeyEvents = true; // Active lisener key events
+            executeEliminar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormSucursalNuevo clienteNuevo = new FormSucursalNuevo();
+            clienteNuevo.ShowDialog();
+            this.reLoad();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idSucursal = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentSucursal = sucursales.Find(x => x.idSucursal == idSucursal); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormSucursalNuevo formPuntoVenta = new FormSucursalNuevo(currentSucursal);
+            formPuntoVenta.ShowDialog();
+            this.reLoad(); // Recargando los registros
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentSucursal = new Sucursal(); //creando una instancia del objeto categoria
+                currentSucursal.idSucursal = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await sucursalModel.eliminar(currentSucursal); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                loadState(true);
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentSucursal = new Sucursal(); //creando una instancia del objeto correspondiente
+                currentSucursal.idSucursal = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (sucursales.Find(x => x.idSucursal == currentSucursal.idSucursal).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                // Response response = await sucursalModel.anular(currentSucursal);
+                // MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
         }
         #endregion
     }

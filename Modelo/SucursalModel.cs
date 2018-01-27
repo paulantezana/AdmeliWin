@@ -44,9 +44,17 @@ namespace Modelo
                 throw ex;
             }
         }
-        public void eliminar()
+        public async Task<Response> eliminar(Sucursal param)
         {
-
+            try
+            {
+                // localhost/admeli/xcore2/xcore/services.php/sucursal/eliminar
+                return await webService.POSTSend("sucursal", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<List<Sucursal>> listarSucursalesActivos()

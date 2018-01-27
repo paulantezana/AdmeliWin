@@ -40,7 +40,7 @@ namespace Admeli.Configuracion
             paisBindingSource.DataSource = await locationModel.paises();
 
             // cargando la ubicacion geografica por defecto
-            ubicacionGeografica = await locationModel.ubicacionGeografica(ConfigModel.sucursal.idUbicacionGeografica);
+            ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.sucursal.idUbicacionGeografica);
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
         }
 
