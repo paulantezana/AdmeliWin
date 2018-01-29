@@ -13,18 +13,27 @@ namespace Admeli.Productos.Nuevo
 {
     public partial class FormProductoNuevo : Form
     {
+        #region =============================== User Control ===============================
         private UCAdicionalPD uCAdicionalPD { get; set; }
         private UCDescuentosPD uCDescuentosPD { get; set; }
         private UCGeneralesPD uCGeneralesPD { get; set; }
         private UCImpuestoPD uCImpuestoPD { get; set; }
         private UCStockPD uCStockPD { get; set; }
-        private UCTiendaOnlinePD uCTiendaOnlinePD { get; set; }
+        private UCTiendaOnlinePD uCTiendaOnlinePD { get; set; } 
+        #endregion
 
+        private int currentIDProducto { get; set; }
+        private bool nuevo { get; set; }
+
+        #region =============================== Constructor ===============================
         public FormProductoNuevo()
         {
             InitializeComponent();
-        }
+            this.nuevo = true;
+        } 
+        #endregion
 
+        #region =============================== TOGGLE Panels ===============================
         private void togglePanelMain(string panelName)
         {
             limpiarControles();
@@ -199,6 +208,8 @@ namespace Admeli.Productos.Nuevo
         {
             togglePanelMain("tiendaOnline");
             btnWeb.BackColor = Color.White;
-        }
+        } 
+        #endregion
+
     }
 }

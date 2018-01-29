@@ -77,5 +77,19 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Marca>> marcas(int estado = 1)
+        {
+            try
+            {
+                // www.admeli.com/demo2/services.php/marcas/id/nombre/estado/1
+                List<Marca> marcas = await webService.GETLis<Marca>("marcas", String.Format("id/nombre/estado/{0}", estado));
+                return marcas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

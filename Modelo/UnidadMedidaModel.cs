@@ -77,5 +77,19 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<UnidadMedida>> unimedidas(int estado = 1)
+        {
+            try
+            {
+                // www.admeli.com/demo2/services.php/unimedidas/id/nombre/estado/1
+                List<UnidadMedida> list = await webService.GETLis<UnidadMedida>("unimedidas", String.Format("id/nombre/estado/{0}", estado));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
