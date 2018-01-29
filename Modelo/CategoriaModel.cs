@@ -106,5 +106,19 @@ namespace Modelo
             }
         }
 
+        public async Task<CategoriaProducto> categoriaProducto(int idProducto = 0)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/cproducto/producto/0
+                CategoriaProducto catProducto = await webService.GETObject<CategoriaProducto>("cproducto", String.Format("producto/{0}",idProducto));
+                return catProducto;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

@@ -441,6 +441,12 @@
     <Compile Include="Productos\Nuevo\FormUnidadMedidaNuevo.Designer.cs">
       <DependentUpon>FormUnidadMedidaNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormElegirCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormElegirCategoria.Designer.cs">
+      <DependentUpon>FormElegirCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Nuevo\PDetalle\UCAdicionalPD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -742,6 +748,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\FormUnidadMedidaNuevo.resx">
       <DependentUpon>FormUnidadMedidaNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormElegirCategoria.resx">
+      <DependentUpon>FormElegirCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCAdicionalPD.resx">
       <DependentUpon>UCAdicionalPD.cs</DependentUpon>

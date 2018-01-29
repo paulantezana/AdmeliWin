@@ -137,6 +137,7 @@
             this.button2.TabIndex = 48;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -294,6 +295,7 @@
             this.textNombreCat.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.textNombreCat.BorderThickness = 1;
             this.textNombreCat.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textNombreCat.Enabled = false;
             this.textNombreCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNombreCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textNombreCat.isPassword = false;

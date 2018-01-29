@@ -75,5 +75,11 @@ namespace Admeli.Productos.Nuevo.PDetalle
             formUnidad.ShowDialog();
             this.cargarUnidadesMedida();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormElegirCategoria formElegir = new FormElegirCategoria();
+            formElegir.ShowDialog();
+        }
     }
 }

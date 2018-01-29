@@ -29,5 +29,8 @@ namespace Entidad
         public string tieneRegistros { get; set; }
 
 
+        public bool relacionPrincipal { get; set; }
+
+
     }
 }
