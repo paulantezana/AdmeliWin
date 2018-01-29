@@ -82,7 +82,7 @@ namespace Admeli.Configuracion.Nuevo
         #region =========================== Load ===========================
         private async void cargarComponentes1()
         {
-            sucursalBindingSource.DataSource = await sucursalModel.sucursalesProducto();
+            sucursalBindingSource.DataSource = await sucursalModel.sucursales();
         }
 
         private async Task cargarPaises()

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonalNuevo));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.textNombreCat = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -52,21 +54,44 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.bunifuMetroTextbox6 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label16 = new System.Windows.Forms.Label();
             this.chkActivoCat = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.principalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.cbxNivel3 = new System.Windows.Forms.ComboBox();
+            this.lblNivel3 = new System.Windows.Forms.Label();
+            this.cbxNivel2 = new System.Windows.Forms.ComboBox();
+            this.lblNivel2 = new System.Windows.Forms.Label();
+            this.cbxNivel1 = new System.Windows.Forms.ComboBox();
+            this.lblNivel1 = new System.Windows.Forms.Label();
+            this.cbxPaises = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.progressBarApp = new System.Windows.Forms.ProgressBar();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.panel2.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -74,7 +99,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(745, 42);
             this.panel2.TabIndex = 13;
@@ -311,7 +336,7 @@
             // 
             this.panelFooter.Controls.Add(this.panel1);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 690);
+            this.panelFooter.Location = new System.Drawing.Point(0, 617);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(745, 49);
@@ -399,94 +424,6 @@
             this.label10.TabIndex = 30;
             this.label10.Text = "Celular";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(19, 292);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(160, 24);
-            this.comboBox3.TabIndex = 32;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label11.Location = new System.Drawing.Point(16, 273);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 16);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "País";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(197, 292);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(160, 24);
-            this.comboBox4.TabIndex = 34;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label12.Location = new System.Drawing.Point(194, 273);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 16);
-            this.label12.TabIndex = 33;
-            this.label12.Text = "Departamento";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(373, 292);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(160, 24);
-            this.comboBox5.TabIndex = 36;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label13.Location = new System.Drawing.Point(370, 273);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 16);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Provincia";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(559, 292);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(160, 24);
-            this.comboBox6.TabIndex = 38;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label14.Location = new System.Drawing.Point(558, 273);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 16);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "Distrito";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -542,24 +479,282 @@
             this.chkActivoCat.Size = new System.Drawing.Size(20, 20);
             this.chkActivoCat.TabIndex = 41;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeight = 30;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idSucursalDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.principalDataGridViewCheckBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.estadosDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn,
+            this.tieneRegistrosDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.sucursalBindingSource;
+            this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView1.Location = new System.Drawing.Point(19, 406);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(338, 189);
+            this.dataGridView1.TabIndex = 43;
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Sucursal";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // principalDataGridViewCheckBoxColumn
+            // 
+            this.principalDataGridViewCheckBoxColumn.DataPropertyName = "principal";
+            this.principalDataGridViewCheckBoxColumn.HeaderText = "principal";
+            this.principalDataGridViewCheckBoxColumn.Name = "principalDataGridViewCheckBoxColumn";
+            this.principalDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.principalDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estadosDataGridViewTextBoxColumn
+            // 
+            this.estadosDataGridViewTextBoxColumn.DataPropertyName = "estados";
+            this.estadosDataGridViewTextBoxColumn.HeaderText = "estados";
+            this.estadosDataGridViewTextBoxColumn.Name = "estadosDataGridViewTextBoxColumn";
+            this.estadosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idUbicacionGeograficaDataGridViewTextBoxColumn
+            // 
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.DataPropertyName = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.HeaderText = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
+            // 
+            // treeView1
+            // 
+            this.treeView1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView1.CheckBoxes = true;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageList;
+            this.treeView1.Location = new System.Drawing.Point(373, 406);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(347, 189);
+            this.treeView1.TabIndex = 44;
+            // 
+            // cbxNivel3
+            // 
+            this.cbxNivel3.DataSource = this.nivel3BindingSource;
+            this.cbxNivel3.DisplayMember = "nombre";
+            this.cbxNivel3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNivel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxNivel3.FormattingEnabled = true;
+            this.cbxNivel3.Location = new System.Drawing.Point(560, 293);
+            this.cbxNivel3.Name = "cbxNivel3";
+            this.cbxNivel3.Size = new System.Drawing.Size(160, 24);
+            this.cbxNivel3.TabIndex = 103;
+            this.cbxNivel3.ValueMember = "idNivel3";
+            this.cbxNivel3.Visible = false;
+            // 
+            // lblNivel3
+            // 
+            this.lblNivel3.AutoSize = true;
+            this.lblNivel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.lblNivel3.Location = new System.Drawing.Point(557, 274);
+            this.lblNivel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNivel3.Name = "lblNivel3";
+            this.lblNivel3.Size = new System.Drawing.Size(40, 16);
+            this.lblNivel3.TabIndex = 102;
+            this.lblNivel3.Text = "nivel3";
+            this.lblNivel3.Visible = false;
+            // 
+            // cbxNivel2
+            // 
+            this.cbxNivel2.DataSource = this.nivel2BindingSource;
+            this.cbxNivel2.DisplayMember = "nombre";
+            this.cbxNivel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNivel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxNivel2.FormattingEnabled = true;
+            this.cbxNivel2.Location = new System.Drawing.Point(384, 293);
+            this.cbxNivel2.Name = "cbxNivel2";
+            this.cbxNivel2.Size = new System.Drawing.Size(160, 24);
+            this.cbxNivel2.TabIndex = 101;
+            this.cbxNivel2.ValueMember = "idNivel2";
+            this.cbxNivel2.Visible = false;
+            this.cbxNivel2.SelectedIndexChanged += new System.EventHandler(this.cbxNivel2_SelectedIndexChanged);
+            // 
+            // lblNivel2
+            // 
+            this.lblNivel2.AutoSize = true;
+            this.lblNivel2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.lblNivel2.Location = new System.Drawing.Point(381, 274);
+            this.lblNivel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNivel2.Name = "lblNivel2";
+            this.lblNivel2.Size = new System.Drawing.Size(40, 16);
+            this.lblNivel2.TabIndex = 100;
+            this.lblNivel2.Text = "nivel2";
+            this.lblNivel2.Visible = false;
+            // 
+            // cbxNivel1
+            // 
+            this.cbxNivel1.DataSource = this.nivel1BindingSource;
+            this.cbxNivel1.DisplayMember = "nombre";
+            this.cbxNivel1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNivel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxNivel1.FormattingEnabled = true;
+            this.cbxNivel1.Location = new System.Drawing.Point(214, 293);
+            this.cbxNivel1.Name = "cbxNivel1";
+            this.cbxNivel1.Size = new System.Drawing.Size(154, 24);
+            this.cbxNivel1.TabIndex = 99;
+            this.cbxNivel1.ValueMember = "idNivel1";
+            this.cbxNivel1.Visible = false;
+            this.cbxNivel1.SelectedIndexChanged += new System.EventHandler(this.cbxNivel1_SelectedIndexChanged);
+            // 
+            // lblNivel1
+            // 
+            this.lblNivel1.AutoSize = true;
+            this.lblNivel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.lblNivel1.Location = new System.Drawing.Point(211, 274);
+            this.lblNivel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNivel1.Name = "lblNivel1";
+            this.lblNivel1.Size = new System.Drawing.Size(40, 16);
+            this.lblNivel1.TabIndex = 98;
+            this.lblNivel1.Text = "nivel1";
+            this.lblNivel1.Visible = false;
+            // 
+            // cbxPaises
+            // 
+            this.cbxPaises.DataSource = this.paisBindingSource;
+            this.cbxPaises.DisplayMember = "nombre";
+            this.cbxPaises.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPaises.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPaises.FormattingEnabled = true;
+            this.cbxPaises.Location = new System.Drawing.Point(19, 293);
+            this.cbxPaises.Name = "cbxPaises";
+            this.cbxPaises.Size = new System.Drawing.Size(180, 24);
+            this.cbxPaises.TabIndex = 105;
+            this.cbxPaises.ValueMember = "idPais";
+            this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label11.Location = new System.Drawing.Point(16, 273);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 16);
+            this.label11.TabIndex = 104;
+            this.label11.Text = "País";
+            // 
+            // progressBarApp
+            // 
+            this.progressBarApp.BackColor = System.Drawing.Color.White;
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
+            this.progressBarApp.Margin = new System.Windows.Forms.Padding(2);
+            this.progressBarApp.MarqueeAnimationSpeed = 10;
+            this.progressBarApp.Maximum = 200;
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.RightToLeftLayout = true;
+            this.progressBarApp.Size = new System.Drawing.Size(745, 3);
+            this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBarApp.TabIndex = 106;
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
+            // 
+            // nivel1BindingSource
+            // 
+            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
+            // 
+            // nivel2BindingSource
+            // 
+            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
+            // 
+            // nivel3BindingSource
+            // 
+            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "label_icon.png");
+            this.imageList.Images.SetKeyName(1, "open_icon.png");
+            // 
             // FormPersonalNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(745, 739);
+            this.ClientSize = new System.Drawing.Size(745, 666);
+            this.Controls.Add(this.cbxPaises);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cbxNivel3);
+            this.Controls.Add(this.lblNivel3);
+            this.Controls.Add(this.cbxNivel2);
+            this.Controls.Add(this.lblNivel2);
+            this.Controls.Add(this.cbxNivel1);
+            this.Controls.Add(this.lblNivel1);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.chkActivoCat);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.bunifuMetroTextbox6);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -580,13 +775,21 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textNombreCat);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.progressBarApp);
             this.Name = "FormPersonalNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPersonalNuevo";
+            this.Load += new System.EventHandler(this.FormPersonalNuevo_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,17 +821,34 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox6;
         private System.Windows.Forms.Label label16;
         private Bunifu.Framework.UI.BunifuCheckbox chkActivoCat;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn principalDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacionGeograficaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tieneRegistrosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ComboBox cbxNivel3;
+        private System.Windows.Forms.Label lblNivel3;
+        private System.Windows.Forms.ComboBox cbxNivel2;
+        private System.Windows.Forms.Label lblNivel2;
+        private System.Windows.Forms.ComboBox cbxNivel1;
+        private System.Windows.Forms.Label lblNivel1;
+        private System.Windows.Forms.ComboBox cbxPaises;
+        private System.Windows.Forms.Label label11;
+        protected System.Windows.Forms.ProgressBar progressBarApp;
+        private System.Windows.Forms.BindingSource nivel3BindingSource;
+        private System.Windows.Forms.BindingSource nivel2BindingSource;
+        private System.Windows.Forms.BindingSource nivel1BindingSource;
+        private System.Windows.Forms.BindingSource paisBindingSource;
+        private System.Windows.Forms.ImageList imageList;
     }
 }

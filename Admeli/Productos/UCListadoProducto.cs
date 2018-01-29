@@ -99,7 +99,7 @@ namespace Admeli.Productos
             loadState(true);
             try
             {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.sucursalesProducto();
+                cbxSucursales.ComboBox.DataSource = await sucursalModel.sucursales();
                 cbxSucursales.ComboBox.DisplayMember = "nombre";
                 cbxSucursales.ComboBox.ValueMember = "idSucursal";
                 cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;

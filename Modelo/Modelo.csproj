@@ -51,6 +51,7 @@
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
     <Compile Include="CotizacionModel.cs" />
+    <Compile Include="DepartamentoModel.cs" />
     <Compile Include="DescuentoModel.cs" />
     <Compile Include="DocCorrelativoModel.cs" />
     <Compile Include="DocumentoIdentificacionModel.cs" />

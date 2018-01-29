@@ -89,7 +89,7 @@ namespace Modelo
             }
         }
 
-        public async Task<List<Sucursal>> sucursalesProducto()
+        public async Task<List<Sucursal>> sucursales()
         {
             try
             {

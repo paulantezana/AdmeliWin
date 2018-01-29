@@ -43,7 +43,7 @@ namespace Admeli.Configuracion.Nuevo
 
         private async void cargarSucursal()
         {
-            sucursalBindingSource.DataSource = await sucursalModel.sucursalesProducto();
+            sucursalBindingSource.DataSource = await sucursalModel.sucursales();
         }
 
         #region ===================== Paint =====================
