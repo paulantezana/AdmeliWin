@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
-            this.chkActivoCat = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkActivoProducto = new Bunifu.Framework.UI.BunifuCheckbox();
             this.btnAddUnidadMedida = new System.Windows.Forms.Button();
             this.btnAddMarca = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -39,17 +39,17 @@
             this.unidadMedidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textPrecioCompra = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textNombreProducto = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textCodigoProducto = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textNombreCat = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textCategoria = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxMarcas = new System.Windows.Forms.ComboBox();
             this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textDescripcion = new System.Windows.Forms.TextBox();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -75,17 +75,17 @@
             this.label9.TabIndex = 52;
             this.label9.Text = "Activo *";
             // 
-            // chkActivoCat
+            // chkActivoProducto
             // 
-            this.chkActivoCat.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoCat.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkActivoCat.Checked = true;
-            this.chkActivoCat.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoCat.ForeColor = System.Drawing.Color.White;
-            this.chkActivoCat.Location = new System.Drawing.Point(442, 159);
-            this.chkActivoCat.Name = "chkActivoCat";
-            this.chkActivoCat.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoCat.TabIndex = 51;
+            this.chkActivoProducto.BackColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoProducto.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkActivoProducto.Checked = true;
+            this.chkActivoProducto.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkActivoProducto.ForeColor = System.Drawing.Color.White;
+            this.chkActivoProducto.Location = new System.Drawing.Point(442, 159);
+            this.chkActivoProducto.Name = "chkActivoProducto";
+            this.chkActivoProducto.Size = new System.Drawing.Size(20, 20);
+            this.chkActivoProducto.TabIndex = 51;
             // 
             // btnAddUnidadMedida
             // 
@@ -194,24 +194,24 @@
             this.label6.TabIndex = 44;
             this.label6.Text = "Marca";
             // 
-            // bunifuMetroTextbox3
+            // textPrecioCompra
             // 
-            this.bunifuMetroTextbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox3.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox3.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox3.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox3.BorderThickness = 1;
-            this.bunifuMetroTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox3.isPassword = false;
-            this.bunifuMetroTextbox3.Location = new System.Drawing.Point(438, 100);
-            this.bunifuMetroTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox3.Name = "bunifuMetroTextbox3";
-            this.bunifuMetroTextbox3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox3.Size = new System.Drawing.Size(367, 35);
-            this.bunifuMetroTextbox3.TabIndex = 43;
-            this.bunifuMetroTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textPrecioCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textPrecioCompra.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textPrecioCompra.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textPrecioCompra.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textPrecioCompra.BorderThickness = 1;
+            this.textPrecioCompra.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textPrecioCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPrecioCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textPrecioCompra.isPassword = false;
+            this.textPrecioCompra.Location = new System.Drawing.Point(438, 100);
+            this.textPrecioCompra.Margin = new System.Windows.Forms.Padding(4);
+            this.textPrecioCompra.Name = "textPrecioCompra";
+            this.textPrecioCompra.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textPrecioCompra.Size = new System.Drawing.Size(367, 35);
+            this.textPrecioCompra.TabIndex = 43;
+            this.textPrecioCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label5
             // 
@@ -225,24 +225,24 @@
             this.label5.TabIndex = 42;
             this.label5.Text = "Descripción Corta";
             // 
-            // bunifuMetroTextbox2
+            // textNombreProducto
             // 
-            this.bunifuMetroTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox2.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox2.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox2.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox2.BorderThickness = 1;
-            this.bunifuMetroTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox2.isPassword = false;
-            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(31, 171);
-            this.bunifuMetroTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox2.Name = "bunifuMetroTextbox2";
-            this.bunifuMetroTextbox2.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox2.Size = new System.Drawing.Size(367, 35);
-            this.bunifuMetroTextbox2.TabIndex = 41;
-            this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNombreProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textNombreProducto.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textNombreProducto.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textNombreProducto.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textNombreProducto.BorderThickness = 1;
+            this.textNombreProducto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombreProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textNombreProducto.isPassword = false;
+            this.textNombreProducto.Location = new System.Drawing.Point(31, 171);
+            this.textNombreProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreProducto.Name = "textNombreProducto";
+            this.textNombreProducto.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textNombreProducto.Size = new System.Drawing.Size(367, 35);
+            this.textNombreProducto.TabIndex = 41;
+            this.textNombreProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label3
             // 
@@ -256,24 +256,24 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "Nombre Producto";
             // 
-            // bunifuMetroTextbox1
+            // textCodigoProducto
             // 
-            this.bunifuMetroTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox1.BorderThickness = 1;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(31, 100);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(367, 35);
-            this.bunifuMetroTextbox1.TabIndex = 39;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCodigoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textCodigoProducto.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textCodigoProducto.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textCodigoProducto.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textCodigoProducto.BorderThickness = 1;
+            this.textCodigoProducto.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textCodigoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCodigoProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textCodigoProducto.isPassword = false;
+            this.textCodigoProducto.Location = new System.Drawing.Point(31, 100);
+            this.textCodigoProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.textCodigoProducto.Name = "textCodigoProducto";
+            this.textCodigoProducto.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textCodigoProducto.Size = new System.Drawing.Size(367, 35);
+            this.textCodigoProducto.TabIndex = 39;
+            this.textCodigoProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
             // 
@@ -287,25 +287,25 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Código del Producto";
             // 
-            // textNombreCat
+            // textCategoria
             // 
-            this.textNombreCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textNombreCat.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textNombreCat.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textNombreCat.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textNombreCat.BorderThickness = 1;
-            this.textNombreCat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textNombreCat.Enabled = false;
-            this.textNombreCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombreCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textNombreCat.isPassword = false;
-            this.textNombreCat.Location = new System.Drawing.Point(31, 244);
-            this.textNombreCat.Margin = new System.Windows.Forms.Padding(4);
-            this.textNombreCat.Name = "textNombreCat";
-            this.textNombreCat.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textNombreCat.Size = new System.Drawing.Size(327, 35);
-            this.textNombreCat.TabIndex = 37;
-            this.textNombreCat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textCategoria.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textCategoria.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textCategoria.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textCategoria.BorderThickness = 1;
+            this.textCategoria.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textCategoria.Enabled = false;
+            this.textCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textCategoria.isPassword = false;
+            this.textCategoria.Location = new System.Drawing.Point(31, 244);
+            this.textCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.textCategoria.Name = "textCategoria";
+            this.textCategoria.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textCategoria.Size = new System.Drawing.Size(327, 35);
+            this.textCategoria.TabIndex = 37;
+            this.textCategoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
             // 
@@ -338,16 +338,16 @@
             // 
             this.marcaBindingSource.DataSource = typeof(Entidad.Marca);
             // 
-            // textBox3
+            // textDescripcion
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(31, 317);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(778, 109);
-            this.textBox3.TabIndex = 34;
+            this.textDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescripcion.Location = new System.Drawing.Point(31, 317);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.textDescripcion.Multiline = true;
+            this.textDescripcion.Name = "textDescripcion";
+            this.textDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textDescripcion.Size = new System.Drawing.Size(778, 109);
+            this.textDescripcion.TabIndex = 34;
             // 
             // panelHeader
             // 
@@ -434,7 +434,7 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.chkActivoCat);
+            this.Controls.Add(this.chkActivoProducto);
             this.Controls.Add(this.btnAddUnidadMedida);
             this.Controls.Add(this.btnAddMarca);
             this.Controls.Add(this.button2);
@@ -442,16 +442,16 @@
             this.Controls.Add(this.cbxUnidadMedida);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.bunifuMetroTextbox3);
+            this.Controls.Add(this.textPrecioCompra);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.bunifuMetroTextbox2);
+            this.Controls.Add(this.textNombreProducto);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.bunifuMetroTextbox1);
+            this.Controls.Add(this.textCodigoProducto);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textNombreCat);
+            this.Controls.Add(this.textCategoria);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxMarcas);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textDescripcion);
             this.Name = "UCGeneralesPD";
             this.Size = new System.Drawing.Size(835, 710);
             this.Load += new System.EventHandler(this.UCGeneralesPD_Load);
@@ -469,7 +469,7 @@
         #endregion
 
         private System.Windows.Forms.Label label9;
-        private Bunifu.Framework.UI.BunifuCheckbox chkActivoCat;
+        private Bunifu.Framework.UI.BunifuCheckbox chkActivoProducto;
         private System.Windows.Forms.Button btnAddUnidadMedida;
         private System.Windows.Forms.Button btnAddMarca;
         private System.Windows.Forms.Button button2;
@@ -477,16 +477,16 @@
         private System.Windows.Forms.ComboBox cbxUnidadMedida;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textPrecioCompra;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textNombreProducto;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textCodigoProducto;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textNombreCat;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxMarcas;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textDescripcion;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelFooter;

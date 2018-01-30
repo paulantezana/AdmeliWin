@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Admeli.Componentes;
 using Entidad;
+using Admeli.CajaBox.Nuevo;
 
 namespace Admeli.CajaBox
 {
@@ -17,6 +18,10 @@ namespace Admeli.CajaBox
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private List<Egreso> egresos { get; set; }
+        private Egreso currentEgreso { get; set; }
+
         private Paginacion paginacion;
         private EgresoModel egresoModel = new EgresoModel();
         private PersonalModel personalModel = new PersonalModel();
@@ -98,7 +103,7 @@ namespace Admeli.CajaBox
 
         internal void reLoad()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
         private async void cargarComponentesSecond()
@@ -128,15 +133,18 @@ namespace Admeli.CajaBox
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
                 int idCajaSesion = 0;// ConfigModel.cajaSesion.idCajaSesion;
 
-                RootObject<Egreso> ingresos = await egresoModel.egresos(sucursalId, personalId, idCajaSesion, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<Egreso> ingresosRoot = await egresoModel.egresos(sucursalId, personalId, idCajaSesion, estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ingresos.nro_registros;
+                paginacion.itemsCount = ingresosRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                egresoBindingSource.DataSource = ingresos.datos;
+                egresos = ingresosRoot.datos;
+                egresoBindingSource.DataSource = egresos;
                 dataGridView.Refresh();
+
+                // Mostrando la paginacion del datagridview
                 mostrarPaginado();
             }
             catch (Exception ex)
@@ -247,8 +255,123 @@ namespace Admeli.CajaBox
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
+            executeNuevo();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            executeEliminar();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormEgresoNuevo egresoNuevo = new FormEgresoNuevo();
+            egresoNuevo.ShowDialog();
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idEgreso = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentEgreso = egresos.Find(x => x.idEgreso == idEgreso); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormEgresoNuevo formEgreso = new FormEgresoNuevo(currentEgreso);
+            formEgreso.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentEgreso = new Egreso(); //creando una instancia del objeto categoria
+                currentEgreso.idEgreso = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await egresoModel.eliminar(currentEgreso); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                loadState(true);
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentEgreso = new Egreso(); //creando una instancia del objeto correspondiente
+                currentEgreso.idEgreso = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (egresos.Find(x => x.idEgreso == currentEgreso.idEgreso).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                Response response = await egresoModel.desactivar(currentEgreso);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
         }
         #endregion
     }

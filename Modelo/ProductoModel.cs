@@ -108,5 +108,10 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public Task<Response> modificar(Producto producto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace Admeli.Configuracion
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
-        private CajaSesionModel cajaSesionModel = new CajaSesionModel();
+        private CajaModel cajaSesionModel = new CajaModel();
         private SucursalModel sucursalModel = new SucursalModel();
         public UCCajasInicializadas()
         {

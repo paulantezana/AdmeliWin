@@ -12,19 +12,49 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(Ingreso param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/ingreso/guardarenuno
+                return await webService.POSTSend("ingreso", "guardarenuno", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(Ingreso param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/ingreso/modificarenuno
+                return await webService.POSTSend("ingreso", "modificarenuno", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void eliminar()
+        public async Task<Response> desactivar(Ingreso param)
         {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/ingreso/anularingresonoventa
+                return await webService.POSTSend("ingreso", "anularingresonoventa", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+
+        public Task<Response> eliminar(Ingreso currentIngreso)
+        {
+            return null;
         }
 
         public async Task<RootObject<Ingreso>> ingresos(int idSucursal, int idPersonal, int idCajaSesion, string idEstado, int page, int items)
@@ -40,5 +70,6 @@ namespace Modelo
                 throw ex;
             }
         }
+
     }
 }

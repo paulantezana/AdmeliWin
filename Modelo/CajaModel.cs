@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class CajaSesionModel
+    public class CajaModel
     {
         private WebService webService = new WebService();
 
@@ -26,6 +26,20 @@ namespace Modelo
         public void eliminar()
         {
 
+        }
+
+        public async Task<dynamic> correlativoSerie(int idCaja, int tipo = 0)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/cajacorrelativoserie/caja/1/tipo/0
+                List<dynamic> list = await webService.GETLis<dynamic>("cajacorrelativoserie", String.Format("caja/{0}/tipo/{1}", idCaja,tipo));
+                return list[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<CajaSesion>> cajaSesionesInicializadas(int idSucursal, int page, int items)

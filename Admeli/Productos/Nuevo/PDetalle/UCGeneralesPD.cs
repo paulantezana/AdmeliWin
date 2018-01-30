@@ -36,6 +36,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
         public UCGeneralesPD(FormProductoNuevo formProductoNuevo)
         {
             InitializeComponent();
+            this.nuevo = true;
             this.formProductoNuevo = formProductoNuevo;
         }
 
@@ -114,17 +115,16 @@ namespace Admeli.Productos.Nuevo.PDetalle
         {
             try
             {
-               /* if (nuevo)
+                if (nuevo)
                 {
-                    Response response = await marcaModel.guardar(producto);
+                    Response response = await productoModel.guardar(producto);
                     MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    Response response = await marcaModel.modificar(marca);
+                    Response response = await productoModel.modificar(producto);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                this.Close();*/
             }
             catch (Exception ex)
             {
@@ -134,16 +134,16 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void cargarObjeto()
         {
-           /* marca = new Marca();
-            if (!nuevo) marca.idMarca = currentIdMarca; // Llenar el id categoria cuando este en esdo modificar
+            producto = new Producto();
+            if (!nuevo) producto.idProducto = 1; // Llenar el id categoria cuando este en esdo modificar
 
-            marca.nombreMarca = textNombreMarca.Text;
-            marca.sitioWeb = textWebMarca.Text;
-            marca.descripcion = textDescripcionMarca.Text;
-            marca.estado = Convert.ToInt32(chkActivoMarca.Checked);
-            marca.captionImagen = "";
-            marca.ubicacionLogo = "";
-            marca.tieneRegistros = "";*/
+            producto.codigoProducto = textCodigoProducto.Text;
+            producto.precioCompra = textPrecioCompra.Text;
+            producto.nombreProducto = textNombreProducto.Text;
+            producto.idMarca = Convert.ToInt32(cbxMarcas.SelectedValue);
+            producto.nombreMarca = cbxMarcas.Text;
+            producto.idUnidadMedida = Convert.ToInt32(cbxUnidadMedida.SelectedValue);
+            producto.nombreUnidad = cbxUnidadMedida.Text;
         }
 
     }

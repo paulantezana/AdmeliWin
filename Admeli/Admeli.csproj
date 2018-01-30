@@ -108,6 +108,18 @@
     <Compile Include="AlmacenBox\UCNotaSalida.Designer.cs">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
     </Compile>
+    <Compile Include="CajaBox\Nuevo\FormEgresoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CajaBox\Nuevo\FormEgresoNuevo.Designer.cs">
+      <DependentUpon>FormEgresoNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CajaBox\Nuevo\FormIngresoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CajaBox\Nuevo\FormIngresoNuevo.Designer.cs">
+      <DependentUpon>FormIngresoNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CajaBox\UCCierreCaja.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -595,6 +607,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenBox\UCNotaSalida.resx">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CajaBox\Nuevo\FormEgresoNuevo.resx">
+      <DependentUpon>FormEgresoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CajaBox\Nuevo\FormIngresoNuevo.resx">
+      <DependentUpon>FormIngresoNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CajaBox\UCCierreCaja.resx">
       <DependentUpon>UCCierreCaja.cs</DependentUpon>
