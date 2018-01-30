@@ -17,8 +17,22 @@ namespace Modelo
 
         public void guardar()
         {
-
+            // 
         }
+
+        public async Task<Response> guardar(Producto param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/producto/guardar
+                return await webService.POSTSend("producto", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void modificar()
         {
 
