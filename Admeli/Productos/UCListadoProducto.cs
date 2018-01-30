@@ -180,7 +180,7 @@ namespace Admeli.Productos
             loadState(true);
             try
             {
-                cbxAlmacenes.ComboBox.DataSource = await almacenModel.almacenesProducto();
+                cbxAlmacenes.ComboBox.DataSource = await almacenModel.almacenes();
                 cbxAlmacenes.ComboBox.DisplayMember = "nombre";
                 cbxAlmacenes.ComboBox.ValueMember = "idAlmacen";
                 cbxAlmacenes.ComboBox.SelectedValue = ConfigModel.currentIdAlmacen;

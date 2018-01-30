@@ -16,7 +16,7 @@ namespace Entidad.Configuracion
         public int estado { get; set; }
         public string tipoCambio { get; set; }
         public Fecha fechaCreacion { get; set; }
-        public int idPersonal { get; set; }
+        public dynamic idPersonal { get; set; }
         public string nombres { get; set; }
         public string apellidos { get; set; }
 

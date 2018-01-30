@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStockPD));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -39,36 +40,58 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPrecios = new System.Windows.Forms.TabPage();
-            this.tabStockAlmacen = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.idPrecioProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompetenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utilidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMonedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnDesactivar = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabStockAlmacen = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockIdealDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockMinimoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alertaStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.btnNuevoStock = new System.Windows.Forms.ToolStripButton();
+            this.btnEditarStock = new System.Windows.Forms.ToolStripButton();
+            this.btnDesactiarStock = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizarStock = new System.Windows.Forms.ToolStripButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPrecios.SuspendLayout();
-            this.tabStockAlmacen.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.precioBindingSource)).BeginInit();
             this.toolStripCrud.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
+            this.tabStockAlmacen.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +104,7 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panelHeader.Size = new System.Drawing.Size(1101, 49);
+            this.panelHeader.Size = new System.Drawing.Size(708, 49);
             this.panelHeader.TabIndex = 1;
             this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
@@ -102,7 +125,7 @@
             this.panelFooter.Location = new System.Drawing.Point(0, 630);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.panelFooter.Size = new System.Drawing.Size(1101, 49);
+            this.panelFooter.Size = new System.Drawing.Size(708, 49);
             this.panelFooter.TabIndex = 2;
             // 
             // panel1
@@ -110,7 +133,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(349, 0);
+            this.panel1.Location = new System.Drawing.Point(153, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(402, 49);
             this.panel1.TabIndex = 6;
@@ -159,7 +182,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1101, 581);
+            this.tabControl1.Size = new System.Drawing.Size(708, 581);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPrecios
@@ -171,22 +194,9 @@
             this.tabPrecios.Location = new System.Drawing.Point(4, 39);
             this.tabPrecios.Name = "tabPrecios";
             this.tabPrecios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrecios.Size = new System.Drawing.Size(1093, 538);
+            this.tabPrecios.Size = new System.Drawing.Size(700, 538);
             this.tabPrecios.TabIndex = 0;
             this.tabPrecios.Text = "Precios";
-            // 
-            // tabStockAlmacen
-            // 
-            this.tabStockAlmacen.BackColor = System.Drawing.Color.White;
-            this.tabStockAlmacen.Controls.Add(this.panel3);
-            this.tabStockAlmacen.Controls.Add(this.toolStrip1);
-            this.tabStockAlmacen.Controls.Add(this.panel4);
-            this.tabStockAlmacen.Location = new System.Drawing.Point(4, 39);
-            this.tabStockAlmacen.Name = "tabStockAlmacen";
-            this.tabStockAlmacen.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStockAlmacen.Size = new System.Drawing.Size(1093, 538);
-            this.tabStockAlmacen.TabIndex = 1;
-            this.tabStockAlmacen.Text = "Stock Almacen";
             // 
             // panel2
             // 
@@ -195,7 +205,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 89);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(1087, 446);
+            this.panel2.Size = new System.Drawing.Size(694, 446);
             this.panel2.TabIndex = 23;
             // 
             // dataGridView
@@ -203,19 +213,32 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
+            this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.AutoGenerateContextFilters = true;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 40;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPrecioProductoDataGridViewTextBoxColumn,
+            this.precioVentaDataGridViewTextBoxColumn,
+            this.precioCompetenciaDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.utilidadDataGridViewTextBoxColumn,
+            this.monedaDataGridViewTextBoxColumn,
+            this.idProductoDataGridViewTextBoxColumn,
+            this.idMonedaDataGridViewTextBoxColumn,
+            this.idSucursalDataGridViewTextBoxColumn,
+            this.nombreSucursalDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.precioBindingSource;
             this.dataGridView.DateWithTime = false;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
@@ -225,9 +248,113 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(1067, 426);
+            this.dataGridView.Size = new System.Drawing.Size(674, 426);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
+            // 
+            // idPrecioProductoDataGridViewTextBoxColumn
+            // 
+            this.idPrecioProductoDataGridViewTextBoxColumn.DataPropertyName = "idPrecioProducto";
+            this.idPrecioProductoDataGridViewTextBoxColumn.HeaderText = "idPrecioProducto";
+            this.idPrecioProductoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idPrecioProductoDataGridViewTextBoxColumn.Name = "idPrecioProductoDataGridViewTextBoxColumn";
+            this.idPrecioProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPrecioProductoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idPrecioProductoDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // precioVentaDataGridViewTextBoxColumn
+            // 
+            this.precioVentaDataGridViewTextBoxColumn.DataPropertyName = "precioVenta";
+            this.precioVentaDataGridViewTextBoxColumn.HeaderText = "precioVenta";
+            this.precioVentaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.precioVentaDataGridViewTextBoxColumn.Name = "precioVentaDataGridViewTextBoxColumn";
+            this.precioVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioVentaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.precioVentaDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // precioCompetenciaDataGridViewTextBoxColumn
+            // 
+            this.precioCompetenciaDataGridViewTextBoxColumn.DataPropertyName = "precioCompetencia";
+            this.precioCompetenciaDataGridViewTextBoxColumn.HeaderText = "precioCompetencia";
+            this.precioCompetenciaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.precioCompetenciaDataGridViewTextBoxColumn.Name = "precioCompetenciaDataGridViewTextBoxColumn";
+            this.precioCompetenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioCompetenciaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.precioCompetenciaDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // utilidadDataGridViewTextBoxColumn
+            // 
+            this.utilidadDataGridViewTextBoxColumn.DataPropertyName = "utilidad";
+            this.utilidadDataGridViewTextBoxColumn.HeaderText = "utilidad";
+            this.utilidadDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.utilidadDataGridViewTextBoxColumn.Name = "utilidadDataGridViewTextBoxColumn";
+            this.utilidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.utilidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.utilidadDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // monedaDataGridViewTextBoxColumn
+            // 
+            this.monedaDataGridViewTextBoxColumn.DataPropertyName = "moneda";
+            this.monedaDataGridViewTextBoxColumn.HeaderText = "moneda";
+            this.monedaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.monedaDataGridViewTextBoxColumn.Name = "monedaDataGridViewTextBoxColumn";
+            this.monedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monedaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.monedaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // idProductoDataGridViewTextBoxColumn
+            // 
+            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.HeaderText = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
+            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProductoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idProductoDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // idMonedaDataGridViewTextBoxColumn
+            // 
+            this.idMonedaDataGridViewTextBoxColumn.DataPropertyName = "idMoneda";
+            this.idMonedaDataGridViewTextBoxColumn.HeaderText = "idMoneda";
+            this.idMonedaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idMonedaDataGridViewTextBoxColumn.Name = "idMonedaDataGridViewTextBoxColumn";
+            this.idMonedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idMonedaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idMonedaDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idSucursalDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // nombreSucursalDataGridViewTextBoxColumn
+            // 
+            this.nombreSucursalDataGridViewTextBoxColumn.DataPropertyName = "nombreSucursal";
+            this.nombreSucursalDataGridViewTextBoxColumn.HeaderText = "nombreSucursal";
+            this.nombreSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreSucursalDataGridViewTextBoxColumn.Name = "nombreSucursalDataGridViewTextBoxColumn";
+            this.nombreSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreSucursalDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // precioBindingSource
+            // 
+            this.precioBindingSource.DataSource = typeof(Entidad.Precio);
             // 
             // toolStripCrud
             // 
@@ -243,7 +370,7 @@
             this.toolStripCrud.Location = new System.Drawing.Point(3, 44);
             this.toolStripCrud.Name = "toolStripCrud";
             this.toolStripCrud.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.toolStripCrud.Size = new System.Drawing.Size(1087, 45);
+            this.toolStripCrud.Size = new System.Drawing.Size(694, 45);
             this.toolStripCrud.TabIndex = 22;
             this.toolStripCrud.Text = "toolStrip1";
             // 
@@ -258,6 +385,7 @@
             this.btnModificar.Text = "Detalle";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnDesactivar
             // 
@@ -271,6 +399,18 @@
             this.btnDesactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDesactivar.ToolTipText = "Anular(F7)";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.AutoSize = false;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(79, 37);
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
+            // 
             // panelHeaderItem1
             // 
             this.panelHeaderItem1.Controls.Add(this.label2);
@@ -278,7 +418,7 @@
             this.panelHeaderItem1.Location = new System.Drawing.Point(3, 3);
             this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(1087, 41);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(694, 41);
             this.panelHeaderItem1.TabIndex = 21;
             // 
             // label2
@@ -292,6 +432,19 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "MANTENIMIENTO PRECIO PRODUCTO";
             // 
+            // tabStockAlmacen
+            // 
+            this.tabStockAlmacen.BackColor = System.Drawing.Color.White;
+            this.tabStockAlmacen.Controls.Add(this.panel3);
+            this.tabStockAlmacen.Controls.Add(this.toolStrip1);
+            this.tabStockAlmacen.Controls.Add(this.panel4);
+            this.tabStockAlmacen.Location = new System.Drawing.Point(4, 39);
+            this.tabStockAlmacen.Name = "tabStockAlmacen";
+            this.tabStockAlmacen.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStockAlmacen.Size = new System.Drawing.Size(700, 538);
+            this.tabStockAlmacen.TabIndex = 1;
+            this.tabStockAlmacen.Text = "Stock Almacen";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.advancedDataGridView1);
@@ -299,7 +452,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 89);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(1087, 446);
+            this.panel3.Size = new System.Drawing.Size(694, 446);
             this.panel3.TabIndex = 23;
             // 
             // advancedDataGridView1
@@ -307,19 +460,30 @@
             this.advancedDataGridView1.AllowUserToAddRows = false;
             this.advancedDataGridView1.AllowUserToDeleteRows = false;
             this.advancedDataGridView1.AllowUserToOrderColumns = true;
+            this.advancedDataGridView1.AutoGenerateColumns = false;
             this.advancedDataGridView1.AutoGenerateContextFilters = true;
             this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.advancedDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.advancedDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView1.ColumnHeadersHeight = 40;
+            this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn,
+            this.idAlmacenDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
+            this.stockIdealDataGridViewTextBoxColumn,
+            this.stockMinimoDataGridViewTextBoxColumn,
+            this.alertaStockDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn1,
+            this.nombreAlmacenDataGridViewTextBoxColumn});
+            this.advancedDataGridView1.DataSource = this.stockBindingSource;
             this.advancedDataGridView1.DateWithTime = false;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridView1.GridColor = System.Drawing.Color.Gainsboro;
@@ -329,9 +493,93 @@
             this.advancedDataGridView1.ReadOnly = true;
             this.advancedDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.advancedDataGridView1.RowTemplate.Height = 27;
-            this.advancedDataGridView1.Size = new System.Drawing.Size(1067, 426);
+            this.advancedDataGridView1.Size = new System.Drawing.Size(674, 426);
             this.advancedDataGridView1.TabIndex = 0;
             this.advancedDataGridView1.TimeFilter = false;
+            // 
+            // idProductoStockAlmacenDataGridViewTextBoxColumn
+            // 
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idProductoStockAlmacen";
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn.HeaderText = "idProductoStockAlmacen";
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn.Name = "idProductoStockAlmacenDataGridViewTextBoxColumn";
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idProductoStockAlmacenDataGridViewTextBoxColumn.Width = 152;
+            // 
+            // idAlmacenDataGridViewTextBoxColumn
+            // 
+            this.idAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idAlmacen";
+            this.idAlmacenDataGridViewTextBoxColumn.HeaderText = "idAlmacen";
+            this.idAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idAlmacenDataGridViewTextBoxColumn.Name = "idAlmacenDataGridViewTextBoxColumn";
+            this.idAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idAlmacenDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "stock";
+            this.stockDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.stockDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // stockIdealDataGridViewTextBoxColumn
+            // 
+            this.stockIdealDataGridViewTextBoxColumn.DataPropertyName = "stockIdeal";
+            this.stockIdealDataGridViewTextBoxColumn.HeaderText = "stockIdeal";
+            this.stockIdealDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.stockIdealDataGridViewTextBoxColumn.Name = "stockIdealDataGridViewTextBoxColumn";
+            this.stockIdealDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockIdealDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.stockIdealDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // stockMinimoDataGridViewTextBoxColumn
+            // 
+            this.stockMinimoDataGridViewTextBoxColumn.DataPropertyName = "stockMinimo";
+            this.stockMinimoDataGridViewTextBoxColumn.HeaderText = "stockMinimo";
+            this.stockMinimoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.stockMinimoDataGridViewTextBoxColumn.Name = "stockMinimoDataGridViewTextBoxColumn";
+            this.stockMinimoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockMinimoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.stockMinimoDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // alertaStockDataGridViewTextBoxColumn
+            // 
+            this.alertaStockDataGridViewTextBoxColumn.DataPropertyName = "alertaStock";
+            this.alertaStockDataGridViewTextBoxColumn.HeaderText = "alertaStock";
+            this.alertaStockDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.alertaStockDataGridViewTextBoxColumn.Name = "alertaStockDataGridViewTextBoxColumn";
+            this.alertaStockDataGridViewTextBoxColumn.ReadOnly = true;
+            this.alertaStockDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.alertaStockDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // estadoDataGridViewTextBoxColumn1
+            // 
+            this.estadoDataGridViewTextBoxColumn1.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn1.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn1.Name = "estadoDataGridViewTextBoxColumn1";
+            this.estadoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn1.Width = 64;
+            // 
+            // nombreAlmacenDataGridViewTextBoxColumn
+            // 
+            this.nombreAlmacenDataGridViewTextBoxColumn.DataPropertyName = "nombreAlmacen";
+            this.nombreAlmacenDataGridViewTextBoxColumn.HeaderText = "nombreAlmacen";
+            this.nombreAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreAlmacenDataGridViewTextBoxColumn.Name = "nombreAlmacenDataGridViewTextBoxColumn";
+            this.nombreAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreAlmacenDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataSource = typeof(Entidad.Stock);
             // 
             // toolStrip1
             // 
@@ -341,64 +589,65 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton4,
-            this.toolStripButton5});
+            this.btnNuevoStock,
+            this.btnEditarStock,
+            this.btnDesactiarStock,
+            this.btnActualizarStock});
             this.toolStrip1.Location = new System.Drawing.Point(3, 44);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.toolStrip1.Size = new System.Drawing.Size(1087, 45);
+            this.toolStrip1.Size = new System.Drawing.Size(694, 45);
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // btnNuevoStock
             // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(62, 37);
-            this.toolStripButton1.Text = "Nuevo";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.ToolTipText = "Agregar un nuevo registro (F3)";
+            this.btnNuevoStock.AutoSize = false;
+            this.btnNuevoStock.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoStock.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoStock.Image")));
+            this.btnNuevoStock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevoStock.Name = "btnNuevoStock";
+            this.btnNuevoStock.Size = new System.Drawing.Size(62, 37);
+            this.btnNuevoStock.Text = "Nuevo";
+            this.btnNuevoStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNuevoStock.ToolTipText = "Agregar un nuevo registro (F3)";
+            this.btnNuevoStock.Click += new System.EventHandler(this.btnNuevoStock_Click);
             // 
-            // toolStripButton2
+            // btnEditarStock
             // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(78, 37);
-            this.toolStripButton2.Text = "Detalle";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.ToolTipText = "Modificar registro actual (F4)";
+            this.btnEditarStock.AutoSize = false;
+            this.btnEditarStock.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarStock.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarStock.Image")));
+            this.btnEditarStock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditarStock.Name = "btnEditarStock";
+            this.btnEditarStock.Size = new System.Drawing.Size(78, 37);
+            this.btnEditarStock.Text = "Detalle";
+            this.btnEditarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditarStock.ToolTipText = "Modificar registro actual (F4)";
             // 
-            // toolStripButton4
+            // btnDesactiarStock
             // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(73, 37);
-            this.toolStripButton4.Text = "Desactivar";
-            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton4.ToolTipText = "Anular(F7)";
+            this.btnDesactiarStock.AutoSize = false;
+            this.btnDesactiarStock.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesactiarStock.Image = ((System.Drawing.Image)(resources.GetObject("btnDesactiarStock.Image")));
+            this.btnDesactiarStock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDesactiarStock.Name = "btnDesactiarStock";
+            this.btnDesactiarStock.Size = new System.Drawing.Size(73, 37);
+            this.btnDesactiarStock.Text = "Desactivar";
+            this.btnDesactiarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDesactiarStock.ToolTipText = "Anular(F7)";
             // 
-            // toolStripButton5
+            // btnActualizarStock
             // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(79, 37);
-            this.toolStripButton5.Text = "Actualizar";
-            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton5.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.btnActualizarStock.AutoSize = false;
+            this.btnActualizarStock.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarStock.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarStock.Image")));
+            this.btnActualizarStock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizarStock.Name = "btnActualizarStock";
+            this.btnActualizarStock.Size = new System.Drawing.Size(79, 37);
+            this.btnActualizarStock.Text = "Actualizar";
+            this.btnActualizarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnActualizarStock.ToolTipText = "Actualizar registros (F5)\r\n";
             // 
             // panel4
             // 
@@ -407,7 +656,7 @@
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1087, 41);
+            this.panel4.Size = new System.Drawing.Size(694, 41);
             this.panel4.TabIndex = 21;
             // 
             // label3
@@ -421,18 +670,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "MANTENIMIENTO STOCK PRODUCTO";
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.AutoSize = false;
-            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(79, 37);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
-            // 
             // UCStockPD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,22 +678,25 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Name = "UCStockPD";
-            this.Size = new System.Drawing.Size(1101, 679);
+            this.Size = new System.Drawing.Size(708, 679);
+            this.Load += new System.EventHandler(this.UCStockPD_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPrecios.ResumeLayout(false);
-            this.tabStockAlmacen.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.precioBindingSource)).EndInit();
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
+            this.tabStockAlmacen.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -486,12 +726,32 @@
         private System.Windows.Forms.Panel panel3;
         private ADGV.AdvancedDataGridView advancedDataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton btnNuevoStock;
+        private System.Windows.Forms.ToolStripButton btnEditarStock;
+        private System.Windows.Forms.ToolStripButton btnDesactiarStock;
+        private System.Windows.Forms.ToolStripButton btnActualizarStock;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPrecioProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioVentaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioCompetenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn utilidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monedaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMonedaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource precioBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProductoStockAlmacenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAlmacenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockIdealDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockMinimoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alertaStockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreAlmacenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource stockBindingSource;
     }
 }

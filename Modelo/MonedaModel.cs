@@ -69,9 +69,24 @@ namespace Modelo
         {
             try
             {
+                // www.lineatienda.com/services.php/monedas/estado/1
                 // www.lineatienda.com/services.php/monedas/estado/1/100
                 RootObject<Moneda> monedas = await webService.GETRoot<Moneda>("monedas", String.Format("estado/{0}/{1}", page, items));
                 return monedas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Moneda>> monedas(int estado = 1)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/monedas/estado/1
+                List<Moneda> list = await webService.GETLis<Moneda>("monedas", String.Format("estado/{0}", estado));
+                return list;
             }
             catch (Exception ex)
             {

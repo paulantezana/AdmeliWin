@@ -22,7 +22,6 @@ namespace Modelo
                 Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
                 param.idUbicacionGeografica = res.id;
 
-
                 // localhost:8080/admeli/xcore2/xcore/services.php/almacen/guardar
                 return await webService.POSTSend("almacen", "guardar", param);
             }
@@ -89,12 +88,12 @@ namespace Modelo
             }
         }
 
-        public async Task<List<Almacen>> almacenesProducto()
+        public async Task<List<Almacen>> almacenes(int estado = 1)
         {
             try
             {
                 // www.lineatienda.com/services.php/almacenes/id/nombre/estado/1
-                List<Almacen> almacenes = await webService.GETLis<Almacen>("almacenes", "id/nombre/estado/1");
+                List<Almacen> almacenes = await webService.GETLis<Almacen>("almacenes", String.Format("id/nombre/estado/{0}",estado));
                 return almacenes;
             }
             catch (Exception ex)

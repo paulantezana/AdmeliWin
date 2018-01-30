@@ -48,7 +48,7 @@ namespace Admeli.Configuracion.Nuevo
             textNombreAlmacen.Text = currentAlmacen.nombre;
             textDirecionAlmacen.Text = currentAlmacen.direccion;
             chkPrincipalAlmacen.Checked = currentAlmacen.principal;
-            chkActivoAlmacen.Checked = currentAlmacen.principal;
+            chkActivoAlmacen.Checked = Convert.ToBoolean(currentAlmacen.estado);
         }
 
         #region ======================= Paint =======================
@@ -385,7 +385,7 @@ namespace Admeli.Configuracion.Nuevo
             currentAlmacen.nombre = textNombreAlmacen.Text;
             currentAlmacen.direccion = textDirecionAlmacen.Text;
             currentAlmacen.principal = chkPrincipalAlmacen.Checked;
-            currentAlmacen.principal = chkActivoAlmacen.Checked;
+            currentAlmacen.estado = Convert.ToInt32(chkActivoAlmacen.Checked);
             currentAlmacen.tieneRegistros = "0";
 
 

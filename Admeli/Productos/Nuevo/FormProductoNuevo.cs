@@ -22,7 +22,7 @@ namespace Admeli.Productos.Nuevo
         private UCTiendaOnlinePD uCTiendaOnlinePD { get; set; } 
         #endregion
 
-        private int currentIDProducto { get; set; }
+        public int currentIDProducto { get; set; }
         private bool nuevo { get; set; }
 
         #region =============================== Constructor ===============================

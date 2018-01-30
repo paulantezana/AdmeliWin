@@ -447,6 +447,18 @@
     <Compile Include="Productos\Nuevo\PDetalle\FormElegirCategoria.Designer.cs">
       <DependentUpon>FormElegirCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormPrecioDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormPrecioDetalle.Designer.cs">
+      <DependentUpon>FormPrecioDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormStockNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormStockNuevo.Designer.cs">
+      <DependentUpon>FormStockNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Nuevo\PDetalle\UCAdicionalPD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -752,6 +764,12 @@
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormElegirCategoria.resx">
       <DependentUpon>FormElegirCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormPrecioDetalle.resx">
+      <DependentUpon>FormPrecioDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormStockNuevo.resx">
+      <DependentUpon>FormStockNuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCAdicionalPD.resx">
       <DependentUpon>UCAdicionalPD.cs</DependentUpon>
     </EmbeddedResource>
@@ -852,8 +870,10 @@
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.Pago.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />
+    <None Include="Properties\DataSources\Entidad.Precio.datasource" />
     <None Include="Properties\DataSources\Entidad.Producto.datasource" />
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />
+    <None Include="Properties\DataSources\Entidad.Stock.datasource" />
     <None Include="Properties\DataSources\Entidad.Sucursal.datasource" />
     <None Include="Properties\DataSources\Entidad.UnidadMedida.datasource" />
     <None Include="Properties\DataSources\Entidad.Venta.datasource" />
