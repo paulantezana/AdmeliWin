@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelFooter = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -68,6 +68,8 @@
             this.btnComprasShortcut = new System.Windows.Forms.Button();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button8 = new System.Windows.Forms.Button();
             this.panelFooter.SuspendLayout();
             this.panelAside.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -233,6 +235,7 @@
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 8;
             this.btnHome.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnHome, "Menu Principal");
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // button1
@@ -249,6 +252,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Compras";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button1, "Compra");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnCompras_Click);
             // 
@@ -266,6 +270,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Ventas";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button2, "Venta");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnVentas_Click);
             // 
@@ -283,6 +288,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Caja";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button3, "Caja");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -300,6 +306,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Almacen";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button4, "Almacen");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
@@ -318,6 +325,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Producto";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button5, "Producto");
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.btnProductos_Click);
             // 
@@ -335,6 +343,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "Config";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button6, "Configuracion");
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.btnConfig_Click);
             // 
@@ -352,6 +361,7 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "Tools";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button7, "Herramientas");
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.btnTools_Click);
             // 
@@ -436,6 +446,7 @@
             // panelMainHeader
             // 
             this.panelMainHeader.BackColor = System.Drawing.Color.White;
+            this.panelMainHeader.Controls.Add(this.button8);
             this.panelMainHeader.Controls.Add(this.btnToggleAsideMenu);
             this.panelMainHeader.Controls.Add(this.pictureBox3);
             this.panelMainHeader.Controls.Add(this.panel3);
@@ -469,6 +480,7 @@
             this.btnToggleAsideMenu.Name = "btnToggleAsideMenu";
             this.btnToggleAsideMenu.Size = new System.Drawing.Size(49, 40);
             this.btnToggleAsideMenu.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnToggleAsideMenu, "Ocultar y mostrar panel de administración");
             this.btnToggleAsideMenu.UseVisualStyleBackColor = true;
             this.btnToggleAsideMenu.Click += new System.EventHandler(this.btnToggleAsideMenu_Click);
             // 
@@ -503,6 +515,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(139, 32);
             this.panel3.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.panel3, "Usuario logeado");
             // 
             // pictureBox2
             // 
@@ -554,7 +567,7 @@
             this.btnProductoShortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductoShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnProductoShortcut.Image")));
             this.btnProductoShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductoShortcut.Location = new System.Drawing.Point(518, 8);
+            this.btnProductoShortcut.Location = new System.Drawing.Point(521, 8);
             this.btnProductoShortcut.Margin = new System.Windows.Forms.Padding(0);
             this.btnProductoShortcut.Name = "btnProductoShortcut";
             this.btnProductoShortcut.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -577,7 +590,7 @@
             this.btnVentaShorkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentaShorkout.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaShorkout.Image")));
             this.btnVentaShorkout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaShorkout.Location = new System.Drawing.Point(409, 8);
+            this.btnVentaShorkout.Location = new System.Drawing.Point(249, 9);
             this.btnVentaShorkout.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentaShorkout.Name = "btnVentaShorkout";
             this.btnVentaShorkout.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -600,7 +613,7 @@
             this.btnComprasShortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprasShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnComprasShortcut.Image")));
             this.btnComprasShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprasShortcut.Location = new System.Drawing.Point(300, 8);
+            this.btnComprasShortcut.Location = new System.Drawing.Point(136, 9);
             this.btnComprasShortcut.Margin = new System.Windows.Forms.Padding(0);
             this.btnComprasShortcut.Name = "btnComprasShortcut";
             this.btnComprasShortcut.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -629,29 +642,60 @@
             // 
             this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation4;
             this.transition1.TimeStep = 0.03F;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 200;
+            this.toolTip1.AutoPopDelay = 20000;
+            this.toolTip1.InitialDelay = 200;
+            this.toolTip1.ReshowDelay = 40;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Admeli";
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transition1.SetDecoration(this.button8, BunifuAnimatorNS.DecorationType.None);
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(362, 9);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.button8.Size = new System.Drawing.Size(143, 32);
+            this.button8.TabIndex = 11;
+            this.button8.Text = "Venta Touch";
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1022, 741);
             this.Controls.Add(this.panelMainContainer);
             this.Controls.Add(this.panelAside);
@@ -725,5 +769,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnToggleAsideMenu;
         private BunifuAnimatorNS.BunifuTransition transition1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button8;
     }
 }

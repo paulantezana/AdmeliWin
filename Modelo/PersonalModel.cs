@@ -29,6 +29,10 @@ namespace Modelo
                 personal.password = password;
 
                 List<Personal> user =  await  webService.POSTList<Personal>("personal", "buscar", personal);
+                if (user.Count == 0)
+                {
+                    throw new Exception("El nombre de usuario o contraseña es incorrecta!!");
+                }
                 PersonalModel.personal = user[0];
             }
             catch (Exception ex)

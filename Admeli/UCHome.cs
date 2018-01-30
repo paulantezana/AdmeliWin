@@ -80,6 +80,7 @@ namespace Admeli
             this.formPrincipal.appLoadState(false);
         }
 
+        #region ==================================== Paint Decoration ====================================
         private void cardContainer1_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
@@ -114,7 +115,8 @@ namespace Admeli
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(cardContainer6);
-        }
+        } 
+        #endregion
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
