@@ -90,6 +90,7 @@
     <Compile Include="Sucursal.cs" />
     <Compile Include="UnidadMedida.cs" />
     <Compile Include="Util\Fecha.cs" />
+    <Compile Include="Variante.cs" />
     <Compile Include="Venta.cs" />
   </ItemGroup>
   <ItemGroup />

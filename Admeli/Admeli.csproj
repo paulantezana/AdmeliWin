@@ -871,6 +871,7 @@
     <None Include="Properties\DataSources\Entidad.Pago.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />
     <None Include="Properties\DataSources\Entidad.Precio.datasource" />
+    <None Include="Properties\DataSources\Entidad.Presentacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Producto.datasource" />
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />
     <None Include="Properties\DataSources\Entidad.Stock.datasource" />

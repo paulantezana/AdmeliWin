@@ -78,6 +78,7 @@
     <Compile Include="SucursalModel.cs" />
     <Compile Include="TipoDocumentoModel.cs" />
     <Compile Include="UnidadMedidaModel.cs" />
+    <Compile Include="VarianteModel.cs" />
     <Compile Include="VentaModel.cs" />
   </ItemGroup>
   <ItemGroup>

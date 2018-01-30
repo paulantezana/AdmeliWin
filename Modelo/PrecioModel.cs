@@ -25,5 +25,10 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public Task<Response> desactivar(Precio currentPrecio)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

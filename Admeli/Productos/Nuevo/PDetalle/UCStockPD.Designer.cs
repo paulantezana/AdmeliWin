@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStockPD));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -41,7 +41,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPrecios = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.dataGridViewPrecios = new ADGV.AdvancedDataGridView();
             this.idPrecioProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCompetenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabStockAlmacen = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
+            this.dataGridViewStocks = new ADGV.AdvancedDataGridView();
             this.idProductoStockAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,13 +84,13 @@
             this.tabControl1.SuspendLayout();
             this.tabPrecios.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrecios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioBindingSource)).BeginInit();
             this.toolStripCrud.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
             this.tabStockAlmacen.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -200,7 +200,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView);
+            this.panel2.Controls.Add(this.dataGridViewPrecios);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 89);
             this.panel2.Name = "panel2";
@@ -208,26 +208,26 @@
             this.panel2.Size = new System.Drawing.Size(694, 446);
             this.panel2.TabIndex = 23;
             // 
-            // dataGridView
+            // dataGridViewPrecios
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.AutoGenerateContextFilters = true;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.ColumnHeadersHeight = 40;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewPrecios.AllowUserToAddRows = false;
+            this.dataGridViewPrecios.AllowUserToDeleteRows = false;
+            this.dataGridViewPrecios.AllowUserToOrderColumns = true;
+            this.dataGridViewPrecios.AutoGenerateColumns = false;
+            this.dataGridViewPrecios.AutoGenerateContextFilters = true;
+            this.dataGridViewPrecios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewPrecios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewPrecios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPrecios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewPrecios.ColumnHeadersHeight = 40;
+            this.dataGridViewPrecios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPrecioProductoDataGridViewTextBoxColumn,
             this.precioVentaDataGridViewTextBoxColumn,
             this.precioCompetenciaDataGridViewTextBoxColumn,
@@ -238,19 +238,19 @@
             this.idMonedaDataGridViewTextBoxColumn,
             this.idSucursalDataGridViewTextBoxColumn,
             this.nombreSucursalDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.precioBindingSource;
-            this.dataGridView.DateWithTime = false;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(674, 426);
-            this.dataGridView.TabIndex = 0;
-            this.dataGridView.TimeFilter = false;
+            this.dataGridViewPrecios.DataSource = this.precioBindingSource;
+            this.dataGridViewPrecios.DateWithTime = false;
+            this.dataGridViewPrecios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewPrecios.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridViewPrecios.Location = new System.Drawing.Point(10, 10);
+            this.dataGridViewPrecios.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewPrecios.Name = "dataGridViewPrecios";
+            this.dataGridViewPrecios.ReadOnly = true;
+            this.dataGridViewPrecios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewPrecios.RowTemplate.Height = 27;
+            this.dataGridViewPrecios.Size = new System.Drawing.Size(674, 426);
+            this.dataGridViewPrecios.TabIndex = 0;
+            this.dataGridViewPrecios.TimeFilter = false;
             // 
             // idPrecioProductoDataGridViewTextBoxColumn
             // 
@@ -398,6 +398,7 @@
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDesactivar.ToolTipText = "Anular(F7)";
+            this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // btnActualizar
             // 
@@ -410,6 +411,7 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // panelHeaderItem1
             // 
@@ -447,7 +449,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.advancedDataGridView1);
+            this.panel3.Controls.Add(this.dataGridViewStocks);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 89);
             this.panel3.Name = "panel3";
@@ -455,26 +457,26 @@
             this.panel3.Size = new System.Drawing.Size(694, 446);
             this.panel3.TabIndex = 23;
             // 
-            // advancedDataGridView1
+            // dataGridViewStocks
             // 
-            this.advancedDataGridView1.AllowUserToAddRows = false;
-            this.advancedDataGridView1.AllowUserToDeleteRows = false;
-            this.advancedDataGridView1.AllowUserToOrderColumns = true;
-            this.advancedDataGridView1.AutoGenerateColumns = false;
-            this.advancedDataGridView1.AutoGenerateContextFilters = true;
-            this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.advancedDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.advancedDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.advancedDataGridView1.ColumnHeadersHeight = 40;
-            this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewStocks.AllowUserToAddRows = false;
+            this.dataGridViewStocks.AllowUserToDeleteRows = false;
+            this.dataGridViewStocks.AllowUserToOrderColumns = true;
+            this.dataGridViewStocks.AutoGenerateColumns = false;
+            this.dataGridViewStocks.AutoGenerateContextFilters = true;
+            this.dataGridViewStocks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewStocks.ColumnHeadersHeight = 40;
+            this.dataGridViewStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProductoStockAlmacenDataGridViewTextBoxColumn,
             this.idAlmacenDataGridViewTextBoxColumn,
             this.stockDataGridViewTextBoxColumn,
@@ -483,19 +485,19 @@
             this.alertaStockDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn1,
             this.nombreAlmacenDataGridViewTextBoxColumn});
-            this.advancedDataGridView1.DataSource = this.stockBindingSource;
-            this.advancedDataGridView1.DateWithTime = false;
-            this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.advancedDataGridView1.GridColor = System.Drawing.Color.Gainsboro;
-            this.advancedDataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.advancedDataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.advancedDataGridView1.Name = "advancedDataGridView1";
-            this.advancedDataGridView1.ReadOnly = true;
-            this.advancedDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.advancedDataGridView1.RowTemplate.Height = 27;
-            this.advancedDataGridView1.Size = new System.Drawing.Size(674, 426);
-            this.advancedDataGridView1.TabIndex = 0;
-            this.advancedDataGridView1.TimeFilter = false;
+            this.dataGridViewStocks.DataSource = this.stockBindingSource;
+            this.dataGridViewStocks.DateWithTime = false;
+            this.dataGridViewStocks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewStocks.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridViewStocks.Location = new System.Drawing.Point(10, 10);
+            this.dataGridViewStocks.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewStocks.Name = "dataGridViewStocks";
+            this.dataGridViewStocks.ReadOnly = true;
+            this.dataGridViewStocks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewStocks.RowTemplate.Height = 27;
+            this.dataGridViewStocks.Size = new System.Drawing.Size(674, 426);
+            this.dataGridViewStocks.TabIndex = 0;
+            this.dataGridViewStocks.TimeFilter = false;
             // 
             // idProductoStockAlmacenDataGridViewTextBoxColumn
             // 
@@ -608,7 +610,7 @@
             this.btnNuevoStock.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevoStock.Name = "btnNuevoStock";
             this.btnNuevoStock.Size = new System.Drawing.Size(62, 37);
-            this.btnNuevoStock.Text = "Nuevo";
+            this.btnNuevoStock.Text = "Nuevo ";
             this.btnNuevoStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNuevoStock.ToolTipText = "Agregar un nuevo registro (F3)";
             this.btnNuevoStock.Click += new System.EventHandler(this.btnNuevoStock_Click);
@@ -636,6 +638,7 @@
             this.btnDesactiarStock.Text = "Desactivar";
             this.btnDesactiarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDesactiarStock.ToolTipText = "Anular(F7)";
+            this.btnDesactiarStock.Click += new System.EventHandler(this.btnDesactiarStock_Click);
             // 
             // btnActualizarStock
             // 
@@ -648,6 +651,7 @@
             this.btnActualizarStock.Text = "Actualizar";
             this.btnActualizarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnActualizarStock.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.btnActualizarStock.Click += new System.EventHandler(this.btnActualizarStock_Click);
             // 
             // panel4
             // 
@@ -687,7 +691,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPrecios.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrecios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioBindingSource)).EndInit();
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
@@ -695,7 +699,7 @@
             this.panelHeaderItem1.PerformLayout();
             this.tabStockAlmacen.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -717,14 +721,14 @@
         private System.Windows.Forms.TabPage tabPrecios;
         private System.Windows.Forms.TabPage tabStockAlmacen;
         private System.Windows.Forms.Panel panel2;
-        private ADGV.AdvancedDataGridView dataGridView;
+        private ADGV.AdvancedDataGridView dataGridViewPrecios;
         private System.Windows.Forms.ToolStrip toolStripCrud;
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnDesactivar;
         private System.Windows.Forms.Panel panelHeaderItem1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private ADGV.AdvancedDataGridView advancedDataGridView1;
+        private ADGV.AdvancedDataGridView dataGridViewStocks;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNuevoStock;
         private System.Windows.Forms.ToolStripButton btnEditarStock;

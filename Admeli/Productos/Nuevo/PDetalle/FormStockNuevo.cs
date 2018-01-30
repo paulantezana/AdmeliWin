@@ -1,4 +1,5 @@
 ﻿using Admeli.Configuracion.Nuevo;
+using Entidad;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,16 @@ namespace Admeli.Productos.Nuevo.PDetalle
     public partial class FormStockNuevo : Form
     {
         private AlmacenModel almacenModel = new AlmacenModel();
+        private Stock currentStock;
 
         public FormStockNuevo()
         {
             InitializeComponent();
+        }
+
+        public FormStockNuevo(Stock currentStock)
+        {
+            this.currentStock = currentStock;
         }
 
         private void FormStockNuevo_Load(object sender, EventArgs e)

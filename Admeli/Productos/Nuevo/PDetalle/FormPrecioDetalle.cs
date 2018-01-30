@@ -1,4 +1,6 @@
 ﻿using Admeli.Configuracion.Nuevo;
+using Entidad;
+using Entidad.Configuracion;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -16,10 +18,16 @@ namespace Admeli.Productos.Nuevo.PDetalle
     {
         private MonedaModel monedaModel = new MonedaModel();
         private SucursalModel sucursalModel = new SucursalModel();
+        private Precio currentPrecio;
 
         public FormPrecioDetalle()
         {
             InitializeComponent();
+        }
+
+        public FormPrecioDetalle(Precio currentPrecio)
+        {
+            this.currentPrecio = currentPrecio;
         }
 
         private void FormPrecioDetalle_Load(object sender, EventArgs e)
@@ -41,6 +49,8 @@ namespace Admeli.Productos.Nuevo.PDetalle
         private async void cargarMonedas()
         {
             monedaBindingSource.DataSource = await monedaModel.monedas();
+            Moneda moneda = await monedaModel.monedaPorDefecto();
+            cbxMoneda.SelectedValue = moneda.idMoneda;
         }
 
         private void btnAddMoneda_Click(object sender, EventArgs e)

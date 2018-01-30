@@ -8,27 +8,22 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class StockModel
+    public class VarianteModel
     {
         private WebService webService = new WebService();
 
-        public async Task<List<Stock>> stockProducto(int idProducto)
+        public async Task<List<Variante>> precioProducto(int idProducto)
         {
             try
             {
-                // www.lineatienda.com/services.php/psalmacenes/producto/445
-                List<Stock> list = await webService.GETLis<Stock>("psalmacenes", String.Format("producto/{0}", idProducto));
+                // www.lineatienda.com/services.php/producto/403/variantes
+                List<Variante> list = await webService.GETLis<Variante>("producto", String.Format("{0}/variantes", idProducto));
                 return list;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }
-
-        public Task<Response> desactivar(Stock currentStock)
-        {
-            throw new NotImplementedException();
         }
     }
 }

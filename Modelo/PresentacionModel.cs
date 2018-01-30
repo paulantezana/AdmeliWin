@@ -16,8 +16,8 @@ namespace Modelo
         {
             try
             {
-                // www.lineatienda.com/services.php/precio/producto/445
-                List<Presentacion> list = await webService.GETLis<Presentacion>("precio", String.Format("producto/{0}", idProducto));
+                // www.lineatienda.com/services.php/presentacion/producto/403
+                List<Presentacion> list = await webService.GETLis<Presentacion>("presentacion", String.Format("producto/{0}", idProducto));
                 return list;
             }
             catch (Exception ex)

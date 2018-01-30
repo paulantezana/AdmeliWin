@@ -80,6 +80,7 @@ namespace Modelo
             }
         }
 
+
         public async Task<List<Moneda>> monedas(int estado = 1)
         {
             try
@@ -87,6 +88,20 @@ namespace Modelo
                 // www.lineatienda.com/services.php/monedas/estado/1
                 List<Moneda> list = await webService.GETLis<Moneda>("monedas", String.Format("estado/{0}", estado));
                 return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Moneda> monedaPorDefecto()
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/moneda/pordefecto
+                List<Moneda> list = await webService.GETLis<Moneda>("moneda", "pordefecto");
+                return list[0];
             }
             catch (Exception ex)
             {
