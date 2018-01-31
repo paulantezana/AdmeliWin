@@ -180,7 +180,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label7.Location = new System.Drawing.Point(20, 64);
+            this.label7.Location = new System.Drawing.Point(24, 64);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 16);
@@ -198,7 +198,7 @@
             this.textNIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNIdentificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textNIdentificacion.isPassword = false;
-            this.textNIdentificacion.Location = new System.Drawing.Point(19, 84);
+            this.textNIdentificacion.Location = new System.Drawing.Point(23, 84);
             this.textNIdentificacion.Margin = new System.Windows.Forms.Padding(4);
             this.textNIdentificacion.Name = "textNIdentificacion";
             this.textNIdentificacion.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -215,10 +215,10 @@
             this.cbxTipoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoProveedor.FormattingEnabled = true;
             this.cbxTipoProveedor.Items.AddRange(new object[] {
-            "Minorista",
+            "Mayorista",
             "Productor",
             "Minorista"});
-            this.cbxTipoProveedor.Location = new System.Drawing.Point(19, 342);
+            this.cbxTipoProveedor.Location = new System.Drawing.Point(23, 344);
             this.cbxTipoProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTipoProveedor.Name = "cbxTipoProveedor";
             this.cbxTipoProveedor.Size = new System.Drawing.Size(300, 26);
@@ -230,7 +230,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label1.Location = new System.Drawing.Point(20, 192);
+            this.label1.Location = new System.Drawing.Point(24, 192);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 16);
@@ -248,7 +248,7 @@
             this.textNombreEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNombreEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textNombreEmpresa.isPassword = false;
-            this.textNombreEmpresa.Location = new System.Drawing.Point(19, 212);
+            this.textNombreEmpresa.Location = new System.Drawing.Point(23, 212);
             this.textNombreEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.textNombreEmpresa.Name = "textNombreEmpresa";
             this.textNombreEmpresa.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -261,7 +261,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label2.Location = new System.Drawing.Point(20, 257);
+            this.label2.Location = new System.Drawing.Point(24, 259);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 16);
@@ -279,7 +279,7 @@
             this.textActividadPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textActividadPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textActividadPrincipal.isPassword = false;
-            this.textActividadPrincipal.Location = new System.Drawing.Point(19, 277);
+            this.textActividadPrincipal.Location = new System.Drawing.Point(23, 279);
             this.textActividadPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.textActividadPrincipal.Name = "textActividadPrincipal";
             this.textActividadPrincipal.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -292,7 +292,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label3.Location = new System.Drawing.Point(20, 324);
+            this.label3.Location = new System.Drawing.Point(24, 326);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 16);
@@ -323,7 +323,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label5.Location = new System.Drawing.Point(20, 385);
+            this.label5.Location = new System.Drawing.Point(24, 383);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
@@ -341,7 +341,7 @@
             this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textEmail.isPassword = false;
-            this.textEmail.Location = new System.Drawing.Point(19, 405);
+            this.textEmail.Location = new System.Drawing.Point(23, 403);
             this.textEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textEmail.Name = "textEmail";
             this.textEmail.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -520,6 +520,7 @@
             this.textTelefono.Size = new System.Drawing.Size(300, 33);
             this.textTelefono.TabIndex = 1;
             this.textTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefono_KeyPress);
             // 
             // UCProveedorGeneral
             // 

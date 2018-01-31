@@ -122,6 +122,7 @@ namespace Admeli.Compras.Nuevo
         {
             togglePanelMain("general");
             btnGenerales.BackColor = Color.White;
+            btnContacto.Enabled = (nuevo) ? false : true;
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Entidad.Location;
 using Entidad;
+using Admeli.Componentes;
 
 namespace Admeli.Compras.Nuevo.Detalle
 {
@@ -393,6 +394,23 @@ namespace Admeli.Compras.Nuevo.Detalle
             }
             errorProvider1.Clear();
 
+            if (!Validator.IsValidEmail(textEmail.Text) && textEmail.Text != "")
+            {
+                errorProvider1.SetError(textEmail, "Dirección de correo electrónico inválido");
+                textEmail.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            /*
+            if (Validator.)
+            {
+                errorProvider1.SetError(cbxTipoProveedor, "Elija almenos uno");
+                cbxTipoProveedor.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+            */
             return true;
         }
 
@@ -401,5 +419,10 @@ namespace Admeli.Compras.Nuevo.Detalle
             this.formProveedorNuevo.Close();
         }
         #endregion
+
+        private void textTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
     }
 }

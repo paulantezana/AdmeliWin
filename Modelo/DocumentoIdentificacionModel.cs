@@ -12,6 +12,19 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
+        public async Task<List<DocumentoIdentificacion>> docIdentificacionNatural()
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/documentoidentificacionesnatural
+                return await webService.GETLis<DocumentoIdentificacion>("documentoidentificacionesnatural");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<Response> guardar(DocumentoIdentificacion param)
         {
             try

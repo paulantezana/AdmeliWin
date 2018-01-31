@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Admeli.Componentes;
 using Entidad;
 using Modelo;
 
@@ -15,40 +16,76 @@ namespace Admeli.Compras.Nuevo.Detalle
     public partial class FormContactoNuevo : Form
     {
         private ContactoModel contactoModel = new ContactoModel();
+        private DocumentoIdentificacionModel documentoIdentificacion = new DocumentoIdentificacionModel();
         private FormProveedorNuevo formProveedorNuevo;
 
         private Contacto currentContacto { get; set; }
+        private List<DocumentoIdentificacion> docIdentificaciones { get; set; }
         private int currentIDContacto { get; set; }
+        private int currentIDProveedor { get; set; }
         private bool nuevo { get; set; }
 
+        #region ===================================== Constructor =====================================
         public FormContactoNuevo()
         {
             InitializeComponent();
         }
 
-        private void FormContactoNuevo_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public FormContactoNuevo(FormProveedorNuevo formProveedorNuevo, Contacto currentContacto)
         {
+            InitializeComponent();
             this.formProveedorNuevo = formProveedorNuevo;
             this.currentContacto = currentContacto;
+            this.currentIDProveedor = currentContacto.idProveedor;
+            this.nuevo = false;
         }
 
         public FormContactoNuevo(FormProveedorNuevo formProveedorNuevo)
         {
+            InitializeComponent();
             this.formProveedorNuevo = formProveedorNuevo;
+            this.nuevo = true;
+        } 
+        #endregion
+
+        private void FormContactoNuevo_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
+        private void reLoad()
+        {
+            this.cargarDocumentosIdentificacion();
+        }
+
+        private void mostrarDatosModificar()
+        {
+            if (nuevo) return;
+            textNombres.Text = currentContacto.nombres;
+            textApellidos.Text = currentContacto.apellidos;
+            textNDocumento.Text = currentContacto.numeroDocumento;
+            textTelefono.Text = currentContacto.telefono;
+            textCelular.Text = currentContacto.celular;
+            textEmail.Text = currentContacto.email;
+            textDireccion.Text = currentContacto.direccion;
+            chkEstado.Checked = Convert.ToBoolean(currentContacto.estado);
+            cbxTipoDocumento.SelectedValue = currentContacto.idDocumento;
+        }
+
+        private async void cargarDocumentosIdentificacion()
+        {
+            docIdentificaciones = await documentoIdentificacion.docIdentificacionNatural();
+            documentoIdentificacionBindingSource.DataSource = docIdentificaciones;
+            this.mostrarDatosModificar();
         }
 
         #region ========================== SAVE AND UPDATE ===========================
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            guardarSucursal();
+            guardarData();
         }
 
-        private async void guardarSucursal()
+        private async void guardarData()
         {
             if (!validarCampos()) return;
             try
@@ -86,7 +123,7 @@ namespace Admeli.Compras.Nuevo.Detalle
             currentContacto.email = textEmail.Text;
             currentContacto.direccion = textDireccion.Text;
             currentContacto.estado = Convert.ToInt32(chkEstado.Checked);
-            currentContacto.idDocumento = 
+            currentContacto.idDocumento = Convert.ToInt32(cbxTipoDocumento.SelectedValue);
             currentContacto.idProveedor = formProveedorNuevo.currentIDProveedor;
         }
 
@@ -116,6 +153,24 @@ namespace Admeli.Compras.Nuevo.Detalle
             }
             errorProvider1.Clear();
 
+            // Validando la longitud del documento
+            DocumentoIdentificacion doctIdenti = docIdentificaciones.Find(x => x.idDocumento == Convert.ToInt32(cbxTipoDocumento.SelectedValue));
+            if (doctIdenti.numeroDigitos.ToString() != textNDocumento.Text && textNDocumento.Text != "")
+            {
+                errorProvider1.SetError(textNDocumento, "La longitud del numero del documento debe ser" + doctIdenti.numeroDigitos.ToString());
+                textNDocumento.Focus();
+                return false;
+            }
+
+            // Validacion de correo electronico
+            if (!Validator.IsValidEmail(textEmail.Text) && textEmail.Text != "")
+            {
+                errorProvider1.SetError(textEmail, "Dirección de correo electrónico inválido");
+                textEmail.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
             return true;
         }
 
@@ -124,5 +179,20 @@ namespace Admeli.Compras.Nuevo.Detalle
             this.Close();
         }
         #endregion
+
+        private void textTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void textNDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void textCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
     }
 }

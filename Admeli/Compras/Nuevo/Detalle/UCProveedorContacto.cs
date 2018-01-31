@@ -31,6 +31,11 @@ namespace Admeli.Compras.Nuevo.Detalle
             this.formProveedorNuevo = formProveedorNuevo;
         }
 
+        private void UCProveedorContacto_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
         internal void reLoad()
         {
             cargarRegistros();
