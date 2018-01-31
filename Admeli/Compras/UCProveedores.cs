@@ -16,7 +16,6 @@ namespace Admeli.Compras
 {
     public partial class UCProveedores : UserControl
     {
-        #region ===================== Metodos =====================
         private ProveedorModel proveedorModel = new ProveedorModel();
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
@@ -24,7 +23,6 @@ namespace Admeli.Compras
         private Paginacion paginacion;
         private List<Proveedor> proveedores { get; set; }
         private Proveedor currentProveedor { get; set; }
-        #endregion
 
         #region ======================= Constructor =======================
         public UCProveedores()
@@ -75,7 +73,46 @@ namespace Admeli.Compras
         {
             cargarComponentes();
             cargarRegistros();
-        } 
+            // Escuchando los eventos del formulario padre
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
+        }
+
+        internal void reLoad()
+        {
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F6:
+                    // executeEliminar();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
 
         #region ======================= Loads =======================
@@ -174,13 +211,6 @@ namespace Admeli.Compras
             // Paginados
             lblPageAllItems.Text = paginacion.itemsCount.ToString();
             lblPageCount.Text = paginacion.pageCount.ToString();
-        }
-
-        internal void reLoad()
-        {
-
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)

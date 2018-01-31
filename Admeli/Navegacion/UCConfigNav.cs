@@ -370,7 +370,6 @@ namespace Admeli.Navegacion
             if (uCTipoCambio != null) uCTipoCambio.lisenerKeyEvents = false;
         }
 
-
         private void btnColor()
         {
             btnAsignarCorrelativo.BackColor = this.BackColor;

@@ -45,7 +45,7 @@ namespace Admeli.Navegacion
         }
         private void togglePanelMain(string panelName)
         {
-            this.formPrincipal.panelMain.Controls.Clear();
+            this.limpiarControles();
             btnColor();
             switch (panelName)
             {
@@ -104,6 +104,14 @@ namespace Admeli.Navegacion
                 default:
                     break;
             }
+        }
+
+        private void limpiarControles()
+        {
+            this.formPrincipal.panelMain.Controls.Clear();
+            if (uCGuiaRemision != null) uCGuiaRemision.lisenerKeyEvents = false;
+            if (uCNotaEntrada != null) uCNotaEntrada.lisenerKeyEvents = false;
+            if (uCNotaEntrada != null) uCNotaEntrada.lisenerKeyEvents = false;
         }
 
         private void btnColor()
