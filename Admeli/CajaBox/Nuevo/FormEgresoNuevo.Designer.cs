@@ -39,6 +39,7 @@
             this.textNOperacion = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxMoneda = new System.Windows.Forms.ComboBox();
+            this.monedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textMonto = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.textMotivo = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -47,11 +48,12 @@
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.textObcervacion = new System.Windows.Forms.TextBox();
-            this.monedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monedaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -90,6 +92,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -108,6 +111,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panelHeader
             // 
@@ -190,6 +194,10 @@
             this.cbxMoneda.Size = new System.Drawing.Size(288, 26);
             this.cbxMoneda.TabIndex = 53;
             this.cbxMoneda.ValueMember = "idMoneda";
+            // 
+            // monedaBindingSource
+            // 
+            this.monedaBindingSource.DataSource = typeof(Entidad.Configuracion.Moneda);
             // 
             // textMonto
             // 
@@ -297,9 +305,9 @@
             this.textObcervacion.Size = new System.Drawing.Size(598, 108);
             this.textObcervacion.TabIndex = 69;
             // 
-            // monedaBindingSource
+            // errorProvider1
             // 
-            this.monedaBindingSource.DataSource = typeof(Entidad.Configuracion.Moneda);
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormEgresoNuevo
             // 
@@ -329,6 +337,7 @@
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monedaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +364,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textObcervacion;
         private System.Windows.Forms.BindingSource monedaBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
