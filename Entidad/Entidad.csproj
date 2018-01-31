@@ -58,6 +58,7 @@
     <Compile Include="Configuracion\PuntoGerencia.cs" />
     <Compile Include="Configuracion\TipoCambioMoneda.cs" />
     <Compile Include="Configuracion\TipoDocumento.cs" />
+    <Compile Include="Contacto.cs" />
     <Compile Include="Cotizacion.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Descuento.cs" />

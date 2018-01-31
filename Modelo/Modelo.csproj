@@ -50,6 +50,7 @@
     <Compile Include="CobroModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
+    <Compile Include="ContactoModel.cs" />
     <Compile Include="CotizacionModel.cs" />
     <Compile Include="DepartamentoModel.cs" />
     <Compile Include="DescuentoModel.cs" />

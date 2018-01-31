@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using Entidad.Location;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -11,18 +12,53 @@ namespace Modelo
     public class ProveedorModel
     {
         private WebService webService = new WebService();
+        private LocationModel locationModel = new LocationModel();
 
-        public void guardar()
+        public async Task<Response> guardar(UbicacionGeografica ubicacionGeografica, Proveedor param)
         {
+            try
+            {
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                param.idUbicacionGeografica = res.id;
 
+                // localhost:8080/admeli/xcore2/xcore/services.php/proveedor/guardar
+                return await webService.POSTSend("proveedor", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public void modificar()
-        {
 
-        }
-        public void eliminar()
+        public async Task<Response> modificar(UbicacionGeografica ubicacionGeografica, Proveedor param)
         {
-            
+            try
+            {
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                param.idUbicacionGeografica = res.id;
+
+                // localhost:8080/admeli/xcore2/xcore/services.php/proveedor/modificar
+                return await webService.POSTSend("proveedor", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> eliminar(Proveedor param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/proveedor/eliminar
+                return await webService.POSTSend("proveedor", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<RootObject<Proveedor>> proveedoreslike(int page, int items, string like = "")

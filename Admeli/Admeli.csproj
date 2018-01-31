@@ -159,6 +159,24 @@
     <Compile Include="Compras\Modificar\FormCuentaPagarModificar.Designer.cs">
       <DependentUpon>FormCuentaPagarModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\Nuevo\Detalle\FormContactoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Nuevo\Detalle\FormContactoNuevo.Designer.cs">
+      <DependentUpon>FormContactoNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Nuevo\Detalle\UCProveedorContacto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Compras\Nuevo\Detalle\UCProveedorContacto.Designer.cs">
+      <DependentUpon>UCProveedorContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Nuevo\Detalle\UCProveedorGeneral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Compras\Nuevo\Detalle\UCProveedorGeneral.Designer.cs">
+      <DependentUpon>UCProveedorGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\Nuevo\FormCompraProveedorNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -632,6 +650,15 @@
     <EmbeddedResource Include="Compras\Modificar\FormCuentaPagarModificar.resx">
       <DependentUpon>FormCuentaPagarModificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Nuevo\Detalle\FormContactoNuevo.resx">
+      <DependentUpon>FormContactoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Nuevo\Detalle\UCProveedorContacto.resx">
+      <DependentUpon>UCProveedorContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Nuevo\Detalle\UCProveedorGeneral.resx">
+      <DependentUpon>UCProveedorGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\Nuevo\FormCompraProveedorNuevo.resx">
       <DependentUpon>FormCompraProveedorNuevo.cs</DependentUpon>
     </EmbeddedResource>
@@ -871,6 +898,7 @@
     <None Include="Properties\DataSources\Entidad.Configuracion.Moneda.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.PuntoDeVenta.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.TipoDocumento.datasource" />
+    <None Include="Properties\DataSources\Entidad.Contacto.datasource" />
     <None Include="Properties\DataSources\Entidad.Cotizacion.datasource" />
     <None Include="Properties\DataSources\Entidad.DocCorrelativo.datasource" />
     <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />

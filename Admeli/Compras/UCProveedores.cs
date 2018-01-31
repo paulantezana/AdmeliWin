@@ -19,8 +19,11 @@ namespace Admeli.Compras
         #region ===================== Metodos =====================
         private ProveedorModel proveedorModel = new ProveedorModel();
         private FormPrincipal formPrincipal;
-        private Paginacion paginacion;
         public bool lisenerKeyEvents { get; set; }
+
+        private Paginacion paginacion;
+        private List<Proveedor> proveedores { get; set; }
+        private Proveedor currentProveedor { get; set; }
         #endregion
 
         #region ======================= Constructor =======================
@@ -42,33 +45,37 @@ namespace Admeli.Compras
         }
         #endregion
 
-        #region ============================ Paint ============================
+        #region ======================== Paint =======================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
+        private void decorationDataGridView()
+        {
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                int idProveedor = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentProveedor = proveedores.Find(x => x.idProveedor == idProveedor); // Buscando la categoria en las lista de categorias
+                if (currentProveedor.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        }
         #endregion
 
         #region ====================== root load ======================
-        private async void UCProveedores_Load(object sender, EventArgs e)
+        private void UCProveedores_Load(object sender, EventArgs e)
         {
             cargarComponentes();
-            await cargarRegistros();
-            decorationDataGridView();
+            cargarRegistros();
         } 
-        #endregion
-
-        #region =========================== Decoration ===========================
-        private void decorationDataGridView()
-        {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
-            {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
-        }
         #endregion
 
         #region ======================= Loads =======================
@@ -83,21 +90,27 @@ namespace Admeli.Compras
             loadState(false);
         }
 
-        private async Task cargarRegistros()
+        private async void cargarRegistros()
         {
             loadState(true);
             try
             {
-                RootObject<Proveedor> ordenCompra = await proveedorModel.proveedores(paginacion.currentPage, paginacion.speed);
+                RootObject<Proveedor> proveedorRoot = await proveedorModel.proveedores(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ordenCompra.nro_registros;
+                paginacion.itemsCount = proveedorRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                proveedorBindingSource.DataSource = ordenCompra.datos;
+                proveedores = proveedorRoot.datos;
+                proveedorBindingSource.DataSource = proveedores;
                 dataGridView.Refresh();
+
+                // Mostrando la páginacion
                 mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -170,21 +183,21 @@ namespace Admeli.Compras
             lisenerKeyEvents = true; // Active lisener key events
         }
 
-        private async void btnPrevious_Click(object sender, EventArgs e)
+        private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.previousPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
-        private async void btnFirst_Click(object sender, EventArgs e)
+        private void btnFirst_Click(object sender, EventArgs e)
         {
             if (lblCurrentPage.Text != "1")
             {
                 paginacion.firstPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
@@ -194,27 +207,27 @@ namespace Admeli.Compras
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.nextPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
-        private async void btnLast_Click(object sender, EventArgs e)
+        private void btnLast_Click(object sender, EventArgs e)
         {
             if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
             {
                 paginacion.lastPage();
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
-        private async void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
+        private void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
                 paginacion.currentPage = 1;
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
 
@@ -223,23 +236,11 @@ namespace Admeli.Compras
             if (e.KeyCode == Keys.Enter)
             {
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
-                await cargarRegistros();
+                cargarRegistros();
             }
         }
         #endregion
 
-        #region ==================== CRUD ====================
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            FormProveedorNuevo proveedorNuevo = new FormProveedorNuevo();
-            proveedorNuevo.ShowDialog();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            FormProveedorNuevo proveedorNuevo = new FormProveedorNuevo();
-            proveedorNuevo.ShowDialog();
-        }
         private async void btnBuscar_Click(object sender, EventArgs e)
         {
             await cargarRegistrosBuscados();
@@ -253,10 +254,88 @@ namespace Admeli.Compras
             }
         }
 
-        private async void btnActualizar_Click(object sender, EventArgs e)
+        #region ==================== CRUD ====================
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            await cargarRegistros();
-        } 
+            cargarRegistros();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            executeNuevo();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormProveedorNuevo formProveedor = new FormProveedorNuevo();
+            formProveedor.ShowDialog();
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idProveedor = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentProveedor = proveedores.Find(x => x.idProveedor == idProveedor); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormProveedorNuevo formProveedor = new FormProveedorNuevo(currentProveedor);
+            formProveedor.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+        
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentProveedor = new Proveedor(); //creando una instancia del objeto correspondiente
+                currentProveedor.idProveedor = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                // Comprobando si el registro ya esta desactivado
+                if (proveedores.Find(x => x.idProveedor == currentProveedor.idProveedor).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                /*Response response = await proveedorModel.desactivar(currentMarca);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+                */
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         #endregion
     }
 }

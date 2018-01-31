@@ -90,11 +90,11 @@
             this.panelContainer.Controls.Add(this.toolStripCrud);
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(11, 10);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContainer.Location = new System.Drawing.Point(8, 8);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(1179, 670);
+            this.panelContainer.Size = new System.Drawing.Size(885, 545);
             this.panelContainer.TabIndex = 7;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -102,11 +102,10 @@
             // 
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 161);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(1, 132);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel1.Size = new System.Drawing.Size(1177, 471);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel1.Size = new System.Drawing.Size(883, 382);
             this.panel1.TabIndex = 20;
             // 
             // dataGridView
@@ -143,12 +142,13 @@
             this.dataGridView.DataSource = this.proveedorBindingSource;
             this.dataGridView.DateWithTime = false;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(13, 12);
+            this.dataGridView.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(1151, 447);
+            this.dataGridView.Size = new System.Drawing.Size(863, 362);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             // 
@@ -160,7 +160,7 @@
             this.idProveedorDataGridViewTextBoxColumn.Name = "idProveedorDataGridViewTextBoxColumn";
             this.idProveedorDataGridViewTextBoxColumn.ReadOnly = true;
             this.idProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idProveedorDataGridViewTextBoxColumn.Width = 114;
+            this.idProveedorDataGridViewTextBoxColumn.Width = 89;
             // 
             // rucDataGridViewTextBoxColumn
             // 
@@ -170,7 +170,7 @@
             this.rucDataGridViewTextBoxColumn.Name = "rucDataGridViewTextBoxColumn";
             this.rucDataGridViewTextBoxColumn.ReadOnly = true;
             this.rucDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.rucDataGridViewTextBoxColumn.Width = 57;
+            this.rucDataGridViewTextBoxColumn.Width = 47;
             // 
             // razonSocialDataGridViewTextBoxColumn
             // 
@@ -180,7 +180,7 @@
             this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
             this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
             this.razonSocialDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.razonSocialDataGridViewTextBoxColumn.Width = 111;
+            this.razonSocialDataGridViewTextBoxColumn.Width = 87;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
@@ -190,7 +190,7 @@
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             this.telefonoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.telefonoDataGridViewTextBoxColumn.Width = 88;
+            this.telefonoDataGridViewTextBoxColumn.Width = 70;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -200,7 +200,7 @@
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.emailDataGridViewTextBoxColumn.Width = 70;
+            this.emailDataGridViewTextBoxColumn.Width = 56;
             // 
             // actividadPrincipalDataGridViewTextBoxColumn
             // 
@@ -210,7 +210,7 @@
             this.actividadPrincipalDataGridViewTextBoxColumn.Name = "actividadPrincipalDataGridViewTextBoxColumn";
             this.actividadPrincipalDataGridViewTextBoxColumn.ReadOnly = true;
             this.actividadPrincipalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.actividadPrincipalDataGridViewTextBoxColumn.Width = 147;
+            this.actividadPrincipalDataGridViewTextBoxColumn.Width = 115;
             // 
             // tipoProveedorDataGridViewTextBoxColumn
             // 
@@ -220,7 +220,7 @@
             this.tipoProveedorDataGridViewTextBoxColumn.Name = "tipoProveedorDataGridViewTextBoxColumn";
             this.tipoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tipoProveedorDataGridViewTextBoxColumn.Width = 126;
+            this.tipoProveedorDataGridViewTextBoxColumn.Width = 98;
             // 
             // direccionDataGridViewTextBoxColumn
             // 
@@ -230,7 +230,7 @@
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
             this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.direccionDataGridViewTextBoxColumn.Width = 94;
+            this.direccionDataGridViewTextBoxColumn.Width = 75;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
@@ -240,7 +240,7 @@
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 80;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
             // 
             // idUbicacionGeograficaDataGridViewTextBoxColumn
             // 
@@ -250,7 +250,7 @@
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 180;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 140;
             // 
             // nroComprasDataGridViewTextBoxColumn
             // 
@@ -260,7 +260,7 @@
             this.nroComprasDataGridViewTextBoxColumn.Name = "nroComprasDataGridViewTextBoxColumn";
             this.nroComprasDataGridViewTextBoxColumn.ReadOnly = true;
             this.nroComprasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nroComprasDataGridViewTextBoxColumn.Width = 116;
+            this.nroComprasDataGridViewTextBoxColumn.Width = 90;
             // 
             // proveedorBindingSource
             // 
@@ -287,10 +287,10 @@
             this.toolStripButton1,
             this.lblSpeedPages,
             this.toolStripButton3});
-            this.toolStripNavigation.Location = new System.Drawing.Point(1, 632);
+            this.toolStripNavigation.Location = new System.Drawing.Point(1, 514);
             this.toolStripNavigation.Name = "toolStripNavigation";
-            this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.toolStripNavigation.Size = new System.Drawing.Size(1177, 37);
+            this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.toolStripNavigation.Size = new System.Drawing.Size(883, 30);
             this.toolStripNavigation.TabIndex = 19;
             this.toolStripNavigation.Text = "toolStrip3";
             // 
@@ -300,7 +300,7 @@
             this.lblPageAllItems.Image = ((System.Drawing.Image)(resources.GetObject("lblPageAllItems.Image")));
             this.lblPageAllItems.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lblPageAllItems.Name = "lblPageAllItems";
-            this.lblPageAllItems.Size = new System.Drawing.Size(17, 34);
+            this.lblPageAllItems.Size = new System.Drawing.Size(13, 27);
             this.lblPageAllItems.Text = "0";
             this.lblPageAllItems.ToolTipText = "Total de registros en el sistema";
             // 
@@ -310,7 +310,7 @@
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(70, 34);
+            this.toolStripButton5.Size = new System.Drawing.Size(55, 27);
             this.toolStripButton5.Text = "Registros";
             // 
             // btnFirst
@@ -319,7 +319,7 @@
             this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
             this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(24, 34);
+            this.btnFirst.Size = new System.Drawing.Size(24, 27);
             this.btnFirst.Text = "Primera página";
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
@@ -329,7 +329,7 @@
             this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
             this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(24, 34);
+            this.btnPrevious.Size = new System.Drawing.Size(24, 27);
             this.btnPrevious.Text = "Anterior página";
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
@@ -337,7 +337,7 @@
             // 
             this.lblCurrentPage.AutoSize = false;
             this.lblCurrentPage.Name = "lblCurrentPage";
-            this.lblCurrentPage.Size = new System.Drawing.Size(40, 28);
+            this.lblCurrentPage.Size = new System.Drawing.Size(31, 23);
             this.lblCurrentPage.Text = "1";
             this.lblCurrentPage.ToolTipText = "Página actual (enter)";
             this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
@@ -348,7 +348,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(15, 34);
+            this.toolStripButton2.Size = new System.Drawing.Size(12, 27);
             this.toolStripButton2.Text = "/";
             // 
             // lblPageCount
@@ -357,7 +357,7 @@
             this.lblPageCount.Image = ((System.Drawing.Image)(resources.GetObject("lblPageCount.Image")));
             this.lblPageCount.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lblPageCount.Name = "lblPageCount";
-            this.lblPageCount.Size = new System.Drawing.Size(17, 34);
+            this.lblPageCount.Size = new System.Drawing.Size(13, 27);
             this.lblPageCount.Text = "1";
             this.lblPageCount.ToolTipText = "Número total de páginas";
             // 
@@ -367,7 +367,7 @@
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(24, 34);
+            this.btnNext.Size = new System.Drawing.Size(24, 27);
             this.btnNext.Text = "Siguiente página";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -377,7 +377,7 @@
             this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
             this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(24, 34);
+            this.btnLast.Size = new System.Drawing.Size(24, 27);
             this.btnLast.Text = "Ultimo página";
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
@@ -387,14 +387,14 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(96, 34);
+            this.toolStripButton1.Size = new System.Drawing.Size(76, 27);
             this.toolStripButton1.Text = "Mostrar cada";
             // 
             // lblSpeedPages
             // 
             this.lblSpeedPages.AutoSize = false;
             this.lblSpeedPages.Name = "lblSpeedPages";
-            this.lblSpeedPages.Size = new System.Drawing.Size(50, 37);
+            this.lblSpeedPages.Size = new System.Drawing.Size(38, 23);
             this.lblSpeedPages.Text = "100";
             this.lblSpeedPages.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lblSpeedPages.ToolTipText = "Cantidad de registros a mostrar (enter)";
@@ -406,7 +406,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(70, 34);
+            this.toolStripButton3.Size = new System.Drawing.Size(55, 27);
             this.toolStripButton3.Text = "Registros";
             // 
             // toolStripTools
@@ -420,10 +420,10 @@
             this.toolStripButton6,
             this.textBuscar,
             this.btnBuscar});
-            this.toolStripTools.Location = new System.Drawing.Point(1, 106);
+            this.toolStripTools.Location = new System.Drawing.Point(1, 87);
             this.toolStripTools.Name = "toolStripTools";
-            this.toolStripTools.Padding = new System.Windows.Forms.Padding(10);
-            this.toolStripTools.Size = new System.Drawing.Size(1177, 55);
+            this.toolStripTools.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.toolStripTools.Size = new System.Drawing.Size(883, 45);
             this.toolStripTools.TabIndex = 18;
             this.toolStripTools.Text = "toolStrip2";
             // 
@@ -434,7 +434,7 @@
             this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(129, 32);
+            this.toolStripButton6.Size = new System.Drawing.Size(107, 26);
             this.toolStripButton6.Text = "Nombre proveedor:";
             // 
             // textBuscar
@@ -443,7 +443,7 @@
             this.textBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(399, 26);
+            this.textBuscar.Size = new System.Drawing.Size(300, 22);
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
             // 
             // btnBuscar
@@ -452,7 +452,7 @@
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(73, 32);
+            this.btnBuscar.Size = new System.Drawing.Size(65, 26);
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.ToolTipText = "Buscar (Enter)";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -470,10 +470,10 @@
             this.btnEliminar,
             this.btnAnular,
             this.btnActualizar});
-            this.toolStripCrud.Location = new System.Drawing.Point(1, 51);
+            this.toolStripCrud.Location = new System.Drawing.Point(1, 42);
             this.toolStripCrud.Name = "toolStripCrud";
-            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(0, 0, 1, 10);
-            this.toolStripCrud.Size = new System.Drawing.Size(1177, 55);
+            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(0, 0, 1, 8);
+            this.toolStripCrud.Size = new System.Drawing.Size(883, 45);
             this.toolStripCrud.TabIndex = 17;
             this.toolStripCrud.Text = "toolStrip1";
             // 
@@ -488,6 +488,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNuevo.ToolTipText = "Agregar un nuevo registro (F3)";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -500,6 +501,7 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -524,6 +526,7 @@
             this.btnAnular.Text = "Anular";
             this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAnular.ToolTipText = "Anular(F7)";
+            this.btnAnular.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // btnActualizar
             // 
@@ -543,30 +546,31 @@
             this.panelHeaderItem1.Controls.Add(this.label1);
             this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(1177, 50);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(883, 41);
             this.panelHeaderItem1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(9, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 20);
+            this.label1.Size = new System.Drawing.Size(114, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "PROVEEDORES";
             // 
             // UCProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCProveedores";
-            this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.Size = new System.Drawing.Size(1201, 690);
+            this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Size = new System.Drawing.Size(901, 561);
             this.Load += new System.EventHandler(this.UCProveedores_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
