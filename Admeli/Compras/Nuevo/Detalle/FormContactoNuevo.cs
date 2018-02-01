@@ -155,7 +155,7 @@ namespace Admeli.Compras.Nuevo.Detalle
 
             // Validando la longitud del documento
             DocumentoIdentificacion doctIdenti = docIdentificaciones.Find(x => x.idDocumento == Convert.ToInt32(cbxTipoDocumento.SelectedValue));
-            if (doctIdenti.numeroDigitos.ToString() != textNDocumento.Text && textNDocumento.Text != "")
+            if (doctIdenti.numeroDigitos != textNDocumento.Text.Length && textNDocumento.Text != "")
             {
                 errorProvider1.SetError(textNDocumento, "La longitud del numero del documento debe ser" + doctIdenti.numeroDigitos.ToString());
                 textNDocumento.Focus();

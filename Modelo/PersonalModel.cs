@@ -120,5 +120,19 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Personal>> listarPersonalAlmacen(int idSucursal)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/listarpersonalalmacen/sucursal/0
+                List<Personal> list = await webService.GETLis<Personal>("listarpersonalalmacen", String.Format("sucursal/{0}", idSucursal));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

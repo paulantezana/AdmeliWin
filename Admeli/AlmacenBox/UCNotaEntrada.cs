@@ -18,20 +18,23 @@ namespace Admeli.AlmacenBox
         public UCNotaEntrada()
         {
             InitializeComponent();
-
             lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCNotaEntrada(FormPrincipal formPrincipal)
         {
+            InitializeComponent();
             this.formPrincipal = formPrincipal;
         }
 
         internal void reLoad()
         {
-
-
             lisenerKeyEvents = true; // Active lisener key events
+        }
+
+        private void UCNotaEntrada_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

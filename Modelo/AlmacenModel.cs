@@ -93,8 +93,22 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/almacenes/id/nombre/estado/1
-                List<Almacen> almacenes = await webService.GETLis<Almacen>("almacenes", String.Format("id/nombre/estado/{0}",estado));
-                return almacenes;
+                List<Almacen> list = await webService.GETLis<Almacen>("almacenes", String.Format("id/nombre/estado/{0}",estado));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Almacen>> almacenesPorSucursales(int idSucursal)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/almacenesporsucursal/sucursal/0
+                List<Almacen> list = await webService.GETLis<Almacen>("almacenesporsucursal", String.Format("sucursal/{0}", idSucursal));
+                return list;
             }
             catch (Exception ex)
             {
