@@ -29,22 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCProveedores));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rucDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actividadPrincipalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroComprasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
@@ -71,6 +60,17 @@
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.idProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rucDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actividadPrincipalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoProveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroComprasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -118,14 +118,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProveedorDataGridViewTextBoxColumn,
@@ -151,116 +151,6 @@
             this.dataGridView.Size = new System.Drawing.Size(863, 362);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
-            // 
-            // idProveedorDataGridViewTextBoxColumn
-            // 
-            this.idProveedorDataGridViewTextBoxColumn.DataPropertyName = "idProveedor";
-            this.idProveedorDataGridViewTextBoxColumn.HeaderText = "idProveedor";
-            this.idProveedorDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idProveedorDataGridViewTextBoxColumn.Name = "idProveedorDataGridViewTextBoxColumn";
-            this.idProveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idProveedorDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // rucDataGridViewTextBoxColumn
-            // 
-            this.rucDataGridViewTextBoxColumn.DataPropertyName = "ruc";
-            this.rucDataGridViewTextBoxColumn.HeaderText = "ruc";
-            this.rucDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.rucDataGridViewTextBoxColumn.Name = "rucDataGridViewTextBoxColumn";
-            this.rucDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rucDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.rucDataGridViewTextBoxColumn.Width = 47;
-            // 
-            // razonSocialDataGridViewTextBoxColumn
-            // 
-            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "razonSocial";
-            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "razonSocial";
-            this.razonSocialDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
-            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
-            this.razonSocialDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.razonSocialDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.telefonoDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.emailDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // actividadPrincipalDataGridViewTextBoxColumn
-            // 
-            this.actividadPrincipalDataGridViewTextBoxColumn.DataPropertyName = "actividadPrincipal";
-            this.actividadPrincipalDataGridViewTextBoxColumn.HeaderText = "actividadPrincipal";
-            this.actividadPrincipalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.actividadPrincipalDataGridViewTextBoxColumn.Name = "actividadPrincipalDataGridViewTextBoxColumn";
-            this.actividadPrincipalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.actividadPrincipalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.actividadPrincipalDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // tipoProveedorDataGridViewTextBoxColumn
-            // 
-            this.tipoProveedorDataGridViewTextBoxColumn.DataPropertyName = "tipoProveedor";
-            this.tipoProveedorDataGridViewTextBoxColumn.HeaderText = "tipoProveedor";
-            this.tipoProveedorDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tipoProveedorDataGridViewTextBoxColumn.Name = "tipoProveedorDataGridViewTextBoxColumn";
-            this.tipoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tipoProveedorDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
-            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.direccionDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // idUbicacionGeograficaDataGridViewTextBoxColumn
-            // 
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.DataPropertyName = "idUbicacionGeografica";
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.HeaderText = "idUbicacionGeografica";
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // nroComprasDataGridViewTextBoxColumn
-            // 
-            this.nroComprasDataGridViewTextBoxColumn.DataPropertyName = "NroCompras";
-            this.nroComprasDataGridViewTextBoxColumn.HeaderText = "NroCompras";
-            this.nroComprasDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nroComprasDataGridViewTextBoxColumn.Name = "nroComprasDataGridViewTextBoxColumn";
-            this.nroComprasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroComprasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nroComprasDataGridViewTextBoxColumn.Width = 90;
             // 
             // proveedorBindingSource
             // 
@@ -514,6 +404,7 @@
             this.btnEliminar.Text = "Eliminar (F6)";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAnular
             // 
@@ -561,6 +452,119 @@
             this.label1.Size = new System.Drawing.Size(114, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "PROVEEDORES";
+            // 
+            // idProveedorDataGridViewTextBoxColumn
+            // 
+            this.idProveedorDataGridViewTextBoxColumn.DataPropertyName = "idProveedor";
+            this.idProveedorDataGridViewTextBoxColumn.HeaderText = "idProveedor";
+            this.idProveedorDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idProveedorDataGridViewTextBoxColumn.Name = "idProveedorDataGridViewTextBoxColumn";
+            this.idProveedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idProveedorDataGridViewTextBoxColumn.Visible = false;
+            this.idProveedorDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // rucDataGridViewTextBoxColumn
+            // 
+            this.rucDataGridViewTextBoxColumn.DataPropertyName = "ruc";
+            this.rucDataGridViewTextBoxColumn.HeaderText = "RUC";
+            this.rucDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.rucDataGridViewTextBoxColumn.Name = "rucDataGridViewTextBoxColumn";
+            this.rucDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rucDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.rucDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // razonSocialDataGridViewTextBoxColumn
+            // 
+            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "razonSocial";
+            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "Proveedor";
+            this.razonSocialDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
+            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.razonSocialDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.razonSocialDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefonoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.telefonoDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.emailDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // actividadPrincipalDataGridViewTextBoxColumn
+            // 
+            this.actividadPrincipalDataGridViewTextBoxColumn.DataPropertyName = "actividadPrincipal";
+            this.actividadPrincipalDataGridViewTextBoxColumn.HeaderText = "Actividad Principal";
+            this.actividadPrincipalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.actividadPrincipalDataGridViewTextBoxColumn.Name = "actividadPrincipalDataGridViewTextBoxColumn";
+            this.actividadPrincipalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.actividadPrincipalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.actividadPrincipalDataGridViewTextBoxColumn.Width = 109;
+            // 
+            // tipoProveedorDataGridViewTextBoxColumn
+            // 
+            this.tipoProveedorDataGridViewTextBoxColumn.DataPropertyName = "tipoProveedor";
+            this.tipoProveedorDataGridViewTextBoxColumn.HeaderText = "Tipo Proveedor";
+            this.tipoProveedorDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tipoProveedorDataGridViewTextBoxColumn.Name = "tipoProveedorDataGridViewTextBoxColumn";
+            this.tipoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tipoProveedorDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
+            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.direccionDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // idUbicacionGeograficaDataGridViewTextBoxColumn
+            // 
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.DataPropertyName = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.HeaderText = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Visible = false;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // nroComprasDataGridViewTextBoxColumn
+            // 
+            this.nroComprasDataGridViewTextBoxColumn.DataPropertyName = "NroCompras";
+            this.nroComprasDataGridViewTextBoxColumn.HeaderText = "Nro Compras";
+            this.nroComprasDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nroComprasDataGridViewTextBoxColumn.Name = "nroComprasDataGridViewTextBoxColumn";
+            this.nroComprasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroComprasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nroComprasDataGridViewTextBoxColumn.Width = 86;
             // 
             // UCProveedores
             // 
@@ -617,6 +621,8 @@
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnAnular;
         private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.BindingSource proveedorBindingSource;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rucDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocialDataGridViewTextBoxColumn;
@@ -628,7 +634,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUbicacionGeograficaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroComprasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource proveedorBindingSource;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }

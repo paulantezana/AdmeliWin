@@ -48,6 +48,19 @@ namespace Modelo
             }
         }
 
+        public async Task<Response> modificar(Proveedor param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/proveedor/modificar
+                return await webService.POSTSend("proveedor", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<Response> eliminar(Proveedor param)
         {
             try

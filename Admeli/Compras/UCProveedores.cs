@@ -104,7 +104,7 @@ namespace Admeli.Compras
                     cargarRegistros();
                     break;
                 case Keys.F6:
-                    // executeEliminar();
+                    executeEliminar();
                     break;
                 case Keys.F7:
                     executeAnular();
@@ -231,7 +231,7 @@ namespace Admeli.Compras
             }
         }
 
-        private async void btnNext_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             if (lblPageCount.Text == "0") return;
             if (lblPageCount.Text != lblCurrentPage.Text)
@@ -261,7 +261,7 @@ namespace Admeli.Compras
             }
         }
 
-        private async void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
+        private void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -300,6 +300,11 @@ namespace Admeli.Compras
             executeModificar();
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            executeEliminar();
+        }
+
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
             executeAnular();
@@ -317,7 +322,7 @@ namespace Admeli.Compras
             // Verificando la existencia de datos en el datagridview
             if (dataGridView.Rows.Count == 0)
             {
-                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -331,7 +336,44 @@ namespace Admeli.Compras
             formProveedor.ShowDialog();
             cargarRegistros(); // recargando loas registros en el datagridview
         }
-        
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentProveedor = new Proveedor(); //creando una instancia del objeto categoria
+                currentProveedor.idProveedor = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await proveedorModel.eliminar(currentProveedor); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+
         private async void executeAnular()
         {
             // Verificando la existencia de datos en el datagridview
@@ -344,21 +386,15 @@ namespace Admeli.Compras
             try
             {
                 int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
-                currentProveedor = new Proveedor(); //creando una instancia del objeto correspondiente
-                currentProveedor.idProveedor = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+                int idProveedor = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
 
-                // Comprobando si el registro ya esta desactivado
-                if (proveedores.Find(x => x.idProveedor == currentProveedor.idProveedor).estado == 0)
-                {
-                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                currentProveedor = proveedores.Find(x => x.idProveedor == idProveedor); // Buscando la registro especifico en la lista de registros
+                currentProveedor.estado = 0;
 
                 // Procediendo con las desactivacion
-                /*Response response = await proveedorModel.desactivar(currentMarca);
+                Response response = await proveedorModel.modificar(currentProveedor);
                 MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cargarRegistros(); // recargando los registros en el datagridview
-                */
             }
             catch (Exception ex)
             {
