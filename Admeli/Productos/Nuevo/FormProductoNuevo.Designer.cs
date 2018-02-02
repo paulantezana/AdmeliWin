@@ -39,6 +39,8 @@
             this.btnStock = new System.Windows.Forms.Button();
             this.btnGenerales = new System.Windows.Forms.Button();
             this.panelMainNP = new System.Windows.Forms.Panel();
+            this.progressBarApp = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,12 +182,27 @@
             this.panelMainNP.Size = new System.Drawing.Size(1036, 568);
             this.panelMainNP.TabIndex = 7;
             // 
+            // progressBarApp
+            // 
+            this.progressBarApp.BackColor = System.Drawing.Color.White;
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBarApp.Location = new System.Drawing.Point(60, 0);
+            this.progressBarApp.Margin = new System.Windows.Forms.Padding(2);
+            this.progressBarApp.MarqueeAnimationSpeed = 10;
+            this.progressBarApp.Maximum = 200;
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.RightToLeftLayout = true;
+            this.progressBarApp.Size = new System.Drawing.Size(1036, 3);
+            this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBarApp.TabIndex = 8;
+            // 
             // FormProductoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1096, 568);
+            this.Controls.Add(this.progressBarApp);
             this.Controls.Add(this.panelMainNP);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -208,5 +225,7 @@
         private System.Windows.Forms.Button btnOtros;
         private System.Windows.Forms.Button btnStock;
         public System.Windows.Forms.Panel panelMainNP;
+        protected System.Windows.Forms.ProgressBar progressBarApp;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

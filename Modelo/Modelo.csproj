@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlmacenModel.cs" />
+    <Compile Include="AlternativaModel.cs" />
     <Compile Include="CajaModel.cs" />
     <Compile Include="CategoriaModel.cs" />
     <Compile Include="ClienteModel.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="MarcaModel.cs" />
     <Compile Include="MonedaModel.cs" />
     <Compile Include="NotaEntradaModel.cs" />
+    <Compile Include="OfertaModel.cs" />
     <Compile Include="OrdenCompraModel.cs" />
     <Compile Include="PagoModel.cs" />
     <Compile Include="PersonalModel.cs" />

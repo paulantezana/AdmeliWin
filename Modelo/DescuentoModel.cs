@@ -12,27 +12,64 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
-        {
-
-        }
-
-        public void modificar()
-        {
-
-        }
-
-        public void eliminar()
-        {
-
-        }
-
-        public async Task<RootObject<Descuento>> descuentoOfertaCodigo(int page, int items)
+        public async Task<Response> guardar(Descuento param)
         {
             try
             {
-                // www.lineatienda.com/services.php/descuentoofertacodigo/1/100
-                RootObject<Descuento> descuentos = await webService.GETRoot<Descuento>("descuentoofertacodigo", String.Format("{0}/{1}", page, items));
+                // localhost:8080/admeli/xcore2/xcore/services.php/descuento/guardar
+                return await webService.POSTSend("descuento", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> modificar(Descuento param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/descuento/modificar
+                return await webService.POSTSend("descuento", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> desactivar(Descuento param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/desccascasuento/elicascsminar
+                return await webService.POSTSend("catecascascasgoria", "dascascasesactivar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> eliminar(Descuento param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/descuento/eliminar
+                return await webService.POSTSend("descuento", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<RootObject<Descuento>> descuentoOfertaCodigo(int idProducto)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/descuento/producto/21
+                RootObject<Descuento> descuentos = await webService.GETRoot<Descuento>("descuento", String.Format("producto/{0}", idProducto));
                 return descuentos;
             }
             catch (Exception ex)

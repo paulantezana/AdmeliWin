@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacen.cs" />
+    <Compile Include="Alternativa.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaProducto.cs" />
     <Compile Include="Cliente.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Location\UbicacionGeografica.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="NotaEntrada.cs" />
+    <Compile Include="Oferta.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Pago.cs" />
     <Compile Include="Personal.cs" />

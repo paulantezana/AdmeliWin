@@ -46,12 +46,31 @@ namespace Admeli.Productos
         }
         #endregion
 
-        #region ======================== Paint ========================
+        #region ======================== Paint and decoration ========================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
-        } 
+        }
+
+        private void decorationDataGridView()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                int idCategoria = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                Categoria categoria = categorias.Find(x => x.idCategoria == idCategoria); // Buscando la categoria en las lista de categorias
+                if (categoria.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        }
         #endregion
 
         #region ============================== Load Root ==============================
@@ -99,27 +118,6 @@ namespace Admeli.Productos
                     break;
             }
         } 
-        #endregion
-
-        #region =========================== Decoration ===========================
-        private void decorationDataGridView()
-        {
-            // Verificando la existencia de datos en el datagridview
-            if (dataGridView.Rows.Count == 0) return;
-
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                int idCategoria = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
-
-                Categoria categoria = categorias.Find(x => x.idCategoria == idCategoria); // Buscando la categoria en las lista de categorias
-                if (categoria.estado == 0)
-                {
-                    dataGridView.ClearSelection();
-                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
-                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
-                }
-            }
-        }
         #endregion
 
         #region ======================= Loads =======================

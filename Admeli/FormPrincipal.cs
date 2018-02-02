@@ -425,10 +425,12 @@ namespace Admeli
         {
             if (state)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 progressBarApp.Style = ProgressBarStyle.Marquee;
             }
             else
             {
+                Cursor.Current = Cursors.Default;
                 progressBarApp.Style = ProgressBarStyle.Blocks;
             }
         }

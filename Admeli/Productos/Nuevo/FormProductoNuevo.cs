@@ -176,6 +176,20 @@ namespace Admeli.Productos.Nuevo
             btnWeb.BackColor = Color.FromArgb(230, 231, 232);
         }
 
+        public void appLoadState(bool state)
+        {
+            if (state)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                progressBarApp.Style = ProgressBarStyle.Marquee;
+            }
+            else
+            {
+                Cursor.Current = Cursors.Default;
+                progressBarApp.Style = ProgressBarStyle.Blocks;
+            }
+        }
+
         private void FormProductoNuevo_Load(object sender, EventArgs e)
         {
             togglePanelMain("generales");

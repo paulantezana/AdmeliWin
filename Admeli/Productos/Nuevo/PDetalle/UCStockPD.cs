@@ -27,6 +27,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
         public bool lisenerKeyEvents { get; internal set; }
         private FormProductoNuevo formProductoNuevo;
 
+        #region ================================ Constructor ================================
         public UCStockPD()
         {
             InitializeComponent();
@@ -37,39 +38,87 @@ namespace Admeli.Productos.Nuevo.PDetalle
             InitializeComponent();
             this.formProductoNuevo = formProductoNuevo;
         }
+        #endregion
 
+        #region =========================== Root Load ===========================
+        private void UCStockPD_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
 
         internal void reLoad()
         {
             cargarPrecios();
             cargarStock();
         }
+        #endregion
 
+        #region =========================== Loads ===========================
         private async void cargarPrecios()
         {
-            precios = await precioModel.precioProducto(formProductoNuevo.currentIDProducto);
-            precioBindingSource.DataSource = precios;
+            try
+            {
+                formProductoNuevo.appLoadState(true);
+                precios = await precioModel.precioProducto(formProductoNuevo.currentIDProducto);
+                precioBindingSource.DataSource = precios;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                formProductoNuevo.appLoadState(false);
+            }
         }
 
         private async void cargarStock()
         {
-            stocks = await stockModel.stockProducto(formProductoNuevo.currentIDProducto);
-            stockBindingSource.DataSource = stocks;
-        }
+            try
+            {
+                formProductoNuevo.appLoadState(true);
+                stocks = await stockModel.stockProducto(formProductoNuevo.currentIDProducto);
+                stockBindingSource.DataSource = stocks;
 
+                // dando formato en las celdas
+                decorationDataGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                formProductoNuevo.appLoadState(false);
+            }
+        } 
+        #endregion
+
+        #region ============================== Paint decoration ==============================
         private void panelHeader_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.bottomLine(panelHeader);
         }
 
-        private void UCStockPD_Load(object sender, EventArgs e)
+        private void decorationDataGridView()
         {
-            this.reLoad();
-        }
+            if (dataGridViewStocks.Rows.Count == 0) return;
 
+            foreach (DataGridViewRow row in dataGridViewStocks.Rows)
+            {
+                int idProductoStockAlmacen = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
 
-
+                currentStock = stocks.Find(x => x.idProductoStockAlmacen == idProductoStockAlmacen); // Buscando la categoria en las lista de categorias
+                if (currentStock.estado == 0)
+                {
+                    dataGridViewStocks.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        } 
+        #endregion
 
         #region ==================== CRUD ====================
         private void btnModificar_Click(object sender, EventArgs e)
@@ -165,6 +214,8 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
             try
             {
+                formProductoNuevo.appLoadState(true); // estado cargando
+
                 int index = dataGridViewPrecios.CurrentRow.Index; // Identificando la fila actual del datagridview
                 currentPrecio = new Precio(); //creando una instancia del objeto correspondiente
                 currentPrecio.idPrecioProducto = Convert.ToInt32(dataGridViewPrecios.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
@@ -185,6 +236,10 @@ namespace Admeli.Productos.Nuevo.PDetalle
             {
                 MessageBox.Show("Error: " + ex.Message, "Anular", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally
+            {
+                formProductoNuevo.appLoadState(false);
+            }
         }
 
         private async void executeEliminarStock()
@@ -204,11 +259,12 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
             try
             {
+                formProductoNuevo.appLoadState(true); // cambiando el estado
+
                 int index = dataGridViewStocks.CurrentRow.Index; // Identificando la fila actual del datagridview
                 currentStock = new Stock(); //creando una instancia del objeto categoria
                 currentStock.idProductoStockAlmacen = Convert.ToInt32(dataGridViewStocks.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
 
-                loadState(true); // cambiando el estado
                 Response response = await stockModel.eliminar(currentStock); // Eliminando con el webservice correspondiente
                 MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cargarStock(); // recargando el datagridview
@@ -219,7 +275,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             }
             finally
             {
-                loadState(false); // cambiando el estado
+                formProductoNuevo.appLoadState(false); // cambiando el estado
             }
         }
 
@@ -258,10 +314,5 @@ private async void executeAnularStock()
    }
 }*/
         #endregion
-
-        private void loadState(bool v)
-        {
-            // 
-        }
     }
 }

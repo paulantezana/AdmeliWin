@@ -403,5 +403,10 @@ namespace Admeli.Compras
         }
 
         #endregion
+
+        private void UCProveedores_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }
