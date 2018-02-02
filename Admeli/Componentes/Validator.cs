@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 
 namespace Admeli.Componentes
 {
@@ -121,5 +123,20 @@ namespace Admeli.Componentes
             return match.Groups[1].Value + domainName;
         }
 
+        internal static void textboxValidateColor(BunifuMetroTextbox textBox, bool isSuccess)
+        {
+            if (isSuccess)
+            {
+                textBox.BorderColorIdle = Color.FromArgb(22, 166, 106);
+                textBox.BorderColorFocused = Color.FromArgb(22, 166, 106);
+                textBox.BorderColorMouseHover = Color.FromArgb(22, 166, 106);
+            }
+            else
+            {
+                textBox.BorderColorIdle = Color.FromArgb(248, 63, 81);
+                textBox.BorderColorFocused = Color.FromArgb(248, 63, 81);
+                textBox.BorderColorMouseHover = Color.FromArgb(248, 63, 81);
+            }
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCGeneralesPD));
             this.label9 = new System.Windows.Forms.Label();
             this.chkActivoProducto = new Bunifu.Framework.UI.BunifuCheckbox();
             this.btnAddUnidadMedida = new System.Windows.Forms.Button();
@@ -56,11 +57,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.unidadMedidaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -212,6 +215,8 @@
             this.textPrecioCompra.Size = new System.Drawing.Size(367, 35);
             this.textPrecioCompra.TabIndex = 43;
             this.textPrecioCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecioCompra_KeyPress);
+            this.textPrecioCompra.Validated += new System.EventHandler(this.textPrecioCompra_Validated);
             // 
             // label5
             // 
@@ -243,6 +248,7 @@
             this.textNombreProducto.Size = new System.Drawing.Size(367, 35);
             this.textNombreProducto.TabIndex = 41;
             this.textNombreProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNombreProducto.Validated += new System.EventHandler(this.textNombreProducto_Validated);
             // 
             // label3
             // 
@@ -274,6 +280,7 @@
             this.textCodigoProducto.Size = new System.Drawing.Size(367, 35);
             this.textCodigoProducto.TabIndex = 39;
             this.textCodigoProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCodigoProducto.Validated += new System.EventHandler(this.textCodigoProducto_Validated);
             // 
             // label2
             // 
@@ -427,6 +434,11 @@
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
             // UCGeneralesPD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +473,7 @@
             this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,5 +508,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.BindingSource unidadMedidaBindingSource;
         private System.Windows.Forms.BindingSource marcaBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

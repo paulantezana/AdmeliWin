@@ -12,8 +12,23 @@ namespace Modelo
     public class ProductoModel
     {
         public static Producto producto { get; set; }
-
         private WebService webService = new WebService();
+
+        // validacion de un producto     
+        public async Task<List<Producto>> validarProducto(Producto param)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/verificarproductonombrecodigo
+                List<Producto> list = await webService.POSTResponse("verificarproductonombrecodigo", param);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public void guardar()
         {
