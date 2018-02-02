@@ -22,7 +22,13 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         public FormAlternativaNuevo(Alternativa currentAlternativa)
         {
+            InitializeComponent();
             this.currentAlternativa = currentAlternativa;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

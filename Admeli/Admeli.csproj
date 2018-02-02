@@ -834,6 +834,9 @@
     <EmbeddedResource Include="Productos\Nuevo\FormUnidadMedidaNuevo.resx">
       <DependentUpon>FormUnidadMedidaNuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormAlternativaNuevo.resx">
+      <DependentUpon>FormAlternativaNuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormElegirCategoria.resx">
       <DependentUpon>FormElegirCategoria.cs</DependentUpon>
     </EmbeddedResource>

@@ -22,7 +22,13 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         public FormPresentacionNuevo(Presentacion currentPresentacion)
         {
+            InitializeComponent();
             this.currentPresentacion = currentPresentacion;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

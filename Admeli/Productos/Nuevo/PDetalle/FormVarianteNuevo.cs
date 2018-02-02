@@ -22,7 +22,13 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         public FormVarianteNuevo(Variante currentVariante)
         {
+            InitializeComponent();
             this.currentVariante = currentVariante;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
