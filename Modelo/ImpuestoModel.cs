@@ -64,6 +64,23 @@ namespace Modelo
             }
         }
 
+
+        // prod/21/suc/1
+
+        public async Task<List<Impuesto>> impuestoProductoSucursal(int idProducto, int idSucursal)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/impuestos/prod/21/suc/1
+                List<Impuesto> list = await webService.GETLis<Impuesto>("impuestos", String.Format("prod/{0}/suc/{1}", idProducto, idSucursal));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<RootObject<Impuesto>> impuestos(int page, int items)
         {
             try

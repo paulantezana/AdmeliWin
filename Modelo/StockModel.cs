@@ -12,6 +12,45 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
+        public async Task<Response> guardar(Stock param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/psalmacen/guardar
+                return await webService.POSTSend("psalmacen", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> modificar(Stock param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/psalmacen/modificar
+                return await webService.POSTSend("psalmacen", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> eliminar(Stock param)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/psalmacen/eliminar
+                return await webService.POSTSend("psalmacen", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<Stock>> stockProducto(int idProducto)
         {
             try
@@ -26,9 +65,5 @@ namespace Modelo
             }
         }
 
-        public Task<Response> desactivar(Stock currentStock)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

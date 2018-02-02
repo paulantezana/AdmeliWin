@@ -9,6 +9,7 @@ namespace Entidad
     public class Stock
     {
         public int idProductoStockAlmacen { get; set; }
+        public int idProducto { get; set; }
         public int idAlmacen { get; set; }
         public string stock { get; set; }
         public string stockIdeal { get; set; }

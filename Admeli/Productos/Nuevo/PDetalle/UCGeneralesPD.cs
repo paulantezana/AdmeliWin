@@ -19,24 +19,18 @@ namespace Admeli.Productos.Nuevo.PDetalle
         public MarcaModel marcaModel = new MarcaModel();
         public ProductoModel productoModel = new ProductoModel();
 
-
-        private Producto producto { get; set; }
-        private bool nuevo { get; set; }
-
+        private bool isFieldsValid { get; set; }
         public bool lisenerKeyEvents { get; internal set; }
         private FormProductoNuevo formProductoNuevo;
-
 
         public UCGeneralesPD()
         {
             InitializeComponent();
-            this.nuevo = true;
         }
 
         public UCGeneralesPD(FormProductoNuevo formProductoNuevo)
         {
             InitializeComponent();
-            this.nuevo = true;
             this.formProductoNuevo = formProductoNuevo;
         }
 
@@ -50,8 +44,22 @@ namespace Admeli.Productos.Nuevo.PDetalle
         {
             cargarMarcas();
             cargarUnidadesMedida();
-        } 
+            cargarDatosModificar();
+        }
         #endregion
+
+
+        private void cargarDatosModificar()
+        {
+            if (!formProductoNuevo.nuevo)
+            {
+                textNombreProducto.Text = formProductoNuevo.currentProducto.nombreProducto;
+                textCodigoProducto.Text = formProductoNuevo.currentProducto.codigoProducto;
+                textPrecioCompra.Text = formProductoNuevo.currentProducto.precioCompra;
+                textDescripcion.Text = formProductoNuevo.currentProducto.descripcionCorta;
+            }
+        }
+
 
         #region ============================= Loads =============================
         internal async void cargarMarcas()
@@ -92,37 +100,30 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (validarCampos())
-            {
-                cargarObjeto();
-                guardar();
-            }
-        }
-        
-        private bool validarCampos()
-        {
-            /*if (textNombreMarca.Text == "")
-            {
-                errorProvider1.SetError(textNombreMarca, "Rellene este campo");
-                textNombreMarca.Focus();
-                return false;
-            }
-            errorProvider1.Clear();*/
-            return true;
+            guardar();
         }
 
         private async void guardar()
         {
+            // Validando los campos
+            if (!isFieldsValid)
+            {
+                MessageBox.Show("Datos incorrectos", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Ejecutando el guardado
             try
             {
-                if (nuevo)
+                cargarObjeto();
+                if (formProductoNuevo.nuevo)
                 {
-                    Response response = await productoModel.guardar(producto);
+                    Response response = await productoModel.guardar(formProductoNuevo.currentProducto);
                     MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    Response response = await productoModel.modificar(producto);
+                    Response response = await productoModel.modificar(formProductoNuevo.currentProducto);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -134,81 +135,73 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void cargarObjeto()
         {
-            producto = new Producto();
-            if (!nuevo) producto.idProducto = 1; // Llenar el id categoria cuando este en esdo modificar
+            formProductoNuevo.currentProducto = new Producto();
+            if (!formProductoNuevo.nuevo) formProductoNuevo.currentProducto.idProducto = 1; // Llenar el id categoria cuando este en esdo modificar
 
-            producto.cantidadFraccion = false;
-            producto.codigoBarras = ""; 
+            formProductoNuevo.currentProducto.cantidadFraccion = false;
+            formProductoNuevo.currentProducto.codigoBarras = "";
 
-            producto.codigoProducto = textCodigoProducto.Text;
-            producto.controlSinStock = "sin_stock";
-            producto.descripcionCorta = textDescripcion.Text;
+            formProductoNuevo.currentProducto.codigoProducto = textCodigoProducto.Text;
+            formProductoNuevo.currentProducto.controlSinStock = "sin_stock";
+            formProductoNuevo.currentProducto.descripcionCorta = textDescripcion.Text;
 
-            producto.descripcionLarga = "";
+            formProductoNuevo.currentProducto.descripcionLarga = "";
 
-            producto.enCategoriaEstrella = false;
-            producto.enPortada = false;
-            producto.enUso = false;
+            formProductoNuevo.currentProducto.enCategoriaEstrella = false;
+            formProductoNuevo.currentProducto.enPortada = false;
+            formProductoNuevo.currentProducto.enUso = false;
 
-            producto.estado = chkActivoProducto.Checked;
-            producto.idMarca = Convert.ToInt32(cbxMarcas.SelectedValue);
-            producto.idUnidadMedida = Convert.ToInt32(cbxUnidadMedida.SelectedValue);
+            formProductoNuevo.currentProducto.estado = chkActivoProducto.Checked;
+            formProductoNuevo.currentProducto.idMarca = Convert.ToInt32(cbxMarcas.SelectedValue);
+            formProductoNuevo.currentProducto.idUnidadMedida = Convert.ToInt32(cbxUnidadMedida.SelectedValue);
 
-            producto.keywords = "";
+            formProductoNuevo.currentProducto.keywords = "";
 
-            producto.limiteMaximo = "0";
-            producto.limiteMinimo = "0";
-            producto.mostrarPrecioWeb = true;
-            producto.mostrarVideo = true;
-            producto.mostrarWeb = true;
+            formProductoNuevo.currentProducto.limiteMaximo = "0";
+            formProductoNuevo.currentProducto.limiteMinimo = "0";
+            formProductoNuevo.currentProducto.mostrarPrecioWeb = true;
+            formProductoNuevo.currentProducto.mostrarVideo = true;
+            formProductoNuevo.currentProducto.mostrarWeb = true;
 
-            producto.nombreMarca = cbxMarcas.Text;
-            producto.nombreProducto = textNombreProducto.Text;
-            producto.nombreUnidad = cbxUnidadMedida.Text;
+            formProductoNuevo.currentProducto.nombreMarca = cbxMarcas.Text;
+            formProductoNuevo.currentProducto.nombreProducto = textNombreProducto.Text;
+            formProductoNuevo.currentProducto.nombreUnidad = cbxUnidadMedida.Text;
 
-            producto.precioCompra = Convert.ToInt32(textPrecioCompra.Text);
-            producto.urlVideo = "";
-            producto.ventaVarianteSinStock = false;
+            formProductoNuevo.currentProducto.precioCompra = Convert.ToInt32(textPrecioCompra.Text);
+            formProductoNuevo.currentProducto.urlVideo = "";
+            formProductoNuevo.currentProducto.ventaVarianteSinStock = false;
         }
 
-        private async Task<bool> validarProductoNuevo(int elegir)
-        {
-            // 1 ==> validar codigo producto
-            // 2 ==> validar nombre producto
-            // 3 ==> validar ambos
-            Producto np = new Producto();
-            if (elegir == 1) np.codigo = textCodigoProducto.Text;
-            if (elegir == 2) np.nombre = textCodigoProducto.Text;
-            if (elegir == 3)
-            {
-                np.codigo = textCodigoProducto.Text;
-                np.nombre = textCodigoProducto.Text;
-            }
-            List<Producto> list = await productoModel.validarProducto(np);
-            return (list.Count > 0) ? false : true;
-        }
+        #region ================================ Validation ===============================
+        /**
+         * ======================================================================
+         *  ---- Funciones de las validacion por cada campo
+         * 
+         * */
 
-        private bool validarPrecio()
+        private void validarPrecio()
         {
             if (textPrecioCompra.Text.Trim() == "")
             {
                 Validator.textboxValidateColor(textPrecioCompra, false);
                 errorProvider1.SetError(textPrecioCompra, "Campo obligatorio");
-                return false;
+                this.isFieldsValid = false;
+                return;
             }
             Validator.textboxValidateColor(textPrecioCompra, true);
             errorProvider1.Clear();
-            return true;
+            this.isFieldsValid = true;
         }
 
-        private async Task<bool> validarProductoNombre()
+        private async void validarProductoNombreCodigo()
         {
             // Validando si el campo esta vacia
             if (textNombreProducto.Text.Trim() == "")
             {
                 Validator.textboxValidateColor(textNombreProducto, false);
                 errorProvider1.SetError(textNombreProducto, "Campo obligatorio");
-                return false;
+                this.isFieldsValid = false;
+                return;
             }
 
             // Creando el objeto para enviar
@@ -221,16 +214,48 @@ namespace Admeli.Productos.Nuevo.PDetalle
             {
                 errorProvider1.SetError(textNombreProducto, "Ya existe un producto con el mismo nombre.");
                 Validator.textboxValidateColor(textNombreProducto, false);
-                return false;
+                this.isFieldsValid = false;
+                return;
             }
 
             // Dando el formato adecuado cuando paso toda las validaciones
             Validator.textboxValidateColor(textNombreProducto, true);
             errorProvider1.Clear();
-            return true;
+            this.isFieldsValid = true;
         }
 
-        private async Task<bool>  validarProductoCodigo()
+        private async void validarProductoNombre()
+        {
+            // Validando si el campo esta vacia
+            if (textNombreProducto.Text.Trim() == "")
+            {
+                Validator.textboxValidateColor(textNombreProducto, false);
+                errorProvider1.SetError(textNombreProducto, "Campo obligatorio");
+                this.isFieldsValid = false;
+                return;
+            }
+
+            // Creando el objeto para enviar
+            Producto np = new Producto();
+            np.nombre = textNombreProducto.Text;
+
+            // validando si el codigo del producto existe
+            List<Producto> list = await productoModel.validarProducto(np);
+            if (list.Count > 0)
+            {
+                errorProvider1.SetError(textNombreProducto, "Ya existe un producto con el mismo nombre.");
+                Validator.textboxValidateColor(textNombreProducto, false);
+                this.isFieldsValid = false;
+                return;
+            }
+
+            // Dando el formato adecuado cuando paso toda las validaciones
+            Validator.textboxValidateColor(textNombreProducto, true);
+            errorProvider1.Clear();
+            this.isFieldsValid = true;
+        }
+
+        private async void validarProductoCodigo()
         {
 
             // Validando si el campo esta vacia
@@ -238,7 +263,8 @@ namespace Admeli.Productos.Nuevo.PDetalle
             {
                 Validator.textboxValidateColor(textCodigoProducto, false);
                 errorProvider1.SetError(textCodigoProducto, "Campo obligatorio");
-                return false;
+                this.isFieldsValid = false;
+                return;
             }
 
             // Creando el objeto para enviar
@@ -251,24 +277,29 @@ namespace Admeli.Productos.Nuevo.PDetalle
             {
                 errorProvider1.SetError(textCodigoProducto, "Ya existe un producto con el mismo código.");
                 Validator.textboxValidateColor(textCodigoProducto, false);
-                return false;
+                this.isFieldsValid = false;
+                return;
             }
 
             // Dando el formato adecuado cuando paso toda las validaciones
             Validator.textboxValidateColor(textCodigoProducto, true);
             errorProvider1.Clear();
-            return true;
+            this.isFieldsValid = true;
         }
 
-        #region =================================== Validaciones en tiempo real ===================================
-        private async void textCodigoProducto_Validated(object sender, EventArgs e)
+        /**
+         * ======================================================================
+         *  ---- Eventos de las validaciones en timepo real
+         * 
+         * */
+        private void textCodigoProducto_Validated(object sender, EventArgs e)
         {
-            await validarProductoCodigo();
+            validarProductoCodigo();
         }
 
-        private async void textNombreProducto_Validated(object sender, EventArgs e)
+        private void textNombreProducto_Validated(object sender, EventArgs e)
         {
-            await validarProductoNombre();
+            validarProductoNombre();
         }
 
         private void textPrecioCompra_Validated(object sender, EventArgs e)
@@ -279,7 +310,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
         private void textPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validator.isNumber(e);
-        } 
+        }  
         #endregion
     }
 }

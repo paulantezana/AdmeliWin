@@ -417,16 +417,8 @@ namespace Admeli
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            // Load datas
-            lblDniPersonal.Text = PersonalModel.personal.numeroDocumento;
-            lblUsuarioPersonal.Text = PersonalModel.personal.usuario;
-            lblNombrePersonal2.Text = PersonalModel.personal.nombres;
-
             // Cargando los componentes necesarios para el funcionamiento de todo el sistema
             cargarComponente();
-
-            // Open Panel Default
-            
         }
 
         public void appLoadState(bool state)

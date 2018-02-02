@@ -1,4 +1,5 @@
 ﻿using Admeli.Productos.Nuevo.PDetalle;
+using Entidad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,25 +14,32 @@ namespace Admeli.Productos.Nuevo
 {
     public partial class FormProductoNuevo : Form
     {
-        #region =============================== User Control ===============================
         private UCAdicionalPD uCAdicionalPD { get; set; }
         private UCDescuentosPD uCDescuentosPD { get; set; }
         private UCGeneralesPD uCGeneralesPD { get; set; }
         private UCImpuestoPD uCImpuestoPD { get; set; }
         private UCStockPD uCStockPD { get; set; }
         private UCTiendaOnlinePD uCTiendaOnlinePD { get; set; } 
-        #endregion
 
         public int currentIDProducto { get; set; }
-        private bool nuevo { get; set; }
+        public Producto currentProducto { get; set; }
+        public bool nuevo { get; set; }
 
-        #region =============================== Constructor ===============================
+        public FormProductoNuevo(Producto currentProducto)
+        {
+            InitializeComponent();
+            this.currentProducto = currentProducto;
+            this.currentIDProducto = currentProducto.idProducto;
+            this.nuevo = false;
+            this.reLoad();
+        }
+
         public FormProductoNuevo()
         {
             InitializeComponent();
             this.nuevo = true;
-        } 
-        #endregion
+            this.reLoad();
+        }
 
         #region =============================== TOGGLE Panels ===============================
         private void togglePanelMain(string panelName)
@@ -210,6 +218,27 @@ namespace Admeli.Productos.Nuevo
             btnWeb.BackColor = Color.White;
         } 
         #endregion
+
+        internal void reLoad()
+        {
+            if (this.nuevo)
+            {
+                this.btnImpuestos.Enabled = false;
+                this.btnOfertas.Enabled = false;
+                this.btnOtros.Enabled = false;
+                this.btnWeb.Enabled = false;
+                this.btnStock.Enabled = false;
+            }
+            else
+            {
+                this.btnImpuestos.Enabled = true;
+                this.btnOfertas.Enabled = true;
+                this.btnOtros.Enabled = true;
+                this.btnWeb.Enabled = true;
+                this.btnStock.Enabled = true;
+                this.Text = "MANTENIMIENTO PRODUCTO " + currentProducto.nombreProducto;
+            }
+        }
 
     }
 }

@@ -18,6 +18,8 @@ namespace Admeli.Productos.Nuevo.PDetalle
     {
         private MonedaModel monedaModel = new MonedaModel();
         private SucursalModel sucursalModel = new SucursalModel();
+        private ImpuestoModel impuestoModel = new ImpuestoModel();
+
         private Precio currentPrecio;
 
         public FormPrecioDetalle()
@@ -27,7 +29,17 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         public FormPrecioDetalle(Precio currentPrecio)
         {
+            InitializeComponent();
             this.currentPrecio = currentPrecio;
+        }
+
+        private void cargarDatosModificar()
+        {
+            textPrecioVenta.Text = currentPrecio.precioVenta;
+            textPrecioCompetencia.Text = currentPrecio.precioCompetencia;
+            textPrecioUtilidad.Text = currentPrecio.utilidad;
+            cbxMoneda.SelectedValue = currentPrecio.idMoneda;
+            cbxSucursal.SelectedValue = currentPrecio.idSucursal;
         }
 
         private void FormPrecioDetalle_Load(object sender, EventArgs e)
@@ -51,6 +63,14 @@ namespace Admeli.Productos.Nuevo.PDetalle
             monedaBindingSource.DataSource = await monedaModel.monedas();
             Moneda moneda = await monedaModel.monedaPorDefecto();
             cbxMoneda.SelectedValue = moneda.idMoneda;
+
+            // mostrando los datos de modificar
+            cargarDatosModificar();
+        }
+
+        private async void cargarImpuestos()
+        {
+            List<Impuesto> impuestos = await impuestoModel.impuestoProductoSucursal(currentPrecio.idProducto, currentPrecio.idSucursal);
         }
 
         private void btnAddMoneda_Click(object sender, EventArgs e)

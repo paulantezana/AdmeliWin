@@ -72,21 +72,14 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
 
         #region ==================== CRUD ====================
-        private void btnNuevoStock_Click(object sender, EventArgs e)
-        {
-            FormStockNuevo formStock = new FormStockNuevo();
-            formStock.ShowDialog();
-            this.cargarStock();
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             executeModificarPrecio();
         }
 
-        private void btnDesactiarStock_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            executeAnularStock();
+            executeEliminarStock();
         }
 
         private void btnDesactivar_Click(object sender, EventArgs e)
@@ -99,9 +92,26 @@ namespace Admeli.Productos.Nuevo.PDetalle
             this.cargarPrecios();
         }
 
+        private void btnEditarStock_Click(object sender, EventArgs e)
+        {
+            this.executeModificarStock();
+        }
+
         private void btnActualizarStock_Click(object sender, EventArgs e)
         {
             this.cargarStock();
+        }
+
+        private void btnNuevoStock_Click(object sender, EventArgs e)
+        {
+            FormStockNuevo formStock = new FormStockNuevo(this.formProductoNuevo);
+            formStock.ShowDialog();
+            this.cargarStock();
+        }
+
+        private void dataGridViewPrecios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarPrecio();
         }
 
         private void executeModificarPrecio()
@@ -139,7 +149,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             currentStock = stocks.Find(x => x.idProductoStockAlmacen == idProductoStockAlmacen); // Buscando la registro especifico en la lista de registros
 
             // Mostrando el formulario de modificacion
-            FormStockNuevo formStock = new FormStockNuevo(currentStock);
+            FormStockNuevo formStock = new FormStockNuevo(currentStock, this.formProductoNuevo);
             formStock.ShowDialog();
             this.cargarStock(); // recargando los registros
         }
@@ -177,38 +187,81 @@ namespace Admeli.Productos.Nuevo.PDetalle
             }
         }
 
-        private async void executeAnularStock()
+        private async void executeEliminarStock()
         {
             // Verificando la existencia de datos en el datagridview
             if (dataGridViewStocks.Rows.Count == 0)
             {
-                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
 
             try
             {
                 int index = dataGridViewStocks.CurrentRow.Index; // Identificando la fila actual del datagridview
-                currentStock = new Stock(); //creando una instancia del objeto correspondiente
-                currentStock.idProductoStockAlmacen = Convert.ToInt32(dataGridViewStocks.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+                currentStock = new Stock(); //creando una instancia del objeto categoria
+                currentStock.idProductoStockAlmacen = Convert.ToInt32(dataGridViewStocks.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
 
-                // Comprobando si el registro ya esta desactivado
-                if (stocks.Find(x => x.idProductoStockAlmacen == currentStock.idProductoStockAlmacen).estado == 0)
-                {
-                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                // Procediendo con las desactivacion
-                Response response = await stockModel.desactivar(currentStock);
-                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cargarStock(); // recargando los registros en el datagridview
+                loadState(true); // cambiando el estado
+                Response response = await stockModel.eliminar(currentStock); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarStock(); // recargando el datagridview
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Anular", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
             }
         }
+
+
+        /*
+private async void executeAnularStock()
+{
+   // Verificando la existencia de datos en el datagridview
+   if (dataGridViewStocks.Rows.Count == 0)
+   {
+       MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+       return;
+   }
+
+   try
+   {
+       int index = dataGridViewStocks.CurrentRow.Index; // Identificando la fila actual del datagridview
+       currentStock = new Stock(); //creando una instancia del objeto correspondiente
+       currentStock.idProductoStockAlmacen = Convert.ToInt32(dataGridViewStocks.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+       // Comprobando si el registro ya esta desactivado
+       if (stocks.Find(x => x.idProductoStockAlmacen == currentStock.idProductoStockAlmacen).estado == 0)
+       {
+           MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+           return;
+       }
+
+       // Procediendo con las desactivacion
+       Response response = await stockModel.desactivar(currentStock);
+       MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+       this.cargarStock(); // recargando los registros en el datagridview
+   }
+   catch (Exception ex)
+   {
+       MessageBox.Show("Error: " + ex.Message, "Anular", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+   }
+}*/
         #endregion
+
+        private void loadState(bool v)
+        {
+            // 
+        }
     }
 }

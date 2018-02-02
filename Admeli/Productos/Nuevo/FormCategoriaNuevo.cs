@@ -75,18 +75,19 @@ namespace Admeli.Productos.Nuevo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cargarObjeto();
             if (validarCampos())
             {
+                cargarObjeto();
                 guardar();
             }
         }
 
+        #region ============================= Guardar y actualizar =======================
         private bool validarCampos()
         {
             if (textNombreCat.Text == "")
             {
-                errorProvider1.SetError(textNombreCat,"Rellene este campo");
+                errorProvider1.SetError(textNombreCat, "Rellene este campo");
                 textNombreCat.Focus();
                 return false;
             }
@@ -103,16 +104,27 @@ namespace Admeli.Productos.Nuevo
 
         private async void guardar()
         {
-            if (nuevo)
+            try
             {
-                await categoriaModel.guardar(categoria);
+                if (nuevo)
+                {
+                    Response response = await categoriaModel.guardar(categoria);
+                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Response response = await categoriaModel.modificar(categoria);
+                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                await categoriaModel.modificar(categoria);
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            this.Close();
         }
+
+
 
         private void cargarObjeto()
         {
@@ -133,7 +145,8 @@ namespace Admeli.Productos.Nuevo
             categoria.orden = (textOrden.Text != "") ? Convert.ToInt32(textOrden.Text) : 0;
             categoria.estado = Convert.ToInt32(chkActivoCat.Checked);
             categoria.mostrarWeb = Convert.ToInt32(chkMostrarWeb.Checked);
-        }
+        } 
+        #endregion
 
         private void textNumeroColumna_KeyPress(object sender, KeyPressEventArgs e)
         {

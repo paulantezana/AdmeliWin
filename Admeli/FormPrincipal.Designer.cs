@@ -32,12 +32,6 @@
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblUsuarioPersonal = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblDniPersonal = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelAside = new System.Windows.Forms.Panel();
             this.panelAsideMain = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -70,7 +64,6 @@
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panelFooter.SuspendLayout();
             this.panelAside.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -87,98 +80,14 @@
             // panelFooter
             // 
             this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(198)))), ((int)(((byte)(62)))));
-            this.panelFooter.Controls.Add(this.label12);
-            this.panelFooter.Controls.Add(this.lblUsuarioPersonal);
-            this.panelFooter.Controls.Add(this.label7);
-            this.panelFooter.Controls.Add(this.label6);
-            this.panelFooter.Controls.Add(this.lblDniPersonal);
-            this.panelFooter.Controls.Add(this.label5);
             this.transition1.SetDecoration(this.panelFooter, BunifuAnimatorNS.DecorationType.None);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 711);
+            this.panelFooter.Location = new System.Drawing.Point(0, 716);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1022, 22);
+            this.panelFooter.Size = new System.Drawing.Size(1022, 17);
             this.panelFooter.TabIndex = 3;
             this.panelFooter.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.transition1.SetDecoration(this.label12, BunifuAnimatorNS.DecorationType.None);
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(264, 2);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 16);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "dolares 1.00";
-            // 
-            // lblUsuarioPersonal
-            // 
-            this.lblUsuarioPersonal.AutoSize = true;
-            this.transition1.SetDecoration(this.lblUsuarioPersonal, BunifuAnimatorNS.DecorationType.None);
-            this.lblUsuarioPersonal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioPersonal.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuarioPersonal.Location = new System.Drawing.Point(135, 2);
-            this.lblUsuarioPersonal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUsuarioPersonal.Name = "lblUsuarioPersonal";
-            this.lblUsuarioPersonal.Size = new System.Drawing.Size(33, 16);
-            this.lblUsuarioPersonal.TabIndex = 18;
-            this.lblUsuarioPersonal.Text = "admin";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.transition1.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(186, 2);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 16);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Tipo de cambio:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.transition1.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(90, 2);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 16);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Usuario:";
-            // 
-            // lblDniPersonal
-            // 
-            this.lblDniPersonal.AutoSize = true;
-            this.transition1.SetDecoration(this.lblDniPersonal, BunifuAnimatorNS.DecorationType.None);
-            this.lblDniPersonal.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDniPersonal.ForeColor = System.Drawing.Color.Black;
-            this.lblDniPersonal.Location = new System.Drawing.Point(29, 2);
-            this.lblDniPersonal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDniPersonal.Name = "lblDniPersonal";
-            this.lblDniPersonal.Size = new System.Drawing.Size(53, 16);
-            this.lblDniPersonal.TabIndex = 17;
-            this.lblDniPersonal.Text = "951951652";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.transition1.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(5, 2);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "DNI:";
             // 
             // panelAside
             // 
@@ -190,7 +99,7 @@
             this.panelAside.Location = new System.Drawing.Point(0, 3);
             this.panelAside.Margin = new System.Windows.Forms.Padding(2);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(248, 708);
+            this.panelAside.Size = new System.Drawing.Size(248, 713);
             this.panelAside.TabIndex = 4;
             this.panelAside.Visible = false;
             // 
@@ -202,7 +111,7 @@
             this.panelAsideMain.Location = new System.Drawing.Point(60, 0);
             this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(188, 708);
+            this.panelAsideMain.Size = new System.Drawing.Size(188, 713);
             this.panelAsideMain.TabIndex = 7;
             // 
             // flowLayoutPanel1
@@ -220,7 +129,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(60, 708);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(60, 713);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // btnHome
@@ -374,7 +283,7 @@
             this.panelMainContainer.Location = new System.Drawing.Point(248, 3);
             this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(774, 708);
+            this.panelMainContainer.Size = new System.Drawing.Size(774, 713);
             this.panelMainContainer.TabIndex = 5;
             // 
             // panelMain
@@ -385,7 +294,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 49);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(774, 659);
+            this.panelMain.Size = new System.Drawing.Size(774, 664);
             this.panelMain.TabIndex = 1;
             // 
             // panel1
@@ -395,7 +304,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Location = new System.Drawing.Point(186, 224);
+            this.panel1.Location = new System.Drawing.Point(186, 227);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(402, 210);
@@ -672,7 +581,7 @@
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
@@ -711,8 +620,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormPrincipal_KeyUp);
-            this.panelFooter.ResumeLayout(false);
-            this.panelFooter.PerformLayout();
             this.panelAside.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
@@ -750,12 +657,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lblUsuarioPersonal;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblDniPersonal;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnProductoShortcut;
         private System.Windows.Forms.Button btnVentaShorkout;
         private System.Windows.Forms.Button btnComprasShortcut;

@@ -12,6 +12,7 @@ using Admeli.Productos.Nuevo;
 using Modelo;
 using Entidad;
 using Newtonsoft.Json;
+using Admeli.Productos.Importar;
 
 namespace Admeli.Productos
 {
@@ -26,10 +27,10 @@ namespace Admeli.Productos
         private FormPrincipal formPrincipal;
 
         public bool lisenerKeyEvents { get; set; }
+        private List<Producto> productos { get; set; }
+        private Producto currentProducto { get; set; }
 
         private bool verStock { get; set; }
-
-        
 
         public UCListadoProducto()
         {
@@ -52,22 +53,16 @@ namespace Admeli.Productos
             lisenerKeyEvents = true; // Active lisener key events
         }
 
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer);
-        }
-
         private void UCListadoProducto_Load(object sender, EventArgs e)
         {
-            // agregando un checkbox en toostriptools
-            addCheckBox();
+            this.reLoad();
 
-            // load data
-            cargarComponentes();
-            cargarCategorias();
-            cargarComponentesThird();
-            cargarRegistros();
+            // Escuchando los eventos del formulario padre
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         internal void reLoad(FormPrincipal formPrincipal)
@@ -77,8 +72,41 @@ namespace Admeli.Productos
 
         internal void reLoad()
         {
-            
+            // agregando un checkbox en toostriptools
+            addCheckBox();
+
+            // load data
+            cargarComponentes();
+            cargarCategorias();
+            cargarComponentesThird();
+            cargarRegistros();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F6:
+                    executeEliminar();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
 
         #region =========================== Decoration ===========================
         private void decorationDataGridView()
@@ -200,16 +228,21 @@ namespace Admeli.Productos
                 list.Add("id0", 0);
                 Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
 
-                RootObject<Producto> productos = await productoModel.productosPorCategoria(sendList, paginacion.currentPage, paginacion.speed);
+                RootObject<Producto> productosRoot = await productoModel.productosPorCategoria(sendList, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = productos.nro_registros;
+                paginacion.itemsCount = productosRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                productoBindingSource.DataSource = productos.datos;
+                productos = productosRoot.datos;
+                productoBindingSource.DataSource = productos;
                 dataGridView.Refresh();
+
+                // Mostrando la paginacion
                 mostrarPaginado();
+
+                // Formato de celdas
             }
             catch (Exception ex)
             {
@@ -409,19 +442,29 @@ namespace Admeli.Productos
         #endregion
 
         #region ==================== CRUD ====================
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            executeNuevo();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            cargarRegistros();
-        }
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            FormProductoNuevo productoNuevo = new FormProductoNuevo();
-            productoNuevo.ShowDialog();
+            executeEliminar();
         }
 
         private void textBuscar_KeyUp(object sender, KeyEventArgs e)
@@ -445,6 +488,99 @@ namespace Admeli.Productos
                 cargarRegistrosBuscar();
             }
         }
+
+        private void executeNuevo()
+        {
+            FormProductoNuevo formProducto = new FormProductoNuevo();
+            formProducto.ShowDialog();
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idProducto = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentProducto = productos.Find(x => x.idProducto == idProducto); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormProductoNuevo formProducto = new FormProductoNuevo(currentProducto);
+            formProducto.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentProducto = new Producto(); //creando una instancia del objeto categoria
+                currentProducto.idProducto = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await productoModel.eliminar(currentProducto); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        /*
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                int idProducto = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                currentProducto = productos.Find(x => x.idProducto == idProducto); // Buscando la registro especifico en la lista de registros
+                currentProducto.estado = 0;
+
+                // Procediendo con las desactivacion
+                Response response = await productoModel.modificar(currentProducto);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        */
         private void btnNuevoCategoria_Click(object sender, EventArgs e)
         {
             FormCategoriaNuevo formCategoria = new FormCategoriaNuevo();
@@ -455,7 +591,18 @@ namespace Admeli.Productos
         {
             cargarCategorias();
         }
+
+        // Nueva ventana para importar los productos desde un archivo excel
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            FormImportarProduto formImportar = new FormImportarProduto();
+            formImportar.ShowDialog();
+            this.reLoad();
+        }
+
         #endregion
+
+
 
         #region ======================== Treeview control checked ========================
 
@@ -541,6 +688,5 @@ namespace Admeli.Productos
             stateCombobox(verStock);
         }
         #endregion
-
     }
 }

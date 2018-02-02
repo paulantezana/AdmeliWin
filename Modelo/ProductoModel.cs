@@ -52,10 +52,20 @@ namespace Modelo
         {
 
         }
-        public void eliminar()
-        {
 
+        public async Task<Response> eliminar(Producto param)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/producto/eliminar
+                return await webService.POSTSend("producto", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+
         public void cambiarClave()
         {
 

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStockPD));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -74,10 +74,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevoStock = new System.Windows.Forms.ToolStripButton();
             this.btnEditarStock = new System.Windows.Forms.ToolStripButton();
-            this.btnDesactiarStock = new System.Windows.Forms.ToolStripButton();
             this.btnActualizarStock = new System.Windows.Forms.ToolStripButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -218,14 +218,14 @@
             this.dataGridViewPrecios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewPrecios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewPrecios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewPrecios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPrecios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewPrecios.ColumnHeadersHeight = 40;
             this.dataGridViewPrecios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPrecioProductoDataGridViewTextBoxColumn,
@@ -251,6 +251,7 @@
             this.dataGridViewPrecios.Size = new System.Drawing.Size(674, 426);
             this.dataGridViewPrecios.TabIndex = 0;
             this.dataGridViewPrecios.TimeFilter = false;
+            this.dataGridViewPrecios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPrecios_CellDoubleClick);
             // 
             // idPrecioProductoDataGridViewTextBoxColumn
             // 
@@ -467,14 +468,14 @@
             this.dataGridViewStocks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewStocks.ColumnHeadersHeight = 40;
             this.dataGridViewStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProductoStockAlmacenDataGridViewTextBoxColumn,
@@ -593,7 +594,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevoStock,
             this.btnEditarStock,
-            this.btnDesactiarStock,
+            this.btnEliminar,
             this.btnActualizarStock});
             this.toolStrip1.Location = new System.Drawing.Point(3, 44);
             this.toolStrip1.Name = "toolStrip1";
@@ -626,19 +627,7 @@
             this.btnEditarStock.Text = "Detalle";
             this.btnEditarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditarStock.ToolTipText = "Modificar registro actual (F4)";
-            // 
-            // btnDesactiarStock
-            // 
-            this.btnDesactiarStock.AutoSize = false;
-            this.btnDesactiarStock.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesactiarStock.Image = ((System.Drawing.Image)(resources.GetObject("btnDesactiarStock.Image")));
-            this.btnDesactiarStock.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDesactiarStock.Name = "btnDesactiarStock";
-            this.btnDesactiarStock.Size = new System.Drawing.Size(73, 37);
-            this.btnDesactiarStock.Text = "Desactivar";
-            this.btnDesactiarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDesactiarStock.ToolTipText = "Anular(F7)";
-            this.btnDesactiarStock.Click += new System.EventHandler(this.btnDesactiarStock_Click);
+            this.btnEditarStock.Click += new System.EventHandler(this.btnEditarStock_Click);
             // 
             // btnActualizarStock
             // 
@@ -673,6 +662,19 @@
             this.label3.Size = new System.Drawing.Size(256, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "MANTENIMIENTO STOCK PRODUCTO";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AutoSize = false;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(80, 37);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // UCStockPD
             // 
@@ -732,7 +734,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNuevoStock;
         private System.Windows.Forms.ToolStripButton btnEditarStock;
-        private System.Windows.Forms.ToolStripButton btnDesactiarStock;
         private System.Windows.Forms.ToolStripButton btnActualizarStock;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
@@ -757,5 +758,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreAlmacenDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource stockBindingSource;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }

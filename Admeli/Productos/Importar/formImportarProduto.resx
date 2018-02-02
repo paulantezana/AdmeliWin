@@ -117,10 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="almacenBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAD1SURBVDhPYxi8wGTGrZn63SeeaTfv+xoy9cCPaZuO/kXGM7ce/zl7+8mvrRvPvDaZcfuk2Yy7
+        JlCtqAAouV+v8+h/zYad/2Nm7P2/Yd9ROO6bvei/mpEFmJ645fR/oFoQ/mIy/bYDVDsCkGEQCO+DakcA
+        Mg3aD9WOACBBg4kX/+u0H/rv0H/4f9e6I/971yNw36aT//u3nPqfuvwSYYOQFBCLaWzQ6isf/hMLVgHV
+        4jRo842P/3/9/vP/9qOneDFIDUgtXoP+/v37/+2HT3gxSA39DKKK19ZcJT6wVwPVYjXIdPrtHpPpd3aT
+        gkF6oNoHHWBgAABlgFBRHexZ3gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnImportExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAVxJREFUOE9j
+        GDrAoMFAQL/O2FG/xrhYr9ZwqU6VuThUCj8wqDWx1qs1qtKrNV4NpO8C8X9k7LDAOdp7g78LMvZdE6wB
+        1Y4AurWG+9E1I2OPlT7/fdYHoOP9UO0IQMig5sNt/2O3J/zvPzsJjMsOVeI2yLjB/P/G85v/Zy/O/W9Q
+        b/J//dkN/+NmJ4IN2n9v//+8fYX/L7++AsYLri7C76Jp+2b8v/ni1v+69Y3/b7+889+w3hRs0PQzM/8n
+        7Uz7v+z6CjBuOdGO3yCzJqv/zz+8+P/p+6f/iXNT4F5bdXXN/4w92f/3PNwHxpPOTcVvkHmz9f+n75/+
+        //Dt4/+MhdnkG7Ti5Kr/+68f+N+0qfX/sw/PwQaDxEnymlWr3f+VJ1f/D54S9h8U8MtOrPgfOysBbBDJ
+        gY0LkxT92AyAYaITJKEsYj/Hydd7fYAxCl4brATVjhuQnWkHCWBgAACo+Ih1A9oFrAAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <metadata name="codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>193, 17</value>
+  <metadata name="nombreProducto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="precioCompra.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="precioVenta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="marca.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="unidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="stock.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

@@ -145,6 +145,7 @@
       <DependentUpon>UCIniciarCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Componentes\DrawShape.cs" />
+    <Compile Include="Componentes\ExternalFiles.cs" />
     <Compile Include="Componentes\FormSuccess.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +447,12 @@
     </Compile>
     <Compile Include="Navegacion\UCVentasNav.Designer.cs">
       <DependentUpon>UCVentasNav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Importar\FormImportarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Importar\FormImportarProduto.Designer.cs">
+      <DependentUpon>FormImportarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\Nuevo\FormCategoriaNuevo.cs">
       <SubType>Form</SubType>
@@ -793,6 +800,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Navegacion\UCVentasNav.resx">
       <DependentUpon>UCVentasNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Importar\FormImportarProduto.resx">
+      <DependentUpon>FormImportarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\FormCategoriaNuevo.resx">
       <DependentUpon>FormCategoriaNuevo.cs</DependentUpon>
