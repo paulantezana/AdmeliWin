@@ -64,7 +64,7 @@ namespace Modelo
             }
         }
 
-        public async Task<List<Alternativa>> categoriasTodo(int idVariante)
+        public async Task<List<Alternativa>> alternativas(int idVariante)
         {
             try
             {

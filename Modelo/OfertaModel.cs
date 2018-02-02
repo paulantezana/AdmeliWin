@@ -51,7 +51,7 @@ namespace Modelo
             }
         }
 
-        public async Task<List<Oferta>> categoriasTodo(int idProducto)
+        public async Task<List<Oferta>> ofertas(int idProducto)
         {
             try
             {

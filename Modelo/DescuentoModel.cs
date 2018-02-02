@@ -64,7 +64,7 @@ namespace Modelo
             }
         }
 
-        public async Task<RootObject<Descuento>> descuentoOfertaCodigo(int idProducto)
+        public async Task<RootObject<Descuento>> descuentos(int idProducto)
         {
             try
             {

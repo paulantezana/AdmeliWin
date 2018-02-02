@@ -64,7 +64,7 @@ namespace Modelo
             }
         }
 
-        public async Task<List<Variante>> precioProducto(int idProducto)
+        public async Task<List<Variante>> variantes(int idProducto)
         {
             try
             {
