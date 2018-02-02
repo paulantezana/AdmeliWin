@@ -30,7 +30,7 @@ namespace Entidad
         public string nombreMarca { get; set; }
         public string nombreProducto { get; set; }
         public string nombreUnidad { get; set; }
-        public int precioCompra { get; set; }
+        public dynamic precioCompra { get; set; }
         public string urlVideo { get; set; }
         public bool ventaVarianteSinStock { get; set; }
 
