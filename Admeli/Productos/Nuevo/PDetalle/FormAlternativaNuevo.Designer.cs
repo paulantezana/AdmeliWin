@@ -258,6 +258,7 @@
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
             this.Name = "FormAlternativaNuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAlternativaNuevo";
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
