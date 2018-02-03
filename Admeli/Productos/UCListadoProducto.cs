@@ -84,6 +84,12 @@ namespace Admeli.Productos
             lisenerKeyEvents = true; // Active lisener key events
         }
 
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         #region ======================== KEYBOARD ========================
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
@@ -237,7 +243,7 @@ namespace Admeli.Productos
                 // Ingresando
                 productos = productosRoot.datos;
                 productoBindingSource.DataSource = productos;
-                dataGridView.Refresh();
+                dataGridView1.Refresh();
 
                 // Mostrando la paginacion
                 mostrarPaginado();
@@ -270,7 +276,7 @@ namespace Admeli.Productos
 
                 // Ingresando
                 productoBindingSource.DataSource = productos.datos;
-                dataGridView.Refresh();
+                dataGridView1.Refresh();
                 mostrarPaginado();
             }
             catch (Exception ex)
@@ -303,7 +309,7 @@ namespace Admeli.Productos
 
                 // Ingresando
                 productoBindingSource.DataSource = productos.datos;
-                dataGridView.Refresh();
+                dataGridView1.Refresh();
                 mostrarPaginado();
             }
             catch (Exception ex)
@@ -336,7 +342,7 @@ namespace Admeli.Productos
 
                 // Ingresando
                 productoBindingSource.DataSource = productos.datos;
-                dataGridView.Refresh();
+                dataGridView1.Refresh();
                 mostrarPaginado();
             }
             catch (Exception ex)
@@ -357,7 +363,7 @@ namespace Admeli.Productos
             toolStripNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
             toolStripTools.Enabled = !state;
-            dataGridView.Enabled = !state;
+            dataGridView1.Enabled = !state;
         }
 
         private void stateCombobox(bool state)
@@ -499,14 +505,14 @@ namespace Admeli.Productos
         private void executeModificar()
         {
             // Verificando la existencia de datos en el datagridview
-            if (dataGridView.Rows.Count == 0)
+            if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
-            int idProducto = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+            int index = dataGridView1.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idProducto = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
 
             currentProducto = productos.Find(x => x.idProducto == idProducto); // Buscando la registro especifico en la lista de registros
 
@@ -519,7 +525,7 @@ namespace Admeli.Productos
         private async void executeEliminar()
         {
             // Verificando la existencia de datos en el datagridview
-            if (dataGridView.Rows.Count == 0)
+            if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -533,9 +539,9 @@ namespace Admeli.Productos
 
             try
             {
-                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                int index = dataGridView1.CurrentRow.Index; // Identificando la fila actual del datagridview
                 currentProducto = new Producto(); //creando una instancia del objeto categoria
-                currentProducto.idProducto = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+                currentProducto.idProducto = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
 
                 loadState(true); // cambiando el estado
                 Response response = await productoModel.eliminar(currentProducto); // Eliminando con el webservice correspondiente
@@ -688,5 +694,6 @@ namespace Admeli.Productos
             stateCombobox(verStock);
         }
         #endregion
+
     }
 }

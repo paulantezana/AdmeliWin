@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -38,9 +39,12 @@
             this.chkEsCombo = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label7 = new System.Windows.Forms.Label();
             this.textNombre = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -76,9 +80,10 @@
             this.btnAceptar.Location = new System.Drawing.Point(58, 6);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(152, 36);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -94,7 +99,7 @@
             this.btnClose.Location = new System.Drawing.Point(230, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 36);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -130,7 +135,7 @@
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 16);
-            this.label9.TabIndex = 66;
+            this.label9.TabIndex = 3;
             this.label9.Text = "Es Combo";
             // 
             // chkEsCombo
@@ -143,7 +148,7 @@
             this.chkEsCombo.Location = new System.Drawing.Point(17, 144);
             this.chkEsCombo.Name = "chkEsCombo";
             this.chkEsCombo.Size = new System.Drawing.Size(20, 20);
-            this.chkEsCombo.TabIndex = 65;
+            this.chkEsCombo.TabIndex = 2;
             // 
             // label7
             // 
@@ -154,7 +159,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 16);
-            this.label7.TabIndex = 63;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Nombre Variante";
             // 
             // textNombre
@@ -173,8 +178,22 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textNombre.Size = new System.Drawing.Size(367, 35);
-            this.textNombre.TabIndex = 61;
+            this.textNombre.TabIndex = 1;
             this.textNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(14, 166);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Como mostramos la variante en la página.";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormVarianteNuevo
             // 
@@ -184,6 +203,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(395, 391);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.chkEsCombo);
             this.Controls.Add(this.label7);
@@ -196,6 +216,7 @@
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +234,7 @@
         private Bunifu.Framework.UI.BunifuCheckbox chkEsCombo;
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuMetroTextbox textNombre;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelAside = new System.Windows.Forms.Panel();
@@ -79,13 +79,13 @@
             // 
             // panelFooter
             // 
-            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(198)))), ((int)(((byte)(62)))));
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(209)))), ((int)(((byte)(79)))));
             this.transition1.SetDecoration(this.panelFooter, BunifuAnimatorNS.DecorationType.None);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 716);
+            this.panelFooter.Location = new System.Drawing.Point(0, 723);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(2);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1022, 17);
+            this.panelFooter.Size = new System.Drawing.Size(1071, 10);
             this.panelFooter.TabIndex = 3;
             this.panelFooter.Visible = false;
             // 
@@ -99,7 +99,7 @@
             this.panelAside.Location = new System.Drawing.Point(0, 3);
             this.panelAside.Margin = new System.Windows.Forms.Padding(2);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(248, 713);
+            this.panelAside.Size = new System.Drawing.Size(248, 720);
             this.panelAside.TabIndex = 4;
             this.panelAside.Visible = false;
             // 
@@ -111,7 +111,7 @@
             this.panelAsideMain.Location = new System.Drawing.Point(60, 0);
             this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(188, 713);
+            this.panelAsideMain.Size = new System.Drawing.Size(188, 720);
             this.panelAsideMain.TabIndex = 7;
             // 
             // flowLayoutPanel1
@@ -129,7 +129,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(60, 713);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(60, 720);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // btnHome
@@ -283,7 +283,7 @@
             this.panelMainContainer.Location = new System.Drawing.Point(248, 3);
             this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(774, 713);
+            this.panelMainContainer.Size = new System.Drawing.Size(823, 720);
             this.panelMainContainer.TabIndex = 5;
             // 
             // panelMain
@@ -294,7 +294,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 49);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(774, 664);
+            this.panelMain.Size = new System.Drawing.Size(823, 671);
             this.panelMain.TabIndex = 1;
             // 
             // panel1
@@ -304,7 +304,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Location = new System.Drawing.Point(186, 227);
+            this.panel1.Location = new System.Drawing.Point(210, 230);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(402, 210);
@@ -329,6 +329,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.transition1.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(54, 184);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -369,7 +370,7 @@
             this.panelMainHeader.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainHeader.Name = "panelMainHeader";
             this.panelMainHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panelMainHeader.Size = new System.Drawing.Size(774, 49);
+            this.panelMainHeader.Size = new System.Drawing.Size(823, 49);
             this.panelMainHeader.TabIndex = 0;
             this.panelMainHeader.Visible = false;
             this.panelMainHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMainHeader_Paint);
@@ -387,13 +388,15 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(362, 9);
+            this.button8.Location = new System.Drawing.Point(427, 8);
             this.button8.Margin = new System.Windows.Forms.Padding(0);
             this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(143, 32);
+            this.button8.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button8.Size = new System.Drawing.Size(127, 32);
             this.button8.TabIndex = 11;
-            this.button8.Text = "Venta Touch";
+            this.button8.Text = "   Venta Touch";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button8.UseVisualStyleBackColor = false;
             // 
             // btnToggleAsideMenu
@@ -441,7 +444,7 @@
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.lblNombrePersonal2);
             this.transition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
-            this.panel3.Location = new System.Drawing.Point(627, 8);
+            this.panel3.Location = new System.Drawing.Point(676, 8);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(139, 32);
@@ -498,13 +501,15 @@
             this.btnProductoShortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductoShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnProductoShortcut.Image")));
             this.btnProductoShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductoShortcut.Location = new System.Drawing.Point(521, 8);
+            this.btnProductoShortcut.Location = new System.Drawing.Point(570, 8);
             this.btnProductoShortcut.Margin = new System.Windows.Forms.Padding(0);
             this.btnProductoShortcut.Name = "btnProductoShortcut";
-            this.btnProductoShortcut.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnProductoShortcut.Size = new System.Drawing.Size(97, 32);
+            this.btnProductoShortcut.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnProductoShortcut.Size = new System.Drawing.Size(96, 32);
             this.btnProductoShortcut.TabIndex = 6;
-            this.btnProductoShortcut.Text = "Producto";
+            this.btnProductoShortcut.Text = "   Producto";
+            this.btnProductoShortcut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductoShortcut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductoShortcut.UseVisualStyleBackColor = false;
             this.btnProductoShortcut.Click += new System.EventHandler(this.btnProductoShortcut_Click);
             // 
@@ -521,13 +526,15 @@
             this.btnVentaShorkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentaShorkout.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaShorkout.Image")));
             this.btnVentaShorkout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaShorkout.Location = new System.Drawing.Point(249, 9);
+            this.btnVentaShorkout.Location = new System.Drawing.Point(323, 8);
             this.btnVentaShorkout.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentaShorkout.Name = "btnVentaShorkout";
-            this.btnVentaShorkout.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnVentaShorkout.Size = new System.Drawing.Size(97, 32);
+            this.btnVentaShorkout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnVentaShorkout.Size = new System.Drawing.Size(88, 32);
             this.btnVentaShorkout.TabIndex = 5;
-            this.btnVentaShorkout.Text = "Venta";
+            this.btnVentaShorkout.Text = "   Venta";
+            this.btnVentaShorkout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentaShorkout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentaShorkout.UseVisualStyleBackColor = false;
             this.btnVentaShorkout.Click += new System.EventHandler(this.btnVentaShorkout_Click);
             // 
@@ -544,13 +551,15 @@
             this.btnComprasShortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprasShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnComprasShortcut.Image")));
             this.btnComprasShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprasShortcut.Location = new System.Drawing.Point(136, 9);
+            this.btnComprasShortcut.Location = new System.Drawing.Point(216, 8);
             this.btnComprasShortcut.Margin = new System.Windows.Forms.Padding(0);
             this.btnComprasShortcut.Name = "btnComprasShortcut";
-            this.btnComprasShortcut.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnComprasShortcut.Size = new System.Drawing.Size(97, 32);
+            this.btnComprasShortcut.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnComprasShortcut.Size = new System.Drawing.Size(91, 32);
             this.btnComprasShortcut.TabIndex = 4;
-            this.btnComprasShortcut.Text = "Compra";
+            this.btnComprasShortcut.Text = "  Compra";
+            this.btnComprasShortcut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnComprasShortcut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnComprasShortcut.UseVisualStyleBackColor = false;
             this.btnComprasShortcut.Click += new System.EventHandler(this.btnComprasShortcut_Click);
             // 
@@ -565,7 +574,7 @@
             this.progressBarApp.Maximum = 200;
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
-            this.progressBarApp.Size = new System.Drawing.Size(1022, 3);
+            this.progressBarApp.Size = new System.Drawing.Size(1071, 3);
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 0;
             // 
@@ -573,22 +582,22 @@
             // 
             this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation4;
             this.transition1.TimeStep = 0.03F;
             // 
             // toolTip1
@@ -605,7 +614,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1022, 733);
+            this.ClientSize = new System.Drawing.Size(1071, 733);
             this.Controls.Add(this.panelMainContainer);
             this.Controls.Add(this.panelAside);
             this.Controls.Add(this.panelFooter);

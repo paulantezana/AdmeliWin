@@ -9,6 +9,7 @@ namespace Entidad
     public class Presentacion
     {
         public int idPresentacion { get; set; }
+        public int idProducto { get; set; }
         public string nombrePresentacion { get; set; }
         public string cantidadUnitaria { get; set; }
         public bool presentacionPorDefecto { get; set; }

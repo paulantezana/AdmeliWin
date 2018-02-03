@@ -244,7 +244,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void executeNuevoPresentacion()
         {
-            FormPresentacionNuevo formPresentacion = new FormPresentacionNuevo();
+            FormPresentacionNuevo formPresentacion = new FormPresentacionNuevo(formProductoNuevo);
             formPresentacion.ShowDialog();
             cargarPresentaciones();
         }
@@ -264,7 +264,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             currentPresentacion = presentaciones.Find(x => x.idPresentacion == idPresentacion); // Buscando la registro especifico en la lista de registros
 
             // Mostrando el formulario de modificacion
-            FormPresentacionNuevo formPresentacion = new FormPresentacionNuevo(currentPresentacion);
+            FormPresentacionNuevo formPresentacion = new FormPresentacionNuevo(formProductoNuevo, currentPresentacion);
             formPresentacion.ShowDialog();
             cargarPresentaciones(); // recargando loas registros en el datagridview
         }
@@ -335,7 +335,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void executeNuevoVariante()
         {
-            FormVarianteNuevo formVariante = new FormVarianteNuevo();
+            FormVarianteNuevo formVariante = new FormVarianteNuevo(formProductoNuevo);
             formVariante.ShowDialog();
             cargarVariantes();
         }
@@ -355,7 +355,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             currentVariante = variantes.Find(x => x.idVariante == idVariante); // Buscando la registro especifico en la lista de registros
 
             // Mostrando el formulario de modificacion
-            FormVarianteNuevo formVariante = new FormVarianteNuevo(currentVariante);
+            FormVarianteNuevo formVariante = new FormVarianteNuevo(formProductoNuevo, currentVariante);
             formVariante.ShowDialog();
             cargarVariantes(); // recargando loas registros en el datagridview
         }
@@ -425,7 +425,10 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void executeNuevoAlternativa()
         {
-            FormAlternativaNuevo formAlternativa = new FormAlternativaNuevo();
+            int index = dataGridViewVariante.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idVariante = Convert.ToInt32(dataGridViewVariante.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            FormAlternativaNuevo formAlternativa = new FormAlternativaNuevo(formProductoNuevo, idVariante);
             formAlternativa.ShowDialog();
             cargarAlternativas();
         }
@@ -435,17 +438,24 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Verificando la existencia de datos en el datagridview
             if (dataGridViewAlternativa.Rows.Count == 0)
             {
-                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
+            // Obteniendo el objeto a modificar
             int index = dataGridViewAlternativa.CurrentRow.Index; // Identificando la fila actual del datagridview
             int idAlternativa = Convert.ToInt32(dataGridViewAlternativa.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
 
+            // Obteniendo el objeto padre de esta tabla
+            int index2 = dataGridViewVariante.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idVariante = Convert.ToInt32(dataGridViewVariante.Rows[index2].Cells[0].Value); // obteniedo el idRegistro del datagridview
+             
+            // Actualizando los datos a modificar
             currentAlternativa = alternativas.Find(x => x.idAlternativa == idAlternativa); // Buscando la registro especifico en la lista de registros
+            currentAlternativa.idVariante = idVariante;
 
             // Mostrando el formulario de modificacion
-            FormAlternativaNuevo formAlternativa = new FormAlternativaNuevo(currentAlternativa);
+            FormAlternativaNuevo formAlternativa = new FormAlternativaNuevo(formProductoNuevo, currentAlternativa);
             formAlternativa.ShowDialog();
             cargarAlternativas(); // recargando loas registros en el datagridview
         }
