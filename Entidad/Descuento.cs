@@ -9,8 +9,7 @@ namespace Entidad
 {
     public class Descuento
     {
-
-
+        public int idDescuentoProductoGrupo { get; set; }
         public string codigo { get; set; }
         public string descuento { get; set; }
         public Fecha fechaInicio { get; set; }
@@ -26,7 +25,6 @@ namespace Entidad
         public string nombre { get; set; }
         public int idAfectoProducto { get; set; }
 
-        public int idDescuentoProductoGrupo { get; set; }
         public int idProducto { get; set; }
         public string nombreSucursal { get; set; }
         public object nombreProducto { get; set; }

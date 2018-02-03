@@ -64,12 +64,12 @@ namespace Modelo
             }
         }
 
-        public async Task<RootObject<Descuento>> descuentos(int idProducto)
+        public async Task<List<Descuento>> descuentos(int idProducto)
         {
             try
             {
                 // localhost/admeli/xcore/services.php/descuento/producto/21
-                RootObject<Descuento> descuentos = await webService.GETRoot<Descuento>("descuento", String.Format("producto/{0}", idProducto));
+                List<Descuento> descuentos = await webService.GETLis<Descuento>("descuento", String.Format("producto/{0}", idProducto));
                 return descuentos;
             }
             catch (Exception ex)

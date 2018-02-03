@@ -484,11 +484,23 @@
     <Compile Include="Productos\Nuevo\PDetalle\FormAlternativaNuevo.Designer.cs">
       <DependentUpon>FormAlternativaNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormDescuentoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormDescuentoNuevo.Designer.cs">
+      <DependentUpon>FormDescuentoNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Nuevo\PDetalle\FormElegirCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Productos\Nuevo\PDetalle\FormElegirCategoria.Designer.cs">
       <DependentUpon>FormElegirCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormOfertaNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\FormOfertaNuevo.Designer.cs">
+      <DependentUpon>FormOfertaNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\Nuevo\PDetalle\FormPrecioDetalle.cs">
       <SubType>Form</SubType>
@@ -837,8 +849,14 @@
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormAlternativaNuevo.resx">
       <DependentUpon>FormAlternativaNuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormDescuentoNuevo.resx">
+      <DependentUpon>FormDescuentoNuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormElegirCategoria.resx">
       <DependentUpon>FormElegirCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormOfertaNuevo.resx">
+      <DependentUpon>FormOfertaNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormPrecioDetalle.resx">
       <DependentUpon>FormPrecioDetalle.cs</DependentUpon>
@@ -938,6 +956,7 @@
     <None Include="Properties\DataSources\Entidad.Configuracion.TipoDocumento.datasource" />
     <None Include="Properties\DataSources\Entidad.Contacto.datasource" />
     <None Include="Properties\DataSources\Entidad.Cotizacion.datasource" />
+    <None Include="Properties\DataSources\Entidad.Descuento.datasource" />
     <None Include="Properties\DataSources\Entidad.DocCorrelativo.datasource" />
     <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Egreso.datasource" />
@@ -951,6 +970,7 @@
     <None Include="Properties\DataSources\Entidad.Location.Pais.datasource" />
     <None Include="Properties\DataSources\Entidad.Marca.datasource" />
     <None Include="Properties\DataSources\Entidad.NotaEntrada.datasource" />
+    <None Include="Properties\DataSources\Entidad.Oferta.datasource" />
     <None Include="Properties\DataSources\Entidad.OrdenCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.Pago.datasource" />
     <None Include="Properties\DataSources\Entidad.Personal.datasource" />
