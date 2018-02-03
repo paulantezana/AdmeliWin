@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -37,28 +38,36 @@
             this.lblActive = new System.Windows.Forms.Label();
             this.chkEstado = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textValorVariante = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textCodigo = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textMinimaVenta = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textMaximaVenta = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbxUnidadMedida = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textDescuento = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grupoClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddSucursal = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxSucursal = new System.Windows.Forms.ComboBox();
+            this.btnAddGrupoCliente = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbxGrupoCliente = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbProductoAfecto = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grupoClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -97,6 +106,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -115,6 +125,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -134,9 +145,9 @@
             this.label4.Location = new System.Drawing.Point(16, 13);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 16);
+            this.label4.Size = new System.Drawing.Size(234, 16);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Mantenimiento Stock Producto";
+            this.label4.Text = "Mantenimiento Descuento Producto";
             // 
             // lblActive
             // 
@@ -170,28 +181,28 @@
             this.label7.Location = new System.Drawing.Point(14, 59);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 16);
+            this.label7.Size = new System.Drawing.Size(48, 16);
             this.label7.TabIndex = 36;
-            this.label7.Text = "Valor de Variante";
+            this.label7.Text = "Código";
             // 
-            // textValorVariante
+            // textCodigo
             // 
-            this.textValorVariante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textValorVariante.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textValorVariante.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textValorVariante.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textValorVariante.BorderThickness = 1;
-            this.textValorVariante.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textValorVariante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textValorVariante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textValorVariante.isPassword = false;
-            this.textValorVariante.Location = new System.Drawing.Point(13, 79);
-            this.textValorVariante.Margin = new System.Windows.Forms.Padding(4);
-            this.textValorVariante.Name = "textValorVariante";
-            this.textValorVariante.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textValorVariante.Size = new System.Drawing.Size(621, 35);
-            this.textValorVariante.TabIndex = 37;
-            this.textValorVariante.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textCodigo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textCodigo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textCodigo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textCodigo.BorderThickness = 1;
+            this.textCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textCodigo.isPassword = false;
+            this.textCodigo.Location = new System.Drawing.Point(13, 79);
+            this.textCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.textCodigo.Name = "textCodigo";
+            this.textCodigo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textCodigo.Size = new System.Drawing.Size(621, 35);
+            this.textCodigo.TabIndex = 37;
+            this.textCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
             // 
@@ -201,28 +212,28 @@
             this.label1.Location = new System.Drawing.Point(13, 189);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 16);
+            this.label1.Size = new System.Drawing.Size(164, 16);
             this.label1.TabIndex = 41;
-            this.label1.Text = "Valor de Variante";
+            this.label1.Text = "Cantidad Mínima por Venta";
             // 
-            // bunifuMetroTextbox1
+            // textMinimaVenta
             // 
-            this.bunifuMetroTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox1.BorderThickness = 1;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(12, 209);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(300, 35);
-            this.bunifuMetroTextbox1.TabIndex = 42;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textMinimaVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textMinimaVenta.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textMinimaVenta.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textMinimaVenta.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textMinimaVenta.BorderThickness = 1;
+            this.textMinimaVenta.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textMinimaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMinimaVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textMinimaVenta.isPassword = false;
+            this.textMinimaVenta.Location = new System.Drawing.Point(12, 209);
+            this.textMinimaVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.textMinimaVenta.Name = "textMinimaVenta";
+            this.textMinimaVenta.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textMinimaVenta.Size = new System.Drawing.Size(300, 35);
+            this.textMinimaVenta.TabIndex = 42;
+            this.textMinimaVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
             // 
@@ -232,28 +243,28 @@
             this.label2.Location = new System.Drawing.Point(334, 189);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 16);
+            this.label2.Size = new System.Drawing.Size(168, 16);
             this.label2.TabIndex = 43;
-            this.label2.Text = "Valor de Variante";
+            this.label2.Text = "Cantidad Máxima por Venta";
             // 
-            // bunifuMetroTextbox2
+            // textMaximaVenta
             // 
-            this.bunifuMetroTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox2.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox2.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox2.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox2.BorderThickness = 1;
-            this.bunifuMetroTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox2.isPassword = false;
-            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(333, 209);
-            this.bunifuMetroTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox2.Name = "bunifuMetroTextbox2";
-            this.bunifuMetroTextbox2.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox2.Size = new System.Drawing.Size(300, 35);
-            this.bunifuMetroTextbox2.TabIndex = 44;
-            this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textMaximaVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textMaximaVenta.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textMaximaVenta.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textMaximaVenta.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textMaximaVenta.BorderThickness = 1;
+            this.textMaximaVenta.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textMaximaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMaximaVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textMaximaVenta.isPassword = false;
+            this.textMaximaVenta.Location = new System.Drawing.Point(333, 209);
+            this.textMaximaVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.textMaximaVenta.Name = "textMaximaVenta";
+            this.textMaximaVenta.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textMaximaVenta.Size = new System.Drawing.Size(300, 35);
+            this.textMaximaVenta.TabIndex = 44;
+            this.textMaximaVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label5
             // 
@@ -263,219 +274,248 @@
             this.label5.Location = new System.Drawing.Point(13, 258);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 16);
+            this.label5.Size = new System.Drawing.Size(70, 16);
             this.label5.TabIndex = 45;
-            this.label5.Text = "Valor de Variante";
+            this.label5.Text = "Descuento";
             // 
-            // bunifuMetroTextbox3
+            // textDescuento
             // 
-            this.bunifuMetroTextbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox3.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox3.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox3.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox3.BorderThickness = 1;
-            this.bunifuMetroTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox3.isPassword = false;
-            this.bunifuMetroTextbox3.Location = new System.Drawing.Point(12, 278);
-            this.bunifuMetroTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox3.Name = "bunifuMetroTextbox3";
-            this.bunifuMetroTextbox3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox3.Size = new System.Drawing.Size(300, 35);
-            this.bunifuMetroTextbox3.TabIndex = 46;
-            this.bunifuMetroTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textDescuento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textDescuento.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textDescuento.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textDescuento.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textDescuento.BorderThickness = 1;
+            this.textDescuento.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textDescuento.isPassword = false;
+            this.textDescuento.Location = new System.Drawing.Point(12, 278);
+            this.textDescuento.Margin = new System.Windows.Forms.Padding(4);
+            this.textDescuento.Name = "textDescuento";
+            this.textDescuento.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textDescuento.Size = new System.Drawing.Size(300, 35);
+            this.textDescuento.TabIndex = 46;
+            this.textDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // dateTimePicker1
+            // sucursalBindingSource
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(13, 147);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(300, 24);
-            this.dateTimePicker1.TabIndex = 47;
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
             // 
-            // label6
+            // grupoClienteBindingSource
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label6.Location = new System.Drawing.Point(9, 127);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 16);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Valor de Variante";
+            this.grupoClienteBindingSource.DataSource = typeof(Entidad.GrupoCliente);
             // 
-            // label8
+            // productoBindingSource
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label8.Location = new System.Drawing.Point(330, 127);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 16);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "Valor de Variante";
+            this.productoBindingSource.DataSource = typeof(Entidad.Producto);
             // 
-            // dateTimePicker2
+            // btnAddSucursal
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(334, 147);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(300, 24);
-            this.dateTimePicker2.TabIndex = 49;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label9.Location = new System.Drawing.Point(10, 334);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 16);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "Unidad de Medida";
-            // 
-            // cbxUnidadMedida
-            // 
-            this.cbxUnidadMedida.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxUnidadMedida.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxUnidadMedida.DisplayMember = "nombreUnidad";
-            this.cbxUnidadMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxUnidadMedida.FormattingEnabled = true;
-            this.cbxUnidadMedida.Location = new System.Drawing.Point(13, 352);
-            this.cbxUnidadMedida.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxUnidadMedida.Name = "cbxUnidadMedida";
-            this.cbxUnidadMedida.Size = new System.Drawing.Size(299, 26);
-            this.cbxUnidadMedida.TabIndex = 51;
-            this.cbxUnidadMedida.ValueMember = "idUnidadMedida";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(594, 352);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 26);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label10.Location = new System.Drawing.Point(331, 334);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(112, 16);
-            this.label10.TabIndex = 55;
-            this.label10.Text = "Unidad de Medida";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.DisplayMember = "nombreUnidad";
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(334, 352);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(260, 26);
-            this.comboBox1.TabIndex = 54;
-            this.comboBox1.ValueMember = "idUnidadMedida";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(273, 413);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 26);
-            this.button2.TabIndex = 59;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAddSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddSucursal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddSucursal.FlatAppearance.BorderSize = 0;
+            this.btnAddSucursal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddSucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSucursal.ForeColor = System.Drawing.Color.White;
+            this.btnAddSucursal.Location = new System.Drawing.Point(271, 410);
+            this.btnAddSucursal.Name = "btnAddSucursal";
+            this.btnAddSucursal.Size = new System.Drawing.Size(40, 26);
+            this.btnAddSucursal.TabIndex = 87;
+            this.btnAddSucursal.Text = "+";
+            this.btnAddSucursal.UseVisualStyleBackColor = false;
+            this.btnAddSucursal.Click += new System.EventHandler(this.btnAddSucursal_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label11.Location = new System.Drawing.Point(10, 395);
+            this.label11.Location = new System.Drawing.Point(8, 392);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 16);
-            this.label11.TabIndex = 58;
-            this.label11.Text = "Unidad de Medida";
+            this.label11.Size = new System.Drawing.Size(63, 16);
+            this.label11.TabIndex = 86;
+            this.label11.Text = "Sucursal:";
             // 
-            // comboBox2
+            // cbxSucursal
             // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.DisplayMember = "nombreUnidad";
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(13, 413);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(260, 26);
-            this.comboBox2.TabIndex = 57;
-            this.comboBox2.ValueMember = "idUnidadMedida";
+            this.cbxSucursal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxSucursal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxSucursal.DataSource = this.sucursalBindingSource;
+            this.cbxSucursal.DisplayMember = "nombre";
+            this.cbxSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSucursal.FormattingEnabled = true;
+            this.cbxSucursal.Location = new System.Drawing.Point(11, 410);
+            this.cbxSucursal.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxSucursal.Name = "cbxSucursal";
+            this.cbxSucursal.Size = new System.Drawing.Size(260, 26);
+            this.cbxSucursal.TabIndex = 85;
+            this.cbxSucursal.ValueMember = "idSucursal";
+            // 
+            // btnAddGrupoCliente
+            // 
+            this.btnAddGrupoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddGrupoCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddGrupoCliente.FlatAppearance.BorderSize = 0;
+            this.btnAddGrupoCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddGrupoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddGrupoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGrupoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGrupoCliente.ForeColor = System.Drawing.Color.White;
+            this.btnAddGrupoCliente.Location = new System.Drawing.Point(592, 349);
+            this.btnAddGrupoCliente.Name = "btnAddGrupoCliente";
+            this.btnAddGrupoCliente.Size = new System.Drawing.Size(40, 26);
+            this.btnAddGrupoCliente.TabIndex = 84;
+            this.btnAddGrupoCliente.Text = "+";
+            this.btnAddGrupoCliente.UseVisualStyleBackColor = false;
+            this.btnAddGrupoCliente.Click += new System.EventHandler(this.btnAddGrupoCliente_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label10.Location = new System.Drawing.Point(329, 331);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 16);
+            this.label10.TabIndex = 83;
+            this.label10.Text = "Grupo de Clientes";
+            // 
+            // cbxGrupoCliente
+            // 
+            this.cbxGrupoCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxGrupoCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxGrupoCliente.DataSource = this.grupoClienteBindingSource;
+            this.cbxGrupoCliente.DisplayMember = "nombreGrupo";
+            this.cbxGrupoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxGrupoCliente.FormattingEnabled = true;
+            this.cbxGrupoCliente.Location = new System.Drawing.Point(332, 349);
+            this.cbxGrupoCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxGrupoCliente.Name = "cbxGrupoCliente";
+            this.cbxGrupoCliente.Size = new System.Drawing.Size(260, 26);
+            this.cbxGrupoCliente.TabIndex = 82;
+            this.cbxGrupoCliente.ValueMember = "idGrupoCliente";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label9.Location = new System.Drawing.Point(8, 331);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 16);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Producto Afecto";
+            // 
+            // cbProductoAfecto
+            // 
+            this.cbProductoAfecto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbProductoAfecto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbProductoAfecto.DataSource = this.productoBindingSource;
+            this.cbProductoAfecto.DisplayMember = "nombreProducto";
+            this.cbProductoAfecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductoAfecto.FormattingEnabled = true;
+            this.cbProductoAfecto.Location = new System.Drawing.Point(11, 349);
+            this.cbProductoAfecto.Margin = new System.Windows.Forms.Padding(2);
+            this.cbProductoAfecto.Name = "cbProductoAfecto";
+            this.cbProductoAfecto.Size = new System.Drawing.Size(299, 26);
+            this.cbProductoAfecto.TabIndex = 80;
+            this.cbProductoAfecto.ValueMember = "idProducto";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label8.Location = new System.Drawing.Point(331, 129);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 16);
+            this.label8.TabIndex = 91;
+            this.label8.Text = "Fecha Fin";
+            // 
+            // dtpFechaFin
+            // 
+            this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(333, 149);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(300, 24);
+            this.dtpFechaFin.TabIndex = 90;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label6.Location = new System.Drawing.Point(10, 129);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 16);
+            this.label6.TabIndex = 89;
+            this.label6.Text = "Fecha Inicio";
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(12, 149);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(300, 24);
+            this.dtpFechaInicio.TabIndex = 88;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormDescuentoNuevo
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(651, 512);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.cbxUnidadMedida);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaInicio);
+            this.Controls.Add(this.btnAddSucursal);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cbxSucursal);
+            this.Controls.Add(this.btnAddGrupoCliente);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cbxGrupoCliente);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cbProductoAfecto);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.bunifuMetroTextbox3);
+            this.Controls.Add(this.textDescuento);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.bunifuMetroTextbox2);
+            this.Controls.Add(this.textMaximaVenta);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bunifuMetroTextbox1);
+            this.Controls.Add(this.textMinimaVenta);
             this.Controls.Add(this.lblActive);
             this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textValorVariante);
+            this.Controls.Add(this.textCodigo);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panel2);
             this.Name = "FormDescuentoNuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDescuentoNuevo";
+            this.Load += new System.EventHandler(this.FormDescuentoNuevo_Load);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grupoClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,24 +532,28 @@
         private System.Windows.Forms.Label lblActive;
         private Bunifu.Framework.UI.BunifuCheckbox chkEstado;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textValorVariante;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textCodigo;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textMinimaVenta;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textMaximaVenta;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbxUnidadMedida;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textDescuento;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
+        private System.Windows.Forms.BindingSource grupoClienteBindingSource;
+        private System.Windows.Forms.BindingSource productoBindingSource;
+        private System.Windows.Forms.Button btnAddSucursal;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxSucursal;
+        private System.Windows.Forms.Button btnAddGrupoCliente;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbxGrupoCliente;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbProductoAfecto;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

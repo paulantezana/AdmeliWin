@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCTiendaOnlinePD));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -40,9 +40,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDatosWebs = new System.Windows.Forms.TabPage();
             this.tabRelaciones = new System.Windows.Forms.TabPage();
-            this.tabComentarios = new System.Windows.Forms.TabPage();
-            this.tabImagen = new System.Windows.Forms.TabPage();
-            this.tabBanner = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
@@ -52,6 +49,7 @@
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabComentarios = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -61,16 +59,18 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabImagen = new System.Windows.Forms.TabPage();
+            this.tabBanner = new System.Windows.Forms.TabPage();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabRelaciones.SuspendLayout();
-            this.tabComentarios.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.toolStripCrud.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
+            this.tabComentarios.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -192,36 +192,6 @@
             this.tabRelaciones.TabIndex = 1;
             this.tabRelaciones.Text = "Relaciones";
             // 
-            // tabComentarios
-            // 
-            this.tabComentarios.BackColor = System.Drawing.Color.White;
-            this.tabComentarios.Controls.Add(this.panel3);
-            this.tabComentarios.Controls.Add(this.toolStrip1);
-            this.tabComentarios.Controls.Add(this.panel4);
-            this.tabComentarios.Location = new System.Drawing.Point(4, 39);
-            this.tabComentarios.Name = "tabComentarios";
-            this.tabComentarios.Size = new System.Drawing.Size(1073, 448);
-            this.tabComentarios.TabIndex = 2;
-            this.tabComentarios.Text = "Comentarios";
-            // 
-            // tabImagen
-            // 
-            this.tabImagen.BackColor = System.Drawing.Color.White;
-            this.tabImagen.Location = new System.Drawing.Point(4, 39);
-            this.tabImagen.Name = "tabImagen";
-            this.tabImagen.Size = new System.Drawing.Size(1073, 448);
-            this.tabImagen.TabIndex = 3;
-            this.tabImagen.Text = "Imagen";
-            // 
-            // tabBanner
-            // 
-            this.tabBanner.BackColor = System.Drawing.Color.White;
-            this.tabBanner.Location = new System.Drawing.Point(4, 39);
-            this.tabBanner.Name = "tabBanner";
-            this.tabBanner.Size = new System.Drawing.Size(1073, 448);
-            this.tabBanner.TabIndex = 4;
-            this.tabBanner.Text = "Banner";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView);
@@ -241,14 +211,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.DateWithTime = false;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -351,6 +321,18 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "MANTENIMIENTO RELACION PRODUCTO";
             // 
+            // tabComentarios
+            // 
+            this.tabComentarios.BackColor = System.Drawing.Color.White;
+            this.tabComentarios.Controls.Add(this.panel3);
+            this.tabComentarios.Controls.Add(this.toolStrip1);
+            this.tabComentarios.Controls.Add(this.panel4);
+            this.tabComentarios.Location = new System.Drawing.Point(4, 39);
+            this.tabComentarios.Name = "tabComentarios";
+            this.tabComentarios.Size = new System.Drawing.Size(1073, 448);
+            this.tabComentarios.TabIndex = 2;
+            this.tabComentarios.Text = "Comentarios";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.advancedDataGridView1);
@@ -370,14 +352,14 @@
             this.advancedDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.advancedDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.advancedDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.advancedDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.advancedDataGridView1.ColumnHeadersHeight = 40;
             this.advancedDataGridView1.DateWithTime = false;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -480,6 +462,24 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "MANTENIMIENTO DE COMENTARIOS";
             // 
+            // tabImagen
+            // 
+            this.tabImagen.BackColor = System.Drawing.Color.White;
+            this.tabImagen.Location = new System.Drawing.Point(4, 39);
+            this.tabImagen.Name = "tabImagen";
+            this.tabImagen.Size = new System.Drawing.Size(1073, 448);
+            this.tabImagen.TabIndex = 3;
+            this.tabImagen.Text = "Imagen";
+            // 
+            // tabBanner
+            // 
+            this.tabBanner.BackColor = System.Drawing.Color.White;
+            this.tabBanner.Location = new System.Drawing.Point(4, 39);
+            this.tabBanner.Name = "tabBanner";
+            this.tabBanner.Size = new System.Drawing.Size(1073, 448);
+            this.tabBanner.TabIndex = 4;
+            this.tabBanner.Text = "Banner";
+            // 
             // UCTiendaOnlinePD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,13 +495,13 @@
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabRelaciones.ResumeLayout(false);
-            this.tabComentarios.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
+            this.tabComentarios.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);

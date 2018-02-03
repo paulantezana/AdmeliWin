@@ -997,7 +997,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Productos\Nuevo\PDetalle\web\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidad\Entidad.csproj">
       <Project>{c0683f96-41cc-4467-8b73-2ce7371426a9}</Project>

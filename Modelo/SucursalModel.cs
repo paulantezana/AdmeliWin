@@ -102,5 +102,19 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Sucursal>> sucursalesPrecio(int idProducto)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/sucursales/precio/17
+                List<Sucursal> listSucursal = await webService.GETLis<Sucursal>("sucursales", String.Format("precio/{0}",idProducto));
+                return listSucursal;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

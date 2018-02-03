@@ -77,5 +77,20 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<GrupoCliente>> gclientes21()
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/gclientes21
+                List<GrupoCliente> list = await webService.GETLis<GrupoCliente>("gclientes21");
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

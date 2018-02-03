@@ -48,9 +48,17 @@ namespace Modelo
             }
         }
 
-        public void modificar()
+        public async Task<Response> modificar(Producto param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/producto/modificar
+                return await webService.POSTSend("producto", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<Response> eliminar(Producto param)
@@ -64,11 +72,6 @@ namespace Modelo
             {
                 throw ex;
             }
-        }
-
-        public void cambiarClave()
-        {
-
         }
 
         public async Task<RootObject<Producto>> productosPorCategoria(Dictionary<string, int> dictionary, int page, int items)
@@ -86,6 +89,7 @@ namespace Modelo
                 throw ex;
             }
         }
+
         public async Task<RootObject<Producto>> productosPorCategoriaBuscar(Dictionary<string, int> dictionary, string like, int page, int items)
         {
             try
@@ -134,9 +138,19 @@ namespace Modelo
             }
         }
 
-        public Task<Response> modificar(Producto producto)
+        public async Task<List<Producto>> productos21(int idProducto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // localhost/admeli/xcore/services.php/productos21/17
+                List<Producto> list = await webService.GETLis<Producto>("productos21", String.Format("{0}", idProducto));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+
     }
 }
