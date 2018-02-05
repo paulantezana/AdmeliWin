@@ -680,6 +680,7 @@ namespace Admeli.Productos
             toolStripTools.Items.Insert(3,host);
 
         }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             verStock = ((CheckBox)sender).Checked;

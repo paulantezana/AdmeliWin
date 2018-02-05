@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
             this.chkActivo = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,9 +45,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.productoRelacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoRelacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -120,7 +125,8 @@
             // 
             this.cbxProductoRelacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxProductoRelacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxProductoRelacion.DisplayMember = "nombreMarca";
+            this.cbxProductoRelacion.DataSource = this.productoRelacionBindingSource;
+            this.cbxProductoRelacion.DisplayMember = "nombreProducto";
             this.cbxProductoRelacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxProductoRelacion.FormattingEnabled = true;
             this.cbxProductoRelacion.Location = new System.Drawing.Point(21, 296);
@@ -128,7 +134,7 @@
             this.cbxProductoRelacion.Name = "cbxProductoRelacion";
             this.cbxProductoRelacion.Size = new System.Drawing.Size(328, 26);
             this.cbxProductoRelacion.TabIndex = 53;
-            this.cbxProductoRelacion.ValueMember = "idMarca";
+            this.cbxProductoRelacion.ValueMember = "idProducto";
             // 
             // label1
             // 
@@ -192,6 +198,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -210,6 +217,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panelHeader
             // 
@@ -253,11 +261,21 @@
             this.label5.TabIndex = 65;
             this.label5.Text = "(Si esta Desmarcado, no se mostrara esta Relación en la página.)";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // productoRelacionBindingSource
+            // 
+            this.productoRelacionBindingSource.DataSource = typeof(Entidad.ProductoRelacion);
+            // 
             // FormRelacionNuevo
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(363, 389);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -274,10 +292,13 @@
             this.Name = "FormRelacionNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRelacionNuevo";
+            this.Load += new System.EventHandler(this.FormRelacionNuevo_Load);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoRelacionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +322,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.BindingSource productoRelacionBindingSource;
     }
 }

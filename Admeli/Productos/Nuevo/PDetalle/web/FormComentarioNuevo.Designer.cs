@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -40,6 +41,7 @@
             this.textCorreo = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxPais = new System.Windows.Forms.ComboBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textNombreUsuario = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.textTituloComentario = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -50,9 +52,12 @@
             this.textComentario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -113,6 +118,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -131,6 +137,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label9
             // 
@@ -203,7 +210,8 @@
             // 
             this.cbxPais.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxPais.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxPais.DisplayMember = "nombreMarca";
+            this.cbxPais.DataSource = this.paisBindingSource;
+            this.cbxPais.DisplayMember = "nombre";
             this.cbxPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPais.FormattingEnabled = true;
             this.cbxPais.Location = new System.Drawing.Point(19, 152);
@@ -211,7 +219,11 @@
             this.cbxPais.Name = "cbxPais";
             this.cbxPais.Size = new System.Drawing.Size(328, 26);
             this.cbxPais.TabIndex = 66;
-            this.cbxPais.ValueMember = "idMarca";
+            this.cbxPais.ValueMember = "idPais";
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
             // 
             // textNombreUsuario
             // 
@@ -343,6 +355,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(377, 361);
@@ -350,11 +363,17 @@
             this.dtpFecha.Size = new System.Drawing.Size(328, 26);
             this.dtpFecha.TabIndex = 86;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormComentarioNuevo
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(728, 513);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label5);
@@ -377,10 +396,13 @@
             this.Name = "FormComentarioNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormComentarioNuevo";
+            this.Load += new System.EventHandler(this.FormComentarioNuevo_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +431,7 @@
         private System.Windows.Forms.TextBox textComentario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.BindingSource paisBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

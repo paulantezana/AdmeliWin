@@ -152,5 +152,18 @@ namespace Modelo
             }
         }
 
+        public async Task<List<Producto>> productoRelacionado(int idProducto, string tipoRelacion, int productoRelacion)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/listarproductosnorelacionados/producto/21/tiporelacion/complementaria/productorelacion/0
+                List<Producto> list = await webService.GETLis<Producto>("listarproductosnorelacionados", String.Format("producto/{0}/tiporelacion/{1}/productorelacion/{2}", idProducto, tipoRelacion, productoRelacion));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
