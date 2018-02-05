@@ -62,6 +62,7 @@ namespace Admeli.Productos.Nuevo.PDetalle.web
         private async void cargarPaises()
         {
             paisBindingSource.DataSource = await locationModel.paises();
+            cbxPais.SelectedIndex = -1;
             cargarDatosModificar();
         }
 
