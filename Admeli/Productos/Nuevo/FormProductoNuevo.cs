@@ -1,5 +1,6 @@
 ﻿using Admeli.Productos.Nuevo.PDetalle;
 using Entidad;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,8 @@ namespace Admeli.Productos.Nuevo
         public int currentIDProducto { get; set; }
         public Producto currentProducto { get; set; }
         public bool nuevo { get; set; }
+
+        public ProductoModel productoModel = new ProductoModel();
 
         public FormProductoNuevo(Producto currentProducto)
         {
@@ -230,9 +233,10 @@ namespace Admeli.Productos.Nuevo
         {
             togglePanelMain("tiendaOnline");
             btnWeb.BackColor = Color.White;
-        } 
+        }
         #endregion
 
+        #region ============================ Root Load ============================
         internal void reLoad()
         {
             if (this.nuevo)
@@ -251,8 +255,63 @@ namespace Admeli.Productos.Nuevo
                 this.btnWeb.Enabled = true;
                 this.btnStock.Enabled = true;
                 this.Text = "MANTENIMIENTO PRODUCTO " + currentProducto.nombreProducto;
+                cargarDatosModificar();
+            }
+        } 
+        #endregion
+
+        private async void cargarDatosModificar()
+        {
+            currentProducto = await productoModel.productoDatos(currentIDProducto);
+        }
+
+        #region ========================== Guardar ==========================
+        internal async void executeGuardar()
+        {
+            // Ejecutando el guardado
+            try
+            {
+                if (nuevo)
+                {
+                    Response response = await productoModel.guardar(currentProducto);
+                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Consulta de guardar =============================================
+                    this.nuevo = false;
+                }
+                else
+                {
+                    Response response = await productoModel.modificar(currentProducto);
+                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        internal async void executeGuardarSalir()
+        {
+            // Ejecutando el guardado
+            try
+            {
+                if (nuevo)
+                {
+                    Response response = await productoModel.guardar(currentProducto);
+                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Response response = await productoModel.modificar(currentProducto);
+                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        } 
+        #endregion
     }
 }

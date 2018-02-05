@@ -102,7 +102,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             guardar();
         }
 
-        private async void guardar()
+        private void guardar()
         {
             // Validando los campos
             if (!isFieldsValid)
@@ -112,24 +112,10 @@ namespace Admeli.Productos.Nuevo.PDetalle
             }
 
             // Ejecutando el guardado
-            try
-            {
-                cargarObjeto();
-                if (formProductoNuevo.nuevo)
-                {
-                    Response response = await productoModel.guardar(formProductoNuevo.currentProducto);
-                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    Response response = await productoModel.modificar(formProductoNuevo.currentProducto);
-                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            cargarObjeto();
+
+            // Ejecutando el gurdado
+            formProductoNuevo.executeGuardar();
         }
 
         private void cargarObjeto()
@@ -137,38 +123,42 @@ namespace Admeli.Productos.Nuevo.PDetalle
             formProductoNuevo.currentProducto = new Producto();
             if (!formProductoNuevo.nuevo) formProductoNuevo.currentProducto.idProducto = 1; // Llenar el id categoria cuando este en esdo modificar
 
-            formProductoNuevo.currentProducto.cantidadFraccion = false;
-            formProductoNuevo.currentProducto.codigoBarras = "";
+            if (formProductoNuevo.nuevo)
+            {
+                formProductoNuevo.currentProducto.cantidadFraccion = false;
+                formProductoNuevo.currentProducto.codigoBarras = "";
+                formProductoNuevo.currentProducto.controlSinStock = "sin_stock";
+
+                formProductoNuevo.currentProducto.descripcionLarga = "";
+
+                formProductoNuevo.currentProducto.enCategoriaEstrella = false;
+                formProductoNuevo.currentProducto.enPortada = false;
+                formProductoNuevo.currentProducto.enUso = false;
+
+                formProductoNuevo.currentProducto.keywords = "";
+
+                formProductoNuevo.currentProducto.limiteMaximo = "0";
+                formProductoNuevo.currentProducto.limiteMinimo = "0";
+                formProductoNuevo.currentProducto.mostrarPrecioWeb = true;
+                formProductoNuevo.currentProducto.mostrarVideo = true;
+                formProductoNuevo.currentProducto.mostrarWeb = true;
+
+                formProductoNuevo.currentProducto.urlVideo = "";
+                formProductoNuevo.currentProducto.ventaVarianteSinStock = false;
+            }
 
             formProductoNuevo.currentProducto.codigoProducto = textCodigoProducto.Text;
-            formProductoNuevo.currentProducto.controlSinStock = "sin_stock";
             formProductoNuevo.currentProducto.descripcionCorta = textDescripcion.Text;
-
-            formProductoNuevo.currentProducto.descripcionLarga = "";
-
-            formProductoNuevo.currentProducto.enCategoriaEstrella = false;
-            formProductoNuevo.currentProducto.enPortada = false;
-            formProductoNuevo.currentProducto.enUso = false;
 
             formProductoNuevo.currentProducto.estado = chkActivoProducto.Checked;
             formProductoNuevo.currentProducto.idMarca = Convert.ToInt32(cbxMarcas.SelectedValue);
             formProductoNuevo.currentProducto.idUnidadMedida = Convert.ToInt32(cbxUnidadMedida.SelectedValue);
-
-            formProductoNuevo.currentProducto.keywords = "";
-
-            formProductoNuevo.currentProducto.limiteMaximo = "0";
-            formProductoNuevo.currentProducto.limiteMinimo = "0";
-            formProductoNuevo.currentProducto.mostrarPrecioWeb = true;
-            formProductoNuevo.currentProducto.mostrarVideo = true;
-            formProductoNuevo.currentProducto.mostrarWeb = true;
 
             formProductoNuevo.currentProducto.nombreMarca = cbxMarcas.Text;
             formProductoNuevo.currentProducto.nombreProducto = textNombreProducto.Text;
             formProductoNuevo.currentProducto.nombreUnidad = cbxUnidadMedida.Text;
 
             formProductoNuevo.currentProducto.precioCompra = Convert.ToInt32(textPrecioCompra.Text);
-            formProductoNuevo.currentProducto.urlVideo = "";
-            formProductoNuevo.currentProducto.ventaVarianteSinStock = false;
         }
 
         #region ================================ Validation ===============================

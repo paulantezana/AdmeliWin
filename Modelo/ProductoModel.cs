@@ -152,6 +152,20 @@ namespace Modelo
             }
         }
 
+        public async Task<Producto> productoDatos(int idProducto)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/producto/datos/21
+                List<Producto> list = await webService.GETLis<Producto>("producto", String.Format("datos/{0}", idProducto));
+                return list[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<Producto>> productoRelacionado(int idProducto, string tipoRelacion, int productoRelacion)
         {
             try

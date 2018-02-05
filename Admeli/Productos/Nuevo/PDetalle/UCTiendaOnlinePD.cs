@@ -54,6 +54,33 @@ namespace Admeli.Productos.Nuevo.PDetalle
         {
             cargarComentarios();
             cargarRelacionProducto();
+
+            // Cargar Datos Web 
+            cargarComponentes();
+            mostrarDatosWeb();
+        }
+
+        private void loadState(bool state)
+        {
+            formProductoNuevo.appLoadState(state);
+        }
+
+        #region ========================== Load ==========================
+        private void cargarComponentes()
+        {
+            // Cargando el combobox ce estados
+            DataTable table = new DataTable();
+            table.Columns.Add("idStockProducto", typeof(string));
+            table.Columns.Add("stockProducto", typeof(string));
+
+            table.Rows.Add("en_llegada", "Venta Con Stock");
+            table.Rows.Add("sin_stock", "Venta Sin Stock");
+            table.Rows.Add("lista_espera", "Lista de Espera");
+
+            cbxVentaProducto.DataSource = table;
+            cbxVentaProducto.DisplayMember = "stockProducto";
+            cbxVentaProducto.ValueMember = "idStockProducto";
+            cbxVentaProducto.SelectedIndex = 1;
         }
 
         private async void cargarComentarios()
@@ -81,11 +108,6 @@ namespace Admeli.Productos.Nuevo.PDetalle
             }
         }
 
-        private void loadState(bool state)
-        {
-            formProductoNuevo.appLoadState(state);
-        }
-
         private async void cargarRelacionProducto()
         {
             loadState(true);
@@ -109,6 +131,25 @@ namespace Admeli.Productos.Nuevo.PDetalle
             {
                 loadState(false);
             }
+        } 
+        #endregion
+
+        private void mostrarDatosWeb()
+        {
+            textDescripcionLarga.Text = formProductoNuevo.currentProducto.descripcionLarga;
+            textKeyWords.Text = formProductoNuevo.currentProducto.keywords;
+            chkEnPortada.Checked = formProductoNuevo.currentProducto.enPortada;
+            chkEnCategoria.Checked = formProductoNuevo.currentProducto.enCategoriaEstrella;
+
+            chkCantidadFraccion.Checked = formProductoNuevo.currentProducto.cantidadFraccion;
+            textLimiteMinimo.Text = formProductoNuevo.currentProducto.limiteMinimo.ToString();
+            textLimiteMaximo.Text = formProductoNuevo.currentProducto.limiteMaximo.ToString();
+            chkCantidadFraccion.Checked = formProductoNuevo.currentProducto.cantidadFraccion;
+            textURLVideo.Text = formProductoNuevo.currentProducto.urlVideo;
+            chkMostrarVideo.Checked = formProductoNuevo.currentProducto.mostrarVideo;
+            chkMostrarWeb.Checked = formProductoNuevo.currentProducto.mostrarWeb;
+            chkMostrarPrecio.Checked = formProductoNuevo.currentProducto.mostrarPrecioWeb;
+            cbxVentaProducto.SelectedValue = formProductoNuevo.currentProducto.controlSinStock;
         }
 
         #region ============================ CRUD RELACION ============================
@@ -287,6 +328,26 @@ namespace Admeli.Productos.Nuevo.PDetalle
         private void executeActualizarComentario()
         {
             cargarComentarios();
+        }
+        #endregion
+
+        #region ============================= Guardar =============================
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.currentProducto.descripcionLarga = textDescripcionLarga.Text;
+            formProductoNuevo.currentProducto.keywords = textKeyWords.Text;
+            formProductoNuevo.currentProducto.enCategoriaEstrella = chkEnCategoria.Checked;
+            formProductoNuevo.currentProducto.enPortada = chkEnPortada.Checked;
+            formProductoNuevo.currentProducto.limiteMaximo = textLimiteMaximo.Text;
+            formProductoNuevo.currentProducto.limiteMinimo = textLimiteMinimo.Text;
+            formProductoNuevo.currentProducto.cantidadFraccion = chkCantidadFraccion.Checked;
+            formProductoNuevo.currentProducto.urlVideo = textURLVideo.Text;
+            formProductoNuevo.currentProducto.mostrarVideo = chkMostrarVideo.Checked;
+            formProductoNuevo.currentProducto.mostrarWeb = chkMostrarWeb.Checked;
+            formProductoNuevo.currentProducto.mostrarPrecioWeb = chkMostrarPrecio.Checked;
+            formProductoNuevo.currentProducto.controlSinStock = cbxVentaProducto.SelectedValue.ToString();
+
+            formProductoNuevo.executeGuardar();
         } 
         #endregion
     }

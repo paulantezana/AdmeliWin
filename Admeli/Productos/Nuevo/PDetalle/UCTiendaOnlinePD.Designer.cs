@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCTiendaOnlinePD));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -40,6 +40,41 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDatosWebs = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.chkMostrarPrecio = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.chkMostrarWeb = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.chkMostrarVideo = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.textURLVideo = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.chkCantidadFraccion = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textLimiteMinimo = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbxVentaProducto = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chkEnCategoria = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.chkEnPortada = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textKeyWords = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textDescripcionLarga = new System.Windows.Forms.TextBox();
+            this.textLimiteMaximo = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabRelaciones = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewRelaciones = new ADGV.AdvancedDataGridView();
@@ -83,41 +118,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabImagen = new System.Windows.Forms.TabPage();
             this.tabBanner = new System.Windows.Forms.TabPage();
-            this.textLimiteMaximo = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textDescripcionLarga = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textKeyWords = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.chkEnPortada = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chkEnCategoria = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbxVentaProducto = new System.Windows.Forms.ComboBox();
-            this.textLimiteMinimo = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.chkCantidadFraccion = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.textURLVideo = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.chkMostrarVideo = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.chkMostrarWeb = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.chkMostrarPrecio = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label26 = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -195,6 +195,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -275,6 +276,427 @@
             this.tabDatosWebs.TabIndex = 0;
             this.tabDatosWebs.Text = "Datos Web ";
             // 
+            // label26
+            // 
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label26.Location = new System.Drawing.Point(545, 395);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(149, 29);
+            this.label26.TabIndex = 92;
+            this.label26.Text = "Url del video del producto que se mostrará en la página.";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label24.Location = new System.Drawing.Point(187, 507);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(353, 13);
+            this.label24.TabIndex = 91;
+            this.label24.Text = "Si está desmarcado, no se mostrará el precio de este producto en la web.";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label25.Location = new System.Drawing.Point(40, 505);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(142, 16);
+            this.label25.TabIndex = 90;
+            this.label25.Text = "Mostrar Precio en Web";
+            // 
+            // chkMostrarPrecio
+            // 
+            this.chkMostrarPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkMostrarPrecio.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkMostrarPrecio.Checked = false;
+            this.chkMostrarPrecio.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkMostrarPrecio.ForeColor = System.Drawing.Color.White;
+            this.chkMostrarPrecio.Location = new System.Drawing.Point(15, 503);
+            this.chkMostrarPrecio.Name = "chkMostrarPrecio";
+            this.chkMostrarPrecio.Size = new System.Drawing.Size(20, 20);
+            this.chkMostrarPrecio.TabIndex = 89;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(155, 478);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(295, 13);
+            this.label22.TabIndex = 88;
+            this.label22.Text = "Si está desmarcado, no se mostrará este producto en la web.";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label23.Location = new System.Drawing.Point(40, 475);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(101, 16);
+            this.label23.TabIndex = 87;
+            this.label23.Text = "Mostrar en Web";
+            // 
+            // chkMostrarWeb
+            // 
+            this.chkMostrarWeb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkMostrarWeb.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkMostrarWeb.Checked = false;
+            this.chkMostrarWeb.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkMostrarWeb.ForeColor = System.Drawing.Color.White;
+            this.chkMostrarWeb.Location = new System.Drawing.Point(15, 473);
+            this.chkMostrarWeb.Name = "chkMostrarWeb";
+            this.chkMostrarWeb.Size = new System.Drawing.Size(20, 20);
+            this.chkMostrarWeb.TabIndex = 86;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label20.Location = new System.Drawing.Point(134, 450);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(299, 13);
+            this.label20.TabIndex = 85;
+            this.label20.Text = "(Si está Desmarcado, no se mostrará este video en la página.)";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label21.Location = new System.Drawing.Point(40, 445);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(89, 16);
+            this.label21.TabIndex = 84;
+            this.label21.Text = "Mostrar Video";
+            // 
+            // chkMostrarVideo
+            // 
+            this.chkMostrarVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkMostrarVideo.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkMostrarVideo.Checked = false;
+            this.chkMostrarVideo.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkMostrarVideo.ForeColor = System.Drawing.Color.White;
+            this.chkMostrarVideo.Location = new System.Drawing.Point(15, 443);
+            this.chkMostrarVideo.Name = "chkMostrarVideo";
+            this.chkMostrarVideo.Size = new System.Drawing.Size(20, 20);
+            this.chkMostrarVideo.TabIndex = 83;
+            // 
+            // textURLVideo
+            // 
+            this.textURLVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textURLVideo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textURLVideo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textURLVideo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textURLVideo.BorderThickness = 1;
+            this.textURLVideo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textURLVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textURLVideo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textURLVideo.isPassword = false;
+            this.textURLVideo.Location = new System.Drawing.Point(15, 392);
+            this.textURLVideo.Margin = new System.Windows.Forms.Padding(4);
+            this.textURLVideo.Name = "textURLVideo";
+            this.textURLVideo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textURLVideo.Size = new System.Drawing.Size(523, 35);
+            this.textURLVideo.TabIndex = 82;
+            this.textURLVideo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label19.Location = new System.Drawing.Point(12, 374);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 16);
+            this.label19.TabIndex = 81;
+            this.label19.Text = "URLVideo";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label17.Location = new System.Drawing.Point(158, 347);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(420, 13);
+            this.label17.TabIndex = 80;
+            this.label17.Text = "(Campo para decidir si nuestro producto se puede vender por cantidades fraccionad" +
+    "as.)";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label18.Location = new System.Drawing.Point(40, 345);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(113, 16);
+            this.label18.TabIndex = 79;
+            this.label18.Text = "Cantidad Fracción";
+            // 
+            // chkCantidadFraccion
+            // 
+            this.chkCantidadFraccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkCantidadFraccion.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkCantidadFraccion.Checked = false;
+            this.chkCantidadFraccion.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkCantidadFraccion.ForeColor = System.Drawing.Color.White;
+            this.chkCantidadFraccion.Location = new System.Drawing.Point(15, 343);
+            this.chkCantidadFraccion.Name = "chkCantidadFraccion";
+            this.chkCantidadFraccion.Size = new System.Drawing.Size(20, 20);
+            this.chkCantidadFraccion.TabIndex = 78;
+            // 
+            // label16
+            // 
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label16.Location = new System.Drawing.Point(363, 300);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(331, 32);
+            this.label16.TabIndex = 77;
+            this.label16.Text = "Si es que queremos que el producto se venda a partir de un monto mínimo de cantid" +
+    "ad (0 por Defecto).";
+            // 
+            // label15
+            // 
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label15.Location = new System.Drawing.Point(12, 300);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(331, 32);
+            this.label15.TabIndex = 76;
+            this.label15.Text = "Si es que queremos que el producto se venda a partir de un monto mínimo de cantid" +
+    "ad (0 por Defecto).";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(348, 210);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(570, 13);
+            this.label14.TabIndex = 75;
+            this.label14.Text = "Un campo necesario para poder controlar la venta de nuestros productos cuando los" +
+    " almacenes no lo tengan en stock.";
+            // 
+            // textLimiteMinimo
+            // 
+            this.textLimiteMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textLimiteMinimo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textLimiteMinimo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textLimiteMinimo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textLimiteMinimo.BorderThickness = 1;
+            this.textLimiteMinimo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textLimiteMinimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLimiteMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textLimiteMinimo.isPassword = false;
+            this.textLimiteMinimo.Location = new System.Drawing.Point(15, 261);
+            this.textLimiteMinimo.Margin = new System.Windows.Forms.Padding(4);
+            this.textLimiteMinimo.Name = "textLimiteMinimo";
+            this.textLimiteMinimo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textLimiteMinimo.Size = new System.Drawing.Size(328, 35);
+            this.textLimiteMinimo.TabIndex = 74;
+            this.textLimiteMinimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label13.Location = new System.Drawing.Point(12, 243);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(89, 16);
+            this.label13.TabIndex = 73;
+            this.label13.Text = "Límite Mínimo";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label12.Location = new System.Drawing.Point(12, 188);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(118, 16);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Venta del Producto";
+            // 
+            // cbxVentaProducto
+            // 
+            this.cbxVentaProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxVentaProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxVentaProducto.DisplayMember = "nombreMarca";
+            this.cbxVentaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVentaProducto.FormattingEnabled = true;
+            this.cbxVentaProducto.Location = new System.Drawing.Point(15, 206);
+            this.cbxVentaProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxVentaProducto.Name = "cbxVentaProducto";
+            this.cbxVentaProducto.Size = new System.Drawing.Size(328, 26);
+            this.cbxVentaProducto.TabIndex = 71;
+            this.cbxVentaProducto.ValueMember = "idMarca";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(176, 156);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(540, 13);
+            this.label11.TabIndex = 70;
+            this.label11.Text = "(Campo necesario para ubicar al producto en una posición preferente cuando listam" +
+    "os productos por categorías.)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(118, 122);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(386, 13);
+            this.label10.TabIndex = 69;
+            this.label10.Text = "(Campo utilizado para poner o no a un producto en la portada de la página web.)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label8.Location = new System.Drawing.Point(40, 154);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(131, 16);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "En Categoría Estrella";
+            // 
+            // chkEnCategoria
+            // 
+            this.chkEnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkEnCategoria.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkEnCategoria.Checked = false;
+            this.chkEnCategoria.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkEnCategoria.ForeColor = System.Drawing.Color.White;
+            this.chkEnCategoria.Location = new System.Drawing.Point(15, 152);
+            this.chkEnCategoria.Name = "chkEnCategoria";
+            this.chkEnCategoria.Size = new System.Drawing.Size(20, 20);
+            this.chkEnCategoria.TabIndex = 67;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(509, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(357, 13);
+            this.label7.TabIndex = 66;
+            this.label7.Text = "Campo utilizado como adicional para generar las búsquedas de productos.";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label9.Location = new System.Drawing.Point(40, 120);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 16);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "En Portada";
+            // 
+            // chkEnPortada
+            // 
+            this.chkEnPortada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkEnPortada.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkEnPortada.Checked = false;
+            this.chkEnPortada.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkEnPortada.ForeColor = System.Drawing.Color.White;
+            this.chkEnPortada.Location = new System.Drawing.Point(15, 118);
+            this.chkEnPortada.Name = "chkEnPortada";
+            this.chkEnPortada.Size = new System.Drawing.Size(20, 20);
+            this.chkEnPortada.TabIndex = 53;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label6.Location = new System.Drawing.Point(509, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 16);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Keywords";
+            // 
+            // textKeyWords
+            // 
+            this.textKeyWords.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textKeyWords.Location = new System.Drawing.Point(512, 34);
+            this.textKeyWords.Margin = new System.Windows.Forms.Padding(2);
+            this.textKeyWords.Multiline = true;
+            this.textKeyWords.Name = "textKeyWords";
+            this.textKeyWords.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textKeyWords.Size = new System.Drawing.Size(468, 57);
+            this.textKeyWords.TabIndex = 45;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label5.Location = new System.Drawing.Point(12, 16);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 16);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Descripción Larga";
+            // 
+            // textDescripcionLarga
+            // 
+            this.textDescripcionLarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescripcionLarga.Location = new System.Drawing.Point(15, 34);
+            this.textDescripcionLarga.Margin = new System.Windows.Forms.Padding(2);
+            this.textDescripcionLarga.Multiline = true;
+            this.textDescripcionLarga.Name = "textDescripcionLarga";
+            this.textDescripcionLarga.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textDescripcionLarga.Size = new System.Drawing.Size(468, 57);
+            this.textDescripcionLarga.TabIndex = 43;
+            // 
+            // textLimiteMaximo
+            // 
+            this.textLimiteMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textLimiteMaximo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textLimiteMaximo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textLimiteMaximo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textLimiteMaximo.BorderThickness = 1;
+            this.textLimiteMaximo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textLimiteMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLimiteMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textLimiteMaximo.isPassword = false;
+            this.textLimiteMaximo.Location = new System.Drawing.Point(366, 261);
+            this.textLimiteMaximo.Margin = new System.Windows.Forms.Padding(4);
+            this.textLimiteMaximo.Name = "textLimiteMaximo";
+            this.textLimiteMaximo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textLimiteMaximo.Size = new System.Drawing.Size(328, 35);
+            this.textLimiteMaximo.TabIndex = 41;
+            this.textLimiteMaximo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label4.Location = new System.Drawing.Point(363, 243);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Límite Máximo";
+            // 
             // tabRelaciones
             // 
             this.tabRelaciones.BackColor = System.Drawing.Color.White;
@@ -283,7 +705,7 @@
             this.tabRelaciones.Controls.Add(this.panelHeaderItem1);
             this.tabRelaciones.Location = new System.Drawing.Point(4, 39);
             this.tabRelaciones.Name = "tabRelaciones";
-            this.tabRelaciones.Size = new System.Drawing.Size(1073, 448);
+            this.tabRelaciones.Size = new System.Drawing.Size(1073, 578);
             this.tabRelaciones.TabIndex = 1;
             this.tabRelaciones.Text = "Relaciones";
             // 
@@ -294,7 +716,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 86);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(1073, 362);
+            this.panel2.Size = new System.Drawing.Size(1073, 492);
             this.panel2.TabIndex = 23;
             // 
             // dataGridViewRelaciones
@@ -307,14 +729,14 @@
             this.dataGridViewRelaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewRelaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewRelaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRelaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRelaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewRelaciones.ColumnHeadersHeight = 40;
             this.dataGridViewRelaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProductoRelacionDataGridViewTextBoxColumn,
@@ -334,7 +756,7 @@
             this.dataGridViewRelaciones.ReadOnly = true;
             this.dataGridViewRelaciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridViewRelaciones.RowTemplate.Height = 27;
-            this.dataGridViewRelaciones.Size = new System.Drawing.Size(1053, 342);
+            this.dataGridViewRelaciones.Size = new System.Drawing.Size(1053, 472);
             this.dataGridViewRelaciones.TabIndex = 0;
             this.dataGridViewRelaciones.TimeFilter = false;
             // 
@@ -512,7 +934,7 @@
             this.tabComentarios.Controls.Add(this.panel4);
             this.tabComentarios.Location = new System.Drawing.Point(4, 39);
             this.tabComentarios.Name = "tabComentarios";
-            this.tabComentarios.Size = new System.Drawing.Size(1073, 448);
+            this.tabComentarios.Size = new System.Drawing.Size(1073, 578);
             this.tabComentarios.TabIndex = 2;
             this.tabComentarios.Text = "Comentarios";
             // 
@@ -523,7 +945,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 86);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(1073, 362);
+            this.panel3.Size = new System.Drawing.Size(1073, 492);
             this.panel3.TabIndex = 23;
             // 
             // dataGridViewComentarios
@@ -536,14 +958,14 @@
             this.dataGridViewComentarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewComentarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewComentarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewComentarios.ColumnHeadersHeight = 40;
             this.dataGridViewComentarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idComentarioDataGridViewTextBoxColumn,
@@ -568,7 +990,7 @@
             this.dataGridViewComentarios.ReadOnly = true;
             this.dataGridViewComentarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridViewComentarios.RowTemplate.Height = 27;
-            this.dataGridViewComentarios.Size = new System.Drawing.Size(1053, 342);
+            this.dataGridViewComentarios.Size = new System.Drawing.Size(1053, 472);
             this.dataGridViewComentarios.TabIndex = 0;
             this.dataGridViewComentarios.TimeFilter = false;
             // 
@@ -793,7 +1215,7 @@
             this.tabImagen.BackColor = System.Drawing.Color.White;
             this.tabImagen.Location = new System.Drawing.Point(4, 39);
             this.tabImagen.Name = "tabImagen";
-            this.tabImagen.Size = new System.Drawing.Size(1073, 448);
+            this.tabImagen.Size = new System.Drawing.Size(1073, 578);
             this.tabImagen.TabIndex = 3;
             this.tabImagen.Text = "Imagen";
             // 
@@ -802,431 +1224,9 @@
             this.tabBanner.BackColor = System.Drawing.Color.White;
             this.tabBanner.Location = new System.Drawing.Point(4, 39);
             this.tabBanner.Name = "tabBanner";
-            this.tabBanner.Size = new System.Drawing.Size(1073, 448);
+            this.tabBanner.Size = new System.Drawing.Size(1073, 578);
             this.tabBanner.TabIndex = 4;
             this.tabBanner.Text = "Banner";
-            // 
-            // textLimiteMaximo
-            // 
-            this.textLimiteMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textLimiteMaximo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textLimiteMaximo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textLimiteMaximo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textLimiteMaximo.BorderThickness = 1;
-            this.textLimiteMaximo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textLimiteMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLimiteMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textLimiteMaximo.isPassword = false;
-            this.textLimiteMaximo.Location = new System.Drawing.Point(366, 261);
-            this.textLimiteMaximo.Margin = new System.Windows.Forms.Padding(4);
-            this.textLimiteMaximo.Name = "textLimiteMaximo";
-            this.textLimiteMaximo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textLimiteMaximo.Size = new System.Drawing.Size(328, 35);
-            this.textLimiteMaximo.TabIndex = 41;
-            this.textLimiteMaximo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(363, 243);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Límite Máximo";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label5.Location = new System.Drawing.Point(12, 16);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 16);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Descripción Larga";
-            // 
-            // textDescripcionLarga
-            // 
-            this.textDescripcionLarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDescripcionLarga.Location = new System.Drawing.Point(15, 34);
-            this.textDescripcionLarga.Margin = new System.Windows.Forms.Padding(2);
-            this.textDescripcionLarga.Multiline = true;
-            this.textDescripcionLarga.Name = "textDescripcionLarga";
-            this.textDescripcionLarga.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textDescripcionLarga.Size = new System.Drawing.Size(468, 57);
-            this.textDescripcionLarga.TabIndex = 43;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label6.Location = new System.Drawing.Point(509, 16);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 16);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Keywords";
-            // 
-            // textKeyWords
-            // 
-            this.textKeyWords.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textKeyWords.Location = new System.Drawing.Point(512, 34);
-            this.textKeyWords.Margin = new System.Windows.Forms.Padding(2);
-            this.textKeyWords.Multiline = true;
-            this.textKeyWords.Name = "textKeyWords";
-            this.textKeyWords.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textKeyWords.Size = new System.Drawing.Size(468, 57);
-            this.textKeyWords.TabIndex = 45;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label9.Location = new System.Drawing.Point(40, 120);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 16);
-            this.label9.TabIndex = 54;
-            this.label9.Text = "En Portada";
-            // 
-            // chkEnPortada
-            // 
-            this.chkEnPortada.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkEnPortada.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkEnPortada.Checked = true;
-            this.chkEnPortada.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkEnPortada.ForeColor = System.Drawing.Color.White;
-            this.chkEnPortada.Location = new System.Drawing.Point(15, 118);
-            this.chkEnPortada.Name = "chkEnPortada";
-            this.chkEnPortada.Size = new System.Drawing.Size(20, 20);
-            this.chkEnPortada.TabIndex = 53;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(509, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(357, 13);
-            this.label7.TabIndex = 66;
-            this.label7.Text = "Campo utilizado como adicional para generar las búsquedas de productos.";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label8.Location = new System.Drawing.Point(40, 154);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 16);
-            this.label8.TabIndex = 68;
-            this.label8.Text = "En Categoría Estrella";
-            // 
-            // chkEnCategoria
-            // 
-            this.chkEnCategoria.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkEnCategoria.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkEnCategoria.Checked = true;
-            this.chkEnCategoria.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkEnCategoria.ForeColor = System.Drawing.Color.White;
-            this.chkEnCategoria.Location = new System.Drawing.Point(15, 152);
-            this.chkEnCategoria.Name = "chkEnCategoria";
-            this.chkEnCategoria.Size = new System.Drawing.Size(20, 20);
-            this.chkEnCategoria.TabIndex = 67;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(118, 122);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(386, 13);
-            this.label10.TabIndex = 69;
-            this.label10.Text = "(Campo utilizado para poner o no a un producto en la portada de la página web.)";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(176, 156);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(540, 13);
-            this.label11.TabIndex = 70;
-            this.label11.Text = "(Campo necesario para ubicar al producto en una posición preferente cuando listam" +
-    "os productos por categorías.)";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label12.Location = new System.Drawing.Point(12, 188);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 16);
-            this.label12.TabIndex = 72;
-            this.label12.Text = "Venta del Producto";
-            // 
-            // cbxVentaProducto
-            // 
-            this.cbxVentaProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxVentaProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxVentaProducto.DisplayMember = "nombreMarca";
-            this.cbxVentaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxVentaProducto.FormattingEnabled = true;
-            this.cbxVentaProducto.Location = new System.Drawing.Point(15, 206);
-            this.cbxVentaProducto.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxVentaProducto.Name = "cbxVentaProducto";
-            this.cbxVentaProducto.Size = new System.Drawing.Size(328, 26);
-            this.cbxVentaProducto.TabIndex = 71;
-            this.cbxVentaProducto.ValueMember = "idMarca";
-            // 
-            // textLimiteMinimo
-            // 
-            this.textLimiteMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textLimiteMinimo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textLimiteMinimo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textLimiteMinimo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textLimiteMinimo.BorderThickness = 1;
-            this.textLimiteMinimo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textLimiteMinimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLimiteMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textLimiteMinimo.isPassword = false;
-            this.textLimiteMinimo.Location = new System.Drawing.Point(15, 261);
-            this.textLimiteMinimo.Margin = new System.Windows.Forms.Padding(4);
-            this.textLimiteMinimo.Name = "textLimiteMinimo";
-            this.textLimiteMinimo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textLimiteMinimo.Size = new System.Drawing.Size(328, 35);
-            this.textLimiteMinimo.TabIndex = 74;
-            this.textLimiteMinimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label13.Location = new System.Drawing.Point(12, 243);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 16);
-            this.label13.TabIndex = 73;
-            this.label13.Text = "Límite Mínimo";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(348, 210);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(570, 13);
-            this.label14.TabIndex = 75;
-            this.label14.Text = "Un campo necesario para poder controlar la venta de nuestros productos cuando los" +
-    " almacenes no lo tengan en stock.";
-            // 
-            // label15
-            // 
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(12, 300);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(331, 32);
-            this.label15.TabIndex = 76;
-            this.label15.Text = "Si es que queremos que el producto se venda a partir de un monto mínimo de cantid" +
-    "ad (0 por Defecto).";
-            // 
-            // label16
-            // 
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(363, 300);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(331, 32);
-            this.label16.TabIndex = 77;
-            this.label16.Text = "Si es que queremos que el producto se venda a partir de un monto mínimo de cantid" +
-    "ad (0 por Defecto).";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(158, 347);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(420, 13);
-            this.label17.TabIndex = 80;
-            this.label17.Text = "(Campo para decidir si nuestro producto se puede vender por cantidades fraccionad" +
-    "as.)";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label18.Location = new System.Drawing.Point(40, 345);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(113, 16);
-            this.label18.TabIndex = 79;
-            this.label18.Text = "Cantidad Fracción";
-            // 
-            // chkCantidadFraccion
-            // 
-            this.chkCantidadFraccion.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkCantidadFraccion.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkCantidadFraccion.Checked = true;
-            this.chkCantidadFraccion.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkCantidadFraccion.ForeColor = System.Drawing.Color.White;
-            this.chkCantidadFraccion.Location = new System.Drawing.Point(15, 343);
-            this.chkCantidadFraccion.Name = "chkCantidadFraccion";
-            this.chkCantidadFraccion.Size = new System.Drawing.Size(20, 20);
-            this.chkCantidadFraccion.TabIndex = 78;
-            // 
-            // textURLVideo
-            // 
-            this.textURLVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textURLVideo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textURLVideo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textURLVideo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textURLVideo.BorderThickness = 1;
-            this.textURLVideo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textURLVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textURLVideo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textURLVideo.isPassword = false;
-            this.textURLVideo.Location = new System.Drawing.Point(15, 392);
-            this.textURLVideo.Margin = new System.Windows.Forms.Padding(4);
-            this.textURLVideo.Name = "textURLVideo";
-            this.textURLVideo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textURLVideo.Size = new System.Drawing.Size(328, 35);
-            this.textURLVideo.TabIndex = 82;
-            this.textURLVideo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label19.Location = new System.Drawing.Point(12, 374);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(65, 16);
-            this.label19.TabIndex = 81;
-            this.label19.Text = "URLVideo";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label20.Location = new System.Drawing.Point(134, 450);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(299, 13);
-            this.label20.TabIndex = 85;
-            this.label20.Text = "(Si está Desmarcado, no se mostrará este video en la página.)";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label21.Location = new System.Drawing.Point(40, 445);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(89, 16);
-            this.label21.TabIndex = 84;
-            this.label21.Text = "Mostrar Video";
-            // 
-            // chkMostrarVideo
-            // 
-            this.chkMostrarVideo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkMostrarVideo.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkMostrarVideo.Checked = true;
-            this.chkMostrarVideo.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkMostrarVideo.ForeColor = System.Drawing.Color.White;
-            this.chkMostrarVideo.Location = new System.Drawing.Point(15, 443);
-            this.chkMostrarVideo.Name = "chkMostrarVideo";
-            this.chkMostrarVideo.Size = new System.Drawing.Size(20, 20);
-            this.chkMostrarVideo.TabIndex = 83;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(155, 478);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(295, 13);
-            this.label22.TabIndex = 88;
-            this.label22.Text = "Si está desmarcado, no se mostrará este producto en la web.";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label23.Location = new System.Drawing.Point(40, 475);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(101, 16);
-            this.label23.TabIndex = 87;
-            this.label23.Text = "Mostrar en Web";
-            // 
-            // chkMostrarWeb
-            // 
-            this.chkMostrarWeb.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkMostrarWeb.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkMostrarWeb.Checked = true;
-            this.chkMostrarWeb.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkMostrarWeb.ForeColor = System.Drawing.Color.White;
-            this.chkMostrarWeb.Location = new System.Drawing.Point(15, 473);
-            this.chkMostrarWeb.Name = "chkMostrarWeb";
-            this.chkMostrarWeb.Size = new System.Drawing.Size(20, 20);
-            this.chkMostrarWeb.TabIndex = 86;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label24.Location = new System.Drawing.Point(187, 507);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(353, 13);
-            this.label24.TabIndex = 91;
-            this.label24.Text = "Si está desmarcado, no se mostrará el precio de este producto en la web.";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label25.Location = new System.Drawing.Point(40, 505);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(142, 16);
-            this.label25.TabIndex = 90;
-            this.label25.Text = "Mostrar Precio en Web";
-            // 
-            // chkMostrarPrecio
-            // 
-            this.chkMostrarPrecio.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkMostrarPrecio.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkMostrarPrecio.Checked = true;
-            this.chkMostrarPrecio.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkMostrarPrecio.ForeColor = System.Drawing.Color.White;
-            this.chkMostrarPrecio.Location = new System.Drawing.Point(15, 503);
-            this.chkMostrarPrecio.Name = "chkMostrarPrecio";
-            this.chkMostrarPrecio.Size = new System.Drawing.Size(20, 20);
-            this.chkMostrarPrecio.TabIndex = 89;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label26.Location = new System.Drawing.Point(350, 404);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(270, 13);
-            this.label26.TabIndex = 92;
-            this.label26.Text = "Url del video del producto que se mostrará en la página.";
             // 
             // UCTiendaOnlinePD
             // 
