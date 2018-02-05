@@ -49,6 +49,7 @@
     <Compile Include="CategoriaModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="CobroModel.cs" />
+    <Compile Include="ComentarioModel.cs" />
     <Compile Include="CompraModel.cs" />
     <Compile Include="ConfigModel.cs" />
     <Compile Include="ContactoModel.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="PrecioModel.cs" />
     <Compile Include="PresentacionModel.cs" />
     <Compile Include="ProductoModel.cs" />
+    <Compile Include="ProductoRelacionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorModel.cs" />
     <Compile Include="PuntoModel.cs" />

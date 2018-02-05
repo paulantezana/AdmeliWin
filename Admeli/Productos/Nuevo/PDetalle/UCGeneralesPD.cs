@@ -48,7 +48,6 @@ namespace Admeli.Productos.Nuevo.PDetalle
         }
         #endregion
 
-
         private void cargarDatosModificar()
         {
             if (!formProductoNuevo.nuevo)

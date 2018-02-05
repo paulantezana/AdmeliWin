@@ -562,6 +562,18 @@
     <Compile Include="Productos\Nuevo\PDetalle\UCTiendaOnlinePD.Designer.cs">
       <DependentUpon>UCTiendaOnlinePD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\web\FormComentarioNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\web\FormComentarioNuevo.Designer.cs">
+      <DependentUpon>FormComentarioNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\web\FormRelacionNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\web\FormRelacionNuevo.Designer.cs">
+      <DependentUpon>FormRelacionNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\UCCategorias.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -888,6 +900,12 @@
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCTiendaOnlinePD.resx">
       <DependentUpon>UCTiendaOnlinePD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\web\FormComentarioNuevo.resx">
+      <DependentUpon>FormComentarioNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\web\FormRelacionNuevo.resx">
+      <DependentUpon>FormRelacionNuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\UCCategorias.resx">
       <DependentUpon>UCCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -949,6 +967,7 @@
     <None Include="Properties\DataSources\Entidad.Categoria.datasource" />
     <None Include="Properties\DataSources\Entidad.Cliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Cobro.datasource" />
+    <None Include="Properties\DataSources\Entidad.Comentario.datasource" />
     <None Include="Properties\DataSources\Entidad.Compra.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.CajaSesion.datasource" />
     <None Include="Properties\DataSources\Entidad.Configuracion.Moneda.datasource" />
@@ -977,6 +996,7 @@
     <None Include="Properties\DataSources\Entidad.Precio.datasource" />
     <None Include="Properties\DataSources\Entidad.Presentacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Producto.datasource" />
+    <None Include="Properties\DataSources\Entidad.ProductoRelacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Proveedor.datasource" />
     <None Include="Properties\DataSources\Entidad.Stock.datasource" />
     <None Include="Properties\DataSources\Entidad.Sucursal.datasource" />
@@ -997,9 +1017,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Productos\Nuevo\PDetalle\web\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Entidad\Entidad.csproj">
       <Project>{c0683f96-41cc-4467-8b73-2ce7371426a9}</Project>
