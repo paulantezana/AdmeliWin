@@ -33,5 +33,6 @@ namespace Entidad
         public string nombreLabel { get; set; }
         public int idSucursal { get; set; }
         public string vendedor { get; set; }
+        public int idCajaSesion { get; set; }
     }
 }

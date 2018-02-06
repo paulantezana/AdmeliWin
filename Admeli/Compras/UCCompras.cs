@@ -60,6 +60,24 @@ namespace Admeli.Compras
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
+
+        private void decorationDataGridView()
+        {
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                int idCompra = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentCompra = compras.Find(x => x.idCompra == idCompra); // Buscando la categoria en las lista de categorias
+                if (currentCompra.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        }
         #endregion
 
         #region ============================= root load =============================
@@ -67,28 +85,14 @@ namespace Admeli.Compras
         {
             cargarComponentes();
             cargarRegistros();
-            decorationDataGridView();
         }
 
         internal void reLoad()
         {
             cargarComponentes();
             cargarRegistros();
-            decorationDataGridView();
             lisenerKeyEvents = true; // Active lisener key events
         }
-        #endregion
-
-        #region =========================== Decoration ===========================
-        private void decorationDataGridView()
-        {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
-            {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
-        } 
         #endregion
 
         #region ======================= Loads =======================
@@ -150,6 +154,7 @@ namespace Admeli.Compras
                 mostrarPaginado();
 
                 // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -316,6 +321,7 @@ namespace Admeli.Compras
 
                 currentCompra = compras.Find(x => x.idCompra == idCompra); // Buscando la registro especifico en la lista de registros
                 currentCompra.estado = 0;
+                currentCompra.idCajaSesion = ConfigModel.cajaSesion.idCajaSesion;
 
                 // Procediendo con las desactivacion
                 Response response = await compraModel.anular(currentCompra);

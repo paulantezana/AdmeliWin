@@ -32,10 +32,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComprarNuevo));
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadUnitariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDetalleCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCombinacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cbxCodigoProducto = new System.Windows.Forms.ComboBox();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label15 = new System.Windows.Forms.Label();
             this.bunifuMetroTextbox9 = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -66,46 +88,32 @@
             this.dtpEmision = new System.Windows.Forms.DateTimePicker();
             this.removeCard = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxDescripcion = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAddCard = new System.Windows.Forms.Button();
-            this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuMetroTextbox2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textPrecioUnidario = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textCantidad = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label22 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxVariante = new System.Windows.Forms.ComboBox();
+            this.varianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox5 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuMetroTextbox4 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textTotal = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textDescuento = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbxUnidad = new System.Windows.Forms.ComboBox();
+            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label21 = new System.Windows.Forms.Label();
-            this.detalleCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadUnitariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCombinacionAlternativaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDetalleCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCombinacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrePresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monedaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varianteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -116,7 +124,7 @@
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(8);
-            this.panel5.Size = new System.Drawing.Size(973, 286);
+            this.panel5.Size = new System.Drawing.Size(1080, 286);
             this.panel5.TabIndex = 8;
             // 
             // dataGridView1
@@ -156,8 +164,150 @@
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(957, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(1064, 270);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // codigoProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "codigoProducto";
+            this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "codigoProducto";
+            this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
+            this.codigoProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadUnitariaDataGridViewTextBoxColumn
+            // 
+            this.cantidadUnitariaDataGridViewTextBoxColumn.DataPropertyName = "cantidadUnitaria";
+            this.cantidadUnitariaDataGridViewTextBoxColumn.HeaderText = "cantidadUnitaria";
+            this.cantidadUnitariaDataGridViewTextBoxColumn.Name = "cantidadUnitariaDataGridViewTextBoxColumn";
+            this.cantidadUnitariaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idCombinacionAlternativaDataGridViewTextBoxColumn
+            // 
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.DataPropertyName = "idCombinacionAlternativa";
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.HeaderText = "idCombinacionAlternativa";
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.Name = "idCombinacionAlternativaDataGridViewTextBoxColumn";
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idCompraDataGridViewTextBoxColumn
+            // 
+            this.idCompraDataGridViewTextBoxColumn.DataPropertyName = "idCompra";
+            this.idCompraDataGridViewTextBoxColumn.HeaderText = "idCompra";
+            this.idCompraDataGridViewTextBoxColumn.Name = "idCompraDataGridViewTextBoxColumn";
+            this.idCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCompraDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idDetalleCompraDataGridViewTextBoxColumn
+            // 
+            this.idDetalleCompraDataGridViewTextBoxColumn.DataPropertyName = "idDetalleCompra";
+            this.idDetalleCompraDataGridViewTextBoxColumn.HeaderText = "idDetalleCompra";
+            this.idDetalleCompraDataGridViewTextBoxColumn.Name = "idDetalleCompraDataGridViewTextBoxColumn";
+            this.idDetalleCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDetalleCompraDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idPresentacionDataGridViewTextBoxColumn
+            // 
+            this.idPresentacionDataGridViewTextBoxColumn.DataPropertyName = "idPresentacion";
+            this.idPresentacionDataGridViewTextBoxColumn.HeaderText = "idPresentacion";
+            this.idPresentacionDataGridViewTextBoxColumn.Name = "idPresentacionDataGridViewTextBoxColumn";
+            this.idPresentacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPresentacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idProductoDataGridViewTextBoxColumn
+            // 
+            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.HeaderText = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
+            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProductoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreCombinacionDataGridViewTextBoxColumn
+            // 
+            this.nombreCombinacionDataGridViewTextBoxColumn.DataPropertyName = "nombreCombinacion";
+            this.nombreCombinacionDataGridViewTextBoxColumn.HeaderText = "nombreCombinacion";
+            this.nombreCombinacionDataGridViewTextBoxColumn.Name = "nombreCombinacionDataGridViewTextBoxColumn";
+            this.nombreCombinacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreCombinacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreMarcaDataGridViewTextBoxColumn
+            // 
+            this.nombreMarcaDataGridViewTextBoxColumn.DataPropertyName = "nombreMarca";
+            this.nombreMarcaDataGridViewTextBoxColumn.HeaderText = "nombreMarca";
+            this.nombreMarcaDataGridViewTextBoxColumn.Name = "nombreMarcaDataGridViewTextBoxColumn";
+            this.nombreMarcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreMarcaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombrePresentacionDataGridViewTextBoxColumn
+            // 
+            this.nombrePresentacionDataGridViewTextBoxColumn.DataPropertyName = "nombrePresentacion";
+            this.nombrePresentacionDataGridViewTextBoxColumn.HeaderText = "nombrePresentacion";
+            this.nombrePresentacionDataGridViewTextBoxColumn.Name = "nombrePresentacionDataGridViewTextBoxColumn";
+            this.nombrePresentacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombrePresentacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nroDataGridViewTextBoxColumn
+            // 
+            this.nroDataGridViewTextBoxColumn.DataPropertyName = "nro";
+            this.nroDataGridViewTextBoxColumn.HeaderText = "nro";
+            this.nroDataGridViewTextBoxColumn.Name = "nroDataGridViewTextBoxColumn";
+            this.nroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioUnitarioDataGridViewTextBoxColumn
+            // 
+            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "precioUnitario";
+            this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "precioUnitario";
+            this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
+            this.precioUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descuentoDataGridViewTextBoxColumn
+            // 
+            this.descuentoDataGridViewTextBoxColumn.DataPropertyName = "descuento";
+            this.descuentoDataGridViewTextBoxColumn.HeaderText = "descuento";
+            this.descuentoDataGridViewTextBoxColumn.Name = "descuentoDataGridViewTextBoxColumn";
+            this.descuentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // detalleCompraBindingSource
+            // 
+            this.detalleCompraBindingSource.DataSource = typeof(Entidad.DetalleCompra);
             // 
             // panel4
             // 
@@ -167,7 +317,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 538);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(973, 105);
+            this.panel4.Size = new System.Drawing.Size(1080, 105);
             this.panel4.TabIndex = 7;
             // 
             // btnPrint
@@ -175,7 +325,7 @@
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(757, 61);
+            this.btnPrint.Location = new System.Drawing.Point(864, 61);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -190,7 +340,7 @@
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(869, 61);
+            this.btnGuardar.Location = new System.Drawing.Point(976, 61);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -202,6 +352,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.cbxCodigoProducto);
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.bunifuMetroTextbox9);
@@ -230,26 +382,61 @@
             this.panel1.Controls.Add(this.dtpEmision);
             this.panel1.Controls.Add(this.removeCard);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbxDescripcion);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnAddCard);
-            this.panel1.Controls.Add(this.bunifuMetroTextbox3);
-            this.panel1.Controls.Add(this.bunifuMetroTextbox2);
+            this.panel1.Controls.Add(this.textPrecioUnidario);
+            this.panel1.Controls.Add(this.textCantidad);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cbxVariante);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.bunifuMetroTextbox5);
-            this.panel1.Controls.Add(this.bunifuMetroTextbox4);
+            this.panel1.Controls.Add(this.textTotal);
+            this.panel1.Controls.Add(this.textDescuento);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.cbxUnidad);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 252);
+            this.panel1.Size = new System.Drawing.Size(1080, 252);
             this.panel1.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label16.Location = new System.Drawing.Point(11, 156);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 14);
+            this.label16.TabIndex = 98;
+            this.label16.Text = "Codigo";
+            // 
+            // cbxCodigoProducto
+            // 
+            this.cbxCodigoProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxCodigoProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxCodigoProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxCodigoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.cbxCodigoProducto.DataSource = this.productoBindingSource;
+            this.cbxCodigoProducto.DisplayMember = "codigoProducto";
+            this.cbxCodigoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCodigoProducto.FormattingEnabled = true;
+            this.cbxCodigoProducto.Location = new System.Drawing.Point(14, 174);
+            this.cbxCodigoProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxCodigoProducto.Name = "cbxCodigoProducto";
+            this.cbxCodigoProducto.Size = new System.Drawing.Size(193, 23);
+            this.cbxCodigoProducto.TabIndex = 97;
+            this.cbxCodigoProducto.ValueMember = "idProducto";
+            this.cbxCodigoProducto.SelectedIndexChanged += new System.EventHandler(this.cbxCodigoProducto_SelectedIndexChanged);
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(Entidad.Producto);
             // 
             // bunifuSeparator1
             // 
@@ -260,7 +447,7 @@
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 143);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(973, 17);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1080, 17);
             this.bunifuSeparator1.TabIndex = 96;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -280,6 +467,8 @@
             // 
             // bunifuMetroTextbox9
             // 
+            this.bunifuMetroTextbox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuMetroTextbox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.bunifuMetroTextbox9.BorderColorFocused = System.Drawing.Color.DodgerBlue;
             this.bunifuMetroTextbox9.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
@@ -293,7 +482,7 @@
             this.bunifuMetroTextbox9.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMetroTextbox9.Name = "bunifuMetroTextbox9";
             this.bunifuMetroTextbox9.Padding = new System.Windows.Forms.Padding(75, 0, 6, 0);
-            this.bunifuMetroTextbox9.Size = new System.Drawing.Size(252, 26);
+            this.bunifuMetroTextbox9.Size = new System.Drawing.Size(359, 26);
             this.bunifuMetroTextbox9.TabIndex = 10;
             this.bunifuMetroTextbox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -449,7 +638,7 @@
             this.btnAddMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMarca.ForeColor = System.Drawing.Color.White;
-            this.btnAddMarca.Location = new System.Drawing.Point(788, 14);
+            this.btnAddMarca.Location = new System.Drawing.Point(895, 14);
             this.btnAddMarca.Name = "btnAddMarca";
             this.btnAddMarca.Size = new System.Drawing.Size(176, 26);
             this.btnAddMarca.TabIndex = 3;
@@ -479,7 +668,7 @@
             this.cbxTipoDocumento.DisplayMember = "nombre";
             this.cbxTipoDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoDocumento.FormattingEnabled = true;
-            this.cbxTipoDocumento.Location = new System.Drawing.Point(640, 15);
+            this.cbxTipoDocumento.Location = new System.Drawing.Point(747, 15);
             this.cbxTipoDocumento.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTipoDocumento.Name = "cbxTipoDocumento";
             this.cbxTipoDocumento.Size = new System.Drawing.Size(133, 24);
@@ -497,7 +686,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(21, 174);
+            this.label4.Location = new System.Drawing.Point(229, 174);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 14);
@@ -510,7 +699,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label19.Location = new System.Drawing.Point(531, 19);
+            this.label19.Location = new System.Drawing.Point(638, 19);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(108, 16);
@@ -519,6 +708,8 @@
             // 
             // textCodigoProducto
             // 
+            this.textCodigoProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textCodigoProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.textCodigoProducto.BorderColorFocused = System.Drawing.Color.DodgerBlue;
             this.textCodigoProducto.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
@@ -532,7 +723,7 @@
             this.textCodigoProducto.Margin = new System.Windows.Forms.Padding(4);
             this.textCodigoProducto.Name = "textCodigoProducto";
             this.textCodigoProducto.Padding = new System.Windows.Forms.Padding(85, 0, 6, 0);
-            this.textCodigoProducto.Size = new System.Drawing.Size(951, 26);
+            this.textCodigoProducto.Size = new System.Drawing.Size(1058, 26);
             this.textCodigoProducto.TabIndex = 11;
             this.textCodigoProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -575,11 +766,11 @@
             this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(14, 167);
+            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(219, 167);
             this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
             this.bunifuMetroTextbox1.Padding = new System.Windows.Forms.Padding(70, 0, 6, 0);
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(860, 26);
+            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(655, 26);
             this.bunifuMetroTextbox1.TabIndex = 12;
             this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -684,21 +875,23 @@
             this.label5.TabIndex = 67;
             this.label5.Text = "Descripcion";
             // 
-            // comboBox1
+            // cbxDescripcion
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.comboBox1.DisplayMember = "nombreMarca";
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 218);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 23);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.ValueMember = "idMarca";
+            this.cbxDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxDescripcion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxDescripcion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.cbxDescripcion.DataSource = this.productoBindingSource;
+            this.cbxDescripcion.DisplayMember = "nombreProducto";
+            this.cbxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxDescripcion.FormattingEnabled = true;
+            this.cbxDescripcion.Location = new System.Drawing.Point(14, 218);
+            this.cbxDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxDescripcion.Name = "cbxDescripcion";
+            this.cbxDescripcion.Size = new System.Drawing.Size(193, 23);
+            this.cbxDescripcion.TabIndex = 13;
+            this.cbxDescripcion.ValueMember = "idProducto";
+            this.cbxDescripcion.SelectedIndexChanged += new System.EventHandler(this.cbxDescripcion_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -732,45 +925,45 @@
             this.btnAddCard.UseVisualStyleBackColor = false;
             this.btnAddCard.Click += new System.EventHandler(this.btnAddCard_Click);
             // 
-            // bunifuMetroTextbox3
+            // textPrecioUnidario
             // 
-            this.bunifuMetroTextbox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuMetroTextbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox3.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox3.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox3.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox3.BorderThickness = 1;
-            this.bunifuMetroTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox3.isPassword = false;
-            this.bunifuMetroTextbox3.Location = new System.Drawing.Point(606, 217);
-            this.bunifuMetroTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox3.Name = "bunifuMetroTextbox3";
-            this.bunifuMetroTextbox3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox3.Size = new System.Drawing.Size(85, 24);
-            this.bunifuMetroTextbox3.TabIndex = 17;
-            this.bunifuMetroTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textPrecioUnidario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textPrecioUnidario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textPrecioUnidario.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textPrecioUnidario.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textPrecioUnidario.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textPrecioUnidario.BorderThickness = 1;
+            this.textPrecioUnidario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textPrecioUnidario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPrecioUnidario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textPrecioUnidario.isPassword = false;
+            this.textPrecioUnidario.Location = new System.Drawing.Point(606, 217);
+            this.textPrecioUnidario.Margin = new System.Windows.Forms.Padding(4);
+            this.textPrecioUnidario.Name = "textPrecioUnidario";
+            this.textPrecioUnidario.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textPrecioUnidario.Size = new System.Drawing.Size(85, 24);
+            this.textPrecioUnidario.TabIndex = 17;
+            this.textPrecioUnidario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMetroTextbox2
+            // textCantidad
             // 
-            this.bunifuMetroTextbox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuMetroTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox2.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox2.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox2.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox2.BorderThickness = 1;
-            this.bunifuMetroTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox2.isPassword = false;
-            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(508, 217);
-            this.bunifuMetroTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox2.Name = "bunifuMetroTextbox2";
-            this.bunifuMetroTextbox2.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox2.Size = new System.Drawing.Size(85, 24);
-            this.bunifuMetroTextbox2.TabIndex = 16;
-            this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textCantidad.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textCantidad.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textCantidad.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textCantidad.BorderThickness = 1;
+            this.textCantidad.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textCantidad.isPassword = false;
+            this.textCantidad.Location = new System.Drawing.Point(508, 217);
+            this.textCantidad.Margin = new System.Windows.Forms.Padding(4);
+            this.textCantidad.Name = "textCantidad";
+            this.textCantidad.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textCantidad.Size = new System.Drawing.Size(85, 24);
+            this.textCantidad.TabIndex = 16;
+            this.textCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label22
             // 
@@ -798,21 +991,26 @@
             this.label9.TabIndex = 75;
             this.label9.Text = "PrecioUnidario";
             // 
-            // comboBox2
+            // cbxVariante
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.comboBox2.DisplayMember = "nombreMarca";
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(219, 218);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(134, 23);
-            this.comboBox2.TabIndex = 14;
-            this.comboBox2.ValueMember = "idMarca";
+            this.cbxVariante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxVariante.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxVariante.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxVariante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.cbxVariante.DataSource = this.varianteBindingSource;
+            this.cbxVariante.DisplayMember = "nombreVariante";
+            this.cbxVariante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVariante.FormattingEnabled = true;
+            this.cbxVariante.Location = new System.Drawing.Point(219, 218);
+            this.cbxVariante.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxVariante.Name = "cbxVariante";
+            this.cbxVariante.Size = new System.Drawing.Size(134, 23);
+            this.cbxVariante.TabIndex = 14;
+            this.cbxVariante.ValueMember = "idVariante";
+            // 
+            // varianteBindingSource
+            // 
+            this.varianteBindingSource.DataSource = typeof(Entidad.Variante);
             // 
             // label7
             // 
@@ -823,49 +1021,49 @@
             this.label7.Location = new System.Drawing.Point(366, 200);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 14);
+            this.label7.Size = new System.Drawing.Size(70, 14);
             this.label7.TabIndex = 71;
-            this.label7.Text = "Unidad:";
+            this.label7.Text = "Presentacion";
             // 
-            // bunifuMetroTextbox5
+            // textTotal
             // 
-            this.bunifuMetroTextbox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuMetroTextbox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox5.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox5.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox5.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox5.BorderThickness = 1;
-            this.bunifuMetroTextbox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox5.isPassword = false;
-            this.bunifuMetroTextbox5.Location = new System.Drawing.Point(801, 217);
-            this.bunifuMetroTextbox5.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox5.Name = "bunifuMetroTextbox5";
-            this.bunifuMetroTextbox5.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox5.Size = new System.Drawing.Size(103, 24);
-            this.bunifuMetroTextbox5.TabIndex = 19;
-            this.bunifuMetroTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textTotal.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textTotal.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textTotal.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textTotal.BorderThickness = 1;
+            this.textTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textTotal.isPassword = false;
+            this.textTotal.Location = new System.Drawing.Point(801, 217);
+            this.textTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.textTotal.Name = "textTotal";
+            this.textTotal.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textTotal.Size = new System.Drawing.Size(103, 24);
+            this.textTotal.TabIndex = 19;
+            this.textTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMetroTextbox4
+            // textDescuento
             // 
-            this.bunifuMetroTextbox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuMetroTextbox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox4.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox4.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox4.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox4.BorderThickness = 1;
-            this.bunifuMetroTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox4.isPassword = false;
-            this.bunifuMetroTextbox4.Location = new System.Drawing.Point(704, 217);
-            this.bunifuMetroTextbox4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox4.Name = "bunifuMetroTextbox4";
-            this.bunifuMetroTextbox4.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.bunifuMetroTextbox4.Size = new System.Drawing.Size(85, 24);
-            this.bunifuMetroTextbox4.TabIndex = 18;
-            this.bunifuMetroTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textDescuento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textDescuento.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textDescuento.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.textDescuento.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textDescuento.BorderThickness = 1;
+            this.textDescuento.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textDescuento.isPassword = false;
+            this.textDescuento.Location = new System.Drawing.Point(704, 217);
+            this.textDescuento.Margin = new System.Windows.Forms.Padding(4);
+            this.textDescuento.Name = "textDescuento";
+            this.textDescuento.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.textDescuento.Size = new System.Drawing.Size(85, 24);
+            this.textDescuento.TabIndex = 18;
+            this.textDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label6
             // 
@@ -880,21 +1078,26 @@
             this.label6.TabIndex = 69;
             this.label6.Text = "Variante:";
             // 
-            // comboBox3
+            // cbxUnidad
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.comboBox3.DisplayMember = "nombreMarca";
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(368, 218);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(134, 23);
-            this.comboBox3.TabIndex = 15;
-            this.comboBox3.ValueMember = "idMarca";
+            this.cbxUnidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxUnidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxUnidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxUnidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.cbxUnidad.DataSource = this.presentacionBindingSource;
+            this.cbxUnidad.DisplayMember = "nombrePresentacion";
+            this.cbxUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxUnidad.FormattingEnabled = true;
+            this.cbxUnidad.Location = new System.Drawing.Point(368, 218);
+            this.cbxUnidad.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxUnidad.Name = "cbxUnidad";
+            this.cbxUnidad.Size = new System.Drawing.Size(134, 23);
+            this.cbxUnidad.TabIndex = 15;
+            this.cbxUnidad.ValueMember = "idPresentacion";
+            // 
+            // presentacionBindingSource
+            // 
+            this.presentacionBindingSource.DataSource = typeof(Entidad.Presentacion);
             // 
             // label21
             // 
@@ -909,154 +1112,12 @@
             this.label21.TabIndex = 77;
             this.label21.Text = "Descuento";
             // 
-            // detalleCompraBindingSource
-            // 
-            this.detalleCompraBindingSource.DataSource = typeof(Entidad.DetalleCompra);
-            // 
-            // codigoProductoDataGridViewTextBoxColumn
-            // 
-            this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "codigoProducto";
-            this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "codigoProducto";
-            this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
-            this.codigoProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadUnitariaDataGridViewTextBoxColumn
-            // 
-            this.cantidadUnitariaDataGridViewTextBoxColumn.DataPropertyName = "cantidadUnitaria";
-            this.cantidadUnitariaDataGridViewTextBoxColumn.HeaderText = "cantidadUnitaria";
-            this.cantidadUnitariaDataGridViewTextBoxColumn.Name = "cantidadUnitariaDataGridViewTextBoxColumn";
-            this.cantidadUnitariaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idCombinacionAlternativaDataGridViewTextBoxColumn
-            // 
-            this.idCombinacionAlternativaDataGridViewTextBoxColumn.DataPropertyName = "idCombinacionAlternativa";
-            this.idCombinacionAlternativaDataGridViewTextBoxColumn.HeaderText = "idCombinacionAlternativa";
-            this.idCombinacionAlternativaDataGridViewTextBoxColumn.Name = "idCombinacionAlternativaDataGridViewTextBoxColumn";
-            this.idCombinacionAlternativaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCombinacionAlternativaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idCompraDataGridViewTextBoxColumn
-            // 
-            this.idCompraDataGridViewTextBoxColumn.DataPropertyName = "idCompra";
-            this.idCompraDataGridViewTextBoxColumn.HeaderText = "idCompra";
-            this.idCompraDataGridViewTextBoxColumn.Name = "idCompraDataGridViewTextBoxColumn";
-            this.idCompraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCompraDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idDetalleCompraDataGridViewTextBoxColumn
-            // 
-            this.idDetalleCompraDataGridViewTextBoxColumn.DataPropertyName = "idDetalleCompra";
-            this.idDetalleCompraDataGridViewTextBoxColumn.HeaderText = "idDetalleCompra";
-            this.idDetalleCompraDataGridViewTextBoxColumn.Name = "idDetalleCompraDataGridViewTextBoxColumn";
-            this.idDetalleCompraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDetalleCompraDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idPresentacionDataGridViewTextBoxColumn
-            // 
-            this.idPresentacionDataGridViewTextBoxColumn.DataPropertyName = "idPresentacion";
-            this.idPresentacionDataGridViewTextBoxColumn.HeaderText = "idPresentacion";
-            this.idPresentacionDataGridViewTextBoxColumn.Name = "idPresentacionDataGridViewTextBoxColumn";
-            this.idPresentacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPresentacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idProductoDataGridViewTextBoxColumn
-            // 
-            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn.HeaderText = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
-            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProductoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idSucursalDataGridViewTextBoxColumn
-            // 
-            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
-            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreCombinacionDataGridViewTextBoxColumn
-            // 
-            this.nombreCombinacionDataGridViewTextBoxColumn.DataPropertyName = "nombreCombinacion";
-            this.nombreCombinacionDataGridViewTextBoxColumn.HeaderText = "nombreCombinacion";
-            this.nombreCombinacionDataGridViewTextBoxColumn.Name = "nombreCombinacionDataGridViewTextBoxColumn";
-            this.nombreCombinacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreCombinacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreMarcaDataGridViewTextBoxColumn
-            // 
-            this.nombreMarcaDataGridViewTextBoxColumn.DataPropertyName = "nombreMarca";
-            this.nombreMarcaDataGridViewTextBoxColumn.HeaderText = "nombreMarca";
-            this.nombreMarcaDataGridViewTextBoxColumn.Name = "nombreMarcaDataGridViewTextBoxColumn";
-            this.nombreMarcaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreMarcaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombrePresentacionDataGridViewTextBoxColumn
-            // 
-            this.nombrePresentacionDataGridViewTextBoxColumn.DataPropertyName = "nombrePresentacion";
-            this.nombrePresentacionDataGridViewTextBoxColumn.HeaderText = "nombrePresentacion";
-            this.nombrePresentacionDataGridViewTextBoxColumn.Name = "nombrePresentacionDataGridViewTextBoxColumn";
-            this.nombrePresentacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombrePresentacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nroDataGridViewTextBoxColumn
-            // 
-            this.nroDataGridViewTextBoxColumn.DataPropertyName = "nro";
-            this.nroDataGridViewTextBoxColumn.HeaderText = "nro";
-            this.nroDataGridViewTextBoxColumn.Name = "nroDataGridViewTextBoxColumn";
-            this.nroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precioUnitarioDataGridViewTextBoxColumn
-            // 
-            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "precioUnitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "precioUnitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
-            this.precioUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descuentoDataGridViewTextBoxColumn
-            // 
-            this.descuentoDataGridViewTextBoxColumn.DataPropertyName = "descuento";
-            this.descuentoDataGridViewTextBoxColumn.HeaderText = "descuento";
-            this.descuentoDataGridViewTextBoxColumn.Name = "descuentoDataGridViewTextBoxColumn";
-            this.descuentoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // FormComprarNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(973, 643);
+            this.ClientSize = new System.Drawing.Size(1080, 643);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -1067,12 +1128,15 @@
             this.Load += new System.EventHandler(this.FormComprarNuevo_Load);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monedaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varianteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1097,20 +1161,20 @@
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
         private System.Windows.Forms.Button btnBuscarProducto;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxDescripcion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxVariante;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbxUnidad;
         private System.Windows.Forms.Label label8;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textCantidad;
         private System.Windows.Forms.Label label21;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox4;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textDescuento;
         private System.Windows.Forms.Label label9;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textPrecioUnidario;
         private System.Windows.Forms.Label label22;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox5;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textTotal;
         private System.Windows.Forms.Button btnAddCard;
         private System.Windows.Forms.Button removeCard;
         private System.Windows.Forms.Label label4;
@@ -1148,5 +1212,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource detalleCompraBindingSource;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cbxCodigoProducto;
+        private System.Windows.Forms.BindingSource productoBindingSource;
+        private System.Windows.Forms.BindingSource varianteBindingSource;
+        private System.Windows.Forms.BindingSource presentacionBindingSource;
     }
 }

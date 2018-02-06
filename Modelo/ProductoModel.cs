@@ -179,5 +179,19 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Producto>> productos()
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/productos41
+                List<Producto> list = await webService.GETLis<Producto>("productos41");
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

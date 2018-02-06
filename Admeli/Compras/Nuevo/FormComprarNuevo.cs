@@ -16,17 +16,22 @@ namespace Admeli.Compras.Nuevo
     public partial class FormComprarNuevo : Form
     {
         private Compra currentCompra;
-        private Proveedor currentProveedor { get; set; }
 
+        private Proveedor currentProveedor { get; set; }
+        private Producto currentProducto { get; set; }
 
         private MonedaModel monedaModel = new MonedaModel();
         private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
+        private ProductoModel productoModel = new ProductoModel();
+        private VarianteModel varianteModel = new VarianteModel();
+        private PresentacionModel presentacionModel = new PresentacionModel();
         private FechaModel fechaModel = new FechaModel();
 
         private List<DetalleCompra> carrito = new List<DetalleCompra>();
 
         private bool nuevo { get; set; }
 
+        #region ============================ Constructor ============================
         public FormComprarNuevo()
         {
             InitializeComponent();
@@ -39,7 +44,8 @@ namespace Admeli.Compras.Nuevo
             InitializeComponent();
             this.currentCompra = currentCompra;
             this.nuevo = false;
-        }
+        } 
+        #endregion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -71,6 +77,7 @@ namespace Admeli.Compras.Nuevo
         {
             cargarMonedas();
             cargarTipoDocumento();
+            cargarProductos();
         }
         #endregion
 
@@ -114,6 +121,53 @@ namespace Admeli.Compras.Nuevo
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private async void cargarProductos()
+        {
+            try
+            {
+                productoBindingSource.DataSource = await productoModel.productos();
+                cbxCodigoProducto.SelectedIndex = -1;
+                cbxDescripcion.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarVariantes()
+        {
+            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return;
+            try
+            {
+               // varianteBindingSource.DataSource = await varianteModel.productos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarPrecentaciones()
+        {
+            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return;
+            try
+            {
+                presentacionBindingSource.DataSource = await presentacionModel.presentacionVentas(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void cargarPrepararCarro()
+        {
+            textCantidad.Text = "1";
+            //textPrecioUnidario.Text = 
+        }
+
         #endregion
 
         private void executeBuscarProveedor()
@@ -146,6 +200,25 @@ namespace Admeli.Compras.Nuevo
         {
             BuscarProducto buscarProducto = new BuscarProducto();
             buscarProducto.ShowDialog();
+
+        }
+
+        private void cargarProductoSeleccionado()
+        {
+            if (currentProducto == null) return;
+            
+
+
+        }
+
+        private void cbxCodigoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarPrecentaciones();
+        }
+
+        private void cbxDescripcion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarPrecentaciones();
         }
     }
 }
