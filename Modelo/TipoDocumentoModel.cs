@@ -91,5 +91,18 @@ namespace Modelo
                 throw ex;
             }
         }
+        public async Task<List<TipoDocumento>> tipoDocumentoVentas()
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/tipodocumentoventas/ventas
+                List<TipoDocumento> tipoDocumentos = await webService.GETLis<TipoDocumento>("tipodocumentoventas", "ventas");
+                return tipoDocumentos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

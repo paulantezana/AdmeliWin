@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Admeli.Compras.Buscar;
 using Entidad;
+using Modelo;
 
 namespace Admeli.Compras.Nuevo
 {
@@ -16,6 +17,10 @@ namespace Admeli.Compras.Nuevo
     {
         private Compra currentCompra;
         private Proveedor currentProveedor { get; set; }
+
+
+        private MonedaModel monedaModel = new MonedaModel();
+        private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
 
         public FormComprarNuevo()
         {
@@ -47,6 +52,45 @@ namespace Admeli.Compras.Nuevo
             executeBuscarProveedor();
         }
 
+        #region ================================ Root Load ================================
+        private void FormComprarNuevo_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
+        private void reLoad()
+        {
+            cargarMonedas();
+            cargarTipoDocumento();
+        }
+        #endregion
+
+        #region ============================== Load ==============================
+        private async void cargarMonedas()
+        {
+            try
+            {
+                cbxMoneda.DataSource = await monedaModel.monedas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarTipoDocumento()
+        {
+            try
+            {
+                cbxTipoDocumento.DataSource = await tipoDocumentoModel.tipoDocumentoVentas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
+
         private void executeBuscarProveedor()
         {
             BuscarProveedor buscarProveedor = new BuscarProveedor();
@@ -60,8 +104,6 @@ namespace Admeli.Compras.Nuevo
             if (currentProveedor != null)
             {
                 textNombreEmpresa.Text = currentProveedor.razonSocial;
-                textIdentificacion.Text = currentProveedor.ruc;
-                textDireccion.Text = currentProveedor.direccion;
             }
         }
 
@@ -69,5 +111,6 @@ namespace Admeli.Compras.Nuevo
         {
             executeBuscarProveedor();
         }
+
     }
 }
