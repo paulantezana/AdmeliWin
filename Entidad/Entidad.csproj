@@ -64,6 +64,7 @@
     <Compile Include="Cotizacion.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Descuento.cs" />
+    <Compile Include="DetalleCompra.cs" />
     <Compile Include="DocCorrelativo.cs" />
     <Compile Include="DocumentoIdentificacion.cs" />
     <Compile Include="Egreso.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Oferta.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Pago.cs" />
+    <Compile Include="PagoCompra.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Precio.cs" />
     <Compile Include="Presentacion.cs" />

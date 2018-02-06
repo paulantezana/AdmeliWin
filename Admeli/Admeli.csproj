@@ -160,6 +160,12 @@
     </Compile>
     <Compile Include="Componentes\Paginacion.cs" />
     <Compile Include="Componentes\Validator.cs" />
+    <Compile Include="Compras\Buscar\BuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Buscar\BuscarProducto.Designer.cs">
+      <DependentUpon>BuscarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\Buscar\BuscarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -708,6 +714,9 @@
     <EmbeddedResource Include="Componentes\FormSuccess.resx">
       <DependentUpon>FormSuccess.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Buscar\BuscarProducto.resx">
+      <DependentUpon>BuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\Buscar\BuscarProveedor.resx">
       <DependentUpon>BuscarProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -991,6 +1000,7 @@
     <None Include="Properties\DataSources\Entidad.Contacto.datasource" />
     <None Include="Properties\DataSources\Entidad.Cotizacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Descuento.datasource" />
+    <None Include="Properties\DataSources\Entidad.DetalleCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.DocCorrelativo.datasource" />
     <None Include="Properties\DataSources\Entidad.DocumentoIdentificacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Egreso.datasource" />

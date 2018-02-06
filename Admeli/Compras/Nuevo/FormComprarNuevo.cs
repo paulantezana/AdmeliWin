@@ -21,15 +21,24 @@ namespace Admeli.Compras.Nuevo
 
         private MonedaModel monedaModel = new MonedaModel();
         private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
+        private FechaModel fechaModel = new FechaModel();
+
+        private List<DetalleCompra> carrito = new List<DetalleCompra>();
+
+        private bool nuevo { get; set; }
 
         public FormComprarNuevo()
         {
             InitializeComponent();
+            this.nuevo = true;
+            cargarFechaSistema();
         }
 
         public FormComprarNuevo(Compra currentCompra)
         {
+            InitializeComponent();
             this.currentCompra = currentCompra;
+            this.nuevo = false;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -89,6 +98,22 @@ namespace Admeli.Compras.Nuevo
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private async void cargarFechaSistema()
+        {
+            try
+            {
+                if (!nuevo) return;
+                dynamic response = await fechaModel.fechaSistema();
+                DateTime currentDateTime = (response.fecha != nuevo) ? response.fecha : DateTime.Now;
+                dtpEmision.Value = currentDateTime;
+                dtpPago.Value = currentDateTime;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         #endregion
 
         private void executeBuscarProveedor()
@@ -112,5 +137,15 @@ namespace Admeli.Compras.Nuevo
             executeBuscarProveedor();
         }
 
+        private void btnAddCard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            BuscarProducto buscarProducto = new BuscarProducto();
+            buscarProducto.ShowDialog();
+        }
     }
 }

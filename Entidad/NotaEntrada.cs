@@ -31,5 +31,7 @@ namespace Entidad
 
         public string nombreAlmacen { get; set; }
         public object numeroDocumentoCompra { get; set; }
+
+
     }
 }
