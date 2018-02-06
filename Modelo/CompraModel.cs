@@ -12,18 +12,45 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(Producto param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/compra/guardar
+                return await webService.POSTSend("compra", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public void modificar()
+
+        public async Task<Response> modificar(Compra param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/compra/modificar
+                return await webService.POSTSend("compra", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public void eliminar()
+
+        public async Task<Response> anular(Compra param)
         {
-
+            try
+            {
+                // localhost/admeli/xcore/services.php/compra/anular
+                return await webService.POSTSend("compra", "anular", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+        
         public async Task<RootObject<Compra>> getByPersonalEstado(int idSucursal, int idPersonal, string idEstado, int page, int items)
         {
             try

@@ -21,14 +21,16 @@ namespace Admeli.Compras
          *  www.lineatienda.com/services.php/listarpersonalcompras/sucursal/1
          *  www.lineatienda.com/services.php/compras/sucursal/1/personal/0/estado/todos/1/100
          * */
-
-        #region ===================== Metodos =====================
+         
         private CompraModel compraModel = new CompraModel();
         private PersonalModel personalModel = new PersonalModel();
+
+        private List<Compra> compras { get; set; }
+        private Compra currentCompra { get; set; }
+
         private Paginacion paginacion;
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
-        #endregion
 
         #region ========================== Constructor ==========================
         public UCCompras()
@@ -133,16 +135,21 @@ namespace Admeli.Compras
                 int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
 
-                RootObject<Compra> ordenCompra = await compraModel.getByPersonalEstado(ConfigModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
+                RootObject<Compra> compraRoot = await compraModel.getByPersonalEstado(ConfigModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ordenCompra.nro_registros;
+                paginacion.itemsCount = compraRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                compraBindingSource.DataSource = ordenCompra.datos;
+                compras = compraRoot.datos;
+                compraBindingSource.DataSource = compras;
                 dataGridView.Refresh();
+
+                // Mostrando la paginacion
                 mostrarPaginado();
+
+                // Formato de celdas
             }
             catch (Exception ex)
             {
@@ -250,11 +257,77 @@ namespace Admeli.Compras
         {
             cargarRegistros();
         }
+
         private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            executeNuevo();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
         {
             FormComprarNuevo comprarNuevo = new FormComprarNuevo();
             comprarNuevo.ShowDialog();
-        } 
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idCompra = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentCompra = compras.Find(x => x.idCompra == idCompra); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormComprarNuevo formComprar = new FormComprarNuevo(currentCompra);
+            formComprar.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                int idCompra = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                currentCompra = compras.Find(x => x.idCompra == idCompra); // Buscando la registro especifico en la lista de registros
+                currentCompra.estado = 0;
+
+                // Procediendo con las desactivacion
+                Response response = await compraModel.anular(currentCompra);
+                MessageBox.Show(response.msj, "Anular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Anular", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         #endregion
     }
 }
