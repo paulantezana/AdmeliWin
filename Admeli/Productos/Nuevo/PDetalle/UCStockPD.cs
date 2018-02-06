@@ -307,7 +307,7 @@ private async void executeAnularStock()
 
         private void btnActualizarStock_Click(object sender, EventArgs e)
         {
-            executeActu
+            
         }
     }
 }

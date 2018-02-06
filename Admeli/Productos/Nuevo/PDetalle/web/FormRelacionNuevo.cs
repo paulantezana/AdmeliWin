@@ -87,7 +87,7 @@ namespace Admeli.Productos.Nuevo.PDetalle.web
             if (!nuevo)
             {
                 currentIDProductoRelacion = currentProductoRelacion.idProductoRelacion;
-                cbxTipoRelacion.SelectedText = currentProductoRelacion.tipoRelacion;
+                cbxTipoRelacion.SelectedValue = currentProductoRelacion.tipoRelacion;
                 textPosicion.Text = currentProductoRelacion.ordenPosicion.ToString();
                 chkActivo.Checked = Convert.ToBoolean(currentProductoRelacion.estado);
                 cbxProductoRelacion.SelectedValue = currentProductoRelacion.idRelacionProducto;

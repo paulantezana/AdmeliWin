@@ -278,6 +278,8 @@ namespace Admeli.Productos.Nuevo
 
                     // Consulta de guardar =============================================
                     this.nuevo = false;
+                    this.currentIDProducto = response.id;
+                    this.reLoad();
                 }
                 else
                 {
@@ -306,6 +308,7 @@ namespace Admeli.Productos.Nuevo
                     Response response = await productoModel.modificar(currentProducto);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                this.Close();
             }
             catch (Exception ex)
             {

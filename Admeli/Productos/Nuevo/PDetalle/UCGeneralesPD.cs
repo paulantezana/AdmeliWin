@@ -105,11 +105,6 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            guardar();
-        }
-
-        private void guardar()
-        {
             // Validando los campos
             if (!isFieldsValid)
             {
@@ -307,7 +302,23 @@ namespace Admeli.Productos.Nuevo.PDetalle
         private void textPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validator.isNumber(e);
-        }  
+        }
         #endregion
+
+        private void btnGuardarSalir_Click(object sender, EventArgs e)
+        {
+            // Validando los campos
+            if (!isFieldsValid)
+            {
+                MessageBox.Show("Datos incorrectos", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Ejecutando el guardado
+            cargarObjeto();
+
+            // Ejecutando el gurdado
+            formProductoNuevo.executeGuardarSalir();
+        }
     }
 }

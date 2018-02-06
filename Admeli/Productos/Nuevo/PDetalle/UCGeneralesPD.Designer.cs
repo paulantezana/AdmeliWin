@@ -55,10 +55,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardarSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.unidadMedidaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -348,7 +348,7 @@
             // 
             // textDescripcion
             // 
-            this.textDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescripcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDescripcion.Location = new System.Drawing.Point(31, 317);
             this.textDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.textDescripcion.Multiline = true;
@@ -392,13 +392,31 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnGuardarSalir);
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Location = new System.Drawing.Point(171, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 49);
             this.panel1.TabIndex = 6;
+            // 
+            // btnGuardarSalir
+            // 
+            this.btnGuardarSalir.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnGuardarSalir.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnGuardarSalir.FlatAppearance.BorderSize = 0;
+            this.btnGuardarSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGuardarSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGuardarSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarSalir.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarSalir.Location = new System.Drawing.Point(192, 6);
+            this.btnGuardarSalir.Name = "btnGuardarSalir";
+            this.btnGuardarSalir.Size = new System.Drawing.Size(152, 36);
+            this.btnGuardarSalir.TabIndex = 6;
+            this.btnGuardarSalir.Text = "Guardar y Cerrar";
+            this.btnGuardarSalir.UseVisualStyleBackColor = false;
+            this.btnGuardarSalir.Click += new System.EventHandler(this.btnGuardarSalir_Click);
             // 
             // btnAceptar
             // 
@@ -440,23 +458,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(192, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Guardar y Cerrar";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // UCGeneralesPD
             // 
@@ -528,6 +529,6 @@
         private System.Windows.Forms.BindingSource unidadMedidaBindingSource;
         private System.Windows.Forms.BindingSource marcaBindingSource;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardarSalir;
     }
 }
