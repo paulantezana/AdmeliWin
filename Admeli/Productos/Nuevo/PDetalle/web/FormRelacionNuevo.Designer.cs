@@ -35,6 +35,7 @@
             this.textPosicion = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxProductoRelacion = new System.Windows.Forms.ComboBox();
+            this.productoRelacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.cbxTipoRelacion = new System.Windows.Forms.ComboBox();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -46,12 +47,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.productoRelacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.productoRelacionBindingSource)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoRelacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -76,7 +76,7 @@
             this.chkActivo.Location = new System.Drawing.Point(21, 220);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(20, 20);
-            this.chkActivo.TabIndex = 58;
+            this.chkActivo.TabIndex = 2;
             // 
             // label6
             // 
@@ -106,7 +106,7 @@
             this.textPosicion.Name = "textPosicion";
             this.textPosicion.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textPosicion.Size = new System.Drawing.Size(328, 35);
-            this.textPosicion.TabIndex = 55;
+            this.textPosicion.TabIndex = 1;
             this.textPosicion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label3
@@ -133,8 +133,12 @@
             this.cbxProductoRelacion.Margin = new System.Windows.Forms.Padding(2);
             this.cbxProductoRelacion.Name = "cbxProductoRelacion";
             this.cbxProductoRelacion.Size = new System.Drawing.Size(328, 26);
-            this.cbxProductoRelacion.TabIndex = 53;
+            this.cbxProductoRelacion.TabIndex = 3;
             this.cbxProductoRelacion.ValueMember = "idProducto";
+            // 
+            // productoRelacionBindingSource
+            // 
+            this.productoRelacionBindingSource.DataSource = typeof(Entidad.ProductoRelacion);
             // 
             // label1
             // 
@@ -159,7 +163,7 @@
             this.cbxTipoRelacion.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTipoRelacion.Name = "cbxTipoRelacion";
             this.cbxTipoRelacion.Size = new System.Drawing.Size(328, 26);
-            this.cbxTipoRelacion.TabIndex = 60;
+            this.cbxTipoRelacion.TabIndex = 0;
             this.cbxTipoRelacion.ValueMember = "idMarca";
             // 
             // panelFooter
@@ -195,7 +199,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(10, 6);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(152, 36);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -214,7 +218,7 @@
             this.btnClose.Location = new System.Drawing.Point(182, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 36);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -265,10 +269,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // productoRelacionBindingSource
-            // 
-            this.productoRelacionBindingSource.DataSource = typeof(Entidad.ProductoRelacion);
-            // 
             // FormRelacionNuevo
             // 
             this.AcceptButton = this.btnAceptar;
@@ -293,12 +293,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRelacionNuevo";
             this.Load += new System.EventHandler(this.FormRelacionNuevo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.productoRelacionBindingSource)).EndInit();
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoRelacionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

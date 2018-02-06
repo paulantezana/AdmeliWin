@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Admeli.Componentes;
 using Entidad;
 using Modelo;
 
@@ -145,6 +146,14 @@ namespace Admeli.Productos.Nuevo.PDetalle.web
             }
             errorProvider1.Clear();
 
+            if (!Validator.IsValidEmail(textCorreo.Text))
+            {
+                errorProvider1.SetError(textCorreo, "Correo no valido");
+                textCorreo.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
             if (textTituloComentario.Text == "")
             {
                 errorProvider1.SetError(textTituloComentario, "Este campo esta bacía");
@@ -169,5 +178,10 @@ namespace Admeli.Productos.Nuevo.PDetalle.web
             this.Close();
         }
         #endregion
+
+        private void textPuntos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
     }
 }

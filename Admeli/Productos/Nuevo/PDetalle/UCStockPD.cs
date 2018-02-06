@@ -117,50 +117,30 @@ namespace Admeli.Productos.Nuevo.PDetalle
                     row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
                 }
             }
-        } 
+        }
         #endregion
 
         #region ==================== CRUD ====================
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void dataGridViewStocks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            executeModificarPrecio();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            executeEliminarStock();
-        }
-
-        private void btnDesactivar_Click(object sender, EventArgs e)
-        {
-            executeAnularPrecio();
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            this.cargarPrecios();
-        }
-
-        private void btnEditarStock_Click(object sender, EventArgs e)
-        {
-            this.executeModificarStock();
-        }
-
-        private void btnActualizarStock_Click(object sender, EventArgs e)
-        {
-            this.cargarStock();
+            executeModificarStock();
         }
 
         private void btnNuevoStock_Click(object sender, EventArgs e)
         {
-            FormStockNuevo formStock = new FormStockNuevo(this.formProductoNuevo);
-            formStock.ShowDialog();
-            this.cargarStock();
+            executeNuevoStock();
         }
 
         private void dataGridViewPrecios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             executeModificarPrecio();
+        }
+
+        private void executeNuevoStock()
+        {
+            FormStockNuevo formStock = new FormStockNuevo(this.formProductoNuevo);
+            formStock.ShowDialog();
+            this.cargarStock();
         }
 
         private void executeModificarPrecio()
@@ -314,5 +294,20 @@ private async void executeAnularStock()
    }
 }*/
         #endregion
+
+        private void btnEditarStock_Click(object sender, EventArgs e)
+        {
+            executeModificarStock();
+        }
+
+        private void btnEliminarStock_Click(object sender, EventArgs e)
+        {
+            executeEliminarStock();
+        }
+
+        private void btnActualizarStock_Click(object sender, EventArgs e)
+        {
+            executeActu
+        }
     }
 }

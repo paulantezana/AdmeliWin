@@ -696,5 +696,9 @@ namespace Admeli.Productos
         }
         #endregion
 
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            executeModificar();
+        }
     }
 }

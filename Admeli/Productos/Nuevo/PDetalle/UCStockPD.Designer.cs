@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStockPD));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStockPD));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
@@ -54,9 +54,9 @@
             this.nombreSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnDesactivar = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.btnModificarPrecio = new System.Windows.Forms.ToolStripButton();
+            this.btnDesactivarPrecio = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizarPrecio = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tabStockAlmacen = new System.Windows.Forms.TabPage();
@@ -74,10 +74,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevoStock = new System.Windows.Forms.ToolStripButton();
             this.btnEditarStock = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminarStock = new System.Windows.Forms.ToolStripButton();
             this.btnActualizarStock = new System.Windows.Forms.ToolStripButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -365,9 +365,9 @@
             this.toolStripCrud.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripCrud.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnModificar,
-            this.btnDesactivar,
-            this.btnActualizar});
+            this.btnModificarPrecio,
+            this.btnDesactivarPrecio,
+            this.btnActualizarPrecio});
             this.toolStripCrud.Location = new System.Drawing.Point(3, 44);
             this.toolStripCrud.Name = "toolStripCrud";
             this.toolStripCrud.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
@@ -375,44 +375,41 @@
             this.toolStripCrud.TabIndex = 22;
             this.toolStripCrud.Text = "toolStrip1";
             // 
-            // btnModificar
+            // btnModificarPrecio
             // 
-            this.btnModificar.AutoSize = false;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(78, 37);
-            this.btnModificar.Text = "Detalle";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificarPrecio.AutoSize = false;
+            this.btnModificarPrecio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarPrecio.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarPrecio.Image")));
+            this.btnModificarPrecio.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificarPrecio.Name = "btnModificarPrecio";
+            this.btnModificarPrecio.Size = new System.Drawing.Size(78, 37);
+            this.btnModificarPrecio.Text = "Detalle";
+            this.btnModificarPrecio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModificarPrecio.ToolTipText = "Modificar registro actual (F4)";
             // 
-            // btnDesactivar
+            // btnDesactivarPrecio
             // 
-            this.btnDesactivar.AutoSize = false;
-            this.btnDesactivar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesactivar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesactivar.Image")));
-            this.btnDesactivar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(73, 37);
-            this.btnDesactivar.Text = "Desactivar";
-            this.btnDesactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDesactivar.ToolTipText = "Anular(F7)";
-            this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
+            this.btnDesactivarPrecio.AutoSize = false;
+            this.btnDesactivarPrecio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesactivarPrecio.Image = ((System.Drawing.Image)(resources.GetObject("btnDesactivarPrecio.Image")));
+            this.btnDesactivarPrecio.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDesactivarPrecio.Name = "btnDesactivarPrecio";
+            this.btnDesactivarPrecio.Size = new System.Drawing.Size(73, 37);
+            this.btnDesactivarPrecio.Text = "Desactivar";
+            this.btnDesactivarPrecio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDesactivarPrecio.ToolTipText = "Anular(F7)";
             // 
-            // btnActualizar
+            // btnActualizarPrecio
             // 
-            this.btnActualizar.AutoSize = false;
-            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(79, 37);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnActualizarPrecio.AutoSize = false;
+            this.btnActualizarPrecio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarPrecio.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarPrecio.Image")));
+            this.btnActualizarPrecio.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizarPrecio.Name = "btnActualizarPrecio";
+            this.btnActualizarPrecio.Size = new System.Drawing.Size(79, 37);
+            this.btnActualizarPrecio.Text = "Actualizar";
+            this.btnActualizarPrecio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnActualizarPrecio.ToolTipText = "Actualizar registros (F5)\r\n";
             // 
             // panelHeaderItem1
             // 
@@ -499,6 +496,7 @@
             this.dataGridViewStocks.Size = new System.Drawing.Size(674, 426);
             this.dataGridViewStocks.TabIndex = 0;
             this.dataGridViewStocks.TimeFilter = false;
+            this.dataGridViewStocks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStocks_CellDoubleClick);
             // 
             // idProductoStockAlmacenDataGridViewTextBoxColumn
             // 
@@ -594,7 +592,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevoStock,
             this.btnEditarStock,
-            this.btnEliminar,
+            this.btnEliminarStock,
             this.btnActualizarStock});
             this.toolStrip1.Location = new System.Drawing.Point(3, 44);
             this.toolStrip1.Name = "toolStrip1";
@@ -629,6 +627,19 @@
             this.btnEditarStock.ToolTipText = "Modificar registro actual (F4)";
             this.btnEditarStock.Click += new System.EventHandler(this.btnEditarStock_Click);
             // 
+            // btnEliminarStock
+            // 
+            this.btnEliminarStock.AutoSize = false;
+            this.btnEliminarStock.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarStock.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarStock.Image")));
+            this.btnEliminarStock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminarStock.Name = "btnEliminarStock";
+            this.btnEliminarStock.Size = new System.Drawing.Size(80, 37);
+            this.btnEliminarStock.Text = "Eliminar";
+            this.btnEliminarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminarStock.ToolTipText = "Eliminar registro actual (F6)";
+            this.btnEliminarStock.Click += new System.EventHandler(this.btnEliminarStock_Click);
+            // 
             // btnActualizarStock
             // 
             this.btnActualizarStock.AutoSize = false;
@@ -662,19 +673,6 @@
             this.label3.Size = new System.Drawing.Size(256, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "MANTENIMIENTO STOCK PRODUCTO";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(80, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // UCStockPD
             // 
@@ -725,8 +723,8 @@
         private System.Windows.Forms.Panel panel2;
         private ADGV.AdvancedDataGridView dataGridViewPrecios;
         private System.Windows.Forms.ToolStrip toolStripCrud;
-        private System.Windows.Forms.ToolStripButton btnModificar;
-        private System.Windows.Forms.ToolStripButton btnDesactivar;
+        private System.Windows.Forms.ToolStripButton btnModificarPrecio;
+        private System.Windows.Forms.ToolStripButton btnDesactivarPrecio;
         private System.Windows.Forms.Panel panelHeaderItem1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
@@ -737,7 +735,7 @@
         private System.Windows.Forms.ToolStripButton btnActualizarStock;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.ToolStripButton btnActualizarPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPrecioProductoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioVentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioCompetenciaDataGridViewTextBoxColumn;
@@ -758,6 +756,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreAlmacenDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource stockBindingSource;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
+        private System.Windows.Forms.ToolStripButton btnEliminarStock;
     }
 }

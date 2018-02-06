@@ -50,24 +50,30 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void cargarDatosModificar()
         {
-            if (!formProductoNuevo.nuevo)
-            {
-                textNombreProducto.Text = formProductoNuevo.currentProducto.nombreProducto;
-                textCodigoProducto.Text = formProductoNuevo.currentProducto.codigoProducto;
-                textPrecioCompra.Text = formProductoNuevo.currentProducto.precioCompra;
-                textDescripcion.Text = formProductoNuevo.currentProducto.descripcionCorta;
-            }
+            if (formProductoNuevo.nuevo) return;
+
+            textNombreProducto.Text = formProductoNuevo.currentProducto.nombreProducto;
+            textCodigoProducto.Text = formProductoNuevo.currentProducto.codigoProducto;
+            textPrecioCompra.Text = formProductoNuevo.currentProducto.precioCompra;
+            textDescripcion.Text = formProductoNuevo.currentProducto.descripcionCorta;
+            isFieldsValid = true;
         }
 
 
         #region ============================= Loads =============================
         internal async void cargarMarcas()
         {
+            formProductoNuevo.appLoadState(true);
             marcaBindingSource.DataSource = await marcaModel.marcas();
+            if (!formProductoNuevo.nuevo) cbxMarcas.SelectedValue = formProductoNuevo.currentProducto.idMarca;
+            formProductoNuevo.appLoadState(false);
         }
         internal async void cargarUnidadesMedida()
         {
+            formProductoNuevo.appLoadState(true);
             unidadMedidaBindingSource.DataSource = await unidadMedidaModel.unimedidas();
+            if (!formProductoNuevo.nuevo) cbxUnidadMedida.SelectedValue = formProductoNuevo.currentProducto.idUnidadMedida;
+            formProductoNuevo.appLoadState(false);
         }
         #endregion
 
@@ -120,9 +126,8 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
         private void cargarObjeto()
         {
-            formProductoNuevo.currentProducto = new Producto();
-            if (!formProductoNuevo.nuevo) formProductoNuevo.currentProducto.idProducto = 1; // Llenar el id categoria cuando este en esdo modificar
-
+            if(formProductoNuevo.nuevo) formProductoNuevo.currentProducto = new Producto();
+           // if (!formProductoNuevo.nuevo) formProductoNuevo.currentProducto.idProducto = 1; // Llenar el id categoria cuando este en esTAdo modificar
             if (formProductoNuevo.nuevo)
             {
                 formProductoNuevo.currentProducto.cantidadFraccion = false;
@@ -158,7 +163,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             formProductoNuevo.currentProducto.nombreProducto = textNombreProducto.Text;
             formProductoNuevo.currentProducto.nombreUnidad = cbxUnidadMedida.Text;
 
-            formProductoNuevo.currentProducto.precioCompra = Convert.ToInt32(textPrecioCompra.Text);
+            formProductoNuevo.currentProducto.precioCompra = Convert.ToDouble(textPrecioCompra.Text);
         }
 
         #region ================================ Validation ===============================
@@ -196,6 +201,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Creando el objeto para enviar
             Producto np = new Producto();
             np.nombre = textNombreProducto.Text;
+            np.idProducto = (formProductoNuevo.nuevo) ? 0 : formProductoNuevo.currentProducto.idProducto;
 
             // validando si el codigo del producto existe
             List<Producto> list = await productoModel.validarProducto(np);
@@ -227,6 +233,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Creando el objeto para enviar
             Producto np = new Producto();
             np.nombre = textNombreProducto.Text;
+            np.idProducto = (formProductoNuevo.nuevo) ? 0 : formProductoNuevo.currentProducto.idProducto;
 
             // validando si el codigo del producto existe
             List<Producto> list = await productoModel.validarProducto(np);
@@ -259,6 +266,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Creando el objeto para enviar
             Producto np = new Producto();
             np.codigo = textCodigoProducto.Text;
+            np.idProducto = (formProductoNuevo.nuevo) ? 0 : formProductoNuevo.currentProducto.idProducto;
 
             // validando si el codigo del producto existe
             List<Producto> list = await productoModel.validarProducto(np);

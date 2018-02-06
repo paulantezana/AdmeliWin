@@ -43,7 +43,7 @@ namespace Admeli.Productos.Nuevo.PDetalle.web
             this.formProductoNuevo = formProductoNuevo;
             this.currentProductoRelacion = currentProductoRelacion;
             this.nuevo = false;
-        } 
+        }
         #endregion
 
         #region ================================= Root Load =================================
@@ -80,7 +80,7 @@ namespace Admeli.Productos.Nuevo.PDetalle.web
         {
             productoRelacionBindingSource.DataSource = await productoModel.productoRelacionado(formProductoNuevo.currentIDProducto, cbxTipoRelacion.SelectedValue.ToString(), 0);
             cargarDatosModificar();
-        } 
+        }
 
         private void cargarDatosModificar()
         {
@@ -170,6 +170,11 @@ namespace Admeli.Productos.Nuevo.PDetalle.web
             this.Close();
         }
         #endregion
+
+    }
+
+    public  class RelacionGuardar
+    {
 
     }
 }

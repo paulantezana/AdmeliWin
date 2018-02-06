@@ -115,7 +115,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(10, 6);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(152, 36);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -134,7 +134,7 @@
             this.btnClose.Location = new System.Drawing.Point(182, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 36);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -191,7 +191,7 @@
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textCorreo.Size = new System.Drawing.Size(328, 35);
-            this.textCorreo.TabIndex = 68;
+            this.textCorreo.TabIndex = 1;
             this.textCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label3
@@ -218,7 +218,7 @@
             this.cbxPais.Margin = new System.Windows.Forms.Padding(2);
             this.cbxPais.Name = "cbxPais";
             this.cbxPais.Size = new System.Drawing.Size(328, 26);
-            this.cbxPais.TabIndex = 66;
+            this.cbxPais.TabIndex = 2;
             this.cbxPais.ValueMember = "idPais";
             // 
             // paisBindingSource
@@ -241,7 +241,7 @@
             this.textNombreUsuario.Name = "textNombreUsuario";
             this.textNombreUsuario.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textNombreUsuario.Size = new System.Drawing.Size(328, 35);
-            this.textNombreUsuario.TabIndex = 77;
+            this.textNombreUsuario.TabIndex = 0;
             this.textNombreUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
@@ -272,7 +272,7 @@
             this.textTituloComentario.Name = "textTituloComentario";
             this.textTituloComentario.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textTituloComentario.Size = new System.Drawing.Size(328, 35);
-            this.textTituloComentario.TabIndex = 79;
+            this.textTituloComentario.TabIndex = 3;
             this.textTituloComentario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label7
@@ -303,8 +303,9 @@
             this.textPuntos.Name = "textPuntos";
             this.textPuntos.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.textPuntos.Size = new System.Drawing.Size(328, 35);
-            this.textPuntos.TabIndex = 81;
+            this.textPuntos.TabIndex = 5;
             this.textPuntos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textPuntos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPuntos_KeyPress);
             // 
             // label2
             // 
@@ -339,7 +340,7 @@
             this.textComentario.Name = "textComentario";
             this.textComentario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textComentario.Size = new System.Drawing.Size(686, 108);
-            this.textComentario.TabIndex = 84;
+            this.textComentario.TabIndex = 4;
             // 
             // label5
             // 
@@ -361,7 +362,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(377, 361);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(328, 26);
-            this.dtpFecha.TabIndex = 86;
+            this.dtpFecha.TabIndex = 6;
             // 
             // errorProvider1
             // 

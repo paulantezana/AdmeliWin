@@ -193,7 +193,6 @@
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
             this.progressBarApp.Size = new System.Drawing.Size(1036, 3);
-            this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 8;
             // 
             // FormProductoNuevo
