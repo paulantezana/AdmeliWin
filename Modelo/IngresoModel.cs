@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using Entidad.Configuracion;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,24 @@ namespace Modelo
                 // www.lineatienda.com/services.php/ingresos/sucursal/0/personal/0/cajasesion/0/estado/todos/1/100
                 RootObject<Ingreso> ingresos = await webService.GETRoot<Ingreso>("ingresos", String.Format("sucursal/{0}/personal/{1}/cajasesion/{2}/estado/{3}/{4}/{5}", idSucursal, idPersonal, idCajaSesion, idEstado,  page, items));
                 return ingresos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /**
+         * Guardar configuraciones al iniciar la caja
+         * **/
+
+        public async Task<Response> guardarEnUno(Moneda moneda)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/ingreso/guardarenuno
+                Response response = await webService.POSTSend("ingreso", "guardarenuno");
+                return response;
             }
             catch (Exception ex)
             {

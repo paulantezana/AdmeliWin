@@ -11,6 +11,7 @@ using Admeli.Componentes;
 using Modelo;
 using Entidad.Configuracion;
 using Bunifu.Framework.UI;
+using Entidad;
 
 namespace Admeli.CajaBox
 {
@@ -21,9 +22,11 @@ namespace Admeli.CajaBox
 
         private FechaModel fechaModel = new FechaModel();
         private MonedaModel monedaModel = new MonedaModel();
+        private IngresoModel ingresoModel = new IngresoModel();
 
         private List<Moneda> monedas { get; set; }
 
+        #region =========================== Constructor ===========================
         public UCIniciarCaja()
         {
             InitializeComponent();
@@ -38,6 +41,7 @@ namespace Admeli.CajaBox
 
             lisenerKeyEvents = true; // Active lisener key events
         }
+        #endregion
 
         #region ============================== Paint and Decoration ==============================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -61,7 +65,7 @@ namespace Admeli.CajaBox
         }
         #endregion
 
-
+        #region =============================== Loads ===============================
         private async void cargarFecha()
         {
             try
@@ -97,7 +101,7 @@ namespace Admeli.CajaBox
 
         private void cargarEstadoCaja()
         {
-            if(ConfigModel.cajaSesion != null)
+            if (ConfigModel.cajaSesion != null)
             {
                 if (ConfigModel.cajaSesion.idCajaSesion > 0)
                 {
@@ -122,6 +126,8 @@ namespace Admeli.CajaBox
                 btnAceptar.Enabled = true;
             }
         }
+
+        #endregion
 
         #region ============================= Crear Elementos 
         private void crearElementosMoneda(string content, int idMoneda,  int y)
@@ -192,5 +198,27 @@ namespace Admeli.CajaBox
         }
         #endregion
 
+        #region ============================ Save ============================
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            executeGuardar();
+        }
+
+        private async void executeGuardar()
+        {
+            try
+            {
+                foreach (Moneda money in monedas)
+                {
+                    Response response = await ingresoModel.guardarEnUno(money);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
     }
 }

@@ -86,6 +86,7 @@
             this.btnAceptar.TabIndex = 98;
             this.btnAceptar.Text = "Iniciar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblCajaEstado
             // 
