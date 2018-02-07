@@ -21,6 +21,7 @@ namespace Admeli.CajaBox.Nuevo
         private int currentIDIngreso { get; set; }
         private bool nuevo { get; set; }
         private Ingreso currentIngreso { get; set; }
+        private SaveObject currentSaveObject { get; set; }
 
         public FormIngresoNuevo()
         {
@@ -89,17 +90,20 @@ namespace Admeli.CajaBox.Nuevo
 
         private void crearObjetoSucursal()
         {
-            currentIngreso = new Ingreso();
+            currentSaveObject = new SaveObject();
 
-            if (!nuevo) currentIngreso.idIngreso = currentIDIngreso; // Llenar el id categoria cuando este en esdo modificar
+            if (!nuevo) currentSaveObject.idIngreso = currentIDIngreso; // Llenar el id categoria cuando este en esdo modificar
 
-            currentIngreso.fechaPago.date = (DateTime)dtpFechaPago.Value;
-            currentIngreso.numeroOperacion = textNOperacion.Text;
-            currentIngreso.monto = textMonto.Text;
-            currentIngreso.moneda = cbxMoneda.Text;
-            currentIngreso.idMoneda = Convert.ToInt32(cbxMoneda.SelectedValue);
-            currentIngreso.motivo = textMotivo.Text;
-            currentIngreso.observacion = textObcervacion.Text;
+            currentSaveObject.estado = 1;
+            currentSaveObject.fechaPago = dtpFechaPago.Value.ToString();
+            currentSaveObject.idCaja = ConfigModel.cajaSesion.idCajaSesion;
+            // currentSaveObject
+            currentSaveObject.numeroOperacion = textNOperacion.Text;
+            currentSaveObject.monto = textMonto.Text;
+            currentSaveObject.moneda = cbxMoneda.Text;
+            currentSaveObject.idMoneda = Convert.ToInt32(cbxMoneda.SelectedValue);
+            currentSaveObject.motivo = textMotivo.Text;
+            currentSaveObject.observacion = textObcervacion.Text;
 
         }
 
@@ -129,4 +133,22 @@ namespace Admeli.CajaBox.Nuevo
         }
         #endregion
     }
+    class SaveObject
+    {
+        public int idIngreso { get; set; }
+        public int estado { get; set; }
+        public string fechaPago { get; set; }
+        public int idCaja { get; set; }
+        public int idCajaSesion { get; set; }
+        public int idMedioPago { get; set; }
+        public int idMoneda { get; set; }
+        public string medioPago { get; set; }
+        public string moneda { get; set; }
+        public string monto { get; set; }
+        public string motivo { get; set; }
+        public string numeroOperacion { get; set; }
+        public string observacion { get; set; }
+        public string personal { get; set; }
+    }
+
 }
