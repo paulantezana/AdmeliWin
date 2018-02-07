@@ -79,6 +79,7 @@
     <Compile Include="Location\Pais.cs" />
     <Compile Include="Location\UbicacionGeografica.cs" />
     <Compile Include="Marca.cs" />
+    <Compile Include="MedioPago.cs" />
     <Compile Include="NotaEntrada.cs" />
     <Compile Include="Oferta.cs" />
     <Compile Include="OrdenCompra.cs" />

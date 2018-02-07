@@ -20,11 +20,16 @@ namespace Admeli.CajaBox
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
 
-        private FechaModel fechaModel = new FechaModel();
+        private CajaModel cajaModel = new CajaModel();
         private MonedaModel monedaModel = new MonedaModel();
+        private MedioPagoModel medioPagoModel = new MedioPagoModel();
+        private FechaModel fechaModel = new FechaModel();
+
         private IngresoModel ingresoModel = new IngresoModel();
 
         private List<Moneda> monedas { get; set; }
+        private MedioPago medioPago { get; set; }
+        private CajaSesion cajaSesion { get; set; }
 
         #region =========================== Constructor ===========================
         public UCIniciarCaja()
@@ -59,13 +64,48 @@ namespace Admeli.CajaBox
 
         internal void reLoad()
         {
-            cargarEstadoCaja();
-            cargarFecha();
+            // verificaciones
+            verificarEstadoCaja();
+
+            // loads
+            cargarCajaSesion();
             cargarMonedas();
+            cargarMediosPago();
+            cargarFecha();
         }
         #endregion
 
         #region =============================== Loads ===============================
+        private async void cargarCajaSesion()
+        {
+            try
+            {
+                List<CajaSesion> list = await cajaModel.cajaSesion(ConfigModel.cajaSesion.idCajaSesion);
+                cajaSesion = list[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarMediosPago()
+        {
+            try
+            {
+                List<MedioPago> list = await medioPagoModel.medioPagos();
+                medioPago = list[0];
+
+                dynamic currentFecha = await fechaModel.fechaSistema();
+                dtpFechaInicio.Value = currentFecha.fecha;
+                dtpFechaIngreso.Value = currentFecha.fecha;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private async void cargarFecha()
         {
             try
@@ -99,7 +139,7 @@ namespace Admeli.CajaBox
 
         }
 
-        private void cargarEstadoCaja()
+        private void verificarEstadoCaja()
         {
             if (ConfigModel.cajaSesion != null)
             {
@@ -206,6 +246,7 @@ namespace Admeli.CajaBox
 
         private async void executeGuardar()
         {
+
             try
             {
                 foreach (Moneda money in monedas)

@@ -13,9 +13,17 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public void guardar()
+        public async Task<Response> guardar(CajaSesion param)
         {
-
+            try
+            {
+                // localhost/admeli/xcore/services.php/cajasesion/guardar
+                return await webService.POSTSend("cajasesion", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void modificar()
@@ -49,6 +57,34 @@ namespace Modelo
                 // www.lineatienda.com/services.php/cajasesionesinicializadas/suc/1/1/100
                 RootObject<CajaSesion> cajaSesion = await webService.GETRoot<CajaSesion>("cajasesionesinicializadas", String.Format("suc/{0}/{1}/{2}", idSucursal, page, items));
                 return cajaSesion;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Moneda>> cierreCajaIngresoMenosEgreso(int mediopago, int cajaSesion)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/cierrecajaingresomenosegreso/mediopago/1/cajasesion/7
+                List<Moneda> list = await webService.GETLis<Moneda>("cajasesionesinicializadas", String.Format("mediopago/{0}/cajasesion/{1}", mediopago, cajaSesion));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<CajaSesion>> cajaSesion(int idAsignarCaja)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/cajasesion/idasignarcaja/1
+                List<CajaSesion> list = await webService.GETLis<CajaSesion>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
+                return list;
             }
             catch (Exception ex)
             {

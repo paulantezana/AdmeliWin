@@ -65,6 +65,7 @@
     <Compile Include="IngresoModel.cs" />
     <Compile Include="LocationModel.cs" />
     <Compile Include="MarcaModel.cs" />
+    <Compile Include="MedioPagoModel.cs" />
     <Compile Include="MonedaModel.cs" />
     <Compile Include="NotaEntradaModel.cs" />
     <Compile Include="OfertaModel.cs" />
