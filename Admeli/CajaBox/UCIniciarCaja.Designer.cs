@@ -28,422 +28,167 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCIniciarCaja));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
-            this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripLabel();
-            this.btnFirst = new System.Windows.Forms.ToolStripButton();
-            this.btnPrevious = new System.Windows.Forms.ToolStripButton();
-            this.lblCurrentPage = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripLabel();
-            this.lblPageCount = new System.Windows.Forms.ToolStripLabel();
-            this.btnNext = new System.Windows.Forms.ToolStripButton();
-            this.btnLast = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripLabel();
-            this.lblSpeedPages = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTools = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripLabel();
-            this.textBuscar = new System.Windows.Forms.ToolStripTextBox();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripCrud = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnAnular = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.cbxPersonales = new System.Windows.Forms.ToolStripComboBox();
-            this.cbxEstados = new System.Windows.Forms.ToolStripComboBox();
-            this.btnConsultar = new System.Windows.Forms.ToolStripButton();
-            this.panelHeaderItem1 = new System.Windows.Forms.Panel();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblCajaEstado = new System.Windows.Forms.Label();
+            this.dtpFechaIngreso = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.dtpFechaInicio = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.toolStripNavigation.SuspendLayout();
-            this.toolStripTools.SuspendLayout();
-            this.toolStripCrud.SuspendLayout();
-            this.panelHeaderItem1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.White;
             this.panelContainer.Controls.Add(this.panel1);
-            this.panelContainer.Controls.Add(this.toolStripNavigation);
-            this.panelContainer.Controls.Add(this.toolStripTools);
-            this.panelContainer.Controls.Add(this.toolStripCrud);
-            this.panelContainer.Controls.Add(this.panelHeaderItem1);
+            this.panelContainer.Controls.Add(this.lblCajaEstado);
+            this.panelContainer.Controls.Add(this.dtpFechaIngreso);
+            this.panelContainer.Controls.Add(this.dtpFechaInicio);
+            this.panelContainer.Controls.Add(this.label2);
+            this.panelContainer.Controls.Add(this.label5);
+            this.panelContainer.Controls.Add(this.textDescripcion);
+            this.panelContainer.Controls.Add(this.label1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(10, 10);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContainer.Location = new System.Drawing.Point(8, 8);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(1237, 547);
-            this.panelContainer.TabIndex = 8;
+            this.panelContainer.Size = new System.Drawing.Size(927, 445);
+            this.panelContainer.TabIndex = 0;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 161);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Controls.Add(this.btnAceptar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(1, 382);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel1.Size = new System.Drawing.Size(1235, 348);
-            this.panel1.TabIndex = 16;
+            this.panel1.Size = new System.Drawing.Size(925, 62);
+            this.panel1.TabIndex = 101;
             // 
-            // dataGridView
+            // btnAceptar
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.AutoGenerateContextFilters = true;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView.ColumnHeadersHeight = 40;
-            this.dataGridView.DateWithTime = false;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView.Location = new System.Drawing.Point(13, 12);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(1209, 324);
-            this.dataGridView.TabIndex = 0;
-            this.dataGridView.TimeFilter = false;
+            this.btnAceptar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(17, 16);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(220, 30);
+            this.btnAceptar.TabIndex = 98;
+            this.btnAceptar.Text = "Iniciar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
             // 
-            // toolStripNavigation
+            // lblCajaEstado
             // 
-            this.toolStripNavigation.AutoSize = false;
-            this.toolStripNavigation.BackColor = System.Drawing.Color.White;
-            this.toolStripNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStripNavigation.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStripNavigation.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripNavigation.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripNavigation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblPageAllItems,
-            this.toolStripButton5,
-            this.btnFirst,
-            this.btnPrevious,
-            this.lblCurrentPage,
-            this.toolStripButton2,
-            this.lblPageCount,
-            this.btnNext,
-            this.btnLast,
-            this.toolStripButton1,
-            this.lblSpeedPages,
-            this.toolStripButton3});
-            this.toolStripNavigation.Location = new System.Drawing.Point(1, 509);
-            this.toolStripNavigation.Name = "toolStripNavigation";
-            this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.toolStripNavigation.Size = new System.Drawing.Size(1235, 37);
-            this.toolStripNavigation.TabIndex = 15;
-            this.toolStripNavigation.Text = "toolStrip3";
+            this.lblCajaEstado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCajaEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.lblCajaEstado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCajaEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.lblCajaEstado.Location = new System.Drawing.Point(16, 18);
+            this.lblCajaEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCajaEstado.Name = "lblCajaEstado";
+            this.lblCajaEstado.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblCajaEstado.Size = new System.Drawing.Size(893, 38);
+            this.lblCajaEstado.TabIndex = 94;
+            this.lblCajaEstado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblPageAllItems
+            // dtpFechaIngreso
             // 
-            this.lblPageAllItems.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblPageAllItems.Image = ((System.Drawing.Image)(resources.GetObject("lblPageAllItems.Image")));
-            this.lblPageAllItems.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lblPageAllItems.Name = "lblPageAllItems";
-            this.lblPageAllItems.Size = new System.Drawing.Size(17, 34);
-            this.lblPageAllItems.Text = "0";
-            this.lblPageAllItems.ToolTipText = "Total de registros en el sistema";
+            this.dtpFechaIngreso.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dtpFechaIngreso.BorderRadius = 0;
+            this.dtpFechaIngreso.ForeColor = System.Drawing.Color.White;
+            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaIngreso.FormatCustom = null;
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(325, 91);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(225, 30);
+            this.dtpFechaIngreso.TabIndex = 100;
+            this.dtpFechaIngreso.Value = new System.DateTime(2018, 2, 6, 19, 19, 41, 715);
             // 
-            // toolStripButton5
+            // dtpFechaInicio
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(70, 34);
-            this.toolStripButton5.Text = "Registros";
+            this.dtpFechaInicio.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dtpFechaInicio.BorderRadius = 0;
+            this.dtpFechaInicio.Enabled = false;
+            this.dtpFechaInicio.ForeColor = System.Drawing.Color.White;
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.FormatCustom = null;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(19, 91);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(225, 30);
+            this.dtpFechaInicio.TabIndex = 99;
+            this.dtpFechaInicio.Value = new System.DateTime(2018, 2, 6, 19, 19, 41, 715);
             // 
-            // btnFirst
+            // label2
             // 
-            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
-            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(24, 34);
-            this.btnFirst.Text = "Primera página";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label2.Location = new System.Drawing.Point(322, 72);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 16);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "Fecha Ingreso";
             // 
-            // btnPrevious
+            // label5
             // 
-            this.btnPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
-            this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(24, 34);
-            this.btnPrevious.Text = "Anterior página";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label5.Location = new System.Drawing.Point(16, 138);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 16);
+            this.label5.TabIndex = 95;
+            this.label5.Text = "Observación";
             // 
-            // lblCurrentPage
+            // textDescripcion
             // 
-            this.lblCurrentPage.AutoSize = false;
-            this.lblCurrentPage.Name = "lblCurrentPage";
-            this.lblCurrentPage.Size = new System.Drawing.Size(40, 28);
-            this.lblCurrentPage.Text = "1";
-            this.lblCurrentPage.ToolTipText = "Página actual (enter)";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(15, 34);
-            this.toolStripButton2.Text = "/";
-            // 
-            // lblPageCount
-            // 
-            this.lblPageCount.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblPageCount.Image = ((System.Drawing.Image)(resources.GetObject("lblPageCount.Image")));
-            this.lblPageCount.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lblPageCount.Name = "lblPageCount";
-            this.lblPageCount.Size = new System.Drawing.Size(17, 34);
-            this.lblPageCount.Text = "1";
-            this.lblPageCount.ToolTipText = "Número total de páginas";
-            // 
-            // btnNext
-            // 
-            this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(24, 34);
-            this.btnNext.Text = "Siguiente página";
-            // 
-            // btnLast
-            // 
-            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
-            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(24, 34);
-            this.btnLast.Text = "Ultimo página";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(96, 34);
-            this.toolStripButton1.Text = "Mostrar cada";
-            // 
-            // lblSpeedPages
-            // 
-            this.lblSpeedPages.AutoSize = false;
-            this.lblSpeedPages.Name = "lblSpeedPages";
-            this.lblSpeedPages.Size = new System.Drawing.Size(50, 37);
-            this.lblSpeedPages.Text = "50";
-            this.lblSpeedPages.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lblSpeedPages.ToolTipText = "Cantidad de registros a mostrar (enter)";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(70, 34);
-            this.toolStripButton3.Text = "Registros";
-            // 
-            // toolStripTools
-            // 
-            this.toolStripTools.AutoSize = false;
-            this.toolStripTools.BackColor = System.Drawing.Color.White;
-            this.toolStripTools.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStripTools.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripTools.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton6,
-            this.textBuscar,
-            this.btnBuscar});
-            this.toolStripTools.Location = new System.Drawing.Point(1, 106);
-            this.toolStripTools.Name = "toolStripTools";
-            this.toolStripTools.Padding = new System.Windows.Forms.Padding(10);
-            this.toolStripTools.Size = new System.Drawing.Size(1235, 55);
-            this.toolStripTools.TabIndex = 14;
-            this.toolStripTools.Text = "toolStrip2";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(52, 32);
-            this.toolStripButton6.Text = "Buscar:";
-            // 
-            // textBuscar
-            // 
-            this.textBuscar.AutoSize = false;
-            this.textBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(399, 26);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(73, 32);
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.ToolTipText = "Buscar (Enter)";
-            // 
-            // toolStripCrud
-            // 
-            this.toolStripCrud.AutoSize = false;
-            this.toolStripCrud.BackColor = System.Drawing.Color.White;
-            this.toolStripCrud.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStripCrud.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripCrud.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevo,
-            this.btnModificar,
-            this.btnAnular,
-            this.btnActualizar,
-            this.cbxPersonales,
-            this.cbxEstados,
-            this.btnConsultar});
-            this.toolStripCrud.Location = new System.Drawing.Point(1, 51);
-            this.toolStripCrud.Name = "toolStripCrud";
-            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.toolStripCrud.Size = new System.Drawing.Size(1235, 55);
-            this.toolStripCrud.TabIndex = 13;
-            this.toolStripCrud.Text = "toolStrip1";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.AutoSize = false;
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(62, 37);
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevo.ToolTipText = "Agregar un nuevo registro (F3)";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.AutoSize = false;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(78, 37);
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.AutoSize = false;
-            this.btnAnular.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
-            this.btnAnular.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(73, 37);
-            this.btnAnular.Text = "Anular";
-            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAnular.ToolTipText = "Anular(F7)";
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.AutoSize = false;
-            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(79, 37);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
-            // 
-            // cbxPersonales
-            // 
-            this.cbxPersonales.AutoSize = false;
-            this.cbxPersonales.BackColor = System.Drawing.Color.Gainsboro;
-            this.cbxPersonales.Name = "cbxPersonales";
-            this.cbxPersonales.Size = new System.Drawing.Size(200, 28);
-            // 
-            // cbxEstados
-            // 
-            this.cbxEstados.AutoSize = false;
-            this.cbxEstados.BackColor = System.Drawing.Color.Gainsboro;
-            this.cbxEstados.Name = "cbxEstados";
-            this.cbxEstados.Size = new System.Drawing.Size(200, 28);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.AutoSize = false;
-            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(79, 37);
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnConsultar.ToolTipText = "Actualizar registros (F5)\r\n";
-            // 
-            // panelHeaderItem1
-            // 
-            this.panelHeaderItem1.Controls.Add(this.label1);
-            this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(1235, 50);
-            this.panelHeaderItem1.TabIndex = 0;
+            this.textDescripcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescripcion.Location = new System.Drawing.Point(18, 157);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.textDescripcion.Multiline = true;
+            this.textDescripcion.Name = "textDescripcion";
+            this.textDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textDescripcion.Size = new System.Drawing.Size(532, 76);
+            this.textDescripcion.TabIndex = 94;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label1.Location = new System.Drawing.Point(16, 72);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "INICIAR CAJA";
+            this.label1.Size = new System.Drawing.Size(78, 16);
+            this.label1.TabIndex = 92;
+            this.label1.Text = "Fecha inicio";
             // 
             // UCIniciarCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCIniciarCaja";
-            this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(1257, 567);
+            this.Padding = new System.Windows.Forms.Padding(8);
+            this.Size = new System.Drawing.Size(943, 461);
+            this.Load += new System.EventHandler(this.UCIniciarCaja_Load);
             this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.toolStripNavigation.ResumeLayout(false);
-            this.toolStripNavigation.PerformLayout();
-            this.toolStripTools.ResumeLayout(false);
-            this.toolStripTools.PerformLayout();
-            this.toolStripCrud.ResumeLayout(false);
-            this.toolStripCrud.PerformLayout();
-            this.panelHeaderItem1.ResumeLayout(false);
-            this.panelHeaderItem1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -451,34 +196,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.Panel panel1;
-        private ADGV.AdvancedDataGridView dataGridView;
-        private System.Windows.Forms.ToolStrip toolStripNavigation;
-        private System.Windows.Forms.ToolStripLabel lblPageAllItems;
-        private System.Windows.Forms.ToolStripLabel toolStripButton5;
-        private System.Windows.Forms.ToolStripButton btnFirst;
-        private System.Windows.Forms.ToolStripButton btnPrevious;
-        private System.Windows.Forms.ToolStripComboBox lblCurrentPage;
-        private System.Windows.Forms.ToolStripLabel toolStripButton2;
-        private System.Windows.Forms.ToolStripLabel lblPageCount;
-        private System.Windows.Forms.ToolStripButton btnNext;
-        private System.Windows.Forms.ToolStripButton btnLast;
-        private System.Windows.Forms.ToolStripLabel toolStripButton1;
-        private System.Windows.Forms.ToolStripTextBox lblSpeedPages;
-        private System.Windows.Forms.ToolStripLabel toolStripButton3;
-        private System.Windows.Forms.ToolStrip toolStripTools;
-        private System.Windows.Forms.ToolStripLabel toolStripButton6;
-        private System.Windows.Forms.ToolStripTextBox textBuscar;
-        private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.ToolStrip toolStripCrud;
-        private System.Windows.Forms.ToolStripButton btnNuevo;
-        private System.Windows.Forms.ToolStripButton btnModificar;
-        private System.Windows.Forms.ToolStripButton btnAnular;
-        private System.Windows.Forms.ToolStripButton btnActualizar;
-        private System.Windows.Forms.ToolStripComboBox cbxPersonales;
-        private System.Windows.Forms.ToolStripComboBox cbxEstados;
-        private System.Windows.Forms.ToolStripButton btnConsultar;
-        private System.Windows.Forms.Panel panelHeaderItem1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textDescripcion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAceptar;
+        private Bunifu.Framework.UI.BunifuDatepicker dtpFechaInicio;
+        private Bunifu.Framework.UI.BunifuDatepicker dtpFechaIngreso;
+        private System.Windows.Forms.Label lblCajaEstado;
+        private System.Windows.Forms.Panel panel1;
     }
 }
