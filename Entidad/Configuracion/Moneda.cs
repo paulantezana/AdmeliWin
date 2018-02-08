@@ -21,12 +21,12 @@ namespace Entidad.Configuracion
         public string apellidos { get; set; }
         public string tieneRegistros { get; set; }
 
-        public DateTime fechaPago { get; set; }
+        public string fechaPago { get; set; }
         public int idCaja { get; set; }
         public int idCajaSesion { get; set; }
         public int idMedioPago { get; set; }
         public string medioPago { get; set; }
-        public int monto { get; set; }
+        public long monto { get; set; }
         public string motivo { get; set; }
         public string numeroOperacion { get; set; }
         public string observacion { get; set; }

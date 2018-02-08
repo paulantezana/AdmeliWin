@@ -29,7 +29,8 @@ namespace Admeli.CajaBox
 
         private List<Moneda> monedas { get; set; }
         private MedioPago medioPago { get; set; }
-        private CajaSesion cajaSesion { get; set; }
+        private CajaSesion currentCajaSesion { get; set; }
+        private ObjectSaveCajaSesion saveCajaSesion { get; set; }
 
         #region =========================== Constructor ===========================
         public UCIniciarCaja()
@@ -65,7 +66,7 @@ namespace Admeli.CajaBox
         internal void reLoad()
         {
             // verificaciones
-            verificarEstadoCaja();
+           verificarEstadoCaja();
 
             // loads
             cargarCajaSesion();
@@ -75,17 +76,30 @@ namespace Admeli.CajaBox
         }
         #endregion
 
+        #region ============================= Estados =============================
+        private void loadState(bool state)
+        {
+            formPrincipal.appLoadState(state);
+        } 
+        #endregion
+
         #region =============================== Loads ===============================
         private async void cargarCajaSesion()
         {
             try
             {
-                List<CajaSesion> list = await cajaModel.cajaSesion(ConfigModel.cajaSesion.idCajaSesion);
-                cajaSesion = list[0];
+                loadState(true);
+                List<CajaSesion> list = await cajaModel.cajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+                if (list.Count == 0) return;
+                currentCajaSesion = list[0];
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
             }
         }
 
@@ -93,6 +107,7 @@ namespace Admeli.CajaBox
         {
             try
             {
+                loadState(true);
                 List<MedioPago> list = await medioPagoModel.medioPagos();
                 medioPago = list[0];
 
@@ -104,12 +119,17 @@ namespace Admeli.CajaBox
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally
+            {
+                loadState(false);
+            }
         }
 
         private async void cargarFecha()
         {
             try
             {
+                loadState(true);
                 dynamic currentFecha = await fechaModel.fechaSistema();
                 dtpFechaInicio.Value = currentFecha.fecha;
                 dtpFechaIngreso.Value = currentFecha.fecha;
@@ -118,23 +138,32 @@ namespace Admeli.CajaBox
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally
+            {
+                loadState(false);
+            }
         }
 
         private async void cargarMonedas()
         {
             try
             {
+                loadState(true);
                 monedas = await monedaModel.monedas();
                 int y = 255;
                 foreach (Moneda money in monedas)
                 {
                     crearElementosMoneda(money.moneda, money.idMoneda, y);
-                    y += 40;
+                    y += 60;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
             }
 
         }
@@ -171,32 +200,33 @@ namespace Admeli.CajaBox
             {
                 // creando un nuevo label
                 AutoSize = true,
-                BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250))))),
+                BackColor = System.Drawing.Color.White,
                 Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76))))),
+                ForeColor = System.Drawing.Color.DodgerBlue,
                 Margin = new System.Windows.Forms.Padding(2, 0, 2, 0),
                 Size = new System.Drawing.Size(52, 14),
 
                 // Modificar al gusto del cliente
                 Name = "lbl" + idMoneda,
-                Text = String.Format("{0}  | ", content.ToUpper()),
-                Location = new System.Drawing.Point(25, (y + 9)),
+                Text = String.Format("{0}", content.ToUpper()),
+                Location = new System.Drawing.Point(25, (y + 8)),
                 TabIndex = 93,
             };
             BunifuMetroTextbox textMoneda1 = new BunifuMetroTextbox()
             {
-                BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250))))),
+                BackColor = System.Drawing.Color.White,
                 BorderColorFocused = System.Drawing.Color.DodgerBlue,
-                BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216))))),
-                BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219))))),
+                BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157))))),
+                BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157))))),
+                
                 BorderThickness = 1,
                 Cursor = System.Windows.Forms.Cursors.IBeam,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64))))),
                 isPassword = false,
                 Margin = new System.Windows.Forms.Padding(4),
-                Padding = new System.Windows.Forms.Padding(100, 0, 6, 0),
-                Size = new System.Drawing.Size(300, 30),
+                Padding = new System.Windows.Forms.Padding(5, 18, 5, 0),
+                Size = new System.Drawing.Size(389, 50),
                 TextAlign = System.Windows.Forms.HorizontalAlignment.Left,
 
                 // al gusto del cliente
@@ -206,6 +236,7 @@ namespace Admeli.CajaBox
                 //OnValueChanged += new System.EventHandler(this.bunifuMetroTextbox1_OnValueChanged);
             };
             textMoneda1.OnValueChanged += new EventHandler(this.textMoneda1_OnValueChanged);
+            textMoneda1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMoneda1_KeyPress);
 
 
             // Agreganto los dos elementos
@@ -213,22 +244,41 @@ namespace Admeli.CajaBox
             this.panelContainer.Controls.Add(textMoneda1);
 
         }
+
+
         #endregion
 
         #region ================================ Validaciones Tiempo Real ================================
         private void textMoneda1_OnValueChanged(object sender, EventArgs e)
         {
-            string currentIDMoneda = ((BunifuMetroTextbox)sender).Name;
-            if (currentIDMoneda != "")
+            try
             {
-                for (int i = 0; i < monedas.Count; i++)
+                string currentIDMoneda = ((BunifuMetroTextbox)sender).Name;
+                if (currentIDMoneda != "")
                 {
-                    if (monedas[i].idMoneda == Convert.ToInt32(currentIDMoneda))
+                    for (int i = 0; i < monedas.Count; i++)
                     {
-                        monedas[i].monto = Convert.ToInt32(((BunifuMetroTextbox)sender).Text);
+                        if (monedas[i].idMoneda == Convert.ToInt32(currentIDMoneda))
+                        {
+                            string contentText = ((BunifuMetroTextbox)sender).Text;
+                            monedas[i].monto = (contentText == "") ? 0 : Convert.ToInt64(contentText);
+                            monedas[i].estado = 2; // este parametro esta enduda
+                            monedas[i].fechaPago = dtpFechaIngreso.Value.ToString("yyyy-MM-dd HH':'mm':'ss");
+                            monedas[i].motivo = "INCIO CAJA";
+                            monedas[i].observacion = textObservacion.Text;
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textMoneda1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
         }
         #endregion
 
@@ -240,9 +290,13 @@ namespace Admeli.CajaBox
 
         private async void executeGuardar()
         {
-
             try
             {
+                // Guardar la caja sesion
+                crearObjetoCajaSesion();
+                Response responseCaja = await cajaModel.guardar(saveCajaSesion);
+
+
                 foreach (Moneda money in monedas)
                 {
                     Response response = await ingresoModel.guardarEnUno(money);
@@ -254,6 +308,18 @@ namespace Admeli.CajaBox
             }
         }
 
+        private void crearObjetoCajaSesion()
+        {
+            saveCajaSesion = new ObjectSaveCajaSesion();
+            saveCajaSesion.idAsignarCaja = ConfigModel.asignacionPersonal.idAsignarCaja;
+            saveCajaSesion.estado = 0;
+        }
+
         #endregion
+    }
+    public class ObjectSaveCajaSesion
+    {
+        public int estado { get; set; }
+        public int idAsignarCaja { get; set; }
     }
 }

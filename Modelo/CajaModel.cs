@@ -13,7 +13,7 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public async Task<Response> guardar(CajaSesion param)
+        public async Task<Response> guardar<T>(T param)
         {
             try
             {

@@ -33,8 +33,6 @@ namespace Admeli.CajaBox
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCEgresos(FormPrincipal formPrincipal)
@@ -44,38 +42,50 @@ namespace Admeli.CajaBox
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
+        #region ============================ Verificar Caja ============================
         private void verificarCaja()
         {
             if (ConfigModel.cajaIniciada)
             {
-                btnNuevo.Enabled = false;
-                btnAnular.Enabled = false;
+                btnNuevo.Enabled = true;
+                btnAnular.Enabled = true;
                 lblCajaEstado.Visible = false;
             }
             else
             {
                 btnNuevo.Enabled = false;
                 btnAnular.Enabled = false;
-                Validator.labelAlert(lblCajaEstado, 0, "No se inició la caja");
                 lblCajaEstado.Visible = true;
+                Validator.labelAlert(lblCajaEstado, 0, "No se inició la caja");
             }
         }
+
+        #endregion
 
         #region ============================== Root Load ==============================
         private void UCEgresos_Load(object sender, EventArgs e)
         {
             this.reLoad();
+
+            // Escuchando los eventos del formulario padre
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         internal void reLoad()
         {
+            // load componentes
             cargarComponentes();
             cargarComponentesSecond();
             cargarRegistros();
+
+            // Active lisener key events
+            lisenerKeyEvents = true; 
 
             // Verificando la caja
             verificarCaja();
@@ -105,7 +115,38 @@ namespace Admeli.CajaBox
                     row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
                 }
             }
-        } 
+        }
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    if (!ConfigModel.cajaIniciada) break;
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    //if (!ConfigModel.cajaIniciada) break;
+                    //executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F6:
+                    //if (!ConfigModel.cajaIniciada) break;
+                    //executeEliminar();
+                    break;
+                case Keys.F7:
+                    if (!ConfigModel.cajaIniciada) break;
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
 
         #region ======================= Loads =======================
@@ -202,7 +243,6 @@ namespace Admeli.CajaBox
             formPrincipal.appLoadState(state);
             toolStripNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

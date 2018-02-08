@@ -114,6 +114,12 @@
     <Compile Include="AlmacenBox\UCNotaSalida.Designer.cs">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
     </Compile>
+    <Compile Include="CajaBox\Nuevo\FormArquearCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CajaBox\Nuevo\FormArquearCaja.Designer.cs">
+      <DependentUpon>FormArquearCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="CajaBox\Nuevo\FormEgresoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -693,6 +699,9 @@
     <EmbeddedResource Include="AlmacenBox\UCNotaSalida.resx">
       <DependentUpon>UCNotaSalida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CajaBox\Nuevo\FormArquearCaja.resx">
+      <DependentUpon>FormArquearCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CajaBox\Nuevo\FormEgresoNuevo.resx">
       <DependentUpon>FormEgresoNuevo.cs</DependentUpon>
     </EmbeddedResource>
@@ -989,6 +998,7 @@
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
     <None Include="Properties\DataSources\Entidad.Alternativa.datasource" />
     <None Include="Properties\DataSources\Entidad.Categoria.datasource" />
+    <None Include="Properties\DataSources\Entidad.CierreCaja.datasource" />
     <None Include="Properties\DataSources\Entidad.Cliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Cobro.datasource" />
     <None Include="Properties\DataSources\Entidad.Comentario.datasource" />

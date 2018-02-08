@@ -47,6 +47,7 @@
     <Compile Include="AlternativaModel.cs" />
     <Compile Include="CajaModel.cs" />
     <Compile Include="CategoriaModel.cs" />
+    <Compile Include="CierreCajaModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="CobroModel.cs" />
     <Compile Include="ComentarioModel.cs" />

@@ -55,6 +55,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblNombrePersonal2 = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             this.panelMainHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -441,6 +443,7 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.panel3.Controls.Add(this.btnCerrarSesion);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.lblNombrePersonal2);
             this.transition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
@@ -449,31 +452,48 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(139, 32);
             this.panel3.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.panel3, "Usuario logeado");
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transition1.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.Location = new System.Drawing.Point(4, 2);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(27, 28);
+            this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnCerrarSesion.TabIndex = 9;
+            this.btnCerrarSesion.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnCerrarSesion, "Cerrar sesión");
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.transition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 10);
+            this.pictureBox2.Location = new System.Drawing.Point(33, 2);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(13, 14);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.Size = new System.Drawing.Size(26, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Foto Usuario");
             // 
             // lblNombrePersonal2
             // 
             this.lblNombrePersonal2.AutoSize = true;
             this.transition1.SetDecoration(this.lblNombrePersonal2, BunifuAnimatorNS.DecorationType.None);
             this.lblNombrePersonal2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
-            this.lblNombrePersonal2.Location = new System.Drawing.Point(32, 10);
+            this.lblNombrePersonal2.Location = new System.Drawing.Point(62, 9);
             this.lblNombrePersonal2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombrePersonal2.Name = "lblNombrePersonal2";
             this.lblNombrePersonal2.Size = new System.Drawing.Size(35, 13);
             this.lblNombrePersonal2.TabIndex = 0;
             this.lblNombrePersonal2.Text = "label9";
+            this.toolTip1.SetToolTip(this.lblNombrePersonal2, "Nombre usuario");
             // 
             // lblSucursal
             // 
@@ -629,7 +649,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormPrincipal_KeyUp);
             this.panelAside.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
@@ -642,6 +661,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -682,5 +702,6 @@
         private BunifuAnimatorNS.BunifuTransition transition1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.PictureBox btnCerrarSesion;
     }
 }

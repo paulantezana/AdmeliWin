@@ -300,8 +300,6 @@
         private System.Windows.Forms.Panel panelHeader;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textUsuario;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textPassword;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton btnCLose;
@@ -313,5 +311,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        public Bunifu.Framework.UI.BunifuMetroTextbox textUsuario;
+        public Bunifu.Framework.UI.BunifuMetroTextbox textPassword;
     }
 }

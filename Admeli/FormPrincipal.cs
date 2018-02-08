@@ -37,22 +37,30 @@ namespace Admeli
 
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
+        private FormLogin formLogin;
 
         private int widthPanelAside { get; set; }
+        private bool notCloseApp { get; set; }
 
+        #region ========================= Constructors =========================
         public FormPrincipal()
         {
             InitializeComponent();
         }
 
+        public FormPrincipal(FormLogin formLogin)
+        {
+            InitializeComponent();
+            this.formLogin = formLogin;
+        } 
+        #endregion
+
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void btnToogleAside_Click(object sender, EventArgs e)
-        {
-           
+            if (!notCloseApp)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnCompras_Click(object sender, EventArgs e)
@@ -417,6 +425,11 @@ namespace Admeli
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            this.reLoad();
+        }
+
+        internal void reLoad()
+        {
             // Cargando los componentes necesarios para el funcionamiento de todo el sistema
             cargarComponente();
         }
@@ -509,9 +522,19 @@ namespace Admeli
             }
         }
 
-        private void FormPrincipal_KeyUp(object sender, KeyEventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-           
+            // mostrar nuevamente el login del usuario
+            this.formLogin.Show();
+
+            // limpiar loas campos de login usuario
+            this.formLogin.textUsuario.Text = "";
+            this.formLogin.textPassword.Text = "";
+            this.formLogin.textUsuario.Focus();
+
+            // Cerrando el formulario actual
+            this.notCloseApp = true;
+            this.Close();
         }
     }
 }

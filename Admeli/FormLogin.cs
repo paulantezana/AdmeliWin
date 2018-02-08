@@ -14,6 +14,7 @@ namespace Admeli
     public partial class FormLogin : Form
     {
         private PersonalModel personalModel = new PersonalModel();
+        private FormPrincipal formPrincipal { get; set; }
 
         public FormLogin()
         {
@@ -28,7 +29,7 @@ namespace Admeli
                 if (validarCampos())
                 {
                     await personalModel.loginPersonal(textUsuario.Text, textPassword.Text);
-                    FormPrincipal formPrincipal = new FormPrincipal();
+                    formPrincipal = new FormPrincipal(this);
                     formPrincipal.Show();
                     this.Hide();
                 }

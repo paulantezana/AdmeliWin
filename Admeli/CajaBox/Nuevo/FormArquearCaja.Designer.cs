@@ -1,6 +1,6 @@
-﻿namespace Admeli
+﻿namespace Admeli.CajaBox.Nuevo
 {
-    partial class Form1
+    partial class FormArquearCaja
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // FormArquearCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 407);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(652, 296);
+            this.Name = "FormArquearCaja";
+            this.Text = "FormArquearCaja";
             this.ResumeLayout(false);
 
         }

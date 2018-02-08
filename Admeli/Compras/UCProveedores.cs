@@ -38,8 +38,6 @@ namespace Admeli.Compras
             InitializeComponent();
             this.formPrincipal = formPrincipal;
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 
@@ -73,6 +71,7 @@ namespace Admeli.Compras
         {
             cargarComponentes();
             cargarRegistros();
+
             // Escuchando los eventos del formulario padre
             if (TopLevelControl is Form)
             {
