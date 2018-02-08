@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Admeli.Componentes;
+using Entidad;
 using Entidad.Util;
 using Modelo;
 using System;
@@ -17,11 +18,13 @@ namespace Admeli.CajaBox.Nuevo
     {
         private MonedaModel monedaModel = new MonedaModel();
         private EgresoModel egresoModel = new EgresoModel();
+        private MedioPagoModel medioPagoModel = new MedioPagoModel();
         private CajaModel cajaModel = new CajaModel();
 
         private int currentIDEgreso { get; set; }
         private bool nuevo { get; set; }
         private Egreso currentEgreso { get; set; }
+        private List<MedioPago> mediosDePagos { get; set; }
 
 
         public FormEgresoNuevo()
@@ -37,6 +40,7 @@ namespace Admeli.CajaBox.Nuevo
             this.nuevo = false;
         }
 
+        #region ========================= Root Load =========================
         private void FormEgresoNuevo_Load(object sender, EventArgs e)
         {
             this.reLoad();
@@ -45,19 +49,68 @@ namespace Admeli.CajaBox.Nuevo
         private void reLoad()
         {
             this.cargarMonedas();
+            this.cargarMediosPago();
             this.cargarCorrelativo();
-        }
 
+            // Verificacion del estado de caja
+            this.verificarCaja();
+        } 
+        #endregion
+
+        #region ========================= Loads =========================
         private async void cargarMonedas()
         {
-            monedaBindingSource.DataSource = await monedaModel.monedas();
+            try
+            {
+                monedaBindingSource.DataSource = await monedaModel.monedas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarMediosPago()
+        {
+            try
+            {
+                mediosDePagos = await medioPagoModel.medioPagos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void cargarCorrelativo()
         {
-            dynamic response = await cajaModel.correlativoSerie(1, 0);
-            textNOperacion.Text = Convert.ToString(response.correlativoActual);
+            try
+            {
+                dynamic response = await cajaModel.correlativoSerie(ConfigModel.asignacionPersonal.idCaja, 0);
+                textNOperacion.Text = String.Format("{0} - {1}", response.serie, response.correlativoActual);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+        #endregion
+
+        #region ================================= Validator ====================================
+        private void verificarCaja()
+        {
+            if (ConfigModel.cajaIniciada)
+            {
+                lblCajaEstado.Visible = false;
+            }
+            else
+            {
+                Validator.labelAlert(lblCajaEstado, 0, "No se inició la caja");
+                lblCajaEstado.Visible = true;
+                btnAceptar.Enabled = false;
+            }
+        }
+        #endregion
 
         #region ========================== SAVE AND UPDATE ===========================
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -118,13 +171,27 @@ namespace Admeli.CajaBox.Nuevo
             }
             errorProvider1.Clear();
 
-            if (textMonto.Text == "")
+            // validacion monto
+            if (textMonto.Text.Trim() == "")
             {
-                errorProvider1.SetError(textMonto, "Este campo esta bacía");
-                textMonto.Focus();
+                errorProvider1.SetError(textMonto, "Campo obligatorio");
+                Validator.textboxValidateColor(textMonto, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textMonto, true);
+
+            // validacion motivo
+            if (textMotivo.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textMotivo, "Campo obligatorio");
+                Validator.textboxValidateColor(textMotivo, false);
+                return false;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textMotivo, true);
+
+            // Toda las validaciones correctas
             return true;
         }
 
@@ -134,5 +201,47 @@ namespace Admeli.CajaBox.Nuevo
         }
         #endregion
 
+        #region ========================= Decoration and value defaults =========================
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panel2, 157, 157, 157);
+        }
+        #endregion
+
+        #region ============================ Validacion timpo real ============================
+        private void textMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+        private void textMonto_Validated(object sender, EventArgs e)
+        {
+            if (textMonto.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textMonto, "Campo obligatorio");
+                Validator.textboxValidateColor(textMonto, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textMonto, true);
+        }
+
+        private void textMotivo_Validated(object sender, EventArgs e)
+        {
+            if (textMotivo.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textMotivo, "Campo obligatorio");
+                Validator.textboxValidateColor(textMotivo, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textMotivo, true);
+        }
+        #endregion
+
+        private void FormEgresoNuevo_Shown(object sender, EventArgs e)
+        {
+            textMonto.Focus();
+        }
     }
 }

@@ -42,6 +42,7 @@ namespace Modelo
          * */
         public static int currentIdAlmacen { get; set; }
         public static int currentPuntoVenta { get; set; }
+        public static bool cajaIniciada { get; set; }
         public static Dictionary<string, int> currentProductoCategory = new Dictionary<string, int>();
 
         public async Task<Response> guardarDatosGenerales(UbicacionGeografica ubicacionGeografica, DatosGenerales datosGenerales)
@@ -256,6 +257,7 @@ namespace Modelo
                 // www.lineatienda.com/services.php/cajasesion/idasignarcaja/3
                 List<CajaSesion> list = await webService.GETLis<CajaSesion>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
                 cajaSesion = list[0];
+                ConfigModel.cajaIniciada = true;
             }
             catch (Exception ex)
             {

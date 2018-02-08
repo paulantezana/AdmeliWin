@@ -48,24 +48,64 @@ namespace Admeli.CajaBox
             lisenerKeyEvents = true; // Active lisener key events
         }
 
+        private void verificarCaja()
+        {
+            if (ConfigModel.cajaIniciada)
+            {
+                btnNuevo.Enabled = false;
+                btnAnular.Enabled = false;
+                lblCajaEstado.Visible = false;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+                btnAnular.Enabled = false;
+                Validator.labelAlert(lblCajaEstado, 0, "No se inició la caja");
+                lblCajaEstado.Visible = true;
+            }
+        }
+
+        #region ============================== Root Load ==============================
         private void UCEgresos_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
+        internal void reLoad()
         {
             cargarComponentes();
             cargarComponentesSecond();
             cargarRegistros();
-        }
 
+            // Verificando la caja
+            verificarCaja();
+        }
+        #endregion
 
         #region =========================== Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
-        }
+                int idEgreso = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentEgreso = egresos.Find(x => x.idEgreso == idEgreso); // Buscando la categoria en las lista de categorias
+                if (currentEgreso.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        } 
         #endregion
 
         #region ======================= Loads =======================
@@ -99,11 +139,6 @@ namespace Admeli.CajaBox
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        internal void reLoad()
-        {
-            // throw new NotImplementedException();
         }
 
         private async void cargarComponentesSecond()
@@ -146,6 +181,9 @@ namespace Admeli.CajaBox
 
                 // Mostrando la paginacion del datagridview
                 mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -374,5 +412,6 @@ namespace Admeli.CajaBox
             }
         }
         #endregion
+
     }
 }

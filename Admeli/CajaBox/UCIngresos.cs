@@ -48,12 +48,42 @@ namespace Admeli.CajaBox
             lisenerKeyEvents = true; // Active lisener key events
         }
 
+        #region ============================ Root load ============================
         private void UCIngresos_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
+        internal void reLoad()
         {
             cargarComponentes();
             cargarComponentesSecond();
             cargarRegistros();
-        }
+            lisenerKeyEvents = true; // Active lisener key events
+
+            // Verificacion de la caja
+            verificarCaja();
+        } 
+        #endregion
+
+        #region ============================== Verificar caja ==============================
+        private void verificarCaja()
+        {
+            if (ConfigModel.cajaIniciada)
+            {
+                btnNuevo.Enabled = false;
+                btnAnular.Enabled = false;
+                lblCajaEstado.Visible = false;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+                btnAnular.Enabled = false;
+                Validator.labelAlert(lblCajaEstado, 0, "No se inició la caja");
+                lblCajaEstado.Visible = true;
+            }
+        } 
+        #endregion
 
         #region =========================== Decoration ===========================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -131,14 +161,6 @@ namespace Admeli.CajaBox
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        internal void reLoad()
-        {
-            cargarComponentes();
-            cargarComponentesSecond();
-            cargarRegistros();
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private async void cargarRegistros()

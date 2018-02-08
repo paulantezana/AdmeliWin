@@ -46,7 +46,7 @@ namespace Admeli.CajaBox.Nuevo
             this.cargarMediosPago();
 
             // Verificacion del estado de caja
-            this.verificarEstadoCaja();
+            this.verificarCaja();
         }
 
         #region =========================== Loads ===========================
@@ -81,32 +81,21 @@ namespace Admeli.CajaBox.Nuevo
         }
         #endregion
 
-
         #region ================================= Validator ====================================
-        private void verificarEstadoCaja()
+        private void verificarCaja()
         {
-            if (ConfigModel.cajaSesion != null)
+            if (ConfigModel.cajaIniciada)
             {
-                if (ConfigModel.cajaSesion.idCajaSesion > 0)
-                {
-                    lblCajaEstado.Visible = false;
-                }
-                else
-                {
-                    Validator.labelAlert(lblCajaEstado, 0, "No se inicio la caja");
-                    lblCajaEstado.Visible = true;
-                    btnAceptar.Enabled = false;
-                }
+                lblCajaEstado.Visible = false;
             }
             else
             {
-                Validator.labelAlert(lblCajaEstado, 0, "No se inicio la caja");
+                Validator.labelAlert(lblCajaEstado, 0, "No se inició la caja");
                 lblCajaEstado.Visible = true;
                 btnAceptar.Enabled = false;
             }
         }
         #endregion
-
 
         #region ========================== SAVE AND UPDATE ===========================
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -192,18 +181,19 @@ namespace Admeli.CajaBox.Nuevo
         }
         #endregion
 
+        #region ========================= Decoration and value defaults =========================
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panel2, 157, 157, 157);
+        }
+        #endregion
+
+        #region ============================ Validacion timpo real ============================
         private void textMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validator.isNumber(e);
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panel2);
-        }
-
-        #region ============================ Validacion timpo real ============================
         private void textMonto_Validated(object sender, EventArgs e)
         {
             if (textMonto.Text.Trim() == "")
@@ -226,8 +216,13 @@ namespace Admeli.CajaBox.Nuevo
             }
             errorProvider1.Clear();
             Validator.textboxValidateColor(textMotivo, true);
-        } 
+        }
         #endregion
+
+        private void FormIngresoNuevo_Shown(object sender, EventArgs e)
+        {
+            textMonto.Focus();
+        }
     }
     class SaveObject
     {

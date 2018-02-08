@@ -35,6 +35,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label4 = new System.Windows.Forms.Label();
             this.textObcervacion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -131,6 +131,19 @@
             this.panelHeader.Size = new System.Drawing.Size(430, 49);
             this.panelHeader.TabIndex = 1;
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 37);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(430, 12);
+            this.bunifuSeparator1.TabIndex = 1;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -139,14 +152,15 @@
             this.label4.Location = new System.Drawing.Point(19, 13);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 16);
+            this.label4.Size = new System.Drawing.Size(76, 16);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Mantenimiento Almacén";
+            this.label4.Text = "INGRESOS";
             // 
             // textObcervacion
             // 
             this.textObcervacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textObcervacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorProvider1.SetIconPadding(this.textObcervacion, -30);
             this.textObcervacion.Location = new System.Drawing.Point(19, 366);
             this.textObcervacion.Margin = new System.Windows.Forms.Padding(2);
             this.textObcervacion.Multiline = true;
@@ -171,14 +185,15 @@
             // textMotivo
             // 
             this.textMotivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textMotivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textMotivo.BackColor = System.Drawing.Color.White;
             this.textMotivo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textMotivo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textMotivo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textMotivo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textMotivo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.textMotivo.BorderThickness = 1;
             this.textMotivo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMotivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.errorProvider1.SetIconPadding(this.textMotivo, -30);
             this.textMotivo.isPassword = false;
             this.textMotivo.Location = new System.Drawing.Point(19, 281);
             this.textMotivo.Margin = new System.Windows.Forms.Padding(4);
@@ -193,7 +208,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label2.Location = new System.Drawing.Point(24, 287);
@@ -206,14 +221,15 @@
             // textMonto
             // 
             this.textMonto.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textMonto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textMonto.BackColor = System.Drawing.Color.White;
             this.textMonto.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textMonto.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textMonto.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textMonto.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textMonto.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.textMonto.BorderThickness = 1;
             this.textMonto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.errorProvider1.SetIconPadding(this.textMonto, -30);
             this.textMonto.isPassword = false;
             this.textMonto.Location = new System.Drawing.Point(18, 149);
             this.textMonto.Margin = new System.Windows.Forms.Padding(4);
@@ -229,7 +245,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(22, 155);
@@ -242,7 +258,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label6.Location = new System.Drawing.Point(4, 5);
@@ -255,15 +271,16 @@
             // textNOperacion
             // 
             this.textNOperacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textNOperacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.textNOperacion.BackColor = System.Drawing.Color.White;
             this.textNOperacion.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textNOperacion.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textNOperacion.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.textNOperacion.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textNOperacion.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.textNOperacion.BorderThickness = 1;
             this.textNOperacion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textNOperacion.Enabled = false;
             this.textNOperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNOperacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.errorProvider1.SetIconPadding(this.textNOperacion, -30);
             this.textNOperacion.isPassword = false;
             this.textNOperacion.Location = new System.Drawing.Point(18, 82);
             this.textNOperacion.Margin = new System.Windows.Forms.Padding(4);
@@ -277,7 +294,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -295,11 +312,12 @@
             // dtpFechaPago
             // 
             this.dtpFechaPago.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpFechaPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.dtpFechaPago.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dtpFechaPago.BorderRadius = 0;
             this.dtpFechaPago.ForeColor = System.Drawing.Color.DodgerBlue;
             this.dtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaPago.FormatCustom = null;
+            this.errorProvider1.SetIconPadding(this.dtpFechaPago, -30);
             this.dtpFechaPago.Location = new System.Drawing.Point(19, 21);
             this.dtpFechaPago.Name = "dtpFechaPago";
             this.dtpFechaPago.Padding = new System.Windows.Forms.Padding(0, 18, 0, 0);
@@ -326,13 +344,14 @@
             // 
             this.cbxMoneda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxMoneda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.cbxMoneda.BackColor = System.Drawing.Color.White;
             this.cbxMoneda.DataSource = this.monedaBindingSource;
             this.cbxMoneda.DisplayMember = "moneda";
             this.cbxMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMoneda.FormattingEnabled = true;
+            this.errorProvider1.SetIconPadding(this.cbxMoneda, -30);
             this.cbxMoneda.Location = new System.Drawing.Point(9, 20);
             this.cbxMoneda.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMoneda.Name = "cbxMoneda";
@@ -343,7 +362,7 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.cbxMoneda);
             this.panel2.Location = new System.Drawing.Point(18, 215);
@@ -357,7 +376,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -387,19 +406,6 @@
             this.panel3.Size = new System.Drawing.Size(430, 460);
             this.panel3.TabIndex = 2;
             // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.LightGray;
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 37);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(430, 12);
-            this.bunifuSeparator1.TabIndex = 1;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -419,6 +425,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormIngresoNuevo";
             this.Load += new System.EventHandler(this.FormIngresoNuevo_Load);
+            this.Shown += new System.EventHandler(this.FormIngresoNuevo_Shown);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
