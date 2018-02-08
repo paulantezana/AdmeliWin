@@ -56,14 +56,28 @@ namespace Admeli.CajaBox
         }
 
         #region =========================== Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idIngreso = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentIngreso = ingresos.Find(x => x.idIngreso == idIngreso); // Buscando la categoria en las lista de categorias
+                if (currentIngreso.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
         }
         #endregion
 
@@ -137,16 +151,20 @@ namespace Admeli.CajaBox
                 string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
                 int idCajaSesion = 0;// ConfigModel.cajaSesion.idCajaSesion;
 
-                RootObject<Ingreso> ingresos = await ingresoModel.ingresos(sucursalId,personalId,idCajaSesion,estado, paginacion.currentPage, paginacion.speed);
+                RootObject<Ingreso> ingresoRoot = await ingresoModel.ingresos(sucursalId,personalId,idCajaSesion,estado, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ingresos.nro_registros;
+                paginacion.itemsCount = ingresoRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                ingresoBindingSource.DataSource = ingresos.datos;
+                ingresos = ingresoRoot.datos;
+                ingresoBindingSource.DataSource = ingresos;
                 dataGridView.Refresh();
                 mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -375,5 +393,6 @@ namespace Admeli.CajaBox
             }
         }
         #endregion
+
     }
 }

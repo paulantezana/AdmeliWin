@@ -145,24 +145,18 @@ namespace Admeli.CajaBox
             {
                 if (ConfigModel.cajaSesion.idCajaSesion > 0)
                 {
-                    lblCajaEstado.Text = "Usted ya inicio caja.";
-                    lblCajaEstado.ForeColor = Color.FromArgb(76, 175, 80);
-                    lblCajaEstado.BackColor = Color.FromArgb(232, 250, 239);
+                    Validator.labelAlert(lblCajaEstado, 1, "Usted ya inicio caja.");
                     btnAceptar.Enabled = false;
                 }
                 else
                 {
-                    lblCajaEstado.Text = "No se inicio la caja";
-                    lblCajaEstado.ForeColor = Color.FromArgb(250, 5, 73);
-                    lblCajaEstado.BackColor = Color.FromArgb(255, 224, 224);
+                    Validator.labelAlert(lblCajaEstado, 0, "No se inicio la caja");
                     btnAceptar.Enabled = true;
                 }
             }
             else
             {
-                lblCajaEstado.Text = "No se inicio la caja";
-                lblCajaEstado.ForeColor = Color.FromArgb(250, 5, 73);
-                lblCajaEstado.BackColor = Color.FromArgb(255, 224, 224);
+                Validator.labelAlert(lblCajaEstado, 0, "No se inicio la caja");
                 btnAceptar.Enabled = true;
             }
         }

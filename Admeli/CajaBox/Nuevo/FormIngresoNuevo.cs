@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Admeli.Componentes;
 using Entidad;
 using Modelo;
 
@@ -16,23 +17,21 @@ namespace Admeli.CajaBox.Nuevo
     {
         private IngresoModel ingresoModel = new IngresoModel();
         private MonedaModel monedaModel = new MonedaModel();
+        private MedioPagoModel medioPagoModel = new MedioPagoModel();
         private CajaModel cajaModel = new CajaModel();
 
-        private int currentIDIngreso { get; set; }
-        private bool nuevo { get; set; }
         private Ingreso currentIngreso { get; set; }
         private SaveObject currentSaveObject { get; set; }
+        private List<MedioPago> mediosDePagos { get; set; }
 
         public FormIngresoNuevo()
         {
             InitializeComponent();
-            this.nuevo = true;
         }
 
         public FormIngresoNuevo(Ingreso currentIngreso)
         {
             this.currentIngreso = currentIngreso;
-            this.nuevo = false;
         }
 
         private void FormIngresoNuevo_Load(object sender, EventArgs e)
@@ -44,18 +43,69 @@ namespace Admeli.CajaBox.Nuevo
         {
             this.cargarMonedas();
             this.cargarCorrelativo();
+            this.cargarMediosPago();
+
+            // Verificacion del estado de caja
+            this.verificarEstadoCaja();
         }
 
+        #region =========================== Loads ===========================
         private async void cargarMonedas()
         {
-            monedaBindingSource.DataSource = await monedaModel.monedas();
+            try
+            {
+                monedaBindingSource.DataSource = await monedaModel.monedas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarMediosPago()
+        {
+            try
+            {
+                mediosDePagos = await medioPagoModel.medioPagos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void cargarCorrelativo()
         {
-            dynamic response = await cajaModel.correlativoSerie(1, 0);
-            textNOperacion.Text = Convert.ToString(response.correlativoActual);
+            dynamic response = await cajaModel.correlativoSerie(ConfigModel.asignacionPersonal.idCaja, 1);
+            textNOperacion.Text = String.Format("{0} - {1}", response.serie, response.correlativoActual);
         }
+        #endregion
+
+
+        #region ================================= Validator ====================================
+        private void verificarEstadoCaja()
+        {
+            if (ConfigModel.cajaSesion != null)
+            {
+                if (ConfigModel.cajaSesion.idCajaSesion > 0)
+                {
+                    lblCajaEstado.Visible = false;
+                }
+                else
+                {
+                    Validator.labelAlert(lblCajaEstado, 0, "No se inicio la caja");
+                    lblCajaEstado.Visible = true;
+                    btnAceptar.Enabled = false;
+                }
+            }
+            else
+            {
+                Validator.labelAlert(lblCajaEstado, 0, "No se inicio la caja");
+                lblCajaEstado.Visible = true;
+                btnAceptar.Enabled = false;
+            }
+        }
+        #endregion
 
 
         #region ========================== SAVE AND UPDATE ===========================
@@ -70,16 +120,8 @@ namespace Admeli.CajaBox.Nuevo
             try
             {
                 crearObjetoSucursal();
-                if (nuevo)
-                {
-                    Response response = await ingresoModel.guardar(currentIngreso);
-                    MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    Response response = await ingresoModel.modificar(currentIngreso);
-                    MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                Response response = await ingresoModel.guardarEnUno(currentSaveObject);
+                MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
@@ -91,19 +133,22 @@ namespace Admeli.CajaBox.Nuevo
         private void crearObjetoSucursal()
         {
             currentSaveObject = new SaveObject();
-
-            if (!nuevo) currentSaveObject.idIngreso = currentIDIngreso; // Llenar el id categoria cuando este en esdo modificar
-
             currentSaveObject.estado = 1;
-            currentSaveObject.fechaPago = dtpFechaPago.Value.ToString();
-            currentSaveObject.idCaja = ConfigModel.cajaSesion.idCajaSesion;
-            // currentSaveObject
-            currentSaveObject.numeroOperacion = textNOperacion.Text;
-            currentSaveObject.monto = textMonto.Text;
-            currentSaveObject.moneda = cbxMoneda.Text;
+            currentSaveObject.fechaPago = dtpFechaPago.Value.ToString("yyyy-MM-dd HH':'mm':'ss");
+            currentSaveObject.idCaja = ConfigModel.asignacionPersonal.idCaja;
+            currentSaveObject.idCajaSesion = ConfigModel.cajaSesion.idCajaSesion;
+            currentSaveObject.idMedioPago = mediosDePagos[0].idMedioPago;
             currentSaveObject.idMoneda = Convert.ToInt32(cbxMoneda.SelectedValue);
+            currentSaveObject.medioPago = mediosDePagos[0].nombre;
+            currentSaveObject.moneda = cbxMoneda.Text;
+            currentSaveObject.monto = textMonto.Text;
             currentSaveObject.motivo = textMotivo.Text;
+            currentSaveObject.numeroOperacion = textNOperacion.Text;
             currentSaveObject.observacion = textObcervacion.Text;
+            currentSaveObject.personal = PersonalModel.personal.nombres;
+
+            // currentSaveObject
+            currentSaveObject.idMoneda = Convert.ToInt32(cbxMoneda.SelectedValue);
 
         }
 
@@ -117,13 +162,27 @@ namespace Admeli.CajaBox.Nuevo
             }
             errorProvider1.Clear();
 
-            if (textMonto.Text == "")
+            // validacion monto
+            if (textMonto.Text.Trim() == "")
             {
-                errorProvider1.SetError(textMonto, "Este campo esta bacía");
-                textMonto.Focus();
+                errorProvider1.SetError(textMonto, "Campo obligatorio");
+                Validator.textboxValidateColor(textMonto, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textMonto, true);
+
+            // validacion motivo
+            if (textMotivo.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textMotivo, "Campo obligatorio");
+                Validator.textboxValidateColor(textMotivo, false);
+                return false;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textMotivo, true);
+
+            // Toda las validaciones correctas
             return true;
         }
 
@@ -132,10 +191,47 @@ namespace Admeli.CajaBox.Nuevo
             this.Close();
         }
         #endregion
+
+        private void textMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panel2);
+        }
+
+        #region ============================ Validacion timpo real ============================
+        private void textMonto_Validated(object sender, EventArgs e)
+        {
+            if (textMonto.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textMonto, "Campo obligatorio");
+                Validator.textboxValidateColor(textMonto, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textMonto, true);
+        }
+
+        private void textMotivo_Validated(object sender, EventArgs e)
+        {
+            if (textMotivo.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textMotivo, "Campo obligatorio");
+                Validator.textboxValidateColor(textMotivo, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textMotivo, true);
+        } 
+        #endregion
     }
     class SaveObject
     {
-        public int idIngreso { get; set; }
+        // public int idIngreso { get; set; }
         public int estado { get; set; }
         public string fechaPago { get; set; }
         public int idCaja { get; set; }

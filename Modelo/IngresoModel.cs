@@ -13,7 +13,7 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public async Task<Response> guardar(Ingreso param)
+        public async Task<Response> guardar<T>(T param)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace Modelo
             }
         }
 
-        public async Task<Response> modificar(Ingreso param)
+        public async Task<Response> modificar<T>(T param)
         {
             try
             {
@@ -76,12 +76,12 @@ namespace Modelo
          * Guardar configuraciones al iniciar la caja
          * **/
 
-        public async Task<Response> guardarEnUno(Moneda moneda)
+        public async Task<Response> guardarEnUno<T>(T param)
         {
             try
             {
                 // localhost/admeli/xcore/services.php/ingreso/guardarenuno
-                Response response = await webService.POSTSend("ingreso", "guardarenuno");
+                Response response = await webService.POSTSend("ingreso", "guardarenuno", param);
                 return response;
             }
             catch (Exception ex)

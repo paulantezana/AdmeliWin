@@ -138,5 +138,45 @@ namespace Admeli.Componentes
                 textBox.BorderColorMouseHover = Color.FromArgb(248, 63, 81);
             }
         }
+
+        internal static void labelAlert(Label label, int alertType, string message = "")
+        {
+            /**
+             * 0 =====> error
+             * 1 =====> success
+             * 2 =====> warning
+             * 3 =====> info
+             * 4 =====> alternative
+             * */
+
+            switch (alertType)
+            {
+                case 0:
+                    label.ForeColor = Color.FromArgb(250, 5, 73);
+                    label.BackColor = Color.FromArgb(255, 224, 224);
+                    break;
+                case 1:
+                    label.ForeColor = Color.FromArgb(76, 175, 80);
+                    label.BackColor = Color.FromArgb(232, 250, 239);
+                    break;
+                case 2:
+                    label.ForeColor = Color.FromArgb(76, 175, 80);
+                    label.BackColor = Color.FromArgb(232, 250, 239);
+                    break;
+                case 3:
+                    label.ForeColor = Color.FromArgb(76, 175, 80);
+                    label.BackColor = Color.FromArgb(232, 250, 239);
+                    break;
+                case 4:
+                    label.ForeColor = Color.FromArgb(76, 175, 80);
+                    label.BackColor = Color.FromArgb(232, 250, 239);
+                    break;
+                default:
+                    break;
+            }
+
+            // Message label
+            label.Text = message;
+        }
     }
 }
