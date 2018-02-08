@@ -24,6 +24,7 @@ namespace Admeli.CajaBox
         private MonedaModel monedaModel = new MonedaModel();
         private MedioPagoModel medioPagoModel = new MedioPagoModel();
         private FechaModel fechaModel = new FechaModel();
+        private ConfigModel configModel = new ConfigModel();
 
         private IngresoModel ingresoModel = new IngresoModel();
 
@@ -261,11 +262,7 @@ namespace Admeli.CajaBox
                         if (monedas[i].idMoneda == Convert.ToInt32(currentIDMoneda))
                         {
                             string contentText = ((BunifuMetroTextbox)sender).Text;
-                            monedas[i].monto = (contentText == "") ? 0 : Convert.ToInt64(contentText);
-                            monedas[i].estado = 2; // este parametro esta enduda
-                            monedas[i].fechaPago = dtpFechaIngreso.Value.ToString("yyyy-MM-dd HH':'mm':'ss");
-                            monedas[i].motivo = "INCIO CAJA";
-                            monedas[i].observacion = textObservacion.Text;
+                            monedas[i].monto = (contentText == "") ? 0 : Convert.ToInt32(contentText);
                         }
                     }
                 }
@@ -292,19 +289,44 @@ namespace Admeli.CajaBox
         {
             try
             {
+                // Cambiando de estado
+                loadState(true);
+
                 // Guardar la caja sesion
                 crearObjetoCajaSesion();
                 Response responseCaja = await cajaModel.guardar(saveCajaSesion);
 
+                
 
+                // Guardando las monedas
                 foreach (Moneda money in monedas)
                 {
+                    if (money.monto == 0) continue;
+                    money.fechaPago = dtpFechaIngreso.Value.ToString("yyyy-MM-dd HH':'mm':'ss");
+                    money.observacion = textObservacion.Text;
+                    money.idCaja = ConfigModel.asignacionPersonal.idCaja;
+                    money.idCajaSesion = responseCaja.id;
+                    money.idMedioPago = medioPago.idMedioPago;
+                    money.medioPago = medioPago.nombre;
+                    money.motivo = "INCIO CAJA";
+                    money.numeroOperacion = "";
+
                     Response response = await ingresoModel.guardarEnUno(money);
                 }
+
+                // Mensaje de confirmacion
+                MessageBox.Show("Se inicio caja correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                // Recargar Datos despues de iniciar la caja
+                await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+                loadState(false);
+                this.reLoad();
             }
         }
 
