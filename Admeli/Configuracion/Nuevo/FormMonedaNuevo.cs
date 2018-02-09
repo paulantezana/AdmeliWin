@@ -56,6 +56,7 @@ namespace Admeli.Configuracion.Nuevo
         }
         #endregion
 
+        #region ================================ SAVE AND UPDATE ================================
         private bool validarCampos()
         {
             if (textNombreMoneda.Text == "")
@@ -122,6 +123,7 @@ namespace Admeli.Configuracion.Nuevo
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } 
+        #endregion
     }
 }

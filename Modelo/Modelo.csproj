@@ -55,6 +55,7 @@
     <Compile Include="ConfigModel.cs" />
     <Compile Include="ContactoModel.cs" />
     <Compile Include="CotizacionModel.cs" />
+    <Compile Include="DenominacionModel.cs" />
     <Compile Include="DepartamentoModel.cs" />
     <Compile Include="DescuentoModel.cs" />
     <Compile Include="DocCorrelativoModel.cs" />

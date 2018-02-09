@@ -63,6 +63,7 @@
     <Compile Include="Configuracion\TipoDocumento.cs" />
     <Compile Include="Contacto.cs" />
     <Compile Include="Cotizacion.cs" />
+    <Compile Include="Denominacion.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Descuento.cs" />
     <Compile Include="DetalleCompra.cs" />

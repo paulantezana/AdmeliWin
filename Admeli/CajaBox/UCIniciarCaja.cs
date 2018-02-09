@@ -193,7 +193,7 @@ namespace Admeli.CajaBox
 
         #endregion
 
-        #region ============================= Crear Elementos 
+        #region ============================= Crear Elementos =============================
         private void crearElementosMoneda(string content, int idMoneda,  int y)
         {
 

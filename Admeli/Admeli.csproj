@@ -250,6 +250,12 @@
     <Compile Include="Configuracion\Nuevo\FormAlmacenNuevo.Designer.cs">
       <DependentUpon>FormAlmacenNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Nuevo\FormDenominacionNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormDenominacionNuevo.Designer.cs">
+      <DependentUpon>FormDenominacionNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Nuevo\FormDocumentoIdetificaionNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -765,6 +771,9 @@
     <EmbeddedResource Include="Configuracion\Nuevo\FormAlmacenNuevo.resx">
       <DependentUpon>FormAlmacenNuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormDenominacionNuevo.resx">
+      <DependentUpon>FormDenominacionNuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Nuevo\FormDocumentoIdetificaionNuevo.resx">
       <DependentUpon>FormDocumentoIdetificaionNuevo.cs</DependentUpon>
     </EmbeddedResource>
@@ -1009,6 +1018,7 @@
     <None Include="Properties\DataSources\Entidad.Configuracion.TipoDocumento.datasource" />
     <None Include="Properties\DataSources\Entidad.Contacto.datasource" />
     <None Include="Properties\DataSources\Entidad.Cotizacion.datasource" />
+    <None Include="Properties\DataSources\Entidad.Denominacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Descuento.datasource" />
     <None Include="Properties\DataSources\Entidad.DetalleCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.DocCorrelativo.datasource" />
