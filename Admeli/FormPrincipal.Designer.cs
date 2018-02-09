@@ -107,7 +107,7 @@
             // 
             // panelAsideMain
             // 
-            this.panelAsideMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(248)))));
+            this.panelAsideMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.transition1.SetDecoration(this.panelAsideMain, BunifuAnimatorNS.DecorationType.None);
             this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAsideMain.Location = new System.Drawing.Point(60, 0);
@@ -118,7 +118,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(179)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(37)))));
             this.flowLayoutPanel1.Controls.Add(this.btnHome);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
