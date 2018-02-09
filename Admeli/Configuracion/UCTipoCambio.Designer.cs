@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.lblMonedaPorDefecto = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textNombre = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtpFechaIngreso = new Bunifu.Framework.UI.BunifuDatepicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textNombre = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.lblMonedaPorDefecto = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
+            this.panelContainer.AutoScroll = true;
             this.panelContainer.BackColor = System.Drawing.Color.White;
             this.panelContainer.Controls.Add(this.lblMonedaPorDefecto);
             this.panelContainer.Controls.Add(this.label3);
@@ -55,6 +56,51 @@
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
             this.panelContainer.Size = new System.Drawing.Size(855, 530);
             this.panelContainer.TabIndex = 1;
+            // 
+            // lblMonedaPorDefecto
+            // 
+            this.lblMonedaPorDefecto.AutoSize = true;
+            this.lblMonedaPorDefecto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonedaPorDefecto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.lblMonedaPorDefecto.Location = new System.Drawing.Point(18, 140);
+            this.lblMonedaPorDefecto.Name = "lblMonedaPorDefecto";
+            this.lblMonedaPorDefecto.Size = new System.Drawing.Size(205, 16);
+            this.lblMonedaPorDefecto.TabIndex = 106;
+            this.lblMonedaPorDefecto.Text = "Moneda por defecto: DOLARES";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Enabled = false;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Location = new System.Drawing.Point(22, 88);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 16);
+            this.label3.TabIndex = 105;
+            this.label3.Text = "Nombre";
+            // 
+            // textNombre
+            // 
+            this.textNombre.BackColor = System.Drawing.Color.White;
+            this.textNombre.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textNombre.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textNombre.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textNombre.BorderThickness = 1;
+            this.textNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textNombre.Enabled = false;
+            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textNombre.isPassword = false;
+            this.textNombre.Location = new System.Drawing.Point(18, 82);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
+            this.textNombre.Size = new System.Drawing.Size(350, 50);
+            this.textNombre.TabIndex = 104;
+            this.textNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label8
             // 
@@ -106,53 +152,11 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Location = new System.Drawing.Point(17, 13);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(389, 33);
+            this.btnAceptar.Size = new System.Drawing.Size(350, 33);
             this.btnAceptar.TabIndex = 98;
-            this.btnAceptar.Text = "Iniciar";
+            this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(22, 88);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 16);
-            this.label3.TabIndex = 105;
-            this.label3.Text = "Nombre";
-            // 
-            // textNombre
-            // 
-            this.textNombre.BackColor = System.Drawing.Color.White;
-            this.textNombre.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textNombre.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textNombre.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textNombre.BorderThickness = 1;
-            this.textNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textNombre.isPassword = false;
-            this.textNombre.Location = new System.Drawing.Point(18, 82);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
-            this.textNombre.Size = new System.Drawing.Size(350, 50);
-            this.textNombre.TabIndex = 104;
-            this.textNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // lblMonedaPorDefecto
-            // 
-            this.lblMonedaPorDefecto.AutoSize = true;
-            this.lblMonedaPorDefecto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonedaPorDefecto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.lblMonedaPorDefecto.Location = new System.Drawing.Point(18, 140);
-            this.lblMonedaPorDefecto.Name = "lblMonedaPorDefecto";
-            this.lblMonedaPorDefecto.Size = new System.Drawing.Size(205, 16);
-            this.lblMonedaPorDefecto.TabIndex = 106;
-            this.lblMonedaPorDefecto.Text = "Moneda por defecto: DOLARES";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // UCTipoCambio
             // 

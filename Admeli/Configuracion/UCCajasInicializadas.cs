@@ -49,7 +49,13 @@ namespace Admeli.Configuracion
         }
 
 
-        #region =========================== Decoration ===========================
+        #region =========================== Paint and Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
             /*
@@ -219,6 +225,5 @@ namespace Admeli.Configuracion
             comprarNuevo.ShowDialog();*/
         }
         #endregion
-
     }
 }

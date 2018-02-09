@@ -244,6 +244,12 @@
     <Compile Include="Compras\UCProveedores.Designer.cs">
       <DependentUpon>UCProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Modificar\FormAsignarCorrelativoModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Modificar\FormAsignarCorrelativoModificar.Designer.cs">
+      <DependentUpon>FormAsignarCorrelativoModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Nuevo\FormAlmacenNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -767,6 +773,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\UCProveedores.resx">
       <DependentUpon>UCProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Modificar\FormAsignarCorrelativoModificar.resx">
+      <DependentUpon>FormAsignarCorrelativoModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Nuevo\FormAlmacenNuevo.resx">
       <DependentUpon>FormAlmacenNuevo.cs</DependentUpon>

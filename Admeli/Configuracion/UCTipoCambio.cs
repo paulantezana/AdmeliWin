@@ -56,17 +56,26 @@ namespace Admeli.Configuracion
         {
             try
             {
-                loadState(true);
-                monedas = await monedaModel.monedas();
-                int y = 170;
+                loadState(true); // cambiando de estado
+                monedas = await monedaModel.monedas(); // Cargando las monedas
+                int y = 170; // POsition initial elements (TextBox AND Label)
+
+                // Buscando la moneda por defecto
                 foreach (Moneda money in monedas)
                 {
                     if (money.porDefecto)
                     {
+                        textNombre.Text = String.Format("{0} {1}", money.nombres, money.apellidos);
+                        dtpFechaIngreso.Value = (money.fechaCreacion == null) ? DateTime.Now : money.fechaCreacion.date;
                         lblMonedaPorDefecto.Text = String.Format("Moneda por defecto: {0}", money.moneda);
                         monedaPorDefecto = money;
                     }
-                    else
+                }
+
+                // Creando los campos para cada moneda
+                foreach (Moneda money in monedas)
+                {
+                    if (!money.porDefecto)
                     {
                         crearElementosMoneda(money, y);
                         y += 60;
@@ -101,7 +110,7 @@ namespace Admeli.Configuracion
 
                 // Modificar al gusto del cliente
                 Name = "lbl" + moneda.idMoneda,
-                Text = String.Format("1 {0} es igual a ... {1} ↓", monedaPorDefecto.moneda, moneda.moneda.ToUpper()),
+                Text = String.Format("1 {0} es igual a ... {1} ↓", monedaPorDefecto.moneda.ToUpper(), moneda.moneda.ToUpper()),
                 Location = new System.Drawing.Point(25, (y + 8)),
                 TabIndex = 93,
             };
@@ -127,6 +136,7 @@ namespace Admeli.Configuracion
                 Location = new System.Drawing.Point(18, y),
                 Name = moneda.idMoneda.ToString(),
                 TabIndex = 91,
+                Text = moneda.tipoCambio,
                 //OnValueChanged += new System.EventHandler(this.bunifuMetroTextbox1_OnValueChanged);
             };
             textMoneda1.OnValueChanged += new EventHandler(this.textMoneda1_OnValueChanged);
@@ -149,8 +159,7 @@ namespace Admeli.Configuracion
                     {
                         if (monedas[i].idMoneda == Convert.ToInt32(currentIDMoneda))
                         {
-                            string contentText = ((BunifuMetroTextbox)sender).Text;
-                            monedas[i].monto = (contentText == "") ? 0 : Convert.ToInt32(contentText);
+                            monedas[i].tipoCambio = ((BunifuMetroTextbox)sender).Text;
                         }
                     }
                 }
@@ -167,29 +176,37 @@ namespace Admeli.Configuracion
         {
             try
             {
+                loadState(true);
                 foreach (SaveObject item in saveObjects)
                 {
-                    Response response = await monedaModel.guardar(item);
+                    Response response = await monedaModel.tipoCambioGuardar(item);
                 }
                 MessageBox.Show("Se guardo correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.reLoad();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally
+            {
+                loadState(false);
+            }
         }
 
         private void crearObjeto()
         {
+            saveObjects = new List<SaveObject>();
             foreach (Moneda moneda in monedas)
             {
                 SaveObject save = new SaveObject();
-                save.cambioCompra = moneda.monto;
-                save.cambioVenta = moneda.monto;
+                save.cambioCompra = (moneda.tipoCambio == "") ? 0 : Convert.ToDecimal(moneda.tipoCambio);
+                save.cambioVenta = (moneda.tipoCambio == "") ? 0 : Convert.ToDecimal(moneda.tipoCambio);
                 save.estado = moneda.estado;
                 save.idMoneda = monedaPorDefecto.idMoneda;
                 save.idMonedaCambio = moneda.idMoneda;
                 save.idPersonal = PersonalModel.personal.idPersonal;
+                saveObjects.Add(save);
             }
         }
 
@@ -201,8 +218,8 @@ namespace Admeli.Configuracion
 
         struct SaveObject
         {
-            public double cambioCompra { get; set; }
-            public double cambioVenta { get; set; }
+            public decimal cambioCompra { get; set; }
+            public decimal cambioVenta { get; set; }
             public int estado { get; set; }
             public int idMoneda { get; set; }
             public int idMonedaCambio { get; set; }

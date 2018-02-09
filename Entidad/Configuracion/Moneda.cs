@@ -10,6 +10,8 @@ namespace Entidad.Configuracion
     public class Moneda
     {
         public int idMoneda { get; set; }
+        public int idMonedaPorDefecto { get; set; }
+
         public string moneda { get; set; }
         public string simbolo { get; set; }
         public bool porDefecto { get; set; }
@@ -26,7 +28,7 @@ namespace Entidad.Configuracion
         public int idCajaSesion { get; set; }
         public int idMedioPago { get; set; }
         public string medioPago { get; set; }
-        public long monto { get; set; }
+        public double monto { get; set; }
         public string motivo { get; set; }
         public string numeroOperacion { get; set; }
         public string observacion { get; set; }

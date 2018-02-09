@@ -13,12 +13,25 @@ namespace Modelo
     {
         private WebService webService = new WebService();
 
-        public async Task<Response> guardar<T>(T param)
+        public async Task<Response> guardar(Moneda param)
         {
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/moneda/guardar
                 return await webService.POSTSend("moneda", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> tipoCambioGuardar<T>(T param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/tipocambio/guardar
+                return await webService.POSTSend("tipocambio", "guardar", param);
             }
             catch (Exception ex)
             {

@@ -48,7 +48,13 @@ namespace Admeli.Configuracion
             cargarRegistros();
         }
 
-        #region =========================== Decoration ===========================
+        #region =========================== Paint Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
             /*

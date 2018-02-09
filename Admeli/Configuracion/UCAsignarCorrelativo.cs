@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Admeli.Componentes;
 using Entidad;
+using Admeli.Configuracion.Modificar;
 
 namespace Admeli.Configuracion
 {
@@ -17,8 +18,13 @@ namespace Admeli.Configuracion
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
-        public DocCorrelativoModel docCorrelativoModel = new DocCorrelativoModel();
+
+        private List<DocCorrelativo> docCorrelativos { get; set; }
+        private DocCorrelativo currentDocCorrelativo { get; set; }
+
         private Paginacion paginacion;
+        public DocCorrelativoModel docCorrelativoModel = new DocCorrelativoModel();
+
 
         public UCAsignarCorrelativo()
         {
@@ -43,12 +49,22 @@ namespace Admeli.Configuracion
 
         private void UCAsignarCorrelativo_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            this.reLoad();
         }
 
+        internal void reLoad()
+        {
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
+        }
 
         #region =========================== Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
             /*
@@ -61,30 +77,26 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
-        {
-            // Cargando el combobox de personales
-            // loadState(true);
-           
-            // Estado cargar en falso
-            // loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);
             try
             {
-                RootObject<DocCorrelativo> docCorrelativo = await docCorrelativoModel.listartodoCorrelativo(paginacion.currentPage, paginacion.speed);
+                RootObject<DocCorrelativo> docCorrelativoRoot = await docCorrelativoModel.listartodoCorrelativo(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = docCorrelativo.nro_registros;
+                paginacion.itemsCount = docCorrelativoRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                docCorrelativoBindingSource.DataSource = docCorrelativo.datos;
+                docCorrelativos = docCorrelativoRoot.datos;
+                docCorrelativoBindingSource.DataSource = docCorrelativos;
                 dataGridView.Refresh();
+
+                // Mostrando el paginado
                 mostrarPaginado();
+
+                // Formato de celdas
             }
             catch (Exception ex)
             {
@@ -130,13 +142,6 @@ namespace Admeli.Configuracion
                 paginacion.previousPage();
                 cargarRegistros();
             }
-        }
-
-        internal void reLoad()
-        {
-
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
@@ -189,16 +194,40 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }
-        private void btnNuevo_Click(object sender, EventArgs e)
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
+            executeModificar();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idCorrelativo = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentDocCorrelativo = docCorrelativos.Find(x => x.idCorrelativo == idCorrelativo); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormAsignarCorrelativoModificar formAsignarCorrelativo = new FormAsignarCorrelativoModificar(currentDocCorrelativo);
+            formAsignarCorrelativo.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
         }
         #endregion
-
     }
 }

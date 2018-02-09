@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using Entidad.Configuracion;
+using Admeli.Componentes;
 
 namespace Admeli.Configuracion
 {
@@ -39,7 +40,13 @@ namespace Admeli.Configuracion
             cargarRegistros();
         }
 
-        #region =========================== Decoration ===========================
+        #region =========================== Paint and Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
             /*
@@ -126,5 +133,6 @@ namespace Admeli.Configuracion
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
+
     }
 }
