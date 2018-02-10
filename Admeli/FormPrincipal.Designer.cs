@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelAside = new System.Windows.Forms.Panel();
@@ -47,10 +47,6 @@
             this.lblNombrePersonal2 = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelHeaderApp = new System.Windows.Forms.Panel();
-            this.btnMinimizedApp = new System.Windows.Forms.Button();
-            this.btnMaximizedApp = new System.Windows.Forms.Button();
-            this.btnCloseApp = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelMainContainer = new System.Windows.Forms.Panel();
@@ -70,7 +66,6 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelHeaderApp.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelMainContainer.SuspendLayout();
@@ -102,7 +97,7 @@
             this.panelAside.Margin = new System.Windows.Forms.Padding(2);
             this.panelAside.Name = "panelAside";
             this.panelAside.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panelAside.Size = new System.Drawing.Size(907, 150);
+            this.panelAside.Size = new System.Drawing.Size(907, 120);
             this.panelAside.TabIndex = 4;
             this.panelAside.Visible = false;
             this.panelAside.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAside_Paint);
@@ -112,10 +107,10 @@
             this.panelAsideMain.BackColor = System.Drawing.Color.White;
             this.transition1.SetDecoration(this.panelAsideMain, BunifuAnimatorNS.DecorationType.None);
             this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAsideMain.Location = new System.Drawing.Point(0, 65);
+            this.panelAsideMain.Location = new System.Drawing.Point(0, 40);
             this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(907, 84);
+            this.panelAsideMain.Size = new System.Drawing.Size(907, 79);
             this.panelAsideMain.TabIndex = 8;
             // 
             // panel2
@@ -123,13 +118,12 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(102)))), ((int)(((byte)(179)))));
             this.panel2.Controls.Add(this.flowLayoutPanel2);
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panelHeaderApp);
             this.panel2.Controls.Add(this.panel4);
             this.transition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(907, 65);
+            this.panel2.Size = new System.Drawing.Size(907, 40);
             this.panel2.TabIndex = 0;
             // 
             // flowLayoutPanel2
@@ -144,10 +138,10 @@
             this.transition1.SetDecoration(this.flowLayoutPanel2, BunifuAnimatorNS.DecorationType.None);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(59, 30);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(59, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(686, 35);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(686, 40);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // btnCompras
@@ -156,7 +150,7 @@
             this.btnCompras.FlatAppearance.BorderSize = 0;
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompras.ForeColor = System.Drawing.Color.White;
-            this.btnCompras.Location = new System.Drawing.Point(0, 5);
+            this.btnCompras.Location = new System.Drawing.Point(0, 10);
             this.btnCompras.Margin = new System.Windows.Forms.Padding(0);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(87, 30);
@@ -173,7 +167,7 @@
             this.btnHerramientas.FlatAppearance.BorderSize = 0;
             this.btnHerramientas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHerramientas.ForeColor = System.Drawing.Color.White;
-            this.btnHerramientas.Location = new System.Drawing.Point(87, 5);
+            this.btnHerramientas.Location = new System.Drawing.Point(87, 10);
             this.btnHerramientas.Margin = new System.Windows.Forms.Padding(0);
             this.btnHerramientas.Name = "btnHerramientas";
             this.btnHerramientas.Size = new System.Drawing.Size(87, 30);
@@ -190,7 +184,7 @@
             this.btnConfiguracion.FlatAppearance.BorderSize = 0;
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracion.Location = new System.Drawing.Point(174, 5);
+            this.btnConfiguracion.Location = new System.Drawing.Point(174, 10);
             this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(87, 30);
@@ -208,7 +202,7 @@
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.White;
-            this.btnProducto.Location = new System.Drawing.Point(261, 5);
+            this.btnProducto.Location = new System.Drawing.Point(261, 10);
             this.btnProducto.Margin = new System.Windows.Forms.Padding(0);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(87, 30);
@@ -225,7 +219,7 @@
             this.btnAlmacen.FlatAppearance.BorderSize = 0;
             this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlmacen.ForeColor = System.Drawing.Color.White;
-            this.btnAlmacen.Location = new System.Drawing.Point(348, 5);
+            this.btnAlmacen.Location = new System.Drawing.Point(348, 10);
             this.btnAlmacen.Margin = new System.Windows.Forms.Padding(0);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.Size = new System.Drawing.Size(87, 30);
@@ -242,7 +236,7 @@
             this.btnCaja.FlatAppearance.BorderSize = 0;
             this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaja.ForeColor = System.Drawing.Color.White;
-            this.btnCaja.Location = new System.Drawing.Point(435, 5);
+            this.btnCaja.Location = new System.Drawing.Point(435, 10);
             this.btnCaja.Margin = new System.Windows.Forms.Padding(0);
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(87, 30);
@@ -259,7 +253,7 @@
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVentas.Location = new System.Drawing.Point(522, 5);
+            this.btnVentas.Location = new System.Drawing.Point(522, 10);
             this.btnVentas.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(87, 30);
@@ -277,9 +271,9 @@
             this.panel6.Controls.Add(this.pictureBox2);
             this.transition1.SetDecoration(this.panel6, BunifuAnimatorNS.DecorationType.None);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(745, 30);
+            this.panel6.Location = new System.Drawing.Point(745, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(162, 35);
+            this.panel6.Size = new System.Drawing.Size(162, 40);
             this.panel6.TabIndex = 3;
             // 
             // lblNombrePersonal2
@@ -324,69 +318,6 @@
             this.pictureBox2.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBox2, "Foto Usuario");
             // 
-            // panelHeaderApp
-            // 
-            this.panelHeaderApp.Controls.Add(this.btnMinimizedApp);
-            this.panelHeaderApp.Controls.Add(this.btnMaximizedApp);
-            this.panelHeaderApp.Controls.Add(this.btnCloseApp);
-            this.transition1.SetDecoration(this.panelHeaderApp, BunifuAnimatorNS.DecorationType.None);
-            this.panelHeaderApp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderApp.Location = new System.Drawing.Point(59, 0);
-            this.panelHeaderApp.Name = "panelHeaderApp";
-            this.panelHeaderApp.Size = new System.Drawing.Size(848, 30);
-            this.panelHeaderApp.TabIndex = 1;
-            // 
-            // btnMinimizedApp
-            // 
-            this.transition1.SetDecoration(this.btnMinimizedApp, BunifuAnimatorNS.DecorationType.None);
-            this.btnMinimizedApp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimizedApp.FlatAppearance.BorderSize = 0;
-            this.btnMinimizedApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizedApp.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizedApp.Location = new System.Drawing.Point(740, 0);
-            this.btnMinimizedApp.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMinimizedApp.Name = "btnMinimizedApp";
-            this.btnMinimizedApp.Size = new System.Drawing.Size(36, 30);
-            this.btnMinimizedApp.TabIndex = 4;
-            this.btnMinimizedApp.Text = "-";
-            this.btnMinimizedApp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnMinimizedApp.UseVisualStyleBackColor = true;
-            this.btnMinimizedApp.Click += new System.EventHandler(this.btnMinimizedApp_Click);
-            // 
-            // btnMaximizedApp
-            // 
-            this.transition1.SetDecoration(this.btnMaximizedApp, BunifuAnimatorNS.DecorationType.None);
-            this.btnMaximizedApp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximizedApp.FlatAppearance.BorderSize = 0;
-            this.btnMaximizedApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizedApp.ForeColor = System.Drawing.Color.White;
-            this.btnMaximizedApp.Location = new System.Drawing.Point(776, 0);
-            this.btnMaximizedApp.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMaximizedApp.Name = "btnMaximizedApp";
-            this.btnMaximizedApp.Size = new System.Drawing.Size(36, 30);
-            this.btnMaximizedApp.TabIndex = 3;
-            this.btnMaximizedApp.Text = "O";
-            this.btnMaximizedApp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnMaximizedApp.UseVisualStyleBackColor = true;
-            this.btnMaximizedApp.Click += new System.EventHandler(this.btnMaximizedApp_Click);
-            // 
-            // btnCloseApp
-            // 
-            this.transition1.SetDecoration(this.btnCloseApp, BunifuAnimatorNS.DecorationType.None);
-            this.btnCloseApp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCloseApp.FlatAppearance.BorderSize = 0;
-            this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseApp.ForeColor = System.Drawing.Color.White;
-            this.btnCloseApp.Location = new System.Drawing.Point(812, 0);
-            this.btnCloseApp.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCloseApp.Name = "btnCloseApp";
-            this.btnCloseApp.Size = new System.Drawing.Size(36, 30);
-            this.btnCloseApp.TabIndex = 2;
-            this.btnCloseApp.Text = "X";
-            this.btnCloseApp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCloseApp.UseVisualStyleBackColor = true;
-            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnHome);
@@ -394,7 +325,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(59, 65);
+            this.panel4.Size = new System.Drawing.Size(59, 40);
             this.panel4.TabIndex = 2;
             // 
             // btnHome
@@ -406,7 +337,7 @@
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Margin = new System.Windows.Forms.Padding(0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(60, 65);
+            this.btnHome.Size = new System.Drawing.Size(60, 40);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 8;
             this.btnHome.TabStop = false;
@@ -419,10 +350,10 @@
             this.panelMainContainer.Controls.Add(this.progressBarApp);
             this.transition1.SetDecoration(this.panelMainContainer, BunifuAnimatorNS.DecorationType.None);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(0, 150);
+            this.panelMainContainer.Location = new System.Drawing.Point(0, 120);
             this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(907, 466);
+            this.panelMainContainer.Size = new System.Drawing.Size(907, 496);
             this.panelMainContainer.TabIndex = 5;
             // 
             // panelMain
@@ -433,7 +364,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(907, 463);
+            this.panelMain.Size = new System.Drawing.Size(907, 493);
             this.panelMain.TabIndex = 1;
             // 
             // panel1
@@ -443,7 +374,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Location = new System.Drawing.Point(252, 126);
+            this.panel1.Location = new System.Drawing.Point(252, 141);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(402, 210);
@@ -497,7 +428,7 @@
             this.progressBarApp.BackColor = System.Drawing.Color.White;
             this.transition1.SetDecoration(this.progressBarApp, BunifuAnimatorNS.DecorationType.None);
             this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarApp.Location = new System.Drawing.Point(0, 463);
+            this.progressBarApp.Location = new System.Drawing.Point(0, 493);
             this.progressBarApp.Margin = new System.Windows.Forms.Padding(2);
             this.progressBarApp.MarqueeAnimationSpeed = 10;
             this.progressBarApp.Maximum = 200;
@@ -518,22 +449,22 @@
             // 
             this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.transition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation2;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation5;
             this.transition1.TimeStep = 0.03F;
             // 
             // toolTip1
@@ -549,7 +480,6 @@
             // 
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panelHeaderApp;
             this.bunifuDragControl1.Vertical = true;
             // 
             // FormPrincipal
@@ -578,7 +508,6 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelHeaderApp.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelMainContainer.ResumeLayout(false);
@@ -617,10 +546,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panelHeaderApp;
-        private System.Windows.Forms.Button btnMinimizedApp;
-        private System.Windows.Forms.Button btnMaximizedApp;
-        private System.Windows.Forms.Button btnCloseApp;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         internal System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelAsideMain;

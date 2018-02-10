@@ -30,8 +30,6 @@ namespace Admeli.Configuracion
             InitializeComponent();
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCAlmacenes(FormPrincipal formPrincipal)
@@ -40,14 +38,24 @@ namespace Admeli.Configuracion
             this.formPrincipal = formPrincipal;
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCAlmacenes_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
+            this.reLoad();
+
+            // Atajos de teclados
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
+        }
+
+        internal void reLoad()
+        {
             cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         #region ======================== KEYBOARD ========================
@@ -101,16 +109,6 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ======================= Loads =======================
-        private void cargarComponentes()
-        {
-            // Cargando el combobox ce estados
-            
-            // loadState(true);
-           
-            // Estado cargar en falso
-            // loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);
@@ -141,13 +139,6 @@ namespace Admeli.Configuracion
             {
                 loadState(false);
             }
-        }
-
-        internal void reLoad()
-        {
-
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 
@@ -236,6 +227,11 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
@@ -365,8 +361,7 @@ namespace Admeli.Configuracion
                 loadState(false);
             }
         }
+
         #endregion
-
-
     }
 }

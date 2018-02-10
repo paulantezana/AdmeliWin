@@ -47,12 +47,6 @@ namespace Admeli.Configuracion.Nuevo
         }
 
         #region ===================== Paint =====================
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panel2);
-        }
-
         private void panelFooter_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
@@ -63,13 +57,14 @@ namespace Admeli.Configuracion.Nuevo
         #region ===================== Guardar o guardar cambios =====================
         private bool validarCampos()
         {
-            if (textPuntoVenta.Text == "")
+            if (textPuntoVenta.Text.Trim() == "")
             {
-                errorProvider1.SetError(textPuntoVenta, "Rellene este campo");
-                textPuntoVenta.Focus();
+                errorProvider1.SetError(textPuntoVenta, "Campo obligatorio");
+                Validator.textboxValidateColor(textPuntoVenta, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textPuntoVenta, true);
 
             if (cbxSucursalPV.SelectedIndex == -1)
             {
@@ -85,6 +80,7 @@ namespace Admeli.Configuracion.Nuevo
         {
             try
             {
+                btnAceptar.Enabled = false;
                 if (nuevo)
                 {
                     Response response = await puntoVentaModel.guardar(puntoVenta);
@@ -100,6 +96,10 @@ namespace Admeli.Configuracion.Nuevo
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                btnAceptar.Enabled = true;
             }
         }
 
@@ -132,5 +132,25 @@ namespace Admeli.Configuracion.Nuevo
         {
             cargarSucursal();
         }
+
+        private void FormPuntoVentaNuevo_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panel12, 157, 157, 157);
+        }
+
+        #region ================================ Validacion en tiempo real ================================
+        private void textPuntoVenta_Validated(object sender, EventArgs e)
+        {
+            if (textPuntoVenta.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textPuntoVenta, "Campo obligatorio");
+                Validator.textboxValidateColor(textPuntoVenta, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textPuntoVenta, true);
+        } 
+        #endregion
     }
 }

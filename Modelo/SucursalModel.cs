@@ -48,12 +48,26 @@ namespace Modelo
                 throw ex;
             }
         }
+
         public async Task<Response> eliminar(Sucursal param)
         {
             try
             {
                 // localhost/admeli/xcore2/xcore/services.php/sucursal/eliminar
                 return await webService.POSTSend("sucursal", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> existeSucursal(string nombre, int idSucursal)
+        {
+            try
+            {
+                // localhost/admeli/xcore2/xcore/services.php/sucursal/nombre/cusco/ids/0
+                return await webService.GETObject<Response>("sucursal", String.Format("nombre/{0}/ids/{1}", nombre,idSucursal));
             }
             catch (Exception ex)
             {

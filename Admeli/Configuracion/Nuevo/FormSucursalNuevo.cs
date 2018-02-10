@@ -57,6 +57,15 @@ namespace Admeli.Configuracion.Nuevo
             DrawShape drawShape = new DrawShape();
             drawShape.topLine(panelFooter);
         }
+
+        private void FormSucursalNuevo_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelLevelPais, 157, 157, 157);
+            drawShape.lineBorder(panelLevel1, 157, 157, 157);
+            drawShape.lineBorder(panelLevel2, 157, 157, 157);
+            drawShape.lineBorder(panelLevel3, 157, 157, 157);
+        }
         #endregion
 
         #region ========================== Load ==========================
@@ -73,6 +82,7 @@ namespace Admeli.Configuracion.Nuevo
             loadCajas();
             loadPuntoGerencia();*/
         }
+
 
         /*
         private async void loadPuntoAdministracion(){
@@ -137,34 +147,20 @@ namespace Admeli.Configuracion.Nuevo
                 // Mostrando los niveles uno por uno
                 if (labelUbicaciones.Count >= 1)
                 {
-                    lblNivel1.Visible = true;
                     lblNivel1.Text = labelUbicaciones[0].denominacion;
-
-                    cbxNivel1.Visible = true;
+                    panelLevel1.Visible = true;
                 }
 
                 if (labelUbicaciones.Count >= 2)
                 {
-                    lblNivel2.Visible = true;
                     lblNivel2.Text = labelUbicaciones[1].denominacion;
-
-                    cbxNivel2.Visible = true;
+                    panelLevel2.Visible = true;
                 }
 
                 if (labelUbicaciones.Count >= 3)
                 {
-                    lblNivel3.Visible = true;
+                    panelLevel3.Visible = true;
                     lblNivel3.Text = labelUbicaciones[2].denominacion;
-
-                    cbxNivel3.Visible = true;
-                }
-
-                if (labelUbicaciones.Count > 4)
-                {
-                    lblNivel4.Visible = true;
-                    lblNivel4.Text = labelUbicaciones[3].denominacion;
-
-                    cbxNivel4.Visible = true;
                 }
 
                 // Cargar el primer nivel de la localizacion
@@ -183,20 +179,13 @@ namespace Admeli.Configuracion.Nuevo
 
         private void ocultarNiveles()
         {
-            lblNivel1.Visible = false;
-            lblNivel2.Visible = false;
-            lblNivel3.Visible = false;
-            lblNivel4.Visible = false;
-
-            cbxNivel1.Visible = false;
-            cbxNivel2.Visible = false;
-            cbxNivel3.Visible = false;
-            cbxNivel4.Visible = false;
+            panelLevel1.Visible = false;
+            panelLevel2.Visible = false;
+            panelLevel3.Visible = false;
 
             cbxNivel1.SelectedIndex = -1;
             cbxNivel2.SelectedIndex = -1;
             cbxNivel3.SelectedIndex = -1;
-            cbxNivel4.SelectedIndex = -1;
         }
 
         private async void cargarNivel1()
@@ -279,44 +268,16 @@ namespace Admeli.Configuracion.Nuevo
                 desactivarNivelDesde(4);
             }
         }
-        private async void cargarNivel4()
-        {
-            try
-            {
-                if (labelUbicaciones.Count < 4) return;
-                loadStateApp(true);
-                nivel4BindingSource.DataSource = await locationModel.nivel4(Convert.ToInt32(cbxNivel3.SelectedValue));
-                /*if (ubicacionGeografica.idNivel4 > 0)
-                {
-                    cbxNivel4.SelectedValue = ubicacionGeografica.idNivel4;
-                }
-                else
-                {
-                    cbxNivel4.SelectedIndex = -1;
-                }*/
-                cbxNivel4.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                loadStateApp(false);
-            }
-        }
 
         private void desactivarNivelDesde(int n)
         {
             cbxNivel1.Enabled = true;
             cbxNivel2.Enabled = true;
             cbxNivel3.Enabled = true;
-            cbxNivel4.Enabled = true;
 
             if (n < 2) cbxNivel1.Enabled = false;
             if (n < 3) cbxNivel2.Enabled = false;
             if (n < 4) cbxNivel3.Enabled = false;
-            if (n < 5) cbxNivel4.Enabled = false;
         }
         #endregion
 
@@ -350,11 +311,6 @@ namespace Admeli.Configuracion.Nuevo
         private void cbxNivel2_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarNivel3();
-        }
-
-        private void cbxNivel3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarNivel4();
         } 
         #endregion
 
@@ -370,6 +326,7 @@ namespace Admeli.Configuracion.Nuevo
             try
             {
                 crearObjetoSucursal();
+                btnAceptar.Enabled = false;
                 if (nuevo)
                 {
                     Response response = await sucursalModel.guardar(ubicacionGeografica, currentSucursal);
@@ -385,6 +342,10 @@ namespace Admeli.Configuracion.Nuevo
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                btnAceptar.Enabled = true;
             }
         }
 
@@ -417,13 +378,14 @@ namespace Admeli.Configuracion.Nuevo
 
         private bool validarCampos()
         {
-            if (textNombreSucursal.Text == "")
+            if (textNombreSucursal.Text.Trim() == "")
             {
-                errorProvider1.SetError(textNombreSucursal, "Este campo esta bacía");
-                textNombreSucursal.Focus();
+                errorProvider1.SetError(textNombreSucursal, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreSucursal, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreSucursal, true);
 
             switch (labelUbicaciones.Count)
             {
@@ -454,30 +416,88 @@ namespace Admeli.Configuracion.Nuevo
                     }
                     errorProvider1.Clear();
                     break;
-                case 4:
-                    if (cbxNivel4.SelectedIndex == -1)
-                    {
-                        errorProvider1.SetError(cbxNivel4, "No se seleccionó ningún elemento");
-                        cbxNivel4.Focus();
-                        return false;
-                    }
-                    errorProvider1.Clear();
-                    break;
                 default:
                     break;
             }
 
-            if (textDirecionSucursal.Text == "")
+            if (textDirecionSucursal.Text.Trim() == "")
             {
-                errorProvider1.SetError(textDirecionSucursal, "Este campo esta bacía");
-                textDirecionSucursal.Focus();
+                errorProvider1.SetError(textDirecionSucursal, "Campo obligatorio");
+                Validator.textboxValidateColor(textDirecionSucursal, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textDirecionSucursal, true);
+
             return true;
         }
 
         #endregion
 
+        #region ============================ Validacion Timepo Real ============================
+        private async void textNombreSucursal_Validated(object sender, EventArgs e)
+        {
+            if (textNombreSucursal.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textNombreSucursal, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreSucursal, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreSucursal, true);
+
+            try
+            {
+                int sucursalID = (nuevo) ? 0 : currentIDSucursal;
+                Response response = await sucursalModel.existeSucursal(textNombreSucursal.Text, sucursalID);
+                if (response.id == 0)
+                {
+                    errorProvider1.SetError(textNombreSucursal, response.msj);
+                    Validator.textboxValidateColor(textNombreSucursal, false);
+                    return;
+                }
+                errorProvider1.Clear();
+                Validator.textboxValidateColor(textNombreSucursal, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textDirecionSucursal_Validated(object sender, EventArgs e)
+        {
+            if (textDirecionSucursal.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textDirecionSucursal, "Campo obligatorio");
+                Validator.textboxValidateColor(textDirecionSucursal, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textDirecionSucursal, true);
+        }
+        #endregion
+
+        private void FormSucursalNuevo_Shown(object sender, EventArgs e)
+        {
+            textNombreSucursal.Focus();
+        }
+
+        #region ======================================= WORKERS =======================================
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+        } 
+        #endregion
     }
 }

@@ -193,6 +193,7 @@
             this.textPassword.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.textPassword.Size = new System.Drawing.Size(269, 41);
             this.textPassword.TabIndex = 1;
+            this.textPassword.Text = "admin";
             this.textPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.toolTip1.SetToolTip(this.textPassword, "Ingrese su contraseña");
             // 
@@ -213,6 +214,7 @@
             this.textUsuario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.textUsuario.Size = new System.Drawing.Size(269, 41);
             this.textUsuario.TabIndex = 0;
+            this.textUsuario.Text = "admin";
             this.textUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.toolTip1.SetToolTip(this.textUsuario, "Ingrese su nombre de usuario");
             // 
