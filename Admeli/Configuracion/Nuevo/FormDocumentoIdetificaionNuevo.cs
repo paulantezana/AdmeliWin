@@ -16,9 +16,8 @@ namespace Admeli.Configuracion.Nuevo
     public partial class FormDocumentoIdetificaionNuevo : Form
     {
         private DocumentoIdentificacionModel documentoModel = new DocumentoIdentificacionModel();
-        private DocumentoIdentificacion currentDocumentoIdentificacion;
 
-        private DocumentoIdentificacion documentoIdentificacion { get; set; }
+        private DocumentoIdentificacion currentDocument { get; set; }
         private bool nuevo { get; set; }
         private int currentIDDocI { get; set; }
 
@@ -28,17 +27,12 @@ namespace Admeli.Configuracion.Nuevo
             this.nuevo = true;
         }
 
-        public FormDocumentoIdetificaionNuevo(DocumentoIdentificacion document)
+        public FormDocumentoIdetificaionNuevo(DocumentoIdentificacion currentDocument)
         {
             InitializeComponent();
+            this.currentDocument = currentDocument;
+            this.currentIDDocI = currentDocument.idDocumento;
             this.nuevo = false;
-
-            this.currentDocumentoIdentificacion = document;
-            currentIDDocI = document.idDocumento;
-            textNombreDocumentoIdenti.Text = document.nombre;
-            textDigitosDocumentoIdenti.Text = document.numeroDigitos.ToString();
-            cbxTipoDocumento.Text = document.tipoDocumento;
-            chkActivoDI.Checked = Convert.ToBoolean(document.estado);
         }
 
         #region =================== Paint ===================
@@ -47,31 +41,74 @@ namespace Admeli.Configuracion.Nuevo
             DrawShape drawShape = new DrawShape();
             drawShape.topLine(panelFooter);
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void FormDocumentoIdetificaionNuevo_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panel2);
+            drawShape.lineBorder(panel12, 157, 157, 157);
+        }
+        #endregion
+
+        #region ========================== Root Load ==========================
+        private void FormDocumentoIdetificaionNuevo_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
+        private void reLoad()
+        {
+            cargarTipoDocumento();
+            cargarDatosModificar();
+        }
+        #endregion
+
+        #region =============================== Load ===============================
+        private void cargarTipoDocumento()
+        {
+            // Cargando el combobox ce estados
+            DataTable table = new DataTable();
+            table.Columns.Add("idTipoDocumento", typeof(string));
+            table.Columns.Add("tipoDocumento", typeof(string));
+
+            table.Rows.Add("1", "Natural");
+            table.Rows.Add("2", "Jurídico");
+
+            cbxTipoDocumento.DataSource = table;
+            cbxTipoDocumento.DisplayMember = "tipoDocumento";
+            cbxTipoDocumento.ValueMember = "idTipoDocumento";
+            cbxTipoDocumento.SelectedIndex = 0;
+        }
+
+        private void cargarDatosModificar()
+        {
+            if (nuevo) return;
+            currentIDDocI = currentDocument.idDocumento;
+            textNombreDocumentoIdenti.Text = currentDocument.nombre;
+            textDigitosDocumentoIdenti.Text = currentDocument.numeroDigitos.ToString();
+            cbxTipoDocumento.Text = currentDocument.tipoDocumento;
+            chkActivoDI.Checked = Convert.ToBoolean(currentDocument.estado);
         } 
         #endregion
 
+        #region ==================================== SAVE AND UPDATE ====================================
         private bool validarCampos()
         {
-            if (textNombreDocumentoIdenti.Text == "")
+            if (textNombreDocumentoIdenti.Text.Trim() == "")
             {
-                errorProvider1.SetError(textNombreDocumentoIdenti, "Rellene este campo");
-                textNombreDocumentoIdenti.Focus();
+                errorProvider1.SetError(textNombreDocumentoIdenti, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
 
-            if (textDigitosDocumentoIdenti.Text == "")
+            if (textDigitosDocumentoIdenti.Text.Trim() == "")
             {
-                errorProvider1.SetError(textDigitosDocumentoIdenti, "Rellene este campo");
-                textDigitosDocumentoIdenti.Focus();
+                errorProvider1.SetError(textDigitosDocumentoIdenti, "Campo obligatorio");
+                Validator.textboxValidateColor(textDigitosDocumentoIdenti, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textDigitosDocumentoIdenti, true);
 
             if (cbxTipoDocumento.Text == "")
             {
@@ -85,16 +122,34 @@ namespace Admeli.Configuracion.Nuevo
 
         private async void guardar()
         {
+            /////// 
+
+
             try
             {
+                btnAceptar.Enabled = false;
+
+                // Verificando el documento
+                int documentID = (nuevo) ? 0 : currentIDDocI;
+                List<DocumentoIdentificacion> listAlmacenes = await documentoModel.verificar(textNombreDocumentoIdenti.Text, documentID);
+                if (listAlmacenes.Count > 0)
+                {
+                    errorProvider1.SetError(textNombreDocumentoIdenti, "Ya existe");
+                    Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
+                    return;
+                }
+                errorProvider1.Clear();
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
+
+                // Procediendo con el guardado
                 if (nuevo)
                 {
-                    Response response = await documentoModel.guardar(documentoIdentificacion);
+                    Response response = await documentoModel.guardar(currentDocument);
                     MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    Response response = await documentoModel.modificar(documentoIdentificacion);
+                    Response response = await documentoModel.modificar(currentDocument);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Close();
@@ -103,17 +158,21 @@ namespace Admeli.Configuracion.Nuevo
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            finally
+            {
+                btnAceptar.Enabled = true;
+            }
         }
 
         private void crearObjeto()
         {
-            documentoIdentificacion = new DocumentoIdentificacion();
-            if (!nuevo) documentoIdentificacion.idDocumento = currentIDDocI; // Llenar el id categoria cuando este en esdo modificar
+            currentDocument = new DocumentoIdentificacion();
+            if (!nuevo) currentDocument.idDocumento = currentIDDocI; // Llenar el id categoria cuando este en esdo modificar
 
-            documentoIdentificacion.nombre = textNombreDocumentoIdenti.Text;
-            documentoIdentificacion.numeroDigitos = Convert.ToInt32(textDigitosDocumentoIdenti.Text);
-            documentoIdentificacion.tipoDocumento = cbxTipoDocumento.Text;
-            documentoIdentificacion.estado = Convert.ToInt32(chkActivoDI.Checked);
+            currentDocument.nombre = textNombreDocumentoIdenti.Text;
+            currentDocument.numeroDigitos = Convert.ToInt32(textDigitosDocumentoIdenti.Text);
+            currentDocument.tipoDocumento = cbxTipoDocumento.Text;
+            currentDocument.estado = Convert.ToInt32(chkActivoDI.Checked);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -124,20 +183,62 @@ namespace Admeli.Configuracion.Nuevo
                 guardar();
             }
         }
-
-        private void FormDocumentoIdetificaionNuevo_Load(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
+        #endregion
 
+        #region ============================= Validacion TiempoReal =============================
         private void textDigitosDocumentoIdenti_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validator.isNumber(e);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private async void textNombreDocumentoIdenti_Validating(object sender, CancelEventArgs e)
         {
-            this.Close();
+            if (textNombreDocumentoIdenti.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textNombreDocumentoIdenti, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
+
+            /////// 
+            try
+            {
+                int documentID = (nuevo) ? 0 : currentIDDocI;
+                List<DocumentoIdentificacion> listAlmacenes = await documentoModel.verificar(textNombreDocumentoIdenti.Text, documentID);
+                if (listAlmacenes.Count > 0)
+                {
+                    errorProvider1.SetError(textNombreDocumentoIdenti, "Ya existe");
+                    Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
+                    return;
+                }
+                errorProvider1.Clear();
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
+        private void textDigitosDocumentoIdenti_Validated(object sender, EventArgs e)
+        {
+            if (textDigitosDocumentoIdenti.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textDigitosDocumentoIdenti, "Campo obligatorio");
+                Validator.textboxValidateColor(textDigitosDocumentoIdenti, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textDigitosDocumentoIdenti, true);
+        }
+        #endregion
+
+        
     }
 }

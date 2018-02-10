@@ -56,7 +56,17 @@ namespace Admeli.Configuracion.Nuevo
         {
             DrawShape drawShape = new DrawShape();
             drawShape.topLine(panelFooter);
-        } 
+        }
+
+        private void FormAlmacenNuevo_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelLevelPais, 157, 157, 157);
+            drawShape.lineBorder(panelLevel1, 157, 157, 157);
+            drawShape.lineBorder(panelLevel2, 157, 157, 157);
+            drawShape.lineBorder(panelLevel3, 157, 157, 157);
+            drawShape.lineBorder(panel2, 157, 157, 157);
+        }
         #endregion
 
         #region ======================== Load Root ========================
@@ -295,6 +305,23 @@ namespace Admeli.Configuracion.Nuevo
             if (!validarCampos()) return;
             try
             {
+                btnAceptar.Enabled = false;
+
+                // Validacion
+                int almacenID = (nuevo) ? 0 : currentIDAlmacen;
+                int sucursalID = Convert.ToInt32(cbxSucursal.SelectedValue);
+
+                List<Almacen> listAlmacenes = await almacenModel.verificarAlmacen(textNombreAlmacen.Text, sucursalID, almacenID);
+                if (listAlmacenes.Count > 0)
+                {
+                    errorProvider1.SetError(textNombreAlmacen, "Ya existe un almacén con mismo nombre.");
+                    Validator.textboxValidateColor(textNombreAlmacen, false);
+                    return;
+                }
+                errorProvider1.Clear();
+                Validator.textboxValidateColor(textNombreAlmacen, true);
+
+                // Procediendo con el guardado
                 crearObjetoSucursal();
                 if (nuevo)
                 {
@@ -311,6 +338,10 @@ namespace Admeli.Configuracion.Nuevo
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                btnAceptar.Enabled = true;
             }
         }
 
@@ -339,13 +370,15 @@ namespace Admeli.Configuracion.Nuevo
 
         private bool validarCampos()
         {
-            if (textNombreAlmacen.Text == "")
+
+            if (textNombreAlmacen.Text.Trim() == "")
             {
-                errorProvider1.SetError(textNombreAlmacen, "Este campo esta bacía");
-                textNombreAlmacen.Focus();
+                errorProvider1.SetError(textNombreAlmacen, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreAlmacen, false);
                 return false;
             }
             errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreAlmacen, true);
 
             switch (labelUbicaciones.Count)
             {
@@ -387,6 +420,15 @@ namespace Admeli.Configuracion.Nuevo
                 return false;
             }
             errorProvider1.Clear();
+
+            if (textDirecionAlmacen.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textDirecionAlmacen, "Campo obligatorio");
+                Validator.textboxValidateColor(textDirecionAlmacen, false);
+                return false;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textDirecionAlmacen, true);
             return true;
         }
 
@@ -396,14 +438,56 @@ namespace Admeli.Configuracion.Nuevo
         }
         #endregion
 
-        private void FormAlmacenNuevo_Paint(object sender, PaintEventArgs e)
+        #region =============================== Validacion Tiempo Real ===============================
+        private async void textNombreAlmacen_Validated(object sender, EventArgs e)
         {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelLevelPais, 157, 157, 157);
-            drawShape.lineBorder(panelLevel1, 157, 157, 157);
-            drawShape.lineBorder(panelLevel2, 157, 157, 157);
-            drawShape.lineBorder(panelLevel3, 157, 157, 157);
-            drawShape.lineBorder(panel2, 157, 157, 157);
+            if (textNombreAlmacen.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textNombreAlmacen, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreAlmacen, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreAlmacen, true);
+
+            ////
+            try
+            {
+                int almacenID = (nuevo) ? 0 : currentIDAlmacen;
+                int sucursalID = Convert.ToInt32(cbxSucursal.SelectedValue);
+
+                List<Almacen> listAlmacenes = await almacenModel.verificarAlmacen(textNombreAlmacen.Text, sucursalID, almacenID);
+                if (listAlmacenes.Count > 0)
+                {
+                    errorProvider1.SetError(textNombreAlmacen, "Ya existe un almacén con mismo nombre.");
+                    Validator.textboxValidateColor(textNombreAlmacen, false);
+                    return;
+                }
+                errorProvider1.Clear();
+                Validator.textboxValidateColor(textNombreAlmacen, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textDirecionAlmacen_Validated(object sender, EventArgs e)
+        {
+            if (textDirecionAlmacen.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textDirecionAlmacen, "Campo obligatorio");
+                Validator.textboxValidateColor(textDirecionAlmacen, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textDirecionAlmacen, true);
+        }
+        #endregion
+
+        private void FormAlmacenNuevo_Shown(object sender, EventArgs e)
+        {
+            cbxSucursal.Focus();
         }
     }
 }

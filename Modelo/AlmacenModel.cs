@@ -74,6 +74,20 @@ namespace Modelo
             }
         }
 
+        public async Task<List<Almacen>> verificarAlmacen(string nombre, int sucursal, int idAlmcaen)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/verificarnombrealmacen/nombre/almacen%201/sucursal/1/almacen/-1
+                List<Almacen> list = await webService.GETLis<Almacen>("verificarnombrealmacen", String.Format("nombre/{0}/sucursal/{1}/almacen/{2}", nombre, sucursal, idAlmcaen));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<RootObject<Almacen>> almacenes(int page, int items)
         {
             try

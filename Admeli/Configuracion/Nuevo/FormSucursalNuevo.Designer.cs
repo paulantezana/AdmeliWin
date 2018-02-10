@@ -93,10 +93,10 @@
             // 
             this.panelFooter.Controls.Add(this.panel1);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 405);
+            this.panelFooter.Location = new System.Drawing.Point(0, 407);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.panelFooter.Size = new System.Drawing.Size(735, 49);
+            this.panelFooter.Size = new System.Drawing.Size(734, 49);
             this.panelFooter.TabIndex = 3;
             this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
@@ -570,7 +570,7 @@
             this.progressBarApp.Maximum = 200;
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
-            this.progressBarApp.Size = new System.Drawing.Size(735, 5);
+            this.progressBarApp.Size = new System.Drawing.Size(734, 5);
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 0;
             // 
@@ -639,7 +639,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(735, 454);
+            this.ClientSize = new System.Drawing.Size(734, 456);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.chkCompraSucursal);

@@ -45,10 +45,11 @@ namespace Admeli.Configuracion
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
 
             lisenerKeyEvents = true; // Active lisener key events
-        } 
+        }
         #endregion
 
 
+        #region ================================== Root load ==================================
         private void UCDocumentoIdentificacion_Load(object sender, EventArgs e)
         {
             this.reLoad();
@@ -67,6 +68,7 @@ namespace Admeli.Configuracion
             cargarRegistros();
         }
 
+        #endregion
 
         #region ======================== KEYBOARD ========================
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
@@ -246,6 +248,11 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             cargarRegistros();

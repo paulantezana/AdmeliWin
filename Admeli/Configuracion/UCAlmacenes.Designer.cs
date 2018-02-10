@@ -34,6 +34,16 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.idAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.principalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPersonalAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
@@ -49,22 +59,12 @@
             this.lblSpeedPages = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
-            this.panelHeaderItem1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnAnular = new System.Windows.Forms.ToolStripButton();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.idAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.principalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPersonalAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelHeaderItem1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -145,6 +145,111 @@
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+            // 
+            // idAlmacenDataGridViewTextBoxColumn
+            // 
+            this.idAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idAlmacen";
+            this.idAlmacenDataGridViewTextBoxColumn.HeaderText = "idAlmacen";
+            this.idAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idAlmacenDataGridViewTextBoxColumn.Name = "idAlmacenDataGridViewTextBoxColumn";
+            this.idAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idAlmacenDataGridViewTextBoxColumn.Visible = false;
+            this.idAlmacenDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
+            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // principalDataGridViewCheckBoxColumn
+            // 
+            this.principalDataGridViewCheckBoxColumn.DataPropertyName = "principal";
+            this.principalDataGridViewCheckBoxColumn.HeaderText = "Principal";
+            this.principalDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.principalDataGridViewCheckBoxColumn.Name = "principalDataGridViewCheckBoxColumn";
+            this.principalDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.principalDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.principalDataGridViewCheckBoxColumn.Width = 72;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
+            this.idSucursalDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // idUbicacionGeograficaDataGridViewTextBoxColumn
+            // 
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.DataPropertyName = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.HeaderText = "idUbicacionGeografica";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Visible = false;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // nombreSucursalDataGridViewTextBoxColumn
+            // 
+            this.nombreSucursalDataGridViewTextBoxColumn.DataPropertyName = "nombreSucursal";
+            this.nombreSucursalDataGridViewTextBoxColumn.HeaderText = "Sucursal";
+            this.nombreSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreSucursalDataGridViewTextBoxColumn.Name = "nombreSucursalDataGridViewTextBoxColumn";
+            this.nombreSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreSucursalDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "Tiene Registros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // idPersonalAlmacenDataGridViewTextBoxColumn
+            // 
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idPersonalAlmacen";
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.HeaderText = "idPersonalAlmacen";
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.Name = "idPersonalAlmacenDataGridViewTextBoxColumn";
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.Visible = false;
+            this.idPersonalAlmacenDataGridViewTextBoxColumn.Width = 122;
             // 
             // almacenBindingSource
             // 
@@ -301,8 +406,8 @@
             this.toolStripCrud.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripCrud.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripCrud.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnModificar,
             this.btnNuevo,
+            this.btnModificar,
             this.btnAnular,
             this.btnActualizar});
             this.toolStripCrud.Location = new System.Drawing.Point(1, 42);
@@ -311,27 +416,6 @@
             this.toolStripCrud.Size = new System.Drawing.Size(878, 45);
             this.toolStripCrud.TabIndex = 17;
             this.toolStripCrud.Text = "toolStrip1";
-            // 
-            // panelHeaderItem1
-            // 
-            this.panelHeaderItem1.Controls.Add(this.label1);
-            this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
-            this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(878, 41);
-            this.panelHeaderItem1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MANTENIMIENTO ALMACEN";
             // 
             // btnModificar
             // 
@@ -385,110 +469,26 @@
             this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // idAlmacenDataGridViewTextBoxColumn
+            // panelHeaderItem1
             // 
-            this.idAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idAlmacen";
-            this.idAlmacenDataGridViewTextBoxColumn.HeaderText = "idAlmacen";
-            this.idAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idAlmacenDataGridViewTextBoxColumn.Name = "idAlmacenDataGridViewTextBoxColumn";
-            this.idAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idAlmacenDataGridViewTextBoxColumn.Visible = false;
-            this.idAlmacenDataGridViewTextBoxColumn.Width = 81;
+            this.panelHeaderItem1.Controls.Add(this.label1);
+            this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
+            this.panelHeaderItem1.Name = "panelHeaderItem1";
+            this.panelHeaderItem1.Size = new System.Drawing.Size(878, 41);
+            this.panelHeaderItem1.TabIndex = 0;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // label1
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
-            this.direccionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // principalDataGridViewCheckBoxColumn
-            // 
-            this.principalDataGridViewCheckBoxColumn.DataPropertyName = "principal";
-            this.principalDataGridViewCheckBoxColumn.HeaderText = "Principal";
-            this.principalDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.principalDataGridViewCheckBoxColumn.Name = "principalDataGridViewCheckBoxColumn";
-            this.principalDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.principalDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.principalDataGridViewCheckBoxColumn.Width = 72;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // idSucursalDataGridViewTextBoxColumn
-            // 
-            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
-            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
-            this.idSucursalDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // idUbicacionGeograficaDataGridViewTextBoxColumn
-            // 
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.DataPropertyName = "idUbicacionGeografica";
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.HeaderText = "idUbicacionGeografica";
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Visible = false;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // nombreSucursalDataGridViewTextBoxColumn
-            // 
-            this.nombreSucursalDataGridViewTextBoxColumn.DataPropertyName = "nombreSucursal";
-            this.nombreSucursalDataGridViewTextBoxColumn.HeaderText = "Sucursal";
-            this.nombreSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreSucursalDataGridViewTextBoxColumn.Name = "nombreSucursalDataGridViewTextBoxColumn";
-            this.nombreSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreSucursalDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // tieneRegistrosDataGridViewTextBoxColumn
-            // 
-            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "Tiene Registros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
-            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // idPersonalAlmacenDataGridViewTextBoxColumn
-            // 
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.DataPropertyName = "idPersonalAlmacen";
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.HeaderText = "idPersonalAlmacen";
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.Name = "idPersonalAlmacenDataGridViewTextBoxColumn";
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.Visible = false;
-            this.idPersonalAlmacenDataGridViewTextBoxColumn.Width = 122;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MANTENIMIENTO ALMACEN";
             // 
             // UCAlmacenes
             // 

@@ -325,8 +325,21 @@ namespace Admeli.Configuracion.Nuevo
             if (!validarCampos()) return;
             try
             {
-                crearObjetoSucursal();
                 btnAceptar.Enabled = false;
+                // Validacion
+                int sucursalID = (nuevo) ? 0 : currentIDSucursal;
+                Response ress = await sucursalModel.existeSucursal(textNombreSucursal.Text, sucursalID);
+                if (ress.id == 0)
+                {
+                    errorProvider1.SetError(textNombreSucursal, ress.msj);
+                    Validator.textboxValidateColor(textNombreSucursal, false);
+                    return;
+                }
+                errorProvider1.Clear();
+                Validator.textboxValidateColor(textNombreSucursal, true);
+
+                // Procediendo con el guardado
+                crearObjetoSucursal();
                 if (nuevo)
                 {
                     Response response = await sucursalModel.guardar(ubicacionGeografica, currentSucursal);

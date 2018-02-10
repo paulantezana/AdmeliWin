@@ -78,13 +78,27 @@ namespace Modelo
             }
         }
         
+        public async Task<List<DocumentoIdentificacion>> verificar(string nombre, int idDocumento)
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/verificardocumentoidentificaciones/nombre/rerg/documento/0
+                List<DocumentoIdentificacion> list = await webService.GETLis<DocumentoIdentificacion>("verificardocumentoidentificaciones", String.Format("nombre/{0}/documento/{1}", nombre, idDocumento));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<RootObject<DocumentoIdentificacion>> documentoidentificaciones(int page, int items)
         {
             try
             {
                 // www.lineatienda.com/services.php/documentoidentificaciones/1/100
-                RootObject<DocumentoIdentificacion> documetoIdentificacion = await webService.GETRoot<DocumentoIdentificacion>("documentoidentificaciones", String.Format("{0}/{1}", page, items));
-                return documetoIdentificacion;
+                RootObject<DocumentoIdentificacion> listRoot = await webService.GETRoot<DocumentoIdentificacion>("documentoidentificaciones", String.Format("{0}/{1}", page, items));
+                return listRoot;
             }
             catch (Exception ex)
             {
