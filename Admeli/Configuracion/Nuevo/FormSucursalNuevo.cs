@@ -68,6 +68,19 @@ namespace Admeli.Configuracion.Nuevo
         }
         #endregion
 
+        #region =============================== Root Load ===============================
+        private void FormSucursalNuevo_Load(object sender, EventArgs e)
+        {
+            reLoad();
+        }
+
+        private async void reLoad()
+        {
+            await cargarPaises();
+            crearNivelesPais();
+        }
+        #endregion
+
         #region ========================== Load ==========================
         private void mostrarDatosModificar()
         {
@@ -105,17 +118,6 @@ namespace Admeli.Configuracion.Nuevo
             puntoGerencia = await puntoModel.puntoGerencia(currentSucursal.idSucursal);
             chkGerenciaSucursal.Checked = Convert.ToBoolean(puntoGerencia.estado);
         }*/
-
-        private void FormSucursalNuevo_Load(object sender, EventArgs e)
-        {
-            loadRootData();
-        }
-
-        private async void loadRootData()
-        {
-            await cargarPaises();
-            crearNivelesPais();
-        }
 
         private async Task cargarPaises()
         {
