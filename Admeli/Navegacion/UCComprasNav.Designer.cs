@@ -29,175 +29,124 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCComprasNav));
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOredenCompra = new System.Windows.Forms.Button();
-            this.btnCompras = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.btnCuentaPagar = new System.Windows.Forms.Button();
-            this.panelHeader.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.btnOredenCompra = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.Controls.Add(this.label2);
-            this.panelHeader.Controls.Add(this.label1);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(188, 49);
-            this.panelHeader.TabIndex = 6;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 27);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Administración de las compras";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Compras";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnOredenCompra);
-            this.flowLayoutPanel1.Controls.Add(this.btnCompras);
-            this.flowLayoutPanel1.Controls.Add(this.btnProveedores);
-            this.flowLayoutPanel1.Controls.Add(this.btnCuentaPagar);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 49);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(188, 485);
-            this.flowLayoutPanel1.TabIndex = 7;
-            // 
-            // btnOredenCompra
-            // 
-            this.btnOredenCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOredenCompra.FlatAppearance.BorderSize = 0;
-            this.btnOredenCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnOredenCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnOredenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOredenCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnOredenCompra.Image")));
-            this.btnOredenCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOredenCompra.Location = new System.Drawing.Point(0, 8);
-            this.btnOredenCompra.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOredenCompra.Name = "btnOredenCompra";
-            this.btnOredenCompra.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnOredenCompra.Size = new System.Drawing.Size(185, 41);
-            this.btnOredenCompra.TabIndex = 2;
-            this.btnOredenCompra.Text = " Orden de compra proveedor";
-            this.btnOredenCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOredenCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOredenCompra.UseVisualStyleBackColor = true;
-            this.btnOredenCompra.Click += new System.EventHandler(this.btnOredenCompra_Click);
-            // 
-            // btnCompras
-            // 
-            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCompras.FlatAppearance.BorderSize = 0;
-            this.btnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
-            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(0, 49);
-            this.btnCompras.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnCompras.Size = new System.Drawing.Size(185, 41);
-            this.btnCompras.TabIndex = 3;
-            this.btnCompras.Text = " Compras";
-            this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCompras.UseVisualStyleBackColor = true;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnProveedores
             // 
+            this.btnProveedores.BackColor = System.Drawing.Color.White;
             this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnProveedores.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnProveedores.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 90);
-            this.btnProveedores.Margin = new System.Windows.Forms.Padding(0);
+            this.btnProveedores.Location = new System.Drawing.Point(5, 5);
+            this.btnProveedores.Margin = new System.Windows.Forms.Padding(5);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(185, 41);
-            this.btnProveedores.TabIndex = 4;
-            this.btnProveedores.Text = " Proveedores";
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(125, 32);
+            this.btnProveedores.TabIndex = 14;
+            this.btnProveedores.Text = "   Proveedores";
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.BackColor = System.Drawing.Color.White;
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCompras.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
+            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.Location = new System.Drawing.Point(140, 5);
+            this.btnCompras.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnCompras.Size = new System.Drawing.Size(105, 32);
+            this.btnCompras.TabIndex = 15;
+            this.btnCompras.Text = "   Compras";
+            this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCompras.UseVisualStyleBackColor = false;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnCuentaPagar
             // 
+            this.btnCuentaPagar.BackColor = System.Drawing.Color.White;
             this.btnCuentaPagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCuentaPagar.FlatAppearance.BorderSize = 0;
-            this.btnCuentaPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnCuentaPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCuentaPagar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCuentaPagar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCuentaPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCuentaPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnCuentaPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCuentaPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentaPagar.Image")));
             this.btnCuentaPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCuentaPagar.Location = new System.Drawing.Point(0, 131);
-            this.btnCuentaPagar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCuentaPagar.Location = new System.Drawing.Point(255, 5);
+            this.btnCuentaPagar.Margin = new System.Windows.Forms.Padding(5);
             this.btnCuentaPagar.Name = "btnCuentaPagar";
-            this.btnCuentaPagar.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnCuentaPagar.Size = new System.Drawing.Size(185, 41);
-            this.btnCuentaPagar.TabIndex = 5;
-            this.btnCuentaPagar.Text = " Cuentas por pagar";
+            this.btnCuentaPagar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnCuentaPagar.Size = new System.Drawing.Size(147, 32);
+            this.btnCuentaPagar.TabIndex = 16;
+            this.btnCuentaPagar.Text = "   Cuentas por pagar";
             this.btnCuentaPagar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCuentaPagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCuentaPagar.UseVisualStyleBackColor = true;
+            this.btnCuentaPagar.UseVisualStyleBackColor = false;
             this.btnCuentaPagar.Click += new System.EventHandler(this.btnCuentaPagar_Click);
+            // 
+            // btnOredenCompra
+            // 
+            this.btnOredenCompra.BackColor = System.Drawing.Color.White;
+            this.btnOredenCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOredenCompra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnOredenCompra.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnOredenCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnOredenCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnOredenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOredenCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnOredenCompra.Image")));
+            this.btnOredenCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOredenCompra.Location = new System.Drawing.Point(412, 5);
+            this.btnOredenCompra.Margin = new System.Windows.Forms.Padding(5);
+            this.btnOredenCompra.Name = "btnOredenCompra";
+            this.btnOredenCompra.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnOredenCompra.Size = new System.Drawing.Size(187, 32);
+            this.btnOredenCompra.TabIndex = 17;
+            this.btnOredenCompra.Text = "   Orden Compra Proveedor";
+            this.btnOredenCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOredenCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOredenCompra.UseVisualStyleBackColor = false;
+            this.btnOredenCompra.Click += new System.EventHandler(this.btnOredenCompra_Click);
             // 
             // UCComprasNav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(248)))));
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panelHeader);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnProveedores);
+            this.Controls.Add(this.btnCompras);
+            this.Controls.Add(this.btnCuentaPagar);
+            this.Controls.Add(this.btnOredenCompra);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCComprasNav";
-            this.Size = new System.Drawing.Size(188, 534);
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(665, 103);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnOredenCompra;
-        private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnCuentaPagar;
+        private System.Windows.Forms.Button btnOredenCompra;
     }
 }

@@ -46,25 +46,6 @@ namespace Admeli.Navegacion
             this.formPrincipal = formPrincipal;
         }
 
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelHeader,220, 220, 220);
-        }
-
-        private void panelDivide_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelDivide1);
-        }
-
-        private void panelDivide2_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelDivide2);
-        }
-
-
         private void togglePanelMain(string panelName)
         {
             limpiarControles();

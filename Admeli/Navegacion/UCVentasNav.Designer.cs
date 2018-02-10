@@ -29,51 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCVentasNav));
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCotizacionCliente = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnCuentasPorCobrar = new System.Windows.Forms.Button();
             this.btnVentaTouch = new System.Windows.Forms.Button();
-            this.panelHeader.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.Controls.Add(this.label2);
-            this.panelHeader.Controls.Add(this.label1);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(188, 49);
-            this.panelHeader.TabIndex = 6;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 27);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Administración de ventas";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ventas";
             // 
             // flowLayoutPanel1
             // 
@@ -83,11 +46,11 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCuentasPorCobrar);
             this.flowLayoutPanel1.Controls.Add(this.btnVentaTouch);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 49);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(188, 492);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(777, 107);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnCotizacionCliente
@@ -120,7 +83,7 @@
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 49);
+            this.btnVentas.Location = new System.Drawing.Point(185, 8);
             this.btnVentas.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -141,7 +104,7 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 90);
+            this.btnClientes.Location = new System.Drawing.Point(370, 8);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(0);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -162,7 +125,7 @@
             this.btnCuentasPorCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCuentasPorCobrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentasPorCobrar.Image")));
             this.btnCuentasPorCobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCuentasPorCobrar.Location = new System.Drawing.Point(0, 131);
+            this.btnCuentasPorCobrar.Location = new System.Drawing.Point(555, 8);
             this.btnCuentasPorCobrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCuentasPorCobrar.Name = "btnCuentasPorCobrar";
             this.btnCuentasPorCobrar.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -183,7 +146,7 @@
             this.btnVentaTouch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentaTouch.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaTouch.Image")));
             this.btnVentaTouch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaTouch.Location = new System.Drawing.Point(0, 172);
+            this.btnVentaTouch.Location = new System.Drawing.Point(0, 49);
             this.btnVentaTouch.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentaTouch.Name = "btnVentaTouch";
             this.btnVentaTouch.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -199,24 +162,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(248)))));
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panelHeader);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCVentasNav";
-            this.Size = new System.Drawing.Size(188, 541);
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
+            this.Size = new System.Drawing.Size(777, 107);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCotizacionCliente;
         private System.Windows.Forms.Button btnVentas;

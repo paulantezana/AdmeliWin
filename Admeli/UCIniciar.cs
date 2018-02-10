@@ -63,7 +63,7 @@ namespace Admeli
 
             // Mostrando Todo Los Elementos
             formPrincipal.appLoadInciComponents();
-            formPrincipal.toggleHome();
+            formPrincipal.togglePanelAside("Home");
         }
 
         private void panelContent_Paint(object sender, PaintEventArgs e)

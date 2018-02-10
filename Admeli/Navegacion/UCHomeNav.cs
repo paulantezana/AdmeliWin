@@ -31,24 +31,24 @@ namespace Admeli.Navegacion
 
         private void UCHomeNav_Load(object sender, EventArgs e)
         {
-            lblApellidoPersonal.Text = PersonalModel.personal.apellidos;
+            /*lblApellidoPersonal.Text = PersonalModel.personal.apellidos;
             lblDniPersonal.Text = PersonalModel.personal.numeroDocumento;
             lblNombrePersonal.Text = PersonalModel.personal.nombres;
             lblUsuarioPersonal.Text = PersonalModel.personal.usuario;
-
+            */
 
             // Configuracion
-            int x = 20, y = 40;
+           /* int x = 20, y = 40;
             foreach (TipoCambioMoneda item in ConfigModel.tipoCambioMonedas)
             {
                 y += 20;
                 element(String.Format("{0} : {1:0.00}", item.moneda, item.cambio), x, y);
-            }
+            }*/
         }
 
         private void element(string textContent, int x, int y)
         {
-            Label label = new Label()
+            /*Label label = new Label()
             {
                 AutoSize = true,
                 Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
@@ -58,14 +58,14 @@ namespace Admeli.Navegacion
                 Size = new System.Drawing.Size(64, 91),
                 TabIndex = 39,
                 Text = textContent
-            };
-            this.panelCambio.Controls.Add(label);
+            };*/
+           // this.panelCambio.Controls.Add(label);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panel1);
+           // drawShape.bottomLine(panel1);
         }
     }
 }
