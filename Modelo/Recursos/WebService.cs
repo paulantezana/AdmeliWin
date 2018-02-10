@@ -19,7 +19,7 @@ namespace Modelo.Recursos
 
         public WebService()
         {
-            // this.domainName = "http://www.lineatienda.com";
+            //this.domainName = "http://www.lineatienda.com";
             this.domainName = "http://localhost";
             // this.domainName = "http://192.168.1.45:8080";
 
