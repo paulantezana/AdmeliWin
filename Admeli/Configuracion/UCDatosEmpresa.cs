@@ -40,7 +40,7 @@ namespace Admeli.Configuracion
             paisBindingSource.DataSource = await locationModel.paises();
 
             // cargando la ubicacion geografica por defecto
-            ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.sucursal.idUbicacionGeografica);
+            ubicacionGeografica = await locationModel.ubigeoActual(ConfigModel.datosGenerales.idUbicacionGeografica);
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
         }
 
@@ -64,7 +64,7 @@ namespace Admeli.Configuracion
         {
             textNombreEmpresa.Text = datosGenerales.razonSocial;
             textNumeroIdentificacion.Text = datosGenerales.ruc;
-            textEmail.Text = datosGenerales.email;
+            textNumeroIdentificacion.Text = datosGenerales.email;
             textDireccion.Text = datosGenerales.direccion;
             textFormaDePago.Text = datosGenerales.cuentaBancaria;
 
@@ -335,7 +335,7 @@ namespace Admeli.Configuracion
             // Actualizando los datos generales
             datosGenerales.razonSocial = textNombreEmpresa.Text;
             datosGenerales.ruc = textNumeroIdentificacion.Text;
-            datosGenerales.email = textEmail.Text;
+            datosGenerales.email = textNumeroIdentificacion.Text;
             datosGenerales.direccion = textDireccion.Text;
             datosGenerales.cuentaBancaria = textFormaDePago.Text;
 

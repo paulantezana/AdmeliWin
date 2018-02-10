@@ -52,12 +52,6 @@ namespace Admeli.Configuracion.Nuevo
         #endregion
 
         #region ========================= Paint =========================
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panel2);
-        }
-
         private void panelFooter_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();

@@ -31,8 +31,6 @@ namespace Admeli.Configuracion
             InitializeComponent();
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCSucursales(FormPrincipal formPrincipal)
@@ -42,8 +40,6 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         } 
         #endregion
 
@@ -51,35 +47,83 @@ namespace Admeli.Configuracion
         private void UCSucursales_Load(object sender, EventArgs e)
         {
             reLoad();
+
+            // Key events listener
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         internal void reLoad()
         {
             cargarRegistros();
             cargarComponentes();
+
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         #endregion
 
-        #region ===================== Paint =====================
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F6:
+                    executeEliminar();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
+        #region ===================== Paint and Decoration =====================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
-        #endregion
-
-        #region =========================== Decoration ===========================
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idSucursal = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentSucursal = sucursales.Find(x => x.idSucursal == idSucursal); // Buscando la categoria en las lista de categorias
+                if (currentSucursal.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+                if (currentSucursal.principal)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(180, 241, 202);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(16, 120, 53);
+                }
+            }
         }
         #endregion
+
 
         #region ======================= Loads =======================
         private  void cargarComponentes()
@@ -106,7 +150,12 @@ namespace Admeli.Configuracion
                 sucursales = sucursalesRoot.datos;
                 sucursalBindingSource.DataSource = sucursales;
                 dataGridView.Refresh();
+
+                // Mostrando el páginado
                 mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -204,6 +253,11 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             cargarRegistros();

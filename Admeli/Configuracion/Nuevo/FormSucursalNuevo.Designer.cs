@@ -33,15 +33,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textNombreSucursal = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.chkPrincipalSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textDirecionSucursal = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.chkActivoSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.groupDatoSucursales = new System.Windows.Forms.GroupBox();
@@ -72,9 +66,12 @@
             this.chkGerenciaSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.textNombreSucursal = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textDirecionSucursal = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.groupDatoSucursales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
@@ -89,7 +86,7 @@
             // 
             this.panelFooter.Controls.Add(this.panel1);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 559);
+            this.panelFooter.Location = new System.Drawing.Point(0, 522);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(795, 49);
@@ -142,60 +139,6 @@
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(795, 42);
-            this.panel2.TabIndex = 28;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(16, 13);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Mantenimiento Sucursal";
-            // 
-            // textNombreSucursal
-            // 
-            this.textNombreSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textNombreSucursal.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textNombreSucursal.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textNombreSucursal.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textNombreSucursal.BorderThickness = 1;
-            this.textNombreSucursal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textNombreSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombreSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textNombreSucursal.isPassword = false;
-            this.textNombreSucursal.Location = new System.Drawing.Point(20, 45);
-            this.textNombreSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.textNombreSucursal.Name = "textNombreSucursal";
-            this.textNombreSucursal.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textNombreSucursal.Size = new System.Drawing.Size(328, 35);
-            this.textNombreSucursal.TabIndex = 31;
-            this.textNombreSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label2.Location = new System.Drawing.Point(17, 27);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 16);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Nombres*";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -232,37 +175,6 @@
             this.chkPrincipalSucursal.Size = new System.Drawing.Size(20, 20);
             this.chkPrincipalSucursal.TabIndex = 49;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label15.Location = new System.Drawing.Point(22, 375);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 16);
-            this.label15.TabIndex = 48;
-            this.label15.Text = "Dirección";
-            // 
-            // textDirecionSucursal
-            // 
-            this.textDirecionSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.textDirecionSucursal.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textDirecionSucursal.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.textDirecionSucursal.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.textDirecionSucursal.BorderThickness = 1;
-            this.textDirecionSucursal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textDirecionSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDirecionSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textDirecionSucursal.isPassword = false;
-            this.textDirecionSucursal.Location = new System.Drawing.Point(20, 395);
-            this.textDirecionSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.textDirecionSucursal.Name = "textDirecionSucursal";
-            this.textDirecionSucursal.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.textDirecionSucursal.Size = new System.Drawing.Size(330, 35);
-            this.textDirecionSucursal.TabIndex = 47;
-            this.textDirecionSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -289,7 +201,11 @@
             // 
             // groupDatoSucursales
             // 
+            this.groupDatoSucursales.Controls.Add(this.label2);
+            this.groupDatoSucursales.Controls.Add(this.label4);
+            this.groupDatoSucursales.Controls.Add(this.textDirecionSucursal);
             this.groupDatoSucursales.Controls.Add(this.cbxNivel4);
+            this.groupDatoSucursales.Controls.Add(this.textNombreSucursal);
             this.groupDatoSucursales.Controls.Add(this.lblNivel4);
             this.groupDatoSucursales.Controls.Add(this.cbxNivel3);
             this.groupDatoSucursales.Controls.Add(this.lblNivel3);
@@ -298,16 +214,12 @@
             this.groupDatoSucursales.Controls.Add(this.cbxNivel1);
             this.groupDatoSucursales.Controls.Add(this.lblNivel1);
             this.groupDatoSucursales.Controls.Add(this.cbxPaises);
-            this.groupDatoSucursales.Controls.Add(this.label2);
             this.groupDatoSucursales.Controls.Add(this.label1);
-            this.groupDatoSucursales.Controls.Add(this.textNombreSucursal);
             this.groupDatoSucursales.Controls.Add(this.chkActivoSucursal);
             this.groupDatoSucursales.Controls.Add(this.label11);
             this.groupDatoSucursales.Controls.Add(this.label16);
             this.groupDatoSucursales.Controls.Add(this.chkPrincipalSucursal);
-            this.groupDatoSucursales.Controls.Add(this.label15);
-            this.groupDatoSucursales.Controls.Add(this.textDirecionSucursal);
-            this.groupDatoSucursales.Location = new System.Drawing.Point(12, 51);
+            this.groupDatoSucursales.Location = new System.Drawing.Point(12, 12);
             this.groupDatoSucursales.Name = "groupDatoSucursales";
             this.groupDatoSucursales.Size = new System.Drawing.Size(371, 490);
             this.groupDatoSucursales.TabIndex = 53;
@@ -471,7 +383,7 @@
             this.groupBox2.Controls.Add(this.chkAdministracionSucursal);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.chkGerenciaSucursal);
-            this.groupBox2.Location = new System.Drawing.Point(403, 51);
+            this.groupBox2.Location = new System.Drawing.Point(407, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(376, 490);
             this.groupBox2.TabIndex = 54;
@@ -616,16 +528,85 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(23, 36);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 14);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Nombres*";
+            // 
+            // textNombreSucursal
+            // 
+            this.textNombreSucursal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textNombreSucursal.BackColor = System.Drawing.Color.White;
+            this.textNombreSucursal.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textNombreSucursal.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textNombreSucursal.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textNombreSucursal.BorderThickness = 1;
+            this.textNombreSucursal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textNombreSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombreSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.errorProvider1.SetIconPadding(this.textNombreSucursal, -30);
+            this.textNombreSucursal.isPassword = false;
+            this.textNombreSucursal.Location = new System.Drawing.Point(19, 30);
+            this.textNombreSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombreSucursal.Name = "textNombreSucursal";
+            this.textNombreSucursal.Padding = new System.Windows.Forms.Padding(5, 18, 5, 2);
+            this.textNombreSucursal.Size = new System.Drawing.Size(328, 40);
+            this.textNombreSucursal.TabIndex = 60;
+            this.textNombreSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(23, 383);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 14);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "Dirección *";
+            // 
+            // textDirecionSucursal
+            // 
+            this.textDirecionSucursal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textDirecionSucursal.BackColor = System.Drawing.Color.White;
+            this.textDirecionSucursal.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textDirecionSucursal.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textDirecionSucursal.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textDirecionSucursal.BorderThickness = 1;
+            this.textDirecionSucursal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textDirecionSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDirecionSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.errorProvider1.SetIconPadding(this.textDirecionSucursal, -30);
+            this.textDirecionSucursal.isPassword = false;
+            this.textDirecionSucursal.Location = new System.Drawing.Point(19, 377);
+            this.textDirecionSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textDirecionSucursal.Name = "textDirecionSucursal";
+            this.textDirecionSucursal.Padding = new System.Windows.Forms.Padding(5, 18, 5, 2);
+            this.textDirecionSucursal.Size = new System.Drawing.Size(328, 40);
+            this.textDirecionSucursal.TabIndex = 62;
+            this.textDirecionSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // FormSucursalNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(795, 608);
+            this.ClientSize = new System.Drawing.Size(795, 571);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupDatoSucursales);
             this.Controls.Add(this.panelFooter);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.progressBarApp);
             this.Name = "FormSucursalNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -633,8 +614,6 @@
             this.Load += new System.EventHandler(this.FormSucursalNuevo_Load);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.groupDatoSucursales.ResumeLayout(false);
             this.groupDatoSucursales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
@@ -655,15 +634,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textNombreSucursal;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
         private Bunifu.Framework.UI.BunifuCheckbox chkPrincipalSucursal;
-        private System.Windows.Forms.Label label15;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textDirecionSucursal;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCheckbox chkActivoSucursal;
         private System.Windows.Forms.GroupBox groupDatoSucursales;
@@ -694,5 +667,9 @@
         private System.Windows.Forms.BindingSource nivel2BindingSource;
         private System.Windows.Forms.BindingSource paisBindingSource;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textNombreSucursal;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textDirecionSucursal;
     }
 }
