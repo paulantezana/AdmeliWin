@@ -20,6 +20,7 @@ namespace Admeli.Configuracion.Modificar
         private PuntoVentaModel puntoVentaModel = new PuntoVentaModel();
         private SucursalModel sucursalModel = new SucursalModel();
         private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
+        private DocCorrelativoModel docCorrelativoModel = new DocCorrelativoModel();
 
         #region ========================= Constructor =========================
         public FormAsignarCorrelativoModificar()
@@ -83,11 +84,20 @@ namespace Admeli.Configuracion.Modificar
             {
                 int sucursalID = (cbxSucursal.SelectedIndex == -1) ? 0 : Convert.ToInt32(cbxSucursal.SelectedValue);
                 puntoDeVentaBindingSource.DataSource = await puntoVentaModel.puntoventas(sucursalID);
+                cargarDatosModificar();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error! " + ex.Message, "Load", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void cargarDatosModificar()
+        {
+            cbxSucursal.SelectedValue = currentDocCorrelativo.idSucursal;
+            cbxTipoDocumento.SelectedValue = currentDocCorrelativo.idDocumento;
+            textSerie.Text = currentDocCorrelativo.serie;
+            textCorrelativoSiguiente.Text = currentDocCorrelativo.correlativoActual;
         }
 
         #endregion
@@ -100,7 +110,65 @@ namespace Admeli.Configuracion.Modificar
             drawShape.lineBorder(panel4, 157, 157, 157);
             drawShape.lineBorder(panel5, 157, 157, 157);
             drawShape.lineBorder(panel6, 157, 157, 157);
-        } 
+        }
+        #endregion
+
+        #region ========================== SAVE AND UPDATE ===========================
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            guardarSucursal();
+        }
+
+        private async void guardarSucursal()
+        {
+            if (!validarCampos()) return;
+            try
+            {
+                crearObjetoSucursal();
+                Response response = await docCorrelativoModel.modificar(currentDocCorrelativo);
+                MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void crearObjetoSucursal()
+        {
+            currentDocCorrelativo.serie = textSerie.Text;
+            currentDocCorrelativo.correlativoActual = textCorrelativoSiguiente.Text;
+            currentDocCorrelativo.estado = Convert.ToInt32(chkActivoSucursal.Checked);
+            currentDocCorrelativo.idSucursal = Convert.ToInt32(cbxSucursal.SelectedValue);
+            currentDocCorrelativo.idDocumento = Convert.ToInt32(cbxTipoDocumento.SelectedValue);
+            //currentDocCorrelativo.
+        }
+
+        private bool validarCampos()
+        {
+            if (textSerie.Text == "")
+            {
+                errorProvider1.SetError(textSerie, "Este campo esta bacía");
+                textSerie.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            if (textCorrelativoSiguiente.Text == "")
+            {
+                errorProvider1.SetError(textCorrelativoSiguiente, "Este campo esta bacía");
+                textCorrelativoSiguiente.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+            return true;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
     }
 }

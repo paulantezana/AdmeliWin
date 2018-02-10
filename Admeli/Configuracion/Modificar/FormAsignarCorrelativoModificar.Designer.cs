@@ -33,21 +33,24 @@
             this.label8 = new System.Windows.Forms.Label();
             this.chkActivoSucursal = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textCorrelativoSiguiente = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxPuntoVenta = new System.Windows.Forms.ComboBox();
+            this.puntoDeVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxSucursal = new System.Windows.Forms.ComboBox();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.cbxArea = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textMotivo = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.textSerie = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -55,20 +58,19 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label4 = new System.Windows.Forms.Label();
-            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.puntoDeVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.puntoDeVentaBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puntoDeVentaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -76,17 +78,17 @@
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.chkActivoSucursal);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.bunifuMetroTextbox1);
+            this.panel3.Controls.Add(this.textCorrelativoSiguiente);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.textMotivo);
+            this.panel3.Controls.Add(this.textSerie);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 49);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(404, 398);
+            this.panel3.Size = new System.Drawing.Size(414, 398);
             this.panel3.TabIndex = 10;
             // 
             // label8
@@ -94,7 +96,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label8.Location = new System.Drawing.Point(36, 366);
+            this.label8.Location = new System.Drawing.Point(42, 366);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
@@ -108,7 +110,7 @@
             this.chkActivoSucursal.Checked = true;
             this.chkActivoSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.chkActivoSucursal.ForeColor = System.Drawing.Color.White;
-            this.chkActivoSucursal.Location = new System.Drawing.Point(11, 364);
+            this.chkActivoSucursal.Location = new System.Drawing.Point(17, 364);
             this.chkActivoSucursal.Name = "chkActivoSucursal";
             this.chkActivoSucursal.Size = new System.Drawing.Size(20, 20);
             this.chkActivoSucursal.TabIndex = 53;
@@ -120,32 +122,32 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(13, 311);
+            this.label1.Location = new System.Drawing.Point(18, 311);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Correlativo siguiente";
             // 
-            // bunifuMetroTextbox1
+            // textCorrelativoSiguiente
             // 
-            this.bunifuMetroTextbox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuMetroTextbox1.BackColor = System.Drawing.Color.White;
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.bunifuMetroTextbox1.BorderThickness = 1;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(8, 305);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(389, 50);
-            this.bunifuMetroTextbox1.TabIndex = 13;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCorrelativoSiguiente.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textCorrelativoSiguiente.BackColor = System.Drawing.Color.White;
+            this.textCorrelativoSiguiente.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textCorrelativoSiguiente.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textCorrelativoSiguiente.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textCorrelativoSiguiente.BorderThickness = 1;
+            this.textCorrelativoSiguiente.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textCorrelativoSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCorrelativoSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textCorrelativoSiguiente.isPassword = false;
+            this.textCorrelativoSiguiente.Location = new System.Drawing.Point(13, 305);
+            this.textCorrelativoSiguiente.Margin = new System.Windows.Forms.Padding(4);
+            this.textCorrelativoSiguiente.Name = "textCorrelativoSiguiente";
+            this.textCorrelativoSiguiente.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
+            this.textCorrelativoSiguiente.Size = new System.Drawing.Size(389, 50);
+            this.textCorrelativoSiguiente.TabIndex = 13;
+            this.textCorrelativoSiguiente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panel6
             // 
@@ -153,7 +155,7 @@
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.cbxTipoDocumento);
-            this.panel6.Location = new System.Drawing.Point(8, 190);
+            this.panel6.Location = new System.Drawing.Point(13, 190);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(1);
             this.panel6.Size = new System.Drawing.Size(389, 50);
@@ -163,6 +165,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label7.Location = new System.Drawing.Point(4, 5);
@@ -180,6 +183,7 @@
             this.cbxTipoDocumento.DataSource = this.tipoDocumentoBindingSource;
             this.cbxTipoDocumento.DisplayMember = "nombre";
             this.cbxTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoDocumento.Enabled = false;
             this.cbxTipoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxTipoDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoDocumento.FormattingEnabled = true;
@@ -190,13 +194,17 @@
             this.cbxTipoDocumento.TabIndex = 1;
             this.cbxTipoDocumento.ValueMember = "idTipoDocumento";
             // 
+            // tipoDocumentoBindingSource
+            // 
+            this.tipoDocumentoBindingSource.DataSource = typeof(Entidad.Configuracion.TipoDocumento);
+            // 
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.cbxPuntoVenta);
-            this.panel5.Location = new System.Drawing.Point(8, 129);
+            this.panel5.Location = new System.Drawing.Point(13, 129);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(1);
             this.panel5.Size = new System.Drawing.Size(389, 50);
@@ -206,6 +214,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(4, 5);
@@ -223,6 +232,7 @@
             this.cbxPuntoVenta.DataSource = this.puntoDeVentaBindingSource;
             this.cbxPuntoVenta.DisplayMember = "nombre";
             this.cbxPuntoVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPuntoVenta.Enabled = false;
             this.cbxPuntoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxPuntoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPuntoVenta.FormattingEnabled = true;
@@ -233,13 +243,17 @@
             this.cbxPuntoVenta.TabIndex = 1;
             this.cbxPuntoVenta.ValueMember = "idPuntoVenta";
             // 
+            // puntoDeVentaBindingSource
+            // 
+            this.puntoDeVentaBindingSource.DataSource = typeof(Entidad.Configuracion.PuntoDeVenta);
+            // 
             // panel4
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.cbxSucursal);
-            this.panel4.Location = new System.Drawing.Point(8, 69);
+            this.panel4.Location = new System.Drawing.Point(13, 69);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(1);
             this.panel4.Size = new System.Drawing.Size(389, 50);
@@ -249,6 +263,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(4, 5);
@@ -266,6 +281,7 @@
             this.cbxSucursal.DataSource = this.sucursalBindingSource;
             this.cbxSucursal.DisplayMember = "nombre";
             this.cbxSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSucursal.Enabled = false;
             this.cbxSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSucursal.FormattingEnabled = true;
@@ -276,13 +292,17 @@
             this.cbxSucursal.TabIndex = 1;
             this.cbxSucursal.ValueMember = "idSucursal";
             // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.cbxArea);
-            this.panel2.Location = new System.Drawing.Point(8, 9);
+            this.panel2.Location = new System.Drawing.Point(13, 9);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(1);
             this.panel2.Size = new System.Drawing.Size(389, 50);
@@ -325,32 +345,32 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(13, 253);
+            this.label2.Location = new System.Drawing.Point(18, 253);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Serie";
             // 
-            // textMotivo
+            // textSerie
             // 
-            this.textMotivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textMotivo.BackColor = System.Drawing.Color.White;
-            this.textMotivo.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textMotivo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textMotivo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textMotivo.BorderThickness = 1;
-            this.textMotivo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMotivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textMotivo.isPassword = false;
-            this.textMotivo.Location = new System.Drawing.Point(8, 247);
-            this.textMotivo.Margin = new System.Windows.Forms.Padding(4);
-            this.textMotivo.Name = "textMotivo";
-            this.textMotivo.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
-            this.textMotivo.Size = new System.Drawing.Size(389, 50);
-            this.textMotivo.TabIndex = 8;
-            this.textMotivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textSerie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textSerie.BackColor = System.Drawing.Color.White;
+            this.textSerie.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textSerie.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textSerie.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textSerie.BorderThickness = 1;
+            this.textSerie.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textSerie.isPassword = false;
+            this.textSerie.Location = new System.Drawing.Point(13, 247);
+            this.textSerie.Margin = new System.Windows.Forms.Padding(4);
+            this.textSerie.Name = "textSerie";
+            this.textSerie.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
+            this.textSerie.Size = new System.Drawing.Size(389, 50);
+            this.textSerie.TabIndex = 8;
+            this.textSerie.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panelFooter
             // 
@@ -359,7 +379,7 @@
             this.panelFooter.Location = new System.Drawing.Point(0, 447);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.panelFooter.Size = new System.Drawing.Size(404, 74);
+            this.panelFooter.Size = new System.Drawing.Size(414, 74);
             this.panelFooter.TabIndex = 11;
             // 
             // panel1
@@ -367,7 +387,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(1, 12);
+            this.panel1.Location = new System.Drawing.Point(6, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(402, 48);
             this.panel1.TabIndex = 0;
@@ -388,6 +408,7 @@
             this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnClose
             // 
@@ -406,6 +427,7 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panelHeader
             // 
@@ -415,7 +437,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(404, 49);
+            this.panelHeader.Size = new System.Drawing.Size(414, 49);
             this.panelHeader.TabIndex = 9;
             // 
             // bunifuSeparator1
@@ -426,7 +448,7 @@
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 37);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(404, 12);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(414, 12);
             this.bunifuSeparator1.TabIndex = 1;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -443,24 +465,18 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "EGRESOS";
             // 
-            // sucursalBindingSource
+            // errorProvider1
             // 
-            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
-            // 
-            // puntoDeVentaBindingSource
-            // 
-            this.puntoDeVentaBindingSource.DataSource = typeof(Entidad.Configuracion.PuntoDeVenta);
-            // 
-            // tipoDocumentoBindingSource
-            // 
-            this.tipoDocumentoBindingSource.DataSource = typeof(Entidad.Configuracion.TipoDocumento);
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormAsignarCorrelativoModificar
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(404, 521);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(414, 521);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
@@ -473,19 +489,20 @@
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.puntoDeVentaBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.puntoDeVentaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -497,7 +514,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbxArea;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox textMotivo;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textSerie;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAceptar;
@@ -515,11 +532,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbxTipoDocumento;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox textCorrelativoSiguiente;
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuCheckbox chkActivoSucursal;
         private System.Windows.Forms.BindingSource tipoDocumentoBindingSource;
         private System.Windows.Forms.BindingSource puntoDeVentaBindingSource;
         private System.Windows.Forms.BindingSource sucursalBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

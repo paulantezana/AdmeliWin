@@ -17,9 +17,17 @@ namespace Modelo
 
         }
 
-        public void modificar()
+        public async Task<Response> modificar(DocCorrelativo param)
         {
-
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/ventacorrelativo/modificar
+                return await webService.POSTSend("ventacorrelativo", "modificar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void eliminar()
