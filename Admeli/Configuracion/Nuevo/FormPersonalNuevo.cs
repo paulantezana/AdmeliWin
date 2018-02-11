@@ -35,6 +35,11 @@ namespace Admeli.Configuracion.Nuevo
             this.nuevo = true;
         }
 
+        public FormPersonalNuevo(Personal currentPersonal)
+        {
+            this.currentPersonal = currentPersonal;
+        }
+
         #region ============================ PAINT ============================
         private void panel2_Paint(object sender, PaintEventArgs e)
         {

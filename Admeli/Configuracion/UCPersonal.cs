@@ -18,9 +18,12 @@ namespace Admeli.Configuracion
     public partial class UCPersonal : UserControl
     {
         private PersonalModel personalModel = new PersonalModel();
-        private Paginacion paginacion;
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private Paginacion paginacion;
+        private List<Personal> personales { get; set; }
+        private Personal currentPersonal { get; set; }
 
         #region ========================== Constructor ==========================
         public UCPersonal()
@@ -46,9 +49,23 @@ namespace Admeli.Configuracion
         #region ======================= Load Root =======================
         private void UCPersonal_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            this.reLoad();
+
+            // Escuchando los eventos del formulario padre
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         } 
+
+        internal void reLoad()
+        {
+            cargarRegistros();
+
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+
         #endregion
 
         #region ======================= Paint =======================
@@ -56,38 +73,49 @@ namespace Admeli.Configuracion
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
-        } 
+        }
+
+        private void decorationDataGridView()
+        {
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                int idPersonal = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentPersonal = personales.Find(x => x.idPersonal == idPersonal); // Buscando la categoria en las lista de categorias
+                if (currentPersonal.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        }
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
-        {
-            // Cargando el combobox de personales
-            // loadState(true);
-
-            // Estado cargar en falso
-            // loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);
             try
             {
-
-                //int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                //string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
-
-                RootObject<Personal> personal = await personalModel.listar(paginacion.currentPage, paginacion.speed);
+                RootObject<Personal> personalRoot = await personalModel.listar(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = personal.nro_registros;
+                paginacion.itemsCount = personalRoot.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                personalBindingSource.DataSource = personal.datos;
+                personales = personalRoot.datos;
+                personalBindingSource.DataSource = personales;
                 dataGridView.Refresh();
+
+                // Páginacion
                 mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -96,6 +124,33 @@ namespace Admeli.Configuracion
             finally
             {
                 loadState(false);
+            }
+        }
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F6:
+                    executeEliminar();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
             }
         }
         #endregion
@@ -190,19 +245,117 @@ namespace Admeli.Configuracion
         {
             cargarRegistros();
         }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormPersonalNuevo personalNuevo = new FormPersonalNuevo();
-            personalNuevo.ShowDialog();
+            executeNuevo();
         }
 
-        internal void reLoad()
+        private void btnModificar_Click(object sender, EventArgs e)
         {
+            executeModificar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            executeEliminar();
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormPersonalNuevo formPersonal = new FormPersonalNuevo();
+            formPersonal.ShowDialog();
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idPersonal = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentPersonal = personales.Find(x => x.idPersonal == idPersonal); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormPersonalNuevo formPersonal = new FormPersonalNuevo(currentPersonal);
+            formPersonal.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
 
 
-            lisenerKeyEvents = true; // Active lisener key events
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentPersonal = new Personal(); //creando una instancia del objeto categoria
+                currentPersonal.idPersonal = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await personalModel.eliminar(currentPersonal); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                int idPersonal = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                currentPersonal = personales.Find(x => x.idPersonal == idPersonal); // Buscando la registro especifico en la lista de registros
+                currentPersonal.estado = 0;
+
+                // Procediendo con las desactivacion
+                Response response = await personalModel.modificar(currentPersonal);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         #endregion
-
     }
 }

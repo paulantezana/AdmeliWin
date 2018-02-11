@@ -47,6 +47,7 @@ namespace Admeli.Compras
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
+
         private void decorationDataGridView()
         {
             if (dataGridView.Rows.Count == 0) return;

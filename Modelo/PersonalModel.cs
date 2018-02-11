@@ -66,20 +66,7 @@ namespace Modelo
                 throw ex;
             }
         }
-        /*
-        public async Task<Response> desactivar(Marca param)
-        {
-            try
-            {
-                // localhost:8080/admeli/xcore2/xcore/services.php/marca/desactivar
-                return await webService.POSTSend("marca", "desactivar", param);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        */
+
         public async Task<Response> eliminar(Personal param)
         {
             try
