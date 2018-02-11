@@ -236,60 +236,8 @@ namespace Admeli
         private void togglePanelMain(string panelName)
         {
             this.panelMain.Controls.Clear();
-            btnColorShorCout();
             switch (panelName)
             {
-                case "ventas":
-                    if (this.uCVentas == null)
-                    {
-                        this.uCVentas = new Admeli.Ventas.UCVentas(this);
-                        this.panelMain.Controls.Add(uCVentas);
-                        this.uCVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCVentas.Location = new System.Drawing.Point(0, 0);
-                        this.uCVentas.Name = "uCVentas";
-                        this.uCVentas.Size = new System.Drawing.Size(250, 776);
-                        this.uCVentas.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCVentas);
-                    }
-
-                    break;
-                case "compras":
-                    if (this.uCCompras == null)
-                    {
-                        this.uCCompras = new Admeli.Compras.UCCompras(this);
-                        this.panelMain.Controls.Add(uCCompras);
-                        this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCCompras.Location = new System.Drawing.Point(0, 0);
-                        this.uCCompras.Name = "uCCompras";
-                        this.uCCompras.Size = new System.Drawing.Size(250, 776);
-                        this.uCCompras.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCCompras);
-                    }
-
-                    break;
-                case "productos":
-                    if (this.uCListadoProducto == null)
-                    {
-                        this.uCListadoProducto = new Admeli.Productos.UCListadoProducto(this);
-                        this.panelMain.Controls.Add(uCListadoProducto);
-                        this.uCListadoProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCListadoProducto.Location = new System.Drawing.Point(0, 0);
-                        this.uCListadoProducto.Name = "uCListadoProducto";
-                        this.uCListadoProducto.Size = new System.Drawing.Size(250, 776);
-                        this.uCListadoProducto.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCListadoProducto);
-                    }
-
-                    break;
                 case "home":
                     if (this.uCHome == null)
                     {
@@ -322,14 +270,11 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCIniciar);
                     }
-                    
                     break;
                 default:
                     break;
             }
         }
-
-
         #endregion
 
         #region ======================== Evnetos ========================
@@ -388,13 +333,6 @@ namespace Admeli
         }
         #endregion
 
-        private void btnColorShorCout()
-        {
-           /* btnComprasShortcut.BackColor = Color.White;
-            btnVentaShorkout.BackColor = Color.White;
-            btnProductoShortcut.BackColor = Color.White;*/
-        }
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             this.reLoad();
@@ -411,12 +349,12 @@ namespace Admeli
             if (state)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                progressBarApp.Style = ProgressBarStyle.Marquee;
+               // progressBarApp.Style = ProgressBarStyle.Marquee;
             }
             else
             {
                 Cursor.Current = Cursors.Default;
-                progressBarApp.Style = ProgressBarStyle.Blocks;
+               // progressBarApp.Style = ProgressBarStyle.Blocks;
             }
         }
 
@@ -424,7 +362,6 @@ namespace Admeli
         public void appLoadInciComponents()
         {
             panelAside.Visible = true;
-            panelFooter.Visible = true;
             togglePanelAside("home");
             togglePanelMain("home");
         }
