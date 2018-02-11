@@ -20,7 +20,7 @@ namespace Admeli.Navegacion
         private UCIngresos uCIngresos;
         private UCIniciarCaja uCIniciarCaja;
 
-        private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
+        private Color colorActive = Color.FromArgb(243, 243, 243);  // Color que se muestra del ultimo voton clikeado
         private FormPrincipal formPrincipal;
 
         public UCCajaNav()

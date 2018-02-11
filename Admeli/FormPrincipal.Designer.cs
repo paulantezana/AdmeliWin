@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelAside = new System.Windows.Forms.Panel();
+            this.panelAsideMain = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCompras = new System.Windows.Forms.Button();
@@ -43,35 +45,34 @@
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblNombrePersonal2 = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelAsideMain = new System.Windows.Forms.Panel();
             this.panelAside.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelMainContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,10 +100,31 @@
             this.panelAside.Margin = new System.Windows.Forms.Padding(2);
             this.panelAside.Name = "panelAside";
             this.panelAside.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panelAside.Size = new System.Drawing.Size(907, 120);
+            this.panelAside.Size = new System.Drawing.Size(907, 116);
             this.panelAside.TabIndex = 4;
             this.panelAside.Visible = false;
             this.panelAside.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAside_Paint);
+            // 
+            // panelAsideMain
+            // 
+            this.panelAsideMain.BackColor = System.Drawing.Color.White;
+            this.transition1.SetDecoration(this.panelAsideMain, BunifuAnimatorNS.DecorationType.None);
+            this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAsideMain.Location = new System.Drawing.Point(26, 40);
+            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelAsideMain.Name = "panelAsideMain";
+            this.panelAsideMain.Size = new System.Drawing.Size(881, 75);
+            this.panelAsideMain.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.transition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(26, 75);
+            this.panel3.TabIndex = 1;
             // 
             // panel2
             // 
@@ -129,10 +151,10 @@
             this.transition1.SetDecoration(this.flowLayoutPanel2, BunifuAnimatorNS.DecorationType.None);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(59, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(43, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(686, 40);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(702, 40);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // btnCompras
@@ -140,11 +162,12 @@
             this.transition1.SetDecoration(this.btnCompras, BunifuAnimatorNS.DecorationType.None);
             this.btnCompras.FlatAppearance.BorderSize = 0;
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Location = new System.Drawing.Point(0, 10);
             this.btnCompras.Margin = new System.Windows.Forms.Padding(0);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(87, 30);
+            this.btnCompras.Size = new System.Drawing.Size(98, 30);
             this.btnCompras.TabIndex = 1;
             this.btnCompras.Text = "Compras";
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -157,11 +180,12 @@
             this.transition1.SetDecoration(this.btnHerramientas, BunifuAnimatorNS.DecorationType.None);
             this.btnHerramientas.FlatAppearance.BorderSize = 0;
             this.btnHerramientas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHerramientas.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHerramientas.ForeColor = System.Drawing.Color.White;
-            this.btnHerramientas.Location = new System.Drawing.Point(87, 10);
+            this.btnHerramientas.Location = new System.Drawing.Point(98, 10);
             this.btnHerramientas.Margin = new System.Windows.Forms.Padding(0);
             this.btnHerramientas.Name = "btnHerramientas";
-            this.btnHerramientas.Size = new System.Drawing.Size(87, 30);
+            this.btnHerramientas.Size = new System.Drawing.Size(98, 30);
             this.btnHerramientas.TabIndex = 7;
             this.btnHerramientas.Text = "Herramientas";
             this.btnHerramientas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -174,11 +198,12 @@
             this.transition1.SetDecoration(this.btnConfiguracion, BunifuAnimatorNS.DecorationType.None);
             this.btnConfiguracion.FlatAppearance.BorderSize = 0;
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracion.Location = new System.Drawing.Point(174, 10);
+            this.btnConfiguracion.Location = new System.Drawing.Point(196, 10);
             this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(87, 30);
+            this.btnConfiguracion.Size = new System.Drawing.Size(98, 30);
             this.btnConfiguracion.TabIndex = 6;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -191,12 +216,12 @@
             this.transition1.SetDecoration(this.btnProducto, BunifuAnimatorNS.DecorationType.None);
             this.btnProducto.FlatAppearance.BorderSize = 0;
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.White;
-            this.btnProducto.Location = new System.Drawing.Point(261, 10);
+            this.btnProducto.Location = new System.Drawing.Point(294, 10);
             this.btnProducto.Margin = new System.Windows.Forms.Padding(0);
             this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(87, 30);
+            this.btnProducto.Size = new System.Drawing.Size(98, 30);
             this.btnProducto.TabIndex = 5;
             this.btnProducto.Text = "Producto";
             this.btnProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -209,11 +234,12 @@
             this.transition1.SetDecoration(this.btnAlmacen, BunifuAnimatorNS.DecorationType.None);
             this.btnAlmacen.FlatAppearance.BorderSize = 0;
             this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlmacen.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlmacen.ForeColor = System.Drawing.Color.White;
-            this.btnAlmacen.Location = new System.Drawing.Point(348, 10);
+            this.btnAlmacen.Location = new System.Drawing.Point(392, 10);
             this.btnAlmacen.Margin = new System.Windows.Forms.Padding(0);
             this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(87, 30);
+            this.btnAlmacen.Size = new System.Drawing.Size(98, 30);
             this.btnAlmacen.TabIndex = 4;
             this.btnAlmacen.Text = "Almacen";
             this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -226,11 +252,12 @@
             this.transition1.SetDecoration(this.btnCaja, BunifuAnimatorNS.DecorationType.None);
             this.btnCaja.FlatAppearance.BorderSize = 0;
             this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaja.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaja.ForeColor = System.Drawing.Color.White;
-            this.btnCaja.Location = new System.Drawing.Point(435, 10);
+            this.btnCaja.Location = new System.Drawing.Point(490, 10);
             this.btnCaja.Margin = new System.Windows.Forms.Padding(0);
             this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(87, 30);
+            this.btnCaja.Size = new System.Drawing.Size(98, 30);
             this.btnCaja.TabIndex = 3;
             this.btnCaja.Text = "Caja";
             this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -243,11 +270,12 @@
             this.transition1.SetDecoration(this.btnVentas, BunifuAnimatorNS.DecorationType.None);
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVentas.Location = new System.Drawing.Point(522, 10);
+            this.btnVentas.Location = new System.Drawing.Point(588, 10);
             this.btnVentas.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(87, 30);
+            this.btnVentas.Size = new System.Drawing.Size(98, 30);
             this.btnVentas.TabIndex = 2;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -257,9 +285,9 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Controls.Add(this.lblNombrePersonal2);
             this.panel6.Controls.Add(this.btnCerrarSesion);
-            this.panel6.Controls.Add(this.pictureBox2);
             this.transition1.SetDecoration(this.panel6, BunifuAnimatorNS.DecorationType.None);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(745, 0);
@@ -267,17 +295,31 @@
             this.panel6.Size = new System.Drawing.Size(162, 40);
             this.panel6.TabIndex = 3;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(31, 1);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Cerrar sesión");
+            // 
             // lblNombrePersonal2
             // 
-            this.lblNombrePersonal2.AutoSize = true;
             this.transition1.SetDecoration(this.lblNombrePersonal2, BunifuAnimatorNS.DecorationType.None);
             this.lblNombrePersonal2.ForeColor = System.Drawing.Color.White;
-            this.lblNombrePersonal2.Location = new System.Drawing.Point(80, 15);
+            this.lblNombrePersonal2.Location = new System.Drawing.Point(65, 6);
             this.lblNombrePersonal2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombrePersonal2.Name = "lblNombrePersonal2";
-            this.lblNombrePersonal2.Size = new System.Drawing.Size(35, 13);
+            this.lblNombrePersonal2.Size = new System.Drawing.Size(95, 12);
             this.lblNombrePersonal2.TabIndex = 0;
             this.lblNombrePersonal2.Text = "label9";
+            this.lblNombrePersonal2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.toolTip1.SetToolTip(this.lblNombrePersonal2, "Nombre usuario");
             // 
             // btnCerrarSesion
@@ -285,7 +327,7 @@
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.transition1.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(14, 6);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(2, 2);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(27, 28);
@@ -295,20 +337,6 @@
             this.toolTip1.SetToolTip(this.btnCerrarSesion, "Cerrar sesión");
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.transition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(43, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox2, "Foto Usuario");
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnHome);
@@ -316,7 +344,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(59, 40);
+            this.panel4.Size = new System.Drawing.Size(43, 40);
             this.panel4.TabIndex = 2;
             // 
             // btnHome
@@ -328,7 +356,7 @@
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Margin = new System.Windows.Forms.Padding(0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(60, 40);
+            this.btnHome.Size = new System.Drawing.Size(43, 40);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 8;
             this.btnHome.TabStop = false;
@@ -338,38 +366,39 @@
             // panelMainContainer
             // 
             this.panelMainContainer.Controls.Add(this.panelMain);
+            this.panelMainContainer.Controls.Add(this.panel1);
             this.panelMainContainer.Controls.Add(this.progressBarApp);
             this.transition1.SetDecoration(this.panelMainContainer, BunifuAnimatorNS.DecorationType.None);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(0, 120);
+            this.panelMainContainer.Location = new System.Drawing.Point(0, 116);
             this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(907, 496);
+            this.panelMainContainer.Size = new System.Drawing.Size(907, 500);
             this.panelMainContainer.TabIndex = 5;
             // 
             // panelMain
             // 
-            this.panelMain.Controls.Add(this.panel1);
+            this.panelMain.Controls.Add(this.panel5);
             this.transition1.SetDecoration(this.panelMain, BunifuAnimatorNS.DecorationType.None);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Location = new System.Drawing.Point(200, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(907, 493);
-            this.panelMain.TabIndex = 1;
+            this.panelMain.Size = new System.Drawing.Size(707, 497);
+            this.panelMain.TabIndex = 2;
             // 
-            // panel1
+            // panel5
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Location = new System.Drawing.Point(252, 141);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 210);
-            this.panel1.TabIndex = 3;
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.label1);
+            this.transition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
+            this.panel5.Location = new System.Drawing.Point(152, 143);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(402, 210);
+            this.panel5.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -414,12 +443,21 @@
             this.label1.Text = "admeli";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 497);
+            this.panel1.TabIndex = 1;
+            // 
             // progressBarApp
             // 
             this.progressBarApp.BackColor = System.Drawing.Color.White;
             this.transition1.SetDecoration(this.progressBarApp, BunifuAnimatorNS.DecorationType.None);
             this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarApp.Location = new System.Drawing.Point(0, 493);
+            this.progressBarApp.Location = new System.Drawing.Point(0, 497);
             this.progressBarApp.Margin = new System.Windows.Forms.Padding(2);
             this.progressBarApp.MarqueeAnimationSpeed = 10;
             this.progressBarApp.Maximum = 200;
@@ -440,22 +478,22 @@
             // 
             this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.transition1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation1;
             this.transition1.TimeStep = 0.03F;
             // 
             // toolTip1
@@ -474,27 +512,6 @@
             this.bunifuDragControl1.TargetControl = null;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.transition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(26, 79);
-            this.panel3.TabIndex = 1;
-            // 
-            // panelAsideMain
-            // 
-            this.panelAsideMain.BackColor = System.Drawing.Color.White;
-            this.transition1.SetDecoration(this.panelAsideMain, BunifuAnimatorNS.DecorationType.None);
-            this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAsideMain.Location = new System.Drawing.Point(26, 40);
-            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
-            this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(881, 79);
-            this.panelAsideMain.TabIndex = 9;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,7 +522,6 @@
             this.Controls.Add(this.panelAside);
             this.Controls.Add(this.panelFooter);
             this.transition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -519,14 +535,13 @@
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelMainContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -536,11 +551,7 @@
 
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panelMainContainer;
-        public System.Windows.Forms.Panel panelMain;
         protected System.Windows.Forms.ProgressBar progressBarApp;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnCaja;
@@ -548,9 +559,7 @@
         private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Button btnHerramientas;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNombrePersonal2;
-        private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.Panel panelAside;
         private System.Windows.Forms.ImageList imageList1;
         private BunifuAnimatorNS.BunifuTransition transition1;
@@ -564,5 +573,12 @@
         internal System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelAsideMain;
         private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

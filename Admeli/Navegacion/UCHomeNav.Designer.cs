@@ -33,6 +33,7 @@
             this.btnProductoShortcut = new System.Windows.Forms.Button();
             this.btnVentaShorkout = new System.Windows.Forms.Button();
             this.btnComprasShortcut = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button8
@@ -103,6 +104,7 @@
             this.btnVentaShorkout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentaShorkout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentaShorkout.UseVisualStyleBackColor = false;
+            this.btnVentaShorkout.Click += new System.EventHandler(this.btnVentaShorkout_Click);
             // 
             // btnComprasShortcut
             // 
@@ -116,7 +118,7 @@
             this.btnComprasShortcut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprasShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnComprasShortcut.Image")));
             this.btnComprasShortcut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprasShortcut.Location = new System.Drawing.Point(22, 16);
+            this.btnComprasShortcut.Location = new System.Drawing.Point(510, 25);
             this.btnComprasShortcut.Margin = new System.Windows.Forms.Padding(0);
             this.btnComprasShortcut.Name = "btnComprasShortcut";
             this.btnComprasShortcut.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -127,18 +129,28 @@
             this.btnComprasShortcut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnComprasShortcut.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(33, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // UCHomeNav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.btnProductoShortcut);
             this.Controls.Add(this.btnVentaShorkout);
             this.Controls.Add(this.btnComprasShortcut);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCHomeNav";
-            this.Size = new System.Drawing.Size(757, 70);
+            this.Size = new System.Drawing.Size(757, 75);
             this.Load += new System.EventHandler(this.UCHomeNav_Load);
             this.ResumeLayout(false);
 
@@ -150,5 +162,6 @@
         private System.Windows.Forms.Button btnProductoShortcut;
         private System.Windows.Forms.Button btnVentaShorkout;
         private System.Windows.Forms.Button btnComprasShortcut;
+        private System.Windows.Forms.Button button1;
     }
 }

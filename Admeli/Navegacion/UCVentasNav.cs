@@ -19,7 +19,7 @@ namespace Admeli.Navegacion
         private UCCuentaCobrar uCCuentaCobrar;
         private UCVentas uCVentas;
 
-        private Color colorActive = Color.FromArgb(189, 226, 255);  // Color que se muestra del ultimo voton clikeado
+        private Color colorActive = Color.FromArgb(243, 243, 243);  // Color que se muestra del ultimo voton clikeado
         private FormPrincipal formPrincipal;
 
         public UCVentasNav()

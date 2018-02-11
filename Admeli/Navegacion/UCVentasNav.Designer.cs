@@ -49,113 +49,118 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(777, 107);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(977, 75);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnCotizacionCliente
             // 
+            this.btnCotizacionCliente.BackColor = System.Drawing.Color.White;
             this.btnCotizacionCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCotizacionCliente.FlatAppearance.BorderSize = 0;
-            this.btnCotizacionCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnCotizacionCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCotizacionCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCotizacionCliente.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCotizacionCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCotizacionCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnCotizacionCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCotizacionCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnCotizacionCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCotizacionCliente.Image")));
-            this.btnCotizacionCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCotizacionCliente.Location = new System.Drawing.Point(0, 8);
-            this.btnCotizacionCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCotizacionCliente.Location = new System.Drawing.Point(9, 9);
+            this.btnCotizacionCliente.Margin = new System.Windows.Forms.Padding(5);
             this.btnCotizacionCliente.Name = "btnCotizacionCliente";
-            this.btnCotizacionCliente.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnCotizacionCliente.Size = new System.Drawing.Size(185, 41);
-            this.btnCotizacionCliente.TabIndex = 2;
-            this.btnCotizacionCliente.Text = " Cotizaciones de cliente";
-            this.btnCotizacionCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCotizacionCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCotizacionCliente.UseVisualStyleBackColor = true;
+            this.btnCotizacionCliente.Size = new System.Drawing.Size(79, 58);
+            this.btnCotizacionCliente.TabIndex = 17;
+            this.btnCotizacionCliente.Text = "Cotizaciones de cliente";
+            this.btnCotizacionCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCotizacionCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCotizacionCliente.UseVisualStyleBackColor = false;
             this.btnCotizacionCliente.Click += new System.EventHandler(this.btnCotizacionCliente_Click);
             // 
             // btnVentas
             // 
+            this.btnVentas.BackColor = System.Drawing.Color.White;
             this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVentas.FlatAppearance.BorderSize = 0;
-            this.btnVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnVentas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnVentas.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
-            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(185, 8);
-            this.btnVentas.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVentas.Location = new System.Drawing.Point(98, 9);
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(5);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnVentas.Size = new System.Drawing.Size(185, 41);
-            this.btnVentas.TabIndex = 3;
-            this.btnVentas.Text = " Ventas";
-            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Size = new System.Drawing.Size(68, 58);
+            this.btnVentas.TabIndex = 18;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnClientes
             // 
+            this.btnClientes.BackColor = System.Drawing.Color.White;
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnClientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnClientes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnClientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(370, 8);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClientes.Location = new System.Drawing.Point(176, 9);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(5);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(185, 41);
-            this.btnClientes.TabIndex = 4;
-            this.btnClientes.Text = " Clientes";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Size = new System.Drawing.Size(68, 58);
+            this.btnClientes.TabIndex = 19;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnCuentasPorCobrar
             // 
+            this.btnCuentasPorCobrar.BackColor = System.Drawing.Color.White;
             this.btnCuentasPorCobrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCuentasPorCobrar.FlatAppearance.BorderSize = 0;
-            this.btnCuentasPorCobrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnCuentasPorCobrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCuentasPorCobrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCuentasPorCobrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCuentasPorCobrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCuentasPorCobrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnCuentasPorCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCuentasPorCobrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnCuentasPorCobrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentasPorCobrar.Image")));
-            this.btnCuentasPorCobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCuentasPorCobrar.Location = new System.Drawing.Point(555, 8);
-            this.btnCuentasPorCobrar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCuentasPorCobrar.Location = new System.Drawing.Point(254, 9);
+            this.btnCuentasPorCobrar.Margin = new System.Windows.Forms.Padding(5);
             this.btnCuentasPorCobrar.Name = "btnCuentasPorCobrar";
-            this.btnCuentasPorCobrar.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnCuentasPorCobrar.Size = new System.Drawing.Size(185, 41);
-            this.btnCuentasPorCobrar.TabIndex = 5;
+            this.btnCuentasPorCobrar.Size = new System.Drawing.Size(68, 58);
+            this.btnCuentasPorCobrar.TabIndex = 20;
             this.btnCuentasPorCobrar.Text = " Cuentas por cobrar";
-            this.btnCuentasPorCobrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCuentasPorCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCuentasPorCobrar.UseVisualStyleBackColor = true;
+            this.btnCuentasPorCobrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCuentasPorCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCuentasPorCobrar.UseVisualStyleBackColor = false;
             this.btnCuentasPorCobrar.Click += new System.EventHandler(this.btnCuentasPorCobrar_Click);
             // 
             // btnVentaTouch
             // 
+            this.btnVentaTouch.BackColor = System.Drawing.Color.White;
             this.btnVentaTouch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVentaTouch.FlatAppearance.BorderSize = 0;
-            this.btnVentaTouch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnVentaTouch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnVentaTouch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnVentaTouch.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnVentaTouch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnVentaTouch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnVentaTouch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentaTouch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnVentaTouch.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaTouch.Image")));
-            this.btnVentaTouch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaTouch.Location = new System.Drawing.Point(0, 49);
-            this.btnVentaTouch.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVentaTouch.Location = new System.Drawing.Point(332, 9);
+            this.btnVentaTouch.Margin = new System.Windows.Forms.Padding(5);
             this.btnVentaTouch.Name = "btnVentaTouch";
-            this.btnVentaTouch.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnVentaTouch.Size = new System.Drawing.Size(185, 41);
-            this.btnVentaTouch.TabIndex = 6;
-            this.btnVentaTouch.Text = " Venta Touch";
-            this.btnVentaTouch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaTouch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVentaTouch.UseVisualStyleBackColor = true;
+            this.btnVentaTouch.Size = new System.Drawing.Size(68, 58);
+            this.btnVentaTouch.TabIndex = 21;
+            this.btnVentaTouch.Text = "Venta Touch";
+            this.btnVentaTouch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVentaTouch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVentaTouch.UseVisualStyleBackColor = false;
             this.btnVentaTouch.Click += new System.EventHandler(this.btnVentaTouch_Click);
             // 
             // UCVentasNav
@@ -166,7 +171,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCVentasNav";
-            this.Size = new System.Drawing.Size(777, 107);
+            this.Size = new System.Drawing.Size(977, 75);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

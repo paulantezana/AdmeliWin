@@ -42,6 +42,14 @@ namespace Admeli
         private int widthPanelAside { get; set; }
         private bool notCloseApp { get; set; }
 
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!notCloseApp)
+            {
+                Application.Exit();
+            }
+        }
+
         #region ========================= Constructors =========================
         public FormPrincipal()
         {
@@ -52,22 +60,15 @@ namespace Admeli
         {
             InitializeComponent();
             this.formLogin = formLogin;
-        } 
+        }
         #endregion
 
-        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!notCloseApp)
-            {
-                Application.Exit();
-            }
-        }
-
-
-
-
         #region ===================== Paint =====================
-
+        private void panelAside_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.bottomLine(panelAside);
+        }
         #endregion
 
         #region ===================== Toogle panel navegations =====================
@@ -328,11 +329,7 @@ namespace Admeli
             }
         }
 
-        private void toggleConfiguracionInicial()
-        {
-            togglePanelMain("iniciar");
-            
-        }
+
         #endregion
 
         #region ======================== Evnetos ========================
@@ -387,9 +384,8 @@ namespace Admeli
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            togglePanelAside("Home");
+            togglePanelAside("home");
         }
-
         #endregion
 
         private void btnColorShorCout()
@@ -424,11 +420,20 @@ namespace Admeli
             }
         }
 
+        #region ================================ Mostrar Interfaces ================================
         public void appLoadInciComponents()
         {
             panelAside.Visible = true;
             panelFooter.Visible = true;
+            togglePanelAside("home");
+            togglePanelMain("home");
         }
+
+        private void toggleConfiguracionInicial()
+        {
+            togglePanelMain("iniciar");
+        } 
+        #endregion
 
         private async void cargarComponente()
         {
@@ -510,27 +515,6 @@ namespace Admeli
             // Cerrando el formulario actual
             this.notCloseApp = true;
             this.Close();
-        }
-
-        private void btnCloseApp_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnMaximizedApp_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-        }
-
-        private void btnMinimizedApp_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void panelAside_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelAside);
         }
     }
 }

@@ -47,92 +47,96 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(762, 83);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(762, 75);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // btnListadoProductos
             // 
+            this.btnListadoProductos.BackColor = System.Drawing.Color.White;
             this.btnListadoProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListadoProductos.FlatAppearance.BorderSize = 0;
-            this.btnListadoProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnListadoProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnListadoProductos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnListadoProductos.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnListadoProductos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnListadoProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnListadoProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListadoProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnListadoProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoProductos.Image")));
-            this.btnListadoProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoProductos.Location = new System.Drawing.Point(0, 8);
-            this.btnListadoProductos.Margin = new System.Windows.Forms.Padding(0);
+            this.btnListadoProductos.Location = new System.Drawing.Point(9, 9);
+            this.btnListadoProductos.Margin = new System.Windows.Forms.Padding(5);
             this.btnListadoProductos.Name = "btnListadoProductos";
-            this.btnListadoProductos.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnListadoProductos.Size = new System.Drawing.Size(185, 41);
-            this.btnListadoProductos.TabIndex = 2;
-            this.btnListadoProductos.Text = " Listado Productos";
-            this.btnListadoProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListadoProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnListadoProductos.UseVisualStyleBackColor = true;
+            this.btnListadoProductos.Size = new System.Drawing.Size(68, 58);
+            this.btnListadoProductos.TabIndex = 17;
+            this.btnListadoProductos.Text = "Listado Productos";
+            this.btnListadoProductos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnListadoProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnListadoProductos.UseVisualStyleBackColor = false;
             this.btnListadoProductos.Click += new System.EventHandler(this.btnListadoProductos_Click);
             // 
             // btnMarcas
             // 
+            this.btnMarcas.BackColor = System.Drawing.Color.White;
             this.btnMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMarcas.FlatAppearance.BorderSize = 0;
-            this.btnMarcas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnMarcas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMarcas.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMarcas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMarcas.Image = ((System.Drawing.Image)(resources.GetObject("btnMarcas.Image")));
-            this.btnMarcas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.Location = new System.Drawing.Point(185, 8);
-            this.btnMarcas.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMarcas.Location = new System.Drawing.Point(87, 9);
+            this.btnMarcas.Margin = new System.Windows.Forms.Padding(5);
             this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnMarcas.Size = new System.Drawing.Size(185, 41);
-            this.btnMarcas.TabIndex = 3;
-            this.btnMarcas.Text = " Marcas";
-            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Size = new System.Drawing.Size(68, 58);
+            this.btnMarcas.TabIndex = 18;
+            this.btnMarcas.Text = "Marcas";
+            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMarcas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMarcas.UseVisualStyleBackColor = false;
             this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
             // btnUnidadesMedida
             // 
+            this.btnUnidadesMedida.BackColor = System.Drawing.Color.White;
             this.btnUnidadesMedida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUnidadesMedida.FlatAppearance.BorderSize = 0;
-            this.btnUnidadesMedida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnUnidadesMedida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnUnidadesMedida.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnUnidadesMedida.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnUnidadesMedida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnUnidadesMedida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnUnidadesMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnidadesMedida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnUnidadesMedida.Image = ((System.Drawing.Image)(resources.GetObject("btnUnidadesMedida.Image")));
-            this.btnUnidadesMedida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUnidadesMedida.Location = new System.Drawing.Point(370, 8);
-            this.btnUnidadesMedida.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUnidadesMedida.Location = new System.Drawing.Point(165, 9);
+            this.btnUnidadesMedida.Margin = new System.Windows.Forms.Padding(5);
             this.btnUnidadesMedida.Name = "btnUnidadesMedida";
-            this.btnUnidadesMedida.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnUnidadesMedida.Size = new System.Drawing.Size(185, 41);
-            this.btnUnidadesMedida.TabIndex = 4;
-            this.btnUnidadesMedida.Text = " Unidades de Medida";
-            this.btnUnidadesMedida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUnidadesMedida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUnidadesMedida.UseVisualStyleBackColor = true;
+            this.btnUnidadesMedida.Size = new System.Drawing.Size(68, 58);
+            this.btnUnidadesMedida.TabIndex = 19;
+            this.btnUnidadesMedida.Text = "Unidades de Medida";
+            this.btnUnidadesMedida.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUnidadesMedida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUnidadesMedida.UseVisualStyleBackColor = false;
             this.btnUnidadesMedida.Click += new System.EventHandler(this.btnUnidadesMedida_Click);
             // 
             // btnCategorias
             // 
+            this.btnCategorias.BackColor = System.Drawing.Color.White;
             this.btnCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCategorias.FlatAppearance.BorderSize = 0;
-            this.btnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnCategorias.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCategorias.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Image")));
-            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(555, 8);
-            this.btnCategorias.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCategorias.Location = new System.Drawing.Point(243, 9);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(5);
             this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnCategorias.Size = new System.Drawing.Size(185, 41);
-            this.btnCategorias.TabIndex = 5;
-            this.btnCategorias.Text = " Categorías";
-            this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Size = new System.Drawing.Size(73, 58);
+            this.btnCategorias.TabIndex = 20;
+            this.btnCategorias.Text = "Categorías";
+            this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCategorias.UseVisualStyleBackColor = false;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // UCProductosNav
@@ -143,7 +147,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCProductosNav";
-            this.Size = new System.Drawing.Size(762, 83);
+            this.Size = new System.Drawing.Size(762, 75);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

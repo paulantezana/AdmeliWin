@@ -45,72 +45,72 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(749, 104);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(749, 75);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnInicializarStock
             // 
+            this.btnInicializarStock.BackColor = System.Drawing.Color.White;
             this.btnInicializarStock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInicializarStock.FlatAppearance.BorderSize = 0;
-            this.btnInicializarStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnInicializarStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnInicializarStock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnInicializarStock.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnInicializarStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnInicializarStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnInicializarStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicializarStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnInicializarStock.Image = ((System.Drawing.Image)(resources.GetObject("btnInicializarStock.Image")));
-            this.btnInicializarStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicializarStock.Location = new System.Drawing.Point(0, 8);
-            this.btnInicializarStock.Margin = new System.Windows.Forms.Padding(0);
+            this.btnInicializarStock.Location = new System.Drawing.Point(10, 10);
+            this.btnInicializarStock.Margin = new System.Windows.Forms.Padding(5);
             this.btnInicializarStock.Name = "btnInicializarStock";
-            this.btnInicializarStock.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnInicializarStock.Size = new System.Drawing.Size(188, 41);
-            this.btnInicializarStock.TabIndex = 2;
-            this.btnInicializarStock.Text = " Inicializar Stock-precio";
-            this.btnInicializarStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicializarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInicializarStock.UseVisualStyleBackColor = true;
-            this.btnInicializarStock.Click += new System.EventHandler(this.btnInicializarStock_Click);
+            this.btnInicializarStock.Size = new System.Drawing.Size(80, 58);
+            this.btnInicializarStock.TabIndex = 19;
+            this.btnInicializarStock.Text = "Inicializar Stock-precio";
+            this.btnInicializarStock.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInicializarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnInicializarStock.UseVisualStyleBackColor = false;
             // 
             // btnAsignarCategoria
             // 
+            this.btnAsignarCategoria.BackColor = System.Drawing.Color.White;
             this.btnAsignarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAsignarCategoria.FlatAppearance.BorderSize = 0;
-            this.btnAsignarCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnAsignarCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnAsignarCategoria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAsignarCategoria.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAsignarCategoria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAsignarCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnAsignarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAsignarCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarCategoria.Image")));
-            this.btnAsignarCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarCategoria.Location = new System.Drawing.Point(188, 8);
-            this.btnAsignarCategoria.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAsignarCategoria.Location = new System.Drawing.Point(100, 10);
+            this.btnAsignarCategoria.Margin = new System.Windows.Forms.Padding(5);
             this.btnAsignarCategoria.Name = "btnAsignarCategoria";
-            this.btnAsignarCategoria.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnAsignarCategoria.Size = new System.Drawing.Size(188, 41);
-            this.btnAsignarCategoria.TabIndex = 3;
-            this.btnAsignarCategoria.Text = " Asignar categorías";
-            this.btnAsignarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAsignarCategoria.UseVisualStyleBackColor = true;
-            this.btnAsignarCategoria.Click += new System.EventHandler(this.btnAsignarCategoria_Click);
+            this.btnAsignarCategoria.Size = new System.Drawing.Size(68, 58);
+            this.btnAsignarCategoria.TabIndex = 20;
+            this.btnAsignarCategoria.Text = "Asignar categorías";
+            this.btnAsignarCategoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAsignarCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAsignarCategoria.UseVisualStyleBackColor = false;
             // 
             // btnAsignarImpuesto
             // 
+            this.btnAsignarImpuesto.BackColor = System.Drawing.Color.White;
             this.btnAsignarImpuesto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAsignarImpuesto.FlatAppearance.BorderSize = 0;
-            this.btnAsignarImpuesto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            this.btnAsignarImpuesto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            this.btnAsignarImpuesto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAsignarImpuesto.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAsignarImpuesto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnAsignarImpuesto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnAsignarImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarImpuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAsignarImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarImpuesto.Image")));
-            this.btnAsignarImpuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarImpuesto.Location = new System.Drawing.Point(376, 8);
-            this.btnAsignarImpuesto.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAsignarImpuesto.Location = new System.Drawing.Point(178, 10);
+            this.btnAsignarImpuesto.Margin = new System.Windows.Forms.Padding(5);
             this.btnAsignarImpuesto.Name = "btnAsignarImpuesto";
-            this.btnAsignarImpuesto.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnAsignarImpuesto.Size = new System.Drawing.Size(188, 41);
-            this.btnAsignarImpuesto.TabIndex = 4;
-            this.btnAsignarImpuesto.Text = " Asignar impuestos";
-            this.btnAsignarImpuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsignarImpuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAsignarImpuesto.UseVisualStyleBackColor = true;
-            this.btnAsignarImpuesto.Click += new System.EventHandler(this.btnAsignarImpuesto_Click);
+            this.btnAsignarImpuesto.Size = new System.Drawing.Size(68, 58);
+            this.btnAsignarImpuesto.TabIndex = 21;
+            this.btnAsignarImpuesto.Text = "Asignar impuestos";
+            this.btnAsignarImpuesto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAsignarImpuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAsignarImpuesto.UseVisualStyleBackColor = false;
             // 
             // UCHerramientasNav
             // 
@@ -120,7 +120,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCHerramientasNav";
-            this.Size = new System.Drawing.Size(749, 104);
+            this.Size = new System.Drawing.Size(749, 75);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

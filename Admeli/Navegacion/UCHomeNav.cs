@@ -67,5 +67,10 @@ namespace Admeli.Navegacion
             DrawShape drawShape = new DrawShape();
            // drawShape.bottomLine(panel1);
         }
+
+        private void btnVentaShorkout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
