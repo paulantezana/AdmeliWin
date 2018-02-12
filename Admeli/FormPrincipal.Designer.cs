@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelAside = new System.Windows.Forms.Panel();
             this.panelAsideMain = new System.Windows.Forms.Panel();
@@ -62,6 +62,7 @@
             this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btnToggleAsideMenu = new System.Windows.Forms.Button();
             this.panelAside.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -75,6 +76,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAside
@@ -459,11 +461,12 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btnToggleAsideMenu);
             this.transition1.SetDecoration(this.panel7, BunifuAnimatorNS.DecorationType.None);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(183, 0);
+            this.panel7.Location = new System.Drawing.Point(175, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(32, 510);
+            this.panel7.Size = new System.Drawing.Size(40, 510);
             this.panel7.TabIndex = 0;
             // 
             // imageList1
@@ -477,22 +480,22 @@
             // 
             this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation3;
             this.transition1.TimeStep = 0.03F;
             // 
             // toolTip1
@@ -510,6 +513,25 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = null;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // btnToggleAsideMenu
+            // 
+            this.btnToggleAsideMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnToggleAsideMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transition1.SetDecoration(this.btnToggleAsideMenu, BunifuAnimatorNS.DecorationType.None);
+            this.btnToggleAsideMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnToggleAsideMenu.FlatAppearance.BorderSize = 0;
+            this.btnToggleAsideMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnToggleAsideMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnToggleAsideMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToggleAsideMenu.ImageIndex = 0;
+            this.btnToggleAsideMenu.ImageList = this.imageList1;
+            this.btnToggleAsideMenu.Location = new System.Drawing.Point(3, 235);
+            this.btnToggleAsideMenu.Name = "btnToggleAsideMenu";
+            this.btnToggleAsideMenu.Size = new System.Drawing.Size(35, 41);
+            this.btnToggleAsideMenu.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.btnToggleAsideMenu, "Ocultar y mostrar panel de administración");
+            this.btnToggleAsideMenu.UseVisualStyleBackColor = true;
             // 
             // FormPrincipal
             // 
@@ -542,6 +564,7 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -578,5 +601,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuProgressBar progressBarApp;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnToggleAsideMenu;
     }
 }
