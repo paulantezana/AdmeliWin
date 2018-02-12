@@ -144,19 +144,19 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelVentas = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.panelVentasHeader = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel16 = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.panelVentas = new System.Windows.Forms.Panel();
+            this.panelVentasHeader = new System.Windows.Forms.Panel();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panelContainer.SuspendLayout();
             this.panelItem2.SuspendLayout();
             this.cardContainer2.SuspendLayout();
@@ -190,10 +190,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pagoBindingSource)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelVentas.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.panelVentasHeader.SuspendLayout();
             this.panel16.SuspendLayout();
+            this.panelVentas.SuspendLayout();
+            this.panelVentasHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -1355,47 +1355,6 @@
             this.panel2.Size = new System.Drawing.Size(828, 761);
             this.panel2.TabIndex = 6;
             // 
-            // panelVentas
-            // 
-            this.panelVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelVentas.BackColor = System.Drawing.Color.White;
-            this.panelVentas.Controls.Add(this.panelVentasHeader);
-            this.panelVentas.Location = new System.Drawing.Point(13, 157);
-            this.panelVentas.Name = "panelVentas";
-            this.panelVentas.Padding = new System.Windows.Forms.Padding(1);
-            this.panelVentas.Size = new System.Drawing.Size(802, 228);
-            this.panelVentas.TabIndex = 4;
-            // 
-            // panel15
-            // 
-            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Location = new System.Drawing.Point(534, 9);
-            this.panel15.Name = "panel15";
-            this.panel15.Padding = new System.Windows.Forms.Padding(1);
-            this.panel15.Size = new System.Drawing.Size(280, 129);
-            this.panel15.TabIndex = 3;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Location = new System.Drawing.Point(274, 9);
-            this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(1);
-            this.panel14.Size = new System.Drawing.Size(244, 129);
-            this.panel14.TabIndex = 1;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.Location = new System.Drawing.Point(14, 9);
-            this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(1);
-            this.panel11.Size = new System.Drawing.Size(244, 129);
-            this.panel11.TabIndex = 0;
-            // 
             // panel17
             // 
             this.panel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1407,51 +1366,6 @@
             this.panel17.Padding = new System.Windows.Forms.Padding(1);
             this.panel17.Size = new System.Drawing.Size(802, 228);
             this.panel17.TabIndex = 5;
-            // 
-            // panelVentasHeader
-            // 
-            this.panelVentasHeader.Controls.Add(this.bunifuSeparator1);
-            this.panelVentasHeader.Controls.Add(this.label8);
-            this.panelVentasHeader.Controls.Add(this.label7);
-            this.panelVentasHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelVentasHeader.Location = new System.Drawing.Point(1, 1);
-            this.panelVentasHeader.Name = "panelVentasHeader";
-            this.panelVentasHeader.Size = new System.Drawing.Size(800, 65);
-            this.panelVentasHeader.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.label7.Location = new System.Drawing.Point(11, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ventas";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(13, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Resumen";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 43);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(800, 22);
-            this.bunifuSeparator1.TabIndex = 2;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
             // 
             // panel16
             // 
@@ -1498,11 +1412,97 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Compras";
             // 
+            // panelVentas
+            // 
+            this.panelVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelVentas.BackColor = System.Drawing.Color.White;
+            this.panelVentas.Controls.Add(this.panelVentasHeader);
+            this.panelVentas.Location = new System.Drawing.Point(13, 157);
+            this.panelVentas.Name = "panelVentas";
+            this.panelVentas.Padding = new System.Windows.Forms.Padding(1);
+            this.panelVentas.Size = new System.Drawing.Size(802, 228);
+            this.panelVentas.TabIndex = 4;
+            // 
+            // panelVentasHeader
+            // 
+            this.panelVentasHeader.Controls.Add(this.bunifuSeparator1);
+            this.panelVentasHeader.Controls.Add(this.label8);
+            this.panelVentasHeader.Controls.Add(this.label7);
+            this.panelVentasHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelVentasHeader.Location = new System.Drawing.Point(1, 1);
+            this.panelVentasHeader.Name = "panelVentasHeader";
+            this.panelVentasHeader.Size = new System.Drawing.Size(800, 65);
+            this.panelVentasHeader.TabIndex = 0;
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 43);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(800, 22);
+            this.bunifuSeparator1.TabIndex = 2;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(13, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Resumen";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.label7.Location = new System.Drawing.Point(11, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Ventas";
+            // 
+            // panel15
+            // 
+            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Location = new System.Drawing.Point(534, 9);
+            this.panel15.Name = "panel15";
+            this.panel15.Padding = new System.Windows.Forms.Padding(1);
+            this.panel15.Size = new System.Drawing.Size(280, 129);
+            this.panel15.TabIndex = 3;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.Location = new System.Drawing.Point(274, 9);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new System.Windows.Forms.Padding(1);
+            this.panel14.Size = new System.Drawing.Size(244, 129);
+            this.panel14.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.White;
+            this.panel11.Location = new System.Drawing.Point(14, 9);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(1);
+            this.panel11.Size = new System.Drawing.Size(244, 129);
+            this.panel11.TabIndex = 0;
+            // 
             // UCHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1549,12 +1549,12 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panelVentas.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
-            this.panelVentasHeader.ResumeLayout(false);
-            this.panelVentasHeader.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
+            this.panelVentas.ResumeLayout(false);
+            this.panelVentasHeader.ResumeLayout(false);
+            this.panelVentasHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }

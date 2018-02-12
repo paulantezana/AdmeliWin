@@ -51,12 +51,13 @@
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.progressBarApp = new Bunifu.Framework.UI.BunifuProgressBar();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBarApp = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -73,6 +74,7 @@
             this.panelMain.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAside
@@ -354,7 +356,6 @@
             // 
             this.panelMainContainer.Controls.Add(this.panelMain);
             this.panelMainContainer.Controls.Add(this.panel1);
-            this.panelMainContainer.Controls.Add(this.progressBarApp);
             this.transition1.SetDecoration(this.panelMainContainer, BunifuAnimatorNS.DecorationType.None);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContainer.Location = new System.Drawing.Point(0, 116);
@@ -365,14 +366,29 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.progressBarApp);
             this.panelMain.Controls.Add(this.panel5);
             this.transition1.SetDecoration(this.panelMain, BunifuAnimatorNS.DecorationType.None);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(200, 5);
+            this.panelMain.Location = new System.Drawing.Point(215, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(707, 505);
+            this.panelMain.Size = new System.Drawing.Size(692, 510);
             this.panelMain.TabIndex = 2;
+            // 
+            // progressBarApp
+            // 
+            this.progressBarApp.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.progressBarApp.BorderRadius = 0;
+            this.transition1.SetDecoration(this.progressBarApp, BunifuAnimatorNS.DecorationType.None);
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
+            this.progressBarApp.MaximumValue = 100;
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.ProgressColor = System.Drawing.Color.Teal;
+            this.progressBarApp.Size = new System.Drawing.Size(692, 5);
+            this.progressBarApp.TabIndex = 4;
+            this.progressBarApp.Value = 0;
             // 
             // panel5
             // 
@@ -381,7 +397,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
-            this.panel5.Location = new System.Drawing.Point(152, 147);
+            this.panel5.Location = new System.Drawing.Point(145, 150);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 210);
@@ -432,33 +448,30 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel7);
             this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 5);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 505);
+            this.panel1.Size = new System.Drawing.Size(215, 510);
             this.panel1.TabIndex = 1;
             // 
-            // progressBarApp
+            // panel7
             // 
-            this.progressBarApp.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.progressBarApp.BorderRadius = 0;
-            this.transition1.SetDecoration(this.progressBarApp, BunifuAnimatorNS.DecorationType.None);
-            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
-            this.progressBarApp.MaximumValue = 100;
-            this.progressBarApp.Name = "progressBarApp";
-            this.progressBarApp.ProgressColor = System.Drawing.Color.Teal;
-            this.progressBarApp.Size = new System.Drawing.Size(907, 5);
-            this.progressBarApp.TabIndex = 4;
-            this.progressBarApp.Value = 0;
+            this.transition1.SetDecoration(this.panel7, BunifuAnimatorNS.DecorationType.None);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(183, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(32, 510);
+            this.panel7.TabIndex = 0;
             // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "back_icon.png");
-            this.imageList1.Images.SetKeyName(1, "next_icon.png");
+            this.imageList1.Images.SetKeyName(0, "left_blue_icon.png");
+            this.imageList1.Images.SetKeyName(1, "right_blue_icon.png");
             // 
             // transition1
             // 
@@ -528,6 +541,7 @@
             this.panelMain.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -563,5 +577,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuProgressBar progressBarApp;
+        private System.Windows.Forms.Panel panel7;
     }
 }
