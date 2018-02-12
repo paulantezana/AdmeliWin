@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.panelAsideMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCompras = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnDownUp = new System.Windows.Forms.PictureBox();
             this.btnFullScreen = new System.Windows.Forms.PictureBox();
             this.lblUsuarioName = new System.Windows.Forms.Label();
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
@@ -49,7 +51,14 @@
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panelAside = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblSucursalName = new System.Windows.Forms.Label();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblUsuarioNombre = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -61,31 +70,22 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panelAsideMain = new System.Windows.Forms.Panel();
-            this.btnDownUp = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblUsuarioNombre = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.lblSucursalName = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFullScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelAside.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelMainContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownUp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -99,10 +99,21 @@
             this.panelHeader.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panelHeader.Size = new System.Drawing.Size(907, 116);
+            this.panelHeader.Size = new System.Drawing.Size(907, 118);
             this.panelHeader.TabIndex = 4;
             this.panelHeader.Visible = false;
             this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAside_Paint);
+            // 
+            // panelAsideMain
+            // 
+            this.panelAsideMain.BackColor = System.Drawing.Color.White;
+            this.transition1.SetDecoration(this.panelAsideMain, BunifuAnimatorNS.DecorationType.None);
+            this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAsideMain.Location = new System.Drawing.Point(0, 40);
+            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelAsideMain.Name = "panelAsideMain";
+            this.panelAsideMain.Size = new System.Drawing.Size(907, 77);
+            this.panelAsideMain.TabIndex = 9;
             // 
             // panel2
             // 
@@ -274,6 +285,21 @@
             this.panel6.Size = new System.Drawing.Size(189, 40);
             this.panel6.TabIndex = 3;
             // 
+            // btnDownUp
+            // 
+            this.btnDownUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transition1.SetDecoration(this.btnDownUp, BunifuAnimatorNS.DecorationType.None);
+            this.btnDownUp.Image = ((System.Drawing.Image)(resources.GetObject("btnDownUp.Image")));
+            this.btnDownUp.Location = new System.Drawing.Point(2, 0);
+            this.btnDownUp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDownUp.Name = "btnDownUp";
+            this.btnDownUp.Size = new System.Drawing.Size(30, 40);
+            this.btnDownUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnDownUp.TabIndex = 11;
+            this.btnDownUp.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnDownUp, "Ocular Y Mostrar La barra de herramientas");
+            this.btnDownUp.Click += new System.EventHandler(this.btnDownUp_Click);
+            // 
             // btnFullScreen
             // 
             this.btnFullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -347,22 +373,22 @@
             // 
             this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.transition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation1;
             this.transition1.TimeStep = 0.03F;
             // 
             // panelAside
@@ -372,11 +398,27 @@
             this.panelAside.Controls.Add(this.panel1);
             this.transition1.SetDecoration(this.panelAside, BunifuAnimatorNS.DecorationType.None);
             this.panelAside.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAside.Location = new System.Drawing.Point(0, 119);
+            this.panelAside.Location = new System.Drawing.Point(0, 121);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(200, 507);
+            this.panelAside.Size = new System.Drawing.Size(200, 505);
             this.panelAside.TabIndex = 5;
             this.panelAside.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblSucursalName);
+            this.panel1.Controls.Add(this.bunifuSeparator1);
+            this.panel1.Controls.Add(this.lblDNI);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.lblUsuarioNombre);
+            this.panel1.Controls.Add(this.label4);
+            this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 180);
+            this.panel1.TabIndex = 9;
             // 
             // label3
             // 
@@ -390,13 +432,79 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Información General";
             // 
+            // lblSucursalName
+            // 
+            this.transition1.SetDecoration(this.lblSucursalName, BunifuAnimatorNS.DecorationType.None);
+            this.lblSucursalName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalName.Location = new System.Drawing.Point(9, 141);
+            this.lblSucursalName.Name = "lblSucursalName";
+            this.lblSucursalName.Size = new System.Drawing.Size(178, 32);
+            this.lblSucursalName.TabIndex = 8;
+            this.lblSucursalName.Text = "SUCURSAL";
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.transition1.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 115);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(197, 35);
+            this.bunifuSeparator1.TabIndex = 6;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.transition1.SetDecoration(this.lblDNI, BunifuAnimatorNS.DecorationType.None);
+            this.lblDNI.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.Location = new System.Drawing.Point(13, 102);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(28, 16);
+            this.lblDNI.TabIndex = 7;
+            this.lblDNI.Text = "DNI";
+            // 
+            // pictureBox2
+            // 
+            this.transition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(9, 33);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(68, 75);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblUsuarioNombre
+            // 
+            this.transition1.SetDecoration(this.lblUsuarioNombre, BunifuAnimatorNS.DecorationType.None);
+            this.lblUsuarioNombre.ForeColor = System.Drawing.Color.Gray;
+            this.lblUsuarioNombre.Location = new System.Drawing.Point(75, 69);
+            this.lblUsuarioNombre.Name = "lblUsuarioNombre";
+            this.lblUsuarioNombre.Size = new System.Drawing.Size(104, 29);
+            this.lblUsuarioNombre.TabIndex = 4;
+            this.lblUsuarioNombre.Text = "Usuario";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.transition1.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(75, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Nombres Y Apellidos";
+            // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.Gainsboro;
             this.transition1.SetDecoration(this.splitter1, BunifuAnimatorNS.DecorationType.None);
-            this.splitter1.Location = new System.Drawing.Point(200, 119);
+            this.splitter1.Location = new System.Drawing.Point(200, 121);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 507);
+            this.splitter1.Size = new System.Drawing.Size(2, 505);
             this.splitter1.TabIndex = 6;
             this.splitter1.TabStop = false;
             // 
@@ -405,9 +513,9 @@
             this.panelMainContainer.Controls.Add(this.panelMain);
             this.transition1.SetDecoration(this.panelMainContainer, BunifuAnimatorNS.DecorationType.None);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(202, 119);
+            this.panelMainContainer.Location = new System.Drawing.Point(202, 121);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(705, 507);
+            this.panelMainContainer.Size = new System.Drawing.Size(705, 505);
             this.panelMainContainer.TabIndex = 7;
             // 
             // panelMain
@@ -418,7 +526,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(705, 507);
+            this.panelMain.Size = new System.Drawing.Size(705, 505);
             this.panelMain.TabIndex = 5;
             // 
             // panel5
@@ -428,7 +536,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
-            this.panel5.Location = new System.Drawing.Point(151, 148);
+            this.panel5.Location = new System.Drawing.Point(151, 147);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 210);
@@ -483,7 +591,7 @@
             this.transition1.SetDecoration(this.progressBarApp, BunifuAnimatorNS.DecorationType.BottomMirror);
             this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
             this.progressBarApp.Enabled = false;
-            this.progressBarApp.Location = new System.Drawing.Point(0, 116);
+            this.progressBarApp.Location = new System.Drawing.Point(0, 118);
             this.progressBarApp.Margin = new System.Windows.Forms.Padding(2);
             this.progressBarApp.MarqueeAnimationSpeed = 10;
             this.progressBarApp.Maximum = 200;
@@ -516,114 +624,6 @@
             this.imageList1.Images.SetKeyName(0, "left_blue_icon.png");
             this.imageList1.Images.SetKeyName(1, "right_blue_icon.png");
             // 
-            // panelAsideMain
-            // 
-            this.panelAsideMain.BackColor = System.Drawing.Color.White;
-            this.transition1.SetDecoration(this.panelAsideMain, BunifuAnimatorNS.DecorationType.None);
-            this.panelAsideMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAsideMain.Location = new System.Drawing.Point(0, 40);
-            this.panelAsideMain.Margin = new System.Windows.Forms.Padding(2);
-            this.panelAsideMain.Name = "panelAsideMain";
-            this.panelAsideMain.Size = new System.Drawing.Size(907, 75);
-            this.panelAsideMain.TabIndex = 9;
-            // 
-            // btnDownUp
-            // 
-            this.btnDownUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.transition1.SetDecoration(this.btnDownUp, BunifuAnimatorNS.DecorationType.None);
-            this.btnDownUp.Image = ((System.Drawing.Image)(resources.GetObject("btnDownUp.Image")));
-            this.btnDownUp.Location = new System.Drawing.Point(2, 0);
-            this.btnDownUp.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDownUp.Name = "btnDownUp";
-            this.btnDownUp.Size = new System.Drawing.Size(30, 40);
-            this.btnDownUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnDownUp.TabIndex = 11;
-            this.btnDownUp.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnDownUp, "Ocular Y Mostrar La barra de herramientas");
-            this.btnDownUp.Click += new System.EventHandler(this.btnDownUp_Click);
-            // 
-            // pictureBox2
-            // 
-            this.transition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 33);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(68, 75);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.transition1.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(75, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Nombres Y Apellidos";
-            // 
-            // lblUsuarioNombre
-            // 
-            this.transition1.SetDecoration(this.lblUsuarioNombre, BunifuAnimatorNS.DecorationType.None);
-            this.lblUsuarioNombre.ForeColor = System.Drawing.Color.Gray;
-            this.lblUsuarioNombre.Location = new System.Drawing.Point(75, 69);
-            this.lblUsuarioNombre.Name = "lblUsuarioNombre";
-            this.lblUsuarioNombre.Size = new System.Drawing.Size(104, 29);
-            this.lblUsuarioNombre.TabIndex = 4;
-            this.lblUsuarioNombre.Text = "Usuario";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.transition1.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.Gainsboro;
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 115);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(197, 35);
-            this.bunifuSeparator1.TabIndex = 6;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.transition1.SetDecoration(this.lblDNI, BunifuAnimatorNS.DecorationType.None);
-            this.lblDNI.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNI.Location = new System.Drawing.Point(13, 102);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(28, 16);
-            this.lblDNI.TabIndex = 7;
-            this.lblDNI.Text = "DNI";
-            // 
-            // lblSucursalName
-            // 
-            this.transition1.SetDecoration(this.lblSucursalName, BunifuAnimatorNS.DecorationType.None);
-            this.lblSucursalName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalName.Location = new System.Drawing.Point(9, 141);
-            this.lblSucursalName.Name = "lblSucursalName";
-            this.lblSucursalName.Size = new System.Drawing.Size(178, 32);
-            this.lblSucursalName.TabIndex = 8;
-            this.lblSucursalName.Text = "SUCURSAL";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblSucursalName);
-            this.panel1.Controls.Add(this.bunifuSeparator1);
-            this.panel1.Controls.Add(this.lblDNI);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.lblUsuarioNombre);
-            this.panel1.Controls.Add(this.label4);
-            this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 180);
-            this.panel1.TabIndex = 9;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,19 +649,19 @@
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDownUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFullScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelAside.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelMainContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDownUp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
