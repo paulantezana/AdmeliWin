@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelAside = new System.Windows.Forms.Panel();
             this.panelAsideMain = new System.Windows.Forms.Panel();
@@ -49,20 +49,18 @@
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
+            this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelMainContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.progressBarApp = new Bunifu.Framework.UI.BunifuProgressBar();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.transition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btnToggleAsideMenu = new System.Windows.Forms.Button();
             this.panelAside.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -75,8 +73,6 @@
             this.panelMain.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAside
@@ -354,43 +350,90 @@
             this.toolTip1.SetToolTip(this.btnHome, "Menu Principal");
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // transition1
+            // 
+            this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
+            this.transition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation1;
+            this.transition1.TimeStep = 0.03F;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 200;
+            this.toolTip1.AutoPopDelay = 20000;
+            this.toolTip1.InitialDelay = 200;
+            this.toolTip1.ReshowDelay = 40;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Admeli";
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = null;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "left_blue_icon.png");
+            this.imageList1.Images.SetKeyName(1, "right_blue_icon.png");
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 116);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 510);
+            this.panel1.TabIndex = 5;
+            // 
+            // splitter1
+            // 
+            this.transition1.SetDecoration(this.splitter1, BunifuAnimatorNS.DecorationType.None);
+            this.splitter1.Location = new System.Drawing.Point(200, 116);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 510);
+            this.splitter1.TabIndex = 6;
+            this.splitter1.TabStop = false;
+            // 
             // panelMainContainer
             // 
             this.panelMainContainer.Controls.Add(this.panelMain);
-            this.panelMainContainer.Controls.Add(this.panel1);
             this.transition1.SetDecoration(this.panelMainContainer, BunifuAnimatorNS.DecorationType.None);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(0, 116);
-            this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMainContainer.Location = new System.Drawing.Point(203, 116);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(907, 510);
-            this.panelMainContainer.TabIndex = 5;
+            this.panelMainContainer.Size = new System.Drawing.Size(704, 510);
+            this.panelMainContainer.TabIndex = 7;
             // 
             // panelMain
             // 
-            this.panelMain.Controls.Add(this.progressBarApp);
             this.panelMain.Controls.Add(this.panel5);
             this.transition1.SetDecoration(this.panelMain, BunifuAnimatorNS.DecorationType.None);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(215, 0);
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(692, 510);
-            this.panelMain.TabIndex = 2;
-            // 
-            // progressBarApp
-            // 
-            this.progressBarApp.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.progressBarApp.BorderRadius = 0;
-            this.transition1.SetDecoration(this.progressBarApp, BunifuAnimatorNS.DecorationType.None);
-            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
-            this.progressBarApp.MaximumValue = 100;
-            this.progressBarApp.Name = "progressBarApp";
-            this.progressBarApp.ProgressColor = System.Drawing.Color.Teal;
-            this.progressBarApp.Size = new System.Drawing.Size(692, 5);
-            this.progressBarApp.TabIndex = 4;
-            this.progressBarApp.Value = 0;
+            this.panelMain.Size = new System.Drawing.Size(704, 510);
+            this.panelMain.TabIndex = 4;
             // 
             // panel5
             // 
@@ -399,7 +442,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
-            this.panel5.Location = new System.Drawing.Point(145, 150);
+            this.panel5.Location = new System.Drawing.Point(151, 150);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 210);
@@ -448,91 +491,6 @@
             this.label1.Text = "admeli";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel7);
-            this.transition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 510);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnToggleAsideMenu);
-            this.transition1.SetDecoration(this.panel7, BunifuAnimatorNS.DecorationType.None);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(175, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(40, 510);
-            this.panel7.TabIndex = 0;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "left_blue_icon.png");
-            this.imageList1.Images.SetKeyName(1, "right_blue_icon.png");
-            // 
-            // transition1
-            // 
-            this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
-            this.transition1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation3;
-            this.transition1.TimeStep = 0.03F;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutomaticDelay = 200;
-            this.toolTip1.AutoPopDelay = 20000;
-            this.toolTip1.InitialDelay = 200;
-            this.toolTip1.ReshowDelay = 40;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Admeli";
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = null;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // btnToggleAsideMenu
-            // 
-            this.btnToggleAsideMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnToggleAsideMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.transition1.SetDecoration(this.btnToggleAsideMenu, BunifuAnimatorNS.DecorationType.None);
-            this.btnToggleAsideMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnToggleAsideMenu.FlatAppearance.BorderSize = 0;
-            this.btnToggleAsideMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnToggleAsideMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnToggleAsideMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToggleAsideMenu.ImageIndex = 0;
-            this.btnToggleAsideMenu.ImageList = this.imageList1;
-            this.btnToggleAsideMenu.Location = new System.Drawing.Point(3, 235);
-            this.btnToggleAsideMenu.Name = "btnToggleAsideMenu";
-            this.btnToggleAsideMenu.Size = new System.Drawing.Size(35, 41);
-            this.btnToggleAsideMenu.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.btnToggleAsideMenu, "Ocultar y mostrar panel de administración");
-            this.btnToggleAsideMenu.UseVisualStyleBackColor = true;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +498,8 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(907, 626);
             this.Controls.Add(this.panelMainContainer);
+            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelAside);
             this.transition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -563,14 +523,11 @@
             this.panelMain.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelMainContainer;
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnCaja;
@@ -580,7 +537,6 @@
         private System.Windows.Forms.Button btnHerramientas;
         private System.Windows.Forms.Label lblNombrePersonal2;
         public System.Windows.Forms.Panel panelAside;
-        private System.Windows.Forms.ImageList imageList1;
         private BunifuAnimatorNS.BunifuTransition transition1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox btnCerrarSesion;
@@ -592,15 +548,15 @@
         internal System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.Panel panelAsideMain;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel panelMainContainer;
         public System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.Framework.UI.BunifuProgressBar progressBarApp;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button btnToggleAsideMenu;
     }
 }
