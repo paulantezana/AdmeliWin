@@ -115,7 +115,7 @@
             this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.AutoGenerateContextFilters = true;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -126,7 +126,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.ColumnHeadersHeight = 40;
+            this.dataGridView.ColumnHeadersHeight = 35;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProveedorDataGridViewTextBoxColumn,
             this.rucDataGridViewTextBoxColumn,
@@ -147,7 +147,8 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView.RowTemplate.Height = 27;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.Size = new System.Drawing.Size(863, 362);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
@@ -161,7 +162,6 @@
             this.idProveedorDataGridViewTextBoxColumn.ReadOnly = true;
             this.idProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.idProveedorDataGridViewTextBoxColumn.Visible = false;
-            this.idProveedorDataGridViewTextBoxColumn.Width = 89;
             // 
             // rucDataGridViewTextBoxColumn
             // 
@@ -171,7 +171,6 @@
             this.rucDataGridViewTextBoxColumn.Name = "rucDataGridViewTextBoxColumn";
             this.rucDataGridViewTextBoxColumn.ReadOnly = true;
             this.rucDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.rucDataGridViewTextBoxColumn.Width = 55;
             // 
             // razonSocialDataGridViewTextBoxColumn
             // 
@@ -181,7 +180,6 @@
             this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
             this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
             this.razonSocialDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.razonSocialDataGridViewTextBoxColumn.Width = 81;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
@@ -191,7 +189,6 @@
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             this.telefonoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.telefonoDataGridViewTextBoxColumn.Width = 74;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -201,7 +198,6 @@
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.emailDataGridViewTextBoxColumn.Width = 57;
             // 
             // actividadPrincipalDataGridViewTextBoxColumn
             // 
@@ -211,7 +207,6 @@
             this.actividadPrincipalDataGridViewTextBoxColumn.Name = "actividadPrincipalDataGridViewTextBoxColumn";
             this.actividadPrincipalDataGridViewTextBoxColumn.ReadOnly = true;
             this.actividadPrincipalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.actividadPrincipalDataGridViewTextBoxColumn.Width = 109;
             // 
             // tipoProveedorDataGridViewTextBoxColumn
             // 
@@ -221,7 +216,6 @@
             this.tipoProveedorDataGridViewTextBoxColumn.Name = "tipoProveedorDataGridViewTextBoxColumn";
             this.tipoProveedorDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoProveedorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tipoProveedorDataGridViewTextBoxColumn.Width = 96;
             // 
             // direccionDataGridViewTextBoxColumn
             // 
@@ -231,7 +225,6 @@
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
             this.direccionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.direccionDataGridViewTextBoxColumn.Width = 77;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
@@ -242,7 +235,6 @@
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.estadoDataGridViewTextBoxColumn.Visible = false;
-            this.estadoDataGridViewTextBoxColumn.Width = 64;
             // 
             // idUbicacionGeograficaDataGridViewTextBoxColumn
             // 
@@ -253,7 +245,6 @@
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.Visible = false;
-            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 140;
             // 
             // nroComprasDataGridViewTextBoxColumn
             // 
@@ -263,7 +254,6 @@
             this.nroComprasDataGridViewTextBoxColumn.Name = "nroComprasDataGridViewTextBoxColumn";
             this.nroComprasDataGridViewTextBoxColumn.ReadOnly = true;
             this.nroComprasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nroComprasDataGridViewTextBoxColumn.Width = 86;
             // 
             // proveedorBindingSource
             // 

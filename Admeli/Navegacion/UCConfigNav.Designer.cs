@@ -31,29 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCConfigNav));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDatoEmpresa = new System.Windows.Forms.Button();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSucursales = new System.Windows.Forms.Button();
-            this.btnPuntoVenta = new System.Windows.Forms.Button();
             this.btnAlmacenes = new System.Windows.Forms.Button();
             this.btnDocumentoIdentificacion = new System.Windows.Forms.Button();
-            this.btnPersonal = new System.Windows.Forms.Button();
+            this.btnPuntoVenta = new System.Windows.Forms.Button();
             this.btnImpuestos = new System.Windows.Forms.Button();
             this.btnImpuestoDocumento = new System.Windows.Forms.Button();
+            this.btnCajaInicializada = new System.Windows.Forms.Button();
+            this.btnPersonal = new System.Windows.Forms.Button();
             this.btnGrupoCliente = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnListadoDocumento = new System.Windows.Forms.Button();
             this.btnAsignarCorrelativo = new System.Windows.Forms.Button();
             this.btnDisenoPersonalizacion = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnListadoMoneda = new System.Windows.Forms.Button();
             this.btnTipoCambio = new System.Windows.Forms.Button();
             this.btnDenominaciones = new System.Windows.Forms.Button();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCajaInicializada = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(755, 79);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(647, 79);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnDatoEmpresa
@@ -94,6 +94,16 @@
             this.btnDatoEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDatoEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDatoEmpresa.UseVisualStyleBackColor = false;
+            this.btnDatoEmpresa.Click += new System.EventHandler(this.btnDatoEmpresa_Click);
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.btnSucursales);
+            this.flowLayoutPanel4.Controls.Add(this.btnAlmacenes);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(85, 7);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(113, 60);
+            this.flowLayoutPanel4.TabIndex = 12;
             // 
             // btnSucursales
             // 
@@ -114,27 +124,7 @@
             this.btnSucursales.Text = "  Sucursales";
             this.btnSucursales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSucursales.UseVisualStyleBackColor = false;
-            // 
-            // btnPuntoVenta
-            // 
-            this.btnPuntoVenta.BackColor = System.Drawing.Color.White;
-            this.btnPuntoVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPuntoVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPuntoVenta.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPuntoVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPuntoVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPuntoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPuntoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnPuntoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoVenta.Image")));
-            this.btnPuntoVenta.Location = new System.Drawing.Point(314, 9);
-            this.btnPuntoVenta.Margin = new System.Windows.Forms.Padding(5);
-            this.btnPuntoVenta.Name = "btnPuntoVenta";
-            this.btnPuntoVenta.Size = new System.Drawing.Size(68, 58);
-            this.btnPuntoVenta.TabIndex = 19;
-            this.btnPuntoVenta.Text = "Puntos de venta";
-            this.btnPuntoVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPuntoVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPuntoVenta.UseVisualStyleBackColor = false;
+            this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click);
             // 
             // btnAlmacenes
             // 
@@ -155,6 +145,7 @@
             this.btnAlmacenes.Text = "  Almacenes";
             this.btnAlmacenes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAlmacenes.UseVisualStyleBackColor = false;
+            this.btnAlmacenes.Click += new System.EventHandler(this.btnAlmacenes_Click);
             // 
             // btnDocumentoIdentificacion
             // 
@@ -176,27 +167,29 @@
             this.btnDocumentoIdentificacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDocumentoIdentificacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDocumentoIdentificacion.UseVisualStyleBackColor = false;
+            this.btnDocumentoIdentificacion.Click += new System.EventHandler(this.btnDocumentoIdentificacion_Click);
             // 
-            // btnPersonal
+            // btnPuntoVenta
             // 
-            this.btnPersonal.BackColor = System.Drawing.Color.White;
-            this.btnPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPersonal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPersonal.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPersonal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonal.Image")));
-            this.btnPersonal.Location = new System.Drawing.Point(5, 5);
-            this.btnPersonal.Margin = new System.Windows.Forms.Padding(5);
-            this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(101, 29);
-            this.btnPersonal.TabIndex = 22;
-            this.btnPersonal.Text = "Personal";
-            this.btnPersonal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPersonal.UseVisualStyleBackColor = false;
+            this.btnPuntoVenta.BackColor = System.Drawing.Color.White;
+            this.btnPuntoVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPuntoVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPuntoVenta.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPuntoVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPuntoVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPuntoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPuntoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPuntoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoVenta.Image")));
+            this.btnPuntoVenta.Location = new System.Drawing.Point(314, 9);
+            this.btnPuntoVenta.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPuntoVenta.Name = "btnPuntoVenta";
+            this.btnPuntoVenta.Size = new System.Drawing.Size(68, 58);
+            this.btnPuntoVenta.TabIndex = 19;
+            this.btnPuntoVenta.Text = "Puntos de venta";
+            this.btnPuntoVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPuntoVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPuntoVenta.UseVisualStyleBackColor = false;
+            this.btnPuntoVenta.Click += new System.EventHandler(this.btnPuntoVenta_Click);
             // 
             // btnImpuestos
             // 
@@ -218,6 +211,7 @@
             this.btnImpuestos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnImpuestos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImpuestos.UseVisualStyleBackColor = false;
+            this.btnImpuestos.Click += new System.EventHandler(this.btnImpuestos_Click);
             // 
             // btnImpuestoDocumento
             // 
@@ -239,6 +233,51 @@
             this.btnImpuestoDocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnImpuestoDocumento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImpuestoDocumento.UseVisualStyleBackColor = false;
+            this.btnImpuestoDocumento.Click += new System.EventHandler(this.btnImpuestoDocumento_Click);
+            // 
+            // btnCajaInicializada
+            // 
+            this.btnCajaInicializada.BackColor = System.Drawing.Color.White;
+            this.btnCajaInicializada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCajaInicializada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCajaInicializada.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCajaInicializada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCajaInicializada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCajaInicializada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCajaInicializada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCajaInicializada.Image = ((System.Drawing.Image)(resources.GetObject("btnCajaInicializada.Image")));
+            this.btnCajaInicializada.Location = new System.Drawing.Point(559, 9);
+            this.btnCajaInicializada.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCajaInicializada.Name = "btnCajaInicializada";
+            this.btnCajaInicializada.Size = new System.Drawing.Size(79, 58);
+            this.btnCajaInicializada.TabIndex = 26;
+            this.btnCajaInicializada.Text = "Cajas inizializadas";
+            this.btnCajaInicializada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCajaInicializada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCajaInicializada.UseVisualStyleBackColor = false;
+            this.btnCajaInicializada.Click += new System.EventHandler(this.btnCajaInicializada_Click);
+            // 
+            // btnPersonal
+            // 
+            this.btnPersonal.BackColor = System.Drawing.Color.White;
+            this.btnPersonal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPersonal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPersonal.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPersonal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonal.Image")));
+            this.btnPersonal.Location = new System.Drawing.Point(5, 5);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPersonal.Name = "btnPersonal";
+            this.btnPersonal.Size = new System.Drawing.Size(101, 58);
+            this.btnPersonal.TabIndex = 22;
+            this.btnPersonal.Text = "Personal";
+            this.btnPersonal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPersonal.UseVisualStyleBackColor = false;
+            this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
             // 
             // btnGrupoCliente
             // 
@@ -251,7 +290,7 @@
             this.btnGrupoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrupoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnGrupoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupoCliente.Image")));
-            this.btnGrupoCliente.Location = new System.Drawing.Point(5, 44);
+            this.btnGrupoCliente.Location = new System.Drawing.Point(116, 5);
             this.btnGrupoCliente.Margin = new System.Windows.Forms.Padding(5);
             this.btnGrupoCliente.Name = "btnGrupoCliente";
             this.btnGrupoCliente.Size = new System.Drawing.Size(85, 58);
@@ -267,25 +306,12 @@
             this.flowLayoutPanel2.Controls.Add(this.btnListadoDocumento);
             this.flowLayoutPanel2.Controls.Add(this.btnAsignarCorrelativo);
             this.flowLayoutPanel2.Controls.Add(this.btnDisenoPersonalizacion);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(656, 120);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(657, 157);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(291, 93);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(316, 86);
             this.flowLayoutPanel2.TabIndex = 9;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.AutoScroll = true;
-            this.flowLayoutPanel3.Controls.Add(this.btnListadoMoneda);
-            this.flowLayoutPanel3.Controls.Add(this.btnTipoCambio);
-            this.flowLayoutPanel3.Controls.Add(this.btnDenominaciones);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(932, 22);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(247, 94);
-            this.flowLayoutPanel3.TabIndex = 11;
             // 
             // btnListadoDocumento
             // 
@@ -301,7 +327,7 @@
             this.btnListadoDocumento.Location = new System.Drawing.Point(5, 13);
             this.btnListadoDocumento.Margin = new System.Windows.Forms.Padding(5);
             this.btnListadoDocumento.Name = "btnListadoDocumento";
-            this.btnListadoDocumento.Size = new System.Drawing.Size(68, 58);
+            this.btnListadoDocumento.Size = new System.Drawing.Size(94, 58);
             this.btnListadoDocumento.TabIndex = 24;
             this.btnListadoDocumento.Text = "Listado documentos";
             this.btnListadoDocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -319,10 +345,10 @@
             this.btnAsignarCorrelativo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarCorrelativo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAsignarCorrelativo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarCorrelativo.Image")));
-            this.btnAsignarCorrelativo.Location = new System.Drawing.Point(83, 13);
+            this.btnAsignarCorrelativo.Location = new System.Drawing.Point(109, 13);
             this.btnAsignarCorrelativo.Margin = new System.Windows.Forms.Padding(5);
             this.btnAsignarCorrelativo.Name = "btnAsignarCorrelativo";
-            this.btnAsignarCorrelativo.Size = new System.Drawing.Size(68, 58);
+            this.btnAsignarCorrelativo.Size = new System.Drawing.Size(86, 58);
             this.btnAsignarCorrelativo.TabIndex = 25;
             this.btnAsignarCorrelativo.Text = "Asignar correlativos";
             this.btnAsignarCorrelativo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -340,15 +366,28 @@
             this.btnDisenoPersonalizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisenoPersonalizacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnDisenoPersonalizacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDisenoPersonalizacion.Image")));
-            this.btnDisenoPersonalizacion.Location = new System.Drawing.Point(161, 13);
+            this.btnDisenoPersonalizacion.Location = new System.Drawing.Point(205, 13);
             this.btnDisenoPersonalizacion.Margin = new System.Windows.Forms.Padding(5);
             this.btnDisenoPersonalizacion.Name = "btnDisenoPersonalizacion";
-            this.btnDisenoPersonalizacion.Size = new System.Drawing.Size(68, 58);
+            this.btnDisenoPersonalizacion.Size = new System.Drawing.Size(91, 58);
             this.btnDisenoPersonalizacion.TabIndex = 26;
             this.btnDisenoPersonalizacion.Text = "Diseño y personalizacion";
             this.btnDisenoPersonalizacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisenoPersonalizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDisenoPersonalizacion.UseVisualStyleBackColor = false;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoScroll = true;
+            this.flowLayoutPanel3.Controls.Add(this.btnListadoMoneda);
+            this.flowLayoutPanel3.Controls.Add(this.btnTipoCambio);
+            this.flowLayoutPanel3.Controls.Add(this.btnDenominaciones);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(971, 2);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(265, 84);
+            this.flowLayoutPanel3.TabIndex = 11;
             // 
             // btnListadoMoneda
             // 
@@ -403,7 +442,7 @@
             this.btnDenominaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDenominaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnDenominaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnDenominaciones.Image")));
-            this.btnDenominaciones.Location = new System.Drawing.Point(5, 81);
+            this.btnDenominaciones.Location = new System.Drawing.Point(161, 13);
             this.btnDenominaciones.Margin = new System.Windows.Forms.Padding(5);
             this.btnDenominaciones.Name = "btnDenominaciones";
             this.btnDenominaciones.Size = new System.Drawing.Size(68, 58);
@@ -413,44 +452,14 @@
             this.btnDenominaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDenominaciones.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.btnSucursales);
-            this.flowLayoutPanel4.Controls.Add(this.btnAlmacenes);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(85, 7);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(113, 60);
-            this.flowLayoutPanel4.TabIndex = 12;
-            // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(this.btnPersonal);
             this.flowLayoutPanel5.Controls.Add(this.btnGrupoCliente);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(316, 103);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(652, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(322, 68);
             this.flowLayoutPanel5.TabIndex = 12;
-            // 
-            // btnCajaInicializada
-            // 
-            this.btnCajaInicializada.BackColor = System.Drawing.Color.White;
-            this.btnCajaInicializada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCajaInicializada.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnCajaInicializada.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnCajaInicializada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnCajaInicializada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnCajaInicializada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCajaInicializada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnCajaInicializada.Image = ((System.Drawing.Image)(resources.GetObject("btnCajaInicializada.Image")));
-            this.btnCajaInicializada.Location = new System.Drawing.Point(559, 9);
-            this.btnCajaInicializada.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCajaInicializada.Name = "btnCajaInicializada";
-            this.btnCajaInicializada.Size = new System.Drawing.Size(79, 58);
-            this.btnCajaInicializada.TabIndex = 26;
-            this.btnCajaInicializada.Text = "Cajas inizializadas";
-            this.btnCajaInicializada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCajaInicializada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCajaInicializada.UseVisualStyleBackColor = false;
             // 
             // UCConfigNav
             // 
@@ -465,9 +474,9 @@
             this.Name = "UCConfigNav";
             this.Size = new System.Drawing.Size(1179, 245);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -217,7 +217,7 @@ namespace Admeli
             }
 
             // Ocultando la barra de herramientas
-            this.toggleHeaderTools(true);
+            // this.toggleHeaderTools(true);
         }
 
         private void btnMainMenu()
@@ -318,8 +318,8 @@ namespace Admeli
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
-            this.togglePanelAside("configuracion");
             this.toggleHeaderTools(true);
+            this.togglePanelAside("configuracion");
             btnConfiguracion.BackColor = Color.White;
             btnConfiguracion.ForeColor = Color.FromArgb(1, 102, 179);
         }
@@ -327,15 +327,15 @@ namespace Admeli
         private void btnTools_Click(object sender, EventArgs e)
         {
             this.togglePanelAside("herramientas");
-            this.toggleHeaderTools(true);
             btnHerramientas.BackColor = Color.White;
             btnHerramientas.ForeColor = Color.FromArgb(1, 102, 179);
+            this.toggleHeaderTools(true);
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            this.togglePanelAside("productos");
             this.toggleHeaderTools(true);
+            this.togglePanelAside("productos");
             btnProducto.BackColor = Color.White;
             btnProducto.ForeColor = Color.FromArgb(1, 102, 179);
         }
@@ -460,16 +460,16 @@ namespace Admeli
             /// Mostrando el efectivo
             Thread.Sleep(10);
             int y = 193;
-            List<Moneda> efectivos = ConfigModel.cierreIngresoEgreso;
-            foreach (Moneda moneda in efectivos)
+            List<TipoCambioMoneda> tipoCambios = ConfigModel.tipoCambioMonedas;
+            foreach (TipoCambioMoneda cambio in tipoCambios)
             {
-                createElements(y, moneda);
-                y += 15;
+                createElements(y, cambio);
+                y += 22;
             }
 
         }
 
-        private void createElements(int y, Moneda param)
+        private void createElements(int y, TipoCambioMoneda param)
         {
             /// 
             /// lblEfectivoName
@@ -492,11 +492,11 @@ namespace Admeli
             {
                 AutoSize = true,
                 ForeColor = System.Drawing.SystemColors.ControlDarkDark,
-                Location = new System.Drawing.Point(105, y),
+                Location = new System.Drawing.Point(150, y),
                 Name = "lblEfectivoValue",
                 Size = new System.Drawing.Size(65, 13),
                 TabIndex = 11,
-                Text = param.total.ToString()
+                Text = String.Format("{0:0.00}", param.cambio)
             };
 
             /// 
@@ -512,18 +512,11 @@ namespace Admeli
         /// <param name="temporalToggle"></param>
         private void toggleHeaderTools(bool temporalToggle = false)
         {
-            if (temporalToggle)
+            if (temporalToggle && isHideHeader)
             {
-               /* if (isHideHeader)
-                {
-                    panelHeader.Size = new Size(907, 116);
-                }
-                else
-                {
-                    panelHeader.Size = new Size(907, 40);
-                }*/
+                panelHeader.Size = new Size(907, 116);
             }
-            else
+            if (!temporalToggle)
             {
                 if (panelHeader.Size.Height > 40)
                 {
@@ -536,6 +529,7 @@ namespace Admeli
                     this.isHideHeader = false;
                 }
             }
+
         }
 
         #region ================================= Serrar Session =================================
