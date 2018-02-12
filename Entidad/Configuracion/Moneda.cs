@@ -33,5 +33,7 @@ namespace Entidad.Configuracion
         public string numeroOperacion { get; set; }
         public string observacion { get; set; }
 
+        public double total { get; set; }
+
     }
 }

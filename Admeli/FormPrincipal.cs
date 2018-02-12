@@ -4,6 +4,7 @@ using Admeli.Navegacion;
 using Admeli.Productos;
 using Admeli.Ventas;
 using Entidad;
+using Entidad.Configuracion;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -41,6 +43,7 @@ namespace Admeli
 
         private int widthPanelAside { get; set; }
         private bool notCloseApp { get; set; }
+        private bool isHideHeader { get; set; }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -67,7 +70,7 @@ namespace Admeli
         private void panelAside_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelAside);
+            drawShape.bottomLine(panelHeader);
         }
         #endregion
 
@@ -212,6 +215,9 @@ namespace Admeli
                 default:
                     break;
             }
+
+            // Ocultando la barra de herramientas
+            this.toggleHeaderTools(true);
         }
 
         private void btnMainMenu()
@@ -281,55 +287,63 @@ namespace Admeli
         private void btnCompras_Click(object sender, EventArgs e)
         {
             this.togglePanelAside("compras");
+            this.toggleHeaderTools(true);
             btnCompras.BackColor = Color.White;
             btnCompras.ForeColor = Color.FromArgb(1, 102, 179);
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            togglePanelAside("ventas");
+            this.togglePanelAside("ventas");
+            this.toggleHeaderTools(true);
             btnVentas.BackColor = Color.White;
             btnVentas.ForeColor = Color.FromArgb(1, 102, 179);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            togglePanelAside("caja");
+            this.togglePanelAside("caja");
+            this.toggleHeaderTools(true);
             btnCaja.BackColor = Color.White;
             btnCaja.ForeColor = Color.FromArgb(1, 102, 179);
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
-            togglePanelAside("almacen");
+            this.togglePanelAside("almacen");
+            this.toggleHeaderTools(true);
             btnAlmacen.BackColor = Color.White;
             btnAlmacen.ForeColor = Color.FromArgb(1, 102, 179);
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
-            togglePanelAside("configuracion");
+            this.togglePanelAside("configuracion");
+            this.toggleHeaderTools(true);
             btnConfiguracion.BackColor = Color.White;
             btnConfiguracion.ForeColor = Color.FromArgb(1, 102, 179);
         }
 
         private void btnTools_Click(object sender, EventArgs e)
         {
-            togglePanelAside("herramientas");
+            this.togglePanelAside("herramientas");
+            this.toggleHeaderTools(true);
             btnHerramientas.BackColor = Color.White;
             btnHerramientas.ForeColor = Color.FromArgb(1, 102, 179);
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            togglePanelAside("productos");
+            this.togglePanelAside("productos");
+            this.toggleHeaderTools(true);
             btnProducto.BackColor = Color.White;
             btnProducto.ForeColor = Color.FromArgb(1, 102, 179);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            togglePanelAside("home");
+            this.togglePanelAside("home");
+            this.toggleHeaderTools(true);
         }
         #endregion
 
@@ -349,21 +363,23 @@ namespace Admeli
             if (state)
             {
                 Cursor.Current = Cursors.WaitCursor;
-               // progressBarApp.Style = ProgressBarStyle.Marquee;
+                progressBarApp.Style = ProgressBarStyle.Marquee;
             }
             else
             {
                 Cursor.Current = Cursors.Default;
-               // progressBarApp.Style = ProgressBarStyle.Blocks;
+                progressBarApp.Style = ProgressBarStyle.Blocks;
             }
         }
 
         #region ================================ Mostrar Interfaces ================================
         public void appLoadInciComponents()
         {
+            panelHeader.Visible = true;
             panelAside.Visible = true;
             togglePanelAside("home");
             togglePanelMain("home");
+            mostrarDatosCargados();
         }
 
         private void toggleConfiguracionInicial()
@@ -372,6 +388,9 @@ namespace Admeli
         } 
         #endregion
 
+        /// <summary>
+        ///  Cargar Datos necesario desde el webservice
+        /// </summary>
         private async void cargarComponente()
         {
             try
@@ -394,13 +413,14 @@ namespace Admeli
                 await configModel.loadSucursalPersonal(PersonalModel.personal.idPersonal);
                 await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 await configModel.loadConfiGeneral();
-                configModel.loadMonedas();
-                configModel.loadTipoCambioMonedas();
+                await configModel.loadMonedas();
+                await configModel.loadTipoCambioMonedas();
 
-                configModel.loadTipoDocumento();
+                await configModel.loadTipoDocumento();
                 await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+                await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+                await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
 
                 // Eligiendo el puntode venta y almacen
                 if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
@@ -427,18 +447,98 @@ namespace Admeli
             }
         }
 
-        private void btnToggleAsideMenu_Click(object sender, EventArgs e)
+        /// <summary>
+        ///  Mostrar Datos cargados del webservice
+        /// </summary>
+        private void mostrarDatosCargados()
         {
-            if (panelAside.Size.Width < 1)
+            lblUsuarioName.Text = PersonalModel.personal.usuario;
+            lblUsuarioNombre.Text = String.Format("{0} {1}", PersonalModel.personal.nombres, PersonalModel.personal.apellidos);
+            lblDNI.Text = String.Format("{0} : {1}", PersonalModel.personal.tipoDocumento, PersonalModel.personal.numeroDocumento);
+            lblSucursalName.Text = ConfigModel.sucursal.nombre.ToUpper();
+
+            /// Mostrando el efectivo
+            Thread.Sleep(10);
+            int y = 193;
+            List<Moneda> efectivos = ConfigModel.cierreIngresoEgreso;
+            foreach (Moneda moneda in efectivos)
             {
-                panelAside.Size = new Size(250, 881);
+                createElements(y, moneda);
+                y += 15;
+            }
+
+        }
+
+        private void createElements(int y, Moneda param)
+        {
+            /// 
+            /// lblEfectivoName
+            /// 
+            Label lblEfectivoName = new System.Windows.Forms.Label()
+            {
+                AutoSize = true,
+                Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(13, y),
+                Name = "lblEfectivoName",
+                Size = new System.Drawing.Size(44, 16),
+                TabIndex = 10,
+                Text = param.moneda,
+            };
+
+            /// 
+            /// lblEfectivoValue
+            /// 
+            Label lblEfectivoValue = new System.Windows.Forms.Label()
+            {
+                AutoSize = true,
+                ForeColor = System.Drawing.SystemColors.ControlDarkDark,
+                Location = new System.Drawing.Point(105, y),
+                Name = "lblEfectivoValue",
+                Size = new System.Drawing.Size(65, 13),
+                TabIndex = 11,
+                Text = param.total.ToString()
+            };
+
+            /// 
+            /// Add Controls
+            /// 
+            panelAside.Controls.Add(lblEfectivoName);
+            panelAside.Controls.Add(lblEfectivoValue);
+        }
+
+        /// <summary>
+        /// Mostrar y ocultar la barra de herramientas en el header de la aplicacion
+        /// </summary>
+        /// <param name="temporalToggle"></param>
+        private void toggleHeaderTools(bool temporalToggle = false)
+        {
+            if (temporalToggle)
+            {
+               /* if (isHideHeader)
+                {
+                    panelHeader.Size = new Size(907, 116);
+                }
+                else
+                {
+                    panelHeader.Size = new Size(907, 40);
+                }*/
             }
             else
             {
-                panelAside.Size = new Size(0, 0);
+                if (panelHeader.Size.Height > 40)
+                {
+                    panelHeader.Size = new Size(907, 40);
+                    this.isHideHeader = true;
+                }
+                else
+                {
+                    panelHeader.Size = new Size(907, 116);
+                    this.isHideHeader = false;
+                }
             }
         }
 
+        #region ================================= Serrar Session =================================
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             // mostrar nuevamente el login del usuario
@@ -452,7 +552,28 @@ namespace Admeli
             // Cerrando el formulario actual
             this.notCloseApp = true;
             this.Close();
-        }
+        } 
+        #endregion
 
+        #region =============================== Full Screen ===============================
+        private void btnFullScreen_Click(object sender, EventArgs e)
+        {
+            if (this.FormBorderStyle == FormBorderStyle.None)
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+        #endregion
+
+        private void btnDownUp_Click(object sender, EventArgs e)
+        {
+            toggleHeaderTools();
+        }
     }
 }
