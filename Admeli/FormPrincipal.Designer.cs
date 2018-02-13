@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelAsideMain = new System.Windows.Forms.Panel();
@@ -373,22 +373,22 @@
             // 
             this.transition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.transition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.transition1.DefaultAnimation = animation2;
             this.transition1.TimeStep = 0.03F;
             // 
             // panelAside
@@ -398,9 +398,9 @@
             this.panelAside.Controls.Add(this.panel1);
             this.transition1.SetDecoration(this.panelAside, BunifuAnimatorNS.DecorationType.None);
             this.panelAside.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAside.Location = new System.Drawing.Point(0, 128);
+            this.panelAside.Location = new System.Drawing.Point(0, 121);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(200, 498);
+            this.panelAside.Size = new System.Drawing.Size(200, 505);
             this.panelAside.TabIndex = 5;
             this.panelAside.Visible = false;
             // 
@@ -502,9 +502,9 @@
             // 
             this.splitter1.BackColor = System.Drawing.Color.Gainsboro;
             this.transition1.SetDecoration(this.splitter1, BunifuAnimatorNS.DecorationType.None);
-            this.splitter1.Location = new System.Drawing.Point(200, 128);
+            this.splitter1.Location = new System.Drawing.Point(200, 121);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 498);
+            this.splitter1.Size = new System.Drawing.Size(2, 505);
             this.splitter1.TabIndex = 6;
             this.splitter1.TabStop = false;
             // 
@@ -513,9 +513,9 @@
             this.panelMainContainer.Controls.Add(this.panelMain);
             this.transition1.SetDecoration(this.panelMainContainer, BunifuAnimatorNS.DecorationType.None);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(202, 128);
+            this.panelMainContainer.Location = new System.Drawing.Point(202, 121);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(705, 498);
+            this.panelMainContainer.Size = new System.Drawing.Size(705, 505);
             this.panelMainContainer.TabIndex = 7;
             // 
             // panelMain
@@ -526,7 +526,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(705, 498);
+            this.panelMain.Size = new System.Drawing.Size(705, 505);
             this.panelMain.TabIndex = 5;
             // 
             // panel5
@@ -536,7 +536,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
-            this.panel5.Location = new System.Drawing.Point(151, 144);
+            this.panel5.Location = new System.Drawing.Point(151, 147);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 210);
@@ -597,7 +597,7 @@
             this.progressBarApp.Maximum = 200;
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
-            this.progressBarApp.Size = new System.Drawing.Size(907, 10);
+            this.progressBarApp.Size = new System.Drawing.Size(907, 3);
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 4;
             // 
