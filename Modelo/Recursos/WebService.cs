@@ -124,7 +124,8 @@ namespace Modelo.Recursos
             }
         }
 
-        public async Task<K> POST<T, K>(string servicio, T param)
+        /*
+        public async Task<List<T>> POST<T>(string servicio, T param)
         {
             try
             {
@@ -146,7 +147,7 @@ namespace Modelo.Recursos
                 string result = await response.Content.ReadAsStringAsync();
 
                 // retornando los valores en una lista de objetos
-                K dataResponse = JsonConvert.DeserializeObject<K>(result);
+                List<T> dataResponse = JsonConvert.DeserializeObject<List<T>>(result);
                 return dataResponse;
             }
             catch (Exception ex)
@@ -154,7 +155,7 @@ namespace Modelo.Recursos
                 throw ex;
             }
         }
-
+        */
         #region ============== Metododo GET que retorna un objeto generico ==============
         public async Task<T> GET<T>(string servicio, string metodo)
         {
