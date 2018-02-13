@@ -24,10 +24,21 @@ namespace Admeli
         private CobroModel cobroModel = new CobroModel();
         private PagoModel pagoModel = new PagoModel();
 
+        public bool lisenerKeyEvents { get; internal set; }
+
+        #region ============================= Contructor =============================
         public UCHome()
         {
             InitializeComponent();
         }
+
+        public UCHome(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
+            cargarGraficoVentas();
+        } 
+        #endregion
 
         struct ultimasVentas
         {
@@ -96,23 +107,21 @@ namespace Admeli
 
         }
 
-
-
-        public UCHome(FormPrincipal formPrincipal)
+        private async void cargarGraficoCompra()
         {
-            InitializeComponent();
-            this.formPrincipal = formPrincipal;
-            cargarGraficoVentas();
+
         }
+
+
 
         private void UCHome_Load(object sender, EventArgs e)
         {
-            cargarRegistros1();
+          /*  cargarRegistros1();
             cargarRegistros2();
             cargarRegistros3();
             cargarRegistros4();
             cargarRegistros5();
-            cargarRegistros6();
+            cargarRegistros6();*/
         }
 
         private async void cargarRegistros1()
@@ -136,6 +145,11 @@ namespace Admeli
             this.formPrincipal.appLoadState(false);
         }
 
+        internal void reLoad()
+        {
+            // throw new NotImplementedException();
+        }
+
         private void cargarRegistros4()
         {
             // 
@@ -153,50 +167,18 @@ namespace Admeli
             this.formPrincipal.appLoadState(false);
         }
 
-        #region ==================================== Paint Decoration ====================================
-        private void cardContainer1_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(cardContainer1);
-        }
-
-        private void cardContainer2_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(cardContainer2);
-        }
-
-        private void cardContainer3_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(cardContainer3);
-        }
-
-        private void cardContainer4_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(cardContainer4);
-        }
-
-        private void cardContainer5_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(cardContainer5);
-        }
-
-        private void cardContainer6_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(cardContainer6);
-        } 
-        #endregion
-
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
-            int sizeW = panelContainer.Size.Width;
+           /* int sizeW = panelContainer.Size.Width;
             int sizeH = panelContainer.Size.Height;
             sizeW = sizeW / 2;
-            panelItem1.Size = new Size(sizeW, sizeH);
+            panelItem1.Size = new Size(sizeW, sizeH);*/
+        }
+
+        private void panelContainer_Paint_1(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
         }
     }
 }

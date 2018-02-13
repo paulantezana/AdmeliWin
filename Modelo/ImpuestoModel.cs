@@ -72,7 +72,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/impuestos/prod/21/suc/1
-                List<Impuesto> list = await webService.GETLis<Impuesto>("impuestos", String.Format("prod/{0}/suc/{1}", idProducto, idSucursal));
+                List<Impuesto> list = await webService.GET<List<Impuesto>>("impuestos", String.Format("prod/{0}/suc/{1}", idProducto, idSucursal));
                 return list;
             }
             catch (Exception ex)
@@ -86,7 +86,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/impuestos/estado/1/100
-                RootObject<Impuesto> impuestos = await webService.GETRoot<Impuesto>("impuestos", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Impuesto> impuestos = await webService.GET<RootObject<Impuesto>>("impuestos", String.Format("estado/{0}/{1}", page, items));
                 return impuestos;
             }
             catch (Exception ex)

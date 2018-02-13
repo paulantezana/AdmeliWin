@@ -67,7 +67,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore2/xcore/services.php/sucursal/nombre/cusco/ids/0
-                return await webService.GETObject<Response>("sucursal", String.Format("nombre/{0}/ids/{1}", nombre,idSucursal));
+                return await webService.GET<Response>("sucursal", String.Format("nombre/{0}/ids/{1}", nombre,idSucursal));
             }
             catch (Exception ex)
             {
@@ -80,7 +80,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/listarsucursalesactivos
-                List<Sucursal> listSucursal = await webService.GETLis<Sucursal>("listarsucursalesactivos");
+                List<Sucursal> listSucursal = await webService.GET<List<Sucursal>>("listarsucursalesactivos");
                 return listSucursal;
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/sucursales/estado/1/100
-                RootObject<Sucursal> sucursales = await webService.GETRoot<Sucursal>("sucursales", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Sucursal> sucursales = await webService.GET<RootObject<Sucursal>>("sucursales", String.Format("estado/{0}/{1}", page, items));
                 return sucursales;
             }
             catch (Exception ex)
@@ -108,7 +108,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/sucursales/id/nombre/estado/1
-                List<Sucursal> listSucursal = await webService.GETLis<Sucursal>("sucursales", "id/nombre/estado/1");
+                List<Sucursal> listSucursal = await webService.GET<List<Sucursal>>("sucursales", "id/nombre/estado/1");
                 return listSucursal;
             }
             catch (Exception ex)
@@ -122,7 +122,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/sucursales/precio/17
-                List<Sucursal> listSucursal = await webService.GETLis<Sucursal>("sucursales", String.Format("precio/{0}",idProducto));
+                List<Sucursal> listSucursal = await webService.GET<List<Sucursal>>("sucursales", String.Format("precio/{0}",idProducto));
                 return listSucursal;
             }
             catch (Exception ex)

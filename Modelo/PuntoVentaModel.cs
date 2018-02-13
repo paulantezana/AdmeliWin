@@ -70,7 +70,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/puntoventas/sucursal/0/estado/todos/1/100
-                RootObject<PuntoDeVenta> puntoVenta = await webService.GETRoot<PuntoDeVenta>("puntoventas", String.Format("sucursal/{0}/estado/{1}/{2}/{3}", idSucursal, idEstado, page, items));
+                RootObject<PuntoDeVenta> puntoVenta = await webService.GET<RootObject<PuntoDeVenta>>("puntoventas", String.Format("sucursal/{0}/estado/{1}/{2}/{3}", idSucursal, idEstado, page, items));
                 return puntoVenta;
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/puntoventas/suc/1
-                List<PuntoDeVenta> puntoVenta = await webService.GETLis<PuntoDeVenta>("puntoventas", String.Format("suc/{0}", idSucursal));
+                List<PuntoDeVenta> puntoVenta = await webService.GET<List<PuntoDeVenta>>("puntoventas", String.Format("suc/{0}", idSucursal));
                 return puntoVenta;
             }
             catch (Exception ex)
@@ -98,7 +98,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/puntoventasytodos/suc/0
-                List<PuntoDeVenta> puntoVenta = await webService.GETLis<PuntoDeVenta>("puntoventasytodos", String.Format("suc/{0}", idSucursal));
+                List<PuntoDeVenta> puntoVenta = await webService.GET<List<PuntoDeVenta>>("puntoventasytodos", String.Format("suc/{0}", idSucursal));
                 return puntoVenta;
             }
             catch (Exception ex)

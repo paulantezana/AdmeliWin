@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/prelacion/producto/21
-                List<ProductoRelacion> list = await webService.GETLis<ProductoRelacion>("prelacion", String.Format("producto/{0}", idProducto));
+                List<ProductoRelacion> list = await webService.GET<List<ProductoRelacion>>("prelacion", String.Format("producto/{0}", idProducto));
                 return list;
             }
             catch (Exception ex)

@@ -79,7 +79,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/verificarnombrealmacen/nombre/almacen%201/sucursal/1/almacen/-1
-                List<Almacen> list = await webService.GETLis<Almacen>("verificarnombrealmacen", String.Format("nombre/{0}/sucursal/{1}/almacen/{2}", nombre, sucursal, idAlmcaen));
+                List<Almacen> list = await webService.GET<List<Almacen>>("verificarnombrealmacen", String.Format("nombre/{0}/sucursal/{1}/almacen/{2}", nombre, sucursal, idAlmcaen));
                 return list;
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/almacenes/estado/1/100
-                RootObject<Almacen> almacenes = await webService.GETRoot<Almacen>("almacenes", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Almacen> almacenes = await webService.GET<RootObject<Almacen>>("almacenes", String.Format("estado/{0}/{1}", page, items));
                 return almacenes;
             }
             catch (Exception ex)
@@ -107,7 +107,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/almacenes/id/nombre/estado/1
-                List<Almacen> list = await webService.GETLis<Almacen>("almacenes", String.Format("id/nombre/estado/{0}",estado));
+                List<Almacen> list = await webService.GET<List<Almacen>>("almacenes", String.Format("id/nombre/estado/{0}",estado));
                 return list;
             }
             catch (Exception ex)
@@ -121,7 +121,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/almacenesporsucursal/sucursal/0
-                List<Almacen> list = await webService.GETLis<Almacen>("almacenesporsucursal", String.Format("sucursal/{0}", idSucursal));
+                List<Almacen> list = await webService.GET<List<Almacen>>("almacenesporsucursal", String.Format("sucursal/{0}", idSucursal));
                 return list;
             }
             catch (Exception ex)

@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/gclientes/estado/1/100
-                RootObject<GrupoCliente> grupoClientes = await webService.GETRoot<GrupoCliente>("gclientes", String.Format("estado/{0}/{1}", page, items));
+                RootObject<GrupoCliente> grupoClientes = await webService.GET<RootObject<GrupoCliente>>("gclientes", String.Format("estado/{0}/{1}", page, items));
                 return grupoClientes;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/gclientes21
-                List<GrupoCliente> list = await webService.GETLis<GrupoCliente>("gclientes21");
+                List<GrupoCliente> list = await webService.GET<List<GrupoCliente>>("gclientes21");
                 return list;
             }
             catch (Exception ex)

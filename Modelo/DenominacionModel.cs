@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/denominaciones/paginacion/1/100
-                RootObject<Denominacion> almacenes = await webService.GETRoot<Denominacion>("denominaciones", String.Format("paginacion/{0}/{1}", page, items));
+                RootObject<Denominacion> almacenes = await webService.GET<RootObject<Denominacion>>("denominaciones", String.Format("paginacion/{0}/{1}", page, items));
                 return almacenes;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/verificardenominaciones/nombre/100%20DOLAR/valor/200/moneda/1/denominacion/0
-                List<Denominacion> almacenes = await webService.GETLis<Denominacion>("verificardenominaciones", String.Format("nombre/{0}/valor/{1}/moneda/{2}/denominacion/{3}", nombre, valor, moneda, idDenominacion));
+                List<Denominacion> almacenes = await webService.GET<List<Denominacion>>("verificardenominaciones", String.Format("nombre/{0}/valor/{1}/moneda/{2}/denominacion/{3}", nombre, valor, moneda, idDenominacion));
                 return almacenes;
             }
             catch (Exception ex)

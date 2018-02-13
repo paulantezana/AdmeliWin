@@ -41,7 +41,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/cajacorrelativoserie/caja/1/tipo/0
-                List<dynamic> list = await webService.GETLis<dynamic>("cajacorrelativoserie", String.Format("caja/{0}/tipo/{1}", idCaja,tipo));
+                List<dynamic> list = await webService.GET<dynamic>("cajacorrelativoserie", String.Format("caja/{0}/tipo/{1}", idCaja,tipo));
                 return list[0];
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/cajasesionesinicializadas/suc/1/1/100
-                RootObject<CajaSesion> cajaSesion = await webService.GETRoot<CajaSesion>("cajasesionesinicializadas", String.Format("suc/{0}/{1}/{2}", idSucursal, page, items));
+                RootObject<CajaSesion> cajaSesion = await webService.GET<RootObject<CajaSesion>>("cajasesionesinicializadas", String.Format("suc/{0}/{1}/{2}", idSucursal, page, items));
                 return cajaSesion;
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/cierrecajaingresomenosegreso/mediopago/1/cajasesion/7
-                List<Moneda> list = await webService.GETLis<Moneda>("cajasesionesinicializadas", String.Format("mediopago/{0}/cajasesion/{1}", mediopago, cajaSesion));
+                List<Moneda> list = await webService.GET<List<Moneda>>("cajasesionesinicializadas", String.Format("mediopago/{0}/cajasesion/{1}", mediopago, cajaSesion));
                 return list;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/cajasesion/idasignarcaja/1
-                List<CajaSesion> list = await webService.GETLis<CajaSesion>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
+                List<CajaSesion> list = await webService.GET<List<CajaSesion>>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
                 return list;
             }
             catch (Exception ex)

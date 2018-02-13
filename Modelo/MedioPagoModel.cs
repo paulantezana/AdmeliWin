@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/mediopagos/estado/1
-                List<MedioPago> list = await webService.GETLis<MedioPago>("mediopagos", String.Format("estado/{0}", estado));
+                List<MedioPago> list = await webService.GET<List<MedioPago>>("mediopagos", String.Format("estado/{0}", estado));
                 return list;
             }
             catch (Exception ex)

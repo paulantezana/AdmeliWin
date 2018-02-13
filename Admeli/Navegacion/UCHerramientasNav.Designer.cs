@@ -43,9 +43,8 @@
             this.flowLayoutPanel1.Controls.Add(this.btnAsignarImpuesto);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(749, 75);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
@@ -60,15 +59,15 @@
             this.btnInicializarStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicializarStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnInicializarStock.Image = ((System.Drawing.Image)(resources.GetObject("btnInicializarStock.Image")));
-            this.btnInicializarStock.Location = new System.Drawing.Point(10, 10);
-            this.btnInicializarStock.Margin = new System.Windows.Forms.Padding(5);
+            this.btnInicializarStock.Location = new System.Drawing.Point(3, 3);
             this.btnInicializarStock.Name = "btnInicializarStock";
-            this.btnInicializarStock.Size = new System.Drawing.Size(80, 58);
+            this.btnInicializarStock.Size = new System.Drawing.Size(80, 69);
             this.btnInicializarStock.TabIndex = 19;
             this.btnInicializarStock.Text = "Inicializar Stock-precio";
             this.btnInicializarStock.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInicializarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnInicializarStock.UseVisualStyleBackColor = false;
+            this.btnInicializarStock.Click += new System.EventHandler(this.btnInicializarStock_Click);
             // 
             // btnAsignarCategoria
             // 
@@ -81,15 +80,15 @@
             this.btnAsignarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAsignarCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarCategoria.Image")));
-            this.btnAsignarCategoria.Location = new System.Drawing.Point(100, 10);
-            this.btnAsignarCategoria.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAsignarCategoria.Location = new System.Drawing.Point(89, 3);
             this.btnAsignarCategoria.Name = "btnAsignarCategoria";
-            this.btnAsignarCategoria.Size = new System.Drawing.Size(68, 58);
+            this.btnAsignarCategoria.Size = new System.Drawing.Size(68, 69);
             this.btnAsignarCategoria.TabIndex = 20;
             this.btnAsignarCategoria.Text = "Asignar categorías";
             this.btnAsignarCategoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAsignarCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAsignarCategoria.UseVisualStyleBackColor = false;
+            this.btnAsignarCategoria.Click += new System.EventHandler(this.btnAsignarCategoria_Click);
             // 
             // btnAsignarImpuesto
             // 
@@ -102,15 +101,15 @@
             this.btnAsignarImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarImpuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAsignarImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarImpuesto.Image")));
-            this.btnAsignarImpuesto.Location = new System.Drawing.Point(178, 10);
-            this.btnAsignarImpuesto.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAsignarImpuesto.Location = new System.Drawing.Point(163, 3);
             this.btnAsignarImpuesto.Name = "btnAsignarImpuesto";
-            this.btnAsignarImpuesto.Size = new System.Drawing.Size(68, 58);
+            this.btnAsignarImpuesto.Size = new System.Drawing.Size(68, 69);
             this.btnAsignarImpuesto.TabIndex = 21;
             this.btnAsignarImpuesto.Text = "Asignar impuestos";
             this.btnAsignarImpuesto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAsignarImpuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAsignarImpuesto.UseVisualStyleBackColor = false;
+            this.btnAsignarImpuesto.Click += new System.EventHandler(this.btnAsignarImpuesto_Click);
             // 
             // UCHerramientasNav
             // 

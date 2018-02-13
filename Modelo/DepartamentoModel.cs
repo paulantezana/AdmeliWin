@@ -18,7 +18,7 @@ namespace Modelo
         {
             try
             {
-                List<Departamento> list = await webService.GETLis<Departamento>("listarareasporsucursal",String.Format("ids/{0}/personal/{1}",ids,idPersonal));
+                List<Departamento> list = await webService.GET<List<Departamento>>("listarareasporsucursal",String.Format("ids/{0}/personal/{1}",ids,idPersonal));
                 return list;
             }
             catch (Exception)

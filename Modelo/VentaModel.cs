@@ -32,7 +32,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/ventas/sucursal/0/puntoventa/0/per/0/estado/todos/1/100
-                RootObject<Venta> ventas = await webService.GETRoot<Venta>("ventas", String.Format("sucursal/{0}/puntoventa/{1}/per/{2}/estado/{3}/{4}/{5}", idSucursal, idPuntoVenta, idPersonal, idEstado, page, items));
+                RootObject<Venta> ventas = await webService.GET<RootObject<Venta>>("ventas", String.Format("sucursal/{0}/puntoventa/{1}/per/{2}/estado/{3}/{4}/{5}", idSucursal, idPuntoVenta, idPersonal, idEstado, page, items));
                 return ventas;
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/ventasultimas/3/1/1/1
-                List<Venta> ventasultimas = await webService.GETLis<Venta>("ventasultimas", String.Format("{0}/{1}/{2}/{3}",idPersonal,idSucursal,todos,gerente));
+                List<Venta> ventasultimas = await webService.GET<List<Venta>>("ventasultimas", String.Format("{0}/{1}/{2}/{3}",idPersonal,idSucursal,todos,gerente));
                 return ventasultimas;
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore/services.php/ventaspormes
-                List<T> list = await webService.GETLis<T>("ventaspormes");
+                List<T> list = await webService.GET<List<T>>("ventaspormes");
                 return list;
             }
             catch (Exception ex)

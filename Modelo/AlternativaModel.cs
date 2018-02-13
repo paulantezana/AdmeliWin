@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/variante/1/alternativas
-                List<Alternativa> list = await webService.GETLis<Alternativa>("variante", String.Format("{0}/alternativas", idVariante));
+                List<Alternativa> list = await webService.GET<List<Alternativa>>("variante", String.Format("{0}/alternativas", idVariante));
                 return list;
             }
             catch (Exception ex)

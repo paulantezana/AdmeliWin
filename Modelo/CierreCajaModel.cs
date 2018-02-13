@@ -74,7 +74,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/cierrecajas/personal/0/sucursal/0/1/15
-                RootObject<CierreCaja> dataRoot = await webService.GETRoot<CierreCaja>("cierrecajas", String.Format("personal/{0}/sucursal/{1}/{2}/{3}", idPersonal, idSucursal, page, items));
+                RootObject<CierreCaja> dataRoot = await webService.GET<RootObject<CierreCaja>>("cierrecajas", String.Format("personal/{0}/sucursal/{1}/{2}/{3}", idPersonal, idSucursal, page, items));
                 return dataRoot;
             }
             catch (Exception ex)

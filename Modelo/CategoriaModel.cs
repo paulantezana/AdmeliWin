@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/categoriastodo/estado/1
-                List<Categoria> categorias = await webService.GETLis<Categoria>("categoriastodo", String.Format("estado/{0}",estado));
+                List<Categoria> categorias = await webService.GET<List<Categoria>>("categoriastodo", String.Format("estado/{0}",estado));
                 return categorias;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/categoriastree
-                RootObject<Categoria> categorias = await webService.GETRoot<Categoria>("categoriastree");
+                RootObject<Categoria> categorias = await webService.GET<RootObject<Categoria>>("categoriastree");
                 return categorias;
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/categorias21/-1
-                List<Categoria> categorias = await webService.GETLis<Categoria>("categorias21", "-1");
+                List<Categoria> categorias = await webService.GET<List<Categoria>>("categorias21", "-1");
                 return categorias;
             }
             catch (Exception ex)
@@ -111,7 +111,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/cproducto/producto/0
-                CategoriaProducto catProducto = await webService.GETObject<CategoriaProducto>("cproducto", String.Format("producto/{0}",idProducto));
+                CategoriaProducto catProducto = await webService.GET<CategoriaProducto>("cproducto", String.Format("producto/{0}",idProducto));
                 return catProducto;
             }
             catch (Exception ex)

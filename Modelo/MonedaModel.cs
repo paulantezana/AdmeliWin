@@ -84,7 +84,7 @@ namespace Modelo
             {
                 // www.lineatienda.com/services.php/monedas/estado/1
                 // www.lineatienda.com/services.php/monedas/estado/1/100
-                RootObject<Moneda> monedas = await webService.GETRoot<Moneda>("monedas", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Moneda> monedas = await webService.GET<RootObject<Moneda>>("monedas", String.Format("estado/{0}/{1}", page, items));
                 return monedas;
             }
             catch (Exception ex)
@@ -99,7 +99,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/monedas/estado/1
-                List<Moneda> list = await webService.GETLis<Moneda>("monedas", String.Format("estado/{0}", estado));
+                List<Moneda> list = await webService.GET<List<Moneda>>("monedas", String.Format("estado/{0}", estado));
                 return list;
             }
             catch (Exception ex)
@@ -113,7 +113,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/moneda/pordefecto
-                List<Moneda> list = await webService.GETLis<Moneda>("moneda", "pordefecto");
+                List<Moneda> list = await webService.GET<List<Moneda>>("moneda", "pordefecto");
                 return list[0];
             }
             catch (Exception ex)

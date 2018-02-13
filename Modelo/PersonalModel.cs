@@ -28,7 +28,7 @@ namespace Modelo
                 personal.usuario = usuario;
                 personal.password = password;
 
-                List<Personal> user =  await  webService.POSTList<Personal>("personal", "buscar", personal);
+                List<Personal> user =  await  webService.POST<Personal,List<Personal>>("personal", "buscar", personal);
                 if (user.Count == 0)
                 {
                     throw new Exception("El nombre de usuario o contraseña es incorrecta!!");
@@ -87,7 +87,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<Personal> personales = await webService.GETRoot<Personal>("personales", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Personal> personales = await webService.GET<RootObject<Personal>>("personales", String.Format("estado/{0}/{1}", page, items));
                 return personales;
             }
             catch (Exception ex)
@@ -99,7 +99,7 @@ namespace Modelo
         {
             try
             {
-                List<Personal> list = await webService.GETLis<Personal>("listarpersonalcompras", String.Format("sucursal/{0}",idSucursal));
+                List<Personal> list = await webService.GET<List<Personal>>("listarpersonalcompras", String.Format("sucursal/{0}",idSucursal));
                 return list;
             }
             catch (Exception ex)
@@ -113,7 +113,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/listarpersonalalmacen/sucursal/0
-                List<Personal> list = await webService.GETLis<Personal>("listarpersonalalmacen", String.Format("sucursal/{0}", idSucursal));
+                List<Personal> list = await webService.GET<List<Personal>>("listarpersonalalmacen", String.Format("sucursal/{0}", idSucursal));
                 return list;
             }
             catch (Exception ex)

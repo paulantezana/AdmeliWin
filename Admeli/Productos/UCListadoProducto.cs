@@ -259,6 +259,7 @@ namespace Admeli.Productos
                 loadState(false);
             }
         }
+
         private async void cargarRegistrosBuscar()
         {
             loadState(true);

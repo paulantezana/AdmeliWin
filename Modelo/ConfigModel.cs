@@ -84,7 +84,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/configeneral
-                List<ConfiguracionGeneral> list = await webService.GETLis<ConfiguracionGeneral>("configeneral");
+                List<ConfiguracionGeneral> list = await webService.GET<List<ConfiguracionGeneral>>("configeneral");
                 configuracionGeneral = list[0];
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/monedas/estado/1
-                List<Moneda> list = await webService.GETLis<Moneda>("monedas", "estado/1");
+                List<Moneda> list = await webService.GET<List<Moneda>>("monedas", "estado/1");
                 monedas = list;
             }
             catch (Exception ex)
@@ -120,7 +120,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/tipocambiotodasmonedas/hoy
-                List<TipoCambioMoneda> list = await webService.GETLis<TipoCambioMoneda>("tipocambiotodasmonedas", "hoy");
+                List<TipoCambioMoneda> list = await webService.GET<List<TipoCambioMoneda>>("tipocambiotodasmonedas", "hoy");
                 tipoCambioMonedas = list;
             }
             catch (Exception ex)
@@ -138,7 +138,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/tipodoc21/estado/1
-                List<TipoDocumento> list = await webService.GETLis<TipoDocumento>("tipodoc21", "estado/1");
+                List<TipoDocumento> list = await webService.GET<List<TipoDocumento>>("tipodoc21", "estado/1");
                 tipoDocumento = list;
             }
             catch (Exception ex)
@@ -158,7 +158,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/personalalmacenes/per/8/suc/1
-                List<Almacen> list = await webService.GETLis<Almacen>("personalalmacenes", String.Format("per/{0}/suc/{1}", idPersonal, idSucursal));
+                List<Almacen> list = await webService.GET<List<Almacen>>("personalalmacenes", String.Format("per/{0}/suc/{1}", idPersonal, idSucursal));
                 alamacenes = list;
             }
             catch (Exception ex)
@@ -178,7 +178,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/asignarpuntoventas/sucursal/1/personal/8
-                List<PuntoDeVenta> list = await webService.GETLis<PuntoDeVenta>("asignarpuntoventas", String.Format("sucursal/{0}/personal/{1}", idSucursal, idPersonal));
+                List<PuntoDeVenta> list = await webService.GET<List<PuntoDeVenta>>("asignarpuntoventas", String.Format("sucursal/{0}/personal/{1}", idSucursal, idPersonal));
                 puntosDeVenta = list;
             }
             catch (Exception ex)
@@ -198,7 +198,7 @@ namespace Modelo
             {
 
                 // www.lineatienda.com/services.php/cajasesion/idasignarcaja/3
-                List<CajaSesion> list = await webService.GETLis<CajaSesion>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
+                List<CajaSesion> list = await webService.GET<List<CajaSesion>>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
                 cajaSesion = list[0];
                 ConfigModel.cajaIniciada = true;
             }
@@ -221,7 +221,7 @@ namespace Modelo
             {
 
                 // localhost:8080/admeli/xcore/services.php/cierrecajaingresomenosegreso/mediopago/1/cajasesion/24
-                List<Moneda> list = await webService.GETLis<Moneda>("cierrecajaingresomenosegreso", String.Format("mediopago/{0}/cajasesion/{1}", idMedioPago, idCajaSesion));
+                List<Moneda> list = await webService.GET<List<Moneda>>("cierrecajaingresomenosegreso", String.Format("mediopago/{0}/cajasesion/{1}", idMedioPago, idCajaSesion));
             }
             catch (Exception ex)
             {
@@ -250,7 +250,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/generales
-                List<DatosGenerales> list = await webService.GETLis<DatosGenerales>("generales");
+                List<DatosGenerales> list = await webService.GET<List<DatosGenerales>>("generales");
                 datosGenerales = list[0];
             }
             catch (Exception ex)
@@ -264,7 +264,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/generales
-                List<DatosGenerales> listData = await webService.GETLis<DatosGenerales>("generales");
+                List<DatosGenerales> listData = await webService.GET<List<DatosGenerales>>("generales");
                 return listData[0];
             }
             catch (Exception ex)
@@ -278,7 +278,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/sucursalespersonal/8
-                List<Sucursal> list = await webService.GETLis<Sucursal>("sucursalespersonal",idPersonal.ToString());
+                List<Sucursal> list = await webService.GET<List<Sucursal>>("sucursalespersonal",idPersonal.ToString());
                 sucursal = list[0];
             }
             catch (Exception ex)
@@ -292,7 +292,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/personales/asignacionpersonal/per/8/suc/1
-                AsignacionPersonal datos = await webService.GETObject<AsignacionPersonal>("personales", String.Format("asignacionpersonal/per/{0}/suc/{1}", idPersonal, idSucursal));
+                AsignacionPersonal datos = await webService.GET<AsignacionPersonal>("personales", String.Format("asignacionpersonal/per/{0}/suc/{1}", idPersonal, idSucursal));
                 asignacionPersonal = datos;
             }
             catch (Exception ex)
@@ -307,7 +307,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/configeneral
-                List<ConfiguracionGeneral> list = await webService.GETLis<ConfiguracionGeneral>("configeneral");
+                List<ConfiguracionGeneral> list = await webService.GET<List<ConfiguracionGeneral>>("configeneral");
                 return list[0];
             }
             catch (Exception ex)

@@ -32,7 +32,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/cotizaciones/suc/0/per/0/1/100
-                RootObject<Cotizacion> almacenes = await webService.GETRoot<Cotizacion>("cotizaciones", String.Format("suc/{0}/per/{1}/{2}/{3}", idSucursal, idPersonal, page, items));
+                RootObject<Cotizacion> almacenes = await webService.GET<RootObject<Cotizacion>>("cotizaciones", String.Format("suc/{0}/per/{1}/{2}/{3}", idSucursal, idPersonal, page, items));
                 return almacenes;
             }
             catch (Exception ex)

@@ -16,7 +16,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/fechasystema
-                return await webService.GETObject<dynamic>("fechasystema");
+                return await webService.GET<dynamic>("fechasystema");
             }
             catch (Exception ex)
             {

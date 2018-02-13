@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/psalmacenes/producto/445
-                List<Stock> list = await webService.GETLis<Stock>("psalmacenes", String.Format("producto/{0}", idProducto));
+                List<Stock> list = await webService.GET<List<Stock>>("psalmacenes", String.Format("producto/{0}", idProducto));
                 return list;
             }
             catch (Exception ex)

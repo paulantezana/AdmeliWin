@@ -40,7 +40,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/listartodocorrelativo/1/100
-                RootObject<DocCorrelativo> docCorrelativo = await webService.GETRoot<DocCorrelativo>("listartodocorrelativo", String.Format("{0}/{1}", page, items));
+                RootObject<DocCorrelativo> docCorrelativo = await webService.GET<RootObject<DocCorrelativo>>("listartodocorrelativo", String.Format("{0}/{1}", page, items));
                 return docCorrelativo;
             }
             catch (Exception ex)

@@ -55,7 +55,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<Compra> ordenCompra = await webService.GETRoot<Compra>("compras", String.Format("sucursal/{0}/personal/{1}/estado/{2}/{3}/{4}", idSucursal,idPersonal,idEstado, page, items));
+                RootObject<Compra> ordenCompra = await webService.GET<RootObject<Compra>>("compras", String.Format("sucursal/{0}/personal/{1}/estado/{2}/{3}/{4}", idSucursal,idPersonal,idEstado, page, items));
                 return ordenCompra;
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/comprasultimas/3/1/1/1
-                List<Compra> comprasultimas = await webService.GETLis<Compra>("comprasultimas", String.Format("{0}/{1}/{2}/{3}", idPersonal, idSucursal, todos, gerente));
+                List<Compra> comprasultimas = await webService.GET<List<Compra>>("comprasultimas", String.Format("{0}/{1}/{2}/{3}", idPersonal, idSucursal, todos, gerente));
                 return comprasultimas;
             }
             catch (Exception ex)

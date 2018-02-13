@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/documentoidentificacionesnatural
-                return await webService.GETLis<DocumentoIdentificacion>("documentoidentificacionesnatural");
+                return await webService.GET<List<DocumentoIdentificacion>>("documentoidentificacionesnatural");
             }
             catch (Exception ex)
             {
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/verificardocumentoidentificaciones/nombre/rerg/documento/0
-                List<DocumentoIdentificacion> list = await webService.GETLis<DocumentoIdentificacion>("verificardocumentoidentificaciones", String.Format("nombre/{0}/documento/{1}", nombre, idDocumento));
+                List<DocumentoIdentificacion> list = await webService.GET<List<DocumentoIdentificacion>>("verificardocumentoidentificaciones", String.Format("nombre/{0}/documento/{1}", nombre, idDocumento));
                 return list;
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/documentoidentificaciones/1/100
-                RootObject<DocumentoIdentificacion> listRoot = await webService.GETRoot<DocumentoIdentificacion>("documentoidentificaciones", String.Format("{0}/{1}", page, items));
+                RootObject<DocumentoIdentificacion> listRoot = await webService.GET<RootObject<DocumentoIdentificacion>>("documentoidentificaciones", String.Format("{0}/{1}", page, items));
                 return listRoot;
             }
             catch (Exception ex)

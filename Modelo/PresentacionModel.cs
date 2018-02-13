@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/presentacion/producto/21
-                List<Presentacion> list = await webService.GETLis<Presentacion>("presentacion", String.Format("producto/{0}", idProducto));
+                List<Presentacion> list = await webService.GET<List<Presentacion>>("presentacion", String.Format("producto/{0}", idProducto));
                 return list;
             }
             catch (Exception ex)
@@ -70,7 +70,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/listarpresentacionventas/producto/28
-                List<Presentacion> list = await webService.GETLis<Presentacion>("listarpresentacionventas", String.Format("producto/{0}", idProducto));
+                List<Presentacion> list = await webService.GET<List<Presentacion>>("listarpresentacionventas", String.Format("producto/{0}", idProducto));
                 return list;
             }
             catch (Exception ex)

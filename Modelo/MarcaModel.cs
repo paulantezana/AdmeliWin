@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/marcas/estado/1/100
-                RootObject<Marca> marcas = await webService.GETRoot<Marca>("marcas", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Marca> marcas = await webService.GET<RootObject<Marca>>("marcas", String.Format("estado/{0}/{1}", page, items));
                 return marcas;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/marcas/id/nombre/estado/1
-                List<Marca> marcas = await webService.GETLis<Marca>("marcas", String.Format("id/nombre/estado/{0}", estado));
+                List<Marca> marcas = await webService.GET<List<Marca>>("marcas", String.Format("id/nombre/estado/{0}", estado));
                 return marcas;
             }
             catch (Exception ex)

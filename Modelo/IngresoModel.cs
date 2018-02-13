@@ -63,7 +63,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/ingresos/sucursal/0/personal/0/cajasesion/0/estado/todos/1/100
-                RootObject<Ingreso> ingresos = await webService.GETRoot<Ingreso>("ingresos", String.Format("sucursal/{0}/personal/{1}/cajasesion/{2}/estado/{3}/{4}/{5}", idSucursal, idPersonal, idCajaSesion, idEstado,  page, items));
+                RootObject<Ingreso> ingresos = await webService.GET<RootObject<Ingreso>>("ingresos", String.Format("sucursal/{0}/personal/{1}/cajasesion/{2}/estado/{3}/{4}/{5}", idSucursal, idPersonal, idCajaSesion, idEstado,  page, items));
                 return ingresos;
             }
             catch (Exception ex)

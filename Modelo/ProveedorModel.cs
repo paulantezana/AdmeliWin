@@ -78,7 +78,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<Proveedor> proveedores = await webService.GETRoot<Proveedor>("proveedoreslike", String.Format("razonsocial/{0}/{1}/{2}", like, page, items));
+                RootObject<Proveedor> proveedores = await webService.GET<RootObject<Proveedor>>("proveedoreslike", String.Format("razonsocial/{0}/{1}/{2}", like, page, items));
                 return proveedores;
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace Modelo
         {
             try
             {
-                RootObject<Proveedor> proveedores = await webService.GETRoot<Proveedor>("proveedores", String.Format("{0}/{1}/{2}", estado, page, items));
+                RootObject<Proveedor> proveedores = await webService.GET<RootObject<Proveedor>>("proveedores", String.Format("{0}/{1}/{2}", estado, page, items));
                 return proveedores;
             }
             catch (Exception ex)

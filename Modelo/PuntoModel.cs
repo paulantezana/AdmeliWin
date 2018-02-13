@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/puntoadministracion/suc/5
-                List<PuntoAdministracion> responseData = await webService.GETLis<PuntoAdministracion>("puntoadministracion", String.Format("suc/{0}",idSucursal));
+                List<PuntoAdministracion> responseData = await webService.GET<List<PuntoAdministracion>>("puntoadministracion", String.Format("suc/{0}",idSucursal));
                 return responseData[0];
             }
             catch (Exception ex)
@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/puntocompra/suc/5
-                List<PuntoCompra> responseData = await webService.GETLis<PuntoCompra>("puntocompra", String.Format("suc/{0}", idSucursal));
+                List<PuntoCompra> responseData = await webService.GET<List<PuntoCompra>>("puntocompra", String.Format("suc/{0}", idSucursal));
                 return responseData[0];
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/puntoventas/suc/5
-                List<PuntoDeVenta> responseData = await webService.GETLis<PuntoDeVenta>("puntoventas", String.Format("suc/{0}", idSucursal));
+                List<PuntoDeVenta> responseData = await webService.GET<List<PuntoDeVenta>>("puntoventas", String.Format("suc/{0}", idSucursal));
                 return responseData;
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/cajas/suc/5
-                List<Caja> responseData = await webService.GETLis<Caja>("cajas", String.Format("suc/{0}", idSucursal));
+                List<Caja> responseData = await webService.GET<List<Caja>>("cajas", String.Format("suc/{0}", idSucursal));
                 return responseData;
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/puntogerencia/suc/5
-                List<PuntoGerencia> responseData = await webService.GETLis<PuntoGerencia>("puntogerencia", String.Format("suc/{0}", idSucursal));
+                List<PuntoGerencia> responseData = await webService.GET<List<PuntoGerencia>>("puntogerencia", String.Format("suc/{0}", idSucursal));
                 return responseData[0];
             }
             catch (Exception ex)

@@ -69,7 +69,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/unimedidas/estado/1/100
-                RootObject<UnidadMedida> unidadesMedidad = await webService.GETRoot<UnidadMedida>("unimedidas", String.Format("estado/{0}/{1}", page, items));
+                RootObject<UnidadMedida> unidadesMedidad = await webService.GET<RootObject<UnidadMedida>>("unimedidas", String.Format("estado/{0}/{1}", page, items));
                 return unidadesMedidad;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/unimedidas/id/nombre/estado/1
-                List<UnidadMedida> list = await webService.GETLis<UnidadMedida>("unimedidas", String.Format("id/nombre/estado/{0}", estado));
+                List<UnidadMedida> list = await webService.GET<List<UnidadMedida>>("unimedidas", String.Format("id/nombre/estado/{0}", estado));
                 return list;
             }
             catch (Exception ex)

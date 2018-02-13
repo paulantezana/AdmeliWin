@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/clientes/estado/1/100
-                RootObject<Cliente> clientes = await webService.GETRoot<Cliente>("clientes", String.Format("estado/{0}/{1}", page, items));
+                RootObject<Cliente> clientes = await webService.GET<RootObject<Cliente>>("clientes", String.Format("estado/{0}/{1}", page, items));
                 return clientes;
             }
             catch (Exception ex)
@@ -44,7 +44,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/buscarclienteslike/nombre/Jhon/1/100
-                RootObject<Cliente> clientes = await webService.GETRoot<Cliente>("buscarclienteslike", String.Format("nombre/{0}/{1}/{2}",like, page, items));
+                RootObject<Cliente> clientes = await webService.GET<RootObject<Cliente>>("buscarclienteslike", String.Format("nombre/{0}/{1}/{2}",like, page, items));
                 return clientes;
             }
             catch (Exception ex)

@@ -20,7 +20,14 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/verificarproductonombrecodigo
-                List<Producto> list = await webService.POSTResponse("verificarproductonombrecodigo", param);
+
+
+
+                /// Error  404 al enviar y recivir Corregir 
+                List<Producto> list = await webService.POcgvsdjgvbehjgvgST<Producto, List<Producto>>("verificarproductonombrecodigo", param);
+
+
+
                 return list;
             }
             catch (Exception ex)
@@ -79,9 +86,9 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/productos/categoria/1/100
-                string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
-                json = String.Format("[\r\n{0}\r\n]", json);
-                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/{0}/{1}",page,items), json);
+                Dictionary<string, int>[] dataSend = { dictionary };
+
+                RootObject<Producto> productos = await webService.POST<Dictionary<string, int>[], RootObject<Producto>>("productos", String.Format("categoria/{0}/{1}",page,items), dataSend);
                 return productos;
             }
             catch (Exception ex)
@@ -95,9 +102,9 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/productos/categoria/1/100/pantalla
-                string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
-                json = String.Format("[\r\n{0}\r\n]", json);
-                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/{0}/{1}/{2}", page, items,like), json);
+                Dictionary<string, int>[] dataSend = { dictionary };
+
+                RootObject<Producto> productos = await webService.POST<Dictionary<string, int>[], RootObject<Producto>>("productos", String.Format("categoria/{0}/{1}/{2}", page, items,like), dataSend);
                 return productos;
             }
             catch (Exception ex)
@@ -111,9 +118,9 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/productos/categoria/stock/1/100/1/1
-                string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
-                json = String.Format("[\r\n{0}\r\n]", json);
-                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/stock/{0}/{1}/{2}/{3}", page, items, idAlmacen, idSucursal), json);
+                Dictionary<string, int>[] dataSend = { dictionary };
+
+                RootObject<Producto> productos = await webService.POST<Dictionary<string, int>[], RootObject<Producto>>("productos", String.Format("categoria/stock/{0}/{1}/{2}/{3}", page, items, idAlmacen, idSucursal), dataSend);
                 return productos;
             }
             catch (Exception ex)
@@ -125,11 +132,26 @@ namespace Modelo
         {
             try
             {
-                // www.lineatienda.com/services.php/productos/categoria/stock/1/100/1/1
                 // www.lineatienda.com/services.php/productos/categoria/stock/1/100/pantalla/1/1
-                string json = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
-                json = String.Format("[\r\n{0}\r\n]", json);
-                RootObject<Producto> productos = await webService.POSTRoot<Producto>("productos", String.Format("categoria/stock/{0}/{1}/{2}/{3}/{4}", page, items, like, idAlmacen, idSucursal), json);
+                Dictionary<string, int>[] dataSend = { dictionary };
+
+                RootObject<Producto> productos = await webService.POST<Dictionary<string, int>[], RootObject<Producto>>("productos", String.Format("categoria/stock/{0}/{1}/{2}/{3}/{4}", page, items, like, idAlmacen, idSucursal), dataSend);
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<RootObject<Producto>> stockHerramienta(Dictionary<string, int> dictionary, int idAlmacen, int idSucursal, int page, int items)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/productos/categoria/stockherramienta/1/100/0/0
+                Dictionary<string, int>[] dataSend = { dictionary };
+
+                RootObject<Producto> productos = await webService.POST<Dictionary<string, int>[], RootObject<Producto>>("productos", String.Format("categoria/stockherramienta/{0}/{1}/{2}/{3}", page, items, idAlmacen, idSucursal), dataSend);
                 return productos;
             }
             catch (Exception ex)
@@ -143,7 +165,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/productos21/17
-                List<Producto> list = await webService.GETLis<Producto>("productos21", String.Format("{0}", idProducto));
+                List<Producto> list = await webService.GET<List<Producto>>("productos21", String.Format("{0}", idProducto));
                 return list;
             }
             catch (Exception ex)
@@ -157,7 +179,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/producto/datos/21
-                List<Producto> list = await webService.GETLis<Producto>("producto", String.Format("datos/{0}", idProducto));
+                List<Producto> list = await webService.GET<List<Producto>>("producto", String.Format("datos/{0}", idProducto));
                 return list[0];
             }
             catch (Exception ex)
@@ -171,7 +193,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/listarproductosnorelacionados/producto/21/tiporelacion/complementaria/productorelacion/0
-                List<Producto> list = await webService.GETLis<Producto>("listarproductosnorelacionados", String.Format("producto/{0}/tiporelacion/{1}/productorelacion/{2}", idProducto, tipoRelacion, productoRelacion));
+                List<Producto> list = await webService.GET<List<Producto>>("listarproductosnorelacionados", String.Format("producto/{0}/tiporelacion/{1}/productorelacion/{2}", idProducto, tipoRelacion, productoRelacion));
                 return list;
             }
             catch (Exception ex)
@@ -185,7 +207,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/productos41
-                List<Producto> list = await webService.GETLis<Producto>("productos41");
+                List<Producto> list = await webService.GET<List<Producto>>("productos41");
                 return list;
             }
             catch (Exception ex)

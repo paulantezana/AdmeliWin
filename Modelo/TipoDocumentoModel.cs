@@ -70,7 +70,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/tipodocumentos/1/100
-                RootObject<TipoDocumento> tipoDocumento = await webService.GETRoot<TipoDocumento>("tipodocumentos", String.Format("{0}/{1}", page, items));
+                RootObject<TipoDocumento> tipoDocumento = await webService.GET<RootObject<TipoDocumento>>("tipodocumentos", String.Format("{0}/{1}", page, items));
                 return tipoDocumento;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/tipodoc/estado/1
-                List<TipoDocumento> tipoDocumentos = await webService.GETLis<TipoDocumento>("tipodoc", String.Format("estado/{0}", estado));
+                List<TipoDocumento> tipoDocumentos = await webService.GET<List<TipoDocumento>>("tipodoc", String.Format("estado/{0}", estado));
                 return tipoDocumentos;
             }
             catch (Exception ex)
@@ -96,7 +96,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/tipodocumentoventas/ventas
-                List<TipoDocumento> tipoDocumentos = await webService.GETLis<TipoDocumento>("tipodocumentoventas", "ventas");
+                List<TipoDocumento> tipoDocumentos = await webService.GET<List<TipoDocumento>>("tipodocumentoventas", "ventas");
                 return tipoDocumentos;
             }
             catch (Exception ex)

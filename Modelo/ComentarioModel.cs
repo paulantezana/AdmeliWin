@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/comentarios/21
-                List<Comentario> list = await webService.GETLis<Comentario>("comentarios", String.Format("{0}", idProducto));
+                List<Comentario> list = await webService.GET<List<Comentario>>("comentarios", String.Format("{0}", idProducto));
                 return list;
             }
             catch (Exception ex)

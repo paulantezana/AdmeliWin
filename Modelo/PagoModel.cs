@@ -32,7 +32,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/porpagar/3/1/3/1/1
-                List<Pago> porcobrar = await webService.GETLis<Pago>("porpagar", String.Format("{0}/{1}/{2}/{3}/{4}", idPersonal, idSucursal, idAsignarCaja, todos, gerente));
+                List<Pago> porcobrar = await webService.GET<List<Pago>>("porpagar", String.Format("{0}/{1}/{2}/{3}/{4}", idPersonal, idSucursal, idAsignarCaja, todos, gerente));
                 return porcobrar;
             }
             catch (Exception ex)

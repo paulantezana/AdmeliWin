@@ -70,7 +70,7 @@ namespace Modelo
             try
             {
                 // www.lineatienda.com/services.php/almacenes/proveedor/7/contactos
-                List<Contacto> list = await webService.GETLis<Contacto>("proveedor", String.Format("{0}/contactos", idProveedor));
+                List<Contacto> list = await webService.GET<List<Contacto>>("proveedor", String.Format("{0}/contactos", idProveedor));
                 return list;
             }
             catch (Exception ex)
