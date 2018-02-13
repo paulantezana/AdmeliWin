@@ -132,9 +132,6 @@ namespace Admeli.Herramientas
             try
             {
                 cbxSucursales.DataSource = await sucursalModel.sucursales();
-                cbxSucursales.DisplayMember = "nombre";
-                cbxSucursales.ValueMember = "idSucursal";
-                cbxSucursales.SelectedValue = ConfigModel.sucursal.idSucursal;
             }
             catch (Exception ex)
             {
@@ -148,9 +145,6 @@ namespace Admeli.Herramientas
             try
             {
                 cbxAlmacenes.DataSource = await almacenModel.almacenes();
-                cbxAlmacenes.DisplayMember = "nombre";
-                cbxAlmacenes.ValueMember = "idAlmacen";
-                cbxAlmacenes.SelectedValue = ConfigModel.currentIdAlmacen;
             }
             catch (Exception ex)
             {
@@ -173,6 +167,52 @@ namespace Admeli.Herramientas
                 RootObjectData rootObjectData = await productoModel.stockHerramienta<RootObjectData>(sendList, almacenID, sucursalId, paginacion.currentPage, paginacion.speed);
 
                 
+                // actualizando datos de páginacón
+                paginacion.itemsCount = rootObjectData.nro_registros;
+                paginacion.reload();
+
+                // Ingresando
+                productos = rootObjectData.productos;
+                productoBindingSource.DataSource = productos;
+                dataGridView1.Refresh();
+
+                // Mostrando la paginacion
+                mostrarPaginado();
+
+                // Formato de celdas
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
+
+        private async void cargarRegistrosBuscar()
+        {
+            loadState(true);
+            try
+            {
+                if (textBuscar.Text == "")
+                {
+                    cargarRegistros();
+                    return;
+                }
+
+                Dictionary<string, int> list = new Dictionary<string, int>();
+                list.Add("id0", 0);
+                Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
+
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
+                int almacenID = (cbxAlmacenes.SelectedIndex == -1) ? ConfigModel.currentIdAlmacen : Convert.ToInt32(cbxAlmacenes.SelectedValue);
+
+                RootObjectData rootObjectData = await productoModel.stockHerramientaLike<RootObjectData>(sendList, textBuscar.Text, almacenID, sucursalId, paginacion.currentPage, paginacion.speed);
+
+
                 // actualizando datos de páginacón
                 paginacion.itemsCount = rootObjectData.nro_registros;
                 paginacion.reload();
@@ -278,7 +318,6 @@ namespace Admeli.Herramientas
         {
             formPrincipal.appLoadState(state);
             toolStripNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
             dataGridView1.Enabled = !state;
         }
         #endregion
@@ -293,7 +332,18 @@ namespace Admeli.Herramientas
             cargarRegistros();
         }
 
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+           if (e.KeyCode == Keys.Enter)
+           {
+                cargarRegistrosBuscar();
+           }
+        }
 
+        private void btnIngresos_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
     }
 }
 

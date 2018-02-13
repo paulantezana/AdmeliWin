@@ -153,6 +153,23 @@ namespace Modelo
             }
         }
 
+        public async Task<T> stockHerramientaLike<T>(Dictionary<string, int> dictionary, string like, int idAlmacen, int idSucursal, int page, int items)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/productos/categoria/stockherramienta/1/100/0/0
+                // localhost:8080/admeli/xcore/services.php/productos/categoria/stockherramienta/1/100000/moto/0/1
+                Dictionary<string, int>[] dataSend = { dictionary };
+
+                T productos = await webService.POST<Dictionary<string, int>[], T>("productos", String.Format("categoria/stockherramienta/{0}/{1}/{2}/{3}/{4}", page, items, like, idAlmacen, idSucursal), dataSend);
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<Producto>> productos21(int idProducto)
         {
             try
