@@ -18,7 +18,7 @@ namespace Modelo
             try
             {
                 // www.admeli.com/demo2/services.php/ubigeo
-                Response response = await webService.POSTSend<UbicacionGeografica>("ubigeo",param);
+                Response response = await webService.POST<UbicacionGeografica,Response>("ubigeo",param);
                 return response;
             }
             catch (Exception ex)

@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/guardar
-                return await webService.POSTSend("documentoidentificacion", "guardar", param);
+                return await webService.POST<DocumentoIdentificacion,Response>("documentoidentificacion", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/modificar
-                return await webService.POSTSend("documentoidentificacion", "modificar", param);
+                return await webService.POST<DocumentoIdentificacion, Response>("documentoidentificacion", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/modificar
-                return await webService.POSTSend("documentoidentificacion", "modificar", param);
+                return await webService.POST<DocumentoIdentificacion,Response>("documentoidentificacion", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/documentoidentificacion/eliminar
-                return await webService.POSTSend("documentoidentificacion", "eliminar", param);
+                return await webService.POST<DocumentoIdentificacion,Response>("documentoidentificacion", "eliminar", param);
             }
             catch (Exception ex)
             {

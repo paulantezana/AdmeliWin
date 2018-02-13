@@ -18,7 +18,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/cajasesion/guardar
-                return await webService.POSTSend("cajasesion", "guardar", param);
+                return await webService.POST<T,Response>("cajasesion", "guardar", param);
             }
             catch (Exception ex)
             {

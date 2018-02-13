@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/unimed/guardar
-                return await webService.POSTSend("unimed", "guardar", param);
+                return await webService.POST<UnidadMedida,Response>("unimed", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/unimed/modificar
-                return await webService.POSTSend("unimed", "modificar", param);
+                return await webService.POST<UnidadMedida,Response>("unimed", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/unimed/desactivar
-                return await webService.POSTSend("unimed", "desactivar", param);
+                return await webService.POST<UnidadMedida,Response>("unimed", "desactivar", param);
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/unimed/eliminar
-                return await webService.POSTSend("unimed", "eliminar", param);
+                return await webService.POST<UnidadMedida,Response>("unimed", "eliminar", param);
             }
             catch (Exception ex)
             {

@@ -30,6 +30,7 @@ namespace Modelo.Recursos
         }
 
         //////// ================================== CRETE ADMELI ==================================
+        /*
         public async Task<Response> POSTSend<T>(string servicio, string metodo, T param)
         {
             try
@@ -92,7 +93,7 @@ namespace Modelo.Recursos
                 throw ex;
             }
         }
-
+        */
         public async Task<K> POST<T,K>(string servicio, string metodo, T param)
         {
             try
@@ -123,6 +124,71 @@ namespace Modelo.Recursos
                 throw ex;
             }
         }
+
+        public async Task<K> POST<T, K>(string servicio, T param)
+        {
+            try
+            {
+                // Serializando el objeto
+                string request = JsonConvert.SerializeObject(param);
+                StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
+
+                // Creando un nuevo cliente
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(this.domainName);
+                string url = string.Format("{0}/{1}", this.directory, servicio);
+                HttpResponseMessage response = await client.PostAsync(url, content);
+
+                // Validando la respuesta
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.ToString());
+                }
+                string result = await response.Content.ReadAsStringAsync();
+
+                // retornando los valores en una lista de objetos
+                K dataResponse = JsonConvert.DeserializeObject<K>(result);
+                return dataResponse;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<T>> POSTResponse<T>(string servicio, T param)
+        {
+            try
+            {
+                // creando el contenido apartir de un jsonString
+                string request = JsonConvert.SerializeObject(param);
+                StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
+
+                // Creando un nuevo cliente
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(this.domainName);
+                string url = string.Format("{0}/{1}", this.directory, servicio);
+                HttpResponseMessage response = await client.PostAsync(url, content);
+
+                // Validando la respuesta
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception(response.ToString());
+                }
+                string result = await response.Content.ReadAsStringAsync();
+
+                // retornando los valores en una lista de objetos
+                List<T> res = JsonConvert.DeserializeObject<List<T>>(result);
+                return res;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
 
         /*
         public async Task<List<T>> POST<T>(string servicio, T param)
@@ -156,6 +222,8 @@ namespace Modelo.Recursos
             }
         }
         */
+
+
         #region ============== Metododo GET que retorna un objeto generico ==============
         public async Task<T> GET<T>(string servicio, string metodo)
         {

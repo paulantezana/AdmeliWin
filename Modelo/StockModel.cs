@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/psalmacen/guardar
-                return await webService.POSTSend("psalmacen", "guardar", param);
+                return await webService.POST<Stock,Response>("psalmacen", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/psalmacen/modificar
-                return await webService.POSTSend("psalmacen", "modificar", param);
+                return await webService.POST<Stock,Response>("psalmacen", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/psalmacen/eliminar
-                return await webService.POSTSend("psalmacen", "eliminar", param);
+                return await webService.POST<Stock, Response>("psalmacen", "eliminar", param);
             }
             catch (Exception ex)
             {

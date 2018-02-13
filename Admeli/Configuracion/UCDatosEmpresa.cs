@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Modelo;
 using Entidad.Configuracion;
 using Entidad.Location;
+using Entidad;
 
 namespace Admeli.Configuracion
 {
@@ -367,11 +368,20 @@ namespace Admeli.Configuracion
 
         private async void executeGuardar()
         {
-            loadStateApp(true);
-            actualizarObejeto();
-            await configModel.guardarConfigGeneral(configuracionGeneral);
-            await configModel.guardarDatosGenerales(ubicacionGeografica, datosGenerales);
-            loadStateApp(false);
+            try
+            {
+                loadStateApp(true);
+                actualizarObejeto();
+                Response responseCG = await configModel.guardarConfigGeneral(configuracionGeneral);
+                Response responseDG = await configModel.guardarDatosGenerales(ubicacionGeografica, datosGenerales);
+                MessageBox.Show("Error! " + responseDG.msj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                loadStateApp(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
         #endregion
 

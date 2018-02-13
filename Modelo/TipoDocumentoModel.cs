@@ -18,7 +18,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/guardar
-                return await webService.POSTSend("tipodoc", "guardar", param);
+                return await webService.POST<TipoDocumento,Response>("tipodoc", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/modificar
-                return await webService.POSTSend("tipodoc", "modificar", param);
+                return await webService.POST<TipoDocumento,Response>("tipodoc", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/eliminar
-                return await webService.POSTSend("tipodoc", "eliminar", param);
+                return await webService.POST<TipoDocumento,Response>("tipodoc", "eliminar", param);
             }
             catch (Exception ex)
             {

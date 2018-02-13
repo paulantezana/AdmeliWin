@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/egreso/guardarenuno
-                return await webService.POSTSend("egreso", "guardarenuno", param);
+                return await webService.POST<Egreso,Response>("egreso", "guardarenuno", param);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/egreso/modificarenuno
-                return await webService.POSTSend("egreso", "modificarenuno", param);
+                return await webService.POST<Egreso,Response>("egreso", "modificarenuno", param);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/egreso/anularegresonocompra
-                return await webService.POSTSend("egreso", "anularegresonocompra", param);
+                return await webService.POST<Egreso,Response>("egreso", "anularegresonocompra", param);
             }
             catch (Exception ex)
             {

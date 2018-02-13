@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/compra/guardar
-                return await webService.POSTSend("compra", "guardar", param);
+                return await webService.POST<Producto,Response>("compra", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/compra/modificar
-                return await webService.POSTSend("compra", "modificar", param);
+                return await webService.POST<Compra,Response>("compra", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/compra/anular
-                return await webService.POSTSend("compra", "anular", param);
+                return await webService.POST<Compra,Response>("compra", "anular", param);
             }
             catch (Exception ex)
             {

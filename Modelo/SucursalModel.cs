@@ -25,7 +25,7 @@ namespace Modelo
                 param.idUbicacionGeografica = res.id;
 
                 // localhost/admeli/xcore2/xcore/services.php/sucursal/guardar
-                return await webService.POSTSend("sucursal", "guardar", param);
+                return await webService.POST<Sucursal,Response>("sucursal", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace Modelo
                 param.idUbicacionGeografica = res.id;
 
                 // localhost/admeli/xcore2/xcore/services.php/sucursal/modificar
-                return await webService.POSTSend("sucursal", "modificar", param);
+                return await webService.POST<Sucursal,Response>("sucursal", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -54,7 +54,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore2/xcore/services.php/sucursal/eliminar
-                return await webService.POSTSend("sucursal", "eliminar", param);
+                return await webService.POST<Sucursal,Response>("sucursal", "eliminar", param);
             }
             catch (Exception ex)
             {

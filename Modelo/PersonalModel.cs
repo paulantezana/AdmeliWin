@@ -46,7 +46,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/personal/guardar
-                return await webService.POSTSend("personal", "guardar", param);
+                return await webService.POST<Personal,Response>("personal", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/personal/modificar
-                return await webService.POSTSend("personal", "modificar", param);
+                return await webService.POST<Personal,Response>("personal", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/personal/eliminar
-                return await webService.POSTSend("personal", "eliminar", param);
+                return await webService.POST<Personal,Response>("personal", "eliminar", param);
             }
             catch (Exception ex)
             {

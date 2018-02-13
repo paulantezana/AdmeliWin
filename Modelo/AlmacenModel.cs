@@ -23,7 +23,7 @@ namespace Modelo
                 param.idUbicacionGeografica = res.id;
 
                 // localhost:8080/admeli/xcore2/xcore/services.php/almacen/guardar
-                return await webService.POSTSend("almacen", "guardar", param);
+                return await webService.POST<Almacen,Response>("almacen", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace Modelo
                 param.idUbicacionGeografica = res.id;
 
                 // localhost:8080/admeli/xcore2/xcore/services.php/almacen/modificar
-                return await webService.POSTSend("almacen", "modificar", param);
+                return await webService.POST<Almacen,Response>("almacen", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/almacen/desactivar
-                return await webService.POSTSend("almacen", "desactivar", param);
+                return await webService.POST<Almacen,Response>("almacen", "desactivar", param);
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/almacen/eliminar
-                return await webService.POSTSend("almacen", "eliminar", param);
+                return await webService.POST<Almacen,Response>("almacen", "eliminar", param);
             }
             catch (Exception ex)
             {

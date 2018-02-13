@@ -432,6 +432,12 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Herramientas\Report\FormReportProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Herramientas\Report\FormReportProducto.Designer.cs">
+      <DependentUpon>FormReportProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Herramientas\UCAsignarCategorias.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -874,6 +880,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Herramientas\Report\FormReportProducto.resx">
+      <DependentUpon>FormReportProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Herramientas\UCAsignarCategorias.resx">
       <DependentUpon>UCAsignarCategorias.cs</DependentUpon>

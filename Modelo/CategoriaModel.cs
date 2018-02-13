@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/categorias/guardar
-                return await webService.POSTSend("categorias", "guardar", param);
+                return await webService.POST<Categoria, Response>("categorias", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/categorias/modificar
-                return await webService.POSTSend("categorias", "modificar", param);
+                return await webService.POST<Categoria,Response>("categorias", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/categoria/desactivar
-                return await webService.POSTSend("categoria", "desactivar", param);
+                return await webService.POST<Categoria,Response>("categoria", "desactivar", param);
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/categorias/eliminar
-                return await webService.POSTSend("categorias", "eliminar", param);
+                return await webService.POST<Categoria,Response>("categorias", "eliminar", param);
             }
             catch (Exception ex)
             {

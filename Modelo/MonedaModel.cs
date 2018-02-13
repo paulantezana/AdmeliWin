@@ -18,7 +18,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/moneda/guardar
-                return await webService.POSTSend("moneda", "guardar", param);
+                return await webService.POST<Moneda,Response>("moneda", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/tipocambio/guardar
-                return await webService.POSTSend("tipocambio", "guardar", param);
+                return await webService.POST<T,Response>("tipocambio", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/moneda/modificar
-                return await webService.POSTSend("moneda", "modificar", param);
+                return await webService.POST<Moneda,Response>("moneda", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/moneda/desactivar
-                return await webService.POSTSend("moneda", "desactivar", param);
+                return await webService.POST<Moneda,Response>("moneda", "desactivar", param);
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/moneda/eliminar
-                return await webService.POSTSend("moneda", "eliminar", param);
+                return await webService.POST<Moneda,Response>("moneda", "eliminar", param);
             }
             catch (Exception ex)
             {

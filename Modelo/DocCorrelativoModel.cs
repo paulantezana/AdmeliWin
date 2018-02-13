@@ -22,7 +22,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/ventacorrelativo/modificar
-                return await webService.POSTSend("ventacorrelativo", "modificar", param);
+                return await webService.POST<DocCorrelativo,Response>("ventacorrelativo", "modificar", param);
             }
             catch (Exception ex)
             {

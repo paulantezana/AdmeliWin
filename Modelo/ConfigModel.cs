@@ -53,7 +53,7 @@ namespace Modelo
                 Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
                 datosGenerales.idUbicacionGeografica = res.id;
                 
-                return await webService.POSTSend("datosgenerales", "modificar", datosGenerales);
+                return await webService.POST<DatosGenerales,Response>("datosgenerales", "modificar", datosGenerales);
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/configuraciongeneral/modificar
-                return await webService.POSTSend("configuraciongeneral", "modificar", configGeneral);
+                return await webService.POST<ConfiguracionGeneral,Response>("configuraciongeneral", "modificar", configGeneral);
             }
             catch (Exception ex)
             {

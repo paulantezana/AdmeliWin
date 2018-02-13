@@ -44,11 +44,20 @@ namespace Admeli.Herramientas
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
+        #region ================================= Paint =================================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
+
+        private void UCInicializarStock_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelSucursal);
+            drawShape.lineBorder(panelAlmacen);
+        } 
+        #endregion
 
         private void UCInicializarStock_Load(object sender, EventArgs e)
         {
@@ -57,10 +66,11 @@ namespace Admeli.Herramientas
 
         internal void reLoad()
         {
-            lisenerKeyEvents = true; // Active lisener key events
-            cargarCategorias(); // 
-            cargarSucursales();
-            cargarAlmacenes();
+            this.lisenerKeyEvents = true; // Active lisener key events
+            this.cargarCategorias(); // 
+            this.cargarSucursales();
+            this.cargarAlmacenes();
+            this.cargarRegistros();
         }
 
         #region ==================================== Load ====================================
@@ -121,10 +131,10 @@ namespace Admeli.Herramientas
             loadState(true);
             try
             {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.sucursales();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+                cbxSucursales.DataSource = await sucursalModel.sucursales();
+                cbxSucursales.DisplayMember = "nombre";
+                cbxSucursales.ValueMember = "idSucursal";
+                cbxSucursales.SelectedValue = ConfigModel.sucursal.idSucursal;
             }
             catch (Exception ex)
             {
@@ -137,10 +147,10 @@ namespace Admeli.Herramientas
             loadState(true);
             try
             {
-                cbxAlmacenes.ComboBox.DataSource = await almacenModel.almacenes();
-                cbxAlmacenes.ComboBox.DisplayMember = "nombre";
-                cbxAlmacenes.ComboBox.ValueMember = "idAlmacen";
-                cbxAlmacenes.ComboBox.SelectedValue = ConfigModel.currentIdAlmacen;
+                cbxAlmacenes.DataSource = await almacenModel.almacenes();
+                cbxAlmacenes.DisplayMember = "nombre";
+                cbxAlmacenes.ValueMember = "idAlmacen";
+                cbxAlmacenes.SelectedValue = ConfigModel.currentIdAlmacen;
             }
             catch (Exception ex)
             {
@@ -157,25 +167,26 @@ namespace Admeli.Herramientas
                 list.Add("id0", 0);
                 Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
 
-/*
-                RootObjectData rootObjectData = await productoModel.stockHerramienta(sendList, 1, 1, paginacion.currentPage, paginacion.speed);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
+                int almacenID = (cbxAlmacenes.SelectedIndex == -1) ? ConfigModel.currentIdAlmacen : Convert.ToInt32(cbxAlmacenes.SelectedValue);
 
-                RootObject<Producto> productosRoot = await productoModel.productosPorCategoria(sendList, paginacion.currentPage, paginacion.speed);
+                RootObjectData rootObjectData = await productoModel.stockHerramienta<RootObjectData>(sendList, almacenID, sucursalId, paginacion.currentPage, paginacion.speed);
 
-
+                
                 // actualizando datos de páginacón
-                paginacion.itemsCount = productosRoot.nro_registros;
+                paginacion.itemsCount = rootObjectData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                productos = productosRoot.datos;
+                productos = rootObjectData.productos;
                 productoBindingSource.DataSource = productos;
-                dataGridView1.Refresh();*/
+                dataGridView1.Refresh();
 
                 // Mostrando la paginacion
                 mostrarPaginado();
 
                 // Formato de celdas
+
             }
             catch (Exception ex)
             {
@@ -268,10 +279,21 @@ namespace Admeli.Herramientas
             formPrincipal.appLoadState(state);
             toolStripNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
             dataGridView1.Enabled = !state;
         }
         #endregion
+
+        private void cbxSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
+        private void cbxAlmacenes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
+
     }
 }
 

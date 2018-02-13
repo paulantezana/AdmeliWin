@@ -20,14 +20,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/verificarproductonombrecodigo
-
-
-
-                /// Error  404 al enviar y recivir Corregir 
-                List<Producto> list = await webService.POcgvsdjgvbehjgvgST<Producto, List<Producto>>("verificarproductonombrecodigo", param);
-
-
-
+                List<Producto> list = await webService.POSTResponse("verificarproductonombrecodigo", param);
                 return list;
             }
             catch (Exception ex)
@@ -47,7 +40,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/producto/guardar
-                return await webService.POSTSend("producto", "guardar", param);
+                return await webService.POST<Producto,Response>("producto", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -60,7 +53,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/producto/modificar
-                return await webService.POSTSend("producto", "modificar", param);
+                return await webService.POST<Producto,Response>("producto", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -73,7 +66,7 @@ namespace Modelo
             try
             {
                 // localhost/admeli/xcore/services.php/producto/eliminar
-                return await webService.POSTSend("producto", "eliminar", param);
+                return await webService.POST<Producto,Response>("producto", "eliminar", param);
             }
             catch (Exception ex)
             {
@@ -144,14 +137,14 @@ namespace Modelo
             }
         }
 
-        public async Task<RootObject<Producto>> stockHerramienta(Dictionary<string, int> dictionary, int idAlmacen, int idSucursal, int page, int items)
+        public async Task<T> stockHerramienta<T>(Dictionary<string, int> dictionary, int idAlmacen, int idSucursal, int page, int items)
         {
             try
             {
                 // localhost:8080/admeli/xcore/services.php/productos/categoria/stockherramienta/1/100/0/0
                 Dictionary<string, int>[] dataSend = { dictionary };
 
-                RootObject<Producto> productos = await webService.POST<Dictionary<string, int>[], RootObject<Producto>>("productos", String.Format("categoria/stockherramienta/{0}/{1}/{2}/{3}", page, items, idAlmacen, idSucursal), dataSend);
+                T productos = await webService.POST<Dictionary<string, int>[], T>("productos", String.Format("categoria/stockherramienta/{0}/{1}/{2}/{3}", page, items, idAlmacen, idSucursal), dataSend);
                 return productos;
             }
             catch (Exception ex)

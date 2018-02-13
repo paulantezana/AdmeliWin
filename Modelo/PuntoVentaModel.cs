@@ -18,7 +18,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/guardar
-                return await webService.POSTSend("puntoventa", "guardar", param);
+                return await webService.POST<PuntoDeVenta,Response>("puntoventa", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/modificar
-                return await webService.POSTSend("puntoventa", "modificar", param);
+                return await webService.POST<PuntoDeVenta,Response>("puntoventa", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/anular
-                return await webService.POSTSend("puntoventa", "anular", param);
+                return await webService.POST<PuntoDeVenta,Response>("puntoventa", "anular", param);
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/puntoventa/eliminar
-                return await webService.POSTSend("puntoventa", "eliminar", param);
+                return await webService.POST<PuntoDeVenta,Response>("puntoventa", "eliminar", param);
             }
             catch (Exception ex)
             {

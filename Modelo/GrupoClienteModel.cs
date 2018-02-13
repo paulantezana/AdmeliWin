@@ -17,7 +17,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/guardar
-                return await webService.POSTSend("gcliente", "guardar", param);
+                return await webService.POST<GrupoCliente,Response>("gcliente", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/modificar
-                return await webService.POSTSend("gcliente", "modificar", param);
+                return await webService.POST<GrupoCliente, Response>("gcliente", "modificar", param);
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/desactivar
-                return await webService.POSTSend("gcliente", "desactivar", param);
+                return await webService.POST<GrupoCliente,Response>("gcliente", "desactivar", param);
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace Modelo
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/gcliente/eliminar
-                return await webService.POSTSend("gcliente", "eliminar", param);
+                return await webService.POST<GrupoCliente,Response>("gcliente", "eliminar", param);
             }
             catch (Exception ex)
             {
