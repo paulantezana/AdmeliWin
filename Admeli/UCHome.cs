@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
 using Admeli.Componentes;
+using Entidad;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace Admeli
 {
@@ -26,10 +29,80 @@ namespace Admeli
             InitializeComponent();
         }
 
+        struct ultimasVentas
+        {
+            public string dia { get; set; }
+            public dynamic idVenta { get; set; }
+            public string total { get; set; }
+        }
+
+        private async void cargarGraficoVentas()
+        {
+            try
+            {
+                /// Cargando datos
+                List<ultimasVentas> ventas = await ventaModel.ventasPorMes<ultimasVentas>();
+                
+                ChartValues<double> serie1Values = new ChartValues<double>();
+                String[] xValues = new string[ventas.Count];
+                for (int i = 0; i < ventas.Count; i++)
+                {
+                    xValues[i] = String.Format("Dia {0}", ventas[i].dia);
+                    serie1Values.Add(Convert.ToDouble(ventas[i].total));
+                }
+
+                /// 
+                cartesianChart1.Series = new SeriesCollection
+                {
+                    new LineSeries
+                    {
+                        Title = "Total",
+                        Values = serie1Values
+                    }
+                };
+
+                cartesianChart1.AxisX.Add(new Axis
+                {
+                    Title = "Dias",
+                    Labels = xValues,
+                    Separator = new Separator // force the separator step to 1, so it always display all labels
+                    {
+                        Step = 1,
+                        IsEnabled = true //disable it to make it invisible.
+                    }
+                });
+
+                cartesianChart1.AxisY.Add(new Axis
+                {
+                    Title = "Numero De Ventas",
+                    LabelFormatter = value => value + "",
+                    Separator = new Separator()
+                    //LabelFormatter = value => value.ToString("C")
+                });
+
+                cartesianChart1.LegendLocation = LegendLocation.Right;
+
+                //modifying any series values will also animate and update the chart
+                cartesianChart1.Series[0].Values.Add(5d);
+
+
+                // cartesianChart1.DataClick += CartesianChart1OnDataClick;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error! " + ex.Message, "Ventas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+
+
         public UCHome(FormPrincipal formPrincipal)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+            cargarGraficoVentas();
         }
 
         private void UCHome_Load(object sender, EventArgs e)

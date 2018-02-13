@@ -55,5 +55,19 @@ namespace Modelo
             }
         }
 
+        public async Task<List<T>> ventasPorMes<T>()
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/ventaspormes
+                List<T> list = await webService.GETLis<T>("ventaspormes");
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

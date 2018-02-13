@@ -375,8 +375,11 @@ namespace Admeli
         #region ================================ Mostrar Interfaces ================================
         public void appLoadInciComponents()
         {
+            panelMain.Visible = false;
+            // ============================
             panelHeader.Visible = true;
             panelAside.Visible = true;
+            panelMain.Visible = true;
             togglePanelAside("home");
             togglePanelMain("home");
             mostrarDatosCargados();

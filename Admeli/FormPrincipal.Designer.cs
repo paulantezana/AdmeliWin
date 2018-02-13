@@ -398,9 +398,9 @@
             this.panelAside.Controls.Add(this.panel1);
             this.transition1.SetDecoration(this.panelAside, BunifuAnimatorNS.DecorationType.None);
             this.panelAside.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAside.Location = new System.Drawing.Point(0, 121);
+            this.panelAside.Location = new System.Drawing.Point(0, 128);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(200, 505);
+            this.panelAside.Size = new System.Drawing.Size(200, 498);
             this.panelAside.TabIndex = 5;
             this.panelAside.Visible = false;
             // 
@@ -502,9 +502,9 @@
             // 
             this.splitter1.BackColor = System.Drawing.Color.Gainsboro;
             this.transition1.SetDecoration(this.splitter1, BunifuAnimatorNS.DecorationType.None);
-            this.splitter1.Location = new System.Drawing.Point(200, 121);
+            this.splitter1.Location = new System.Drawing.Point(200, 128);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 505);
+            this.splitter1.Size = new System.Drawing.Size(2, 498);
             this.splitter1.TabIndex = 6;
             this.splitter1.TabStop = false;
             // 
@@ -513,9 +513,9 @@
             this.panelMainContainer.Controls.Add(this.panelMain);
             this.transition1.SetDecoration(this.panelMainContainer, BunifuAnimatorNS.DecorationType.None);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(202, 121);
+            this.panelMainContainer.Location = new System.Drawing.Point(202, 128);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(705, 505);
+            this.panelMainContainer.Size = new System.Drawing.Size(705, 498);
             this.panelMainContainer.TabIndex = 7;
             // 
             // panelMain
@@ -526,7 +526,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(705, 505);
+            this.panelMain.Size = new System.Drawing.Size(705, 498);
             this.panelMain.TabIndex = 5;
             // 
             // panel5
@@ -536,7 +536,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
             this.transition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
-            this.panel5.Location = new System.Drawing.Point(151, 147);
+            this.panel5.Location = new System.Drawing.Point(151, 144);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 210);
@@ -597,7 +597,7 @@
             this.progressBarApp.Maximum = 200;
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
-            this.progressBarApp.Size = new System.Drawing.Size(907, 3);
+            this.progressBarApp.Size = new System.Drawing.Size(907, 10);
             this.progressBarApp.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarApp.TabIndex = 4;
             // 

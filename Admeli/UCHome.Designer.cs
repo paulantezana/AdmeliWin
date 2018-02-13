@@ -145,18 +145,20 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.panelVentas = new System.Windows.Forms.Panel();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panelVentasHeader = new System.Windows.Forms.Panel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblVentePorMes = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
             this.panelContainer.SuspendLayout();
             this.panelItem2.SuspendLayout();
             this.cardContainer2.SuspendLayout();
@@ -191,9 +193,9 @@
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.panelVentas.SuspendLayout();
             this.panelVentasHeader.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -201,10 +203,10 @@
             this.panelContainer.Controls.Add(this.panelItem2);
             this.panelContainer.Controls.Add(this.panelItem1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 769);
+            this.panelContainer.Location = new System.Drawing.Point(0, 660);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(828, 106);
+            this.panelContainer.Size = new System.Drawing.Size(828, 215);
             this.panelContainer.TabIndex = 0;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -220,7 +222,7 @@
             this.panelItem2.Margin = new System.Windows.Forms.Padding(2);
             this.panelItem2.Name = "panelItem2";
             this.panelItem2.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.panelItem2.Size = new System.Drawing.Size(414, 106);
+            this.panelItem2.Size = new System.Drawing.Size(414, 215);
             this.panelItem2.TabIndex = 8;
             // 
             // cardContainer2
@@ -761,7 +763,7 @@
             this.panelItem1.Margin = new System.Windows.Forms.Padding(2);
             this.panelItem1.Name = "panelItem1";
             this.panelItem1.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.panelItem1.Size = new System.Drawing.Size(414, 106);
+            this.panelItem1.Size = new System.Drawing.Size(414, 215);
             this.panelItem1.TabIndex = 6;
             // 
             // cardContainer1
@@ -1344,6 +1346,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel17);
             this.panel2.Controls.Add(this.panelVentas);
             this.panel2.Controls.Add(this.panel15);
@@ -1352,7 +1355,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(828, 761);
+            this.panel2.Size = new System.Drawing.Size(828, 652);
             this.panel2.TabIndex = 6;
             // 
             // panel17
@@ -1360,79 +1363,45 @@
             this.panel17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel17.BackColor = System.Drawing.Color.White;
+            this.panel17.Controls.Add(this.cartesianChart2);
             this.panel17.Controls.Add(this.panel16);
-            this.panel17.Location = new System.Drawing.Point(13, 402);
+            this.panel17.Location = new System.Drawing.Point(13, 387);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(1);
             this.panel17.Size = new System.Drawing.Size(802, 228);
             this.panel17.TabIndex = 5;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.bunifuSeparator2);
-            this.panel16.Controls.Add(this.label9);
-            this.panel16.Controls.Add(this.label10);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(1, 1);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(800, 65);
-            this.panel16.TabIndex = 1;
-            // 
-            // bunifuSeparator2
-            // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(0, 43);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(800, 22);
-            this.bunifuSeparator2.TabIndex = 2;
-            this.bunifuSeparator2.Transparency = 255;
-            this.bunifuSeparator2.Vertical = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(13, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Resumen";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.label10.Location = new System.Drawing.Point(11, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Compras";
             // 
             // panelVentas
             // 
             this.panelVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVentas.BackColor = System.Drawing.Color.White;
+            this.panelVentas.Controls.Add(this.cartesianChart1);
             this.panelVentas.Controls.Add(this.panelVentasHeader);
-            this.panelVentas.Location = new System.Drawing.Point(13, 157);
+            this.panelVentas.Location = new System.Drawing.Point(13, 148);
             this.panelVentas.Name = "panelVentas";
             this.panelVentas.Padding = new System.Windows.Forms.Padding(1);
             this.panelVentas.Size = new System.Drawing.Size(802, 228);
             this.panelVentas.TabIndex = 4;
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesianChart1.Location = new System.Drawing.Point(1, 36);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(800, 191);
+            this.cartesianChart1.TabIndex = 1;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // panelVentasHeader
             // 
-            this.panelVentasHeader.Controls.Add(this.bunifuSeparator1);
             this.panelVentasHeader.Controls.Add(this.label8);
-            this.panelVentasHeader.Controls.Add(this.label7);
+            this.panelVentasHeader.Controls.Add(this.bunifuSeparator1);
+            this.panelVentasHeader.Controls.Add(this.lblVentePorMes);
             this.panelVentasHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelVentasHeader.Location = new System.Drawing.Point(1, 1);
             this.panelVentasHeader.Name = "panelVentasHeader";
-            this.panelVentasHeader.Size = new System.Drawing.Size(800, 65);
+            this.panelVentasHeader.Size = new System.Drawing.Size(800, 35);
             this.panelVentasHeader.TabIndex = 0;
             // 
             // bunifuSeparator1
@@ -1441,9 +1410,9 @@
             this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 43);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 25);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(800, 22);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(800, 10);
             this.bunifuSeparator1.TabIndex = 2;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -1452,22 +1421,22 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(13, 27);
+            this.label8.Location = new System.Drawing.Point(149, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Resumen";
             // 
-            // label7
+            // lblVentePorMes
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.label7.Location = new System.Drawing.Point(11, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ventas";
+            this.lblVentePorMes.AutoSize = true;
+            this.lblVentePorMes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentePorMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.lblVentePorMes.Location = new System.Drawing.Point(3, 5);
+            this.lblVentePorMes.Name = "lblVentePorMes";
+            this.lblVentePorMes.Size = new System.Drawing.Size(148, 20);
+            this.lblVentePorMes.TabIndex = 0;
+            this.lblVentePorMes.Text = "VENTAS MENSUALES";
             // 
             // panel15
             // 
@@ -1497,6 +1466,60 @@
             this.panel11.Padding = new System.Windows.Forms.Padding(1);
             this.panel11.Size = new System.Drawing.Size(244, 129);
             this.panel11.TabIndex = 0;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.label7);
+            this.panel16.Controls.Add(this.bunifuSeparator2);
+            this.panel16.Controls.Add(this.label9);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(1, 1);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(800, 35);
+            this.panel16.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(180, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Resumen";
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(0, 25);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(800, 10);
+            this.bunifuSeparator2.TabIndex = 2;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.label9.Location = new System.Drawing.Point(3, 5);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(171, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "INGRESOS POR MONEDA";
+            // 
+            // cartesianChart2
+            // 
+            this.cartesianChart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cartesianChart2.Location = new System.Drawing.Point(1, 36);
+            this.cartesianChart2.Name = "cartesianChart2";
+            this.cartesianChart2.Size = new System.Drawing.Size(800, 191);
+            this.cartesianChart2.TabIndex = 2;
+            this.cartesianChart2.Text = "cartesianChart2";
             // 
             // UCHome
             // 
@@ -1550,11 +1573,11 @@
             this.panel10.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.panelVentas.ResumeLayout(false);
             this.panelVentasHeader.ResumeLayout(false);
             this.panelVentasHeader.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1682,12 +1705,14 @@
         private System.Windows.Forms.Panel panelVentas;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panelVentasHeader;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblVentePorMes;
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private LiveCharts.WinForms.CartesianChart cartesianChart2;
     }
 }
