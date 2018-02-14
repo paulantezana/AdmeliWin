@@ -11,6 +11,7 @@ using Admeli.Componentes;
 using Modelo;
 using Entidad;
 using Entidad.Configuracion;
+using Admeli.CajaBox.Nuevo;
 
 namespace Admeli.Configuracion
 {
@@ -21,14 +22,17 @@ namespace Admeli.Configuracion
         private Paginacion paginacion;
         private CajaModel cajaSesionModel = new CajaModel();
         private SucursalModel sucursalModel = new SucursalModel();
+
+        private List<CajaSesion> cajaSesiones { get; set; }
+        private CajaSesion currentCajaSesion { get; set; }
+
+
         public UCCajasInicializadas()
         {
             InitializeComponent();
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCCajasInicializadas(FormPrincipal formPrincipal)
@@ -38,14 +42,18 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCCajasInicializadas_Load(object sender, EventArgs e)
         {
+            this.reLoad();
+        }
+
+        internal void reLoad()
+        {
             cargarComponentes();
             cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
 
@@ -58,12 +66,20 @@ namespace Admeli.Configuracion
 
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idCajaSesion = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentCajaSesion = cajaSesiones.Find(x => x.idCajaSesion == idCajaSesion); // Buscando la categoria en las lista de categorias
+                if (currentCajaSesion.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
         }
         #endregion
 
@@ -103,9 +119,15 @@ namespace Admeli.Configuracion
                 paginacion.reload();
 
                 // Ingresando
-                cajaSesionBindingSource.DataSource = cajaSesion.datos;
+                cajaSesiones = cajaSesion.datos;
+                cajaSesionBindingSource.DataSource = cajaSesiones;
                 dataGridView.Refresh();
+
+                // Mostrando el paginado
                 mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -162,13 +184,6 @@ namespace Admeli.Configuracion
             }
         }
 
-        internal void reLoad()
-        {
-
-
-            lisenerKeyEvents = true; // Active lisener key events
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (lblPageCount.Text == "0") return;
@@ -210,19 +225,81 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            cargarRegistros();
+            executeModificar();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
         }
-        private void btnNuevo_Click(object sender, EventArgs e)
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
+            executeModificar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            executeEliminar();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idCajaSesion = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentCajaSesion = cajaSesiones.Find(x => x.idCajaSesion == idCajaSesion); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormArquearCaja formArquearCaja = new FormArquearCaja(currentCajaSesion);
+            formArquearCaja.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                int idCajaSesion = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                currentCajaSesion = cajaSesiones.Find(x => x.idCajaSesion == idCajaSesion); // Buscando la registro especifico en la lista de registros
+
+                loadState(true); // cambiando el estado
+                Response response = await cajaSesionModel.eliminar(currentCajaSesion); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
         }
         #endregion
     }

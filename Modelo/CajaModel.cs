@@ -31,17 +31,25 @@ namespace Modelo
 
         }
 
-        public void eliminar()
+        public async Task<Response> eliminar(CajaSesion param)
         {
-
+            try
+            {
+                // 192.168.1.19:8080/admeli/xcore/services.php/cajasesion/eliminar
+                return await webService.POST<CajaSesion, Response>("cajasesion", "eliminar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public async Task<dynamic> correlativoSerie(int idCaja, int tipo = 0)
+        public async Task<T> correlativoSerie<T>(int idCaja, int tipo = 0)
         {
             try
             {
                 // www.lineatienda.com/services.php/cajacorrelativoserie/caja/1/tipo/0
-                List<dynamic> list = await webService.GET<dynamic>("cajacorrelativoserie", String.Format("caja/{0}/tipo/{1}", idCaja,tipo));
+                List<T> list = await webService.GET<List<T>>("cajacorrelativoserie", String.Format("caja/{0}/tipo/{1}", idCaja,tipo));
                 return list[0];
             }
             catch (Exception ex)

@@ -382,7 +382,7 @@ namespace Admeli
             panelMain.Visible = true;
             togglePanelAside("home");
             togglePanelMain("home");
-            mostrarDatosCargados();
+            // mostrarDatosCargados();
         }
 
         private void toggleConfiguracionInicial()
@@ -423,7 +423,7 @@ namespace Admeli
                 await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
-                await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
+                // await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
 
                 // Eligiendo el puntode venta y almacen
                 if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)

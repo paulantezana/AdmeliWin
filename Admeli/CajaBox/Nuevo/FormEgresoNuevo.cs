@@ -82,11 +82,17 @@ namespace Admeli.CajaBox.Nuevo
             }
         }
 
+        struct CorrelativoData
+        {
+            public string correlativoActual { get; set; }
+            public string serie { get; set; }
+        }
+
         private async void cargarCorrelativo()
         {
             try
             {
-                dynamic response = await cajaModel.correlativoSerie(ConfigModel.asignacionPersonal.idCaja, 0);
+                CorrelativoData response = await cajaModel.correlativoSerie<CorrelativoData>(ConfigModel.asignacionPersonal.idCaja, 0);
                 textNOperacion.Text = String.Format("{0} - {1}", response.serie, response.correlativoActual);
             }
             catch (Exception ex)

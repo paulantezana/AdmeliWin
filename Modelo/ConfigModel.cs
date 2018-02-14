@@ -199,8 +199,15 @@ namespace Modelo
 
                 // www.lineatienda.com/services.php/cajasesion/idasignarcaja/3
                 List<CajaSesion> list = await webService.GET<List<CajaSesion>>("cajasesion", String.Format("idasignarcaja/{0}", idAsignarCaja));
-                cajaSesion = list[0];
-                ConfigModel.cajaIniciada = true;
+                if (list.Count > 0)
+                {
+                    cajaSesion = list[0];
+                    ConfigModel.cajaIniciada = true;
+                }
+                else
+                {
+                    ConfigModel.cajaIniciada = false;
+                }
             }
             catch (Exception ex)
             {
