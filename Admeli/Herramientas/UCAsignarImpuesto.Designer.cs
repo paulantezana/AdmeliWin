@@ -30,71 +30,270 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAsignarImpuesto));
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tlsHeader = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.btnFirtsNav = new System.Windows.Forms.ToolStripButton();
-            this.btnPrevNav = new System.Windows.Forms.ToolStripButton();
-            this.textCurentPage = new System.Windows.Forms.ToolStripTextBox();
-            this.lblPageSeparator = new System.Windows.Forms.ToolStripLabel();
-            this.lblTotalPages = new System.Windows.Forms.ToolStripLabel();
-            this.btnNextNav = new System.Windows.Forms.ToolStripButton();
-            this.btnLastNav = new System.Windows.Forms.ToolStripButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.btnFirst = new System.Windows.Forms.ToolStripButton();
-            this.btnPrevious = new System.Windows.Forms.ToolStripButton();
-            this.textCurrentPage = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripLabel();
-            this.textTotalPage = new System.Windows.Forms.ToolStripTextBox();
-            this.btnNext = new System.Windows.Forms.ToolStripButton();
-            this.btnLast = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripLabel();
-            this.textBuscar = new System.Windows.Forms.ToolStripTextBox();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnDesactivar = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.panelSucursal = new System.Windows.Forms.Panel();
+            this.cbxSucursales = new System.Windows.Forms.ComboBox();
+            this.lblNivel1 = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
-            this.panelHeaderItem1.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.toolStrip3.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            this.toolStrip4.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tlsHeader.SuspendLayout();
+            this.panelHeaderItem1.SuspendLayout();
+            this.panelSucursal.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.panel3);
+            this.panelContainer.Controls.Add(this.splitter1);
             this.panelContainer.Controls.Add(this.panel1);
-            this.panelContainer.Controls.Add(this.toolStrip3);
-            this.panelContainer.Controls.Add(this.toolStrip1);
-            this.panelContainer.Controls.Add(this.toolStrip4);
+            this.panelContainer.Controls.Add(this.tlsHeader);
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
-            this.panelContainer.Controls.Add(this.toolStrip2);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(8, 8);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
             this.panelContainer.Size = new System.Drawing.Size(889, 550);
-            this.panelContainer.TabIndex = 7;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
+            this.panelContainer.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(416, 73);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(472, 435);
+            this.panel3.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.dataGridView2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 41);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(8);
+            this.panel7.Size = new System.Drawing.Size(472, 394);
+            this.panel7.TabIndex = 2;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView2.ColumnHeadersHeight = 35;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCategoria,
+            this.nombreCategoria});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView2.Location = new System.Drawing.Point(8, 8);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(456, 378);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "idCategoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.Visible = false;
+            // 
+            // nombreCategoria
+            // 
+            this.nombreCategoria.DataPropertyName = "nombreCategoria";
+            this.nombreCategoria.HeaderText = "nombreCategoria";
+            this.nombreCategoria.Name = "nombreCategoria";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(472, 41);
+            this.panel5.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 12);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "LISTA DE IMPUESTOS";
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(414, 73);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(2, 435);
+            this.splitter1.TabIndex = 4;
+            this.splitter1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(1, 73);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(413, 435);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 41);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(8);
+            this.panel6.Size = new System.Drawing.Size(413, 394);
+            this.panel6.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeight = 35;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoProducto,
+            this.nombre});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 8);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(397, 378);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // codigoProducto
+            // 
+            this.codigoProducto.DataPropertyName = "codigoProducto";
+            this.codigoProducto.HeaderText = "codigoProducto";
+            this.codigoProducto.Name = "codigoProducto";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(413, 41);
+            this.panel4.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 19);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(213, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = " *Solo aparecen los que no tienen Impuesto";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Productos";
+            // 
+            // tlsHeader
+            // 
+            this.tlsHeader.AutoSize = false;
+            this.tlsHeader.BackColor = System.Drawing.Color.White;
+            this.tlsHeader.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlsHeader.GripMargin = new System.Windows.Forms.Padding(0);
+            this.tlsHeader.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tlsHeader.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tlsHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tlsHeader.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNuevo});
+            this.tlsHeader.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.tlsHeader.Location = new System.Drawing.Point(1, 508);
+            this.tlsHeader.Name = "tlsHeader";
+            this.tlsHeader.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tlsHeader.Size = new System.Drawing.Size(887, 41);
+            this.tlsHeader.TabIndex = 6;
+            this.tlsHeader.Text = "toolStrip1";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.AutoSize = false;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(120, 47);
+            this.btnNuevo.Text = "  Guardar";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnNuevo.ToolTipText = "Guardar cambios";
             // 
             // panelHeaderItem1
             // 
+            this.panelHeaderItem1.Controls.Add(this.panelSucursal);
             this.panelHeaderItem1.Controls.Add(this.label1);
             this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(887, 41);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(887, 72);
             this.panelHeaderItem1.TabIndex = 0;
             // 
             // label1
@@ -108,343 +307,70 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ASIGNACION DE(LOS) IMPUESTO(S) A(LOS) PRODUCTO(S)";
             // 
-            // toolStrip2
+            // panelSucursal
             // 
-            this.toolStrip2.AutoSize = false;
-            this.toolStrip2.BackColor = System.Drawing.Color.White;
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip2.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFirtsNav,
-            this.btnPrevNav,
-            this.textCurentPage,
-            this.lblPageSeparator,
-            this.lblTotalPages,
-            this.btnNextNav,
-            this.btnLastNav});
-            this.toolStrip2.Location = new System.Drawing.Point(1, 508);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(887, 41);
-            this.toolStrip2.TabIndex = 2;
-            this.toolStrip2.Text = "toolStrip2";
+            this.panelSucursal.Controls.Add(this.cbxSucursales);
+            this.panelSucursal.Controls.Add(this.lblNivel1);
+            this.panelSucursal.Location = new System.Drawing.Point(9, 33);
+            this.panelSucursal.Name = "panelSucursal";
+            this.panelSucursal.Size = new System.Drawing.Size(226, 29);
+            this.panelSucursal.TabIndex = 17;
             // 
-            // btnFirtsNav
+            // cbxSucursales
             // 
-            this.btnFirtsNav.AutoSize = false;
-            this.btnFirtsNav.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFirtsNav.Image = ((System.Drawing.Image)(resources.GetObject("btnFirtsNav.Image")));
-            this.btnFirtsNav.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnFirtsNav.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFirtsNav.Name = "btnFirtsNav";
-            this.btnFirtsNav.Size = new System.Drawing.Size(50, 47);
-            this.btnFirtsNav.Text = "toolStripButton12";
+            this.cbxSucursales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSucursales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxSucursales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxSucursales.DisplayMember = "nombre";
+            this.cbxSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSucursales.FormattingEnabled = true;
+            this.cbxSucursales.Location = new System.Drawing.Point(75, 3);
+            this.cbxSucursales.Name = "cbxSucursales";
+            this.cbxSucursales.Size = new System.Drawing.Size(147, 24);
+            this.cbxSucursales.TabIndex = 1;
+            this.cbxSucursales.ValueMember = "idSucursal";
             // 
-            // btnPrevNav
+            // lblNivel1
             // 
-            this.btnPrevNav.AutoSize = false;
-            this.btnPrevNav.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrevNav.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevNav.Image")));
-            this.btnPrevNav.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrevNav.Name = "btnPrevNav";
-            this.btnPrevNav.Size = new System.Drawing.Size(50, 47);
-            this.btnPrevNav.Text = "toolStripButton13";
-            // 
-            // textCurentPage
-            // 
-            this.textCurentPage.AutoSize = false;
-            this.textCurentPage.Name = "textCurentPage";
-            this.textCurentPage.Size = new System.Drawing.Size(27, 23);
-            this.textCurentPage.Text = "10";
-            this.textCurentPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblPageSeparator
-            // 
-            this.lblPageSeparator.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblPageSeparator.Image = ((System.Drawing.Image)(resources.GetObject("lblPageSeparator.Image")));
-            this.lblPageSeparator.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lblPageSeparator.Name = "lblPageSeparator";
-            this.lblPageSeparator.Size = new System.Drawing.Size(31, 38);
-            this.lblPageSeparator.Text = "de  /";
-            // 
-            // lblTotalPages
-            // 
-            this.lblTotalPages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblTotalPages.Image = ((System.Drawing.Image)(resources.GetObject("lblTotalPages.Image")));
-            this.lblTotalPages.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lblTotalPages.Name = "lblTotalPages";
-            this.lblTotalPages.Size = new System.Drawing.Size(25, 38);
-            this.lblTotalPages.Text = "100";
-            // 
-            // btnNextNav
-            // 
-            this.btnNextNav.AutoSize = false;
-            this.btnNextNav.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNextNav.Image = ((System.Drawing.Image)(resources.GetObject("btnNextNav.Image")));
-            this.btnNextNav.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNextNav.Name = "btnNextNav";
-            this.btnNextNav.Size = new System.Drawing.Size(50, 47);
-            this.btnNextNav.Text = "toolStripButton14";
-            // 
-            // btnLastNav
-            // 
-            this.btnLastNav.AutoSize = false;
-            this.btnLastNav.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLastNav.Image = ((System.Drawing.Image)(resources.GetObject("btnLastNav.Image")));
-            this.btnLastNav.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLastNav.Name = "btnLastNav";
-            this.btnLastNav.Size = new System.Drawing.Size(50, 47);
-            this.btnLastNav.Text = "toolStripButton15";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(887, 368);
-            this.panel1.TabIndex = 8;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(867, 348);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // toolStrip3
-            // 
-            this.toolStrip3.AutoSize = false;
-            this.toolStrip3.BackColor = System.Drawing.Color.White;
-            this.toolStrip3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip3.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip3.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFirst,
-            this.btnPrevious,
-            this.textCurrentPage,
-            this.toolStripButton12,
-            this.textTotalPage,
-            this.btnNext,
-            this.btnLast});
-            this.toolStrip3.Location = new System.Drawing.Point(1, 478);
-            this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(887, 30);
-            this.toolStrip3.TabIndex = 7;
-            this.toolStrip3.Text = "toolStrip3";
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
-            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(23, 27);
-            this.btnFirst.Text = "Firts";
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
-            this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(23, 27);
-            this.btnPrevious.Text = "Previus";
-            // 
-            // textCurrentPage
-            // 
-            this.textCurrentPage.AutoSize = false;
-            this.textCurrentPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textCurrentPage.Name = "textCurrentPage";
-            this.textCurrentPage.Size = new System.Drawing.Size(30, 23);
-            this.textCurrentPage.Text = "1";
-            this.textCurrentPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(28, 27);
-            this.toolStripButton12.Text = "de /";
-            // 
-            // textTotalPage
-            // 
-            this.textTotalPage.AutoSize = false;
-            this.textTotalPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textTotalPage.Name = "textTotalPage";
-            this.textTotalPage.Size = new System.Drawing.Size(30, 23);
-            this.textTotalPage.Text = "100";
-            this.textTotalPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnNext
-            // 
-            this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(23, 27);
-            this.btnNext.Text = "Next";
-            // 
-            // btnLast
-            // 
-            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
-            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(23, 27);
-            this.btnLast.Text = "Last";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.White;
-            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton6,
-            this.textBuscar,
-            this.btnBuscar});
-            this.toolStrip1.Location = new System.Drawing.Point(1, 80);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(887, 30);
-            this.toolStrip1.TabIndex = 6;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(44, 27);
-            this.toolStripButton6.Text = "Buscar:";
-            // 
-            // textBuscar
-            // 
-            this.textBuscar.AutoSize = false;
-            this.textBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(300, 22);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(61, 27);
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.ToolTipText = "Buscar (Enter)";
-            // 
-            // toolStrip4
-            // 
-            this.toolStrip4.AutoSize = false;
-            this.toolStrip4.BackColor = System.Drawing.Color.White;
-            this.toolStrip4.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip4.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevo,
-            this.btnModificar,
-            this.btnEliminar,
-            this.btnDesactivar,
-            this.btnActualizar});
-            this.toolStrip4.Location = new System.Drawing.Point(1, 42);
-            this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(887, 38);
-            this.toolStrip4.TabIndex = 5;
-            this.toolStrip4.Text = "toolStrip4";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.AutoSize = false;
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(62, 37);
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevo.ToolTipText = "Agregar un nuevo registro (F3)";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.AutoSize = false;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(78, 37);
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnModificar.ToolTipText = "Modificar registro actual (F4)";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AutoSize = false;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 37);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.ToolTipText = "Eliminar registro actual (F6)";
-            // 
-            // btnDesactivar
-            // 
-            this.btnDesactivar.AutoSize = false;
-            this.btnDesactivar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesactivar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesactivar.Image")));
-            this.btnDesactivar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(73, 37);
-            this.btnDesactivar.Text = "Desactivar";
-            this.btnDesactivar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDesactivar.ToolTipText = "Desactivar (F7)";
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.AutoSize = false;
-            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(79, 37);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnActualizar.ToolTipText = "Actualizar registros (F5)\r\n";
+            this.lblNivel1.AutoSize = true;
+            this.lblNivel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNivel1.Location = new System.Drawing.Point(8, 7);
+            this.lblNivel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNivel1.Name = "lblNivel1";
+            this.lblNivel1.Size = new System.Drawing.Size(62, 14);
+            this.lblNivel1.TabIndex = 0;
+            this.lblNivel1.Text = "Sucursales";
             // 
             // UCAsignarImpuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCAsignarImpuesto";
-            this.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Padding = new System.Windows.Forms.Padding(8);
             this.Size = new System.Drawing.Size(905, 566);
+            this.Load += new System.EventHandler(this.UCAsignarImpuesto_Load);
             this.panelContainer.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.tlsHeader.ResumeLayout(false);
+            this.tlsHeader.PerformLayout();
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.toolStrip3.ResumeLayout(false);
-            this.toolStrip3.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.toolStrip4.ResumeLayout(false);
-            this.toolStrip4.PerformLayout();
+            this.panelSucursal.ResumeLayout(false);
+            this.panelSucursal.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -452,35 +378,28 @@
         #endregion
 
         private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoria;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStrip tlsHeader;
+        private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.Panel panelHeaderItem1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton btnFirtsNav;
-        private System.Windows.Forms.ToolStripButton btnPrevNav;
-        private System.Windows.Forms.ToolStripTextBox textCurentPage;
-        private System.Windows.Forms.ToolStripLabel lblPageSeparator;
-        private System.Windows.Forms.ToolStripLabel lblTotalPages;
-        private System.Windows.Forms.ToolStripButton btnNextNav;
-        private System.Windows.Forms.ToolStripButton btnLastNav;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStrip toolStrip3;
-        private System.Windows.Forms.ToolStripButton btnFirst;
-        private System.Windows.Forms.ToolStripButton btnPrevious;
-        private System.Windows.Forms.ToolStripTextBox textCurrentPage;
-        private System.Windows.Forms.ToolStripLabel toolStripButton12;
-        private System.Windows.Forms.ToolStripTextBox textTotalPage;
-        private System.Windows.Forms.ToolStripButton btnNext;
-        private System.Windows.Forms.ToolStripButton btnLast;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripButton6;
-        private System.Windows.Forms.ToolStripTextBox textBuscar;
-        private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.ToolStrip toolStrip4;
-        private System.Windows.Forms.ToolStripButton btnNuevo;
-        private System.Windows.Forms.ToolStripButton btnModificar;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.ToolStripButton btnDesactivar;
-        private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.Panel panelSucursal;
+        private System.Windows.Forms.ComboBox cbxSucursales;
+        private System.Windows.Forms.Label lblNivel1;
     }
 }

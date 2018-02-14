@@ -322,6 +322,7 @@ namespace Admeli.Herramientas
         }
         #endregion
 
+        #region ============================ Tools Events ============================
         private void cbxSucursales_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarRegistros();
@@ -334,16 +335,17 @@ namespace Admeli.Herramientas
 
         private void textBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-           if (e.KeyCode == Keys.Enter)
-           {
+            if (e.KeyCode == Keys.Enter)
+            {
                 cargarRegistrosBuscar();
-           }
+            }
         }
 
         private void btnIngresos_Click(object sender, EventArgs e)
         {
             cargarRegistros();
-        }
+        } 
+        #endregion
     }
 }
 

@@ -29,12 +29,6 @@ namespace Modelo
             }
         }
 
-
-        public void guardar()
-        {
-            // 
-        }
-
         public async Task<Response> guardar(Producto param)
         {
             try
@@ -218,6 +212,20 @@ namespace Modelo
             {
                 // localhost/admeli/xcore/services.php/productos41
                 List<Producto> list = await webService.GET<List<Producto>>("productos41");
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Producto>> productosSinCategoria()
+        {
+            try
+            {
+                // localhost/admeli/xcore/services.php/productos41/categoria
+                List<Producto> list = await webService.GET<List<Producto>>("productos41", "categoria");
                 return list;
             }
             catch (Exception ex)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Admeli.Componentes;
+using Modelo;
 
 namespace Admeli.Herramientas
 {
@@ -15,6 +16,9 @@ namespace Admeli.Herramientas
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private ProductoModel productoModel = new ProductoModel();
+        private ImpuestoModel impuestoModel = new ImpuestoModel();
 
         public UCAsignarImpuesto()
         {
@@ -35,9 +39,60 @@ namespace Admeli.Herramientas
             drawShape.lineBorder(panelContainer);
         }
 
+        #region ============================== Root Load ==============================
+        private void UCAsignarImpuesto_Load(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
         internal void reLoad()
         {
             lisenerKeyEvents = true; // Active lisener key events
         }
+        #endregion
+
+        #region ====================================== Loads ======================================
+        private void cargarProductos()
+        {
+            loadState(true);
+            try
+            {
+                /// categoriaBindingSource.DataSource = await categoriaModel.categorias21();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
+
+        private void cargarImpuestos()
+        {
+            loadState(true);
+            try
+            {
+                /// categoriaBindingSource.DataSource = await categoriaModel.categorias21();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
+        #endregion
+
+        #region ==================================== Estados ====================================
+        private void loadState(bool state)
+        {
+            formPrincipal.appLoadState(state);
+        }
+        #endregion
+
     }
 }

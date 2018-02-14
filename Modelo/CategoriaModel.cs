@@ -92,12 +92,12 @@ namespace Modelo
             }
         }
 
-        public async Task<List<Categoria>> categorias21(int estado = 1)
+        public async Task<List<Categoria>> categorias21(int idCategoria = -1)
         {
             try
             {
                 // www.lineatienda.com/services.php/categorias21/-1
-                List<Categoria> categorias = await webService.GET<List<Categoria>>("categorias21", "-1");
+                List<Categoria> categorias = await webService.GET<List<Categoria>>("categorias21", String.Format("{0}", idCategoria));
                 return categorias;
             }
             catch (Exception ex)
