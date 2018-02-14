@@ -169,8 +169,9 @@ namespace Admeli.CajaBox
 
         }
 
-        private void verificarEstadoCaja()
+        private async void verificarEstadoCaja()
         {
+            await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
             if (ConfigModel.cajaSesion != null)
             {
                 if (ConfigModel.cajaSesion.idCajaSesion > 0)

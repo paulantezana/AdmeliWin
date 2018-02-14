@@ -23,6 +23,7 @@ namespace Admeli.CajaBox
         private Egreso currentEgreso { get; set; }
 
         private Paginacion paginacion;
+        private ConfigModel configModel = new ConfigModel();
         private EgresoModel egresoModel = new EgresoModel();
         private PersonalModel personalModel = new PersonalModel();
         private SucursalModel sucursalModel = new SucursalModel();
@@ -45,8 +46,9 @@ namespace Admeli.CajaBox
         }
 
         #region ============================ Verificar Caja ============================
-        private void verificarCaja()
+        private async void verificarCaja()
         {
+            await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
             if (ConfigModel.cajaIniciada)
             {
                 btnNuevo.Enabled = true;

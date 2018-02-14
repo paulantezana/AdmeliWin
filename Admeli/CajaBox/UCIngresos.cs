@@ -26,6 +26,7 @@ namespace Admeli.CajaBox
         private IngresoModel ingresoModel = new IngresoModel();
         private PersonalModel personalModel = new PersonalModel();
         private SucursalModel sucursalModel = new SucursalModel();
+        private ConfigModel configModel = new ConfigModel();
 
         public UCIngresos()
         {
@@ -61,7 +62,7 @@ namespace Admeli.CajaBox
         {
             // load componentes
             cargarComponentes();
-            cargarComponentesSecond();
+            cargarSucursales();
             cargarRegistros();
 
             // Active lisener key events
@@ -69,12 +70,101 @@ namespace Admeli.CajaBox
 
             // Verificacion de la caja
             verificarCaja();
-        } 
+        }
+        #endregion
+
+        #region ======================= Loads =======================
+        private async void cargarComponentes()
+        {
+            loadState(true);
+
+            // Cargando el combobox ce estados
+            DataTable table = new DataTable();
+            table.Columns.Add("idEstado", typeof(string));
+            table.Columns.Add("estado", typeof(string));
+
+            table.Rows.Add("todos", "Todos los estados");
+            table.Rows.Add("0", "Anulados");
+            table.Rows.Add("1", "Activos");
+
+            cbxEstados.ComboBox.DataSource = table;
+            cbxEstados.ComboBox.DisplayMember = "estado";
+            cbxEstados.ComboBox.ValueMember = "idEstado";
+            cbxEstados.ComboBox.SelectedIndex = 0;
+
+            try
+            {
+                // Cargando el combobox de personales
+                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
+                cbxPersonales.ComboBox.DisplayMember = "nombres";
+                cbxPersonales.ComboBox.ValueMember = "idPersonal";
+                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarSucursales()
+        {
+            // cargando los sucursales activos
+            loadState(true);
+            try
+            {
+                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
+                cbxSucursales.ComboBox.DisplayMember = "nombre";
+                cbxSucursales.ComboBox.ValueMember = "idSucursal";
+                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarRegistros()
+        {
+            loadState(true);
+            try
+            {
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
+                int idCajaSesion = 0;// ConfigModel.cajaSesion.idCajaSesion;
+
+                RootObject<Ingreso> ingresoRoot = await ingresoModel.ingresos(sucursalId, personalId, idCajaSesion, estado, paginacion.currentPage, paginacion.speed);
+
+                // actualizando datos de páginacón
+                paginacion.itemsCount = ingresoRoot.nro_registros;
+                paginacion.reload();
+
+                // Ingresando
+                ingresos = ingresoRoot.datos;
+                ingresoBindingSource.DataSource = ingresos;
+                dataGridView.Refresh();
+                mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
         #endregion
 
         #region ============================== Verificar caja ==============================
-        private void verificarCaja()
+        private async void verificarCaja()
         {
+            await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
             if (ConfigModel.cajaIniciada)
             {
                 btnNuevo.Enabled = true;
@@ -144,94 +234,6 @@ namespace Admeli.CajaBox
                     break;
                 default:
                     break;
-            }
-        }
-        #endregion
-
-        #region ======================= Loads =======================
-        private async void cargarComponentes()
-        {
-            loadState(true);
-
-            // Cargando el combobox ce estados
-            DataTable table = new DataTable();
-            table.Columns.Add("idEstado", typeof(string));
-            table.Columns.Add("estado", typeof(string));
-
-            table.Rows.Add("todos", "Todos los estados");
-            table.Rows.Add("0", "Anulados");
-            table.Rows.Add("1", "Activos");
-
-            cbxEstados.ComboBox.DataSource = table;
-            cbxEstados.ComboBox.DisplayMember = "estado";
-            cbxEstados.ComboBox.ValueMember = "idEstado";
-            cbxEstados.ComboBox.SelectedIndex = 0;
-
-            try
-            {
-                // Cargando el combobox de personales
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
-
-              
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private async void cargarComponentesSecond()
-        {
-            // cargando los sucursales activos
-            loadState(true);
-            try
-            {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private async void cargarRegistros()
-        {
-            loadState(true);
-            try
-            {
-                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal: Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
-                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
-                int idCajaSesion = 0;// ConfigModel.cajaSesion.idCajaSesion;
-
-                RootObject<Ingreso> ingresoRoot = await ingresoModel.ingresos(sucursalId,personalId,idCajaSesion,estado, paginacion.currentPage, paginacion.speed);
-
-                // actualizando datos de páginacón
-                paginacion.itemsCount = ingresoRoot.nro_registros;
-                paginacion.reload();
-
-                // Ingresando
-                ingresos = ingresoRoot.datos;
-                ingresoBindingSource.DataSource = ingresos;
-                dataGridView.Refresh();
-                mostrarPaginado();
-
-                // Formato de celdas
-                decorationDataGridView();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                loadState(false);
             }
         }
         #endregion
