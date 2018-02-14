@@ -51,9 +51,9 @@
             this.btnVenta = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCompra = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -592,7 +592,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panelMain);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -601,14 +601,13 @@
             this.panel1.Size = new System.Drawing.Size(635, 628);
             this.panel1.TabIndex = 1;
             // 
-            // panel5
+            // panelMain
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(635, 48);
-            this.panel5.TabIndex = 0;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 48);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(435, 580);
+            this.panelMain.TabIndex = 2;
             // 
             // panel6
             // 
@@ -619,13 +618,14 @@
             this.panel6.Size = new System.Drawing.Size(200, 580);
             this.panel6.TabIndex = 1;
             // 
-            // panel7
+            // panel5
             // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 48);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(435, 580);
-            this.panel7.TabIndex = 2;
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(635, 48);
+            this.panel5.TabIndex = 0;
             // 
             // FormHomeDarck
             // 
@@ -673,7 +673,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
     }

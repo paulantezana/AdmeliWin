@@ -462,6 +462,48 @@
     <Compile Include="Herramientas\UCInicializarStock.Designer.cs">
       <DependentUpon>UCInicializarStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavDarck\UCAlmacenNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCAlmacenNav.Designer.cs">
+      <DependentUpon>UCAlmacenNav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavDarck\UCCajaNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCCajaNav.Designer.cs">
+      <DependentUpon>UCCajaNav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavDarck\UCComprasNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCComprasNav.Designer.cs">
+      <DependentUpon>UCComprasNav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavDarck\UCConfigNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCConfigNav.Designer.cs">
+      <DependentUpon>UCConfigNav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavDarck\UCHerramientasNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCHerramientasNav.Designer.cs">
+      <DependentUpon>UCHerramientasNav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavDarck\UCProductosNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCProductosNav.Designer.cs">
+      <DependentUpon>UCProductosNav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavDarck\UCVentasNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCVentasNav.Designer.cs">
+      <DependentUpon>UCVentasNav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Navegacion\UCAlmacenNav.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -902,6 +944,27 @@
     <EmbeddedResource Include="Herramientas\UCInicializarStock.resx">
       <DependentUpon>UCInicializarStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCAlmacenNav.resx">
+      <DependentUpon>UCAlmacenNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCCajaNav.resx">
+      <DependentUpon>UCCajaNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCComprasNav.resx">
+      <DependentUpon>UCComprasNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCConfigNav.resx">
+      <DependentUpon>UCConfigNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCHerramientasNav.resx">
+      <DependentUpon>UCHerramientasNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCProductosNav.resx">
+      <DependentUpon>UCProductosNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCVentasNav.resx">
+      <DependentUpon>UCVentasNav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Navegacion\UCAlmacenNav.resx">
       <DependentUpon>UCAlmacenNav.cs</DependentUpon>
     </EmbeddedResource>
@@ -1123,5 +1186,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

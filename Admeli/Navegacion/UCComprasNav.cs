@@ -23,6 +23,7 @@ namespace Admeli.Navegacion
         private Color colorActive = Color.FromArgb(243, 243, 243);  // Color que se muestra del ultimo voton clikeado
 
         private FormPrincipal formPrincipal;
+        private FormHomeDarck formHomeDarck;
 
         public UCComprasNav()
         {
