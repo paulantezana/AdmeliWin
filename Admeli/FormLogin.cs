@@ -28,6 +28,7 @@ namespace Admeli
                 Cursor.Current = Cursors.WaitCursor;
                 if (validarCampos())
                 {
+
                     await personalModel.loginPersonal(textUsuario.Text, textPassword.Text);
                     formPrincipal = new FormPrincipal(this);
                     formPrincipal.Show();
