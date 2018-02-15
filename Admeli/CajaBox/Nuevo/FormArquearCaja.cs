@@ -27,8 +27,11 @@ namespace Admeli.CajaBox.Nuevo
         private CierreCajaModel cierreCajaModel = new CierreCajaModel();
         private DenominacionModel denominacionModel = new DenominacionModel();
 
+        private List<MedioPago> medioPagos { get; set; }
+        private List<Moneda> ingresoMenosEgreso { get; set; }
+
         // variables de los elementos en el aside
-        private int x = 13, y = 13;
+        private int x = 13, y = 10;
 
         #region =========================== Constructor ===========================
         public FormArquearCaja()
@@ -57,22 +60,23 @@ namespace Admeli.CajaBox.Nuevo
 
         private void reLoad()
         {
-            this.cargarMedioPago();
+            this.cargarMedioPago(); // carga mas los ingresosMenosEgresos()
             this.cargarIngreso();
             this.cargarCajaSesion();
             this.cargarFecha();
             this.cargarMoneda();
-            this.cargarIngresoMenosEgreso();
             this.cargarDenomincacion();
         } 
         #endregion
 
         #region ================================ Load ================================
-        private void cargarMedioPago()
+        private async void cargarMedioPago()
         {
             try
             {
                 // mediosDePagos = await medioPagoModel.medioPagos();
+                medioPagos = await medioPagoModel.medioPagos();
+                this.cargarIngresoMenosEgreso();
             }
             catch (Exception ex)
             {
@@ -85,28 +89,30 @@ namespace Admeli.CajaBox.Nuevo
             try
             {
                 List<Ingreso> ingresos = await ingresoModel.ingresos(ConfigModel.cajaSesion.idCajaSesion); // Listas
-                int columnas = 2; // Indicar numero de columnas de la grilla
-               
+                int columnas = 3; // Indicar numero de columnas de la grilla
+
+                this.createLabel(x - 5,this.y, "Monto inicio caja");
+                this.y += 25;
+
                 // =========================================== Algoritmo para crear una grilla
-                int items = ingresos.Count % columnas;
-                int rowComplete = Convert.ToInt32(Math.Floor((decimal)(ingresos.Count / columnas))) * columnas;
-                for (int i = 0; i < ingresos.Count; i++)
+                int items = ingresos.Count % columnas;      // Detectar cuandos elementos hay en la ultima fila de la grilla
+                int rowComplete = Convert.ToInt32(Math.Floor((decimal)(ingresos.Count / columnas))) * columnas; // detectar cuantos fila esta lleno de  registros
+                for (int i = 0; i < ingresos.Count; i++) // for para las filas
                 {
-                    for (int j = 0; j < columnas; j++)
+                    for (int j = 0; j < columnas; j++) // For para las columnas
                     {
-                        if (i > rowComplete)
+                        if (i > rowComplete) // validacion
                         {
-                            if (items == j) break;
+                            if (items == j) break; // salir de este for
                         }
-                        this.createElement(x, y, ingresos[i].moneda, ingresos[i].monto);
-                        i = (columnas - 1 == j ) ? i : i + 1;
-                        x += 160;
+                        this.createElement(x, this.y, ingresos[i].moneda, ingresos[i].monto);
+                        i = (columnas - 1 == j ) ? i : i + 1; // indice de registros aumento
+                        x += 170; // cordenada x aumentado
                     }
-                    y += 50;
-                    x = 13;
+                    this.y += 50; // cordenada y
+                    x = 13; // cordenada x regresando al valor original
                 }
                 // ==============================================================================
-                
             }
             catch (Exception ex)
             {
@@ -141,11 +147,13 @@ namespace Admeli.CajaBox.Nuevo
             }
         }
 
-        private void cargarMoneda()
+        private async void cargarMoneda()
         {
             try
             {
                 // mediosDePagos = await medioPagoModel.medioPagos();
+                /// List<Moneda> monedas = await monedaModel.monedas();
+
             }
             catch (Exception ex)
             {
@@ -153,11 +161,25 @@ namespace Admeli.CajaBox.Nuevo
             }
         }
 
-        private void cargarIngresoMenosEgreso()
+        private async void cargarIngresoMenosEgreso()
         {
             try
             {
-                // mediosDePagos = await medioPagoModel.medioPagos();
+                // 
+                int medioPagoID = medioPagos.First<MedioPago>().idMedioPago;
+                ingresoMenosEgreso = await cierreCajaModel.ingresoMenosEgreso(medioPagoID,ConfigModel.cajaSesion.idCajaSesion);
+
+                this.createLabel(x - 5, this.y, "Cálculo efectivo");
+                this.y += 25;
+
+                
+                foreach (Moneda moneda in ingresoMenosEgreso)
+                {
+                    this.createElement(x, y, "Teorico " + moneda.moneda, moneda.total.ToString());
+                    this.createElement(x + 170, y, "Real " + moneda.moneda, "0");   // Falta 
+                    this.createElement(x + 340, y, "Descuadre " + moneda.moneda, "0");   // Falta 
+                    this.y += 50;
+                }
             }
             catch (Exception ex)
             {
@@ -179,15 +201,12 @@ namespace Admeli.CajaBox.Nuevo
         #endregion
 
         /// <summary>
-        /// X = 17 ---------------- Y = 19    //////   x = 13  y = 13
-        /// label2222   X = 167, Y = 19
-        /// textBox222  X = 163, Y = 13
+        /// Crear bunifutextbox con un label indicar las cordenadas, contenido, y el valor
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="content"></param>
         /// <param name="value"></param>
-
         private void createElement(int x, int y, string content, string value)
         {
             Label titlefield = new Label()
@@ -220,13 +239,31 @@ namespace Admeli.CajaBox.Nuevo
                 Margin = new System.Windows.Forms.Padding(4),
                 Name = "textBox1111",
                 Padding = new System.Windows.Forms.Padding(2, 18, 5, 2),
-                Size = new System.Drawing.Size(137, 40),
+                Size = new System.Drawing.Size(160, 40),
                 TabIndex = 9,
                 TextAlign = System.Windows.Forms.HorizontalAlignment.Left,
                 Text = value
             };
             this.panelAside.Controls.Add(titlefield);
             this.panelAside.Controls.Add(textBoxBF1);
+        }
+
+        private void createLabel(int x, int y, string content)
+        {
+            Label titlefield = new Label()
+            {
+                AutoSize = true,
+                BackColor = System.Drawing.Color.White,
+                Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                ForeColor = System.Drawing.Color.FromArgb(76, 76, 76),
+                Location = new System.Drawing.Point(x + 3, y + 3),
+                Margin = new System.Windows.Forms.Padding(2, 0, 2, 0),
+                Name = "label1111",
+                Size = new System.Drawing.Size(59, 14),
+                TabIndex = 8,
+                Text = content
+            };
+            this.panelAside.Controls.Add(titlefield);
         }
     }
 }

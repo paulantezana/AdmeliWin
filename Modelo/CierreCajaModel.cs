@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using Entidad.Configuracion;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -69,7 +70,7 @@ namespace Modelo
             }
         }
         */
-        public async Task<RootObject<CierreCaja>> cuerreCajas(int idPersonal, int idSucursal, int page, int items)
+        public async Task<RootObject<CierreCaja>> cierreCajas(int idPersonal, int idSucursal, int page, int items)
         {
             try
             {
@@ -82,6 +83,23 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Moneda>> ingresoMenosEgreso(int idMedioPago, int idCajaSesion)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/cierrecajaingresomenosegreso/mediopago/1/cajasesion/3
+                List<Moneda> list = await webService.GET<List<Moneda>>("cierrecajaingresomenosegreso", String.Format("mediopago/{0}/cajasesion/{1}", idMedioPago, idCajaSesion));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
         /*
         public async Task<List<Almacen>> almacenes(int estado = 1)
         {

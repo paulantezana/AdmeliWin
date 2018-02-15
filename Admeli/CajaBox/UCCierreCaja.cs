@@ -165,7 +165,7 @@ namespace Admeli.CajaBox
             {
                 int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
                 int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
-                RootObject<CierreCaja> dataRoot = await cierreCajaModel.cuerreCajas(personalId, sucursalId, paginacion.currentPage, paginacion.speed);
+                RootObject<CierreCaja> dataRoot = await cierreCajaModel.cierreCajas(personalId, sucursalId, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
                 paginacion.itemsCount = dataRoot.nro_registros;
