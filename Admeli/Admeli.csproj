@@ -498,6 +498,12 @@
     <Compile Include="NavDarck\UCProductosNav.Designer.cs">
       <DependentUpon>UCProductosNav.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavDarck\UCReporteNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavDarck\UCReporteNav.Designer.cs">
+      <DependentUpon>UCReporteNav.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavDarck\UCVentasNav.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -961,6 +967,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavDarck\UCProductosNav.resx">
       <DependentUpon>UCProductosNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavDarck\UCReporteNav.resx">
+      <DependentUpon>UCReporteNav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavDarck\UCVentasNav.resx">
       <DependentUpon>UCVentasNav.cs</DependentUpon>

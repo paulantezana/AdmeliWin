@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHomeDarck));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnToggleMenu = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -52,8 +53,16 @@
             this.btnCompra = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelMenuRight = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnToggleMenuRigth = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnFullScreen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -61,6 +70,8 @@
             this.panelAsideContainer.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -593,7 +604,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panelMain);
-            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panelMenuRight);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(200, 0);
@@ -606,26 +617,224 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 48);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(435, 580);
+            this.panelMain.Size = new System.Drawing.Size(635, 580);
             this.panelMain.TabIndex = 2;
             // 
-            // panel6
+            // panelMenuRight
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(435, 48);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 580);
-            this.panel6.TabIndex = 1;
+            this.panelMenuRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.panelMenuRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMenuRight.Location = new System.Drawing.Point(635, 48);
+            this.panelMenuRight.Name = "panelMenuRight";
+            this.panelMenuRight.Size = new System.Drawing.Size(0, 580);
+            this.panelMenuRight.TabIndex = 1;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.btnFullScreen);
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.btnToggleMenuRigth);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(635, 48);
             this.panel5.TabIndex = 0;
+            // 
+            // btnToggleMenuRigth
+            // 
+            this.btnToggleMenuRigth.Activecolor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.BackColor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnToggleMenuRigth.BorderRadius = 0;
+            this.btnToggleMenuRigth.ButtonText = "";
+            this.btnToggleMenuRigth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToggleMenuRigth.DisabledColor = System.Drawing.Color.Gray;
+            this.btnToggleMenuRigth.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnToggleMenuRigth.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnToggleMenuRigth.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnToggleMenuRigth.Iconimage")));
+            this.btnToggleMenuRigth.Iconimage_right = null;
+            this.btnToggleMenuRigth.Iconimage_right_Selected = null;
+            this.btnToggleMenuRigth.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnToggleMenuRigth.Iconimage_Selected")));
+            this.btnToggleMenuRigth.IconMarginLeft = 0;
+            this.btnToggleMenuRigth.IconMarginRight = 0;
+            this.btnToggleMenuRigth.IconRightVisible = true;
+            this.btnToggleMenuRigth.IconRightZoom = 0D;
+            this.btnToggleMenuRigth.IconVisible = true;
+            this.btnToggleMenuRigth.IconZoom = 80D;
+            this.btnToggleMenuRigth.IsTab = true;
+            this.btnToggleMenuRigth.Location = new System.Drawing.Point(586, 0);
+            this.btnToggleMenuRigth.Name = "btnToggleMenuRigth";
+            this.btnToggleMenuRigth.Normalcolor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnToggleMenuRigth.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.selected = false;
+            this.btnToggleMenuRigth.Size = new System.Drawing.Size(49, 48);
+            this.btnToggleMenuRigth.TabIndex = 18;
+            this.btnToggleMenuRigth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnToggleMenuRigth.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnToggleMenuRigth.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToggleMenuRigth.Click += new System.EventHandler(this.btnToggleMenuRigth_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel7.Controls.Add(this.button3);
+            this.panel7.Controls.Add(this.button2);
+            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.btnCompras);
+            this.panel7.Location = new System.Drawing.Point(35, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(464, 48);
+            this.panel7.TabIndex = 19;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(153)))), ((int)(((byte)(156)))));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.ImageIndex = 3;
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(5, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(129, 48);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "  Venta Touch";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(153)))), ((int)(((byte)(156)))));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.ImageIndex = 0;
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(134, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(110, 48);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "   Compras";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(153)))), ((int)(((byte)(156)))));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImageIndex = 2;
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(244, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(110, 48);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "   Ventas";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.BackColor = System.Drawing.Color.White;
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompras.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCompras.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(153)))), ((int)(((byte)(156)))));
+            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.ImageIndex = 1;
+            this.btnCompras.ImageList = this.imageList1;
+            this.btnCompras.Location = new System.Drawing.Point(354, 0);
+            this.btnCompras.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnCompras.Size = new System.Drawing.Size(110, 48);
+            this.btnCompras.TabIndex = 22;
+            this.btnCompras.Text = "   Productos";
+            this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCompras.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "purchase_gray_icon.png");
+            this.imageList1.Images.SetKeyName(1, "product_gray_icon.png");
+            this.imageList1.Images.SetKeyName(2, "sale_gray_icon.png");
+            this.imageList1.Images.SetKeyName(3, "sale_gray_icon.png");
+            // 
+            // btnFullScreen
+            // 
+            this.btnFullScreen.Activecolor = System.Drawing.Color.White;
+            this.btnFullScreen.BackColor = System.Drawing.Color.White;
+            this.btnFullScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFullScreen.BorderRadius = 0;
+            this.btnFullScreen.ButtonText = "";
+            this.btnFullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFullScreen.DisabledColor = System.Drawing.Color.Gray;
+            this.btnFullScreen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnFullScreen.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnFullScreen.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Iconimage")));
+            this.btnFullScreen.Iconimage_right = null;
+            this.btnFullScreen.Iconimage_right_Selected = null;
+            this.btnFullScreen.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Iconimage_Selected")));
+            this.btnFullScreen.IconMarginLeft = 0;
+            this.btnFullScreen.IconMarginRight = 0;
+            this.btnFullScreen.IconRightVisible = true;
+            this.btnFullScreen.IconRightZoom = 0D;
+            this.btnFullScreen.IconVisible = true;
+            this.btnFullScreen.IconZoom = 80D;
+            this.btnFullScreen.IsTab = true;
+            this.btnFullScreen.Location = new System.Drawing.Point(537, 0);
+            this.btnFullScreen.Name = "btnFullScreen";
+            this.btnFullScreen.Normalcolor = System.Drawing.Color.White;
+            this.btnFullScreen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnFullScreen.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFullScreen.selected = false;
+            this.btnFullScreen.Size = new System.Drawing.Size(49, 48);
+            this.btnFullScreen.TabIndex = 20;
+            this.btnFullScreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFullScreen.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnFullScreen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFullScreen.Click += new System.EventHandler(this.btnFullScreen_Click);
             // 
             // FormHomeDarck
             // 
@@ -645,6 +854,8 @@
             this.panelAsideContainer.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -674,7 +885,15 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelMenuRight;
         private System.Windows.Forms.Panel panel5;
+        private Bunifu.Framework.UI.BunifuFlatButton btnToggleMenuRigth;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCompras;
+        private System.Windows.Forms.ImageList imageList1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnFullScreen;
     }
 }

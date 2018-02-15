@@ -20,6 +20,7 @@ namespace Admeli
         private UCAlmacenNav UCAlmacenNav;
         private UCConfigNav uCConfigNav;
         private UCHerramientasNav uCHerramientasNav;
+        private UCReporteNav uCReporteNav;
         private UCProductosNav uCProductosNav;
 
         public FormHomeDarck()
@@ -44,7 +45,7 @@ namespace Admeli
             btnColor();
             borderLeftActive.Location = btnReporte.Location;
             btnReporte.Textcolor = Color.White;
-            togglePanelMain("reporte");
+            togglePanelMain("reportes");
         }
 
         private void btnHerramienta_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace Admeli
             btnColor();
             borderLeftActive.Location = btnProducto.Location;
             btnProducto.Textcolor = Color.White;
-            togglePanelMain("producto");
+            togglePanelMain("productos");
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
@@ -237,12 +238,53 @@ namespace Admeli
                         this.panelMain.Controls.Add(uCHerramientasNav);
                     }
                     break;
+                case "reportes":
+                    if (this.uCReporteNav == null)
+                    {
+                        this.uCReporteNav = new UCReporteNav(this);
+                        this.panelMain.Controls.Add(uCReporteNav);
+                        this.uCReporteNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCReporteNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCReporteNav.Name = "uCReporteNav";
+                        this.uCReporteNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCReporteNav.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCHerramientasNav);
+                    }
+                    break;
                 default:
                     break;
             }
         }
+
         #endregion
 
+        private void btnToggleMenuRigth_Click(object sender, EventArgs e)
+        {
+            if (panelMenuRight.Size.Width > 1)
+            {
+                panelMenuRight.Size = new Size(0, 700);
+            }
+            else
+            {
+                panelMenuRight.Size = new Size(200, 700);
+            }
+        }
 
+        private void btnFullScreen_Click(object sender, EventArgs e)
+        {
+            if (this.FormBorderStyle == FormBorderStyle.None)
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

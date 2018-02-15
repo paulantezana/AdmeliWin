@@ -1,6 +1,6 @@
 ﻿namespace Admeli.NavDarck
 {
-    partial class UCAlmacenNav
+    partial class UCReporteNav
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAlmacenNav));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCReporteNav));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panelContainer.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -48,10 +48,10 @@
             this.panelContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panelContainer.Controls.Add(this.flowLayoutPanel1);
             this.panelContainer.Controls.Add(this.panelContent);
-            this.panelContainer.Location = new System.Drawing.Point(80, 25);
+            this.panelContainer.Location = new System.Drawing.Point(55, 25);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(621, 447);
-            this.panelContainer.TabIndex = 0;
+            this.panelContainer.Size = new System.Drawing.Size(621, 495);
+            this.panelContainer.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -61,7 +61,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 351);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 399);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button2
@@ -96,6 +96,22 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.DimGray;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(179, 3);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(5);
+            this.button3.Size = new System.Drawing.Size(82, 90);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Notas De Entrada";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // panelContent
             // 
             this.panelContent.Controls.Add(this.label1);
@@ -116,21 +132,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ALMACEN";
+            this.label1.Text = "REPORTES";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.DarkGray;
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 64);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(621, 32);
-            this.bunifuSeparator1.TabIndex = 1;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
             // 
             // label2
             // 
@@ -144,29 +147,26 @@
             this.label2.Text = "administración";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // bunifuSeparator1
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(179, 3);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(82, 90);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Notas De Entrada";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 64);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(621, 32);
+            this.bunifuSeparator1.TabIndex = 1;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
             // 
-            // UCAlmacenNav
+            // UCReporteNav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Name = "UCAlmacenNav";
-            this.Size = new System.Drawing.Size(775, 490);
+            this.Name = "UCReporteNav";
+            this.Size = new System.Drawing.Size(730, 554);
             this.panelContainer.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
@@ -178,12 +178,12 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }
