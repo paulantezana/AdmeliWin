@@ -94,6 +94,17 @@ namespace Modelo.Recursos
             }
         }
         */
+
+
+        /// <summary>
+        /// Enviar y recivir datos mediante el metodo POST  donde T = al dato k se envia y K es el dato que responde
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="K"></typeparam>
+        /// <param name="servicio"></param>
+        /// <param name="metodo"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
         public async Task<K> POST<T,K>(string servicio, string metodo, T param)
         {
             try
