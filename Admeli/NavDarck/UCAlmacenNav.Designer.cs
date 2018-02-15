@@ -80,6 +80,7 @@
             this.btnNotaSalida.Text = "Notas de Salida";
             this.btnNotaSalida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNotaSalida.UseVisualStyleBackColor = true;
+            this.btnNotaSalida.Click += new System.EventHandler(this.btnNotaSalida_Click);
             // 
             // btnNotaEntrada
             // 
@@ -97,6 +98,7 @@
             this.btnNotaEntrada.Text = "Notas de Entrada";
             this.btnNotaEntrada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNotaEntrada.UseVisualStyleBackColor = true;
+            this.btnNotaEntrada.Click += new System.EventHandler(this.btnNotaEntrada_Click);
             // 
             // btnGuiaRemision
             // 
@@ -114,6 +116,7 @@
             this.btnGuiaRemision.Text = "Guías de Remisión";
             this.btnGuiaRemision.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuiaRemision.UseVisualStyleBackColor = true;
+            this.btnGuiaRemision.Click += new System.EventHandler(this.btnGuiaRemision_Click);
             // 
             // panelContent
             // 

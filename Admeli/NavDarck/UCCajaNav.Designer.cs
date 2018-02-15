@@ -86,6 +86,7 @@
             this.btnEgreso.Text = "Egresos";
             this.btnEgreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEgreso.UseVisualStyleBackColor = true;
+            this.btnEgreso.Click += new System.EventHandler(this.btnEgreso_Click);
             // 
             // btnIngreso
             // 
@@ -103,6 +104,7 @@
             this.btnIngreso.Text = "Ingresos";
             this.btnIngreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnIngreso.UseVisualStyleBackColor = true;
+            this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
             // btnPorCobrar
             // 
@@ -120,6 +122,7 @@
             this.btnPorCobrar.Text = "Cuentas por Cobrar";
             this.btnPorCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPorCobrar.UseVisualStyleBackColor = true;
+            this.btnPorCobrar.Click += new System.EventHandler(this.btnPorCobrar_Click);
             // 
             // btnCuentaPagar
             // 
@@ -137,6 +140,7 @@
             this.btnCuentaPagar.Text = "Cuentas por Pagar";
             this.btnCuentaPagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCuentaPagar.UseVisualStyleBackColor = true;
+            this.btnCuentaPagar.Click += new System.EventHandler(this.btnCuentaPagar_Click);
             // 
             // btnIniciarCaja
             // 
@@ -154,6 +158,7 @@
             this.btnIniciarCaja.Text = "Iniciar Caja";
             this.btnIniciarCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnIniciarCaja.UseVisualStyleBackColor = true;
+            this.btnIniciarCaja.Click += new System.EventHandler(this.btnIniciarCaja_Click);
             // 
             // btnCierreCaja
             // 
@@ -171,6 +176,7 @@
             this.btnCierreCaja.Text = "Cierres de Caja";
             this.btnCierreCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCierreCaja.UseVisualStyleBackColor = true;
+            this.btnCierreCaja.Click += new System.EventHandler(this.btnCierreCaja_Click);
             // 
             // panelContent
             // 

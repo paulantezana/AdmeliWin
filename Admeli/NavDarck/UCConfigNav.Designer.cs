@@ -108,6 +108,7 @@
             this.btnEmpresa.Text = "Datos Empresa";
             this.btnEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEmpresa.UseVisualStyleBackColor = true;
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // btnSucursal
             // 
@@ -125,6 +126,7 @@
             this.btnSucursal.Text = "Sucursales";
             this.btnSucursal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSucursal.UseVisualStyleBackColor = true;
+            this.btnSucursal.Click += new System.EventHandler(this.btnSucursal_Click);
             // 
             // btnPuntoVenta
             // 
@@ -142,6 +144,7 @@
             this.btnPuntoVenta.Text = "Puntos de Venta";
             this.btnPuntoVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPuntoVenta.UseVisualStyleBackColor = true;
+            this.btnPuntoVenta.Click += new System.EventHandler(this.btnPuntoVenta_Click);
             // 
             // btnAlmacen
             // 
@@ -159,6 +162,7 @@
             this.btnAlmacen.Text = "Almacenes";
             this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAlmacen.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
             // btnDocIdentificacion
             // 
@@ -176,6 +180,7 @@
             this.btnDocIdentificacion.Text = "Documentos de Identificación";
             this.btnDocIdentificacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDocIdentificacion.UseVisualStyleBackColor = true;
+            this.btnDocIdentificacion.Click += new System.EventHandler(this.btnDocIdentificacion_Click);
             // 
             // btnPersonal
             // 
@@ -193,6 +198,7 @@
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPersonal.UseVisualStyleBackColor = true;
+            this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
             // 
             // btnListadoDocumento
             // 
@@ -210,6 +216,7 @@
             this.btnListadoDocumento.Text = "Listado Documentos";
             this.btnListadoDocumento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnListadoDocumento.UseVisualStyleBackColor = true;
+            this.btnListadoDocumento.Click += new System.EventHandler(this.btnListadoDocumento_Click);
             // 
             // btnAsignarCorrelativo
             // 
@@ -227,6 +234,7 @@
             this.btnAsignarCorrelativo.Text = "Asignar Correlativos";
             this.btnAsignarCorrelativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAsignarCorrelativo.UseVisualStyleBackColor = true;
+            this.btnAsignarCorrelativo.Click += new System.EventHandler(this.btnAsignarCorrelativo_Click);
             // 
             // btnDiseñoPersonalizacion
             // 
@@ -244,6 +252,7 @@
             this.btnDiseñoPersonalizacion.Text = "Diseño y Personalización";
             this.btnDiseñoPersonalizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDiseñoPersonalizacion.UseVisualStyleBackColor = true;
+            this.btnDiseñoPersonalizacion.Click += new System.EventHandler(this.btnDiseñoPersonalizacion_Click);
             // 
             // btnMonedas
             // 
@@ -261,6 +270,7 @@
             this.btnMonedas.Text = "Monedas";
             this.btnMonedas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMonedas.UseVisualStyleBackColor = true;
+            this.btnMonedas.Click += new System.EventHandler(this.btnMonedas_Click);
             // 
             // btnTipoCambio
             // 
@@ -278,6 +288,7 @@
             this.btnTipoCambio.Text = "Tipo cambio";
             this.btnTipoCambio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTipoCambio.UseVisualStyleBackColor = true;
+            this.btnTipoCambio.Click += new System.EventHandler(this.btnTipoCambio_Click);
             // 
             // btnDenominacion
             // 
@@ -295,6 +306,7 @@
             this.btnDenominacion.Text = "Denominaciones";
             this.btnDenominacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDenominacion.UseVisualStyleBackColor = true;
+            this.btnDenominacion.Click += new System.EventHandler(this.btnDenominacion_Click);
             // 
             // btnImpuesto
             // 
@@ -312,6 +324,7 @@
             this.btnImpuesto.Text = "Impuestos";
             this.btnImpuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImpuesto.UseVisualStyleBackColor = true;
+            this.btnImpuesto.Click += new System.EventHandler(this.btnImpuesto_Click);
             // 
             // btnGrupoCliente
             // 
@@ -329,6 +342,7 @@
             this.btnGrupoCliente.Text = "Grupos Clientes";
             this.btnGrupoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGrupoCliente.UseVisualStyleBackColor = true;
+            this.btnGrupoCliente.Click += new System.EventHandler(this.btnGrupoCliente_Click);
             // 
             // btnCajasInicializadas
             // 
@@ -346,6 +360,7 @@
             this.btnCajasInicializadas.Text = "Cajas Inicializadas";
             this.btnCajasInicializadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCajasInicializadas.UseVisualStyleBackColor = true;
+            this.btnCajasInicializadas.Click += new System.EventHandler(this.btnCajasInicializadas_Click);
             // 
             // btnImpuestoDocs
             // 
@@ -363,6 +378,7 @@
             this.btnImpuestoDocs.Text = "Impuestos Documento";
             this.btnImpuestoDocs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImpuestoDocs.UseVisualStyleBackColor = true;
+            this.btnImpuestoDocs.Click += new System.EventHandler(this.btnImpuestoDocs_Click);
             // 
             // btnBarCode
             // 
@@ -380,6 +396,7 @@
             this.btnBarCode.Text = "Diseño Código Barras";
             this.btnBarCode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBarCode.UseVisualStyleBackColor = true;
+            this.btnBarCode.Click += new System.EventHandler(this.btnBarCode_Click);
             // 
             // panelContent
             // 

@@ -82,6 +82,7 @@
             this.btnPrecioStock.Text = "Stock-Precio";
             this.btnPrecioStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPrecioStock.UseVisualStyleBackColor = true;
+            this.btnPrecioStock.Click += new System.EventHandler(this.btnPrecioStock_Click);
             // 
             // btnAsignarCategoria
             // 
@@ -99,6 +100,7 @@
             this.btnAsignarCategoria.Text = "Asignar Categorías";
             this.btnAsignarCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAsignarCategoria.UseVisualStyleBackColor = true;
+            this.btnAsignarCategoria.Click += new System.EventHandler(this.btnAsignarCategoria_Click);
             // 
             // btnAsignarImpuesto
             // 
@@ -116,6 +118,7 @@
             this.btnAsignarImpuesto.Text = "Asignar Impuestos";
             this.btnAsignarImpuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAsignarImpuesto.UseVisualStyleBackColor = true;
+            this.btnAsignarImpuesto.Click += new System.EventHandler(this.btnAsignarImpuesto_Click);
             // 
             // btnGenerarCodigoDeBarra
             // 
@@ -133,6 +136,7 @@
             this.btnGenerarCodigoDeBarra.Text = "Generar código barras";
             this.btnGenerarCodigoDeBarra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGenerarCodigoDeBarra.UseVisualStyleBackColor = true;
+            this.btnGenerarCodigoDeBarra.Click += new System.EventHandler(this.btnGenerarCodigoDeBarra_Click);
             // 
             // panelContent
             // 

@@ -80,6 +80,7 @@
             this.btnOrdenCompra.Text = "Órdenes de Compra Proveedor";
             this.btnOrdenCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOrdenCompra.UseVisualStyleBackColor = true;
+            this.btnOrdenCompra.Click += new System.EventHandler(this.btnOrdenCompra_Click);
             // 
             // btnCompra
             // 
@@ -97,6 +98,7 @@
             this.btnCompra.Text = "Compras";
             this.btnCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCompra.UseVisualStyleBackColor = true;
+            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
             // 
             // btnProveedor
             // 
@@ -114,6 +116,7 @@
             this.btnProveedor.Text = "Proveedores";
             this.btnProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProveedor.UseVisualStyleBackColor = true;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // panelContent
             // 

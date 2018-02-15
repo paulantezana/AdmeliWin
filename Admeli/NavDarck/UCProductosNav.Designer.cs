@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCProductosNav));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnProductos = new System.Windows.Forms.Button();
+            this.btnMarcas = new System.Windows.Forms.Button();
+            this.btnUnidadMedida = new System.Windows.Forms.Button();
+            this.btnCategorias = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,83 +56,87 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.btnProductos);
+            this.flowLayoutPanel1.Controls.Add(this.btnMarcas);
+            this.flowLayoutPanel1.Controls.Add(this.btnUnidadMedida);
+            this.flowLayoutPanel1.Controls.Add(this.btnCategorias);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 351);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button2
+            // btnProductos
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(10, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.button2.Size = new System.Drawing.Size(95, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Listado Productos";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnProductos.FlatAppearance.BorderSize = 0;
+            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductos.ForeColor = System.Drawing.Color.DimGray;
+            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
+            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProductos.Location = new System.Drawing.Point(10, 10);
+            this.btnProductos.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnProductos.Size = new System.Drawing.Size(95, 90);
+            this.btnProductos.TabIndex = 1;
+            this.btnProductos.Text = "Listado Productos";
+            this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // button1
+            // btnMarcas
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(134, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.button1.Size = new System.Drawing.Size(95, 90);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Marcas";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMarcas.FlatAppearance.BorderSize = 0;
+            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcas.ForeColor = System.Drawing.Color.DimGray;
+            this.btnMarcas.Image = ((System.Drawing.Image)(resources.GetObject("btnMarcas.Image")));
+            this.btnMarcas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMarcas.Location = new System.Drawing.Point(134, 10);
+            this.btnMarcas.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnMarcas.Size = new System.Drawing.Size(95, 90);
+            this.btnMarcas.TabIndex = 2;
+            this.btnMarcas.Text = "Marcas";
+            this.btnMarcas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
-            // button3
+            // btnUnidadMedida
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(258, 10);
-            this.button3.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.button3.Size = new System.Drawing.Size(95, 90);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Unidades de Medida";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnUnidadMedida.FlatAppearance.BorderSize = 0;
+            this.btnUnidadMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnidadMedida.ForeColor = System.Drawing.Color.DimGray;
+            this.btnUnidadMedida.Image = ((System.Drawing.Image)(resources.GetObject("btnUnidadMedida.Image")));
+            this.btnUnidadMedida.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUnidadMedida.Location = new System.Drawing.Point(258, 10);
+            this.btnUnidadMedida.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnUnidadMedida.Name = "btnUnidadMedida";
+            this.btnUnidadMedida.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnUnidadMedida.Size = new System.Drawing.Size(95, 90);
+            this.btnUnidadMedida.TabIndex = 3;
+            this.btnUnidadMedida.Text = "Unidades de Medida";
+            this.btnUnidadMedida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUnidadMedida.UseVisualStyleBackColor = true;
+            this.btnUnidadMedida.Click += new System.EventHandler(this.btnUnidadMedida_Click);
             // 
-            // button4
+            // btnCategorias
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.DimGray;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(382, 10);
-            this.button4.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.button4.Size = new System.Drawing.Size(95, 90);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Categorías";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCategorias.FlatAppearance.BorderSize = 0;
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Image")));
+            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCategorias.Location = new System.Drawing.Point(382, 10);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnCategorias.Size = new System.Drawing.Size(95, 90);
+            this.btnCategorias.TabIndex = 4;
+            this.btnCategorias.Text = "Categorías";
+            this.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // panelContent
             // 
@@ -200,13 +204,13 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnProductos;
+        private System.Windows.Forms.Button btnMarcas;
+        private System.Windows.Forms.Button btnUnidadMedida;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnCategorias;
     }
 }

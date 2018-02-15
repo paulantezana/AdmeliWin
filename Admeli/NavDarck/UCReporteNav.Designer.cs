@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCReporteNav));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnExistenciaProducto = new System.Windows.Forms.Button();
+            this.btnIngresoVentas = new System.Windows.Forms.Button();
+            this.btnImpuestos = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,65 +55,65 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnExistenciaProducto);
+            this.flowLayoutPanel1.Controls.Add(this.btnIngresoVentas);
+            this.flowLayoutPanel1.Controls.Add(this.btnImpuestos);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 399);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button2
+            // btnExistenciaProducto
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(10, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.button2.Size = new System.Drawing.Size(95, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Existencia Producto";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnExistenciaProducto.FlatAppearance.BorderSize = 0;
+            this.btnExistenciaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExistenciaProducto.ForeColor = System.Drawing.Color.DimGray;
+            this.btnExistenciaProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnExistenciaProducto.Image")));
+            this.btnExistenciaProducto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExistenciaProducto.Location = new System.Drawing.Point(10, 10);
+            this.btnExistenciaProducto.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnExistenciaProducto.Name = "btnExistenciaProducto";
+            this.btnExistenciaProducto.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnExistenciaProducto.Size = new System.Drawing.Size(95, 90);
+            this.btnExistenciaProducto.TabIndex = 1;
+            this.btnExistenciaProducto.Text = "Existencia Producto";
+            this.btnExistenciaProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExistenciaProducto.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnIngresoVentas
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(134, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.button1.Size = new System.Drawing.Size(95, 90);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ingresos Ventas";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIngresoVentas.FlatAppearance.BorderSize = 0;
+            this.btnIngresoVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresoVentas.ForeColor = System.Drawing.Color.DimGray;
+            this.btnIngresoVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresoVentas.Image")));
+            this.btnIngresoVentas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnIngresoVentas.Location = new System.Drawing.Point(134, 10);
+            this.btnIngresoVentas.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnIngresoVentas.Name = "btnIngresoVentas";
+            this.btnIngresoVentas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnIngresoVentas.Size = new System.Drawing.Size(95, 90);
+            this.btnIngresoVentas.TabIndex = 2;
+            this.btnIngresoVentas.Text = "Ingresos Ventas";
+            this.btnIngresoVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnIngresoVentas.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnImpuestos
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(258, 10);
-            this.button3.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.button3.Size = new System.Drawing.Size(95, 90);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Impuestos";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnImpuestos.FlatAppearance.BorderSize = 0;
+            this.btnImpuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpuestos.ForeColor = System.Drawing.Color.DimGray;
+            this.btnImpuestos.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuestos.Image")));
+            this.btnImpuestos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImpuestos.Location = new System.Drawing.Point(258, 10);
+            this.btnImpuestos.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnImpuestos.Name = "btnImpuestos";
+            this.btnImpuestos.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnImpuestos.Size = new System.Drawing.Size(95, 90);
+            this.btnImpuestos.TabIndex = 3;
+            this.btnImpuestos.Text = "Impuestos";
+            this.btnImpuestos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnImpuestos.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
@@ -181,9 +181,9 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnExistenciaProducto;
+        private System.Windows.Forms.Button btnIngresoVentas;
+        private System.Windows.Forms.Button btnImpuestos;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

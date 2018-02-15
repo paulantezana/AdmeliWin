@@ -1,4 +1,7 @@
-﻿using Admeli.NavDarck;
+﻿using Admeli.Compras;
+using Admeli.NavDarck;
+using Admeli.Productos;
+using Admeli.Ventas;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -26,6 +29,10 @@ namespace Admeli
         private UCHome uCHome;
         private UCIniciar uCIniciar;
         private FormLogin formLogin;
+
+        private UCVentas uCVentas;
+        private UCListadoProducto uCListadoProducto;
+        private UCCompras uCCompras;
 
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
@@ -57,6 +64,11 @@ namespace Admeli
             btnAlmacen.Textcolor = Color.FromArgb(139, 138, 141);
             btnReporte.Textcolor = Color.FromArgb(139, 138, 141);
             btnConfiguracion.Textcolor = Color.FromArgb(139, 138, 141);
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("home");
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
@@ -293,6 +305,58 @@ namespace Admeli
                         this.panelMain.Controls.Add(uCIniciar);
                     }
                     break;
+                case "compras2":
+                    if (this.uCCompras == null)
+                    {
+                        this.uCCompras = new UCCompras(this);
+                        this.panelMain.Controls.Add(uCCompras);
+                        this.uCCompras.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCCompras.Location = new System.Drawing.Point(0, 0);
+                        this.uCCompras.Name = "uCCompras";
+                        this.uCCompras.Size = new System.Drawing.Size(250, 776);
+                        this.uCCompras.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCCompras);
+                    }
+                    break;
+                case "ventas2":
+                    if (this.uCVentas == null)
+                    {
+                        this.uCVentas = new UCVentas(this);
+                        this.panelMain.Controls.Add(uCVentas);
+                        this.uCVentas.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCVentas.Location = new System.Drawing.Point(0, 0);
+                        this.uCVentas.Name = "uCVentas";
+                        this.uCVentas.Size = new System.Drawing.Size(250, 776);
+                        this.uCVentas.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCIniciar);
+                    }
+                    break;
+                case "productos2":
+                    if (this.uCListadoProducto == null)
+                    {
+                        this.uCListadoProducto = new UCListadoProducto(this);
+                        this.panelMain.Controls.Add(uCListadoProducto);
+                        this.uCListadoProducto.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCListadoProducto.Location = new System.Drawing.Point(0, 0);
+                        this.uCListadoProducto.Name = "uCListadoProducto";
+                        this.uCListadoProducto.Size = new System.Drawing.Size(250, 776);
+                        this.uCListadoProducto.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCListadoProducto);
+                    }
+                    break;
+                case "ventaTouch":
+                    FormVentaTouch ventaTouch = new FormVentaTouch();
+                    ventaTouch.ShowDialog();
+                    break;
                 default:
                     break;
             }
@@ -408,7 +472,28 @@ namespace Admeli
         private void reLoad()
         {
             mostrarModuloPorDefecto();
-        } 
+        }
+        #endregion
+
+        #region ================================= MENU ATAJOS =================================
+        private void btnCompra2_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("compras2");
+        }
+        private void btnVentaTocuh_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("ventaTouch");
+        }
+
+        private void btnVenta2_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("ventas2");
+        }
+
+        private void btnProductos2_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("productos2");
+        }
         #endregion
     }
 }
