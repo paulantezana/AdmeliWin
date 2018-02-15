@@ -50,7 +50,6 @@ namespace Admeli
             InitializeComponent();
             this.formLogin = formLogin;
         }
-
         #endregion
 
         #region ========================= ASIDE LEFT MENU =========================

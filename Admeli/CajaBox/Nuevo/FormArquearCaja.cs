@@ -105,7 +105,7 @@ namespace Admeli.CajaBox.Nuevo
                         {
                             if (items == j) break; // salir de este for
                         }
-                        this.createElement(x, this.y, ingresos[i].moneda, ingresos[i].monto, panelAside.Controls);
+                        this.createElement(panelAside.Controls, x, this.y, ingresos[i].moneda, ingresos[i].monto);
                         i = (columnas - 1 == j) ? i : i + 1; // indice de registros aumento
                         x += 170; // cordenada x aumentado
                     }
@@ -176,9 +176,9 @@ namespace Admeli.CajaBox.Nuevo
                 /// crear los campos textbox
                 foreach (Moneda moneda in ingresoMenosEgreso)
                 {
-                    this.createElement(x, y, "Teorico " + moneda.moneda, moneda.total.ToString(), panelAside.Controls);
-                    this.createElement(x + 170, y, "Real " + moneda.moneda, "0", panelAside.Controls);   // Falta 
-                    this.createElement(x + 340, y, "Descuadre " + moneda.moneda, "0", panelAside.Controls);   // Falta 
+                    this.createElement(panelAside.Controls, x, y, "Teorico " + moneda.moneda, moneda.total.ToString());
+                    this.createElement(panelAside.Controls, x + 170, y, "Real " + moneda.moneda, "0");   // Falta 
+                    this.createElement(panelAside.Controls, x + 340, y, "Descuadre " + moneda.moneda, "0");   // Falta 
                     this.y += 50;
                 }
 
@@ -200,14 +200,20 @@ namespace Admeli.CajaBox.Nuevo
         }
         #endregion
 
+
         /// <summary>
-        /// Crear bunifutextbox con un label indicar las cordenadas, contenido, y el valor
+        /// Crear BuniFuTextBox use este metodo para crear campos dinamicos
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="content"></param>
-        /// <param name="value"></param>
-        private void createElement(int x, int y, string content, string value, Control.ControlCollection controls)
+        /// <param name="controls">Control padre al que se agregara los elementos </param>
+        /// <param name="x">posicion en el eje X</param>
+        /// <param name="y">posicion en el eje Y</param>
+        /// <param name="labelValue">titulo del campo</param>
+        /// <param name="textBoxValue">valor del campo</param>
+        /// <param name="key">Clave para identificar el elemento</param>
+        /// <param name="whidt">ancho del elemento</param>
+        /// <param name="height">alto del elemento</param>
+        /// <param name="gap">separacion de los elementos</param>
+        private void createElement(Control.ControlCollection controls, int x, int y, string labelValue, string textBoxValue, string key = "", int whidt = 160, int height = 40, int gap = 10)
         {
             Label titlefield = new Label()
             {
@@ -220,9 +226,8 @@ namespace Admeli.CajaBox.Nuevo
                 Name = "label1111",
                 Size = new System.Drawing.Size(59, 14),
                 TabIndex = 8,
-                Text = content
+                Text = labelValue
             };
-
 
             BunifuMetroTextbox textBoxBF1 = new BunifuMetroTextbox()
             {
@@ -239,10 +244,10 @@ namespace Admeli.CajaBox.Nuevo
                 Margin = new System.Windows.Forms.Padding(4),
                 Name = "textBox1111",
                 Padding = new System.Windows.Forms.Padding(2, 18, 5, 2),
-                Size = new System.Drawing.Size(160, 40),
+                Size = new System.Drawing.Size(whidt, height),
                 TabIndex = 9,
                 TextAlign = System.Windows.Forms.HorizontalAlignment.Left,
-                Text = value
+                Text = textBoxValue
             };
             controls.Add(titlefield);
             controls.Add(textBoxBF1);
@@ -272,6 +277,10 @@ namespace Admeli.CajaBox.Nuevo
             this.panelAside.Controls.Add(titlefield);
         }
 
+        private void createGrid()
+        {
+
+        }
 
         /// <summary>
         /// Agregar un tab page
@@ -295,9 +304,21 @@ namespace Admeli.CajaBox.Nuevo
             int ordenadas = 13, absisas = 13;
             foreach (Denominacion denominacion in denominaciones)
             {
-                this.createElement(ordenadas, absisas, denominacion.nombre, denominacion.valor, tabPage.Controls);
+                this.createElement(tabPage.Controls, ordenadas, absisas, denominacion.nombre, denominacion.valor);
                 absisas += 50;
             }
         }
+
+        #region ================================ SAVE AND UPDATE ================================
+        private void executeGuardar()
+        {
+            if (!validarCampos()) return;
+
+        }
+        private bool validarCampos()
+        {
+            return true;
+        }
+        #endregion
     }
 }

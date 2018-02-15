@@ -120,12 +120,12 @@ namespace Admeli.NavDarck
 
         private void btnEgreso_Click(object sender, EventArgs e)
         {
-            togglePanelMain("ingresos");
+            togglePanelMain("egresos");
         }
 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
-            togglePanelMain("egresos");
+            togglePanelMain("ingresos");
         }
 
         private void btnPorCobrar_Click(object sender, EventArgs e)

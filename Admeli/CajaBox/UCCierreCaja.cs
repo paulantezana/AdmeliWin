@@ -278,7 +278,6 @@ namespace Admeli.CajaBox
         }
         #endregion
 
-
         #region ==================== CRUD ====================
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -326,23 +325,6 @@ namespace Admeli.CajaBox
             cargarRegistros(); // recargando loas registros en el datagridview
         }
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
