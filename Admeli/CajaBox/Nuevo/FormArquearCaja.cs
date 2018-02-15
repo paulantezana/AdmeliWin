@@ -272,6 +272,7 @@ namespace Admeli.CajaBox.Nuevo
             this.panelAside.Controls.Add(titlefield);
         }
 
+
         /// <summary>
         /// Agregar un tab page
         /// </summary>
