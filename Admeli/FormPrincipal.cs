@@ -1,10 +1,4 @@
-﻿using Admeli.Componentes;
-using Admeli.Compras;
-using Admeli.Navegacion;
-using Admeli.Productos;
-using Admeli.Ventas;
-using Entidad;
-using Entidad.Configuracion;
+﻿using Admeli.NavDarck;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -27,33 +21,18 @@ namespace Admeli
         private UCAlmacenNav UCAlmacenNav;
         private UCConfigNav uCConfigNav;
         private UCHerramientasNav uCHerramientasNav;
+        private UCReporteNav uCReporteNav;
         private UCProductosNav uCProductosNav;
-        private UCHomeNav uCHomeNav;
-
-        private UCVentas uCVentas;
-        private UCListadoProducto uCListadoProducto;
-        private UCCompras uCCompras;
-
         private UCHome uCHome;
         private UCIniciar uCIniciar;
+        private FormLogin formLogin;
 
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
-        private FormLogin formLogin;
 
-        private int widthPanelAside { get; set; }
         private bool notCloseApp { get; set; }
-        private bool isHideHeader { get; set; }
 
-        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!notCloseApp)
-            {
-                Application.Exit();
-            }
-        }
-
-        #region ========================= Constructors =========================
+        #region =============================== Constructor ===============================
         public FormPrincipal()
         {
             InitializeComponent();
@@ -64,28 +43,98 @@ namespace Admeli
             InitializeComponent();
             this.formLogin = formLogin;
         }
+
         #endregion
 
-        #region ===================== Paint =====================
-        private void panelAside_Paint(object sender, PaintEventArgs e)
+        #region ========================= ASIDE LEFT MENU =========================
+        private void btnColor()
         {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelHeader);
+            btnCompra.Textcolor = Color.FromArgb(139, 138, 141);
+            btnHerramienta.Textcolor = Color.FromArgb(139, 138, 141);
+            btnVenta.Textcolor = Color.FromArgb(139, 138, 141);
+            btnProducto.Textcolor = Color.FromArgb(139, 138, 141);
+            btnCaja.Textcolor = Color.FromArgb(139, 138, 141);
+            btnAlmacen.Textcolor = Color.FromArgb(139, 138, 141);
+            btnReporte.Textcolor = Color.FromArgb(139, 138, 141);
+            btnConfiguracion.Textcolor = Color.FromArgb(139, 138, 141);
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnReporte.Location;
+            btnReporte.Textcolor = Color.White;
+            togglePanelMain("reportes");
+        }
+
+        private void btnHerramienta_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnHerramienta.Location;
+            btnHerramienta.Textcolor = Color.White;
+            togglePanelMain("herramientas");
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnProducto.Location;
+            btnProducto.Textcolor = Color.White;
+            togglePanelMain("productos");
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnAlmacen.Location;
+            btnAlmacen.Textcolor = Color.White;
+            togglePanelMain("almacen");
+        }
+
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnCaja.Location;
+            btnCaja.Textcolor = Color.White;
+            togglePanelMain("caja");
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnVenta.Location;
+            btnVenta.Textcolor = Color.White;
+            togglePanelMain("ventas");
+        }
+
+        private void btnCompra_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnCompra.Location;
+            btnCompra.Textcolor = Color.White;
+            togglePanelMain("compras");
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            btnColor();
+            borderLeftActive.Location = btnConfiguracion.Location;
+            btnConfiguracion.Textcolor = Color.White;
+            togglePanelMain("configuracion");
+        } 
         #endregion
 
-        #region ===================== Toogle panel navegations =====================
-        internal void togglePanelAside(string panelName)
+        #region ===================== TOGGLE PANEL ASIDE LEFT =====================
+        internal void togglePanelMain(string panelName)
         {
-            this.panelAsideMain.Controls.Clear();
-            this.btnMainMenu();
+            this.panelMain.Controls.Clear();
             switch (panelName)
             {
                 case "compras":
                     if (this.uCComprasNav == null)
                     {
-                        this.uCComprasNav = new Admeli.Navegacion.UCComprasNav(this);
-                        this.panelAsideMain.Controls.Add(uCComprasNav);
+                        this.uCComprasNav = new UCComprasNav(this);
+                        this.panelMain.Controls.Add(uCComprasNav);
                         this.uCComprasNav.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.uCComprasNav.Location = new System.Drawing.Point(0, 0);
                         this.uCComprasNav.Name = "uCComprasNav";
@@ -94,14 +143,14 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCComprasNav);
+                        this.panelMain.Controls.Add(uCComprasNav);
                     }
                     break;
                 case "ventas":
                     if (this.uCVentasNav == null)
                     {
-                        this.uCVentasNav = new Admeli.Navegacion.UCVentasNav(this);
-                        this.panelAsideMain.Controls.Add(uCVentasNav);
+                        this.uCVentasNav = new UCVentasNav(this);
+                        this.panelMain.Controls.Add(uCVentasNav);
                         this.uCVentasNav.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.uCVentasNav.Location = new System.Drawing.Point(0, 0);
                         this.uCVentasNav.Name = "uCVentasNav";
@@ -110,15 +159,15 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCVentasNav);
+                        this.panelMain.Controls.Add(uCVentasNav);
                     }
 
                     break;
                 case "caja":
                     if (this.uCCajaNav == null)
                     {
-                        this.uCCajaNav = new Admeli.Navegacion.UCCajaNav(this);
-                        this.panelAsideMain.Controls.Add(uCCajaNav);
+                        this.uCCajaNav = new UCCajaNav(this);
+                        this.panelMain.Controls.Add(uCCajaNav);
                         this.uCCajaNav.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.uCCajaNav.Location = new System.Drawing.Point(0, 0);
                         this.uCCajaNav.Name = "uCCajaNav";
@@ -127,14 +176,14 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCCajaNav);
+                        this.panelMain.Controls.Add(uCCajaNav);
                     }
                     break;
                 case "almacen":
                     if (this.UCAlmacenNav == null)
                     {
-                        this.UCAlmacenNav = new Admeli.Navegacion.UCAlmacenNav(this);
-                        this.panelAsideMain.Controls.Add(UCAlmacenNav);
+                        this.UCAlmacenNav = new UCAlmacenNav(this);
+                        this.panelMain.Controls.Add(UCAlmacenNav);
                         this.UCAlmacenNav.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.UCAlmacenNav.Location = new System.Drawing.Point(0, 0);
                         this.UCAlmacenNav.Name = "UCAlmacenNav";
@@ -143,14 +192,14 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(UCAlmacenNav);
+                        this.panelMain.Controls.Add(UCAlmacenNav);
                     }
                     break;
                 case "productos":
                     if (this.uCProductosNav == null)
                     {
-                        this.uCProductosNav = new Admeli.Navegacion.UCProductosNav(this);
-                        this.panelAsideMain.Controls.Add(uCProductosNav);
+                        this.uCProductosNav = new UCProductosNav(this);
+                        this.panelMain.Controls.Add(uCProductosNav);
                         this.uCProductosNav.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.uCProductosNav.Location = new System.Drawing.Point(0, 0);
                         this.uCProductosNav.Name = "uCProductosNav";
@@ -159,15 +208,15 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCProductosNav);
+                        this.panelMain.Controls.Add(uCProductosNav);
                     }
 
                     break;
                 case "configuracion":
                     if (this.uCConfigNav == null)
                     {
-                        this.uCConfigNav = new Admeli.Navegacion.UCConfigNav(this);
-                        this.panelAsideMain.Controls.Add(uCConfigNav);
+                        this.uCConfigNav = new UCConfigNav(this);
+                        this.panelMain.Controls.Add(uCConfigNav);
                         this.uCConfigNav.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.uCConfigNav.Location = new System.Drawing.Point(0, 0);
                         this.uCConfigNav.Name = "uCConfigNav";
@@ -176,15 +225,15 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCConfigNav);
+                        this.panelMain.Controls.Add(uCConfigNav);
                     }
-                    
+
                     break;
                 case "herramientas":
                     if (this.uCHerramientasNav == null)
                     {
-                        this.uCHerramientasNav = new Admeli.Navegacion.UCHerramientasNav(this);
-                        this.panelAsideMain.Controls.Add(uCHerramientasNav);
+                        this.uCHerramientasNav = new UCHerramientasNav(this);
+                        this.panelMain.Controls.Add(uCHerramientasNav);
                         this.uCHerramientasNav.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.uCHerramientasNav.Location = new System.Drawing.Point(0, 0);
                         this.uCHerramientasNav.Name = "uCHerramientasNav";
@@ -193,57 +242,25 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCHerramientasNav);
+                        this.panelMain.Controls.Add(uCHerramientasNav);
                     }
                     break;
-                case "home":
-                    if (this.uCHomeNav == null)
+                case "reportes":
+                    if (this.uCReporteNav == null)
                     {
-                        this.uCHomeNav = new Admeli.Navegacion.UCHomeNav(this);
-                        this.panelAsideMain.Controls.Add(uCHomeNav);
-                        this.uCHomeNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCHomeNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCHomeNav.Name = "uCHomeNav";
-                        this.uCHomeNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCHomeNav.TabIndex = 0;
+                        this.uCReporteNav = new UCReporteNav(this);
+                        this.panelMain.Controls.Add(uCReporteNav);
+                        this.uCReporteNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCReporteNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCReporteNav.Name = "uCReporteNav";
+                        this.uCReporteNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCReporteNav.TabIndex = 0;
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCHomeNav);
+                        this.panelMain.Controls.Add(uCReporteNav);
                     }
                     break;
-                default:
-                    break;
-            }
-
-            // Ocultando la barra de herramientas
-            // this.toggleHeaderTools(true);
-        }
-
-        private void btnMainMenu()
-        {
-            btnCompras.BackColor = Color.FromArgb(1, 102, 179);
-            btnVentas.BackColor = Color.FromArgb(1, 102, 179);
-            btnConfiguracion.BackColor = Color.FromArgb(1, 102, 179);
-            btnHerramientas.BackColor = Color.FromArgb(1, 102, 179);
-            btnCaja.BackColor = Color.FromArgb(1, 102, 179);
-            btnAlmacen.BackColor = Color.FromArgb(1, 102, 179);
-            btnProducto.BackColor = Color.FromArgb(1, 102, 179);
-
-            btnCompras.ForeColor = Color.White;
-            btnVentas.ForeColor = Color.White;
-            btnConfiguracion.ForeColor = Color.White;
-            btnHerramientas.ForeColor = Color.White;
-            btnCaja.ForeColor = Color.White;
-            btnAlmacen.ForeColor = Color.White;
-            btnProducto.ForeColor = Color.White;
-        }
-
-        private void togglePanelMain(string panelName)
-        {
-            this.panelMain.Controls.Clear();
-            switch (panelName)
-            {
                 case "home":
                     if (this.uCHome == null)
                     {
@@ -280,278 +297,36 @@ namespace Admeli
                     break;
             }
         }
+
         #endregion
 
-        #region ======================== Evnetos ========================
-        private void btnCompras_Click(object sender, EventArgs e)
+        #region ========================= MENU =========================
+        private void btnToggleMenuRigth_Click(object sender, EventArgs e)
         {
-            this.togglePanelAside("compras");
-            this.toggleHeaderTools(true);
-            btnCompras.BackColor = Color.White;
-            btnCompras.ForeColor = Color.FromArgb(1, 102, 179);
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            this.togglePanelAside("ventas");
-            this.toggleHeaderTools(true);
-            btnVentas.BackColor = Color.White;
-            btnVentas.ForeColor = Color.FromArgb(1, 102, 179);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.togglePanelAside("caja");
-            this.toggleHeaderTools(true);
-            btnCaja.BackColor = Color.White;
-            btnCaja.ForeColor = Color.FromArgb(1, 102, 179);
-        }
-
-        private void btnAlmacen_Click(object sender, EventArgs e)
-        {
-            this.togglePanelAside("almacen");
-            this.toggleHeaderTools(true);
-            btnAlmacen.BackColor = Color.White;
-            btnAlmacen.ForeColor = Color.FromArgb(1, 102, 179);
-        }
-
-        private void btnConfig_Click(object sender, EventArgs e)
-        {
-            this.toggleHeaderTools(true);
-            this.togglePanelAside("configuracion");
-            btnConfiguracion.BackColor = Color.White;
-            btnConfiguracion.ForeColor = Color.FromArgb(1, 102, 179);
-        }
-
-        private void btnTools_Click(object sender, EventArgs e)
-        {
-            this.togglePanelAside("herramientas");
-            btnHerramientas.BackColor = Color.White;
-            btnHerramientas.ForeColor = Color.FromArgb(1, 102, 179);
-            this.toggleHeaderTools(true);
-        }
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            this.toggleHeaderTools(true);
-            this.togglePanelAside("productos");
-            btnProducto.BackColor = Color.White;
-            btnProducto.ForeColor = Color.FromArgb(1, 102, 179);
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            this.togglePanelAside("home");
-            this.toggleHeaderTools(true);
-        }
-        #endregion
-
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-            this.reLoad();
-        }
-
-        internal void reLoad()
-        {
-            // Cargando los componentes necesarios para el funcionamiento de todo el sistema
-            cargarComponente();
-        }
-
-        public void appLoadState(bool state)
-        {
-            if (state)
+            if (panelMenuRight.Size.Width > 1)
             {
-                Cursor.Current = Cursors.WaitCursor;
-                progressBarApp.Style = ProgressBarStyle.Marquee;
+                panelMenuRight.Size = new Size(0, 700);
             }
             else
             {
-                Cursor.Current = Cursors.Default;
-                progressBarApp.Style = ProgressBarStyle.Blocks;
+                panelMenuRight.Size = new Size(200, 700);
             }
         }
 
-        #region ================================ Mostrar Interfaces ================================
-        public void appLoadInciComponents()
+        private void btnToggleMenu_Click(object sender, EventArgs e)
         {
-            panelMain.Visible = false;
-            // ============================
-            panelHeader.Visible = true;
-            panelAside.Visible = true;
-            panelMain.Visible = true;
-            togglePanelAside("home");
-            togglePanelMain("home");
-            // mostrarDatosCargados();
+            if (panelAsideContainer.Size.Width > 60)
+            {
+                panelAsideContainer.Size = new Size(50, 700);
+            }
+            else
+            {
+                panelAsideContainer.Size = new Size(200, 700);
+            }
         }
-
-        private void toggleConfiguracionInicial()
-        {
-            togglePanelMain("iniciar");
-        } 
         #endregion
 
-        /// <summary>
-        ///  Cargar Datos necesario desde el webservice
-        /// </summary>
-        private async void cargarComponente()
-        {
-            try
-            {
-                this.appLoadState(true);
-                //await sucursalModel.sucursalesPersonal(PersonalModel.personal.idPersonal);
-
-                // DATOS GENERALES
-                // SUCURSALES PERSONA
-                // ASIGNACION PERSONAL
-                // CONFIGURACION GENERAL
-                // MONEDAS
-                // TIPOS DE CAMBIOS
-
-                // TIPOS DE DOCUMENTO
-                // ALMACENES
-                // ASIGNACION PERSONAL PUNTO DE VENTA
-                // CAJA SECION
-                await configModel.loadDatosGenerales();
-                await configModel.loadSucursalPersonal(PersonalModel.personal.idPersonal);
-                await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                await configModel.loadConfiGeneral();
-                await configModel.loadMonedas();
-                await configModel.loadTipoCambioMonedas();
-
-                await configModel.loadTipoDocumento();
-                await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
-                // await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
-
-                // Eligiendo el puntode venta y almacen
-                if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
-                {
-                    toggleConfiguracionInicial();
-                    ConfigModel.currentIdAlmacen = ConfigModel.alamacenes[0].idAlmacen;
-                    ConfigModel.currentPuntoVenta = ConfigModel.puntosDeVenta[1].idAsignarPuntoVenta;
-                }
-                else
-                {
-                    appLoadInciComponents();
-
-                    // Mostrando el menu por defecto
-                    togglePanelAside("Home");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                this.appLoadState(false);
-            }
-        }
-
-        /// <summary>
-        ///  Mostrar Datos cargados del webservice
-        /// </summary>
-        private void mostrarDatosCargados()
-        {
-            lblUsuarioName.Text = PersonalModel.personal.usuario;
-            lblUsuarioNombre.Text = String.Format("{0} {1}", PersonalModel.personal.nombres, PersonalModel.personal.apellidos);
-            lblDNI.Text = String.Format("{0} : {1}", PersonalModel.personal.tipoDocumento, PersonalModel.personal.numeroDocumento);
-            lblSucursalName.Text = ConfigModel.sucursal.nombre.ToUpper();
-
-            /// Mostrando el efectivo
-            Thread.Sleep(10);
-            int y = 193;
-            List<TipoCambioMoneda> tipoCambios = ConfigModel.tipoCambioMonedas;
-            foreach (TipoCambioMoneda cambio in tipoCambios)
-            {
-                createElements(y, cambio);
-                y += 22;
-            }
-
-        }
-
-        private void createElements(int y, TipoCambioMoneda param)
-        {
-            /// 
-            /// lblEfectivoName
-            /// 
-            Label lblEfectivoName = new System.Windows.Forms.Label()
-            {
-                AutoSize = true,
-                Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                Location = new System.Drawing.Point(13, y),
-                Name = "lblEfectivoName",
-                Size = new System.Drawing.Size(44, 16),
-                TabIndex = 10,
-                Text = param.moneda,
-            };
-
-            /// 
-            /// lblEfectivoValue
-            /// 
-            Label lblEfectivoValue = new System.Windows.Forms.Label()
-            {
-                AutoSize = true,
-                ForeColor = System.Drawing.SystemColors.ControlDarkDark,
-                Location = new System.Drawing.Point(150, y),
-                Name = "lblEfectivoValue",
-                Size = new System.Drawing.Size(65, 13),
-                TabIndex = 11,
-                Text = String.Format("{0:0.00}", param.cambio)
-            };
-
-            /// 
-            /// Add Controls
-            /// 
-            panelAside.Controls.Add(lblEfectivoName);
-            panelAside.Controls.Add(lblEfectivoValue);
-        }
-
-        /// <summary>
-        /// Mostrar y ocultar la barra de herramientas en el header de la aplicacion
-        /// </summary>
-        /// <param name="temporalToggle"></param>
-        private void toggleHeaderTools(bool temporalToggle = false)
-        {
-            if (temporalToggle && isHideHeader)
-            {
-                panelHeader.Size = new Size(907, 116);
-            }
-            if (!temporalToggle)
-            {
-                if (panelHeader.Size.Height > 40)
-                {
-                    panelHeader.Size = new Size(907, 40);
-                    this.isHideHeader = true;
-                }
-                else
-                {
-                    panelHeader.Size = new Size(907, 116);
-                    this.isHideHeader = false;
-                }
-            }
-
-        }
-
-        #region ================================= Serrar Session =================================
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            // mostrar nuevamente el login del usuario
-            this.formLogin.Show();
-
-            // limpiar loas campos de login usuario
-            this.formLogin.textUsuario.Text = "";
-            this.formLogin.textPassword.Text = "";
-            this.formLogin.textUsuario.Focus();
-
-            // Cerrando el formulario actual
-            this.notCloseApp = true;
-            this.Close();
-        } 
-        #endregion
-
-        #region =============================== Full Screen ===============================
+        #region ========================= EVENTS =========================
         private void btnFullScreen_Click(object sender, EventArgs e)
         {
             if (this.FormBorderStyle == FormBorderStyle.None)
@@ -567,9 +342,73 @@ namespace Admeli
         }
         #endregion
 
-        private void btnDownUp_Click(object sender, EventArgs e)
+        #region ========================= CLOSE =========================
+        private void FormHomeDarck_FormClosing(object sender, FormClosingEventArgs e)
         {
-            toggleHeaderTools();
+            if (!notCloseApp)
+            {
+                Application.Exit();
+            }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // mostrar nuevamente el login del usuario
+            this.formLogin.Show();
+
+            // limpiar loas campos de login usuario
+            this.formLogin.textUsuario.Text = "";
+            this.formLogin.textPassword.Text = "";
+            this.formLogin.textUsuario.Focus();
+
+            // Cerrando el formulario actual
+            this.notCloseApp = true;
+            this.Close();
+        }
+        #endregion
+
+        #region ================================ LOADS ================================
+        private void mostrarModuloPorDefecto()
+        {
+            if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
+            {
+                togglePanelMain("iniciar");
+                ConfigModel.currentIdAlmacen = ConfigModel.alamacenes[0].idAlmacen;
+                ConfigModel.currentPuntoVenta = ConfigModel.puntosDeVenta[1].idAsignarPuntoVenta;
+            }
+            else
+            {
+                togglePanelMain("home");
+            }
+        }
+        #endregion
+
+        #region =============================== SATATES ===============================
+        public void appLoadState(bool state)
+        {
+            if (state)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                // progressBarApp.Style = ProgressBarStyle.Marquee;
+            }
+            else
+            {
+                Cursor.Current = Cursors.Default;
+                // progressBarApp.Style = ProgressBarStyle.Blocks;
+            }
+        }
+        #endregion
+
+        #region ================================= ROOT LOAD =================================
+        private void FormHomeDarck_Shown(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
+        private void reLoad()
+        {
+            mostrarModuloPorDefecto();
+        } 
+        #endregion
     }
 }

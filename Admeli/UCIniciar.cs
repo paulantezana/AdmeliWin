@@ -15,7 +15,7 @@ namespace Admeli
     public partial class UCIniciar : UserControl
     {
         private FormPrincipal formPrincipal;
-        private FormHomeDarck formHomeDarck;
+        private FormPrincipal formHomeDarck;
 
         public UCIniciar()
         {
@@ -26,11 +26,6 @@ namespace Admeli
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
-        }
-
-        public UCIniciar(FormHomeDarck formHomeDarck)
-        {
-            this.formHomeDarck = formHomeDarck;
         }
 
         private void UCIniciar_Load(object sender, EventArgs e)
@@ -68,8 +63,8 @@ namespace Admeli
             ConfigModel.currentPuntoVenta = Convert.ToInt32(cbxPuntosVenta.SelectedValue.ToString());
 
             // Mostrando Todo Los Elementos
-            formPrincipal.appLoadInciComponents();
-            formPrincipal.togglePanelAside("Home");
+           // formPrincipal.appLoadInciComponents();
+            //formPrincipal.togglePanelAside("Home");
         }
 
         private void panelContent_Paint(object sender, PaintEventArgs e)

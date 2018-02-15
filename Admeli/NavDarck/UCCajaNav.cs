@@ -12,14 +12,14 @@ namespace Admeli.NavDarck
 {
     public partial class UCCajaNav : UserControl
     {
-        private FormHomeDarck formHomeDarck;
+        private FormPrincipal formHomeDarck;
 
         public UCCajaNav()
         {
             InitializeComponent();
         }
 
-        public UCCajaNav(FormHomeDarck formHomeDarck)
+        public UCCajaNav(FormPrincipal formHomeDarck)
         {
             InitializeComponent();
             this.formHomeDarck = formHomeDarck;

@@ -15,7 +15,7 @@ namespace Admeli
     {
         private PersonalModel personalModel = new PersonalModel();
         private FormPrincipal formPrincipal { get; set; }
-        private FormHomeDarck formHomeDarck { get; set; }
+        private FormPrincipal formHomeDarck { get; set; }
 
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
@@ -38,7 +38,7 @@ namespace Admeli
 
                     await cargarComponente();
 
-                    formHomeDarck = new FormHomeDarck(this);
+                    formHomeDarck = new FormPrincipal(this);
                     formHomeDarck.Show();
 
                     // Formulario Office UI

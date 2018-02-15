@@ -30,14 +30,14 @@ namespace Admeli.NavDarck
         private UCPuntoDeVenta uCPuntoDeVenta;
         private UCTipoCambio uCTipoCambio;
 
-        private FormHomeDarck formHomeDarck;
+        private FormPrincipal formHomeDarck;
 
         public UCConfigNav()
         {
             InitializeComponent();
         }
 
-        public UCConfigNav(FormHomeDarck formHomeDarck)
+        public UCConfigNav(FormPrincipal formHomeDarck)
         {
             InitializeComponent();
             this.formHomeDarck = formHomeDarck;
