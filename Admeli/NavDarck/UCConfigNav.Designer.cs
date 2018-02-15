@@ -31,31 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCConfigNav));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEmpresa = new System.Windows.Forms.Button();
+            this.btnSucursal = new System.Windows.Forms.Button();
+            this.btnPuntoVenta = new System.Windows.Forms.Button();
+            this.btnAlmacen = new System.Windows.Forms.Button();
+            this.btnDocIdentificacion = new System.Windows.Forms.Button();
+            this.btnPersonal = new System.Windows.Forms.Button();
+            this.btnListadoDocumento = new System.Windows.Forms.Button();
+            this.btnAsignarCorrelativo = new System.Windows.Forms.Button();
+            this.btnDiseñoPersonalizacion = new System.Windows.Forms.Button();
+            this.btnMonedas = new System.Windows.Forms.Button();
+            this.btnTipoCambio = new System.Windows.Forms.Button();
+            this.btnDenominacion = new System.Windows.Forms.Button();
+            this.btnImpuesto = new System.Windows.Forms.Button();
+            this.btnGrupoCliente = new System.Windows.Forms.Button();
+            this.btnCajasInicializadas = new System.Windows.Forms.Button();
+            this.btnImpuestoDocs = new System.Windows.Forms.Button();
+            this.btnBarCode = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -68,85 +64,322 @@
             this.panelContainer.Controls.Add(this.panelContent);
             this.panelContainer.Location = new System.Drawing.Point(78, 25);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(621, 447);
+            this.panelContainer.Size = new System.Drawing.Size(621, 531);
             this.panelContainer.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button8);
-            this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
-            this.flowLayoutPanel1.Controls.Add(this.button11);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
-            this.flowLayoutPanel1.Controls.Add(this.button13);
-            this.flowLayoutPanel1.Controls.Add(this.button14);
-            this.flowLayoutPanel1.Controls.Add(this.button15);
-            this.flowLayoutPanel1.Controls.Add(this.button16);
-            this.flowLayoutPanel1.Controls.Add(this.button17);
-            this.flowLayoutPanel1.Controls.Add(this.button18);
-            this.flowLayoutPanel1.Controls.Add(this.button19);
-            this.flowLayoutPanel1.Controls.Add(this.button20);
-            this.flowLayoutPanel1.Controls.Add(this.button21);
+            this.flowLayoutPanel1.Controls.Add(this.btnEmpresa);
+            this.flowLayoutPanel1.Controls.Add(this.btnSucursal);
+            this.flowLayoutPanel1.Controls.Add(this.btnPuntoVenta);
+            this.flowLayoutPanel1.Controls.Add(this.btnAlmacen);
+            this.flowLayoutPanel1.Controls.Add(this.btnDocIdentificacion);
+            this.flowLayoutPanel1.Controls.Add(this.btnPersonal);
+            this.flowLayoutPanel1.Controls.Add(this.btnListadoDocumento);
+            this.flowLayoutPanel1.Controls.Add(this.btnAsignarCorrelativo);
+            this.flowLayoutPanel1.Controls.Add(this.btnDiseñoPersonalizacion);
+            this.flowLayoutPanel1.Controls.Add(this.btnMonedas);
+            this.flowLayoutPanel1.Controls.Add(this.btnTipoCambio);
+            this.flowLayoutPanel1.Controls.Add(this.btnDenominacion);
+            this.flowLayoutPanel1.Controls.Add(this.btnImpuesto);
+            this.flowLayoutPanel1.Controls.Add(this.btnGrupoCliente);
+            this.flowLayoutPanel1.Controls.Add(this.btnCajasInicializadas);
+            this.flowLayoutPanel1.Controls.Add(this.btnImpuestoDocs);
+            this.flowLayoutPanel1.Controls.Add(this.btnBarCode);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 351);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 435);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button2
+            // btnEmpresa
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(82, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Notas De Salida";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEmpresa.FlatAppearance.BorderSize = 0;
+            this.btnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpresa.ForeColor = System.Drawing.Color.DimGray;
+            this.btnEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresa.Image")));
+            this.btnEmpresa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEmpresa.Location = new System.Drawing.Point(10, 10);
+            this.btnEmpresa.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnEmpresa.Size = new System.Drawing.Size(95, 90);
+            this.btnEmpresa.TabIndex = 1;
+            this.btnEmpresa.Text = "Datos Empresa";
+            this.btnEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEmpresa.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSucursal
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(91, 3);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(82, 90);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Notas De Entrada";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSucursal.FlatAppearance.BorderSize = 0;
+            this.btnSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSucursal.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSucursal.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursal.Image")));
+            this.btnSucursal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSucursal.Location = new System.Drawing.Point(134, 10);
+            this.btnSucursal.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnSucursal.Name = "btnSucursal";
+            this.btnSucursal.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnSucursal.Size = new System.Drawing.Size(95, 90);
+            this.btnSucursal.TabIndex = 2;
+            this.btnSucursal.Text = "Sucursales";
+            this.btnSucursal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSucursal.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPuntoVenta
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(179, 3);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(82, 90);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Notas De Entrada";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPuntoVenta.FlatAppearance.BorderSize = 0;
+            this.btnPuntoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPuntoVenta.ForeColor = System.Drawing.Color.DimGray;
+            this.btnPuntoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoVenta.Image")));
+            this.btnPuntoVenta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPuntoVenta.Location = new System.Drawing.Point(258, 10);
+            this.btnPuntoVenta.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnPuntoVenta.Name = "btnPuntoVenta";
+            this.btnPuntoVenta.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnPuntoVenta.Size = new System.Drawing.Size(95, 90);
+            this.btnPuntoVenta.TabIndex = 3;
+            this.btnPuntoVenta.Text = "Puntos de Venta";
+            this.btnPuntoVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPuntoVenta.UseVisualStyleBackColor = true;
+            // 
+            // btnAlmacen
+            // 
+            this.btnAlmacen.FlatAppearance.BorderSize = 0;
+            this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlmacen.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAlmacen.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.Image")));
+            this.btnAlmacen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlmacen.Location = new System.Drawing.Point(382, 10);
+            this.btnAlmacen.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnAlmacen.Size = new System.Drawing.Size(95, 90);
+            this.btnAlmacen.TabIndex = 4;
+            this.btnAlmacen.Text = "Almacenes";
+            this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAlmacen.UseVisualStyleBackColor = true;
+            // 
+            // btnDocIdentificacion
+            // 
+            this.btnDocIdentificacion.FlatAppearance.BorderSize = 0;
+            this.btnDocIdentificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocIdentificacion.ForeColor = System.Drawing.Color.DimGray;
+            this.btnDocIdentificacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDocIdentificacion.Image")));
+            this.btnDocIdentificacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDocIdentificacion.Location = new System.Drawing.Point(506, 10);
+            this.btnDocIdentificacion.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnDocIdentificacion.Name = "btnDocIdentificacion";
+            this.btnDocIdentificacion.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnDocIdentificacion.Size = new System.Drawing.Size(95, 90);
+            this.btnDocIdentificacion.TabIndex = 5;
+            this.btnDocIdentificacion.Text = "Documentos de Identificación";
+            this.btnDocIdentificacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDocIdentificacion.UseVisualStyleBackColor = true;
+            // 
+            // btnPersonal
+            // 
+            this.btnPersonal.FlatAppearance.BorderSize = 0;
+            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonal.ForeColor = System.Drawing.Color.DimGray;
+            this.btnPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonal.Image")));
+            this.btnPersonal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPersonal.Location = new System.Drawing.Point(10, 120);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnPersonal.Name = "btnPersonal";
+            this.btnPersonal.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnPersonal.Size = new System.Drawing.Size(95, 90);
+            this.btnPersonal.TabIndex = 6;
+            this.btnPersonal.Text = "Personal";
+            this.btnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPersonal.UseVisualStyleBackColor = true;
+            // 
+            // btnListadoDocumento
+            // 
+            this.btnListadoDocumento.FlatAppearance.BorderSize = 0;
+            this.btnListadoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListadoDocumento.ForeColor = System.Drawing.Color.DimGray;
+            this.btnListadoDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoDocumento.Image")));
+            this.btnListadoDocumento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnListadoDocumento.Location = new System.Drawing.Point(134, 120);
+            this.btnListadoDocumento.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnListadoDocumento.Name = "btnListadoDocumento";
+            this.btnListadoDocumento.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnListadoDocumento.Size = new System.Drawing.Size(95, 90);
+            this.btnListadoDocumento.TabIndex = 7;
+            this.btnListadoDocumento.Text = "Listado Documentos";
+            this.btnListadoDocumento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnListadoDocumento.UseVisualStyleBackColor = true;
+            // 
+            // btnAsignarCorrelativo
+            // 
+            this.btnAsignarCorrelativo.FlatAppearance.BorderSize = 0;
+            this.btnAsignarCorrelativo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignarCorrelativo.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAsignarCorrelativo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignarCorrelativo.Image")));
+            this.btnAsignarCorrelativo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAsignarCorrelativo.Location = new System.Drawing.Point(258, 120);
+            this.btnAsignarCorrelativo.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnAsignarCorrelativo.Name = "btnAsignarCorrelativo";
+            this.btnAsignarCorrelativo.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnAsignarCorrelativo.Size = new System.Drawing.Size(95, 90);
+            this.btnAsignarCorrelativo.TabIndex = 8;
+            this.btnAsignarCorrelativo.Text = "Asignar Correlativos";
+            this.btnAsignarCorrelativo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAsignarCorrelativo.UseVisualStyleBackColor = true;
+            // 
+            // btnDiseñoPersonalizacion
+            // 
+            this.btnDiseñoPersonalizacion.FlatAppearance.BorderSize = 0;
+            this.btnDiseñoPersonalizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiseñoPersonalizacion.ForeColor = System.Drawing.Color.DimGray;
+            this.btnDiseñoPersonalizacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDiseñoPersonalizacion.Image")));
+            this.btnDiseñoPersonalizacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDiseñoPersonalizacion.Location = new System.Drawing.Point(382, 120);
+            this.btnDiseñoPersonalizacion.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnDiseñoPersonalizacion.Name = "btnDiseñoPersonalizacion";
+            this.btnDiseñoPersonalizacion.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnDiseñoPersonalizacion.Size = new System.Drawing.Size(95, 90);
+            this.btnDiseñoPersonalizacion.TabIndex = 9;
+            this.btnDiseñoPersonalizacion.Text = "Diseño y Personalización";
+            this.btnDiseñoPersonalizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDiseñoPersonalizacion.UseVisualStyleBackColor = true;
+            // 
+            // btnMonedas
+            // 
+            this.btnMonedas.FlatAppearance.BorderSize = 0;
+            this.btnMonedas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonedas.ForeColor = System.Drawing.Color.DimGray;
+            this.btnMonedas.Image = ((System.Drawing.Image)(resources.GetObject("btnMonedas.Image")));
+            this.btnMonedas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMonedas.Location = new System.Drawing.Point(506, 120);
+            this.btnMonedas.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnMonedas.Name = "btnMonedas";
+            this.btnMonedas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnMonedas.Size = new System.Drawing.Size(95, 90);
+            this.btnMonedas.TabIndex = 10;
+            this.btnMonedas.Text = "Monedas";
+            this.btnMonedas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMonedas.UseVisualStyleBackColor = true;
+            // 
+            // btnTipoCambio
+            // 
+            this.btnTipoCambio.FlatAppearance.BorderSize = 0;
+            this.btnTipoCambio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoCambio.ForeColor = System.Drawing.Color.DimGray;
+            this.btnTipoCambio.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoCambio.Image")));
+            this.btnTipoCambio.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTipoCambio.Location = new System.Drawing.Point(10, 230);
+            this.btnTipoCambio.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnTipoCambio.Name = "btnTipoCambio";
+            this.btnTipoCambio.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnTipoCambio.Size = new System.Drawing.Size(95, 90);
+            this.btnTipoCambio.TabIndex = 11;
+            this.btnTipoCambio.Text = "Tipo cambio";
+            this.btnTipoCambio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTipoCambio.UseVisualStyleBackColor = true;
+            // 
+            // btnDenominacion
+            // 
+            this.btnDenominacion.FlatAppearance.BorderSize = 0;
+            this.btnDenominacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDenominacion.ForeColor = System.Drawing.Color.DimGray;
+            this.btnDenominacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDenominacion.Image")));
+            this.btnDenominacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDenominacion.Location = new System.Drawing.Point(134, 230);
+            this.btnDenominacion.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnDenominacion.Name = "btnDenominacion";
+            this.btnDenominacion.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnDenominacion.Size = new System.Drawing.Size(95, 90);
+            this.btnDenominacion.TabIndex = 12;
+            this.btnDenominacion.Text = "Denominaciones";
+            this.btnDenominacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDenominacion.UseVisualStyleBackColor = true;
+            // 
+            // btnImpuesto
+            // 
+            this.btnImpuesto.FlatAppearance.BorderSize = 0;
+            this.btnImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpuesto.ForeColor = System.Drawing.Color.DimGray;
+            this.btnImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuesto.Image")));
+            this.btnImpuesto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImpuesto.Location = new System.Drawing.Point(258, 230);
+            this.btnImpuesto.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnImpuesto.Name = "btnImpuesto";
+            this.btnImpuesto.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnImpuesto.Size = new System.Drawing.Size(95, 90);
+            this.btnImpuesto.TabIndex = 13;
+            this.btnImpuesto.Text = "Impuestos";
+            this.btnImpuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnImpuesto.UseVisualStyleBackColor = true;
+            // 
+            // btnGrupoCliente
+            // 
+            this.btnGrupoCliente.FlatAppearance.BorderSize = 0;
+            this.btnGrupoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrupoCliente.ForeColor = System.Drawing.Color.DimGray;
+            this.btnGrupoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupoCliente.Image")));
+            this.btnGrupoCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrupoCliente.Location = new System.Drawing.Point(382, 230);
+            this.btnGrupoCliente.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnGrupoCliente.Name = "btnGrupoCliente";
+            this.btnGrupoCliente.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnGrupoCliente.Size = new System.Drawing.Size(95, 90);
+            this.btnGrupoCliente.TabIndex = 14;
+            this.btnGrupoCliente.Text = "Grupos Clientes";
+            this.btnGrupoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGrupoCliente.UseVisualStyleBackColor = true;
+            // 
+            // btnCajasInicializadas
+            // 
+            this.btnCajasInicializadas.FlatAppearance.BorderSize = 0;
+            this.btnCajasInicializadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCajasInicializadas.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCajasInicializadas.Image = ((System.Drawing.Image)(resources.GetObject("btnCajasInicializadas.Image")));
+            this.btnCajasInicializadas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCajasInicializadas.Location = new System.Drawing.Point(506, 230);
+            this.btnCajasInicializadas.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnCajasInicializadas.Name = "btnCajasInicializadas";
+            this.btnCajasInicializadas.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnCajasInicializadas.Size = new System.Drawing.Size(95, 90);
+            this.btnCajasInicializadas.TabIndex = 15;
+            this.btnCajasInicializadas.Text = "Cajas Inicializadas";
+            this.btnCajasInicializadas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCajasInicializadas.UseVisualStyleBackColor = true;
+            // 
+            // btnImpuestoDocs
+            // 
+            this.btnImpuestoDocs.FlatAppearance.BorderSize = 0;
+            this.btnImpuestoDocs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpuestoDocs.ForeColor = System.Drawing.Color.DimGray;
+            this.btnImpuestoDocs.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuestoDocs.Image")));
+            this.btnImpuestoDocs.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImpuestoDocs.Location = new System.Drawing.Point(10, 340);
+            this.btnImpuestoDocs.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnImpuestoDocs.Name = "btnImpuestoDocs";
+            this.btnImpuestoDocs.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnImpuestoDocs.Size = new System.Drawing.Size(95, 90);
+            this.btnImpuestoDocs.TabIndex = 17;
+            this.btnImpuestoDocs.Text = "Impuestos Documento";
+            this.btnImpuestoDocs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnImpuestoDocs.UseVisualStyleBackColor = true;
+            // 
+            // btnBarCode
+            // 
+            this.btnBarCode.FlatAppearance.BorderSize = 0;
+            this.btnBarCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBarCode.ForeColor = System.Drawing.Color.DimGray;
+            this.btnBarCode.Image = ((System.Drawing.Image)(resources.GetObject("btnBarCode.Image")));
+            this.btnBarCode.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBarCode.Location = new System.Drawing.Point(134, 340);
+            this.btnBarCode.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnBarCode.Name = "btnBarCode";
+            this.btnBarCode.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnBarCode.Size = new System.Drawing.Size(95, 90);
+            this.btnBarCode.TabIndex = 18;
+            this.btnBarCode.Text = "Diseño Código Barras";
+            this.btnBarCode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBarCode.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
@@ -196,294 +429,6 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.DimGray;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(267, 3);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(5);
-            this.button4.Size = new System.Drawing.Size(82, 90);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Notas De Entrada";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.DimGray;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(355, 3);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5);
-            this.button5.Size = new System.Drawing.Size(82, 90);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Notas De Entrada";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(443, 3);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(5);
-            this.button6.Size = new System.Drawing.Size(82, 90);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Notas De Entrada";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.DimGray;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(531, 3);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(5);
-            this.button7.Size = new System.Drawing.Size(82, 90);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Notas De Entrada";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.DimGray;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(3, 99);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(5);
-            this.button8.Size = new System.Drawing.Size(82, 90);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Notas De Entrada";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.DimGray;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(91, 99);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(5);
-            this.button9.Size = new System.Drawing.Size(82, 90);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "Notas De Entrada";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.Color.DimGray;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(179, 99);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(5);
-            this.button10.Size = new System.Drawing.Size(82, 90);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "Notas De Entrada";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ForeColor = System.Drawing.Color.DimGray;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(267, 99);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(5);
-            this.button11.Size = new System.Drawing.Size(82, 90);
-            this.button11.TabIndex = 11;
-            this.button11.Text = "Notas De Entrada";
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.ForeColor = System.Drawing.Color.DimGray;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(355, 99);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(5);
-            this.button12.Size = new System.Drawing.Size(82, 90);
-            this.button12.TabIndex = 12;
-            this.button12.Text = "Notas De Entrada";
-            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.DimGray;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(443, 99);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(5);
-            this.button13.Size = new System.Drawing.Size(82, 90);
-            this.button13.TabIndex = 13;
-            this.button13.Text = "Notas De Entrada";
-            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.Color.DimGray;
-            this.button14.Image = ((System.Drawing.Image)(resources.GetObject("button14.Image")));
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button14.Location = new System.Drawing.Point(531, 99);
-            this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(5);
-            this.button14.Size = new System.Drawing.Size(82, 90);
-            this.button14.TabIndex = 14;
-            this.button14.Text = "Notas De Entrada";
-            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.ForeColor = System.Drawing.Color.DimGray;
-            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
-            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button15.Location = new System.Drawing.Point(3, 195);
-            this.button15.Name = "button15";
-            this.button15.Padding = new System.Windows.Forms.Padding(5);
-            this.button15.Size = new System.Drawing.Size(82, 90);
-            this.button15.TabIndex = 15;
-            this.button15.Text = "Notas De Entrada";
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.ForeColor = System.Drawing.Color.DimGray;
-            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
-            this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button16.Location = new System.Drawing.Point(91, 195);
-            this.button16.Name = "button16";
-            this.button16.Padding = new System.Windows.Forms.Padding(5);
-            this.button16.Size = new System.Drawing.Size(82, 90);
-            this.button16.TabIndex = 16;
-            this.button16.Text = "Notas De Entrada";
-            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.ForeColor = System.Drawing.Color.DimGray;
-            this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
-            this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button17.Location = new System.Drawing.Point(179, 195);
-            this.button17.Name = "button17";
-            this.button17.Padding = new System.Windows.Forms.Padding(5);
-            this.button17.Size = new System.Drawing.Size(82, 90);
-            this.button17.TabIndex = 17;
-            this.button17.Text = "Notas De Entrada";
-            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.ForeColor = System.Drawing.Color.DimGray;
-            this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
-            this.button18.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button18.Location = new System.Drawing.Point(267, 195);
-            this.button18.Name = "button18";
-            this.button18.Padding = new System.Windows.Forms.Padding(5);
-            this.button18.Size = new System.Drawing.Size(82, 90);
-            this.button18.TabIndex = 18;
-            this.button18.Text = "Notas De Entrada";
-            this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.ForeColor = System.Drawing.Color.DimGray;
-            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
-            this.button19.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button19.Location = new System.Drawing.Point(355, 195);
-            this.button19.Name = "button19";
-            this.button19.Padding = new System.Windows.Forms.Padding(5);
-            this.button19.Size = new System.Drawing.Size(82, 90);
-            this.button19.TabIndex = 19;
-            this.button19.Text = "Notas De Entrada";
-            this.button19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.ForeColor = System.Drawing.Color.DimGray;
-            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
-            this.button20.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button20.Location = new System.Drawing.Point(443, 195);
-            this.button20.Name = "button20";
-            this.button20.Padding = new System.Windows.Forms.Padding(5);
-            this.button20.Size = new System.Drawing.Size(82, 90);
-            this.button20.TabIndex = 20;
-            this.button20.Text = "Notas De Entrada";
-            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.FlatAppearance.BorderSize = 0;
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.ForeColor = System.Drawing.Color.DimGray;
-            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
-            this.button21.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button21.Location = new System.Drawing.Point(531, 195);
-            this.button21.Name = "button21";
-            this.button21.Padding = new System.Windows.Forms.Padding(5);
-            this.button21.Size = new System.Drawing.Size(82, 90);
-            this.button21.TabIndex = 21;
-            this.button21.Text = "Notas De Entrada";
-            this.button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button21.UseVisualStyleBackColor = true;
-            // 
             // UCConfigNav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,30 +447,26 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEmpresa;
+        private System.Windows.Forms.Button btnSucursal;
+        private System.Windows.Forms.Button btnPuntoVenta;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button btnAlmacen;
+        private System.Windows.Forms.Button btnDocIdentificacion;
+        private System.Windows.Forms.Button btnPersonal;
+        private System.Windows.Forms.Button btnListadoDocumento;
+        private System.Windows.Forms.Button btnAsignarCorrelativo;
+        private System.Windows.Forms.Button btnDiseñoPersonalizacion;
+        private System.Windows.Forms.Button btnMonedas;
+        private System.Windows.Forms.Button btnTipoCambio;
+        private System.Windows.Forms.Button btnDenominacion;
+        private System.Windows.Forms.Button btnImpuesto;
+        private System.Windows.Forms.Button btnGrupoCliente;
+        private System.Windows.Forms.Button btnCajasInicializadas;
+        private System.Windows.Forms.Button btnImpuestoDocs;
+        private System.Windows.Forms.Button btnBarCode;
     }
 }

@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAlmacenNav));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNotaSalida = new System.Windows.Forms.Button();
+            this.btnNotaEntrada = new System.Windows.Forms.Button();
+            this.btnGuiaRemision = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panelContainer.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -55,46 +55,65 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnNotaSalida);
+            this.flowLayoutPanel1.Controls.Add(this.btnNotaEntrada);
+            this.flowLayoutPanel1.Controls.Add(this.btnGuiaRemision);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 351);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button2
+            // btnNotaSalida
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(82, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Notas De Salida";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnNotaSalida.FlatAppearance.BorderSize = 0;
+            this.btnNotaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotaSalida.ForeColor = System.Drawing.Color.DimGray;
+            this.btnNotaSalida.Image = ((System.Drawing.Image)(resources.GetObject("btnNotaSalida.Image")));
+            this.btnNotaSalida.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNotaSalida.Location = new System.Drawing.Point(10, 10);
+            this.btnNotaSalida.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnNotaSalida.Name = "btnNotaSalida";
+            this.btnNotaSalida.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnNotaSalida.Size = new System.Drawing.Size(95, 90);
+            this.btnNotaSalida.TabIndex = 1;
+            this.btnNotaSalida.Text = "Notas de Salida";
+            this.btnNotaSalida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNotaSalida.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNotaEntrada
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(91, 3);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(82, 90);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Notas De Entrada";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNotaEntrada.FlatAppearance.BorderSize = 0;
+            this.btnNotaEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotaEntrada.ForeColor = System.Drawing.Color.DimGray;
+            this.btnNotaEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnNotaEntrada.Image")));
+            this.btnNotaEntrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNotaEntrada.Location = new System.Drawing.Point(134, 10);
+            this.btnNotaEntrada.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnNotaEntrada.Name = "btnNotaEntrada";
+            this.btnNotaEntrada.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnNotaEntrada.Size = new System.Drawing.Size(95, 90);
+            this.btnNotaEntrada.TabIndex = 2;
+            this.btnNotaEntrada.Text = "Notas de Entrada";
+            this.btnNotaEntrada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNotaEntrada.UseVisualStyleBackColor = true;
+            // 
+            // btnGuiaRemision
+            // 
+            this.btnGuiaRemision.FlatAppearance.BorderSize = 0;
+            this.btnGuiaRemision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuiaRemision.ForeColor = System.Drawing.Color.DimGray;
+            this.btnGuiaRemision.Image = ((System.Drawing.Image)(resources.GetObject("btnGuiaRemision.Image")));
+            this.btnGuiaRemision.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGuiaRemision.Location = new System.Drawing.Point(258, 10);
+            this.btnGuiaRemision.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnGuiaRemision.Name = "btnGuiaRemision";
+            this.btnGuiaRemision.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnGuiaRemision.Size = new System.Drawing.Size(95, 90);
+            this.btnGuiaRemision.TabIndex = 3;
+            this.btnGuiaRemision.Text = "Guías de Remisión";
+            this.btnGuiaRemision.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuiaRemision.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
@@ -119,19 +138,6 @@
             this.label1.Text = "ALMACEN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.DarkGray;
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 64);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(621, 32);
-            this.bunifuSeparator1.TabIndex = 1;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -144,21 +150,18 @@
             this.label2.Text = "administración";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // bunifuSeparator1
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(179, 3);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(82, 90);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Notas De Entrada";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 64);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(621, 32);
+            this.bunifuSeparator1.TabIndex = 1;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
             // 
             // UCAlmacenNav
             // 
@@ -180,10 +183,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNotaSalida;
+        private System.Windows.Forms.Button btnNotaEntrada;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGuiaRemision;
     }
 }

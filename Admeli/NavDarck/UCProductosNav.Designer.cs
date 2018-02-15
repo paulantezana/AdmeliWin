@@ -34,11 +34,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.button4 = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -73,12 +73,13 @@
             this.button2.ForeColor = System.Drawing.Color.DimGray;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Location = new System.Drawing.Point(10, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(82, 90);
+            this.button2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.button2.Size = new System.Drawing.Size(95, 90);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Notas De Salida";
+            this.button2.Text = "Listado Productos";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -89,12 +90,13 @@
             this.button1.ForeColor = System.Drawing.Color.DimGray;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(91, 3);
+            this.button1.Location = new System.Drawing.Point(134, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(82, 90);
+            this.button1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.button1.Size = new System.Drawing.Size(95, 90);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Notas De Entrada";
+            this.button1.Text = "Marcas";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -105,14 +107,32 @@
             this.button3.ForeColor = System.Drawing.Color.DimGray;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(179, 3);
+            this.button3.Location = new System.Drawing.Point(258, 10);
+            this.button3.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(82, 90);
+            this.button3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.button3.Size = new System.Drawing.Size(95, 90);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Notas De Entrada";
+            this.button3.Text = "Unidades de Medida";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.DimGray;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(382, 10);
+            this.button4.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.button4.Size = new System.Drawing.Size(95, 90);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Categorías";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
@@ -161,22 +181,6 @@
             this.bunifuSeparator1.TabIndex = 1;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.DimGray;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(267, 3);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(5);
-            this.button4.Size = new System.Drawing.Size(82, 90);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Notas De Entrada";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // UCProductosNav
             // 

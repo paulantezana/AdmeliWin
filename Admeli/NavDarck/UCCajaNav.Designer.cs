@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCajaNav));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEgreso = new System.Windows.Forms.Button();
+            this.btnIngreso = new System.Windows.Forms.Button();
+            this.btnPorCobrar = new System.Windows.Forms.Button();
+            this.btnCuentaPagar = new System.Windows.Forms.Button();
+            this.btnIniciarCaja = new System.Windows.Forms.Button();
+            this.btnCierreCaja = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -58,65 +58,119 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.btnEgreso);
+            this.flowLayoutPanel1.Controls.Add(this.btnIngreso);
+            this.flowLayoutPanel1.Controls.Add(this.btnPorCobrar);
+            this.flowLayoutPanel1.Controls.Add(this.btnCuentaPagar);
+            this.flowLayoutPanel1.Controls.Add(this.btnIniciarCaja);
+            this.flowLayoutPanel1.Controls.Add(this.btnCierreCaja);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 351);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button2
+            // btnEgreso
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(82, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Notas De Salida";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEgreso.FlatAppearance.BorderSize = 0;
+            this.btnEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEgreso.ForeColor = System.Drawing.Color.DimGray;
+            this.btnEgreso.Image = ((System.Drawing.Image)(resources.GetObject("btnEgreso.Image")));
+            this.btnEgreso.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEgreso.Location = new System.Drawing.Point(10, 10);
+            this.btnEgreso.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnEgreso.Name = "btnEgreso";
+            this.btnEgreso.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnEgreso.Size = new System.Drawing.Size(95, 90);
+            this.btnEgreso.TabIndex = 1;
+            this.btnEgreso.Text = "Egresos";
+            this.btnEgreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEgreso.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnIngreso
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(91, 3);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(82, 90);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Notas De Entrada";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIngreso.FlatAppearance.BorderSize = 0;
+            this.btnIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngreso.ForeColor = System.Drawing.Color.DimGray;
+            this.btnIngreso.Image = ((System.Drawing.Image)(resources.GetObject("btnIngreso.Image")));
+            this.btnIngreso.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnIngreso.Location = new System.Drawing.Point(134, 10);
+            this.btnIngreso.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnIngreso.Name = "btnIngreso";
+            this.btnIngreso.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnIngreso.Size = new System.Drawing.Size(95, 90);
+            this.btnIngreso.TabIndex = 2;
+            this.btnIngreso.Text = "Ingresos";
+            this.btnIngreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnIngreso.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPorCobrar
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(179, 3);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(82, 90);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Notas De Entrada";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPorCobrar.FlatAppearance.BorderSize = 0;
+            this.btnPorCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPorCobrar.ForeColor = System.Drawing.Color.DimGray;
+            this.btnPorCobrar.Image = ((System.Drawing.Image)(resources.GetObject("btnPorCobrar.Image")));
+            this.btnPorCobrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPorCobrar.Location = new System.Drawing.Point(258, 10);
+            this.btnPorCobrar.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnPorCobrar.Name = "btnPorCobrar";
+            this.btnPorCobrar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnPorCobrar.Size = new System.Drawing.Size(95, 90);
+            this.btnPorCobrar.TabIndex = 3;
+            this.btnPorCobrar.Text = "Cuentas por Cobrar";
+            this.btnPorCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPorCobrar.UseVisualStyleBackColor = true;
+            // 
+            // btnCuentaPagar
+            // 
+            this.btnCuentaPagar.FlatAppearance.BorderSize = 0;
+            this.btnCuentaPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCuentaPagar.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCuentaPagar.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentaPagar.Image")));
+            this.btnCuentaPagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCuentaPagar.Location = new System.Drawing.Point(382, 10);
+            this.btnCuentaPagar.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnCuentaPagar.Name = "btnCuentaPagar";
+            this.btnCuentaPagar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnCuentaPagar.Size = new System.Drawing.Size(95, 90);
+            this.btnCuentaPagar.TabIndex = 4;
+            this.btnCuentaPagar.Text = "Cuentas por Pagar";
+            this.btnCuentaPagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCuentaPagar.UseVisualStyleBackColor = true;
+            // 
+            // btnIniciarCaja
+            // 
+            this.btnIniciarCaja.FlatAppearance.BorderSize = 0;
+            this.btnIniciarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciarCaja.ForeColor = System.Drawing.Color.DimGray;
+            this.btnIniciarCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnIniciarCaja.Image")));
+            this.btnIniciarCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnIniciarCaja.Location = new System.Drawing.Point(506, 10);
+            this.btnIniciarCaja.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnIniciarCaja.Name = "btnIniciarCaja";
+            this.btnIniciarCaja.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnIniciarCaja.Size = new System.Drawing.Size(95, 90);
+            this.btnIniciarCaja.TabIndex = 5;
+            this.btnIniciarCaja.Text = "Iniciar Caja";
+            this.btnIniciarCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnIniciarCaja.UseVisualStyleBackColor = true;
+            // 
+            // btnCierreCaja
+            // 
+            this.btnCierreCaja.FlatAppearance.BorderSize = 0;
+            this.btnCierreCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCierreCaja.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCierreCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCierreCaja.Image")));
+            this.btnCierreCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCierreCaja.Location = new System.Drawing.Point(10, 120);
+            this.btnCierreCaja.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnCierreCaja.Name = "btnCierreCaja";
+            this.btnCierreCaja.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnCierreCaja.Size = new System.Drawing.Size(95, 90);
+            this.btnCierreCaja.TabIndex = 6;
+            this.btnCierreCaja.Text = "Cierres de Caja";
+            this.btnCierreCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCierreCaja.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
@@ -166,54 +220,6 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.DimGray;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(267, 3);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(5);
-            this.button4.Size = new System.Drawing.Size(82, 90);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Notas De Entrada";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.DimGray;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(355, 3);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5);
-            this.button5.Size = new System.Drawing.Size(82, 90);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Notas De Entrada";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(443, 3);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(5);
-            this.button6.Size = new System.Drawing.Size(82, 90);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Notas De Entrada";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // UCCajaNav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,15 +238,15 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEgreso;
+        private System.Windows.Forms.Button btnIngreso;
+        private System.Windows.Forms.Button btnPorCobrar;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCuentaPagar;
+        private System.Windows.Forms.Button btnIniciarCaja;
+        private System.Windows.Forms.Button btnCierreCaja;
     }
 }

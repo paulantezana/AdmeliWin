@@ -71,12 +71,13 @@
             this.button2.ForeColor = System.Drawing.Color.DimGray;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Location = new System.Drawing.Point(10, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(82, 90);
+            this.button2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.button2.Size = new System.Drawing.Size(95, 90);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Notas De Salida";
+            this.button2.Text = "Existencia Producto";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -87,12 +88,13 @@
             this.button1.ForeColor = System.Drawing.Color.DimGray;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(91, 3);
+            this.button1.Location = new System.Drawing.Point(134, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(82, 90);
+            this.button1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.button1.Size = new System.Drawing.Size(95, 90);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Notas De Entrada";
+            this.button1.Text = "Ingresos Ventas";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -103,12 +105,13 @@
             this.button3.ForeColor = System.Drawing.Color.DimGray;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(179, 3);
+            this.button3.Location = new System.Drawing.Point(258, 10);
+            this.button3.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(82, 90);
+            this.button3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.button3.Size = new System.Drawing.Size(95, 90);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Notas De Entrada";
+            this.button3.Text = "Impuestos";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = true;
             // 

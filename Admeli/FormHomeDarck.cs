@@ -251,7 +251,7 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelMain.Controls.Add(uCHerramientasNav);
+                        this.panelMain.Controls.Add(uCReporteNav);
                     }
                     break;
                 default:

@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCComprasNav));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnOrdenCompra = new System.Windows.Forms.Button();
+            this.btnCompra = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,62 +55,65 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.btnOrdenCompra);
+            this.flowLayoutPanel1.Controls.Add(this.btnCompra);
+            this.flowLayoutPanel1.Controls.Add(this.btnProveedor);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 96);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 351);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button2
+            // btnOrdenCompra
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(82, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Notas De Salida";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOrdenCompra.FlatAppearance.BorderSize = 0;
+            this.btnOrdenCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenCompra.ForeColor = System.Drawing.Color.DimGray;
+            this.btnOrdenCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnOrdenCompra.Image")));
+            this.btnOrdenCompra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOrdenCompra.Location = new System.Drawing.Point(10, 10);
+            this.btnOrdenCompra.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnOrdenCompra.Name = "btnOrdenCompra";
+            this.btnOrdenCompra.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnOrdenCompra.Size = new System.Drawing.Size(95, 90);
+            this.btnOrdenCompra.TabIndex = 1;
+            this.btnOrdenCompra.Text = "Órdenes de Compra Proveedor";
+            this.btnOrdenCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnOrdenCompra.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCompra
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(91, 3);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(82, 90);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Notas De Entrada";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCompra.FlatAppearance.BorderSize = 0;
+            this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompra.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnCompra.Image")));
+            this.btnCompra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCompra.Location = new System.Drawing.Point(134, 10);
+            this.btnCompra.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnCompra.Size = new System.Drawing.Size(95, 90);
+            this.btnCompra.TabIndex = 2;
+            this.btnCompra.Text = "Compras";
+            this.btnCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCompra.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnProveedor
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(179, 3);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(82, 90);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Notas De Entrada";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnProveedor.FlatAppearance.BorderSize = 0;
+            this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedor.ForeColor = System.Drawing.Color.DimGray;
+            this.btnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedor.Image")));
+            this.btnProveedor.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProveedor.Location = new System.Drawing.Point(258, 10);
+            this.btnProveedor.Margin = new System.Windows.Forms.Padding(10, 10, 19, 10);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnProveedor.Size = new System.Drawing.Size(95, 90);
+            this.btnProveedor.TabIndex = 3;
+            this.btnProveedor.Text = "Proveedores";
+            this.btnProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProveedor.UseVisualStyleBackColor = true;
             // 
             // panelContent
             // 
@@ -178,9 +181,9 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnOrdenCompra;
+        private System.Windows.Forms.Button btnCompra;
+        private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

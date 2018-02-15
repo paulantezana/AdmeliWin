@@ -55,14 +55,14 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelMenuRight = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnToggleMenuRigth = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnFullScreen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnFullScreen = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnToggleMenuRigth = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -308,7 +308,7 @@
             // borderLeftActive
             // 
             this.borderLeftActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
-            this.borderLeftActive.Location = new System.Drawing.Point(0, 336);
+            this.borderLeftActive.Location = new System.Drawing.Point(-6, 391);
             this.borderLeftActive.Name = "borderLeftActive";
             this.borderLeftActive.Size = new System.Drawing.Size(3, 47);
             this.borderLeftActive.TabIndex = 17;
@@ -641,40 +641,40 @@
             this.panel5.Size = new System.Drawing.Size(635, 48);
             this.panel5.TabIndex = 0;
             // 
-            // btnToggleMenuRigth
+            // btnFullScreen
             // 
-            this.btnToggleMenuRigth.Activecolor = System.Drawing.Color.White;
-            this.btnToggleMenuRigth.BackColor = System.Drawing.Color.White;
-            this.btnToggleMenuRigth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnToggleMenuRigth.BorderRadius = 0;
-            this.btnToggleMenuRigth.ButtonText = "";
-            this.btnToggleMenuRigth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnToggleMenuRigth.DisabledColor = System.Drawing.Color.Gray;
-            this.btnToggleMenuRigth.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnToggleMenuRigth.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnToggleMenuRigth.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnToggleMenuRigth.Iconimage")));
-            this.btnToggleMenuRigth.Iconimage_right = null;
-            this.btnToggleMenuRigth.Iconimage_right_Selected = null;
-            this.btnToggleMenuRigth.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnToggleMenuRigth.Iconimage_Selected")));
-            this.btnToggleMenuRigth.IconMarginLeft = 0;
-            this.btnToggleMenuRigth.IconMarginRight = 0;
-            this.btnToggleMenuRigth.IconRightVisible = true;
-            this.btnToggleMenuRigth.IconRightZoom = 0D;
-            this.btnToggleMenuRigth.IconVisible = true;
-            this.btnToggleMenuRigth.IconZoom = 80D;
-            this.btnToggleMenuRigth.IsTab = true;
-            this.btnToggleMenuRigth.Location = new System.Drawing.Point(586, 0);
-            this.btnToggleMenuRigth.Name = "btnToggleMenuRigth";
-            this.btnToggleMenuRigth.Normalcolor = System.Drawing.Color.White;
-            this.btnToggleMenuRigth.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnToggleMenuRigth.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnToggleMenuRigth.selected = false;
-            this.btnToggleMenuRigth.Size = new System.Drawing.Size(49, 48);
-            this.btnToggleMenuRigth.TabIndex = 18;
-            this.btnToggleMenuRigth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToggleMenuRigth.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.btnToggleMenuRigth.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToggleMenuRigth.Click += new System.EventHandler(this.btnToggleMenuRigth_Click);
+            this.btnFullScreen.Activecolor = System.Drawing.Color.White;
+            this.btnFullScreen.BackColor = System.Drawing.Color.White;
+            this.btnFullScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFullScreen.BorderRadius = 0;
+            this.btnFullScreen.ButtonText = "";
+            this.btnFullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFullScreen.DisabledColor = System.Drawing.Color.Gray;
+            this.btnFullScreen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnFullScreen.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnFullScreen.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Iconimage")));
+            this.btnFullScreen.Iconimage_right = null;
+            this.btnFullScreen.Iconimage_right_Selected = null;
+            this.btnFullScreen.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Iconimage_Selected")));
+            this.btnFullScreen.IconMarginLeft = 0;
+            this.btnFullScreen.IconMarginRight = 0;
+            this.btnFullScreen.IconRightVisible = true;
+            this.btnFullScreen.IconRightZoom = 0D;
+            this.btnFullScreen.IconVisible = true;
+            this.btnFullScreen.IconZoom = 80D;
+            this.btnFullScreen.IsTab = true;
+            this.btnFullScreen.Location = new System.Drawing.Point(537, 0);
+            this.btnFullScreen.Name = "btnFullScreen";
+            this.btnFullScreen.Normalcolor = System.Drawing.Color.White;
+            this.btnFullScreen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnFullScreen.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFullScreen.selected = false;
+            this.btnFullScreen.Size = new System.Drawing.Size(49, 48);
+            this.btnFullScreen.TabIndex = 20;
+            this.btnFullScreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFullScreen.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnFullScreen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFullScreen.Click += new System.EventHandler(this.btnFullScreen_Click);
             // 
             // panel7
             // 
@@ -713,6 +713,15 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "purchase_gray_icon.png");
+            this.imageList1.Images.SetKeyName(1, "product_gray_icon.png");
+            this.imageList1.Images.SetKeyName(2, "sale_gray_icon.png");
+            this.imageList1.Images.SetKeyName(3, "sale_gray_icon.png");
             // 
             // button2
             // 
@@ -792,49 +801,40 @@
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCompras.UseVisualStyleBackColor = false;
             // 
-            // imageList1
+            // btnToggleMenuRigth
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "purchase_gray_icon.png");
-            this.imageList1.Images.SetKeyName(1, "product_gray_icon.png");
-            this.imageList1.Images.SetKeyName(2, "sale_gray_icon.png");
-            this.imageList1.Images.SetKeyName(3, "sale_gray_icon.png");
-            // 
-            // btnFullScreen
-            // 
-            this.btnFullScreen.Activecolor = System.Drawing.Color.White;
-            this.btnFullScreen.BackColor = System.Drawing.Color.White;
-            this.btnFullScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFullScreen.BorderRadius = 0;
-            this.btnFullScreen.ButtonText = "";
-            this.btnFullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFullScreen.DisabledColor = System.Drawing.Color.Gray;
-            this.btnFullScreen.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFullScreen.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnFullScreen.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Iconimage")));
-            this.btnFullScreen.Iconimage_right = null;
-            this.btnFullScreen.Iconimage_right_Selected = null;
-            this.btnFullScreen.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Iconimage_Selected")));
-            this.btnFullScreen.IconMarginLeft = 0;
-            this.btnFullScreen.IconMarginRight = 0;
-            this.btnFullScreen.IconRightVisible = true;
-            this.btnFullScreen.IconRightZoom = 0D;
-            this.btnFullScreen.IconVisible = true;
-            this.btnFullScreen.IconZoom = 80D;
-            this.btnFullScreen.IsTab = true;
-            this.btnFullScreen.Location = new System.Drawing.Point(537, 0);
-            this.btnFullScreen.Name = "btnFullScreen";
-            this.btnFullScreen.Normalcolor = System.Drawing.Color.White;
-            this.btnFullScreen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnFullScreen.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFullScreen.selected = false;
-            this.btnFullScreen.Size = new System.Drawing.Size(49, 48);
-            this.btnFullScreen.TabIndex = 20;
-            this.btnFullScreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFullScreen.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.btnFullScreen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFullScreen.Click += new System.EventHandler(this.btnFullScreen_Click);
+            this.btnToggleMenuRigth.Activecolor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.BackColor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnToggleMenuRigth.BorderRadius = 0;
+            this.btnToggleMenuRigth.ButtonText = "";
+            this.btnToggleMenuRigth.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToggleMenuRigth.DisabledColor = System.Drawing.Color.Gray;
+            this.btnToggleMenuRigth.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnToggleMenuRigth.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnToggleMenuRigth.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnToggleMenuRigth.Iconimage")));
+            this.btnToggleMenuRigth.Iconimage_right = null;
+            this.btnToggleMenuRigth.Iconimage_right_Selected = null;
+            this.btnToggleMenuRigth.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnToggleMenuRigth.Iconimage_Selected")));
+            this.btnToggleMenuRigth.IconMarginLeft = 0;
+            this.btnToggleMenuRigth.IconMarginRight = 0;
+            this.btnToggleMenuRigth.IconRightVisible = true;
+            this.btnToggleMenuRigth.IconRightZoom = 0D;
+            this.btnToggleMenuRigth.IconVisible = true;
+            this.btnToggleMenuRigth.IconZoom = 80D;
+            this.btnToggleMenuRigth.IsTab = true;
+            this.btnToggleMenuRigth.Location = new System.Drawing.Point(586, 0);
+            this.btnToggleMenuRigth.Name = "btnToggleMenuRigth";
+            this.btnToggleMenuRigth.Normalcolor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnToggleMenuRigth.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnToggleMenuRigth.selected = false;
+            this.btnToggleMenuRigth.Size = new System.Drawing.Size(49, 48);
+            this.btnToggleMenuRigth.TabIndex = 18;
+            this.btnToggleMenuRigth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnToggleMenuRigth.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnToggleMenuRigth.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToggleMenuRigth.Click += new System.EventHandler(this.btnToggleMenuRigth_Click);
             // 
             // FormHomeDarck
             // 
