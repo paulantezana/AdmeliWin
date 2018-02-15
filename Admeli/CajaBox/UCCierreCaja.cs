@@ -19,6 +19,7 @@ namespace Admeli.CajaBox
         private CierreCajaModel cierreCajaModel = new CierreCajaModel();
         private PersonalModel personalModel = new PersonalModel();
         private SucursalModel sucursalModel = new SucursalModel();
+        private ConfigModel configModel = new ConfigModel();
 
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
@@ -59,10 +60,33 @@ namespace Admeli.CajaBox
             this.cargarSucursales();
             this.cargarRegistros();
 
+            // Verificar caja
+            this.verificarCaja();
+
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 
+
+        #region ============================ Verificar Caja ============================
+        private async void verificarCaja()
+        {
+            await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+            if (ConfigModel.cajaIniciada)
+            {
+                btnNuevo.Enabled = true;
+                btnModificar.Enabled = true;
+                lblCajaEstado.Visible = false;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+                btnModificar.Enabled = false;
+                lblCajaEstado.Visible = true;
+                Validator.labelAlert(lblCajaEstado, 0, "No se inició la caja");
+            }
+        }
+        #endregion
 
         #region ======================== KEYBOARD ========================
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)

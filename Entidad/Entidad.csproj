@@ -70,6 +70,7 @@
     <Compile Include="DocCorrelativo.cs" />
     <Compile Include="DocumentoIdentificacion.cs" />
     <Compile Include="Egreso.cs" />
+    <Compile Include="FechaSistema.cs" />
     <Compile Include="GrupoCliente.cs" />
     <Compile Include="Impuesto.cs" />
     <Compile Include="Ingreso.cs" />

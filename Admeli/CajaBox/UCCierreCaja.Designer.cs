@@ -34,6 +34,16 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.idCierreCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCierreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCajaSesionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPersonalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cierreCajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
             this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripLabel();
@@ -58,23 +68,14 @@
             this.btnConsultar = new System.Windows.Forms.ToolStripButton();
             this.panelHeaderItem1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cierreCajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idCierreCajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCierreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCajaSesionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPersonalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCajaEstado = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cierreCajaBindingSource)).BeginInit();
             this.toolStripNavigation.SuspendLayout();
             this.toolStripCrud.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cierreCajaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -84,6 +85,7 @@
             this.panelContainer.Controls.Add(this.toolStripNavigation);
             this.panelContainer.Controls.Add(this.toolStripCrud);
             this.panelContainer.Controls.Add(this.panelHeaderItem1);
+            this.panelContainer.Controls.Add(this.lblCajaEstado);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(8, 8);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
@@ -97,10 +99,10 @@
             // 
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 87);
+            this.panel1.Location = new System.Drawing.Point(1, 125);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(917, 346);
+            this.panel1.Size = new System.Drawing.Size(917, 308);
             this.panel1.TabIndex = 16;
             // 
             // dataGridView
@@ -143,9 +145,94 @@
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(897, 326);
+            this.dataGridView.Size = new System.Drawing.Size(897, 288);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
+            // 
+            // idCierreCajaDataGridViewTextBoxColumn
+            // 
+            this.idCierreCajaDataGridViewTextBoxColumn.DataPropertyName = "idCierreCaja";
+            this.idCierreCajaDataGridViewTextBoxColumn.HeaderText = "idCierreCaja";
+            this.idCierreCajaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idCierreCajaDataGridViewTextBoxColumn.Name = "idCierreCajaDataGridViewTextBoxColumn";
+            this.idCierreCajaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCierreCajaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaInicioDataGridViewTextBoxColumn
+            // 
+            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "fechaInicio";
+            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "fechaInicio";
+            this.fechaInicioDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
+            this.fechaInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaInicioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // fechaCierreDataGridViewTextBoxColumn
+            // 
+            this.fechaCierreDataGridViewTextBoxColumn.DataPropertyName = "fechaCierre";
+            this.fechaCierreDataGridViewTextBoxColumn.HeaderText = "fechaCierre";
+            this.fechaCierreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fechaCierreDataGridViewTextBoxColumn.Name = "fechaCierreDataGridViewTextBoxColumn";
+            this.fechaCierreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaCierreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // observacionDataGridViewTextBoxColumn
+            // 
+            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "observacion";
+            this.observacionDataGridViewTextBoxColumn.HeaderText = "observacion";
+            this.observacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
+            this.observacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.observacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // idCajaSesionDataGridViewTextBoxColumn
+            // 
+            this.idCajaSesionDataGridViewTextBoxColumn.DataPropertyName = "idCajaSesion";
+            this.idCajaSesionDataGridViewTextBoxColumn.HeaderText = "idCajaSesion";
+            this.idCajaSesionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idCajaSesionDataGridViewTextBoxColumn.Name = "idCajaSesionDataGridViewTextBoxColumn";
+            this.idCajaSesionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCajaSesionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // nombresDataGridViewTextBoxColumn
+            // 
+            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "nombres";
+            this.nombresDataGridViewTextBoxColumn.HeaderText = "nombres";
+            this.nombresDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
+            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombresDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // idPersonalDataGridViewTextBoxColumn
+            // 
+            this.idPersonalDataGridViewTextBoxColumn.DataPropertyName = "idPersonal";
+            this.idPersonalDataGridViewTextBoxColumn.HeaderText = "idPersonal";
+            this.idPersonalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idPersonalDataGridViewTextBoxColumn.Name = "idPersonalDataGridViewTextBoxColumn";
+            this.idPersonalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPersonalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // cierreCajaBindingSource
+            // 
+            this.cierreCajaBindingSource.DataSource = typeof(Entidad.CierreCaja);
             // 
             // toolStripNavigation
             // 
@@ -306,7 +393,7 @@
             this.cbxPersonales,
             this.cbxSucursales,
             this.btnConsultar});
-            this.toolStripCrud.Location = new System.Drawing.Point(1, 42);
+            this.toolStripCrud.Location = new System.Drawing.Point(1, 80);
             this.toolStripCrud.Name = "toolStripCrud";
             this.toolStripCrud.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.toolStripCrud.Size = new System.Drawing.Size(917, 45);
@@ -397,7 +484,7 @@
             // 
             this.panelHeaderItem1.Controls.Add(this.label1);
             this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
+            this.panelHeaderItem1.Location = new System.Drawing.Point(1, 39);
             this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
             this.panelHeaderItem1.Size = new System.Drawing.Size(917, 41);
@@ -414,90 +501,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CIERRE CAJA";
             // 
-            // cierreCajaBindingSource
+            // lblCajaEstado
             // 
-            this.cierreCajaBindingSource.DataSource = typeof(Entidad.CierreCaja);
-            // 
-            // idCierreCajaDataGridViewTextBoxColumn
-            // 
-            this.idCierreCajaDataGridViewTextBoxColumn.DataPropertyName = "idCierreCaja";
-            this.idCierreCajaDataGridViewTextBoxColumn.HeaderText = "idCierreCaja";
-            this.idCierreCajaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idCierreCajaDataGridViewTextBoxColumn.Name = "idCierreCajaDataGridViewTextBoxColumn";
-            this.idCierreCajaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCierreCajaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaInicioDataGridViewTextBoxColumn
-            // 
-            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "fechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "fechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
-            this.fechaInicioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaInicioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // fechaCierreDataGridViewTextBoxColumn
-            // 
-            this.fechaCierreDataGridViewTextBoxColumn.DataPropertyName = "fechaCierre";
-            this.fechaCierreDataGridViewTextBoxColumn.HeaderText = "fechaCierre";
-            this.fechaCierreDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.fechaCierreDataGridViewTextBoxColumn.Name = "fechaCierreDataGridViewTextBoxColumn";
-            this.fechaCierreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaCierreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // observacionDataGridViewTextBoxColumn
-            // 
-            this.observacionDataGridViewTextBoxColumn.DataPropertyName = "observacion";
-            this.observacionDataGridViewTextBoxColumn.HeaderText = "observacion";
-            this.observacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
-            this.observacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.observacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idCajaSesionDataGridViewTextBoxColumn
-            // 
-            this.idCajaSesionDataGridViewTextBoxColumn.DataPropertyName = "idCajaSesion";
-            this.idCajaSesionDataGridViewTextBoxColumn.HeaderText = "idCajaSesion";
-            this.idCajaSesionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idCajaSesionDataGridViewTextBoxColumn.Name = "idCajaSesionDataGridViewTextBoxColumn";
-            this.idCajaSesionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCajaSesionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // nombresDataGridViewTextBoxColumn
-            // 
-            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "nombres";
-            this.nombresDataGridViewTextBoxColumn.HeaderText = "nombres";
-            this.nombresDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
-            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombresDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idPersonalDataGridViewTextBoxColumn
-            // 
-            this.idPersonalDataGridViewTextBoxColumn.DataPropertyName = "idPersonal";
-            this.idPersonalDataGridViewTextBoxColumn.HeaderText = "idPersonal";
-            this.idPersonalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idPersonalDataGridViewTextBoxColumn.Name = "idPersonalDataGridViewTextBoxColumn";
-            this.idPersonalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPersonalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // idSucursalDataGridViewTextBoxColumn
-            // 
-            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
-            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.lblCajaEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.lblCajaEstado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCajaEstado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCajaEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.lblCajaEstado.Location = new System.Drawing.Point(1, 1);
+            this.lblCajaEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCajaEstado.Name = "lblCajaEstado";
+            this.lblCajaEstado.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.lblCajaEstado.Size = new System.Drawing.Size(917, 38);
+            this.lblCajaEstado.TabIndex = 19;
+            this.lblCajaEstado.Text = "alert message";
+            this.lblCajaEstado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // UCCierreCaja
             // 
@@ -512,13 +529,13 @@
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cierreCajaBindingSource)).EndInit();
             this.toolStripNavigation.ResumeLayout(false);
             this.toolStripNavigation.PerformLayout();
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
             this.panelHeaderItem1.ResumeLayout(false);
             this.panelHeaderItem1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cierreCajaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +579,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idSucursalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cierreCajaBindingSource;
+        private System.Windows.Forms.Label lblCajaEstado;
     }
 }

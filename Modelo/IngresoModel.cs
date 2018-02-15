@@ -72,10 +72,23 @@ namespace Modelo
             }
         }
 
+        public async Task<List<Ingreso>> ingresos(int idCajaSesion)
+        {
+            try
+            {
+                // www.lineatienda.com/services.php/ingresos/montoinicio/3
+                List<Ingreso> ingresos = await webService.GET<List<Ingreso>>("ingresos", String.Format("montoinicio/{0}", idCajaSesion));
+                return ingresos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /**
          * Guardar configuraciones al iniciar la caja
          * **/
-
         public async Task<Response> guardarEnUno<T>(T param)
         {
             try
