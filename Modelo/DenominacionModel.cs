@@ -78,6 +78,20 @@ namespace Modelo
             }
         }
 
+        public async Task<List<Denominacion>> denominacionMoneda(int idMoneda, int idCierreCaja)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/denominaciones/moneda/1/cierrecaja/0
+                List<Denominacion> almacenes = await webService.GET<List<Denominacion>>("denominaciones", String.Format("moneda/{0}/cierrecaja/{1}", idMoneda, idCierreCaja));
+                return almacenes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<Denominacion>> verificarDenominaciones(string nombre, double valor, int moneda, int idDenominacion)
         {
             try

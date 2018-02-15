@@ -37,6 +37,7 @@ namespace Admeli.CajaBox.Nuevo
         public FormArquearCaja()
         {
             InitializeComponent();
+            currentCierreCaja = new CierreCaja() { idCierreCaja = 0 };
         }
 
         public FormArquearCaja(CierreCaja currentCierreCaja)
@@ -60,13 +61,12 @@ namespace Admeli.CajaBox.Nuevo
 
         private void reLoad()
         {
+            this.cargarCajaSesion();
             this.cargarMedioPago(); // carga mas los ingresosMenosEgresos()
             this.cargarIngreso();
-            this.cargarCajaSesion();
             this.cargarFecha();
             this.cargarMoneda();
-            this.cargarDenomincacion();
-        } 
+        }
         #endregion
 
         #region ================================ Load ================================
@@ -91,7 +91,7 @@ namespace Admeli.CajaBox.Nuevo
                 List<Ingreso> ingresos = await ingresoModel.ingresos(ConfigModel.cajaSesion.idCajaSesion); // Listas
                 int columnas = 3; // Indicar numero de columnas de la grilla
 
-                this.createLabel(x - 5,this.y, "Monto inicio caja");
+                this.createLabel(x - 5, this.y, "Monto inicio caja");
                 this.y += 25;
 
                 // =========================================== Algoritmo para crear una grilla
@@ -105,8 +105,8 @@ namespace Admeli.CajaBox.Nuevo
                         {
                             if (items == j) break; // salir de este for
                         }
-                        this.createElement(x, this.y, ingresos[i].moneda, ingresos[i].monto);
-                        i = (columnas - 1 == j ) ? i : i + 1; // indice de registros aumento
+                        this.createElement(x, this.y, ingresos[i].moneda, ingresos[i].monto, panelAside.Controls);
+                        i = (columnas - 1 == j) ? i : i + 1; // indice de registros aumento
                         x += 170; // cordenada x aumentado
                     }
                     this.y += 50; // cordenada y
@@ -167,32 +167,32 @@ namespace Admeli.CajaBox.Nuevo
             {
                 // 
                 int medioPagoID = medioPagos.First<MedioPago>().idMedioPago;
-                ingresoMenosEgreso = await cierreCajaModel.ingresoMenosEgreso(medioPagoID,ConfigModel.cajaSesion.idCajaSesion);
+                ingresoMenosEgreso = await cierreCajaModel.ingresoMenosEgreso(medioPagoID, ConfigModel.cajaSesion.idCajaSesion);
 
                 this.createLabel(x - 5, this.y, "Cálculo efectivo");
                 this.y += 25;
 
-                
+                /// ==================================================================
+                /// crear los campos textbox
                 foreach (Moneda moneda in ingresoMenosEgreso)
                 {
-                    this.createElement(x, y, "Teorico " + moneda.moneda, moneda.total.ToString());
-                    this.createElement(x + 170, y, "Real " + moneda.moneda, "0");   // Falta 
-                    this.createElement(x + 340, y, "Descuadre " + moneda.moneda, "0");   // Falta 
+                    this.createElement(x, y, "Teorico " + moneda.moneda, moneda.total.ToString(), panelAside.Controls);
+                    this.createElement(x + 170, y, "Real " + moneda.moneda, "0", panelAside.Controls);   // Falta 
+                    this.createElement(x + 340, y, "Descuadre " + moneda.moneda, "0", panelAside.Controls);   // Falta 
                     this.y += 50;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
 
-        private void cargarDenomincacion()
-        {
-            try
-            {
-                // mediosDePagos = await medioPagoModel.medioPagos();
+                /// ==================================================================
+                /// crar loas tab pages
+                foreach (Moneda moneda in ingresoMenosEgreso)
+                {
+                    /// ===================================================================
+                    /// denominaciones de las monedas
+                    List<Denominacion> denominaciones = await denominacionModel.denominacionMoneda(moneda.idMoneda,currentCierreCaja.idCierreCaja);
+                    createTabPage(moneda.moneda, moneda.idMoneda.ToString(), denominaciones);
+                }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -207,7 +207,7 @@ namespace Admeli.CajaBox.Nuevo
         /// <param name="y"></param>
         /// <param name="content"></param>
         /// <param name="value"></param>
-        private void createElement(int x, int y, string content, string value)
+        private void createElement(int x, int y, string content, string value, Control.ControlCollection controls)
         {
             Label titlefield = new Label()
             {
@@ -244,10 +244,16 @@ namespace Admeli.CajaBox.Nuevo
                 TextAlign = System.Windows.Forms.HorizontalAlignment.Left,
                 Text = value
             };
-            this.panelAside.Controls.Add(titlefield);
-            this.panelAside.Controls.Add(textBoxBF1);
+            controls.Add(titlefield);
+            controls.Add(textBoxBF1);
         }
 
+        /// <summary>
+        /// Crear un label
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="content"></param>
         private void createLabel(int x, int y, string content)
         {
             Label titlefield = new Label()
@@ -264,6 +270,33 @@ namespace Admeli.CajaBox.Nuevo
                 Text = content
             };
             this.panelAside.Controls.Add(titlefield);
+        }
+
+        /// <summary>
+        /// Agregar un tab page
+        /// </summary>
+        /// <param name="titlePage"></param>
+        /// <param name="idTitlePage"></param>
+        private void createTabPage(string titlePage, string idTitlePage, List<Denominacion> denominaciones)
+        {
+            TabPage tabPage = new TabPage()
+            {
+                Location = new System.Drawing.Point(4, 34),
+                Name = idTitlePage.Trim(),
+                Padding = new System.Windows.Forms.Padding(3),
+                Size = new System.Drawing.Size(550, 208),
+                TabIndex = 1,
+                Text = titlePage,
+                UseVisualStyleBackColor = true,
+            };
+
+            this.tabControlMonedas.Controls.Add(tabPage);
+            int ordenadas = 13, absisas = 13;
+            foreach (Denominacion denominacion in denominaciones)
+            {
+                this.createElement(ordenadas, absisas, denominacion.nombre, denominacion.valor, tabPage.Controls);
+                absisas += 50;
+            }
         }
     }
 }

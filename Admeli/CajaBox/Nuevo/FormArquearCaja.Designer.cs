@@ -49,18 +49,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textDescripcion = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabControlMonedas = new System.Windows.Forms.TabControl();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCajaEstado
@@ -193,7 +188,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.tabControl1);
+            this.panel6.Controls.Add(this.tabControlMonedas);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -254,7 +249,7 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panel5.Controls.Add(this.btnAceptar);
             this.panel5.Controls.Add(this.btnClose);
-            this.panel5.Location = new System.Drawing.Point(74, 116);
+            this.panel5.Location = new System.Drawing.Point(78, 116);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 48);
             this.panel5.TabIndex = 1;
@@ -319,58 +314,16 @@
             this.textDescripcion.Size = new System.Drawing.Size(530, 68);
             this.textDescripcion.TabIndex = 43;
             // 
-            // tabControl1
+            // tabControlMonedas
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ItemSize = new System.Drawing.Size(70, 30);
-            this.tabControl1.Location = new System.Drawing.Point(0, 49);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(10);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(558, 246);
-            this.tabControl1.TabIndex = 14;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(550, 208);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(550, 208);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(550, 208);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(550, 208);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabControlMonedas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlMonedas.ItemSize = new System.Drawing.Size(70, 30);
+            this.tabControlMonedas.Location = new System.Drawing.Point(0, 49);
+            this.tabControlMonedas.Margin = new System.Windows.Forms.Padding(10);
+            this.tabControlMonedas.Name = "tabControlMonedas";
+            this.tabControlMonedas.SelectedIndex = 0;
+            this.tabControlMonedas.Size = new System.Drawing.Size(558, 246);
+            this.tabControlMonedas.TabIndex = 14;
             // 
             // FormArquearCaja
             // 
@@ -395,7 +348,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -422,10 +374,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textDescripcion;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabControl tabControlMonedas;
     }
 }
