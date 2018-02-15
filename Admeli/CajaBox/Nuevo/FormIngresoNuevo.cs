@@ -158,7 +158,7 @@ namespace Admeli.CajaBox.Nuevo
         {
             if (textNOperacion.Text == "")
             {
-                errorProvider1.SetError(textNOperacion, "Este campo esta bacía");
+                errorProvider1.SetError(textNOperacion, "Este campo esta vacía");
                 textNOperacion.Focus();
                 return false;
             }
