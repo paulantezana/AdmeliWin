@@ -15,6 +15,7 @@ namespace Admeli
     public partial class UCIniciar : UserControl
     {
         private FormPrincipal formPrincipal;
+        private FormHomeDarck formHomeDarck;
 
         public UCIniciar()
         {
@@ -25,6 +26,11 @@ namespace Admeli
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+        }
+
+        public UCIniciar(FormHomeDarck formHomeDarck)
+        {
+            this.formHomeDarck = formHomeDarck;
         }
 
         private void UCIniciar_Load(object sender, EventArgs e)

@@ -48,6 +48,8 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.formFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.progressbar = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.lblProgress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -82,6 +84,8 @@
             // 
             // panelHeader
             // 
+            this.panelHeader.Controls.Add(this.lblProgress);
+            this.panelHeader.Controls.Add(this.progressbar);
             this.panelHeader.Controls.Add(this.label5);
             this.panelHeader.Controls.Add(this.label4);
             this.panelHeader.Controls.Add(this.label3);
@@ -126,7 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(30, 414);
+            this.label3.Location = new System.Drawing.Point(30, 398);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 13);
             this.label3.TabIndex = 17;
@@ -137,7 +141,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
-            this.label2.Location = new System.Drawing.Point(30, 400);
+            this.label2.Location = new System.Drawing.Point(30, 384);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 16;
@@ -271,6 +275,26 @@
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Login";
             // 
+            // progressbar
+            // 
+            this.progressbar.BackColor = System.Drawing.Color.White;
+            this.progressbar.BorderRadius = 5;
+            this.progressbar.Location = new System.Drawing.Point(12, 436);
+            this.progressbar.MaximumValue = 100;
+            this.progressbar.Name = "progressbar";
+            this.progressbar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(202)))), ((int)(((byte)(59)))));
+            this.progressbar.Size = new System.Drawing.Size(679, 10);
+            this.progressbar.TabIndex = 20;
+            this.progressbar.Value = 0;
+            // 
+            // lblProgress
+            // 
+            this.lblProgress.Location = new System.Drawing.Point(268, 417);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(147, 16);
+            this.lblProgress.TabIndex = 21;
+            this.lblProgress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -315,5 +339,7 @@
         private System.Windows.Forms.Label label5;
         public Bunifu.Framework.UI.BunifuMetroTextbox textUsuario;
         public Bunifu.Framework.UI.BunifuMetroTextbox textPassword;
+        private Bunifu.Framework.UI.BunifuProgressBar progressbar;
+        private System.Windows.Forms.Label lblProgress;
     }
 }

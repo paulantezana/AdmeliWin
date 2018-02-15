@@ -37,8 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnLogout = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panelAsideContainer = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,10 +51,10 @@
             this.btnCaja = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnVenta = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCompra = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelRoot = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelMenuRight = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.btnFullScreen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,8 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAsideContainer.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelRoot.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,8 +125,8 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.bunifuFlatButton3);
-            this.panel3.Controls.Add(this.bunifuFlatButton2);
-            this.panel3.Controls.Add(this.bunifuFlatButton1);
+            this.panel3.Controls.Add(this.btnLogout);
+            this.panel3.Controls.Add(this.btnDashboard);
             this.panel3.Controls.Add(this.bunifuSeparator1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -198,71 +198,72 @@
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuFlatButton2
+            // btnLogout
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage_Selected")));
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 100D;
-            this.bunifuFlatButton2.IsTab = true;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(66, 75);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(49, 48);
-            this.bunifuFlatButton2.TabIndex = 10;
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.BorderRadius = 0;
+            this.btnLogout.ButtonText = "";
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLogout.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLogout.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnLogout.Iconimage")));
+            this.btnLogout.Iconimage_right = null;
+            this.btnLogout.Iconimage_right_Selected = null;
+            this.btnLogout.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnLogout.Iconimage_Selected")));
+            this.btnLogout.IconMarginLeft = 0;
+            this.btnLogout.IconMarginRight = 0;
+            this.btnLogout.IconRightVisible = true;
+            this.btnLogout.IconRightZoom = 0D;
+            this.btnLogout.IconVisible = true;
+            this.btnLogout.IconZoom = 100D;
+            this.btnLogout.IsTab = true;
+            this.btnLogout.Location = new System.Drawing.Point(66, 75);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnLogout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnLogout.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLogout.selected = false;
+            this.btnLogout.Size = new System.Drawing.Size(49, 48);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnLogout.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // bunifuFlatButton1
+            // btnDashboard
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage_Selected")));
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 100D;
-            this.bunifuFlatButton1.IsTab = true;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(1, 75);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(49, 48);
-            this.bunifuFlatButton1.TabIndex = 9;
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDashboard.BorderRadius = 0;
+            this.btnDashboard.ButtonText = "";
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.DisabledColor = System.Drawing.Color.Gray;
+            this.btnDashboard.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Iconimage")));
+            this.btnDashboard.Iconimage_right = null;
+            this.btnDashboard.Iconimage_right_Selected = null;
+            this.btnDashboard.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Iconimage_Selected")));
+            this.btnDashboard.IconMarginLeft = 0;
+            this.btnDashboard.IconMarginRight = 0;
+            this.btnDashboard.IconRightVisible = true;
+            this.btnDashboard.IconRightZoom = 0D;
+            this.btnDashboard.IconVisible = true;
+            this.btnDashboard.IconZoom = 100D;
+            this.btnDashboard.IsTab = true;
+            this.btnDashboard.Location = new System.Drawing.Point(1, 75);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnDashboard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnDashboard.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnDashboard.selected = false;
+            this.btnDashboard.Size = new System.Drawing.Size(49, 48);
+            this.btnDashboard.TabIndex = 9;
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnDashboard.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuSeparator1
             // 
@@ -601,16 +602,16 @@
             this.btnCompra.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
             // 
-            // panel1
+            // panelRoot
             // 
-            this.panel1.Controls.Add(this.panelMain);
-            this.panel1.Controls.Add(this.panelMenuRight);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(635, 628);
-            this.panel1.TabIndex = 1;
+            this.panelRoot.Controls.Add(this.panelMain);
+            this.panelRoot.Controls.Add(this.panelMenuRight);
+            this.panelRoot.Controls.Add(this.panelHeader);
+            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRoot.Location = new System.Drawing.Point(200, 0);
+            this.panelRoot.Name = "panelRoot";
+            this.panelRoot.Size = new System.Drawing.Size(635, 628);
+            this.panelRoot.TabIndex = 1;
             // 
             // panelMain
             // 
@@ -629,17 +630,17 @@
             this.panelMenuRight.Size = new System.Drawing.Size(0, 580);
             this.panelMenuRight.TabIndex = 1;
             // 
-            // panel5
+            // panelHeader
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.btnFullScreen);
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.btnToggleMenuRigth);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(635, 48);
-            this.panel5.TabIndex = 0;
+            this.panelHeader.BackColor = System.Drawing.Color.White;
+            this.panelHeader.Controls.Add(this.btnFullScreen);
+            this.panelHeader.Controls.Add(this.panel7);
+            this.panelHeader.Controls.Add(this.btnToggleMenuRigth);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(635, 48);
+            this.panelHeader.TabIndex = 0;
             // 
             // btnFullScreen
             // 
@@ -841,20 +842,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 628);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelRoot);
             this.Controls.Add(this.panelAsideContainer);
             this.Name = "FormHomeDarck";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHomeDarck";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormHomeDarck_FormClosing);
+            this.Shown += new System.EventHandler(this.FormHomeDarck_Shown);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelAsideContainer.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.panelRoot.ResumeLayout(false);
+            this.panelHeader.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -880,13 +883,13 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnToggleMenu;
         private Bunifu.Framework.UI.BunifuFlatButton btnConfiguracion;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnLogout;
+        private Bunifu.Framework.UI.BunifuFlatButton btnDashboard;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelRoot;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelMenuRight;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelHeader;
         private Bunifu.Framework.UI.BunifuFlatButton btnToggleMenuRigth;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button3;

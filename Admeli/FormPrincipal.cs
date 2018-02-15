@@ -259,7 +259,6 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCHome);
                     }
-
                     break;
                 case "iniciar":
                     if (this.uCIniciar == null)

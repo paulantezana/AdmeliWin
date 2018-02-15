@@ -23,6 +23,7 @@ namespace Admeli
         private NotaEntradaModel notaEntradaModel = new NotaEntradaModel();
         private CobroModel cobroModel = new CobroModel();
         private PagoModel pagoModel = new PagoModel();
+        private FormHomeDarck formHomeDarck;
 
         public bool lisenerKeyEvents { get; internal set; }
 
@@ -37,7 +38,14 @@ namespace Admeli
             InitializeComponent();
             this.formPrincipal = formPrincipal;
             cargarGraficoVentas();
-        } 
+        }
+
+        public UCHome(FormHomeDarck formHomeDarck)
+        {
+            InitializeComponent();
+            this.formHomeDarck = formHomeDarck;
+            cargarGraficoVentas();
+        }
         #endregion
 
         struct ultimasVentas

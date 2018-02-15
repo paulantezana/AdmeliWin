@@ -1,4 +1,5 @@
 ﻿using Admeli.NavDarck;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,12 +23,30 @@ namespace Admeli
         private UCHerramientasNav uCHerramientasNav;
         private UCReporteNav uCReporteNav;
         private UCProductosNav uCProductosNav;
+        private UCHome uCHome;
+        private UCIniciar uCIniciar;
+        private FormLogin formLogin;
 
+        private SucursalModel sucursalModel = new SucursalModel();
+        private ConfigModel configModel = new ConfigModel();
+
+        private bool notCloseApp { get; set; }
+
+        #region =============================== Constructor ===============================
         public FormHomeDarck()
         {
             InitializeComponent();
         }
 
+        public FormHomeDarck(FormLogin formLogin)
+        {
+            InitializeComponent();
+            this.formLogin = formLogin;
+        }
+
+        #endregion
+
+        #region ========================= ASIDE LEFT MENU =========================
         private void btnColor()
         {
             btnCompra.Textcolor = Color.FromArgb(139, 138, 141);
@@ -102,22 +121,10 @@ namespace Admeli
             borderLeftActive.Location = btnConfiguracion.Location;
             btnConfiguracion.Textcolor = Color.White;
             togglePanelMain("configuracion");
-        }
+        } 
+        #endregion
 
-        private void btnToggleMenu_Click(object sender, EventArgs e)
-        {
-            if (panelAsideContainer.Size.Width > 60)
-            {
-                panelAsideContainer.Size = new Size(50, 700);
-            }
-            else
-            {
-                panelAsideContainer.Size = new Size(200, 700);
-            }
-        }
-
-
-        #region ===================== Toogle panel navegations =====================
+        #region ===================== TOGGLE PANEL ASIDE LEFT =====================
         internal void togglePanelMain(string panelName)
         {
             this.panelMain.Controls.Clear();
@@ -254,6 +261,38 @@ namespace Admeli
                         this.panelMain.Controls.Add(uCReporteNav);
                     }
                     break;
+                case "home":
+                    if (this.uCHome == null)
+                    {
+                        this.uCHome = new Admeli.UCHome(this);
+                        this.panelMain.Controls.Add(uCHome);
+                        this.uCHome.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCHome.Location = new System.Drawing.Point(0, 0);
+                        this.uCHome.Name = "uCHome";
+                        this.uCHome.Size = new System.Drawing.Size(250, 776);
+                        this.uCHome.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCHome);
+                    }
+                    break;
+                case "iniciar":
+                    if (this.uCIniciar == null)
+                    {
+                        this.uCIniciar = new Admeli.UCIniciar(this);
+                        this.panelMain.Controls.Add(uCIniciar);
+                        this.uCIniciar.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCIniciar.Location = new System.Drawing.Point(0, 0);
+                        this.uCIniciar.Name = "uCIniciar";
+                        this.uCIniciar.Size = new System.Drawing.Size(250, 776);
+                        this.uCIniciar.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMain.Controls.Add(uCIniciar);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -261,6 +300,7 @@ namespace Admeli
 
         #endregion
 
+        #region ========================= MENU =========================
         private void btnToggleMenuRigth_Click(object sender, EventArgs e)
         {
             if (panelMenuRight.Size.Width > 1)
@@ -273,6 +313,20 @@ namespace Admeli
             }
         }
 
+        private void btnToggleMenu_Click(object sender, EventArgs e)
+        {
+            if (panelAsideContainer.Size.Width > 60)
+            {
+                panelAsideContainer.Size = new Size(50, 700);
+            }
+            else
+            {
+                panelAsideContainer.Size = new Size(200, 700);
+            }
+        }
+        #endregion
+
+        #region ========================= EVENTS =========================
         private void btnFullScreen_Click(object sender, EventArgs e)
         {
             if (this.FormBorderStyle == FormBorderStyle.None)
@@ -286,5 +340,75 @@ namespace Admeli
                 this.WindowState = FormWindowState.Maximized;
             }
         }
+        #endregion
+
+        #region ========================= CLOSE =========================
+        private void FormHomeDarck_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!notCloseApp)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // mostrar nuevamente el login del usuario
+            this.formLogin.Show();
+
+            // limpiar loas campos de login usuario
+            this.formLogin.textUsuario.Text = "";
+            this.formLogin.textPassword.Text = "";
+            this.formLogin.textUsuario.Focus();
+
+            // Cerrando el formulario actual
+            this.notCloseApp = true;
+            this.Close();
+        }
+        #endregion
+
+        #region ================================ LOADS ================================
+        private void mostrarModuloPorDefecto()
+        {
+            if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
+            {
+                togglePanelMain("iniciar");
+                ConfigModel.currentIdAlmacen = ConfigModel.alamacenes[0].idAlmacen;
+                ConfigModel.currentPuntoVenta = ConfigModel.puntosDeVenta[1].idAsignarPuntoVenta;
+            }
+            else
+            {
+                togglePanelMain("home");
+            }
+        }
+        #endregion
+
+        #region =============================== SATATES ===============================
+        public void appLoadState(bool state)
+        {
+            if (state)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                // progressBarApp.Style = ProgressBarStyle.Marquee;
+            }
+            else
+            {
+                Cursor.Current = Cursors.Default;
+                // progressBarApp.Style = ProgressBarStyle.Blocks;
+            }
+        }
+        #endregion
+
+        #region ================================= ROOT LOAD =================================
+        private void FormHomeDarck_Shown(object sender, EventArgs e)
+        {
+            this.reLoad();
+        }
+
+        private void reLoad()
+        {
+            mostrarModuloPorDefecto();
+        } 
+        #endregion
     }
 }
