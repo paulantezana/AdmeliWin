@@ -24,7 +24,6 @@ namespace Modelo.Recursos
         {
             //this.domainName = "http://www.lineatienda.com";
             this.domainName = "http://localhost";
-            //this.domainName = "http://192.168.1.45:8080";
 
             //this.directory = "services.php";
             this.directory = "admeli/xcore/services.php";
