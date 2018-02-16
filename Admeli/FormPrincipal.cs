@@ -2,6 +2,7 @@
 using Admeli.NavDarck;
 using Admeli.Productos;
 using Admeli.Ventas;
+using Entidad.Configuracion;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -456,12 +457,18 @@ namespace Admeli
             lblUserName.Text = PersonalModel.personal.usuario.ToUpper();
             lblDocumento.Text = String.Format("{0}", PersonalModel.personal.numeroDocumento);
 
-            loadDataInfo();
+            cargarDatosAsideRight();
         }
 
-        private void loadDataInfo()
+        private void cargarDatosAsideRight()
         {
-            
+            int y = 13;
+            List<TipoCambioMoneda> tipoCambios = ConfigModel.tipoCambioMonedas;
+            foreach (TipoCambioMoneda cambio in tipoCambios)
+            {
+                createElements(y, cambio);
+                y += 22;
+            }
         }
         #endregion
 
@@ -485,5 +492,42 @@ namespace Admeli
             togglePanelMain("productos2");
         }
         #endregion
+
+        private void createElements(int y, TipoCambioMoneda param)
+        {
+            /// 
+            /// lblEfectivoName
+            /// 
+            Label lblEfectivoName = new System.Windows.Forms.Label()
+            {
+                AutoSize = true,
+                Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                Location = new System.Drawing.Point(13, y),
+                Name = "lblEfectivoName",
+                Size = new System.Drawing.Size(44, 16),
+                TabIndex = 10,
+                Text = param.moneda,
+            };
+
+            /// 
+            /// lblEfectivoValue
+            /// 
+            Label lblEfectivoValue = new System.Windows.Forms.Label()
+            {
+                AutoSize = true,
+                ForeColor = System.Drawing.SystemColors.ControlDarkDark,
+                Location = new System.Drawing.Point(150, y),
+                Name = "lblEfectivoValue",
+                Size = new System.Drawing.Size(65, 13),
+                TabIndex = 11,
+                Text = String.Format("{0:0.00}", param.cambio)
+            };
+
+            /// 
+            /// Add Controls
+            /// 
+            panelMenuRight.Controls.Add(lblEfectivoName);
+            panelMenuRight.Controls.Add(lblEfectivoValue);
+        }
     }
 }
