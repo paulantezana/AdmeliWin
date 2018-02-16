@@ -430,22 +430,16 @@ namespace Admeli
         }
         #endregion
 
-        #region ================================ LOADS ================================
-
-        #endregion
-
         #region =============================== SATATES ===============================
         public void appLoadState(bool state)
         {
             if (state)
             {
-                Cursor.Current = Cursors.WaitCursor;
-                // progressBarApp.Style = ProgressBarStyle.Marquee;
+                progressBarApp.Style = ProgressBarStyle.Marquee;
             }
             else
             {
-                Cursor.Current = Cursors.Default;
-                // progressBarApp.Style = ProgressBarStyle.Blocks;
+                progressBarApp.Style = ProgressBarStyle.Blocks;
             }
         }
         #endregion
@@ -459,6 +453,8 @@ namespace Admeli
         private void reLoad()
         {
             togglePanelMain("home");
+            lblUserName.Text = PersonalModel.personal.usuario.ToUpper();
+            lblDocumento.Text = String.Format("{0}", PersonalModel.personal.numeroDocumento);
         }
         #endregion
 

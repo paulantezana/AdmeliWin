@@ -127,9 +127,9 @@ namespace Admeli.Componentes
         {
             if (isSuccess)
             {
-                textBox.BorderColorIdle = Color.FromArgb(22, 166, 106);
-                textBox.BorderColorFocused = Color.FromArgb(22, 166, 106);
-                textBox.BorderColorMouseHover = Color.FromArgb(22, 166, 106);
+                textBox.BorderColorIdle = Color.FromArgb(23, 203, 34);
+                textBox.BorderColorFocused = Color.FromArgb(23, 203, 34);
+                textBox.BorderColorMouseHover = Color.FromArgb(23, 203, 34);
             }
             else
             {

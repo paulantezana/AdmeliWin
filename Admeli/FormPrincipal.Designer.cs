@@ -35,7 +35,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLogout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -63,6 +63,8 @@
             this.btnVenta2 = new System.Windows.Forms.Button();
             this.btnProductos2 = new System.Windows.Forms.Button();
             this.btnToggleMenuRigth = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.progressBarApp = new System.Windows.Forms.ProgressBar();
+            this.lblDocumento = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -82,7 +84,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 583);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 45);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 2;
             // 
             // btnToggleMenu
             // 
@@ -113,7 +115,7 @@
             this.btnToggleMenu.OnHoverTextColor = System.Drawing.Color.White;
             this.btnToggleMenu.selected = false;
             this.btnToggleMenu.Size = new System.Drawing.Size(49, 45);
-            this.btnToggleMenu.TabIndex = 17;
+            this.btnToggleMenu.TabIndex = 0;
             this.btnToggleMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnToggleMenu.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.btnToggleMenu.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,9 +123,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblDocumento);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblUserName);
             this.panel3.Controls.Add(this.bunifuFlatButton3);
             this.panel3.Controls.Add(this.btnLogout);
             this.panel3.Controls.Add(this.btnDashboard);
@@ -132,7 +135,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 145);
-            this.panel3.TabIndex = 1;
+            this.panel3.TabIndex = 2;
             // 
             // pictureBox2
             // 
@@ -154,16 +157,16 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblUserName
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(51, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 46);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "User name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUserName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.White;
+            this.lblUserName.Location = new System.Drawing.Point(51, 12);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(115, 38);
+            this.lblUserName.TabIndex = 0;
+            this.lblUserName.Text = "User name";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuFlatButton3
             // 
@@ -193,7 +196,7 @@
             this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton3.selected = false;
             this.bunifuFlatButton3.Size = new System.Drawing.Size(49, 48);
-            this.bunifuFlatButton3.TabIndex = 11;
+            this.bunifuFlatButton3.TabIndex = 4;
             this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,7 +229,7 @@
             this.btnLogout.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogout.selected = false;
             this.btnLogout.Size = new System.Drawing.Size(49, 48);
-            this.btnLogout.TabIndex = 10;
+            this.btnLogout.TabIndex = 3;
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.btnLogout.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,7 +263,7 @@
             this.btnDashboard.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDashboard.selected = false;
             this.btnDashboard.Size = new System.Drawing.Size(49, 48);
-            this.btnDashboard.TabIndex = 9;
+            this.btnDashboard.TabIndex = 2;
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.btnDashboard.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,7 +277,7 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 54);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(200, 35);
-            this.bunifuSeparator1.TabIndex = 12;
+            this.bunifuSeparator1.TabIndex = 1;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
@@ -305,7 +308,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 145);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 438);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 1;
             // 
             // borderLeftActive
             // 
@@ -344,7 +347,7 @@
             this.btnConfiguracion.OnHoverTextColor = System.Drawing.Color.White;
             this.btnConfiguracion.selected = false;
             this.btnConfiguracion.Size = new System.Drawing.Size(200, 48);
-            this.btnConfiguracion.TabIndex = 18;
+            this.btnConfiguracion.TabIndex = 7;
             this.btnConfiguracion.Text = "Configuracion";
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguracion.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -380,7 +383,7 @@
             this.btnReporte.OnHoverTextColor = System.Drawing.Color.White;
             this.btnReporte.selected = false;
             this.btnReporte.Size = new System.Drawing.Size(200, 48);
-            this.btnReporte.TabIndex = 14;
+            this.btnReporte.TabIndex = 6;
             this.btnReporte.Text = "Reporte";
             this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -416,7 +419,7 @@
             this.btnHerramienta.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHerramienta.selected = false;
             this.btnHerramienta.Size = new System.Drawing.Size(200, 48);
-            this.btnHerramienta.TabIndex = 13;
+            this.btnHerramienta.TabIndex = 5;
             this.btnHerramienta.Text = "Herramientas";
             this.btnHerramienta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHerramienta.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -452,7 +455,7 @@
             this.btnProducto.OnHoverTextColor = System.Drawing.Color.White;
             this.btnProducto.selected = false;
             this.btnProducto.Size = new System.Drawing.Size(200, 48);
-            this.btnProducto.TabIndex = 11;
+            this.btnProducto.TabIndex = 4;
             this.btnProducto.Text = "Productos";
             this.btnProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProducto.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -488,7 +491,7 @@
             this.btnAlmacen.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAlmacen.selected = false;
             this.btnAlmacen.Size = new System.Drawing.Size(200, 48);
-            this.btnAlmacen.TabIndex = 15;
+            this.btnAlmacen.TabIndex = 3;
             this.btnAlmacen.Text = "Almacen";
             this.btnAlmacen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlmacen.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -524,7 +527,7 @@
             this.btnCaja.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCaja.selected = false;
             this.btnCaja.Size = new System.Drawing.Size(200, 48);
-            this.btnCaja.TabIndex = 10;
+            this.btnCaja.TabIndex = 2;
             this.btnCaja.Text = "Caja";
             this.btnCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCaja.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -560,7 +563,7 @@
             this.btnVenta.OnHoverTextColor = System.Drawing.Color.White;
             this.btnVenta.selected = false;
             this.btnVenta.Size = new System.Drawing.Size(200, 48);
-            this.btnVenta.TabIndex = 9;
+            this.btnVenta.TabIndex = 1;
             this.btnVenta.Text = "Venta";
             this.btnVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVenta.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -596,7 +599,7 @@
             this.btnCompra.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCompra.selected = false;
             this.btnCompra.Size = new System.Drawing.Size(200, 48);
-            this.btnCompra.TabIndex = 8;
+            this.btnCompra.TabIndex = 0;
             this.btnCompra.Text = "Compra";
             this.btnCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCompra.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -608,6 +611,7 @@
             this.panelRoot.Controls.Add(this.panelMain);
             this.panelRoot.Controls.Add(this.panelMenuRight);
             this.panelRoot.Controls.Add(this.panelHeader);
+            this.panelRoot.Controls.Add(this.progressBarApp);
             this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRoot.Location = new System.Drawing.Point(200, 0);
             this.panelRoot.Name = "panelRoot";
@@ -619,8 +623,8 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 48);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(635, 580);
-            this.panelMain.TabIndex = 2;
+            this.panelMain.Size = new System.Drawing.Size(635, 572);
+            this.panelMain.TabIndex = 1;
             // 
             // panelMenuRight
             // 
@@ -628,7 +632,7 @@
             this.panelMenuRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelMenuRight.Location = new System.Drawing.Point(635, 48);
             this.panelMenuRight.Name = "panelMenuRight";
-            this.panelMenuRight.Size = new System.Drawing.Size(0, 580);
+            this.panelMenuRight.Size = new System.Drawing.Size(0, 572);
             this.panelMenuRight.TabIndex = 1;
             // 
             // panelHeader
@@ -672,7 +676,7 @@
             this.btnFullScreen.OnHoverTextColor = System.Drawing.Color.White;
             this.btnFullScreen.selected = false;
             this.btnFullScreen.Size = new System.Drawing.Size(49, 48);
-            this.btnFullScreen.TabIndex = 20;
+            this.btnFullScreen.TabIndex = 1;
             this.btnFullScreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFullScreen.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.btnFullScreen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -688,7 +692,7 @@
             this.panel7.Location = new System.Drawing.Point(35, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(464, 48);
-            this.panel7.TabIndex = 19;
+            this.panel7.TabIndex = 0;
             // 
             // btnVentaTocuh
             // 
@@ -710,7 +714,7 @@
             this.btnVentaTocuh.Name = "btnVentaTocuh";
             this.btnVentaTocuh.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnVentaTocuh.Size = new System.Drawing.Size(129, 48);
-            this.btnVentaTocuh.TabIndex = 25;
+            this.btnVentaTocuh.TabIndex = 0;
             this.btnVentaTocuh.Text = "  Venta Touch";
             this.btnVentaTocuh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentaTocuh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -746,7 +750,7 @@
             this.btnCompra2.Name = "btnCompra2";
             this.btnCompra2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnCompra2.Size = new System.Drawing.Size(110, 48);
-            this.btnCompra2.TabIndex = 24;
+            this.btnCompra2.TabIndex = 1;
             this.btnCompra2.Text = "   Compras";
             this.btnCompra2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCompra2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -773,7 +777,7 @@
             this.btnVenta2.Name = "btnVenta2";
             this.btnVenta2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnVenta2.Size = new System.Drawing.Size(110, 48);
-            this.btnVenta2.TabIndex = 23;
+            this.btnVenta2.TabIndex = 2;
             this.btnVenta2.Text = "   Ventas";
             this.btnVenta2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVenta2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -800,7 +804,7 @@
             this.btnProductos2.Name = "btnProductos2";
             this.btnProductos2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnProductos2.Size = new System.Drawing.Size(110, 48);
-            this.btnProductos2.TabIndex = 22;
+            this.btnProductos2.TabIndex = 3;
             this.btnProductos2.Text = "   Productos";
             this.btnProductos2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -836,11 +840,31 @@
             this.btnToggleMenuRigth.OnHoverTextColor = System.Drawing.Color.White;
             this.btnToggleMenuRigth.selected = false;
             this.btnToggleMenuRigth.Size = new System.Drawing.Size(49, 48);
-            this.btnToggleMenuRigth.TabIndex = 18;
+            this.btnToggleMenuRigth.TabIndex = 2;
             this.btnToggleMenuRigth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnToggleMenuRigth.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.btnToggleMenuRigth.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToggleMenuRigth.Click += new System.EventHandler(this.btnToggleMenuRigth_Click);
+            // 
+            // progressBarApp
+            // 
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBarApp.Location = new System.Drawing.Point(0, 620);
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.Size = new System.Drawing.Size(635, 8);
+            this.progressBarApp.TabIndex = 2;
+            this.progressBarApp.UseWaitCursor = true;
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.lblDocumento.Location = new System.Drawing.Point(51, 39);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(115, 19);
+            this.lblDocumento.TabIndex = 7;
+            this.lblDocumento.Text = "User name";
+            this.lblDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormPrincipal
             // 
@@ -874,7 +898,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelAsideContainer;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuFlatButton btnHerramienta;
         private Bunifu.Framework.UI.BunifuFlatButton btnProducto;
@@ -904,5 +928,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private Bunifu.Framework.UI.BunifuFlatButton btnFullScreen;
         public System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.ProgressBar progressBarApp;
+        private System.Windows.Forms.Label lblDocumento;
     }
 }

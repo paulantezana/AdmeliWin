@@ -44,7 +44,7 @@ namespace Admeli
                     // cargar componentes desde el webservice
                     await cargarComponente();
 
-                    // esterar a que cargen todo los web service
+                    // esperar a que cargen todo los web service
                     await Task.Run(() =>
                     {
                         while (true)

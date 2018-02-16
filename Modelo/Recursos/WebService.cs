@@ -22,32 +22,31 @@ namespace Modelo.Recursos
         /// </summary>
         public WebService()
         {
-            this.domainName = "http://www.lineatienda.com";
-            //this.domainName = "http://localhost:8080";
+            //this.domainName = "http://www.lineatienda.com";
+            this.domainName = "http://localhost:8080";
             //this.domainName = "http://192.168.1.45:8080";
 
-            this.directory = "services.php";
-            //this.directory = "admeli/xcore/services.php";
+            //this.directory = "services.php";
+            this.directory = "admeli/xcore/services.php";
 
             this.urlBase = String.Format("{0}/{1}", domainName, directory);
         }
 
-
         /// <summary>
-        /// Enviar y recivir datos mediante el metodo POST  donde T = al dato k se envia y K es el dato que responde
+        /// Enviar y recivir datos mediante el metodo POST
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="K"></typeparam>
-        /// <param name="servicio"></param>
-        /// <param name="metodo"></param>
-        /// <param name="param"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Data Type enviar</typeparam>
+        /// <typeparam name="K">Data Type recivir</typeparam>
+        /// <param name="servicio">Servicio</param>
+        /// <param name="metodo">metodo</param>
+        /// <param name="param">datos enviar al webservie</param>
+        /// <returns>K tipo generico</returns>
         public async Task<K> POST<T,K>(string servicio, string metodo, T param)
         {
             try
             {
                 // Serializando el objeto
-                string request = JsonConvert.SerializeObject(param);
+                 string request = JsonConvert.SerializeObject(param);
                 StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
 
                 // Creando un nuevo cliente
@@ -74,13 +73,13 @@ namespace Modelo.Recursos
         }
 
         /// <summary>
-        /// Enviar y recivir datos mediante el metodo POST  donde T = al dato k se envia y K es el dato que responde
+        /// Enviar y recivir datos mediante el metodo POST
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="K"></typeparam>
-        /// <param name="servicio"></param>
-        /// <param name="param"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Data Type enviar</typeparam>
+        /// <typeparam name="K">Data Type recivir</typeparam>
+        /// <param name="servicio">Servicio</param>
+        /// <param name="param">datos enviar al webservie</param>
+        /// <returns>K tipo generico</returns>
         public async Task<K> POST<T, K>(string servicio, T param)
         {
             try

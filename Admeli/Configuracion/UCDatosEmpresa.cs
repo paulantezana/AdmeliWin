@@ -11,6 +11,7 @@ using Modelo;
 using Entidad.Configuracion;
 using Entidad.Location;
 using Entidad;
+using Admeli.Componentes;
 
 namespace Admeli.Configuracion
 {
@@ -76,207 +77,6 @@ namespace Admeli.Configuracion
         }
         #endregion
 
-        #region ================== Formando los niveles de cada pais ==================
-        private async void crearNivelesPais()
-        {
-            try
-            {
-                loadStateApp(true);
-                labelUbicaciones = await locationModel.labelUbicacion(Convert.ToInt32(cbxPaises.SelectedValue));
-                ocultarNiveles(); // Ocultando todo los niveles
-
-                // Mostrando los niveles uno por uno
-                if (labelUbicaciones.Count >= 1)
-                {
-                    lblNivel1.Visible = true;
-                    lblNivel1.Text = labelUbicaciones[0].denominacion;
-                    cbxNivel1.Visible = true;
-                }
-
-                if (labelUbicaciones.Count >= 2)
-                {
-                    lblNivel2.Visible = true;
-                    lblNivel2.Text = labelUbicaciones[1].denominacion;
-                    cbxNivel2.Visible = true;
-                }
-
-                if (labelUbicaciones.Count >= 3)
-                {
-                    lblNivel3.Visible = true;
-                    lblNivel3.Text = labelUbicaciones[2].denominacion;
-                    cbxNivel3.Visible = true;
-                }
-
-                if (labelUbicaciones.Count > 4)
-                {
-                    lblNivel4.Visible = true;
-                    lblNivel4.Text = labelUbicaciones[3].denominacion;
-                    cbxNivel4.Visible = true;
-                }
-
-                // Cargar el primer nivel de la localizacion
-                cargarNivel1();
-            }
-            catch (Exception)
-            {
-                // MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                loadStateApp(false);
-            }
-        }
-
-        private void ocultarNiveles()
-        {
-            lblNivel1.Visible = false;
-            lblNivel2.Visible = false;
-            lblNivel3.Visible = false;
-            lblNivel4.Visible = false;
-
-            cbxNivel1.Visible = false;
-            cbxNivel2.Visible = false;
-            cbxNivel3.Visible = false;
-            cbxNivel4.Visible = false;
-
-            cbxNivel1.SelectedIndex = -1;
-            cbxNivel2.SelectedIndex = -1;
-            cbxNivel3.SelectedIndex = -1;
-            cbxNivel4.SelectedIndex = -1;
-        }
-
-        private async void cargarNivel1()
-        {
-            try
-            {
-                // No cargar directo al comobobox esto causara que el evento SelectedIndexChange de forma automatica
-                if (labelUbicaciones.Count < 1) return;
-                loadStateApp(true);
-                nivel1BindingSource.DataSource = await locationModel.nivel1(Convert.ToInt32(cbxPaises.SelectedValue));
-
-                // seleccionando el valor por defecto
-                if (ubicacionGeografica.idNivel1 > 0)
-                {
-                    cbxNivel1.SelectedValue = ubicacionGeografica.idNivel1;
-                }
-                else
-                {
-                    cbxNivel1.SelectedIndex = -1;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                loadStateApp(false);
-                desactivarNivelDesde(2);
-            }
-        }
-
-        private async void cargarNivel2()
-        {
-            try
-            {
-                if (labelUbicaciones.Count < 2) return;
-                loadStateApp(true);
-                nivel2BindingSource.DataSource = await locationModel.nivel2(Convert.ToInt32(cbxNivel1.SelectedValue));
-
-                // seleccionando el valor por defecto
-                if (Convert.ToInt32(ubicacionGeografica.idNivel2) > 0)
-                {
-                    cbxNivel2.SelectedValue = Convert.ToInt32(ubicacionGeografica.idNivel2);
-                }
-                else
-                {
-                    cbxNivel2.SelectedIndex = -1;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                desactivarNivelDesde(3);
-                loadStateApp(false);
-            }
-        }
-
-        private async void cargarNivel3()
-        {
-            try
-            { 
-                if (labelUbicaciones.Count < 3) return;
-                loadStateApp(true);
-                nivel3BindingSource.DataSource = await locationModel.nivel3(Convert.ToInt32(cbxNivel2.SelectedValue));
-
-                // seleccionando el valor por defecto
-                if (Convert.ToInt32(ubicacionGeografica.idNivel3) > 0)
-                {
-                    cbxNivel3.SelectedValue = Convert.ToInt32(ubicacionGeografica.idNivel3);
-                }
-                else
-                {
-                    cbxNivel3.SelectedIndex = -1;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                loadStateApp(false);
-                desactivarNivelDesde(4);
-            }
-        }
-
-        private async void cargarNivel4()
-        {
-            try
-            {
-                if (labelUbicaciones.Count < 4) return;
-                loadStateApp(true);
-                nivel4BindingSource.DataSource = await locationModel.nivel4(Convert.ToInt32(cbxNivel3.SelectedValue));
-
-                // seleccionando el valor por defecto
-                /*if (Convert.ToInt32(ubicacionGeografica.idNivel4) > 0)
-                {
-                    cbxNivel4.SelectedValue = Convert.ToInt32(ubicacionGeografica.idNivel4);
-                }
-                else
-                {
-                    cbxNivel4.SelectedIndex = -1;
-                }*/
-
-                cbxNivel4.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                loadStateApp(false);
-            }
-        }
-
-        private void desactivarNivelDesde(int n)
-        {
-            cbxNivel1.Enabled = true;
-            cbxNivel2.Enabled = true;
-            cbxNivel3.Enabled = true;
-            cbxNivel4.Enabled = true;
-
-            if (n < 2) cbxNivel1.Enabled = false;
-            if (n < 3) cbxNivel2.Enabled = false;
-            if (n < 4) cbxNivel3.Enabled = false;
-            if (n < 5) cbxNivel4.Enabled = false;
-        }
-        #endregion
-
         #region ==================== Estados =====================
         private void loadStateApp(bool state)
         {
@@ -308,12 +108,154 @@ namespace Admeli.Configuracion
         }
         #endregion
 
-        #region ===================== Eventos Para cargar paise y niveles =====================
-        private void cbxPaises_SelectedIndexChanged(object sender, EventArgs e)
+        #region ================== Formando los niveles de cada pais ==================
+        private async void crearNivelesPais()
         {
-            crearNivelesPais();
+            try
+            {
+                loadStateApp(true);
+                labelUbicaciones = await locationModel.labelUbicacion(Convert.ToInt32(cbxPaises.SelectedValue));
+                ocultarNiveles(); // Ocultando todo los niveles
+
+                // Mostrando los niveles uno por uno
+                if (labelUbicaciones.Count >= 1)
+                {
+                    lblNivel1.Text = labelUbicaciones[0].denominacion;
+                    panelLevel1.Visible = true;
+                }
+
+                if (labelUbicaciones.Count >= 2)
+                {
+                    lblNivel2.Text = labelUbicaciones[1].denominacion;
+                    panelLevel2.Visible = true;
+                }
+
+                if (labelUbicaciones.Count >= 3)
+                {
+                    panelLevel3.Visible = true;
+                    lblNivel3.Text = labelUbicaciones[2].denominacion;
+                }
+
+                // Cargar el primer nivel de la localizacion
+                cargarNivel1();
+
+            }
+            catch (Exception)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                loadStateApp(false);
+            }
         }
 
+        private void ocultarNiveles()
+        {
+            panelLevel1.Visible = false;
+            panelLevel2.Visible = false;
+            panelLevel3.Visible = false;
+
+            cbxNivel1.SelectedIndex = -1;
+            cbxNivel2.SelectedIndex = -1;
+            cbxNivel3.SelectedIndex = -1;
+        }
+
+        private async void cargarNivel1()
+        {
+            try
+            {
+                // No cargar directo al comobobox esto causara que el evento SelectedIndexChange de forma automatica
+                if (labelUbicaciones.Count < 1) return;
+                loadStateApp(true);
+                nivel1BindingSource.DataSource = await locationModel.nivel1(Convert.ToInt32(cbxPaises.SelectedValue));
+                if (ubicacionGeografica.idNivel1 > 0)
+                {
+                    cbxNivel1.SelectedValue = ubicacionGeografica.idNivel1;
+                }
+                else
+                {
+                    cbxNivel1.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadStateApp(false);
+                desactivarNivelDesde(2);
+            }
+        }
+
+        private async void cargarNivel2()
+        {
+            try
+            {
+                if (labelUbicaciones.Count < 2) return;
+                loadStateApp(true);
+                nivel2BindingSource.DataSource = await locationModel.nivel2(Convert.ToInt32(cbxNivel1.SelectedValue));
+                if (ubicacionGeografica.idNivel2 > 0)
+                {
+                    cbxNivel2.SelectedValue = ubicacionGeografica.idNivel2;
+                }
+                else
+                {
+                    cbxNivel2.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                desactivarNivelDesde(3);
+                loadStateApp(false);
+            }
+        }
+
+        private async void cargarNivel3()
+        {
+            try
+            {
+                if (labelUbicaciones.Count < 3) return;
+                loadStateApp(true);
+                nivel3BindingSource.DataSource = await locationModel.nivel3(Convert.ToInt32(cbxNivel2.SelectedValue));
+                if (ubicacionGeografica.idNivel3 > 0)
+                {
+                    cbxNivel3.SelectedValue = ubicacionGeografica.idNivel3;
+                }
+                else
+                {
+                    cbxNivel3.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Upps! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadStateApp(false);
+                desactivarNivelDesde(4);
+            }
+        }
+
+        private void desactivarNivelDesde(int n)
+        {
+            cbxNivel1.Enabled = true;
+            cbxNivel2.Enabled = true;
+            cbxNivel3.Enabled = true;
+
+            if (n < 2) cbxNivel1.Enabled = false;
+            if (n < 3) cbxNivel2.Enabled = false;
+            if (n < 4) cbxNivel3.Enabled = false;
+        }
+        #endregion
+
+        #region  ======================= Eventos cargar paises =======================
         private void cbxNivel1_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarNivel2();
@@ -324,9 +266,9 @@ namespace Admeli.Configuracion
             cargarNivel3();
         }
 
-        private void cbxNivel3_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxPaises_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarNivel4();
+            crearNivelesPais();
         }
         #endregion
 
@@ -374,7 +316,7 @@ namespace Admeli.Configuracion
                 actualizarObejeto();
                 Response responseCG = await configModel.guardarConfigGeneral(configuracionGeneral);
                 Response responseDG = await configModel.guardarDatosGenerales(ubicacionGeografica, datosGenerales);
-                MessageBox.Show("Error! " + responseDG.msj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(responseDG.msj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadStateApp(false);
             }
             catch (Exception ex)
@@ -385,5 +327,74 @@ namespace Admeli.Configuracion
         }
         #endregion
 
+        #region =========================== Validacion Tiempo Real ===========================
+        private void textNombreEmpresa_Validated(object sender, EventArgs e)
+        {
+            if (textNombreEmpresa.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textNombreEmpresa, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreEmpresa, false);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreEmpresa, true);
+        }
+
+        private void textEmail_Validated(object sender, EventArgs e)
+        {
+            if (textEmail.Text.Trim() != "")
+            {
+                if (!Validator.IsValidEmail(textEmail.Text))
+                {
+                    errorProvider1.SetError(textEmail, "Email invválido");
+                    Validator.textboxValidateColor(textEmail, false);
+                    return;
+                }
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textEmail, true);
+        }
+
+        private void textNumeroIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void textNumeroDigitos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void textItemPagina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        } 
+        #endregion
+
+        #region ========================================= PAINT 
+        private void panelLevelPais_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelLevelPais, 157, 157, 157);
+        }
+
+        private void panelLevel1_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelLevel1, 157, 157, 157);
+        }
+
+        private void panelLevel2_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelLevel2, 157, 157, 157);
+        }
+
+        private void panelLevel3_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelLevel3, 157, 157, 157);
+        }
+        #endregion
     }
 }

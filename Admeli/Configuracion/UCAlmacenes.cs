@@ -42,8 +42,6 @@ namespace Admeli.Configuracion
 
         private void UCAlmacenes_Load(object sender, EventArgs e)
         {
-            this.reLoad();
-
             // Atajos de teclados
             if (TopLevelControl is Form)
             {

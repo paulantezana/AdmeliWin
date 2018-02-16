@@ -254,22 +254,6 @@ namespace Admeli.Configuracion.Nuevo
         }
         #endregion
 
-        #region ==================== Estados =====================
-        private void loadStateApp(bool state)
-        {
-            if (state)
-            {
-                progressBarApp.Style = ProgressBarStyle.Marquee;
-                Cursor.Current = Cursors.WaitCursor;
-            }
-            else
-            {
-                progressBarApp.Style = ProgressBarStyle.Blocks;
-                Cursor.Current = Cursors.Default;
-            }
-        }
-        #endregion
-
         #region  ======================= Eventos cargar paises =======================
         private void cbxNivel1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -286,6 +270,23 @@ namespace Admeli.Configuracion.Nuevo
             crearNivelesPais();
         } 
         #endregion
+
+        #region ==================== Estados =====================
+        private void loadStateApp(bool state)
+        {
+            if (state)
+            {
+                progressBarApp.Style = ProgressBarStyle.Marquee;
+                Cursor.Current = Cursors.WaitCursor;
+            }
+            else
+            {
+                progressBarApp.Style = ProgressBarStyle.Blocks;
+                Cursor.Current = Cursors.Default;
+            }
+        }
+        #endregion
+
 
         private void btnSucursalNuevo_Click(object sender, EventArgs e)
         {
