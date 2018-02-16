@@ -36,6 +36,15 @@ namespace Admeli.Productos.Nuevo
             this.nuevo = false;
             this.reLoad();
         }
+        public FormProductoNuevo(Object OcurrentProducto)
+        {
+            InitializeComponent();
+           // OcurrentProducto.
+            this.currentIDProducto = currentIDProducto;
+            this.nuevo = false;
+
+            this.reLoadinStock();
+        }
 
         public FormProductoNuevo()
         {
@@ -256,13 +265,39 @@ namespace Admeli.Productos.Nuevo
                 this.btnStock.Enabled = true;
                 this.Text = "MANTENIMIENTO PRODUCTO " + currentProducto.nombreProducto;
                 cargarDatosModificar();
+
             }
-        } 
+        }
+        internal  void reLoadinStock()
+        {
+            if (this.nuevo)
+            {
+                this.btnImpuestos.Enabled = false;
+                this.btnOfertas.Enabled = false;
+                this.btnOtros.Enabled = false;
+                this.btnWeb.Enabled = false;
+                this.btnStock.Enabled = false;
+            }
+            else
+            {
+                this.btnImpuestos.Enabled = true;
+                this.btnOfertas.Enabled = true;
+                this.btnOtros.Enabled = true;
+                this.btnWeb.Enabled = true;
+                
+                cargarDatosModificar();
+                
+                
+                this.Text = "MANTENIMIENTO PRODUCTO ";
+            }
+        }
+
         #endregion
 
         private async void cargarDatosModificar()
         {
             currentProducto = await productoModel.productoDatos(currentIDProducto);
+            
         }
 
         #region ========================== Guardar ==========================
