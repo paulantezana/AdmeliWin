@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,6 +28,7 @@ namespace Admeli
         public FormLogin()
         {
             InitializeComponent();
+            this.nLoads = 0;
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -41,6 +43,18 @@ namespace Admeli
                     // Formulario Darck UI
 
                     await cargarComponente();
+
+                    await Task.Run(() =>
+                    {
+                        while (true)
+                        {
+                            Thread.Sleep(50);
+                            if (nLoads >= 10)
+                            {
+                                break;
+                            }
+                        }
+                    });
 
                     formHomeDarck = new FormPrincipal(this);
                     formHomeDarck.Show();
@@ -68,27 +82,29 @@ namespace Admeli
         {
             try
             {
-                loadState(1, "Datos generales");
                 await configModel.loadDatosGenerales();
-                loadState(10, "sucursales");
+                this.nLoads++;
+
                 await configModel.loadSucursalPersonal(PersonalModel.personal.idPersonal);
-                loadState(20, "cajas");
+                this.nLoads++;
+
                 await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                loadState(30, "configuracion");
-                configModel.loadConfiGeneral();
-                loadState(40, "monedas");
-                configModel.loadMonedas();
-                loadState(50, "tipos de cambio");
-                configModel.loadTipoCambioMonedas();
-                loadState(60, "documentos");
-                configModel.loadTipoDocumento();
-                loadState(70, "almacenes");
-                configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                loadState(80, "puntos de venta");
-                configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                loadState(90, "caja sesion");
-                configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
-                loadState(100, "completo");
+                this.nLoads++;
+
+                loadConfiGeneral();
+
+                loadMonedas();
+
+                loadTipoCambioMonedas();
+
+                loadTipoDocumento();
+
+                loadAlmacenes();
+
+                loadPuntoDeVenta();
+
+                loadCajaSesion();
+
                 // await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
             }
             catch (Exception ex)
@@ -97,9 +113,46 @@ namespace Admeli
             }
         }
 
-        private void cargarDatosGenerales()
+        private async void loadConfiGeneral()
         {
+            await configModel.loadConfiGeneral();
+            this.nLoads++;
+        }
 
+        private async void loadCajaSesion()
+        {
+            await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+            this.nLoads++;
+        }
+
+        private async void loadPuntoDeVenta()
+        {
+            await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+            this.nLoads++;
+        }
+
+        private async void loadAlmacenes()
+        {
+            await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+            this.nLoads++;
+        }
+
+        private async void loadTipoDocumento()
+        {
+            await configModel.loadTipoDocumento();
+            this.nLoads++;
+        }
+
+        private async void loadTipoCambioMonedas()
+        {
+            await configModel.loadTipoCambioMonedas();
+            this.nLoads++;
+        }
+
+        private async void loadMonedas()
+        {
+            await configModel.loadMonedas();
+            this.nLoads++;
         }
 
         private void loadState(int value, string message)
