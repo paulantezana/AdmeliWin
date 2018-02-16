@@ -40,31 +40,45 @@ namespace Admeli
                 if (validarCampos())
                 {
                     await personalModel.loginPersonal(textUsuario.Text, textPassword.Text);
-                    // Formulario Darck UI
-
+                   
+                    // cargar componentes desde el webservice
                     await cargarComponente();
 
+                    // esterar a que cargen todo los web service
                     await Task.Run(() =>
                     {
                         while (true)
                         {
                             Thread.Sleep(50);
-                            if (nLoads >= 10)
+                            if (nLoads >= 10) // IMPORTANTE IMPORTANTE el numero tiene que ser igual al numero de web service que se este llamando
                             {
                                 break;
                             }
                         }
                     });
 
-                    formHomeDarck = new FormPrincipal(this);
-                    formHomeDarck.Show();
+                    // Mostrar el formulario dependiendo de la cantidad de puntos de venta y almacenes
+                    if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
+                    {
+                        // Ocultar este formulario
+                        this.Hide();
 
-                    // Formulario Office UI
-                    // formPrincipal = new FormPrincipal(this);
-                    // formPrincipal.Show();
+                        FormConfigInicial formConfig = new FormConfigInicial(this);
+                        formConfig.Show();
+                    }
+                    else
+                    {
+                        // Estableciendo el almacen y punto de venta al personal asignado
+                        ConfigModel.currentIdAlmacen = ConfigModel.alamacenes[0].idAlmacen;
+                        ConfigModel.currentPuntoVenta = ConfigModel.puntosDeVenta[0].idAsignarPuntoVenta;
 
-                    // Ocultar formulario actual
-                    this.Hide();
+                        // Ocultar este formulario
+                        this.Hide();
+
+                        // Mostrar el formulario principal
+                        formHomeDarck = new FormPrincipal(this);
+                        formHomeDarck.Show();
+                    }
                 }
             }
             catch (Exception ex)

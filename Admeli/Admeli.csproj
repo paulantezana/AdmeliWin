@@ -435,6 +435,12 @@
     <Compile Include="Configuracion\UCTipoCambio.Designer.cs">
       <DependentUpon>UCTipoCambio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConfigInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfigInicial.Designer.cs">
+      <DependentUpon>FormConfigInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -886,6 +892,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\UCTipoCambio.resx">
       <DependentUpon>UCTipoCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfigInicial.resx">
+      <DependentUpon>FormConfigInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

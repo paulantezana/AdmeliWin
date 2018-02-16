@@ -431,19 +431,7 @@ namespace Admeli
         #endregion
 
         #region ================================ LOADS ================================
-        private void mostrarModuloPorDefecto()
-        {
-            if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
-            {
-                togglePanelMain("iniciar");
-                ConfigModel.currentIdAlmacen = ConfigModel.alamacenes[0].idAlmacen;
-                ConfigModel.currentPuntoVenta = ConfigModel.puntosDeVenta[1].idAsignarPuntoVenta;
-            }
-            else
-            {
-                togglePanelMain("home");
-            }
-        }
+
         #endregion
 
         #region =============================== SATATES ===============================
@@ -470,7 +458,7 @@ namespace Admeli
 
         private void reLoad()
         {
-            mostrarModuloPorDefecto();
+            togglePanelMain("home");
         }
         #endregion
 
