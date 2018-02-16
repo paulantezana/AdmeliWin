@@ -96,7 +96,7 @@ namespace Admeli.Herramientas
                 foreach (Categoria categoria in categoriaList)
                 {
                     TreeNode aux = new TreeNode(categoria.nombreCategoria);
-                    aux.ImageIndex = 1;
+                   
                     listNode.Add(aux);
                     
                 }
@@ -127,20 +127,21 @@ namespace Admeli.Herramientas
             categoriaList.Remove(lastCategori);
             return lastCategori;
         }
-        private List<Categoria> hijos(List<Categoria> categoriaList,Categoria padre)
+        private bool hijos(List<Categoria> categoriaList,Categoria padre)
         {
-            List<Categoria> aux = new List<Categoria>();
+            bool tieneHijos = false;
 
             foreach (Categoria categoria in categoriaList)
             {
                 if(categoria.padre == padre.nombreCategoria)
                 {
-                    aux.Add(categoria);
+                    tieneHijos = true;
+                    break;
 
                 }
 
             }
-             return aux;
+             return tieneHijos;
         }
         private TreeNode buscar(Categoria categoria,List<TreeNode> listNode)
         {
@@ -190,14 +191,22 @@ namespace Admeli.Herramientas
                     Categoria aux = primerElemento(categoriaList);
                     TreeNode auxTreeNode = buscar(aux, listNode);
                     TreeNode nodePadre = buscarPadre(aux, listNode);
+                   if (hijos(categoriaList,aux))
+                    {
+                         auxTreeNode.ImageIndex = 1;
+                    }
+
                     if (nodePadre.Text!="")
                     {
+                        
                         nodePadre.Nodes.Add(auxTreeNode);
                         treeviewVista( categoriaList, padreNode, listNode);
                     }
                     else
                     {
+                        
                         padreNode.Nodes.Add(auxTreeNode);
+                        
                         treeviewVista(categoriaList, padreNode, listNode);
 
                     }
