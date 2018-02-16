@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Admeli.Componentes;
 using Modelo;
 using Entidad;
+using Admeli.Productos;
+using Admeli.Productos.Nuevo;
 
 namespace Admeli.Herramientas
 {
@@ -26,7 +28,7 @@ namespace Admeli.Herramientas
         private Paginacion paginacion;
         private List<ProductoData> productos { get; set; }
         private ProductoData currentProdcuto { get; set; }
-
+        
         public UCInicializarStock()
         {
             InitializeComponent();
@@ -81,31 +83,25 @@ namespace Admeli.Herramientas
             {
                 // Cargando las categorias desde el webservice
                 List<Categoria> categoriaList = await categoriaModel.categoriasTodo();
-                Categoria lastCategori = categoriaList.Last();
+                Categoria lastCategori = categoriaList.Last();//raiz
                 categoriaList.Remove(lastCategori);
 
                 // Cargando
                 treeViewCategoria.Nodes.Clear(); // limpiando
                 treeViewCategoria.Nodes.Add(lastCategori.idCategoria.ToString(), lastCategori.nombreCategoria); // Cargando categoria raiz
 
+
+                List< TreeNode> listNode = new List<TreeNode>();
+                int i = 0;
                 foreach (Categoria categoria in categoriaList)
                 {
-                    if (categoria.padre == null)
-                    {
-                        // Cargando categorias padre
-                        treeViewCategoria.Nodes[0].ImageIndex = 1;
-                        treeViewCategoria.Nodes[0].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
-                    }
-                    else
-                    {
-                        // Cargando subcategorias
-                        int nodeIndex = treeViewCategoria.Nodes[0].Nodes.IndexOfKey(categoria.idPadreCategoria.ToString());
-                        /* string parent = categoria.idPadreCategoria.ToString();
-                         var node = treeViewCategoria.Nodes.Cast<TreeNode>().Where(r => r.Name == parent);*/
-                        treeViewCategoria.Nodes[0].Nodes[nodeIndex].ImageIndex = 1;
-                        treeViewCategoria.Nodes[0].Nodes[nodeIndex].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
-                    }
+                    TreeNode aux = new TreeNode(categoria.nombreCategoria);
+                    aux.ImageIndex = 1;
+                    listNode.Add(aux);
+                    
                 }
+                    treeviewVista(categoriaList, treeViewCategoria.Nodes[0],listNode);
+                
 
                 // Estableciendo valores por defecto
                 /* if (ConfigModel.currentProductoCategory.Count > 0)
@@ -124,7 +120,98 @@ namespace Admeli.Herramientas
             }
             loadState(false);
         }
+        private Categoria primerElemento(List<Categoria> categoriaList)
+        {
 
+            Categoria lastCategori = categoriaList[0];//raiz
+            categoriaList.Remove(lastCategori);
+            return lastCategori;
+        }
+        private List<Categoria> hijos(List<Categoria> categoriaList,Categoria padre)
+        {
+            List<Categoria> aux = new List<Categoria>();
+
+            foreach (Categoria categoria in categoriaList)
+            {
+                if(categoria.padre == padre.nombreCategoria)
+                {
+                    aux.Add(categoria);
+
+                }
+
+            }
+             return aux;
+        }
+        private TreeNode buscar(Categoria categoria,List<TreeNode> listNode)
+        {
+            TreeNode aux=new TreeNode();
+
+            foreach( TreeNode node in listNode)
+            {
+                if (categoria.nombreCategoria==node.Text)
+                {
+
+                    aux = node;
+                    break;
+                }
+
+            }
+
+            return aux;
+
+        }
+        private TreeNode buscarPadre(Categoria categoria, List<TreeNode> listNode)
+        {
+            TreeNode aux = new TreeNode();
+
+            foreach (TreeNode node in listNode)
+            {
+                if (categoria.padre==node.Text)
+                {
+
+                    aux = node;
+                    break;
+                }
+
+            }
+
+            return aux;
+
+        }
+        private void treeviewVista( List<Categoria> categoriaList,TreeNode padreNode, List<TreeNode> listNode)
+        {
+            if (categoriaList.Count== 0)
+            {
+                return;
+
+            }
+            else
+            {
+                    Categoria aux = primerElemento(categoriaList);
+                    TreeNode auxTreeNode = buscar(aux, listNode);
+                    TreeNode nodePadre = buscarPadre(aux, listNode);
+                    if (nodePadre.Text!="")
+                    {
+                        nodePadre.Nodes.Add(auxTreeNode);
+                        treeviewVista( categoriaList, padreNode, listNode);
+                    }
+                    else
+                    {
+                        padreNode.Nodes.Add(auxTreeNode);
+                        treeviewVista(categoriaList, padreNode, listNode);
+
+                    }
+                        
+                  
+                
+            }
+
+
+
+        }
+        
+
+          
         private async void cargarSucursales()
         {
             // Cargando el combobox de personales
@@ -344,8 +431,73 @@ namespace Admeli.Herramientas
         private void btnIngresos_Click(object sender, EventArgs e)
         {
             cargarRegistros();
-        } 
+        }
         #endregion
+
+        private void btnNuevoCategoria_Click(object sender, EventArgs e)
+        {
+
+            FormCategoriaNuevo formCategoria = new FormCategoriaNuevo();
+            formCategoria.ShowDialog();
+            cargarCategorias();
+        }
+
+        private void btnActualizarCategoria_Click(object sender, EventArgs e)
+        {
+            cargarCategorias();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            FormProductoNuevo producto = new FormProductoNuevo();
+            producto.ShowDialog();
+            cargarRegistros();
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView1.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idProducto = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentProdcuto = productos.Find(x => x.idProducto == idProducto); // Buscando la registro especifico en la lista de registros
+
+            Producto auxProducto = new Producto();
+
+            auxProducto.nombreProducto = currentProdcuto.nombreProducto;
+            auxProducto.codigoProducto= currentProdcuto.codigoProducto;
+            auxProducto.precioCompra= currentProdcuto.precioCompra;
+            auxProducto.descripcionCorta=currentProdcuto.descripcionCorta;
+            auxProducto.idProducto = currentProdcuto.idProducto;
+
+
+            // Mostrando el formulario de modificacion
+            FormProductoNuevo formProducto = new FormProductoNuevo(auxProducto);
+            formProducto.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
@@ -364,7 +516,7 @@ public class ImpuestoData
     public bool porcentual { get; set; }
 }
 
-public class ProductoData
+public class ProductoData 
 {
     public int idProducto { get; set; }
     public string codigoProducto { get; set; }
