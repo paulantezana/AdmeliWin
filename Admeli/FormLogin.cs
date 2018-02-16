@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using Admeli.Componentes;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,9 @@ namespace Admeli
 
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
+
+        private int nLoads { get; set; }
+        private int currentLoad { get; set; }
 
         public FormLogin()
         {
@@ -71,19 +75,19 @@ namespace Admeli
                 loadState(20, "cajas");
                 await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 loadState(30, "configuracion");
-                await configModel.loadConfiGeneral();
+                configModel.loadConfiGeneral();
                 loadState(40, "monedas");
-                await configModel.loadMonedas();
+                configModel.loadMonedas();
                 loadState(50, "tipos de cambio");
-                await configModel.loadTipoCambioMonedas();
+                configModel.loadTipoCambioMonedas();
                 loadState(60, "documentos");
-                await configModel.loadTipoDocumento();
+                configModel.loadTipoDocumento();
                 loadState(70, "almacenes");
-                await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+                configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 loadState(80, "puntos de venta");
-                await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+                configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
                 loadState(90, "caja sesion");
-                await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+                configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
                 loadState(100, "completo");
                 // await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
             }
@@ -91,6 +95,11 @@ namespace Admeli
             {
                 MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void cargarDatosGenerales()
+        {
+
         }
 
         private void loadState(int value, string message)
@@ -124,9 +133,10 @@ namespace Admeli
             this.Close();
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
-           // formFadeTransition1.ShowAsyc(this);
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer,150,150,150);
         }
     }
 }
