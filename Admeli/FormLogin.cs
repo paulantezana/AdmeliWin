@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using Admeli.Componentes;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,9 +22,13 @@ namespace Admeli
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
 
+        private int nLoads { get; set; }
+        private int currentLoad { get; set; }
+
         public FormLogin()
         {
             InitializeComponent();
+            this.nLoads = 0;
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -34,19 +40,45 @@ namespace Admeli
                 if (validarCampos())
                 {
                     await personalModel.loginPersonal(textUsuario.Text, textPassword.Text);
-                    // Formulario Darck UI
-
+                   
+                    // cargar componentes desde el webservice
                     await cargarComponente();
 
-                    formHomeDarck = new FormPrincipal(this);
-                    formHomeDarck.Show();
+                    // esterar a que cargen todo los web service
+                    await Task.Run(() =>
+                    {
+                        while (true)
+                        {
+                            Thread.Sleep(50);
+                            if (nLoads >= 10) // IMPORTANTE IMPORTANTE el numero tiene que ser igual al numero de web service que se este llamando
+                            {
+                                break;
+                            }
+                        }
+                    });
 
-                    // Formulario Office UI
-                    // formPrincipal = new FormPrincipal(this);
-                    // formPrincipal.Show();
+                    // Mostrar el formulario dependiendo de la cantidad de puntos de venta y almacenes
+                    if (ConfigModel.puntosDeVenta.Count > 1 || ConfigModel.alamacenes.Count > 1)
+                    {
+                        // Ocultar este formulario
+                        this.Hide();
 
-                    // Ocultar formulario actual
-                    this.Hide();
+                        FormConfigInicial formConfig = new FormConfigInicial(this);
+                        formConfig.Show();
+                    }
+                    else
+                    {
+                        // Estableciendo el almacen y punto de venta al personal asignado
+                        ConfigModel.currentIdAlmacen = ConfigModel.alamacenes[0].idAlmacen;
+                        ConfigModel.currentPuntoVenta = ConfigModel.puntosDeVenta[0].idAsignarPuntoVenta;
+
+                        // Ocultar este formulario
+                        this.Hide();
+
+                        // Mostrar el formulario principal
+                        formHomeDarck = new FormPrincipal(this);
+                        formHomeDarck.Show();
+                    }
                 }
             }
             catch (Exception ex)
@@ -64,33 +96,77 @@ namespace Admeli
         {
             try
             {
-                loadState(1, "Datos generales");
                 await configModel.loadDatosGenerales();
-                loadState(10, "sucursales");
+                this.nLoads++;
+
                 await configModel.loadSucursalPersonal(PersonalModel.personal.idPersonal);
-                loadState(20, "cajas");
+                this.nLoads++;
+
                 await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                loadState(30, "configuracion");
-                await configModel.loadConfiGeneral();
-                loadState(40, "monedas");
-                await configModel.loadMonedas();
-                loadState(50, "tipos de cambio");
-                await configModel.loadTipoCambioMonedas();
-                loadState(60, "documentos");
-                await configModel.loadTipoDocumento();
-                loadState(70, "almacenes");
-                await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                loadState(80, "puntos de venta");
-                await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                loadState(90, "caja sesion");
-                await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
-                loadState(100, "completo");
+                this.nLoads++;
+
+                loadConfiGeneral();
+
+                loadMonedas();
+
+                loadTipoCambioMonedas();
+
+                loadTipoDocumento();
+
+                loadAlmacenes();
+
+                loadPuntoDeVenta();
+
+                loadCajaSesion();
+
                 // await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private async void loadConfiGeneral()
+        {
+            await configModel.loadConfiGeneral();
+            this.nLoads++;
+        }
+
+        private async void loadCajaSesion()
+        {
+            await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
+            this.nLoads++;
+        }
+
+        private async void loadPuntoDeVenta()
+        {
+            await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+            this.nLoads++;
+        }
+
+        private async void loadAlmacenes()
+        {
+            await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+            this.nLoads++;
+        }
+
+        private async void loadTipoDocumento()
+        {
+            await configModel.loadTipoDocumento();
+            this.nLoads++;
+        }
+
+        private async void loadTipoCambioMonedas()
+        {
+            await configModel.loadTipoCambioMonedas();
+            this.nLoads++;
+        }
+
+        private async void loadMonedas()
+        {
+            await configModel.loadMonedas();
+            this.nLoads++;
         }
 
         private void loadState(int value, string message)
@@ -124,9 +200,10 @@ namespace Admeli
             this.Close();
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
-           // formFadeTransition1.ShowAsyc(this);
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer,150,150,150);
         }
     }
 }
