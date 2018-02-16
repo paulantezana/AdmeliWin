@@ -455,6 +455,13 @@ namespace Admeli
             togglePanelMain("home");
             lblUserName.Text = PersonalModel.personal.usuario.ToUpper();
             lblDocumento.Text = String.Format("{0}", PersonalModel.personal.numeroDocumento);
+
+            loadDataInfo();
+        }
+
+        private void loadDataInfo()
+        {
+            
         }
         #endregion
 
