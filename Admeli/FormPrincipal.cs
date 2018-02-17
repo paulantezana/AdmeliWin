@@ -221,6 +221,29 @@ namespace Admeli
                     }
                     else
                     {
+
+                        //cargar el opcion previa de listado de productos
+                        int lugar = uCProductosNav.lugar;
+                        switch (lugar)
+                        {
+
+                            case 1:
+                                this.panelMain.Controls.Add(uCProductosNav.uCListadoProducto);
+                                break;
+                            case 2:
+                               this.panelMain.Controls.Add(uCProductosNav.uCMarcas);
+                                break;
+                            case 3:
+                                this.panelMain.Controls.Add(uCProductosNav.uCUnidadesMedida);
+                                break;
+                            case 4:
+                                this.Controls.Add(uCProductosNav.uCCategorias);
+                                break;
+                            default:
+                                break;
+
+                        }
+
                         this.panelMain.Controls.Add(uCProductosNav);
                     }
 

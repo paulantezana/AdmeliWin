@@ -13,12 +13,13 @@ namespace Admeli.NavDarck
 {
     public partial class UCProductosNav : UserControl
     {
-        private UCListadoProducto uCListadoProducto;
-        private UCMarcas uCMarcas;
-        private UCUnidadesMedida uCUnidadesMedida;
-        private UCCategorias uCCategorias;
+        public UCListadoProducto uCListadoProducto;
+        public UCMarcas uCMarcas;
+        public UCUnidadesMedida uCUnidadesMedida;
+        public UCCategorias uCCategorias;
 
         private FormPrincipal formPrincipal;
+        public int lugar = 0;
 
         public UCProductosNav()
         {
@@ -29,10 +30,12 @@ namespace Admeli.NavDarck
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+            
+
         }
 
 
-        private void togglePanelMain(string panelName)
+        public void togglePanelMain(string panelName)
         {
             limpiarControles();
             switch (panelName)
@@ -51,7 +54,7 @@ namespace Admeli.NavDarck
                     else
                     {
                         this.formPrincipal.panelMain.Controls.Add(uCListadoProducto);
-                        this.uCListadoProducto.reLoad();
+                       // this.uCListadoProducto.reLoad();
                     }
                     break;
                 case "marcas":
@@ -68,7 +71,7 @@ namespace Admeli.NavDarck
                     else
                     {
                         this.formPrincipal.panelMain.Controls.Add(uCMarcas);
-                        this.uCMarcas.reLoad();
+                        //this.uCMarcas.reLoad();
                     }
                     break;
                 case "unidadesMedida":
@@ -85,7 +88,7 @@ namespace Admeli.NavDarck
                     else
                     {
                         this.formPrincipal.panelMain.Controls.Add(uCUnidadesMedida);
-                        this.uCUnidadesMedida.reLoad();
+                        //this.uCUnidadesMedida.reLoad();
                     }
                     break;
                 case "categorias":
@@ -102,7 +105,7 @@ namespace Admeli.NavDarck
                     else
                     {
                         this.formPrincipal.panelMain.Controls.Add(uCCategorias);
-                        this.uCCategorias.reLoad();
+                        //this.uCCategorias.reLoad();
                     }
                     break;
                 default:
@@ -121,21 +124,25 @@ namespace Admeli.NavDarck
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            lugar = 1;
             togglePanelMain("listadoProducto");
         }
 
         private void btnMarcas_Click(object sender, EventArgs e)
         {
+            lugar = 2;
             togglePanelMain("marcas");
         }
 
         private void btnUnidadMedida_Click(object sender, EventArgs e)
         {
+            lugar = 3;
             togglePanelMain("unidadesMedida");
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
+            lugar = 4;
             togglePanelMain("categorias");
         }
     }
