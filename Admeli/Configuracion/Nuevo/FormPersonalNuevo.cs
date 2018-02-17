@@ -41,8 +41,10 @@ namespace Admeli.Configuracion.Nuevo
 
         public FormPersonalNuevo(Personal currentPersonal)
         {
+            InitializeComponent();
             this.currentPersonal = currentPersonal;
             this.currentIDPersonal = currentPersonal.idPersonal;
+            this.nuevo = false;
         }
 
         #region ============================ PAINT ============================
@@ -78,26 +80,27 @@ namespace Admeli.Configuracion.Nuevo
             crearNivelesPais();
             cargarDocIdentificacion();
             // cargarSucursales();
-        }
-        #endregion
-
-        #region ==================== Estados =====================
-        private void loadStateApp(bool state)
-        {
-            if (state)
-            {
-                progressBarApp.Style = ProgressBarStyle.Marquee;
-                Cursor.Current = Cursors.WaitCursor;
-            }
-            else
-            {
-                progressBarApp.Style = ProgressBarStyle.Blocks;
-                Cursor.Current = Cursors.Default;
-            }
+            cargarDatosModificar();
         }
         #endregion
 
         #region ============================ Loads ============================
+        private void cargarDatosModificar()
+        {
+            if (nuevo) return;
+            textApellidoUsuario.Text = currentPersonal.apellidos;
+            textCelular.Text = currentPersonal.celular;
+            textDirecionUsuario.Text = currentPersonal.direccion;
+            textEmail.Text = currentPersonal.email;
+            chkActivo.Checked = Convert.ToBoolean(currentPersonal.estado);
+            dtpFechaNacimiento.Value = (currentPersonal.fechaNacimiento == null) ? DateTime.Now : currentPersonal.fechaNacimiento.date;
+            cbxTipoDocumento.SelectedValue = currentPersonal.idDocumento;
+            textNombreUsuario.Text = currentPersonal.nombres;
+            textNumeroDocumento.Text = currentPersonal.numeroDocumento;
+            cbxSexo.Text = currentPersonal.sexo;
+            textTelefono.Text = currentPersonal.telefono;
+        }
+
         private async void cargarSucursales()
         {
             sucursalBindingSource.DataSource = await sucursalModel.sucursales();
@@ -177,7 +180,22 @@ namespace Admeli.Configuracion.Nuevo
                 loadStateApp(false);
             }
         }
+        #endregion
 
+        #region ==================== Estados =====================
+        private void loadStateApp(bool state)
+        {
+            if (state)
+            {
+                progressBarApp.Style = ProgressBarStyle.Marquee;
+                Cursor.Current = Cursors.WaitCursor;
+            }
+            else
+            {
+                progressBarApp.Style = ProgressBarStyle.Blocks;
+                Cursor.Current = Cursors.Default;
+            }
+        }
         #endregion
 
         #region ================== Formando los niveles de cada pais ==================
