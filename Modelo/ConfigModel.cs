@@ -286,6 +286,7 @@ namespace Modelo
             {
                 // www.lineatienda.com/services.php/sucursalespersonal/8
                 List<Sucursal> list = await webService.GET<List<Sucursal>>("sucursalespersonal",idPersonal.ToString());
+                if (list.Count == 0) throw new Exception("Usted no pertenece a una sucursal no podrá ingresar al sistema.");
                 sucursal = list[0];
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using Admeli.Compras;
+﻿using Admeli.Componentes;
+using Admeli.Compras;
 using Admeli.NavDarck;
 using Admeli.Productos;
 using Admeli.Ventas;
@@ -50,13 +51,21 @@ namespace Admeli
         {
             InitializeComponent();
             this.formLogin = formLogin;
-            panelMenuRight.Size = new Size(0, 700); /// Ocultar menu lateral derecho 
+        }
+        #endregion
+
+        #region =============================== PAINT ===============================
+        private void FormPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.bottomLine(panelHeader);
         }
         #endregion
 
         #region ========================= ASIDE LEFT MENU =========================
         private void btnColor()
         {
+            /// Reset Color buttons
             btnCompra.Textcolor = Color.FromArgb(139, 138, 141);
             btnHerramienta.Textcolor = Color.FromArgb(139, 138, 141);
             btnVenta.Textcolor = Color.FromArgb(139, 138, 141);
@@ -69,72 +78,72 @@ namespace Admeli
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            togglePanelMain("home");
+            togglePanelMain("home"); /// Navegar
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnReporte.Location;
-            btnReporte.Textcolor = Color.White;
-            togglePanelMain("reportes");
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnReporte.Location; /// Decoracion
+            btnReporte.Textcolor = Color.White; /// Color
+            togglePanelMain("reportes"); /// Navegar
         }
 
         private void btnHerramienta_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnHerramienta.Location;
-            btnHerramienta.Textcolor = Color.White;
-            togglePanelMain("herramientas");
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnHerramienta.Location; /// Decoracion
+            btnHerramienta.Textcolor = Color.White; /// Color
+            togglePanelMain("herramientas"); /// Navegar
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnProducto.Location;
-            btnProducto.Textcolor = Color.White;
-            togglePanelMain("productos");
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnProducto.Location; /// Decoracion
+            btnProducto.Textcolor = Color.White; /// Color
+            togglePanelMain("productos"); /// Navegar
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnAlmacen.Location;
-            btnAlmacen.Textcolor = Color.White;
-            togglePanelMain("almacen");
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnAlmacen.Location; /// Decoracion
+            btnAlmacen.Textcolor = Color.White; /// Color
+            togglePanelMain("almacen"); /// Navegar
         }
 
         private void btnCaja_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnCaja.Location;
-            btnCaja.Textcolor = Color.White;
-            togglePanelMain("caja");
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnCaja.Location; /// Decoracion
+            btnCaja.Textcolor = Color.White; /// Color
+            togglePanelMain("caja"); /// Navegar
         }
 
         private void btnVenta_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnVenta.Location;
-            btnVenta.Textcolor = Color.White;
-            togglePanelMain("ventas");
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnVenta.Location; /// Decoracion
+            btnVenta.Textcolor = Color.White; /// Color
+            togglePanelMain("ventas"); /// Navegar
         }
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnCompra.Location;
-            btnCompra.Textcolor = Color.White;
-            togglePanelMain("compras");
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnCompra.Location; /// Decoracion
+            btnCompra.Textcolor = Color.White; /// Color
+            togglePanelMain("compras"); /// Navegar
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            btnColor();
-            borderLeftActive.Location = btnConfiguracion.Location;
-            btnConfiguracion.Textcolor = Color.White;
-            togglePanelMain("configuracion");
-        } 
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnConfiguracion.Location; /// Decoracion
+            btnConfiguracion.Textcolor = Color.White; /// Color
+            togglePanelMain("configuracion"); /// Navegar
+        }
         #endregion
 
         #region ===================== TOGGLE PANEL ASIDE LEFT =====================
@@ -158,6 +167,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCComprasNav);
                     }
+                    this.lblTitlePage.Text = "Compras/"; /// Titulo en el encabezado
                     break;
                 case "ventas":
                     if (this.uCVentasNav == null)
@@ -174,7 +184,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCVentasNav);
                     }
-
+                    this.lblTitlePage.Text = "Ventas/"; /// Titulo en el encabezado
                     break;
                 case "caja":
                     if (this.uCCajaNav == null)
@@ -191,6 +201,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCCajaNav);
                     }
+                    this.lblTitlePage.Text = "Caja/"; /// Titulo en el encabezado
                     break;
                 case "almacen":
                     if (this.UCAlmacenNav == null)
@@ -207,6 +218,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(UCAlmacenNav);
                     }
+                    this.lblTitlePage.Text = "Almacen/"; /// Titulo en el encabezado
                     break;
                 case "productos":
                     if (this.uCProductosNav == null)
@@ -246,7 +258,7 @@ namespace Admeli
 
                         this.panelMain.Controls.Add(uCProductosNav);
                     }
-
+                    this.lblTitlePage.Text = "Productos/"; /// Titulo en el encabezado
                     break;
                 case "configuracion":
                     if (this.uCConfigNav == null)
@@ -263,7 +275,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCConfigNav);
                     }
-
+                    this.lblTitlePage.Text = "Configuracion/"; /// Titulo en el encabezado
                     break;
                 case "herramientas":
                     if (this.uCHerramientasNav == null)
@@ -280,6 +292,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCHerramientasNav);
                     }
+                    this.lblTitlePage.Text = "Herramientas/"; /// Titulo en el encabezado
                     break;
                 case "reportes":
                     if (this.uCReporteNav == null)
@@ -296,6 +309,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCReporteNav);
                     }
+                    this.lblTitlePage.Text = "Reportes/"; /// Titulo en el encabezado
                     break;
                 case "home":
                     if (this.uCHome == null)
@@ -312,6 +326,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCHome);
                     }
+                    this.lblTitlePage.Text = "Home/"; /// Titulo en el encabezado
                     break;
                 case "iniciar":
                     if (this.uCIniciar == null)
@@ -328,6 +343,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCIniciar);
                     }
+                    this.lblTitlePage.Text = "Init/"; /// Titulo en el encabezado
                     break;
                 case "compras2":
                     if (this.uCCompras == null)
@@ -344,6 +360,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCCompras);
                     }
+                    this.lblTitlePage.Text = "Compras/Compra"; /// Titulo en el encabezado
                     break;
                 case "ventas2":
                     if (this.uCVentas == null)
@@ -360,6 +377,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCIniciar);
                     }
+                    this.lblTitlePage.Text = "Ventas/Venta"; /// Titulo en el encabezado
                     break;
                 case "productos2":
                     if (this.uCListadoProducto == null)
@@ -376,10 +394,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCListadoProducto);
                     }
-                    break;
-                case "ventaTouch":
-                    FormVentaTouch ventaTouch = new FormVentaTouch();
-                    ventaTouch.ShowDialog();
+                    this.lblTitlePage.Text = "Productos/Listar"; /// Titulo en el encabezado
                     break;
                 default:
                     break;
@@ -512,7 +527,8 @@ namespace Admeli
         }
         private void btnVentaTocuh_Click(object sender, EventArgs e)
         {
-            togglePanelMain("ventaTouch");
+            FormVentaTouch ventaTouch = new FormVentaTouch();
+            ventaTouch.ShowDialog();
         }
 
         private void btnVenta2_Click(object sender, EventArgs e)
@@ -562,7 +578,7 @@ namespace Admeli
             /// 
             panelMenuRight.Controls.Add(lblEfectivoName);
             panelMenuRight.Controls.Add(lblEfectivoValue);
-        } 
+        }
         #endregion
     }
 }

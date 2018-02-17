@@ -55,6 +55,32 @@ namespace Modelo
             }
         }
 
+        public async Task<Response> usuarioActualizar<T>(T param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/personal/cambiar/datos
+                return await webService.POST<T, Response>("personal", "actualizar/datos", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> usuarioCambiar<T>(T param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/personal/cambiar/datos
+                return await webService.POST<T, Response>("personal", "cambiar/datos", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<Response> modificar<T>(T param)
         {
             try

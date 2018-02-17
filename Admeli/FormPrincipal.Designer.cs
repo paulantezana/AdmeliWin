@@ -53,7 +53,6 @@
             this.btnVenta = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCompra = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelRoot = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.panelMenuRight = new System.Windows.Forms.Panel();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.lblTipoCambio = new System.Windows.Forms.Label();
@@ -70,7 +69,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnFullScreen = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.btnVentaTocuh = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnCompra2 = new System.Windows.Forms.Button();
@@ -78,6 +76,9 @@
             this.btnProductos2 = new System.Windows.Forms.Button();
             this.btnToggleMenuRigth = new Bunifu.Framework.UI.BunifuFlatButton();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblTitlePage = new System.Windows.Forms.Label();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -87,7 +88,6 @@
             this.panelRoot.SuspendLayout();
             this.panelMenuRight.SuspendLayout();
             this.panelHeader.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -605,6 +605,7 @@
             this.btnCompra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompra.DisabledColor = System.Drawing.Color.Gray;
             this.btnCompra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCompra.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompra.Iconcolor = System.Drawing.Color.Transparent;
             this.btnCompra.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCompra.Iconimage")));
             this.btnCompra.Iconimage_right = null;
@@ -640,16 +641,8 @@
             this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRoot.Location = new System.Drawing.Point(200, 0);
             this.panelRoot.Name = "panelRoot";
-            this.panelRoot.Size = new System.Drawing.Size(635, 628);
+            this.panelRoot.Size = new System.Drawing.Size(957, 628);
             this.panelRoot.TabIndex = 1;
-            // 
-            // panelMain
-            // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 48);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(435, 572);
-            this.panelMain.TabIndex = 1;
             // 
             // panelMenuRight
             // 
@@ -668,7 +661,7 @@
             this.panelMenuRight.Controls.Add(this.lblDocumentType);
             this.panelMenuRight.Controls.Add(this.label1);
             this.panelMenuRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMenuRight.Location = new System.Drawing.Point(435, 48);
+            this.panelMenuRight.Location = new System.Drawing.Point(757, 48);
             this.panelMenuRight.Name = "panelMenuRight";
             this.panelMenuRight.Size = new System.Drawing.Size(200, 572);
             this.panelMenuRight.TabIndex = 1;
@@ -676,7 +669,7 @@
             // lblSucursal
             // 
             this.lblSucursal.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblSucursal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
             this.lblSucursal.Location = new System.Drawing.Point(12, 508);
             this.lblSucursal.Name = "lblSucursal";
@@ -688,11 +681,11 @@
             // lblTipoCambio
             // 
             this.lblTipoCambio.AutoSize = true;
-            this.lblTipoCambio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoCambio.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
             this.lblTipoCambio.Location = new System.Drawing.Point(51, 154);
             this.lblTipoCambio.Name = "lblTipoCambio";
-            this.lblTipoCambio.Size = new System.Drawing.Size(98, 17);
+            this.lblTipoCambio.Size = new System.Drawing.Size(90, 17);
             this.lblTipoCambio.TabIndex = 17;
             this.lblTipoCambio.Text = "Tipo Cambio";
             // 
@@ -709,11 +702,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
             this.label3.Location = new System.Drawing.Point(32, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 17);
+            this.label3.Size = new System.Drawing.Size(125, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Datos Personales";
             // 
@@ -814,13 +807,19 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.White;
+            this.panelHeader.Controls.Add(this.lblTitlePage);
+            this.panelHeader.Controls.Add(this.btnVentaTocuh);
+            this.panelHeader.Controls.Add(this.btnCompra2);
+            this.panelHeader.Controls.Add(this.btnVenta2);
+            this.panelHeader.Controls.Add(this.btnProductos2);
+            this.panelHeader.Controls.Add(this.button1);
             this.panelHeader.Controls.Add(this.btnFullScreen);
-            this.panelHeader.Controls.Add(this.panel7);
             this.panelHeader.Controls.Add(this.btnToggleMenuRigth);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(635, 48);
+            this.panelHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.panelHeader.Size = new System.Drawing.Size(957, 48);
             this.panelHeader.TabIndex = 0;
             // 
             // btnFullScreen
@@ -845,30 +844,19 @@
             this.btnFullScreen.IconVisible = true;
             this.btnFullScreen.IconZoom = 80D;
             this.btnFullScreen.IsTab = true;
-            this.btnFullScreen.Location = new System.Drawing.Point(537, 0);
+            this.btnFullScreen.Location = new System.Drawing.Point(859, 0);
+            this.btnFullScreen.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Normalcolor = System.Drawing.Color.White;
             this.btnFullScreen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnFullScreen.OnHoverTextColor = System.Drawing.Color.White;
             this.btnFullScreen.selected = false;
-            this.btnFullScreen.Size = new System.Drawing.Size(49, 48);
+            this.btnFullScreen.Size = new System.Drawing.Size(49, 47);
             this.btnFullScreen.TabIndex = 1;
             this.btnFullScreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFullScreen.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.btnFullScreen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFullScreen.Click += new System.EventHandler(this.btnFullScreen_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel7.Controls.Add(this.btnVentaTocuh);
-            this.panel7.Controls.Add(this.btnCompra2);
-            this.panel7.Controls.Add(this.btnVenta2);
-            this.panel7.Controls.Add(this.btnProductos2);
-            this.panel7.Location = new System.Drawing.Point(35, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(464, 48);
-            this.panel7.TabIndex = 0;
             // 
             // btnVentaTocuh
             // 
@@ -881,15 +869,15 @@
             this.btnVentaTocuh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnVentaTocuh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnVentaTocuh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentaTocuh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.btnVentaTocuh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnVentaTocuh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentaTocuh.ImageIndex = 3;
             this.btnVentaTocuh.ImageList = this.imageList1;
-            this.btnVentaTocuh.Location = new System.Drawing.Point(5, 0);
+            this.btnVentaTocuh.Location = new System.Drawing.Point(333, 0);
             this.btnVentaTocuh.Margin = new System.Windows.Forms.Padding(5);
             this.btnVentaTocuh.Name = "btnVentaTocuh";
             this.btnVentaTocuh.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnVentaTocuh.Size = new System.Drawing.Size(129, 48);
+            this.btnVentaTocuh.Size = new System.Drawing.Size(129, 47);
             this.btnVentaTocuh.TabIndex = 0;
             this.btnVentaTocuh.Text = "  Venta Touch";
             this.btnVentaTocuh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -917,15 +905,15 @@
             this.btnCompra2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnCompra2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnCompra2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompra2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.btnCompra2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnCompra2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCompra2.ImageIndex = 0;
             this.btnCompra2.ImageList = this.imageList1;
-            this.btnCompra2.Location = new System.Drawing.Point(134, 0);
+            this.btnCompra2.Location = new System.Drawing.Point(462, 0);
             this.btnCompra2.Margin = new System.Windows.Forms.Padding(5);
             this.btnCompra2.Name = "btnCompra2";
             this.btnCompra2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnCompra2.Size = new System.Drawing.Size(110, 48);
+            this.btnCompra2.Size = new System.Drawing.Size(110, 47);
             this.btnCompra2.TabIndex = 1;
             this.btnCompra2.Text = "   Compras";
             this.btnCompra2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -944,15 +932,15 @@
             this.btnVenta2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnVenta2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnVenta2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVenta2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.btnVenta2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnVenta2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVenta2.ImageIndex = 2;
             this.btnVenta2.ImageList = this.imageList1;
-            this.btnVenta2.Location = new System.Drawing.Point(244, 0);
+            this.btnVenta2.Location = new System.Drawing.Point(572, 0);
             this.btnVenta2.Margin = new System.Windows.Forms.Padding(5);
             this.btnVenta2.Name = "btnVenta2";
             this.btnVenta2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnVenta2.Size = new System.Drawing.Size(110, 48);
+            this.btnVenta2.Size = new System.Drawing.Size(110, 47);
             this.btnVenta2.TabIndex = 2;
             this.btnVenta2.Text = "   Ventas";
             this.btnVenta2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -971,15 +959,15 @@
             this.btnProductos2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnProductos2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnProductos2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.btnProductos2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnProductos2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos2.ImageIndex = 1;
             this.btnProductos2.ImageList = this.imageList1;
-            this.btnProductos2.Location = new System.Drawing.Point(354, 0);
+            this.btnProductos2.Location = new System.Drawing.Point(682, 0);
             this.btnProductos2.Margin = new System.Windows.Forms.Padding(5);
             this.btnProductos2.Name = "btnProductos2";
             this.btnProductos2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnProductos2.Size = new System.Drawing.Size(110, 48);
+            this.btnProductos2.Size = new System.Drawing.Size(110, 47);
             this.btnProductos2.TabIndex = 3;
             this.btnProductos2.Text = "   Productos";
             this.btnProductos2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1009,13 +997,13 @@
             this.btnToggleMenuRigth.IconVisible = true;
             this.btnToggleMenuRigth.IconZoom = 80D;
             this.btnToggleMenuRigth.IsTab = true;
-            this.btnToggleMenuRigth.Location = new System.Drawing.Point(586, 0);
+            this.btnToggleMenuRigth.Location = new System.Drawing.Point(908, 0);
             this.btnToggleMenuRigth.Name = "btnToggleMenuRigth";
             this.btnToggleMenuRigth.Normalcolor = System.Drawing.Color.White;
             this.btnToggleMenuRigth.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.btnToggleMenuRigth.OnHoverTextColor = System.Drawing.Color.White;
             this.btnToggleMenuRigth.selected = false;
-            this.btnToggleMenuRigth.Size = new System.Drawing.Size(49, 48);
+            this.btnToggleMenuRigth.Size = new System.Drawing.Size(49, 47);
             this.btnToggleMenuRigth.TabIndex = 2;
             this.btnToggleMenuRigth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnToggleMenuRigth.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
@@ -1029,15 +1017,58 @@
             this.progressBarApp.MarqueeAnimationSpeed = 2;
             this.progressBarApp.Maximum = 5;
             this.progressBarApp.Name = "progressBarApp";
-            this.progressBarApp.Size = new System.Drawing.Size(635, 8);
+            this.progressBarApp.Size = new System.Drawing.Size(957, 8);
             this.progressBarApp.TabIndex = 2;
             this.progressBarApp.UseWaitCursor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImageIndex = 1;
+            this.button1.Location = new System.Drawing.Point(792, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(67, 47);
+            this.button1.TabIndex = 4;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // lblTitlePage
+            // 
+            this.lblTitlePage.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitlePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
+            this.lblTitlePage.Location = new System.Drawing.Point(16, 4);
+            this.lblTitlePage.Name = "lblTitlePage";
+            this.lblTitlePage.Size = new System.Drawing.Size(220, 40);
+            this.lblTitlePage.TabIndex = 5;
+            this.lblTitlePage.Text = "Nombre del modulo actual";
+            this.lblTitlePage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 48);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(757, 572);
+            this.panelMain.TabIndex = 1;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 628);
+            this.ClientSize = new System.Drawing.Size(1157, 628);
             this.Controls.Add(this.panelRoot);
             this.Controls.Add(this.panelAsideContainer);
             this.KeyPreview = true;
@@ -1047,6 +1078,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormHomeDarck_FormClosing);
             this.Shown += new System.EventHandler(this.FormHomeDarck_Shown);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPrincipal_Paint);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1057,7 +1089,6 @@
             this.panelMenuRight.ResumeLayout(false);
             this.panelMenuRight.PerformLayout();
             this.panelHeader.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1089,14 +1120,12 @@
         private System.Windows.Forms.Panel panelMenuRight;
         private System.Windows.Forms.Panel panelHeader;
         private Bunifu.Framework.UI.BunifuFlatButton btnToggleMenuRigth;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnVentaTocuh;
         private System.Windows.Forms.Button btnCompra2;
         private System.Windows.Forms.Button btnVenta2;
         private System.Windows.Forms.Button btnProductos2;
         private System.Windows.Forms.ImageList imageList1;
         private Bunifu.Framework.UI.BunifuFlatButton btnFullScreen;
-        public System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.ProgressBar progressBarApp;
         private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.Label label3;
@@ -1112,5 +1141,8 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
         private System.Windows.Forms.Label lblSucursal;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Panel panelMain;
+        public System.Windows.Forms.Label lblTitlePage;
     }
 }

@@ -57,6 +57,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnUsuario = new System.Windows.Forms.Button();
             this.idPersonalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +75,6 @@
             this.idUbicacionGeograficaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnPasswordChange = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -404,11 +404,11 @@
             // 
             // panelCrud
             // 
-            this.panelCrud.Controls.Add(this.btnPasswordChange);
             this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
+            this.panelCrud.Controls.Add(this.btnUsuario);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 51);
             this.panelCrud.Name = "panelCrud";
@@ -424,7 +424,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(108, 10);
+            this.btnNuevo.Location = new System.Drawing.Point(10, 10);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(86, 48);
@@ -442,7 +442,7 @@
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnModificar.Location = new System.Drawing.Point(194, 10);
+            this.btnModificar.Location = new System.Drawing.Point(96, 10);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(0);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(86, 48);
@@ -460,7 +460,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEliminar.Location = new System.Drawing.Point(280, 10);
+            this.btnEliminar.Location = new System.Drawing.Point(182, 10);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(86, 48);
@@ -478,7 +478,7 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnActualizar.Location = new System.Drawing.Point(366, 10);
+            this.btnActualizar.Location = new System.Drawing.Point(268, 10);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(0);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(86, 48);
@@ -517,6 +517,24 @@
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenu.UseVisualStyleBackColor = true;
+            // 
+            // btnUsuario
+            // 
+            this.btnUsuario.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUsuario.FlatAppearance.BorderSize = 0;
+            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
+            this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUsuario.Location = new System.Drawing.Point(354, 10);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(98, 48);
+            this.btnUsuario.TabIndex = 6;
+            this.btnUsuario.Text = "Usuario (F9)";
+            this.btnUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnPasswordChange_Click);
             // 
             // idPersonalDataGridViewTextBoxColumn
             // 
@@ -685,24 +703,6 @@
             // 
             this.personalBindingSource.DataSource = typeof(Entidad.Personal);
             // 
-            // btnPasswordChange
-            // 
-            this.btnPasswordChange.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPasswordChange.FlatAppearance.BorderSize = 0;
-            this.btnPasswordChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPasswordChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnPasswordChange.Image = ((System.Drawing.Image)(resources.GetObject("btnPasswordChange.Image")));
-            this.btnPasswordChange.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPasswordChange.Location = new System.Drawing.Point(10, 10);
-            this.btnPasswordChange.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPasswordChange.Name = "btnPasswordChange";
-            this.btnPasswordChange.Size = new System.Drawing.Size(98, 48);
-            this.btnPasswordChange.TabIndex = 6;
-            this.btnPasswordChange.Text = "Contraseña (F9)";
-            this.btnPasswordChange.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPasswordChange.UseVisualStyleBackColor = true;
-            this.btnPasswordChange.Click += new System.EventHandler(this.btnPasswordChange_Click);
-            // 
             // UCPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -773,6 +773,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Button btnPasswordChange;
+        private System.Windows.Forms.Button btnUsuario;
     }
 }

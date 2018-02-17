@@ -84,6 +84,7 @@ namespace Admeli
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                progressbar.Value = 0;
             }
             finally
             {
@@ -94,86 +95,93 @@ namespace Admeli
 
         private async Task cargarComponente()
         {
-            try
-            {
-                await configModel.loadDatosGenerales();
-                this.nLoads++;
 
-                await configModel.loadSucursalPersonal(PersonalModel.personal.idPersonal);
-                this.nLoads++;
+            loadDatosGenerales();
 
-                await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
-                this.nLoads++;
+            await configModel.loadSucursalPersonal(PersonalModel.personal.idPersonal);
+            this.nLoads++;
+            loadState("sucursales");
 
-                loadConfiGeneral();
+            await configModel.loadAsignacionPersonales(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
+            this.nLoads++;
+            loadState("asignacion del personal");
 
-                loadMonedas();
+            loadConfiGeneral();
 
-                loadTipoCambioMonedas();
+            loadMonedas();
 
-                loadTipoDocumento();
+            loadTipoCambioMonedas();
 
-                loadAlmacenes();
+            loadTipoDocumento();
 
-                loadPuntoDeVenta();
+            loadAlmacenes();
 
-                loadCajaSesion();
+            loadPuntoDeVenta();
 
-                // await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Login Personal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            loadCajaSesion();
+
+            // await configModel.loadCierreIngresoEgreso(1, ConfigModel.cajaSesion.idCajaSesion); // Falta Buscar de donde viene el primer parametro
+        }
+        private async void loadDatosGenerales()
+        {
+            await configModel.loadDatosGenerales();
+            this.nLoads++;
+            loadState("datos generales");
         }
 
         private async void loadConfiGeneral()
         {
             await configModel.loadConfiGeneral();
             this.nLoads++;
+            loadState("configuracion general");
         }
 
         private async void loadCajaSesion()
         {
             await configModel.loadCajaSesion(ConfigModel.asignacionPersonal.idAsignarCaja);
             this.nLoads++;
+            loadState("caja session");
         }
 
         private async void loadPuntoDeVenta()
         {
             await configModel.loadPuntoDeVenta(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
             this.nLoads++;
+            loadState("puntos de venta");
         }
 
         private async void loadAlmacenes()
         {
             await configModel.loadAlmacenes(PersonalModel.personal.idPersonal, ConfigModel.sucursal.idSucursal);
             this.nLoads++;
+            loadState("almacenes");
         }
 
         private async void loadTipoDocumento()
         {
             await configModel.loadTipoDocumento();
             this.nLoads++;
+            loadState("tipos de documentos");
         }
 
         private async void loadTipoCambioMonedas()
         {
             await configModel.loadTipoCambioMonedas();
             this.nLoads++;
+            loadState("tipos de cambio");
         }
 
         private async void loadMonedas()
         {
             await configModel.loadMonedas();
             this.nLoads++;
+            loadState("monedas");
         }
 
-        private void loadState(int value, string message)
+        private void loadState(string message)
         {
-            lblProgress.Text = String.Format("Cargando {0} ... {1} %", message, value);
-            progressbar.Value = value;
-            progressbar.Refresh();
+            progressbar.Value += 10;
+            lblProgress.Text = String.Format("Cargando {0}", message);
         }
 
         private bool validarCampos()
