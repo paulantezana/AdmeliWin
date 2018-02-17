@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfigInicial));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelHeder = new System.Windows.Forms.Panel();
             this.btnCLose = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,16 +41,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbxPuntosVenta = new System.Windows.Forms.ComboBox();
             this.lblNivel3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnContinuar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelHeder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLose)).BeginInit();
             this.panelContent.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -59,7 +57,7 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.panel1);
+            this.panelContainer.Controls.Add(this.panelHeder);
             this.panelContainer.Controls.Add(this.panelContent);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
@@ -69,26 +67,28 @@
             this.panelContainer.TabIndex = 8;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
-            // panel1
+            // panelHeder
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
-            this.panel1.Controls.Add(this.btnCLose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 35);
-            this.panel1.TabIndex = 9;
+            this.panelHeder.BackColor = System.Drawing.Color.White;
+            this.panelHeder.Controls.Add(this.btnCLose);
+            this.panelHeder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeder.Location = new System.Drawing.Point(1, 1);
+            this.panelHeder.Name = "panelHeder";
+            this.panelHeder.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.panelHeder.Size = new System.Drawing.Size(702, 40);
+            this.panelHeder.TabIndex = 9;
+            this.panelHeder.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeder_Paint);
             // 
             // btnCLose
             // 
-            this.btnCLose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
+            this.btnCLose.BackColor = System.Drawing.Color.White;
             this.btnCLose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCLose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCLose.Image = ((System.Drawing.Image)(resources.GetObject("btnCLose.Image")));
             this.btnCLose.ImageActive = null;
             this.btnCLose.Location = new System.Drawing.Point(663, 0);
             this.btnCLose.Name = "btnCLose";
-            this.btnCLose.Size = new System.Drawing.Size(39, 35);
+            this.btnCLose.Size = new System.Drawing.Size(39, 39);
             this.btnCLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnCLose.TabIndex = 49;
             this.btnCLose.TabStop = false;
@@ -101,7 +101,6 @@
             this.panelContent.BackColor = System.Drawing.Color.White;
             this.panelContent.Controls.Add(this.panel2);
             this.panelContent.Controls.Add(this.panel3);
-            this.panelContent.Controls.Add(this.pictureBox1);
             this.panelContent.Controls.Add(this.btnContinuar);
             this.panelContent.Location = new System.Drawing.Point(99, 77);
             this.panelContent.Margin = new System.Windows.Forms.Padding(2);
@@ -114,7 +113,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.panel2.Controls.Add(this.cbxAlmacenes);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(253, 58);
+            this.panel2.Location = new System.Drawing.Point(146, 58);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(214, 40);
             this.panel2.TabIndex = 152;
@@ -153,7 +152,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.panel3.Controls.Add(this.cbxPuntosVenta);
             this.panel3.Controls.Add(this.lblNivel3);
-            this.panel3.Location = new System.Drawing.Point(253, 116);
+            this.panel3.Location = new System.Drawing.Point(146, 114);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(214, 40);
             this.panel3.TabIndex = 151;
@@ -187,31 +186,19 @@
             this.lblNivel3.TabIndex = 0;
             this.lblNivel3.Text = "Seleccionar Punto de Venta :";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 58);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(158, 149);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnContinuar
             // 
             this.btnContinuar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnContinuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
             this.btnContinuar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContinuar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
             this.btnContinuar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnContinuar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnContinuar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnContinuar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
+            this.btnContinuar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinuar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
+            this.btnContinuar.ForeColor = System.Drawing.Color.White;
             this.btnContinuar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContinuar.Location = new System.Drawing.Point(253, 171);
+            this.btnContinuar.Location = new System.Drawing.Point(146, 170);
             this.btnContinuar.Margin = new System.Windows.Forms.Padding(0);
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Size = new System.Drawing.Size(214, 36);
@@ -234,14 +221,13 @@
             this.Shown += new System.EventHandler(this.FormConfigInicial_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panelContainer.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panelHeder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCLose)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,9 +236,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnContinuar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelHeder;
         private Bunifu.Framework.UI.BunifuImageButton btnCLose;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbxPuntosVenta;

@@ -82,5 +82,11 @@ namespace Admeli
         {
             Application.Exit();
         }
+
+        private void panelHeder_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.bottomLine(panelHeder);
+        }
     }
 }

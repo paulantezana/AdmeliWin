@@ -82,7 +82,7 @@ namespace Admeli.Configuracion
         {
             textNombreEmpresa.Text = datosGenerales.razonSocial;
             textNumeroIdentificacion.Text = datosGenerales.ruc;
-            textNumeroIdentificacion.Text = datosGenerales.email;
+            textEmail.Text = datosGenerales.email;
             textDireccion.Text = datosGenerales.direccion;
             textFormaDePago.Text = datosGenerales.cuentaBancaria;
 
@@ -272,7 +272,7 @@ namespace Admeli.Configuracion
             // Actualizando los datos generales
             datosGenerales.razonSocial = textNombreEmpresa.Text;
             datosGenerales.ruc = textNumeroIdentificacion.Text;
-            datosGenerales.email = textNumeroIdentificacion.Text;
+            datosGenerales.email = textEmail.Text;
             datosGenerales.direccion = textDireccion.Text;
             datosGenerales.cuentaBancaria = textFormaDePago.Text;
 

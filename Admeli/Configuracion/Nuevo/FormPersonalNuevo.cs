@@ -19,6 +19,8 @@ namespace Admeli.Configuracion.Nuevo
         private SucursalModel sucursalModel = new SucursalModel();
         private LocationModel locationModel = new LocationModel();
         private DepartamentoModel departamentoModel = new DepartamentoModel();
+        private DocumentoIdentificacionModel documentoIdentificacion = new DocumentoIdentificacionModel();
+        private PersonalModel personalModel = new PersonalModel();
 
         private List<LabelUbicacion> labelUbicaciones { get; set; }
         private UbicacionGeografica ubicacionGeografica { get; set; }
@@ -28,6 +30,7 @@ namespace Admeli.Configuracion.Nuevo
         private Personal currentPersonal { get; set; }
         private PersonalAux currentPersonalAux { get; set; }
         private int currentIDSucursal { get; set; }
+        private int currentIDPersonal { get; set; }
         private bool isValid { get; set; }
 
         public FormPersonalNuevo()
@@ -39,6 +42,7 @@ namespace Admeli.Configuracion.Nuevo
         public FormPersonalNuevo(Personal currentPersonal)
         {
             this.currentPersonal = currentPersonal;
+            this.currentIDPersonal = currentPersonal.idPersonal;
         }
 
         #region ============================ PAINT ============================
@@ -70,7 +74,9 @@ namespace Admeli.Configuracion.Nuevo
         private async void reLoad()
         {
             await cargarPaises();
+            cargarGenero();
             crearNivelesPais();
+            cargarDocIdentificacion();
             // cargarSucursales();
         }
         #endregion
@@ -95,7 +101,25 @@ namespace Admeli.Configuracion.Nuevo
         private async void cargarSucursales()
         {
             sucursalBindingSource.DataSource = await sucursalModel.sucursales();
-            
+        }
+
+        private void cargarGenero()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("idGenero", typeof(string));
+            table.Columns.Add("genero", typeof(string));
+
+            table.Rows.Add("1", "Masculino");
+            table.Rows.Add("0", "Femenino");
+
+            cbxSexo.DataSource = table;
+            cbxSexo.DisplayMember = "genero";
+            cbxSexo.ValueMember = "idGenero";
+        }
+
+        private async void cargarDocIdentificacion()
+        {
+            documentoIdentificacionBindingSource.DataSource = await documentoIdentificacion.docIdentificacionNatural();
         }
 
         private async Task cargarPaises()
@@ -341,19 +365,24 @@ namespace Admeli.Configuracion.Nuevo
             {
                 btnAceptar.Enabled = false;
 
-                /*// Procediendo con el guardado
+                // Procediendo con el guardado
                 crearObjetoSucursal();
+
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                currentPersonalAux.idUbicacionGeografica = res.id;
+
                 if (nuevo)
                 {
-                    Response response = await sucursalModel.guardar(ubicacionGeografica, currentSucursal);
+                    Response response = await personalModel.guardar(currentPersonalAux);
                     MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    Response response = await sucursalModel.modificar(ubicacionGeografica, currentSucursal);
+                    Response response = await personalModel.modificar(currentPersonalAux);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                this.Close();*/
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -367,12 +396,17 @@ namespace Admeli.Configuracion.Nuevo
 
         private void crearObjetoSucursal()
         {
-            currentPersonalAux = new PersonalAux();
-
-            // if (!nuevo) currentSucursal.idSucursal = currentIDSucursal; // Llenar el id categoria cuando este en esdo modificar
-           // currentPersonalAux.idPersonal =
-
-            // currentPersonalAux.apellidos = textApellidoUsuario.Text;
+            if (nuevo)
+            {
+                currentPersonalAux = new PersonalAux();
+                currentPersonalAux.usuario = " ";
+                currentPersonalAux.password = "";
+            }
+            else
+            {
+                currentPersonalAux.idPersonal = currentIDPersonal; // Llenar el id categoria cuando este en esdo modificar
+            }
+            currentPersonalAux.apellidos = textApellidoUsuario.Text;
             currentPersonalAux.celular = textCelular.Text;
             currentPersonalAux.direccion = textDirecionUsuario.Text;
             currentPersonalAux.email = textEmail.Text;
@@ -381,17 +415,14 @@ namespace Admeli.Configuracion.Nuevo
             currentPersonalAux.idDocumento = Convert.ToInt32(cbxTipoDocumento.SelectedValue);
             currentPersonalAux.nombres = textNombreUsuario.Text;
             currentPersonalAux.numeroDocumento = textNumeroDocumento.Text;
-            //             currentPersonalAux.password = 
             currentPersonalAux.sexo = cbxSexo.Text;
             currentPersonalAux.telefono = textTelefono.Text;
 
-             // currentPersonalAux.usuario = 
-
-             // Ubicacion geografica
-             ubicacionGeografica.idPais = (cbxPaises.SelectedIndex == -1) ? ubicacionGeografica.idPais : Convert.ToInt32(cbxPaises.SelectedValue);
-             ubicacionGeografica.idNivel1 = (cbxNivel1.SelectedIndex == -1) ? ubicacionGeografica.idNivel1 : Convert.ToInt32(cbxNivel1.SelectedValue);
-             ubicacionGeografica.idNivel2 = (cbxNivel2.SelectedIndex == -1) ? ubicacionGeografica.idNivel2 : Convert.ToInt32(cbxNivel2.SelectedValue);
-             ubicacionGeografica.idNivel3 = (cbxNivel3.SelectedIndex == -1) ? ubicacionGeografica.idNivel3 : Convert.ToInt32(cbxNivel3.SelectedValue);
+            // Ubicacion geografica
+            ubicacionGeografica.idPais = (cbxPaises.SelectedIndex == -1) ? ubicacionGeografica.idPais : Convert.ToInt32(cbxPaises.SelectedValue);
+            ubicacionGeografica.idNivel1 = (cbxNivel1.SelectedIndex == -1) ? ubicacionGeografica.idNivel1 : Convert.ToInt32(cbxNivel1.SelectedValue);
+            ubicacionGeografica.idNivel2 = (cbxNivel2.SelectedIndex == -1) ? ubicacionGeografica.idNivel2 : Convert.ToInt32(cbxNivel2.SelectedValue);
+            ubicacionGeografica.idNivel3 = (cbxNivel3.SelectedIndex == -1) ? ubicacionGeografica.idNivel3 : Convert.ToInt32(cbxNivel3.SelectedValue);
          }
 
          private bool validarCampos()
@@ -590,7 +621,7 @@ namespace Admeli.Configuracion.Nuevo
         }
     }
 
-    public class PersonalAux : Personal
+    public class PersonalAux
     {
         public string apellidos { get; set; }
         public string celular { get; set; }

@@ -94,6 +94,7 @@
             this.cbxPaises = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.documentoIdentificacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -109,6 +110,7 @@
             this.panelLevel1.SuspendLayout();
             this.panelLevelPais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentoIdentificacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFooter
@@ -514,7 +516,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxTipoDocumento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxTipoDocumento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxTipoDocumento.DataSource = this.paisBindingSource;
+            this.cbxTipoDocumento.DataSource = this.documentoIdentificacionBindingSource;
             this.cbxTipoDocumento.DisplayMember = "nombre";
             this.cbxTipoDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxTipoDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -523,7 +525,7 @@
             this.cbxTipoDocumento.Name = "cbxTipoDocumento";
             this.cbxTipoDocumento.Size = new System.Drawing.Size(321, 24);
             this.cbxTipoDocumento.TabIndex = 0;
-            this.cbxTipoDocumento.ValueMember = "idPais";
+            this.cbxTipoDocumento.ValueMember = "idDocumento";
             // 
             // label19
             // 
@@ -585,8 +587,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxSexo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxSexo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxSexo.DataSource = this.paisBindingSource;
-            this.cbxSexo.DisplayMember = "nombre";
             this.cbxSexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSexo.FormattingEnabled = true;
@@ -594,7 +594,6 @@
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(321, 24);
             this.cbxSexo.TabIndex = 1;
-            this.cbxSexo.ValueMember = "idPais";
             // 
             // label5
             // 
@@ -906,6 +905,10 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // documentoIdentificacionBindingSource
+            // 
+            this.documentoIdentificacionBindingSource.DataSource = typeof(Entidad.DocumentoIdentificacion);
+            // 
             // FormPersonalNuevo
             // 
             this.AcceptButton = this.btnAceptar;
@@ -976,6 +979,7 @@
             this.panelLevelPais.ResumeLayout(false);
             this.panelLevelPais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentoIdentificacionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1046,5 +1050,6 @@
         private System.Windows.Forms.ComboBox cbxPaises;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.BindingSource documentoIdentificacionBindingSource;
     }
 }

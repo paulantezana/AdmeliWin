@@ -463,10 +463,10 @@ namespace Admeli
 
         private void cargarDatosAsideRight()
         {
-            lblUserName.Text = PersonalModel.personal.nombres;
+            lblName.Text = PersonalModel.personal.nombres;
             lblLastName.Text = PersonalModel.personal.apellidos;
             lblDNI.Text = PersonalModel.personal.numeroDocumento;
-            lblUserName.Text = PersonalModel.personal.nombres;
+            lblUsuario.Text = PersonalModel.personal.nombres;
             lblDocumentType.Text = PersonalModel.personal.tipoDocumento;
 
             lblSucursal.Text = ConfigModel.sucursal.nombre;

@@ -42,16 +42,12 @@ namespace Modelo
             }
         }
 
-        public async Task<Response> guardar(UbicacionGeografica ubicacionGeografica, Personal param)
+        public async Task<Response> guardar<T>(T param)
         {
             try
             {
-                // Obteniendo de la ubicacion geografica del sucursal
-                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
-                param.idUbicacionGeografica = res.id;
-
                 // localhost:8080/admeli/xcore2/xcore/services.php/personal/guardar
-                return await webService.POST<Personal, Response>("personal", "guardar", param);
+                return await webService.POST<T, Response>("personal", "guardar", param);
             }
             catch (Exception ex)
             {
@@ -59,25 +55,12 @@ namespace Modelo
             }
         }
 
-        public async Task<Response> guardar(Personal param)
-        {
-            try
-            {
-                // localhost:8080/admeli/xcore2/xcore/services.php/personal/guardar
-                return await webService.POST<Personal,Response>("personal", "guardar", param);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public async Task<Response> modificar(Personal param)
+        public async Task<Response> modificar<T>(T param)
         {
             try
             {
                 // localhost:8080/admeli/xcore2/xcore/services.php/personal/modificar
-                return await webService.POST<Personal,Response>("personal", "modificar", param);
+                return await webService.POST<T,Response>("personal", "modificar", param);
             }
             catch (Exception ex)
             {
