@@ -66,6 +66,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCAlmacenes);
                         this.uCAlmacenes.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Alamacenes"; /// Titulo en el encabezado
                     break;
                 case "asignarCorrelativo":
                     if (uCAsignarCorrelativo == null)
@@ -83,6 +84,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCAsignarCorrelativo);
                         this.uCAsignarCorrelativo.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Asignar Correlativo"; /// Titulo en el encabezado
                     break;
                 case "cajasInicializadas":
                     if (uCCajasInicializadas == null)
@@ -100,6 +102,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCCajasInicializadas);
                         this.uCCajasInicializadas.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Cajas Inicializadas"; /// Titulo en el encabezado
                     break;
                 case "datosEmpresa":
                     if (uCDatosEmpresa == null)
@@ -117,6 +120,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCDatosEmpresa);
                         this.uCDatosEmpresa.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Datos Empresa"; /// Titulo en el encabezado
                     break;
                 case "denominaciones":
                     if (uCDenominaciones == null)
@@ -134,6 +138,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCDenominaciones);
                         this.uCDenominaciones.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Denominaciones"; /// Titulo en el encabezado
                     break;
                 case "disenoPersonalizacion":
                     if (uCDisenoPersonalizacion == null)
@@ -151,6 +156,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCDisenoPersonalizacion);
                         this.uCDisenoPersonalizacion.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Diseño Personalizacion"; /// Titulo en el encabezado
                     break;
                 case "documentoIdentificacion":
                     if (uCDocumentoIdentificacion == null)
@@ -168,6 +174,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCDocumentoIdentificacion);
                         this.uCDocumentoIdentificacion.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Documento Identificacion"; /// Titulo en el encabezado
                     break;
                 case "grupoClientes":
                     if (uCGrupoClientes == null)
@@ -185,6 +192,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCGrupoClientes);
                         this.uCGrupoClientes.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Grupo Clientes"; /// Titulo en el encabezado
                     break;
                 case "impuestoDocumento":
                     if (uCImpuestoDocumento == null)
@@ -202,6 +210,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCImpuestoDocumento);
                         this.uCImpuestoDocumento.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Impuesto Documento"; /// Titulo en el encabezado
                     break;
                 case "impuestos":
                     if (uCImpuestos == null)
@@ -219,6 +228,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCImpuestos);
                         this.uCImpuestos.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Impuestos"; /// Titulo en el encabezado
                     break;
                 case "listadoDocumento":
                     if (uCListadoDocumentos == null)
@@ -236,6 +246,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCListadoDocumentos);
                         this.uCListadoDocumentos.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Listado Documento"; /// Titulo en el encabezado
                     break;
                 case "listadoMoneda":
                     if (uCListadoMoneda == null)
@@ -253,6 +264,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCListadoMoneda);
                         this.uCListadoMoneda.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Listado Moneda"; /// Titulo en el encabezado
                     break;
                 case "personal":
                     if (uCPersonal == null)
@@ -270,6 +282,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCPersonal);
                         this.uCPersonal.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Personal"; /// Titulo en el encabezado
                     break;
 
                 case "sucursales":
@@ -288,6 +301,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCSucursales);
                         this.uCSucursales.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Sucursales"; /// Titulo en el encabezado
                     break;
                 case "puntodeventa":
                     if (uCPuntoDeVenta == null)
@@ -305,6 +319,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCPuntoDeVenta);
                         this.uCPuntoDeVenta.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Punto De Venta"; /// Titulo en el encabezado
                     break;
                 case "tipoCambio":
                     if (uCTipoCambio == null)
@@ -322,6 +337,7 @@ namespace Admeli.NavDarck
                         this.formPrincipal.panelMain.Controls.Add(uCTipoCambio);
                         this.uCTipoCambio.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text += "Tipo Cambio"; /// Titulo en el encabezado
                     break;
                 default:
                     break;

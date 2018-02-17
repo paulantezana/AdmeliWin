@@ -167,7 +167,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCComprasNav);
                     }
-                    this.lblTitlePage.Text = "Compras/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Compras - "; /// Titulo en el encabezado
                     break;
                 case "ventas":
                     if (this.uCVentasNav == null)
@@ -184,7 +184,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCVentasNav);
                     }
-                    this.lblTitlePage.Text = "Ventas/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Ventas - "; /// Titulo en el encabezado
                     break;
                 case "caja":
                     if (this.uCCajaNav == null)
@@ -201,7 +201,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCCajaNav);
                     }
-                    this.lblTitlePage.Text = "Caja/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Caja - "; /// Titulo en el encabezado
                     break;
                 case "almacen":
                     if (this.UCAlmacenNav == null)
@@ -218,7 +218,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(UCAlmacenNav);
                     }
-                    this.lblTitlePage.Text = "Almacen/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Almacen - "; /// Titulo en el encabezado
                     break;
                 case "productos":
                     if (this.uCProductosNav == null)
@@ -258,7 +258,7 @@ namespace Admeli
 
                         this.panelMain.Controls.Add(uCProductosNav);
                     }
-                    this.lblTitlePage.Text = "Productos/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Productos - "; /// Titulo en el encabezado
                     break;
                 case "configuracion":
                     if (this.uCConfigNav == null)
@@ -275,7 +275,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCConfigNav);
                     }
-                    this.lblTitlePage.Text = "Configuracion/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Configuracion - "; /// Titulo en el encabezado
                     break;
                 case "herramientas":
                     if (this.uCHerramientasNav == null)
@@ -292,7 +292,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCHerramientasNav);
                     }
-                    this.lblTitlePage.Text = "Herramientas/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Herramientas - "; /// Titulo en el encabezado
                     break;
                 case "reportes":
                     if (this.uCReporteNav == null)
@@ -309,7 +309,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCReporteNav);
                     }
-                    this.lblTitlePage.Text = "Reportes/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Reportes - "; /// Titulo en el encabezado
                     break;
                 case "home":
                     if (this.uCHome == null)
@@ -326,7 +326,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCHome);
                     }
-                    this.lblTitlePage.Text = "Home/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Home - "; /// Titulo en el encabezado
                     break;
                 case "iniciar":
                     if (this.uCIniciar == null)
@@ -343,7 +343,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCIniciar);
                     }
-                    this.lblTitlePage.Text = "Init/"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Init - "; /// Titulo en el encabezado
                     break;
                 case "compras2":
                     if (this.uCCompras == null)
@@ -360,7 +360,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCCompras);
                     }
-                    this.lblTitlePage.Text = "Compras/Compra"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Compras - Compra"; /// Titulo en el encabezado
                     break;
                 case "ventas2":
                     if (this.uCVentas == null)
@@ -377,7 +377,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCIniciar);
                     }
-                    this.lblTitlePage.Text = "Ventas/Venta"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Ventas - Venta"; /// Titulo en el encabezado
                     break;
                 case "productos2":
                     if (this.uCListadoProducto == null)
@@ -394,7 +394,7 @@ namespace Admeli
                     {
                         this.panelMain.Controls.Add(uCListadoProducto);
                     }
-                    this.lblTitlePage.Text = "Productos/Listar"; /// Titulo en el encabezado
+                    this.lblTitlePage.Text = "Productos - Listar"; /// Titulo en el encabezado
                     break;
                 default:
                     break;
