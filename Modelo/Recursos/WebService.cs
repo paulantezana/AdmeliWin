@@ -46,7 +46,7 @@ namespace Modelo.Recursos
             try
             {
                 // Serializando el objeto
-                 string request = JsonConvert.SerializeObject(param);
+                string request = JsonConvert.SerializeObject(param);
                 StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
 
                 // Creando un nuevo cliente
@@ -58,11 +58,11 @@ namespace Modelo.Recursos
                 // Validando la respuesta
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(response.ToString());
+                    throw new Exception(response.StatusCode.ToString()); // si hay un error mandar un exception con statuscode
                 }
                 string result = await response.Content.ReadAsStringAsync();
 
-                // retornando los valores en una lista de objetos
+                // retornando los valores como un objeto
                 K dataResponse = JsonConvert.DeserializeObject<K>(result);
                 return dataResponse;
             }
@@ -84,24 +84,24 @@ namespace Modelo.Recursos
         {
             try
             {
-                // Serializando el objeto
+                /// Serializando el objeto
                 string request = JsonConvert.SerializeObject(param);
                 StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
 
-                // Creando un nuevo cliente
+                /// Creando un nuevo cliente
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(this.domainName);
                 string url = string.Format("{0}/{1}", this.directory, servicio);
                 HttpResponseMessage response = await client.PostAsync(url, content);
 
-                // Validando la respuesta
+                /// Validando la respuesta
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(response.ToString());
+                    throw new Exception(response.StatusCode.ToString()); /// si hay un error mandar un exception con statuscode
                 }
                 string result = await response.Content.ReadAsStringAsync();
 
-                // retornando los valores en una lista de objetos
+                /// Retornando los valores en una lista de objetos
                 K dataResponse = JsonConvert.DeserializeObject<K>(result);
                 return dataResponse;
             }
@@ -122,24 +122,24 @@ namespace Modelo.Recursos
         {
             try
             {
-                // creando el contenido apartir de un jsonString
+                /// creando el contenido apartir de un jsonString
                 string request = JsonConvert.SerializeObject(param);
                 StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
 
-                // Creando un nuevo cliente
+                /// Creando un nuevo cliente
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(this.domainName);
                 string url = string.Format("{0}/{1}", this.directory, servicio);
                 HttpResponseMessage response = await client.PostAsync(url, content);
 
-                // Validando la respuesta
+                /// Validando la respuesta
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(response.ToString());
+                    throw new Exception(response.StatusCode.ToString()); /// si hay un error mandar un exception con statuscode
                 }
                 string result = await response.Content.ReadAsStringAsync();
 
-                // retornando los valores en una lista de objetos
+                /// Retornando los valores en una lista de objetos
                 List<T> res = JsonConvert.DeserializeObject<List<T>>(result);
                 return res;
             }
@@ -161,16 +161,20 @@ namespace Modelo.Recursos
         {
             try
             {
+                /// Creando un nuevo cliente
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(this.domainName);
                 string url = string.Format("{0}/{1}/{2}", this.directory, servicio, metodo);
                 HttpResponseMessage response = await client.GetAsync(url);
 
+                /// Validando la respuesta
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(response.ToString());
+                    throw new Exception(response.StatusCode.ToString()); /// si hay un error mandar un exception con statuscode
                 }
                 string result = await response.Content.ReadAsStringAsync();
+
+                /// Retornando los valores en un objeto
                 T objeto = JsonConvert.DeserializeObject<T>(result);
                 return objeto;
             }
@@ -190,16 +194,20 @@ namespace Modelo.Recursos
         {
             try
             {
+                /// Creando un nuevo cliente
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(this.domainName);
                 string url = string.Format("{0}/{1}", this.directory, servicio);
                 HttpResponseMessage response = await client.GetAsync(url);
 
+                /// Validando la respuesta
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception(response.ToString());
+                    throw new Exception(response.StatusCode.ToString()); /// si hay un error mandar un exception con statuscode
                 }
                 string result = await response.Content.ReadAsStringAsync();
+
+                /// Retornando los valores en un objeto
                 T objeto = JsonConvert.DeserializeObject<T>(result);
                 return objeto;
             }

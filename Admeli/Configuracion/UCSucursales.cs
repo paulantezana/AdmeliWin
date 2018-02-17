@@ -177,8 +177,6 @@ namespace Admeli.Configuracion
         private void mostrarPaginado()
         {
             lblCurrentPage.Text = paginacion.currentPage.ToString();
-
-            // Paginados
             lblPageAllItems.Text = String.Format("{0} Registros", paginacion.itemsCount.ToString());
             lblPageCount.Text = paginacion.pageCount.ToString();
         }

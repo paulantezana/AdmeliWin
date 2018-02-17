@@ -51,8 +51,7 @@ namespace Admeli.Componentes
 
         public void reloadPage(int currentPage)
         {
-            this.currentPage = currentPage;
-            // this.itemFrom = this.speed;
+            this.currentPage = (currentPage > pageCount) ? currentPage = pageCount : currentPage;
             this.reload();
         }
 
