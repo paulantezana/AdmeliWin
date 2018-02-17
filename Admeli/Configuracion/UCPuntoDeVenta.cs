@@ -34,8 +34,6 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCPuntoDeVenta(FormPrincipal formPrincipal)
@@ -45,8 +43,6 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         } 
         #endregion
 
@@ -73,6 +69,8 @@ namespace Admeli.Configuracion
         {
             cargarComponentes();
             cargarRegistros();
+
+            lisenerKeyEvents = true; // Active lisener key events
         } 
         #endregion
 

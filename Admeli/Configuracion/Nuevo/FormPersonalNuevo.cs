@@ -26,6 +26,7 @@ namespace Admeli.Configuracion.Nuevo
         private int currentIDAlmacen { get; set; }
         private bool nuevo { get; set; }
         private Personal currentPersonal { get; set; }
+        private PersonalAux currentPersonalAux { get; set; }
         private int currentIDSucursal { get; set; }
         private bool isValid { get; set; }
 
@@ -330,10 +331,10 @@ namespace Admeli.Configuracion.Nuevo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            guardarSucursal();
+            guardarPersonal();
         }
 
-        private async void guardarSucursal()
+        private async void guardarPersonal()
         {
             if (!validarCampos()) return;
             try
@@ -366,196 +367,198 @@ namespace Admeli.Configuracion.Nuevo
 
         private void crearObjetoSucursal()
         {
-           /* currentSucursal = new Sucursal();
+            currentPersonalAux = new PersonalAux();
 
-            if (!nuevo) currentSucursal.idSucursal = currentIDSucursal; // Llenar el id categoria cuando este en esdo modificar
+            // if (!nuevo) currentSucursal.idSucursal = currentIDSucursal; // Llenar el id categoria cuando este en esdo modificar
+           // currentPersonalAux.idPersonal =
 
-            currentSucursal.nombre = textNombreSucursal.Text;
-            currentSucursal.principal = chkPrincipalSucursal.Checked;
-            currentSucursal.estado = Convert.ToInt32(chkActivoSucursal.Checked);
-            currentSucursal.direccion = textDirecionSucursal.Text;
-            currentSucursal.tieneRegistros = "0";
+            // currentPersonalAux.apellidos = textApellidoUsuario.Text;
+            currentPersonalAux.celular = textCelular.Text;
+            currentPersonalAux.direccion = textDirecionUsuario.Text;
+            currentPersonalAux.email = textEmail.Text;
+            currentPersonalAux.estado = Convert.ToInt32(chkActivo.Checked);
+            currentPersonalAux.fechaNacimiento = dtpFechaNacimiento.Value.ToString();
+            currentPersonalAux.idDocumento = Convert.ToInt32(cbxTipoDocumento.SelectedValue);
+            currentPersonalAux.nombres = textNombreUsuario.Text;
+            currentPersonalAux.numeroDocumento = textNumeroDocumento.Text;
+            //             currentPersonalAux.password = 
+            currentPersonalAux.sexo = cbxSexo.Text;
+            currentPersonalAux.telefono = textTelefono.Text;
 
-            // Cargando estados
-            currentSucursal.estados = "";
-            currentSucursal.estados = Convert.ToInt32(chkGerenciaSucursal.Checked) + ",";
-            currentSucursal.estados = Convert.ToInt32(chkAdministracionSucursal.Checked) + ",";
-            currentSucursal.estados = Convert.ToInt32(chkCajaSucursal.Checked) + ",";
-            currentSucursal.estados = Convert.ToInt32(chkVentaSucursal.Checked) + ",";
-            currentSucursal.estados = Convert.ToInt32(chkCompraSucursal.Checked).ToString();*/
+             // currentPersonalAux.usuario = 
 
-            // Ubicacion geografica
-            ubicacionGeografica.idPais = (cbxPaises.SelectedIndex == -1) ? ubicacionGeografica.idPais : Convert.ToInt32(cbxPaises.SelectedValue);
-            ubicacionGeografica.idNivel1 = (cbxNivel1.SelectedIndex == -1) ? ubicacionGeografica.idNivel1 : Convert.ToInt32(cbxNivel1.SelectedValue);
-            ubicacionGeografica.idNivel2 = (cbxNivel2.SelectedIndex == -1) ? ubicacionGeografica.idNivel2 : Convert.ToInt32(cbxNivel2.SelectedValue);
-            ubicacionGeografica.idNivel3 = (cbxNivel3.SelectedIndex == -1) ? ubicacionGeografica.idNivel3 : Convert.ToInt32(cbxNivel3.SelectedValue);
-        }
+             // Ubicacion geografica
+             ubicacionGeografica.idPais = (cbxPaises.SelectedIndex == -1) ? ubicacionGeografica.idPais : Convert.ToInt32(cbxPaises.SelectedValue);
+             ubicacionGeografica.idNivel1 = (cbxNivel1.SelectedIndex == -1) ? ubicacionGeografica.idNivel1 : Convert.ToInt32(cbxNivel1.SelectedValue);
+             ubicacionGeografica.idNivel2 = (cbxNivel2.SelectedIndex == -1) ? ubicacionGeografica.idNivel2 : Convert.ToInt32(cbxNivel2.SelectedValue);
+             ubicacionGeografica.idNivel3 = (cbxNivel3.SelectedIndex == -1) ? ubicacionGeografica.idNivel3 : Convert.ToInt32(cbxNivel3.SelectedValue);
+         }
 
-        private bool validarCampos()
-        {
-            this.isValid = true;        // IS Valid ============ TRUE
+         private bool validarCampos()
+         {
+             this.isValid = true;        // IS Valid ============ TRUE
 
-            switch (labelUbicaciones.Count)
-            {
-                case 1:
-                    if (cbxNivel1.SelectedIndex == -1)
-                    {
-                        errorProvider1.SetError(cbxNivel1, "No se seleccionó ningún elemento");
-                        cbxNivel1.Focus();
-                        this.isValid = false;
-                    }
-                    errorProvider1.Clear();
-                    break;
-                case 2:
-                    if (cbxNivel2.SelectedIndex == -1)
-                    {
-                        errorProvider1.SetError(cbxNivel2, "No se seleccionó ningún elemento");
-                        cbxNivel2.Focus();
-                        this.isValid = false;
-                    }
-                    errorProvider1.Clear();
-                    break;
-                case 3:
-                    if (cbxNivel3.SelectedIndex == -1)
-                    {
-                        errorProvider1.SetError(cbxNivel3, "No se seleccionó ningún elemento");
-                        cbxNivel3.Focus();
-                        this.isValid = false;
-                    }
-                    errorProvider1.Clear();
-                    break;
-                default:
-                    break;
-            }
+             switch (labelUbicaciones.Count)
+             {
+                 case 1:
+                     if (cbxNivel1.SelectedIndex == -1)
+                     {
+                         errorProvider1.SetError(cbxNivel1, "No se seleccionó ningún elemento");
+                         cbxNivel1.Focus();
+                         this.isValid = false;
+                     }
+                     errorProvider1.Clear();
+                     break;
+                 case 2:
+                     if (cbxNivel2.SelectedIndex == -1)
+                     {
+                         errorProvider1.SetError(cbxNivel2, "No se seleccionó ningún elemento");
+                         cbxNivel2.Focus();
+                         this.isValid = false;
+                     }
+                     errorProvider1.Clear();
+                     break;
+                 case 3:
+                     if (cbxNivel3.SelectedIndex == -1)
+                     {
+                         errorProvider1.SetError(cbxNivel3, "No se seleccionó ningún elemento");
+                         cbxNivel3.Focus();
+                         this.isValid = false;
+                     }
+                     errorProvider1.Clear();
+                     break;
+                 default:
+                     break;
+             }
 
-            if (textNombreUsuario.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textNombreUsuario, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreUsuario, false);
-                this.isValid = false;
-            }
+             if (textNombreUsuario.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textNombreUsuario, "Campo obligatorio");
+                 Validator.textboxValidateColor(textNombreUsuario, false);
+                 this.isValid = false;
+             }
 
-            if (textApellidoUsuario.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textApellidoUsuario, "Campo obligatorio");
-                Validator.textboxValidateColor(textApellidoUsuario, false);
-                this.isValid = false;
-            }
+             if (textApellidoUsuario.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textApellidoUsuario, "Campo obligatorio");
+                 Validator.textboxValidateColor(textApellidoUsuario, false);
+                 this.isValid = false;
+             }
 
-            if (textNumeroDocumento.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textNumeroDocumento, "Campo obligatorio");
-                Validator.textboxValidateColor(textNumeroDocumento, false);
-                this.isValid = false;
-            }
+             if (textNumeroDocumento.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textNumeroDocumento, "Campo obligatorio");
+                 Validator.textboxValidateColor(textNumeroDocumento, false);
+                 this.isValid = false;
+             }
 
-            if (textEmail.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textEmail, "Campo obligatorio");
-                Validator.textboxValidateColor(textEmail, false);
-                this.isValid = false;
-            }
+             if (textEmail.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textEmail, "Campo obligatorio");
+                 Validator.textboxValidateColor(textEmail, false);
+                 this.isValid = false;
+             }
 
-            if (textDirecionUsuario.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textDirecionUsuario, "Campo obligatorio");
-                Validator.textboxValidateColor(textDirecionUsuario, false);
-                this.isValid = false;
-            }
+             if (textDirecionUsuario.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textDirecionUsuario, "Campo obligatorio");
+                 Validator.textboxValidateColor(textDirecionUsuario, false);
+                 this.isValid = false;
+             }
 
-            if (dtpFechaNacimiento.Value.Year == DateTime.Now.Year)
-            {
-                errorProvider1.SetError(dtpFechaNacimiento, "Fecha de nacimiento invalido");
-                this.isValid = false;
-            }
+             if (dtpFechaNacimiento.Value.Year == DateTime.Now.Year)
+             {
+                 errorProvider1.SetError(dtpFechaNacimiento, "Fecha de nacimiento invalido");
+                 this.isValid = false;
+             }
 
-            if (!this.isValid)
-            {
-                return false;
-            }
-            return true;
-        }
+             if (!this.isValid)
+             {
+                 return false;
+             }
+             return true;
+         }
 
-        #endregion
+         #endregion
 
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-           // cargarDeprtametnoSucursal();
-        }
+         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+         {
+            // cargarDeprtametnoSucursal();
+         }
 
-        #region ============================== Validacion tiempo real ==============================
-        private void textNombreUsuario_Validated(object sender, EventArgs e)
-        {
-            if (textNombreUsuario.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textNombreUsuario, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreUsuario, false);
-                return;
-            }
-            errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreUsuario, true);
-        }
+         #region ============================== Validacion tiempo real ==============================
+         private void textNombreUsuario_Validated(object sender, EventArgs e)
+         {
+             if (textNombreUsuario.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textNombreUsuario, "Campo obligatorio");
+                 Validator.textboxValidateColor(textNombreUsuario, false);
+                 return;
+             }
+             errorProvider1.Clear();
+             Validator.textboxValidateColor(textNombreUsuario, true);
+         }
 
-        private void textApellidoUsuario_Validated(object sender, EventArgs e)
-        {
-            if (textApellidoUsuario.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textApellidoUsuario, "Campo obligatorio");
-                Validator.textboxValidateColor(textApellidoUsuario, false);
-                return;
-            }
-            errorProvider1.Clear();
-            Validator.textboxValidateColor(textApellidoUsuario, true);
-        }
+         private void textApellidoUsuario_Validated(object sender, EventArgs e)
+         {
+             if (textApellidoUsuario.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textApellidoUsuario, "Campo obligatorio");
+                 Validator.textboxValidateColor(textApellidoUsuario, false);
+                 return;
+             }
+             errorProvider1.Clear();
+             Validator.textboxValidateColor(textApellidoUsuario, true);
+         }
 
-        private void textNumeroDocumento_Validated(object sender, EventArgs e)
-        {
-            if (textNumeroDocumento.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textNumeroDocumento, "Campo obligatorio");
-                Validator.textboxValidateColor(textNumeroDocumento, false);
-                return;
-            }
-            errorProvider1.Clear();
-            Validator.textboxValidateColor(textNumeroDocumento, true);
-        }
+         private void textNumeroDocumento_Validated(object sender, EventArgs e)
+         {
+             if (textNumeroDocumento.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textNumeroDocumento, "Campo obligatorio");
+                 Validator.textboxValidateColor(textNumeroDocumento, false);
+                 return;
+             }
+             errorProvider1.Clear();
+             Validator.textboxValidateColor(textNumeroDocumento, true);
+         }
 
-        private void textEmail_Validated(object sender, EventArgs e)
-        {
-            if (textEmail.Text.Trim() == "")
-            {
-                errorProvider1.SetError(textEmail, "Campo obligatorio");
-                Validator.textboxValidateColor(textEmail, false);
-                return;
-            }
-            errorProvider1.Clear();
-            Validator.textboxValidateColor(textEmail, true);
+         private void textEmail_Validated(object sender, EventArgs e)
+         {
+             if (textEmail.Text.Trim() == "")
+             {
+                 errorProvider1.SetError(textEmail, "Campo obligatorio");
+                 Validator.textboxValidateColor(textEmail, false);
+                 return;
+             }
+             errorProvider1.Clear();
+             Validator.textboxValidateColor(textEmail, true);
 
-            if (!Validator.IsValidEmail(textEmail.Text))
-            {
-                errorProvider1.SetError(textEmail, "Email invalido");
-                Validator.textboxValidateColor(textEmail, false);
-                return;
-            }
-            errorProvider1.Clear();
-            Validator.textboxValidateColor(textEmail, true);
-        }
+             if (!Validator.IsValidEmail(textEmail.Text))
+             {
+                 errorProvider1.SetError(textEmail, "Email invalido");
+                 Validator.textboxValidateColor(textEmail, false);
+                 return;
+             }
+             errorProvider1.Clear();
+             Validator.textboxValidateColor(textEmail, true);
+         }
 
-        private void textTelefono_Validated(object sender, EventArgs e)
-        {
-            ////////////////////////////////////////
-        }
+         private void textTelefono_Validated(object sender, EventArgs e)
+         {
+             ////////////////////////////////////////
+         }
 
-        private void textCelular_Validated(object sender, EventArgs e)
-        {
-            /*  if (textCelular.Text.Trim() == "")
-              {
-                  errorProvider1.SetError(textCelular, "Campo obligatorio");
-                  Validator.textboxValidateColor(textCelular, false);
-                  return;
-              }
-              errorProvider1.Clear();
-              Validator.textboxValidateColor(textCelular, true);*/
+         private void textCelular_Validated(object sender, EventArgs e)
+         {
+             /*  if (textCelular.Text.Trim() == "")
+               {
+                   errorProvider1.SetError(textCelular, "Campo obligatorio");
+                   Validator.textboxValidateColor(textCelular, false);
+                   return;
+               }
+               errorProvider1.Clear();
+               Validator.textboxValidateColor(textCelular, true);*/
         }
 
         private void textTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -580,5 +583,31 @@ namespace Admeli.Configuracion.Nuevo
             Validator.textboxValidateColor(textDirecionUsuario, true);
         }
         #endregion
+
+        private void FormPersonalNuevo_Shown(object sender, EventArgs e)
+        {
+            textNombreUsuario.Focus();
+        }
+    }
+
+    public class PersonalAux : Personal
+    {
+        public string apellidos { get; set; }
+        public string celular { get; set; }
+        public string direccion { get; set; }
+        public string email { get; set; }
+        public int estado { get; set; }
+        public string fechaNacimiento { get; set; }
+        public int idDocumento { get; set; }
+        public int idPersonal { get; set; }
+        public int idUbicacionGeografica { get; set; }
+        public string nombres { get; set; }
+        public string numeroDocumento { get; set; }
+        public string password { get; set; }
+        public string sexo { get; set; }
+        public string telefono { get; set; }
+        public string usuario { get; set; }
     }
 }
+
+

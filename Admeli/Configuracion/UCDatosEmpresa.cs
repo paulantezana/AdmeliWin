@@ -30,6 +30,21 @@ namespace Admeli.Configuracion
 
         private Pais pais { get; set; }
 
+        #region ========================= Constructor =========================
+        public UCDatosEmpresa()
+        {
+            InitializeComponent();
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+
+        public UCDatosEmpresa(FormPrincipal formPrincipal)
+        {
+            InitializeComponent();
+            this.formPrincipal = formPrincipal;
+            lisenerKeyEvents = true; // Active lisener key events
+        }
+        #endregion
+
         #region ============================ Loads ============================
         private void UCDatosEmpresa_Load(object sender, EventArgs e)
         {
@@ -48,6 +63,7 @@ namespace Admeli.Configuracion
 
         internal async void reLoad()
         {
+            loadStateApp(true);
             await cargarPaises();
             crearNivelesPais();
             // Cargando los datos generales
@@ -93,21 +109,6 @@ namespace Admeli.Configuracion
         }
         #endregion
 
-        #region ========================= Constructor =========================
-        public UCDatosEmpresa()
-        {
-            InitializeComponent();
-            lisenerKeyEvents = true; // Active lisener key events
-        }
-
-        public UCDatosEmpresa(FormPrincipal formPrincipal)
-        {
-            InitializeComponent();
-            this.formPrincipal = formPrincipal;
-            lisenerKeyEvents = true; // Active lisener key events
-        }
-        #endregion
-
         #region ================== Formando los niveles de cada pais ==================
         private async void crearNivelesPais()
         {
@@ -140,14 +141,7 @@ namespace Admeli.Configuracion
                 cargarNivel1();
 
             }
-            catch (Exception)
-            {
-                // MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                loadStateApp(false);
-            }
+            catch (Exception){}
         }
 
         private void ocultarNiveles()
@@ -211,8 +205,8 @@ namespace Admeli.Configuracion
             }
             finally
             {
-                desactivarNivelDesde(3);
                 loadStateApp(false);
+                desactivarNivelDesde(3);
             }
         }
 
@@ -316,12 +310,15 @@ namespace Admeli.Configuracion
                 actualizarObejeto();
                 Response responseCG = await configModel.guardarConfigGeneral(configuracionGeneral);
                 Response responseDG = await configModel.guardarDatosGenerales(ubicacionGeografica, datosGenerales);
-                MessageBox.Show(responseDG.msj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadStateApp(false);
+                MessageBox.Show(responseDG.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error! " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadStateApp(false);
             }
 
         }
@@ -368,10 +365,10 @@ namespace Admeli.Configuracion
         private void textItemPagina_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validator.isNumber(e);
-        } 
+        }
         #endregion
 
-        #region ========================================= PAINT 
+        #region ======================== PAINT ========================
         private void panelLevelPais_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();

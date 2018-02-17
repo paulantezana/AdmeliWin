@@ -97,7 +97,7 @@
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(734, 49);
-            this.panelFooter.TabIndex = 3;
+            this.panelFooter.TabIndex = 27;
             this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
             // panel1
@@ -167,7 +167,7 @@
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 16);
-            this.label16.TabIndex = 9;
+            this.label16.TabIndex = 12;
             this.label16.Text = "Principal";
             // 
             // chkPrincipalSucursal
@@ -180,7 +180,7 @@
             this.chkPrincipalSucursal.Location = new System.Drawing.Point(16, 363);
             this.chkPrincipalSucursal.Name = "chkPrincipalSucursal";
             this.chkPrincipalSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkPrincipalSucursal.TabIndex = 8;
+            this.chkPrincipalSucursal.TabIndex = 11;
             // 
             // label1
             // 
@@ -191,7 +191,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 16);
-            this.label1.TabIndex = 11;
+            this.label1.TabIndex = 14;
             this.label1.Text = "Activo *";
             // 
             // chkActivoSucursal
@@ -204,7 +204,7 @@
             this.chkActivoSucursal.Location = new System.Drawing.Point(143, 361);
             this.chkActivoSucursal.Name = "chkActivoSucursal";
             this.chkActivoSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoSucursal.TabIndex = 10;
+            this.chkActivoSucursal.TabIndex = 13;
             // 
             // label2
             // 
@@ -216,7 +216,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 14);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Dirección *";
             // 
             // panelLevel3
@@ -226,7 +226,7 @@
             this.panelLevel3.Location = new System.Drawing.Point(15, 257);
             this.panelLevel3.Name = "panelLevel3";
             this.panelLevel3.Size = new System.Drawing.Size(328, 40);
-            this.panelLevel3.TabIndex = 5;
+            this.panelLevel3.TabIndex = 8;
             this.panelLevel3.Visible = false;
             // 
             // cbxNivel3
@@ -272,7 +272,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 14);
-            this.label4.TabIndex = 0;
+            this.label4.TabIndex = 3;
             this.label4.Text = "Nombres*";
             // 
             // panelLevel2
@@ -282,7 +282,7 @@
             this.panelLevel2.Location = new System.Drawing.Point(15, 208);
             this.panelLevel2.Name = "panelLevel2";
             this.panelLevel2.Size = new System.Drawing.Size(328, 40);
-            this.panelLevel2.TabIndex = 4;
+            this.panelLevel2.TabIndex = 7;
             this.panelLevel2.Visible = false;
             // 
             // cbxNivel2
@@ -336,7 +336,7 @@
             this.textDirecionSucursal.Name = "textDirecionSucursal";
             this.textDirecionSucursal.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textDirecionSucursal.Size = new System.Drawing.Size(329, 40);
-            this.textDirecionSucursal.TabIndex = 7;
+            this.textDirecionSucursal.TabIndex = 9;
             this.textDirecionSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textDirecionSucursal.Validated += new System.EventHandler(this.textDirecionSucursal_Validated);
             // 
@@ -347,7 +347,7 @@
             this.panelLevel1.Location = new System.Drawing.Point(15, 160);
             this.panelLevel1.Name = "panelLevel1";
             this.panelLevel1.Size = new System.Drawing.Size(328, 40);
-            this.panelLevel1.TabIndex = 3;
+            this.panelLevel1.TabIndex = 6;
             this.panelLevel1.Visible = false;
             // 
             // cbxNivel1
@@ -401,7 +401,7 @@
             this.textNombreSucursal.Name = "textNombreSucursal";
             this.textNombreSucursal.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textNombreSucursal.Size = new System.Drawing.Size(329, 40);
-            this.textNombreSucursal.TabIndex = 1;
+            this.textNombreSucursal.TabIndex = 4;
             this.textNombreSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textNombreSucursal.Validated += new System.EventHandler(this.textNombreSucursal_Validated);
             // 
@@ -412,7 +412,7 @@
             this.panelLevelPais.Location = new System.Drawing.Point(15, 112);
             this.panelLevelPais.Name = "panelLevelPais";
             this.panelLevelPais.Size = new System.Drawing.Size(328, 40);
-            this.panelLevelPais.TabIndex = 2;
+            this.panelLevelPais.TabIndex = 5;
             // 
             // cbxPaises
             // 
@@ -449,7 +449,7 @@
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 16);
-            this.label8.TabIndex = 9;
+            this.label8.TabIndex = 26;
             this.label8.Text = "Compra";
             // 
             // chkCompraSucursal
@@ -462,7 +462,7 @@
             this.chkCompraSucursal.Location = new System.Drawing.Point(396, 239);
             this.chkCompraSucursal.Name = "chkCompraSucursal";
             this.chkCompraSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkCompraSucursal.TabIndex = 8;
+            this.chkCompraSucursal.TabIndex = 25;
             // 
             // label6
             // 
@@ -473,7 +473,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 16);
-            this.label6.TabIndex = 7;
+            this.label6.TabIndex = 24;
             this.label6.Text = "Venta";
             // 
             // chkVentaSucursal
@@ -486,7 +486,7 @@
             this.chkVentaSucursal.Location = new System.Drawing.Point(396, 195);
             this.chkVentaSucursal.Name = "chkVentaSucursal";
             this.chkVentaSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkVentaSucursal.TabIndex = 6;
+            this.chkVentaSucursal.TabIndex = 23;
             // 
             // label3
             // 
@@ -497,7 +497,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 16);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 22;
             this.label3.Text = "Caja";
             // 
             // chkCajaSucursal
@@ -510,7 +510,7 @@
             this.chkCajaSucursal.Location = new System.Drawing.Point(396, 151);
             this.chkCajaSucursal.Name = "chkCajaSucursal";
             this.chkCajaSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkCajaSucursal.TabIndex = 4;
+            this.chkCajaSucursal.TabIndex = 21;
             // 
             // label5
             // 
@@ -521,7 +521,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 16);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 20;
             this.label5.Text = "Administración";
             // 
             // chkAdministracionSucursal
@@ -534,7 +534,7 @@
             this.chkAdministracionSucursal.Location = new System.Drawing.Point(396, 107);
             this.chkAdministracionSucursal.Name = "chkAdministracionSucursal";
             this.chkAdministracionSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkAdministracionSucursal.TabIndex = 2;
+            this.chkAdministracionSucursal.TabIndex = 19;
             // 
             // label7
             // 
@@ -545,7 +545,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 16);
-            this.label7.TabIndex = 1;
+            this.label7.TabIndex = 18;
             this.label7.Text = "Gerencia";
             // 
             // chkGerenciaSucursal
@@ -558,7 +558,7 @@
             this.chkGerenciaSucursal.Location = new System.Drawing.Point(396, 63);
             this.chkGerenciaSucursal.Name = "chkGerenciaSucursal";
             this.chkGerenciaSucursal.Size = new System.Drawing.Size(20, 20);
-            this.chkGerenciaSucursal.TabIndex = 0;
+            this.chkGerenciaSucursal.TabIndex = 17;
             // 
             // progressBarApp
             // 
@@ -586,7 +586,7 @@
             this.bunifuSeparator1.Location = new System.Drawing.Point(14, 19);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(329, 28);
-            this.bunifuSeparator1.TabIndex = 4;
+            this.bunifuSeparator1.TabIndex = 2;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
@@ -598,7 +598,7 @@
             this.label9.Location = new System.Drawing.Point(12, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 16);
-            this.label9.TabIndex = 5;
+            this.label9.TabIndex = 1;
             this.label9.Text = "Datos sucursal.";
             // 
             // label10
@@ -609,7 +609,7 @@
             this.label10.Location = new System.Drawing.Point(391, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 16);
-            this.label10.TabIndex = 13;
+            this.label10.TabIndex = 15;
             this.label10.Text = "Datos sucursal.";
             // 
             // bunifuSeparator2
@@ -620,7 +620,7 @@
             this.bunifuSeparator2.Location = new System.Drawing.Point(393, 19);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(324, 28);
-            this.bunifuSeparator2.TabIndex = 12;
+            this.bunifuSeparator2.TabIndex = 16;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 

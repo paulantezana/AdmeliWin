@@ -37,11 +37,11 @@
             this.chkActivo = new Bunifu.Framework.UI.BunifuCheckbox();
             this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textPuntoVenta = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.cbxSucursalPV = new System.Windows.Forms.ComboBox();
             this.lblNivel3 = new System.Windows.Forms.Label();
-            this.textPuntoVenta = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -140,6 +140,27 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // textPuntoVenta
+            // 
+            this.textPuntoVenta.BackColor = System.Drawing.Color.White;
+            this.textPuntoVenta.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textPuntoVenta.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textPuntoVenta.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textPuntoVenta.BorderThickness = 1;
+            this.textPuntoVenta.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textPuntoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPuntoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.errorProvider1.SetIconPadding(this.textPuntoVenta, -30);
+            this.textPuntoVenta.isPassword = false;
+            this.textPuntoVenta.Location = new System.Drawing.Point(13, 70);
+            this.textPuntoVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.textPuntoVenta.Name = "textPuntoVenta";
+            this.textPuntoVenta.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
+            this.textPuntoVenta.Size = new System.Drawing.Size(329, 40);
+            this.textPuntoVenta.TabIndex = 114;
+            this.textPuntoVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textPuntoVenta.Validated += new System.EventHandler(this.textPuntoVenta_Validated);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -191,27 +212,6 @@
             this.lblNivel3.TabIndex = 0;
             this.lblNivel3.Text = "Sucursal :";
             // 
-            // textPuntoVenta
-            // 
-            this.textPuntoVenta.BackColor = System.Drawing.Color.White;
-            this.textPuntoVenta.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textPuntoVenta.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textPuntoVenta.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textPuntoVenta.BorderThickness = 1;
-            this.textPuntoVenta.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textPuntoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPuntoVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.errorProvider1.SetIconPadding(this.textPuntoVenta, -30);
-            this.textPuntoVenta.isPassword = false;
-            this.textPuntoVenta.Location = new System.Drawing.Point(13, 70);
-            this.textPuntoVenta.Margin = new System.Windows.Forms.Padding(4);
-            this.textPuntoVenta.Name = "textPuntoVenta";
-            this.textPuntoVenta.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
-            this.textPuntoVenta.Size = new System.Drawing.Size(329, 40);
-            this.textPuntoVenta.TabIndex = 114;
-            this.textPuntoVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textPuntoVenta.Validated += new System.EventHandler(this.textPuntoVenta_Validated);
-            // 
             // progressBarApp
             // 
             this.progressBarApp.BackColor = System.Drawing.Color.White;
@@ -245,6 +245,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASIGNAR PUNTO VENTA";
             this.Load += new System.EventHandler(this.FormPuntoVentaNuevo_Load);
+            this.Shown += new System.EventHandler(this.FormPuntoVentaNuevo_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPuntoVentaNuevo_Paint);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

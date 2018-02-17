@@ -50,6 +50,7 @@ namespace Admeli
         {
             InitializeComponent();
             this.formLogin = formLogin;
+            panelMenuRight.Size = new Size(0, 700); /// Ocultar menu lateral derecho 
         }
         #endregion
 
@@ -462,7 +463,16 @@ namespace Admeli
 
         private void cargarDatosAsideRight()
         {
-            int y = 13;
+            lblUserName.Text = PersonalModel.personal.nombres;
+            lblLastName.Text = PersonalModel.personal.apellidos;
+            lblDNI.Text = PersonalModel.personal.numeroDocumento;
+            lblUserName.Text = PersonalModel.personal.nombres;
+            lblDocumentType.Text = PersonalModel.personal.tipoDocumento;
+
+            lblSucursal.Text = ConfigModel.sucursal.nombre;
+
+            // datos dinamicos
+            int y = lblTipoCambio.Location.Y + 50;
             List<TipoCambioMoneda> tipoCambios = ConfigModel.tipoCambioMonedas;
             foreach (TipoCambioMoneda cambio in tipoCambios)
             {
@@ -493,6 +503,7 @@ namespace Admeli
         }
         #endregion
 
+        #region ==================== Create Dynamic Elements ====================
         private void createElements(int y, TipoCambioMoneda param)
         {
             /// 
@@ -528,6 +539,7 @@ namespace Admeli
             /// 
             panelMenuRight.Controls.Add(lblEfectivoName);
             panelMenuRight.Controls.Add(lblEfectivoValue);
-        }
+        } 
+        #endregion
     }
 }

@@ -23,6 +23,7 @@ namespace Admeli.Configuracion.Nuevo
         private bool nuevo { get; set; }
         private int currentIDPuntoVenta { get; set; }
 
+        #region ================================= Constructor =================================
         public FormPuntoVentaNuevo()
         {
             InitializeComponent();
@@ -39,18 +40,31 @@ namespace Admeli.Configuracion.Nuevo
             textPuntoVenta.Text = puntoDeVenta.nombre;
             cbxSucursalPV.SelectedValue = puntoDeVenta.idSucursal;
             chkActivo.Checked = Convert.ToBoolean(puntoDeVenta.estado);
+        } 
+        #endregion
+
+        private void FormPuntoVentaNuevo_Load(object sender, EventArgs e)
+        {
+            cargarSucursal();
         }
 
+        #region ====================== Loads ======================
         private async void cargarSucursal()
         {
             sucursalBindingSource.DataSource = await sucursalModel.sucursales();
-        }
+        } 
+        #endregion
 
         #region ===================== Paint =====================
         private void panelFooter_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.topLine(panelFooter);
+        }
+        private void FormPuntoVentaNuevo_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panel12, 157, 157, 157);
         }
         #endregion
 
@@ -111,8 +125,7 @@ namespace Admeli.Configuracion.Nuevo
             puntoVenta.nombre = textPuntoVenta.Text;
             puntoVenta.idSucursal = Convert.ToInt32(cbxSucursalPV.SelectedValue);
             puntoVenta.estado = Convert.ToInt32(chkActivo.Checked);
-        } 
-        #endregion
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -127,17 +140,7 @@ namespace Admeli.Configuracion.Nuevo
         {
             this.Close();
         }
-
-        private void FormPuntoVentaNuevo_Load(object sender, EventArgs e)
-        {
-            cargarSucursal();
-        }
-
-        private void FormPuntoVentaNuevo_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panel12, 157, 157, 157);
-        }
+        #endregion
 
         #region ================================ Validacion en tiempo real ================================
         private void textPuntoVenta_Validated(object sender, EventArgs e)
@@ -150,7 +153,12 @@ namespace Admeli.Configuracion.Nuevo
             }
             errorProvider1.Clear();
             Validator.textboxValidateColor(textPuntoVenta, true);
-        } 
+        }
         #endregion
+
+        private void FormPuntoVentaNuevo_Shown(object sender, EventArgs e)
+        {
+            cbxSucursalPV.Focus();
+        }
     }
 }

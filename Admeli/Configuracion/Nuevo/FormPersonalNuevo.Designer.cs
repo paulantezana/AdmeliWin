@@ -119,7 +119,7 @@
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(1076, 49);
-            this.panelFooter.TabIndex = 31;
+            this.panelFooter.TabIndex = 33;
             // 
             // panel1
             // 
@@ -177,7 +177,7 @@
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 16);
-            this.label16.TabIndex = 26;
+            this.label16.TabIndex = 28;
             this.label16.Text = "Activo *";
             // 
             // chkActivo
@@ -190,7 +190,7 @@
             this.chkActivo.Location = new System.Drawing.Point(365, 298);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(20, 20);
-            this.chkActivo.TabIndex = 25;
+            this.chkActivo.TabIndex = 27;
             // 
             // dataGridView1
             // 
@@ -219,7 +219,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(328, 189);
-            this.dataGridView1.TabIndex = 29;
+            this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
             // idSucursalDataGridViewTextBoxColumn
@@ -300,7 +300,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(328, 189);
-            this.treeView1.TabIndex = 30;
+            this.treeView1.TabIndex = 32;
             // 
             // imageList
             // 
@@ -415,7 +415,7 @@
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(31, 14);
-            this.label13.TabIndex = 11;
+            this.label13.TabIndex = 13;
             this.label13.Text = "Email";
             // 
             // textEmail
@@ -434,7 +434,7 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textEmail.Size = new System.Drawing.Size(329, 40);
-            this.textEmail.TabIndex = 12;
+            this.textEmail.TabIndex = 14;
             this.textEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textEmail.Validated += new System.EventHandler(this.textEmail_Validated);
             // 
@@ -448,7 +448,7 @@
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 14);
-            this.label14.TabIndex = 13;
+            this.label14.TabIndex = 15;
             this.label14.Text = "Teléfono";
             // 
             // textTelefono
@@ -467,7 +467,7 @@
             this.textTelefono.Name = "textTelefono";
             this.textTelefono.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textTelefono.Size = new System.Drawing.Size(329, 40);
-            this.textTelefono.TabIndex = 14;
+            this.textTelefono.TabIndex = 16;
             this.textTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefono_KeyPress);
             this.textTelefono.Validated += new System.EventHandler(this.textTelefono_Validated);
@@ -506,7 +506,7 @@
             this.panel2.Location = new System.Drawing.Point(13, 202);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(328, 40);
-            this.panel2.TabIndex = 122;
+            this.panel2.TabIndex = 9;
             // 
             // cbxTipoDocumento
             // 
@@ -522,7 +522,7 @@
             this.cbxTipoDocumento.Location = new System.Drawing.Point(3, 14);
             this.cbxTipoDocumento.Name = "cbxTipoDocumento";
             this.cbxTipoDocumento.Size = new System.Drawing.Size(321, 24);
-            this.cbxTipoDocumento.TabIndex = 1;
+            this.cbxTipoDocumento.TabIndex = 0;
             this.cbxTipoDocumento.ValueMember = "idPais";
             // 
             // label19
@@ -534,7 +534,7 @@
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(89, 14);
-            this.label19.TabIndex = 0;
+            this.label19.TabIndex = 1;
             this.label19.Text = "Tipo documento :";
             // 
             // label20
@@ -547,7 +547,7 @@
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(101, 14);
-            this.label20.TabIndex = 9;
+            this.label20.TabIndex = 11;
             this.label20.Text = "Número Documento";
             // 
             // textNumeroDocumento
@@ -577,7 +577,7 @@
             this.panel3.Location = new System.Drawing.Point(13, 297);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(328, 40);
-            this.panel3.TabIndex = 125;
+            this.panel3.TabIndex = 12;
             // 
             // cbxSexo
             // 
@@ -618,7 +618,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 14);
-            this.label6.TabIndex = 15;
+            this.label6.TabIndex = 17;
             this.label6.Text = "Celular";
             // 
             // textCelular
@@ -637,7 +637,7 @@
             this.textCelular.Name = "textCelular";
             this.textCelular.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textCelular.Size = new System.Drawing.Size(329, 40);
-            this.textCelular.TabIndex = 16;
+            this.textCelular.TabIndex = 18;
             this.textCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCelular_KeyPress);
             this.textCelular.Validated += new System.EventHandler(this.textCelular_Validated);
@@ -673,7 +673,7 @@
             this.label7.Location = new System.Drawing.Point(363, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 16);
-            this.label7.TabIndex = 17;
+            this.label7.TabIndex = 19;
             this.label7.Text = "Direccion.";
             // 
             // bunifuSeparator2
@@ -684,7 +684,7 @@
             this.bunifuSeparator2.Location = new System.Drawing.Point(365, 17);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(329, 28);
-            this.bunifuSeparator2.TabIndex = 18;
+            this.bunifuSeparator2.TabIndex = 20;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
@@ -696,7 +696,7 @@
             this.label8.Location = new System.Drawing.Point(718, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 16);
-            this.label8.TabIndex = 27;
+            this.label8.TabIndex = 29;
             this.label8.Text = "Permisos.";
             // 
             // bunifuSeparator3
@@ -707,7 +707,7 @@
             this.bunifuSeparator3.Location = new System.Drawing.Point(720, 17);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
             this.bunifuSeparator3.Size = new System.Drawing.Size(329, 28);
-            this.bunifuSeparator3.TabIndex = 28;
+            this.bunifuSeparator3.TabIndex = 30;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
             // 
@@ -721,7 +721,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 14);
-            this.label2.TabIndex = 23;
+            this.label2.TabIndex = 25;
             this.label2.Text = "Dirección *";
             // 
             // panelLevel3
@@ -731,7 +731,7 @@
             this.panelLevel3.Location = new System.Drawing.Point(366, 201);
             this.panelLevel3.Name = "panelLevel3";
             this.panelLevel3.Size = new System.Drawing.Size(328, 40);
-            this.panelLevel3.TabIndex = 22;
+            this.panelLevel3.TabIndex = 24;
             this.panelLevel3.Visible = false;
             // 
             // cbxNivel3
@@ -770,7 +770,7 @@
             this.panelLevel2.Location = new System.Drawing.Point(366, 152);
             this.panelLevel2.Name = "panelLevel2";
             this.panelLevel2.Size = new System.Drawing.Size(328, 40);
-            this.panelLevel2.TabIndex = 21;
+            this.panelLevel2.TabIndex = 23;
             this.panelLevel2.Visible = false;
             // 
             // cbxNivel2
@@ -819,7 +819,7 @@
             this.textDirecionUsuario.Name = "textDirecionUsuario";
             this.textDirecionUsuario.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textDirecionUsuario.Size = new System.Drawing.Size(329, 40);
-            this.textDirecionUsuario.TabIndex = 24;
+            this.textDirecionUsuario.TabIndex = 26;
             this.textDirecionUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textDirecionUsuario.Validated += new System.EventHandler(this.textDirecionUsuario_Validated);
             // 
@@ -830,7 +830,7 @@
             this.panelLevel1.Location = new System.Drawing.Point(366, 104);
             this.panelLevel1.Name = "panelLevel1";
             this.panelLevel1.Size = new System.Drawing.Size(328, 40);
-            this.panelLevel1.TabIndex = 20;
+            this.panelLevel1.TabIndex = 22;
             this.panelLevel1.Visible = false;
             // 
             // cbxNivel1
@@ -870,7 +870,7 @@
             this.panelLevelPais.Location = new System.Drawing.Point(366, 56);
             this.panelLevelPais.Name = "panelLevelPais";
             this.panelLevelPais.Size = new System.Drawing.Size(328, 40);
-            this.panelLevelPais.TabIndex = 19;
+            this.panelLevelPais.TabIndex = 21;
             // 
             // cbxPaises
             // 
@@ -886,7 +886,7 @@
             this.cbxPaises.Location = new System.Drawing.Point(3, 14);
             this.cbxPaises.Name = "cbxPaises";
             this.cbxPaises.Size = new System.Drawing.Size(321, 24);
-            this.cbxPaises.TabIndex = 0;
+            this.cbxPaises.TabIndex = 1;
             this.cbxPaises.ValueMember = "idPais";
             this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
             // 
@@ -899,7 +899,7 @@
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 14);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 0;
             this.label11.Text = "País";
             // 
             // errorProvider1
@@ -953,6 +953,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPersonalNuevo";
             this.Load += new System.EventHandler(this.FormPersonalNuevo_Load);
+            this.Shown += new System.EventHandler(this.FormPersonalNuevo_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPersonalNuevo_Paint);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using Entidad;
+using Entidad.Location;
 using Modelo.Recursos;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Modelo
     public class PersonalModel
     {
         public static bool logged { get; set; }
-
         public static Personal personal { get; set; }
 
+        private LocationModel locationModel = new LocationModel();
         private WebService webService = new WebService();
 
         /**
@@ -34,6 +35,23 @@ namespace Modelo
                     throw new Exception("El nombre de usuario o contraseña es incorrecta!!");
                 }
                 PersonalModel.personal = user[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> guardar(UbicacionGeografica ubicacionGeografica, Personal param)
+        {
+            try
+            {
+                // Obteniendo de la ubicacion geografica del sucursal
+                Response res = await locationModel.guardarUbigeo(ubicacionGeografica);
+                param.idUbicacionGeografica = res.id;
+
+                // localhost:8080/admeli/xcore2/xcore/services.php/personal/guardar
+                return await webService.POST<Personal, Response>("personal", "guardar", param);
             }
             catch (Exception ex)
             {

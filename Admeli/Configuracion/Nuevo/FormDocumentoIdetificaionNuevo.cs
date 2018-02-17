@@ -237,8 +237,12 @@ namespace Admeli.Configuracion.Nuevo
             errorProvider1.Clear();
             Validator.textboxValidateColor(textDigitosDocumentoIdenti, true);
         }
+
         #endregion
 
-        
+        private void FormDocumentoIdetificaionNuevo_Shown(object sender, EventArgs e)
+        {
+            textNombreDocumentoIdenti.Focus();
+        }
     }
 }

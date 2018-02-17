@@ -61,7 +61,7 @@
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(365, 49);
-            this.panelFooter.TabIndex = 31;
+            this.panelFooter.TabIndex = 11;
             this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
             // panel1
@@ -72,7 +72,7 @@
             this.panel1.Location = new System.Drawing.Point(28, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 48);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 0;
             // 
             // btnAceptar
             // 
@@ -87,7 +87,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(11, 9);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(152, 30);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -106,7 +106,7 @@
             this.btnClose.Location = new System.Drawing.Point(183, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 30);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -120,7 +120,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 87;
+            this.label3.TabIndex = 10;
             this.label3.Text = "Activo *";
             // 
             // chkActivoDI
@@ -133,7 +133,7 @@
             this.chkActivoDI.Location = new System.Drawing.Point(18, 234);
             this.chkActivoDI.Name = "chkActivoDI";
             this.chkActivoDI.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoDI.TabIndex = 86;
+            this.chkActivoDI.TabIndex = 9;
             // 
             // errorProvider1
             // 
@@ -156,7 +156,7 @@
             this.textDigitosDocumentoIdenti.Name = "textDigitosDocumentoIdenti";
             this.textDigitosDocumentoIdenti.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textDigitosDocumentoIdenti.Size = new System.Drawing.Size(329, 40);
-            this.textDigitosDocumentoIdenti.TabIndex = 119;
+            this.textDigitosDocumentoIdenti.TabIndex = 4;
             this.textDigitosDocumentoIdenti.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textDigitosDocumentoIdenti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDigitosDocumentoIdenti_KeyPress);
             this.textDigitosDocumentoIdenti.Validated += new System.EventHandler(this.textDigitosDocumentoIdenti_Validated);
@@ -178,7 +178,7 @@
             this.textNombreDocumentoIdenti.Name = "textNombreDocumentoIdenti";
             this.textNombreDocumentoIdenti.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textNombreDocumentoIdenti.Size = new System.Drawing.Size(329, 40);
-            this.textNombreDocumentoIdenti.TabIndex = 121;
+            this.textNombreDocumentoIdenti.TabIndex = 2;
             this.textNombreDocumentoIdenti.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textNombreDocumentoIdenti.Validating += new System.ComponentModel.CancelEventHandler(this.textNombreDocumentoIdenti_Validating);
             // 
@@ -192,7 +192,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 14);
-            this.label4.TabIndex = 118;
+            this.label4.TabIndex = 3;
             this.label4.Text = "Número de Dígitos";
             // 
             // panel12
@@ -202,7 +202,7 @@
             this.panel12.Location = new System.Drawing.Point(16, 146);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(328, 40);
-            this.panel12.TabIndex = 117;
+            this.panel12.TabIndex = 6;
             // 
             // cbxTipoDocumento
             // 
@@ -240,7 +240,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 14);
-            this.label5.TabIndex = 120;
+            this.label5.TabIndex = 1;
             this.label5.Text = "Nombres*";
             // 
             // progressBarApp
@@ -254,7 +254,7 @@
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
             this.progressBarApp.Size = new System.Drawing.Size(365, 5);
-            this.progressBarApp.TabIndex = 122;
+            this.progressBarApp.TabIndex = 0;
             // 
             // label1
             // 
@@ -266,7 +266,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 14);
-            this.label1.TabIndex = 123;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Número de dígitos que tendrá el documento";
             // 
             // label2
@@ -279,7 +279,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 14);
-            this.label2.TabIndex = 124;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Natural: para persona común.";
             // 
             // label6
@@ -292,7 +292,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(126, 14);
-            this.label6.TabIndex = 125;
+            this.label6.TabIndex = 8;
             this.label6.Text = "Jurídico: para empresas.";
             // 
             // FormDocumentoIdetificaionNuevo
@@ -319,6 +319,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DOCUMENTOS DE IDENTIFICACIÓN";
             this.Load += new System.EventHandler(this.FormDocumentoIdetificaionNuevo_Load);
+            this.Shown += new System.EventHandler(this.FormDocumentoIdetificaionNuevo_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormDocumentoIdetificaionNuevo_Paint);
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
