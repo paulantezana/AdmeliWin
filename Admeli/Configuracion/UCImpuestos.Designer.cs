@@ -34,15 +34,6 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.idImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siglasImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porcentualDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.porDefectoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enUsoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.impuestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblSpeedPages = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -58,18 +49,27 @@
             this.panelCrud = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.idImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siglasImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorImpuestoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcentualDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.porDefectoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enUsoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.impuestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAnular = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.impuestoBindingSource)).BeginInit();
             this.panelNavigation.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelCrud.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.impuestoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -139,92 +139,6 @@
             this.dataGridView.Size = new System.Drawing.Size(859, 370);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
-            // 
-            // idImpuestoDataGridViewTextBoxColumn
-            // 
-            this.idImpuestoDataGridViewTextBoxColumn.DataPropertyName = "idImpuesto";
-            this.idImpuestoDataGridViewTextBoxColumn.HeaderText = "idImpuesto";
-            this.idImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idImpuestoDataGridViewTextBoxColumn.Name = "idImpuestoDataGridViewTextBoxColumn";
-            this.idImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idImpuestoDataGridViewTextBoxColumn.Visible = false;
-            this.idImpuestoDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // nombreImpuestoDataGridViewTextBoxColumn
-            // 
-            this.nombreImpuestoDataGridViewTextBoxColumn.DataPropertyName = "nombreImpuesto";
-            this.nombreImpuestoDataGridViewTextBoxColumn.HeaderText = "Nombre Impuesto";
-            this.nombreImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreImpuestoDataGridViewTextBoxColumn.Name = "nombreImpuestoDataGridViewTextBoxColumn";
-            this.nombreImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreImpuestoDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // siglasImpuestoDataGridViewTextBoxColumn
-            // 
-            this.siglasImpuestoDataGridViewTextBoxColumn.DataPropertyName = "siglasImpuesto";
-            this.siglasImpuestoDataGridViewTextBoxColumn.HeaderText = "Siglas Impuesto";
-            this.siglasImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.siglasImpuestoDataGridViewTextBoxColumn.Name = "siglasImpuestoDataGridViewTextBoxColumn";
-            this.siglasImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.siglasImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.siglasImpuestoDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // valorImpuestoDataGridViewTextBoxColumn
-            // 
-            this.valorImpuestoDataGridViewTextBoxColumn.DataPropertyName = "valorImpuesto";
-            this.valorImpuestoDataGridViewTextBoxColumn.HeaderText = "Valor Impuesto";
-            this.valorImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.valorImpuestoDataGridViewTextBoxColumn.Name = "valorImpuestoDataGridViewTextBoxColumn";
-            this.valorImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.valorImpuestoDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // porcentualDataGridViewCheckBoxColumn
-            // 
-            this.porcentualDataGridViewCheckBoxColumn.DataPropertyName = "porcentual";
-            this.porcentualDataGridViewCheckBoxColumn.HeaderText = "Porcentual";
-            this.porcentualDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.porcentualDataGridViewCheckBoxColumn.Name = "porcentualDataGridViewCheckBoxColumn";
-            this.porcentualDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.porcentualDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.porcentualDataGridViewCheckBoxColumn.Width = 83;
-            // 
-            // porDefectoDataGridViewCheckBoxColumn
-            // 
-            this.porDefectoDataGridViewCheckBoxColumn.DataPropertyName = "porDefecto";
-            this.porDefectoDataGridViewCheckBoxColumn.HeaderText = "Por Defecto";
-            this.porDefectoDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.porDefectoDataGridViewCheckBoxColumn.Name = "porDefectoDataGridViewCheckBoxColumn";
-            this.porDefectoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.porDefectoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.porDefectoDataGridViewCheckBoxColumn.Width = 82;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Visible = false;
-            this.estadoDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // enUsoDataGridViewCheckBoxColumn
-            // 
-            this.enUsoDataGridViewCheckBoxColumn.DataPropertyName = "enUso";
-            this.enUsoDataGridViewCheckBoxColumn.HeaderText = "En Uso";
-            this.enUsoDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.enUsoDataGridViewCheckBoxColumn.Name = "enUsoDataGridViewCheckBoxColumn";
-            this.enUsoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.enUsoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.enUsoDataGridViewCheckBoxColumn.Width = 62;
-            // 
-            // impuestoBindingSource
-            // 
-            this.impuestoBindingSource.DataSource = typeof(Entidad.Impuesto);
             // 
             // panelNavigation
             // 
@@ -422,7 +336,7 @@
             // 
             this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
-            this.panelCrud.Controls.Add(this.btnEliminar);
+            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Controls.Add(this.btnActualizar);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 51);
@@ -447,6 +361,7 @@
             this.btnNuevo.Text = "Nuevo (F3)";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -464,23 +379,7 @@
             this.btnModificar.Text = "Modificar (F4)";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEliminar.Location = new System.Drawing.Point(182, 10);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 48);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.Text = "Eliminar (F6)";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnActualizar
             // 
@@ -498,6 +397,7 @@
             this.btnActualizar.Text = "Actualizar (F5)";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // panel2
             // 
@@ -529,6 +429,110 @@
             this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
+            // idImpuestoDataGridViewTextBoxColumn
+            // 
+            this.idImpuestoDataGridViewTextBoxColumn.DataPropertyName = "idImpuesto";
+            this.idImpuestoDataGridViewTextBoxColumn.HeaderText = "idImpuesto";
+            this.idImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idImpuestoDataGridViewTextBoxColumn.Name = "idImpuestoDataGridViewTextBoxColumn";
+            this.idImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idImpuestoDataGridViewTextBoxColumn.Visible = false;
+            this.idImpuestoDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // nombreImpuestoDataGridViewTextBoxColumn
+            // 
+            this.nombreImpuestoDataGridViewTextBoxColumn.DataPropertyName = "nombreImpuesto";
+            this.nombreImpuestoDataGridViewTextBoxColumn.HeaderText = "Nombre Impuesto";
+            this.nombreImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreImpuestoDataGridViewTextBoxColumn.Name = "nombreImpuestoDataGridViewTextBoxColumn";
+            this.nombreImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreImpuestoDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // siglasImpuestoDataGridViewTextBoxColumn
+            // 
+            this.siglasImpuestoDataGridViewTextBoxColumn.DataPropertyName = "siglasImpuesto";
+            this.siglasImpuestoDataGridViewTextBoxColumn.HeaderText = "Siglas Impuesto";
+            this.siglasImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.siglasImpuestoDataGridViewTextBoxColumn.Name = "siglasImpuestoDataGridViewTextBoxColumn";
+            this.siglasImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.siglasImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.siglasImpuestoDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // valorImpuestoDataGridViewTextBoxColumn
+            // 
+            this.valorImpuestoDataGridViewTextBoxColumn.DataPropertyName = "valorImpuesto";
+            this.valorImpuestoDataGridViewTextBoxColumn.HeaderText = "Valor Impuesto";
+            this.valorImpuestoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.valorImpuestoDataGridViewTextBoxColumn.Name = "valorImpuestoDataGridViewTextBoxColumn";
+            this.valorImpuestoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorImpuestoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.valorImpuestoDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // porcentualDataGridViewCheckBoxColumn
+            // 
+            this.porcentualDataGridViewCheckBoxColumn.DataPropertyName = "porcentual";
+            this.porcentualDataGridViewCheckBoxColumn.HeaderText = "Porcentual";
+            this.porcentualDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.porcentualDataGridViewCheckBoxColumn.Name = "porcentualDataGridViewCheckBoxColumn";
+            this.porcentualDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.porcentualDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.porcentualDataGridViewCheckBoxColumn.Width = 83;
+            // 
+            // porDefectoDataGridViewCheckBoxColumn
+            // 
+            this.porDefectoDataGridViewCheckBoxColumn.DataPropertyName = "porDefecto";
+            this.porDefectoDataGridViewCheckBoxColumn.HeaderText = "Por Defecto";
+            this.porDefectoDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.porDefectoDataGridViewCheckBoxColumn.Name = "porDefectoDataGridViewCheckBoxColumn";
+            this.porDefectoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.porDefectoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.porDefectoDataGridViewCheckBoxColumn.Width = 82;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            this.estadoDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // enUsoDataGridViewCheckBoxColumn
+            // 
+            this.enUsoDataGridViewCheckBoxColumn.DataPropertyName = "enUso";
+            this.enUsoDataGridViewCheckBoxColumn.HeaderText = "En Uso";
+            this.enUsoDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.enUsoDataGridViewCheckBoxColumn.Name = "enUsoDataGridViewCheckBoxColumn";
+            this.enUsoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.enUsoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.enUsoDataGridViewCheckBoxColumn.Width = 62;
+            // 
+            // impuestoBindingSource
+            // 
+            this.impuestoBindingSource.DataSource = typeof(Entidad.Impuesto);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAnular.FlatAppearance.BorderSize = 0;
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAnular.Location = new System.Drawing.Point(182, 10);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(86, 48);
+            this.btnAnular.TabIndex = 7;
+            this.btnAnular.Text = "Anular (F7)";
+            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
             // UCImpuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,12 +546,12 @@
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.impuestoBindingSource)).EndInit();
             this.panelNavigation.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panelCrud.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.impuestoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -581,9 +585,9 @@
         private System.Windows.Forms.FlowLayoutPanel panelCrud;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnAnular;
     }
 }

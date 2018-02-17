@@ -411,7 +411,7 @@ namespace Admeli.Configuracion.Nuevo
             currentPersonalAux.direccion = textDirecionUsuario.Text;
             currentPersonalAux.email = textEmail.Text;
             currentPersonalAux.estado = Convert.ToInt32(chkActivo.Checked);
-            currentPersonalAux.fechaNacimiento = dtpFechaNacimiento.Value.ToString();
+            currentPersonalAux.fechaNacimiento = String.Format("{0}-{1}-{2}", dtpFechaNacimiento.Value.Year, dtpFechaNacimiento.Value.Month, dtpFechaNacimiento.Value.Day);
             currentPersonalAux.idDocumento = Convert.ToInt32(cbxTipoDocumento.SelectedValue);
             currentPersonalAux.nombres = textNombreUsuario.Text;
             currentPersonalAux.numeroDocumento = textNumeroDocumento.Text;

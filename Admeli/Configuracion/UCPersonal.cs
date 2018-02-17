@@ -12,6 +12,7 @@ using Entidad;
 using Newtonsoft.Json;
 using Admeli.Componentes;
 using Admeli.Configuracion.Nuevo;
+using Admeli.Configuracion.Modificar;
 
 namespace Admeli.Configuracion
 {
@@ -242,6 +243,11 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void btnPasswordChange_Click(object sender, EventArgs e)
+        {
+            executeUsuario();
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
@@ -265,6 +271,25 @@ namespace Admeli.Configuracion
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
             executeAnular();
+        }
+
+        private void executeUsuario()
+        {
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idPersonal = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentPersonal = personales.Find(x => x.idPersonal == idPersonal); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormUsuario formUsuario = new FormUsuario(currentPersonal);
+            formUsuario.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
         }
 
         private void executeNuevo()

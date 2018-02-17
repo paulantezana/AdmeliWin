@@ -34,23 +34,6 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView = new ADGV.AdvancedDataGridView();
-            this.idCorrelativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreLabelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correlativoInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correlativoFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correlativoActualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idOperacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docCorrelativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblSpeedPages = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -68,14 +51,31 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCorrelativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreLabelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correlativoInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correlativoFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correlativoActualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOperacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docCorrelativoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docCorrelativoBindingSource)).BeginInit();
             this.panelNavigation.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelCrud.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.docCorrelativoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -154,169 +154,6 @@
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
-            // 
-            // idCorrelativoDataGridViewTextBoxColumn
-            // 
-            this.idCorrelativoDataGridViewTextBoxColumn.DataPropertyName = "idCorrelativo";
-            this.idCorrelativoDataGridViewTextBoxColumn.HeaderText = "idCorrelativo";
-            this.idCorrelativoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idCorrelativoDataGridViewTextBoxColumn.Name = "idCorrelativoDataGridViewTextBoxColumn";
-            this.idCorrelativoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCorrelativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idCorrelativoDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // areaDataGridViewTextBoxColumn
-            // 
-            this.areaDataGridViewTextBoxColumn.DataPropertyName = "area";
-            this.areaDataGridViewTextBoxColumn.HeaderText = "area";
-            this.areaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
-            this.areaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.areaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.areaDataGridViewTextBoxColumn.Width = 53;
-            // 
-            // idSucursalDataGridViewTextBoxColumn
-            // 
-            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
-            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
-            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idSucursalDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // nombreLabelDataGridViewTextBoxColumn
-            // 
-            this.nombreLabelDataGridViewTextBoxColumn.DataPropertyName = "nombreLabel";
-            this.nombreLabelDataGridViewTextBoxColumn.HeaderText = "nombreLabel";
-            this.nombreLabelDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreLabelDataGridViewTextBoxColumn.Name = "nombreLabelDataGridViewTextBoxColumn";
-            this.nombreLabelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreLabelDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreLabelDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // serieDataGridViewTextBoxColumn
-            // 
-            this.serieDataGridViewTextBoxColumn.DataPropertyName = "serie";
-            this.serieDataGridViewTextBoxColumn.HeaderText = "serie";
-            this.serieDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
-            this.serieDataGridViewTextBoxColumn.ReadOnly = true;
-            this.serieDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.serieDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // correlativoInicioDataGridViewTextBoxColumn
-            // 
-            this.correlativoInicioDataGridViewTextBoxColumn.DataPropertyName = "correlativoInicio";
-            this.correlativoInicioDataGridViewTextBoxColumn.HeaderText = "correlativoInicio";
-            this.correlativoInicioDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.correlativoInicioDataGridViewTextBoxColumn.Name = "correlativoInicioDataGridViewTextBoxColumn";
-            this.correlativoInicioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.correlativoInicioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.correlativoInicioDataGridViewTextBoxColumn.Width = 106;
-            // 
-            // correlativoFinDataGridViewTextBoxColumn
-            // 
-            this.correlativoFinDataGridViewTextBoxColumn.DataPropertyName = "correlativoFin";
-            this.correlativoFinDataGridViewTextBoxColumn.HeaderText = "correlativoFin";
-            this.correlativoFinDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.correlativoFinDataGridViewTextBoxColumn.Name = "correlativoFinDataGridViewTextBoxColumn";
-            this.correlativoFinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.correlativoFinDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.correlativoFinDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // correlativoActualDataGridViewTextBoxColumn
-            // 
-            this.correlativoActualDataGridViewTextBoxColumn.DataPropertyName = "correlativoActual";
-            this.correlativoActualDataGridViewTextBoxColumn.HeaderText = "correlativoActual";
-            this.correlativoActualDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.correlativoActualDataGridViewTextBoxColumn.Name = "correlativoActualDataGridViewTextBoxColumn";
-            this.correlativoActualDataGridViewTextBoxColumn.ReadOnly = true;
-            this.correlativoActualDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.correlativoActualDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // finDataGridViewCheckBoxColumn
-            // 
-            this.finDataGridViewCheckBoxColumn.DataPropertyName = "fin";
-            this.finDataGridViewCheckBoxColumn.HeaderText = "fin";
-            this.finDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.finDataGridViewCheckBoxColumn.Name = "finDataGridViewCheckBoxColumn";
-            this.finDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.finDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.finDataGridViewCheckBoxColumn.Width = 43;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // idDocumentoDataGridViewTextBoxColumn
-            // 
-            this.idDocumentoDataGridViewTextBoxColumn.DataPropertyName = "idDocumento";
-            this.idDocumentoDataGridViewTextBoxColumn.HeaderText = "idDocumento";
-            this.idDocumentoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idDocumentoDataGridViewTextBoxColumn.Name = "idDocumentoDataGridViewTextBoxColumn";
-            this.idDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDocumentoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idDocumentoDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // operacionDataGridViewTextBoxColumn
-            // 
-            this.operacionDataGridViewTextBoxColumn.DataPropertyName = "operacion";
-            this.operacionDataGridViewTextBoxColumn.HeaderText = "operacion";
-            this.operacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.operacionDataGridViewTextBoxColumn.Name = "operacionDataGridViewTextBoxColumn";
-            this.operacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.operacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.operacionDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // idOperacionDataGridViewTextBoxColumn
-            // 
-            this.idOperacionDataGridViewTextBoxColumn.DataPropertyName = "idOperacion";
-            this.idOperacionDataGridViewTextBoxColumn.HeaderText = "idOperacion";
-            this.idOperacionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idOperacionDataGridViewTextBoxColumn.Name = "idOperacionDataGridViewTextBoxColumn";
-            this.idOperacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idOperacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idOperacionDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // docCorrelativoBindingSource
-            // 
-            this.docCorrelativoBindingSource.DataSource = typeof(Entidad.DocCorrelativo);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idOperacion";
-            this.dataGridViewTextBoxColumn1.HeaderText = "idOperacion";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn1.Width = 114;
             // 
             // panelNavigation
             // 
@@ -537,6 +374,7 @@
             this.btnModificar.Text = "Modificar (F4)";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnActualizar
             // 
@@ -554,6 +392,7 @@
             this.btnActualizar.Text = "Actualizar (F5)";
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // panel2
             // 
@@ -585,6 +424,169 @@
             this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idOperacion";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idOperacion";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn1.Width = 114;
+            // 
+            // idCorrelativoDataGridViewTextBoxColumn
+            // 
+            this.idCorrelativoDataGridViewTextBoxColumn.DataPropertyName = "idCorrelativo";
+            this.idCorrelativoDataGridViewTextBoxColumn.HeaderText = "idCorrelativo";
+            this.idCorrelativoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idCorrelativoDataGridViewTextBoxColumn.Name = "idCorrelativoDataGridViewTextBoxColumn";
+            this.idCorrelativoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCorrelativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idCorrelativoDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // areaDataGridViewTextBoxColumn
+            // 
+            this.areaDataGridViewTextBoxColumn.DataPropertyName = "area";
+            this.areaDataGridViewTextBoxColumn.HeaderText = "area";
+            this.areaDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
+            this.areaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.areaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.areaDataGridViewTextBoxColumn.Width = 53;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idSucursalDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // nombreLabelDataGridViewTextBoxColumn
+            // 
+            this.nombreLabelDataGridViewTextBoxColumn.DataPropertyName = "nombreLabel";
+            this.nombreLabelDataGridViewTextBoxColumn.HeaderText = "nombreLabel";
+            this.nombreLabelDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.nombreLabelDataGridViewTextBoxColumn.Name = "nombreLabelDataGridViewTextBoxColumn";
+            this.nombreLabelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreLabelDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreLabelDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // serieDataGridViewTextBoxColumn
+            // 
+            this.serieDataGridViewTextBoxColumn.DataPropertyName = "serie";
+            this.serieDataGridViewTextBoxColumn.HeaderText = "serie";
+            this.serieDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
+            this.serieDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serieDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.serieDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // correlativoInicioDataGridViewTextBoxColumn
+            // 
+            this.correlativoInicioDataGridViewTextBoxColumn.DataPropertyName = "correlativoInicio";
+            this.correlativoInicioDataGridViewTextBoxColumn.HeaderText = "correlativoInicio";
+            this.correlativoInicioDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.correlativoInicioDataGridViewTextBoxColumn.Name = "correlativoInicioDataGridViewTextBoxColumn";
+            this.correlativoInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.correlativoInicioDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.correlativoInicioDataGridViewTextBoxColumn.Width = 106;
+            // 
+            // correlativoFinDataGridViewTextBoxColumn
+            // 
+            this.correlativoFinDataGridViewTextBoxColumn.DataPropertyName = "correlativoFin";
+            this.correlativoFinDataGridViewTextBoxColumn.HeaderText = "correlativoFin";
+            this.correlativoFinDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.correlativoFinDataGridViewTextBoxColumn.Name = "correlativoFinDataGridViewTextBoxColumn";
+            this.correlativoFinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.correlativoFinDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.correlativoFinDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // correlativoActualDataGridViewTextBoxColumn
+            // 
+            this.correlativoActualDataGridViewTextBoxColumn.DataPropertyName = "correlativoActual";
+            this.correlativoActualDataGridViewTextBoxColumn.HeaderText = "correlativoActual";
+            this.correlativoActualDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.correlativoActualDataGridViewTextBoxColumn.Name = "correlativoActualDataGridViewTextBoxColumn";
+            this.correlativoActualDataGridViewTextBoxColumn.ReadOnly = true;
+            this.correlativoActualDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.correlativoActualDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // finDataGridViewCheckBoxColumn
+            // 
+            this.finDataGridViewCheckBoxColumn.DataPropertyName = "fin";
+            this.finDataGridViewCheckBoxColumn.HeaderText = "fin";
+            this.finDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.finDataGridViewCheckBoxColumn.Name = "finDataGridViewCheckBoxColumn";
+            this.finDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.finDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.finDataGridViewCheckBoxColumn.Width = 43;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // idDocumentoDataGridViewTextBoxColumn
+            // 
+            this.idDocumentoDataGridViewTextBoxColumn.DataPropertyName = "idDocumento";
+            this.idDocumentoDataGridViewTextBoxColumn.HeaderText = "idDocumento";
+            this.idDocumentoDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idDocumentoDataGridViewTextBoxColumn.Name = "idDocumentoDataGridViewTextBoxColumn";
+            this.idDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDocumentoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idDocumentoDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // operacionDataGridViewTextBoxColumn
+            // 
+            this.operacionDataGridViewTextBoxColumn.DataPropertyName = "operacion";
+            this.operacionDataGridViewTextBoxColumn.HeaderText = "operacion";
+            this.operacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.operacionDataGridViewTextBoxColumn.Name = "operacionDataGridViewTextBoxColumn";
+            this.operacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.operacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.operacionDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // idOperacionDataGridViewTextBoxColumn
+            // 
+            this.idOperacionDataGridViewTextBoxColumn.DataPropertyName = "idOperacion";
+            this.idOperacionDataGridViewTextBoxColumn.HeaderText = "idOperacion";
+            this.idOperacionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.idOperacionDataGridViewTextBoxColumn.Name = "idOperacionDataGridViewTextBoxColumn";
+            this.idOperacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idOperacionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.idOperacionDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // docCorrelativoBindingSource
+            // 
+            this.docCorrelativoBindingSource.DataSource = typeof(Entidad.DocCorrelativo);
+            // 
             // UCAsignarCorrelativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,12 +600,12 @@
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docCorrelativoBindingSource)).EndInit();
             this.panelNavigation.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panelCrud.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.docCorrelativoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
