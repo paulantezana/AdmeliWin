@@ -64,6 +64,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -453,6 +454,7 @@
             this.panelCrud.Controls.Add(this.btnModificar);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
+            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 51);
             this.panelCrud.Name = "panelCrud";
@@ -562,6 +564,23 @@
             this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
+            // btnAnular
+            // 
+            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAnular.FlatAppearance.BorderSize = 0;
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAnular.Location = new System.Drawing.Point(354, 10);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(86, 48);
+            this.btnAnular.TabIndex = 6;
+            this.btnAnular.Text = "Anular (F6)";
+            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            // 
             // UCAlmacenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,5 +639,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnAnular;
     }
 }
