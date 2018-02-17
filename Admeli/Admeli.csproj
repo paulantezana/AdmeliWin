@@ -65,9 +65,7 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
@@ -1071,9 +1069,7 @@
     <EmbeddedResource Include="Ventas\UCVentas.resx">
       <DependentUpon>UCVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Admeli_TemporaryKey.pfx" />
     <None Include="packages.config" />
-    <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
     <None Include="Properties\DataSources\Entidad.Alternativa.datasource" />
     <None Include="Properties\DataSources\Entidad.Categoria.datasource" />
