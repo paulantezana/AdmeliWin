@@ -113,8 +113,8 @@ namespace Admeli.Configuracion
         private void loadState(bool state)
         {
             formPrincipal.appLoadState(state);
-            toolStripNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
+            panelNavigation.Enabled = !state;
+            panelCrud.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion
@@ -122,16 +122,8 @@ namespace Admeli.Configuracion
         #region ===================== Eventos Páginación =====================
         private void mostrarPaginado()
         {
-            // Cargando el combobox
-            lblCurrentPage.Items.Clear();
-            for (int i = 1; i <= paginacion.pageCount; i++)
-            {
-                lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
-            }
-            if (paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
-
-            // Paginados
-            lblPageAllItems.Text = paginacion.itemsCount.ToString();
+            lblCurrentPage.Text = paginacion.currentPage.ToString();
+            lblPageAllItems.Text = String.Format("{0} Registros", paginacion.itemsCount.ToString());
             lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
@@ -190,6 +182,16 @@ namespace Admeli.Configuracion
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
                 cargarRegistros();
             }
+        }
+
+        private void lblCurrentPage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void lblSpeedPages_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
         }
         #endregion
 

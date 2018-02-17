@@ -237,6 +237,16 @@ namespace Admeli.Configuracion
                 cargarRegistros();
             }
         }
+
+        private void lblCurrentPage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void lblSpeedPages_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
         #endregion
 
         #region ==================== CRUD ====================
@@ -376,5 +386,7 @@ namespace Admeli.Configuracion
             }
         }
         #endregion
+
+
     }
 }

@@ -107,7 +107,7 @@ namespace Admeli.Configuracion
         private void loadState(bool state)
         {
             formPrincipal.appLoadState(state);
-            toolStripCrud.Enabled = !state;
+            //toolStripCrud.Enabled = !state;
             toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
@@ -119,11 +119,6 @@ namespace Admeli.Configuracion
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
-        }
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            /*FormComprarNuevo comprarNuevo = new FormComprarNuevo();
-            comprarNuevo.ShowDialog();*/
         }
 
         internal void reLoad()
