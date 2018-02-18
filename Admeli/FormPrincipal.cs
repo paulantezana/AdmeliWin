@@ -82,14 +82,23 @@ namespace Admeli
         private void btnColor()
         {
             /// Reset Color buttons
-            btnCompra.Textcolor = Color.FromArgb(139, 138, 141);
-            btnHerramienta.Textcolor = Color.FromArgb(139, 138, 141);
-            btnVenta.Textcolor = Color.FromArgb(139, 138, 141);
-            btnProducto.Textcolor = Color.FromArgb(139, 138, 141);
-            btnCaja.Textcolor = Color.FromArgb(139, 138, 141);
-            btnAlmacen.Textcolor = Color.FromArgb(139, 138, 141);
-            btnReporte.Textcolor = Color.FromArgb(139, 138, 141);
-            btnConfiguracion.Textcolor = Color.FromArgb(139, 138, 141);
+            btnCompra.ForeColor = Color.FromArgb(139, 138, 141);
+            btnHerramienta.ForeColor = Color.FromArgb(139, 138, 141);
+            btnVenta.ForeColor = Color.FromArgb(139, 138, 141);
+            btnProducto.ForeColor = Color.FromArgb(139, 138, 141);
+            btnCaja.ForeColor = Color.FromArgb(139, 138, 141);
+            btnAlmacen.ForeColor = Color.FromArgb(139, 138, 141);
+            btnReporte.ForeColor = Color.FromArgb(139, 138, 141);
+            btnConfiguracion.ForeColor = Color.FromArgb(139, 138, 141);
+
+            btnCompra.BackColor = Color.FromArgb(52, 49, 58);
+            btnHerramienta.BackColor = Color.FromArgb(52, 49, 58);
+            btnVenta.BackColor = Color.FromArgb(52, 49, 58);
+            btnProducto.BackColor = Color.FromArgb(52, 49, 58);
+            btnCaja.BackColor = Color.FromArgb(52, 49, 58);
+            btnAlmacen.BackColor = Color.FromArgb(52, 49, 58);
+            btnReporte.BackColor = Color.FromArgb(52, 49, 58);
+            btnConfiguracion.BackColor = Color.FromArgb(52, 49, 58);
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -101,7 +110,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnReporte.Location; /// Decoracion
-            btnReporte.Textcolor = Color.White; /// Color
+            btnReporte.ForeColor = Color.White; /// Color
+            btnReporte.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("reportes"); /// Navegar
         }
 
@@ -109,7 +119,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnHerramienta.Location; /// Decoracion
-            btnHerramienta.Textcolor = Color.White; /// Color
+            btnHerramienta.ForeColor = Color.White; /// Color
+            btnHerramienta.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("herramientas"); /// Navegar
         }
 
@@ -117,7 +128,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnProducto.Location; /// Decoracion
-            btnProducto.Textcolor = Color.White; /// Color
+            btnProducto.ForeColor = Color.White; /// Color
+            btnProducto.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("productos"); /// Navegar
         }
 
@@ -125,7 +137,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnAlmacen.Location; /// Decoracion
-            btnAlmacen.Textcolor = Color.White; /// Color
+            btnAlmacen.ForeColor = Color.White; /// Color
+            btnAlmacen.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("almacen"); /// Navegar
         }
 
@@ -133,7 +146,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnCaja.Location; /// Decoracion
-            btnCaja.Textcolor = Color.White; /// Color
+            btnCaja.ForeColor = Color.White; /// Color
+            btnCaja.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("caja"); /// Navegar
         }
 
@@ -141,7 +155,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnVenta.Location; /// Decoracion
-            btnVenta.Textcolor = Color.White; /// Color
+            btnVenta.ForeColor = Color.White; /// Color
+            btnVenta.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("ventas"); /// Navegar
         }
 
@@ -149,7 +164,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnCompra.Location; /// Decoracion
-            btnCompra.Textcolor = Color.White; /// Color
+            btnCompra.ForeColor = Color.White; /// Color
+            btnCompra.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("compras"); /// Navegar
         }
 
@@ -157,7 +173,8 @@ namespace Admeli
         {
             btnColor(); /// Color reset
             borderLeftActive.Location = btnConfiguracion.Location; /// Decoracion
-            btnConfiguracion.Textcolor = Color.White; /// Color
+            btnConfiguracion.ForeColor = Color.White; /// Color
+            btnConfiguracion.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelMain("configuracion"); /// Navegar
         }
         #endregion
@@ -451,7 +468,7 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCCajaNav);
+                        this.panelAsideMain.Controls.Add(uCCajaN);
                     }
                     this.lblTitlePage.Text = "Caja - "; /// Titulo en el encabezado
                     break;
@@ -485,7 +502,7 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelAsideMain.Controls.Add(uCProductosNav);
+                        this.panelAsideMain.Controls.Add(uCProductosN);
                     }
                     this.lblTitlePage.Text = "Productos - "; /// Titulo en el encabezado
                     break;
@@ -553,7 +570,7 @@ namespace Admeli
             }
             else
             {
-                panelAsideContainer.Size = new Size(200, 700);
+                panelAsideContainer.Size = new Size(250, 700);
             }
         }
         #endregion
@@ -621,9 +638,17 @@ namespace Admeli
 
         private void reLoad()
         {
+            /// mostrando el panel por defecto
             togglePanelMain("home");
             lblUserName.Text = PersonalModel.personal.usuario.ToUpper();
             lblDocumento.Text = String.Format("{0}", PersonalModel.personal.numeroDocumento);
+
+            /// Mostrando el menu por defecto
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnVenta.Location; /// Decoracion
+            btnVenta.ForeColor = Color.White; /// Color
+            btnVenta.BackColor = Color.FromArgb(36, 35, 40); /// Color
+            togglePanelAsideMain("ventas"); /// Navegar
 
             cargarDatosAsideRight();
         }
