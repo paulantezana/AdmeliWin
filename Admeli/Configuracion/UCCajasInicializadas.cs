@@ -109,17 +109,17 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-
                 int idSucursal = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
 
-                RootObject<CajaSesion> cajaSesion = await cajaSesionModel.cajaSesionesInicializadas(idSucursal, paginacion.currentPage, paginacion.speed);
+                RootObject<CajaSesion> rootData = await cajaSesionModel.cajaSesionesInicializadas(idSucursal, paginacion.currentPage, paginacion.speed);
+                if (rootData == null) return; /// Verificar si hay datos
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = cajaSesion.nro_registros;
+                paginacion.itemsCount = rootData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                cajaSesiones = cajaSesion.datos;
+                cajaSesiones = rootData.datos;
                 cajaSesionBindingSource.DataSource = cajaSesiones;
                 dataGridView.Refresh();
 

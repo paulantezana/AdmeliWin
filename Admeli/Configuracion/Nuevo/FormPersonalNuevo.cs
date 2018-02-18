@@ -414,9 +414,9 @@ namespace Admeli.Configuracion.Nuevo
 
         private void crearObjetoSucursal()
         {
+            currentPersonalAux = new PersonalAux();
             if (nuevo)
             {
-                currentPersonalAux = new PersonalAux();
                 currentPersonalAux.usuario = " ";
                 currentPersonalAux.password = "";
             }

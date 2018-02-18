@@ -119,14 +119,15 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                RootObject<Denominacion> denominacionRoot = await denominacionModel.denominaciones(paginacion.currentPage, paginacion.speed);
+                RootObject<Denominacion> rootData = await denominacionModel.denominaciones(paginacion.currentPage, paginacion.speed);
+                if (rootData == null) return; /// Verificar si hay datos
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = denominacionRoot.nro_registros;
+                paginacion.itemsCount = rootData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                denominaciones = denominacionRoot.datos;
+                denominaciones = rootData.datos;
                 denominacionBindingSource.DataSource = denominaciones;
                 dataGridView.Refresh();
 

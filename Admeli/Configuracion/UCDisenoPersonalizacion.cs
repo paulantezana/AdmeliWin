@@ -22,23 +22,26 @@ namespace Admeli.Configuracion
         public UCDisenoPersonalizacion()
         {
             InitializeComponent();
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCDisenoPersonalizacion(FormPrincipal formPrincipal)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
+        #region ============================ Root Load ============================
         private void UCDisenoPersonalizacion_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            this.reLoad();
         }
+
+        internal void reLoad()
+        {
+            cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
+        } 
+        #endregion
 
         #region =========================== Paint and Decoration ===========================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -59,37 +62,16 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ======================= Loads =======================
-        private void cargarComponentes()
-        {
-            // Cargando el combobox ce estados
-            
-            // Cargando el combobox de personales
-            loadState(true);
-            /*try
-            {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
-
-            // Estado cargar en falso
-            loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);
             try
             {
-                List<TipoDocumento> tipoDocs = await tipoDocumentoModel.tipodoc(1);
+                List<TipoDocumento> listData = await tipoDocumentoModel.tipodoc(1);
+                if (listData == null) return; /// Verificar si hay datos
 
                 // Ingresando
-                tipoDocumentoBindingSource.DataSource = tipoDocs;
+                tipoDocumentoBindingSource.DataSource = listData;
                 dataGridView.Refresh();
             }
             catch (Exception ex)
@@ -119,13 +101,6 @@ namespace Admeli.Configuracion
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
-        }
-
-        internal void reLoad()
-        {
-
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

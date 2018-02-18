@@ -82,14 +82,15 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                RootObject<DocCorrelativo> docCorrelativoRoot = await docCorrelativoModel.listartodoCorrelativo(paginacion.currentPage, paginacion.speed);
+                RootObject<DocCorrelativo> rootData = await docCorrelativoModel.listartodoCorrelativo(paginacion.currentPage, paginacion.speed);
+                if (rootData == null) return; /// Verificar si hay datos
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = docCorrelativoRoot.nro_registros;
+                paginacion.itemsCount = rootData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                docCorrelativos = docCorrelativoRoot.datos;
+                docCorrelativos = rootData.datos;
                 docCorrelativoBindingSource.DataSource = docCorrelativos;
                 dataGridView.Refresh();
 

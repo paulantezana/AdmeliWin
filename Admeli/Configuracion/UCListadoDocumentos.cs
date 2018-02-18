@@ -11,6 +11,7 @@ using Modelo;
 using Admeli.Componentes;
 using Entidad.Configuracion;
 using Entidad;
+using Admeli.Configuracion.Nuevo;
 
 namespace Admeli.Configuracion
 {
@@ -18,6 +19,10 @@ namespace Admeli.Configuracion
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private List<TipoDocumento> tipoDocumentos { get; set; }
+        private TipoDocumento currentTipoDocumento { get; set; }
+
         private Paginacion paginacion;
         private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
 
@@ -27,8 +32,6 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCListadoDocumentos(FormPrincipal formPrincipal)
@@ -38,14 +41,24 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCListadoDocumentos_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
+            this.reLoad();
+
+            // Atajos de teclados
+            if (TopLevelControl is Form)
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
+        }
+
+        internal void reLoad()
+        {
             cargarRegistros();
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         #region =========================== Paint Decoration ===========================
@@ -57,40 +70,65 @@ namespace Admeli.Configuracion
 
         private void decorationDataGridView()
         {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                int idTipoDocumento = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentTipoDocumento = tipoDocumentos.Find(x => x.idTipoDocumento == idTipoDocumento); // Buscando la categoria en las lista de categorias
+                if (currentTipoDocumento.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        }
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                default:
+                    break;
+            }
         }
         #endregion
 
         #region ======================= Loads =======================
-        private void cargarComponentes()
-        {
-            // Cargando el combobox de personales
-            // loadState(true);
-
-            // Estado cargar en falso
-            // loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);
             try
             {
-                RootObject<TipoDocumento> tipoDocumento = await tipoDocumentoModel.tipodocumentos(paginacion.currentPage, paginacion.speed);
+                RootObject<TipoDocumento> rootData = await tipoDocumentoModel.tipodocumentos(paginacion.currentPage, paginacion.speed);
+                if (rootData == null) return; /// Verificar si hay datos
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = tipoDocumento.nro_registros;
+                paginacion.itemsCount = rootData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                tipoDocumentoBindingSource.DataSource = tipoDocumento.datos;
+                tipoDocumentos = rootData.datos;
+                tipoDocumentoBindingSource.DataSource = tipoDocumentos;
                 dataGridView.Refresh();
                 mostrarPaginado();
+
+                // Mostrando la páginacion del datagridvew
+                mostrarPaginado();
+
+                // Formato de celdas en el datagridview
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -200,11 +238,29 @@ namespace Admeli.Configuracion
             cargarRegistros();
         }
 
-        internal void reLoad()
+        private void btnModificar_Click(object sender, EventArgs e)
         {
+            executeModificar();
+        }
 
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
-            lisenerKeyEvents = true; // Active lisener key events
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idTipoDocumento = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentTipoDocumento = tipoDocumentos.Find(x => x.idTipoDocumento == idTipoDocumento); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormTipoDocumentoNuevo formTipoDocumento = new FormTipoDocumentoNuevo(currentTipoDocumento);
+            formTipoDocumento.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
         }
         #endregion
     }

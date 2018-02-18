@@ -114,14 +114,15 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                RootObject<Almacen> almacenesRoot = await almacenModel.almacenes(paginacion.currentPage, paginacion.speed);
+                RootObject<Almacen> rootData = await almacenModel.almacenes(paginacion.currentPage, paginacion.speed);
+                if (rootData == null) return; /// Verificar si hay datos
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = almacenesRoot.nro_registros;
+                paginacion.itemsCount = rootData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                almacenes = almacenesRoot.datos;
+                almacenes = rootData.datos;
                 almacenBindingSource.DataSource = almacenes;
                 dataGridView.Refresh();
 

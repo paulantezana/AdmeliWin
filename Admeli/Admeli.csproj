@@ -361,6 +361,12 @@
     <Compile Include="Configuracion\Nuevo\FormGrupoClienteNuevo.Designer.cs">
       <DependentUpon>FormGrupoClienteNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Nuevo\FormTipoDocumentoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Nuevo\FormTipoDocumentoNuevo.Designer.cs">
+      <DependentUpon>FormTipoDocumentoNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\UCAlmacenes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -869,6 +875,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Nuevo\FormGrupoClienteNuevo.resx">
       <DependentUpon>FormGrupoClienteNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Nuevo\FormTipoDocumentoNuevo.resx">
+      <DependentUpon>FormTipoDocumentoNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\UCAlmacenes.resx">
       <DependentUpon>UCAlmacenes.cs</DependentUpon>
