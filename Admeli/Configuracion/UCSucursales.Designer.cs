@@ -58,6 +58,7 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblPageAllItems = new System.Windows.Forms.Label();
+            this.btnAnular = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -88,7 +89,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 5);
             this.panel1.Size = new System.Drawing.Size(878, 414);
             this.panel1.TabIndex = 20;
             // 
@@ -128,7 +129,7 @@
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.Size = new System.Drawing.Size(858, 404);
+            this.dataGridView.Size = new System.Drawing.Size(858, 399);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
@@ -190,6 +191,7 @@
             this.panelCrud.Controls.Add(this.btnModificar);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
+            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
@@ -505,6 +507,29 @@
             this.lblPageAllItems.Text = "10 Registros";
             this.lblPageAllItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnAnular
+            // 
+            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnAnular.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnAnular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnAnular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.Location = new System.Drawing.Point(554, 15);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAnular.Size = new System.Drawing.Size(126, 40);
+            this.btnAnular.TabIndex = 6;
+            this.btnAnular.Text = "  Anular (F7)";
+            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            // 
             // UCSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,5 +581,6 @@
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAnular;
     }
 }

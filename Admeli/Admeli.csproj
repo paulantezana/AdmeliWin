@@ -553,6 +553,48 @@
     <Compile Include="NavDarck\UCVentasNav.Designer.cs">
       <DependentUpon>UCVentasNav.cs</DependentUpon>
     </Compile>
+    <Compile Include="Navigation\UCAlmacenN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\UCAlmacenN.Designer.cs">
+      <DependentUpon>UCAlmacenN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\UCCajaN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\UCCajaN.Designer.cs">
+      <DependentUpon>UCCajaN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\UCComprasN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\UCComprasN.Designer.cs">
+      <DependentUpon>UCComprasN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\UCHerramientasN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\UCHerramientasN.Designer.cs">
+      <DependentUpon>UCHerramientasN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\UCProductosN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\UCProductosN.Designer.cs">
+      <DependentUpon>UCProductosN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\UCReporteN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\UCReporteN.Designer.cs">
+      <DependentUpon>UCReporteN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation\UCVentasN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\UCVentasN.Designer.cs">
+      <DependentUpon>UCVentasN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Importar\FormImportarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -965,6 +1007,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavDarck\UCVentasNav.resx">
       <DependentUpon>UCVentasNav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\UCAlmacenN.resx">
+      <DependentUpon>UCAlmacenN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\UCCajaN.resx">
+      <DependentUpon>UCCajaN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\UCComprasN.resx">
+      <DependentUpon>UCComprasN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\UCHerramientasN.resx">
+      <DependentUpon>UCHerramientasN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\UCProductosN.resx">
+      <DependentUpon>UCProductosN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\UCReporteN.resx">
+      <DependentUpon>UCReporteN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\UCVentasN.resx">
+      <DependentUpon>UCVentasN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Importar\FormImportarProduto.resx">
       <DependentUpon>FormImportarProduto.cs</DependentUpon>

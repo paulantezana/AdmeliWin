@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo;
+using Admeli.Componentes;
 
 namespace Admeli.AlmacenBox
 {
@@ -16,6 +17,8 @@ namespace Admeli.AlmacenBox
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
 
+        private Paginacion paginacion;
+
         private SucursalModel sucursalModel = new SucursalModel();
         private AlmacenModel almacenModel = new AlmacenModel();
         private PersonalModel personalModel = new PersonalModel();
@@ -23,14 +26,17 @@ namespace Admeli.AlmacenBox
         public UCNotaSalida()
         {
             InitializeComponent();
-            lisenerKeyEvents = true; // Active lisener key events
+
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
         public UCNotaSalida(FormPrincipal formPrincipal)
         {
             InitializeComponent();
-            this.formPrincipal = formPrincipal;
-            lisenerKeyEvents = true; // Active lisener key events
+
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
         private void UCNotaSalida_Load(object sender, EventArgs e)
@@ -156,11 +162,87 @@ namespace Admeli.AlmacenBox
         #endregion
 
 
+        #region ===================== Eventos Páginación =====================
+        private void mostrarPaginado()
+        {
+            lblCurrentPage.Text = paginacion.currentPage.ToString();
+            lblPageAllItems.Text = String.Format("{0} Registros", paginacion.itemsCount.ToString());
+            lblPageCount.Text = paginacion.pageCount.ToString();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (lblCurrentPage.Text != "1")
+            {
+                paginacion.previousPage();
+                cargarRegistros();
+            }
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            if (lblCurrentPage.Text != "1")
+            {
+                paginacion.firstPage();
+                cargarRegistros();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (lblPageCount.Text == "0") return;
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.nextPage();
+                cargarRegistros();
+            }
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            if (lblPageCount.Text == "0") return;
+            if (lblPageCount.Text != lblCurrentPage.Text)
+            {
+                paginacion.lastPage();
+                cargarRegistros();
+            }
+        }
+
+        private void lblSpeedPages_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                paginacion.speed = Convert.ToInt32(lblSpeedPages.Text);
+                paginacion.currentPage = 1;
+                cargarRegistros();
+            }
+        }
+
+        private void lblCurrentPage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
+                cargarRegistros();
+            }
+        }
+
+        private void lblCurrentPage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void lblSpeedPages_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+        #endregion
+
         #region =========================== Estados ===========================
         private void loadState(bool state)
         {
             formPrincipal.appLoadState(state);
-            toolStripNavigation.Enabled = !state;
+            panelNavigation.Enabled = !state;
             toolStripCrud.Enabled = !state;
             dataGridView.Enabled = !state;
         }

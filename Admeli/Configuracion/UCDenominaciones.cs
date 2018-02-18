@@ -28,6 +28,7 @@ namespace Admeli.Configuracion
         public UCDenominaciones()
         {
             InitializeComponent();
+
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
@@ -36,6 +37,7 @@ namespace Admeli.Configuracion
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }

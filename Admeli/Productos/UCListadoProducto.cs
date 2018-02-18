@@ -38,8 +38,6 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         public UCListadoProducto(FormPrincipal formPrincipal)
@@ -49,8 +47,6 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-
-            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void UCListadoProducto_Load(object sender, EventArgs e)
@@ -133,10 +129,10 @@ namespace Admeli.Productos
             loadState(true);
             try
             {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.sucursales();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+                cbxSucursales.DataSource = await sucursalModel.sucursales();
+                cbxSucursales.DisplayMember = "nombre";
+                cbxSucursales.ValueMember = "idSucursal";
+                cbxSucursales.SelectedValue = ConfigModel.sucursal.idSucursal;
             }
             catch (Exception ex)
             {
@@ -214,10 +210,10 @@ namespace Admeli.Productos
             loadState(true);
             try
             {
-                cbxAlmacenes.ComboBox.DataSource = await almacenModel.almacenes();
-                cbxAlmacenes.ComboBox.DisplayMember = "nombre";
-                cbxAlmacenes.ComboBox.ValueMember = "idAlmacen";
-                cbxAlmacenes.ComboBox.SelectedValue = ConfigModel.currentIdAlmacen;
+                cbxAlmacenes.DataSource = await almacenModel.almacenes();
+                cbxAlmacenes.DisplayMember = "nombre";
+                cbxAlmacenes.ValueMember = "idAlmacen";
+                cbxAlmacenes.SelectedValue = ConfigModel.currentIdAlmacen;
             }
             catch (Exception ex)
             {
@@ -299,8 +295,8 @@ namespace Admeli.Productos
                 list.Add("id0", 0);
                 Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
 
-                int idAlmacen = Convert.ToInt32(cbxAlmacenes.ComboBox.SelectedValue);
-                int idSucursal = Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+                int idAlmacen = Convert.ToInt32(cbxAlmacenes.SelectedValue);
+                int idSucursal = Convert.ToInt32(cbxSucursales.SelectedValue);
 
                 RootObject<Producto> productos = await productoModel.productosStock(sendList, textBuscar.Text, idAlmacen, idSucursal, paginacion.currentPage, paginacion.speed);
 
@@ -332,8 +328,8 @@ namespace Admeli.Productos
                 list.Add("id0", 0);
                 Dictionary<string, int> sendList = (ConfigModel.currentProductoCategory.Count == 0) ? list : ConfigModel.currentProductoCategory;
 
-                int idAlmacen = Convert.ToInt32(cbxAlmacenes.ComboBox.SelectedValue);
-                int idSucursal = Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+                int idAlmacen = Convert.ToInt32(cbxAlmacenes.SelectedValue);
+                int idSucursal = Convert.ToInt32(cbxSucursales.SelectedValue);
 
                 RootObject<Producto> productos = await productoModel.productosStock(sendList, textBuscar.Text, idAlmacen, idSucursal, paginacion.currentPage, paginacion.speed);
 
@@ -361,9 +357,9 @@ namespace Admeli.Productos
         private void loadState(bool state)
         {
             formPrincipal.appLoadState(state);
-            toolStripNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
+            panelNavigation.Enabled = !state;
+            panelCrud.Enabled = !state;
+            panelTools.Enabled = !state;
             dataGridView1.Enabled = !state;
         }
 
@@ -377,16 +373,8 @@ namespace Admeli.Productos
         #region ===================== Eventos Páginación =====================
         private void mostrarPaginado()
         {
-            // Cargando el combobox
-            lblCurrentPage.Items.Clear();
-            for (int i = 1; i <= paginacion.pageCount; i++)
-            {
-                lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
-            }
-            if (paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
-
-            // Paginados
-            lblPageAllItems.Text = paginacion.itemsCount.ToString();
+            lblCurrentPage.Text = paginacion.currentPage.ToString();
+            lblPageAllItems.Text = String.Format("{0} Registros", paginacion.itemsCount.ToString());
             lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
@@ -445,6 +433,16 @@ namespace Admeli.Productos
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
                 cargarRegistros();
             }
+        }
+
+        private void lblCurrentPage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void lblSpeedPages_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
         }
         #endregion
 
@@ -678,7 +676,7 @@ namespace Admeli.Productos
             //cb.CheckStateChanged += (s, ex) =&gt; this.Text = cb.CheckState.ToString();
             cb.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             ToolStripControlHost host = new ToolStripControlHost(cb);
-            toolStripTools.Items.Insert(3,host);
+            //toolStripTools.Items.Insert(3,host);
 
         }
 

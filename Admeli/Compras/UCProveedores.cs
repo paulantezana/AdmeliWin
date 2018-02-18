@@ -28,15 +28,17 @@ namespace Admeli.Compras
         public UCProveedores()
         {
             InitializeComponent();
-            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
 
-            lisenerKeyEvents = true; // Active lisener key events
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
+            paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
 
         public UCProveedores(FormPrincipal formPrincipal)
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+
+            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
         #endregion
@@ -190,8 +192,8 @@ namespace Admeli.Compras
         private void loadState(bool state)
         {
             formPrincipal.appLoadState(state);
-            toolStripNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
+            panelNavigation.Enabled = !state;
+            panelCrud.Enabled = !state;
             toolStripTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
@@ -200,16 +202,8 @@ namespace Admeli.Compras
         #region ===================== Eventos Páginación =====================
         private void mostrarPaginado()
         {
-            // Cargando el combobox
-            lblCurrentPage.Items.Clear();
-            for (int i = 1; i <= paginacion.pageCount; i++)
-            {
-                lblCurrentPage.Items.AddRange(new object[] { i.ToString() });
-            }
-            if (paginacion.pageCount != 0) lblCurrentPage.SelectedIndex = paginacion.currentPage - 1;
-
-            // Paginados
-            lblPageAllItems.Text = paginacion.itemsCount.ToString();
+            lblCurrentPage.Text = paginacion.currentPage.ToString();
+            lblPageAllItems.Text = String.Format("{0} Registros", paginacion.itemsCount.ToString());
             lblPageCount.Text = paginacion.pageCount.ToString();
         }
 
@@ -268,6 +262,16 @@ namespace Admeli.Compras
                 paginacion.reloadPage(Convert.ToInt32(lblCurrentPage.Text));
                 cargarRegistros();
             }
+        }
+
+        private void lblCurrentPage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
+        }
+
+        private void lblSpeedPages_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validator.isNumber(e);
         }
         #endregion
 

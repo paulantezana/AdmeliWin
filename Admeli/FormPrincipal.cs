@@ -1,6 +1,7 @@
 ﻿using Admeli.Componentes;
 using Admeli.Compras;
 using Admeli.NavDarck;
+using Admeli.Navigation;
 using Admeli.Productos;
 using Admeli.Ventas;
 using Entidad.Configuracion;
@@ -20,24 +21,39 @@ namespace Admeli
 {
     public partial class FormPrincipal : Form
     {
+        // User Control preparado para el aside menu
+        private UCComprasN uCComprasN;
+        private UCVentasN uCVentasN;
+        private UCCajaN uCCajaN;
+        private UCAlmacenN UCAlmacenN;
+        private UCHerramientasN uCHerramientasN;
+        private UCReporteN uCReporteN;
+        private UCProductosN uCProductosN;
+
+        // User control preparado para main = contenedor principal
         private UCComprasNav uCComprasNav;
         private UCVentasNav uCVentasNav;
         private UCCajaNav uCCajaNav;
         private UCAlmacenNav UCAlmacenNav;
-        private UCConfigNav uCConfigNav;
         private UCHerramientasNav uCHerramientasNav;
         private UCReporteNav uCReporteNav;
         private UCProductosNav uCProductosNav;
+        private UCConfigNav uCConfigNav;
         private UCHome uCHome;
+
+        // Formularios
         private FormLogin formLogin;
 
+        // Accessos directos
         private UCVentas uCVentas;
         private UCListadoProducto uCListadoProducto;
         private UCCompras uCCompras;
 
+        // Modelos
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
 
+        // Metodos
         private bool notCloseApp { get; set; }
 
         #region =============================== Constructor ===============================
@@ -86,7 +102,7 @@ namespace Admeli
             btnColor(); /// Color reset
             borderLeftActive.Location = btnReporte.Location; /// Decoracion
             btnReporte.Textcolor = Color.White; /// Color
-            togglePanelMain("reportes"); /// Navegar
+            togglePanelAsideMain("reportes"); /// Navegar
         }
 
         private void btnHerramienta_Click(object sender, EventArgs e)
@@ -94,7 +110,7 @@ namespace Admeli
             btnColor(); /// Color reset
             borderLeftActive.Location = btnHerramienta.Location; /// Decoracion
             btnHerramienta.Textcolor = Color.White; /// Color
-            togglePanelMain("herramientas"); /// Navegar
+            togglePanelAsideMain("herramientas"); /// Navegar
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
@@ -102,7 +118,7 @@ namespace Admeli
             btnColor(); /// Color reset
             borderLeftActive.Location = btnProducto.Location; /// Decoracion
             btnProducto.Textcolor = Color.White; /// Color
-            togglePanelMain("productos"); /// Navegar
+            togglePanelAsideMain("productos"); /// Navegar
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
@@ -110,7 +126,7 @@ namespace Admeli
             btnColor(); /// Color reset
             borderLeftActive.Location = btnAlmacen.Location; /// Decoracion
             btnAlmacen.Textcolor = Color.White; /// Color
-            togglePanelMain("almacen"); /// Navegar
+            togglePanelAsideMain("almacen"); /// Navegar
         }
 
         private void btnCaja_Click(object sender, EventArgs e)
@@ -118,7 +134,7 @@ namespace Admeli
             btnColor(); /// Color reset
             borderLeftActive.Location = btnCaja.Location; /// Decoracion
             btnCaja.Textcolor = Color.White; /// Color
-            togglePanelMain("caja"); /// Navegar
+            togglePanelAsideMain("caja"); /// Navegar
         }
 
         private void btnVenta_Click(object sender, EventArgs e)
@@ -126,7 +142,7 @@ namespace Admeli
             btnColor(); /// Color reset
             borderLeftActive.Location = btnVenta.Location; /// Decoracion
             btnVenta.Textcolor = Color.White; /// Color
-            togglePanelMain("ventas"); /// Navegar
+            togglePanelAsideMain("ventas"); /// Navegar
         }
 
         private void btnCompra_Click(object sender, EventArgs e)
@@ -134,7 +150,7 @@ namespace Admeli
             btnColor(); /// Color reset
             borderLeftActive.Location = btnCompra.Location; /// Decoracion
             btnCompra.Textcolor = Color.White; /// Color
-            togglePanelMain("compras"); /// Navegar
+            togglePanelAsideMain("compras"); /// Navegar
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
@@ -383,7 +399,137 @@ namespace Admeli
                     break;
             }
         }
-
+        internal void togglePanelAsideMain(string panelName)
+        {
+            this.panelAsideMain.Controls.Clear();
+            switch (panelName)
+            {
+                case "compras":
+                    if (this.uCComprasN == null)
+                    {
+                        this.uCComprasN = new UCComprasN(this);
+                        this.panelAsideMain.Controls.Add(uCComprasN);
+                        this.uCComprasN.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCComprasN.Location = new System.Drawing.Point(0, 0);
+                        this.uCComprasN.Name = "uCComprasN";
+                        this.uCComprasN.Size = new System.Drawing.Size(250, 776);
+                        this.uCComprasN.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCComprasN);
+                    }
+                    this.lblTitlePage.Text = "Compras - "; /// Titulo en el encabezado
+                    break;
+                case "ventas":
+                    if (this.uCVentasN == null)
+                    {
+                        this.uCVentasN = new UCVentasN(this);
+                        this.panelAsideMain.Controls.Add(uCVentasN);
+                        this.uCVentasN.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCVentasN.Location = new System.Drawing.Point(0, 0);
+                        this.uCVentasN.Name = "uCVentasN";
+                        this.uCVentasN.Size = new System.Drawing.Size(250, 776);
+                        this.uCVentasN.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCVentasN);
+                    }
+                    this.lblTitlePage.Text = "Ventas - "; /// Titulo en el encabezado
+                    break;
+                case "caja":
+                    if (this.uCCajaN == null)
+                    {
+                        this.uCCajaN = new UCCajaN(this);
+                        this.panelAsideMain.Controls.Add(uCCajaN);
+                        this.uCCajaN.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCCajaN.Location = new System.Drawing.Point(0, 0);
+                        this.uCCajaN.Name = "uCCajaN";
+                        this.uCCajaN.Size = new System.Drawing.Size(250, 776);
+                        this.uCCajaN.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCCajaNav);
+                    }
+                    this.lblTitlePage.Text = "Caja - "; /// Titulo en el encabezado
+                    break;
+                case "almacen":
+                    if (this.UCAlmacenN == null)
+                    {
+                        this.UCAlmacenN = new UCAlmacenN(this);
+                        this.panelAsideMain.Controls.Add(UCAlmacenN);
+                        this.UCAlmacenN.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.UCAlmacenN.Location = new System.Drawing.Point(0, 0);
+                        this.UCAlmacenN.Name = "UCAlmacenN";
+                        this.UCAlmacenN.Size = new System.Drawing.Size(250, 776);
+                        this.UCAlmacenN.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(UCAlmacenN);
+                    }
+                    this.lblTitlePage.Text = "Almacen - "; /// Titulo en el encabezado
+                    break;
+                case "productos":
+                    if (this.uCProductosN == null)
+                    {
+                        this.uCProductosN = new UCProductosN(this);
+                        this.panelAsideMain.Controls.Add(uCProductosN);
+                        this.uCProductosN.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCProductosN.Location = new System.Drawing.Point(0, 0);
+                        this.uCProductosN.Name = "uCProductosN";
+                        this.uCProductosN.Size = new System.Drawing.Size(250, 776);
+                        this.uCProductosN.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCProductosNav);
+                    }
+                    this.lblTitlePage.Text = "Productos - "; /// Titulo en el encabezado
+                    break;
+                case "configuracion":
+                    this.lblTitlePage.Text = "Configuracion - "; /// Titulo en el encabezado
+                    break;
+                case "herramientas":
+                    if (this.uCHerramientasN == null)
+                    {
+                        this.uCHerramientasN = new UCHerramientasN(this);
+                        this.panelAsideMain.Controls.Add(uCHerramientasN);
+                        this.uCHerramientasN.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCHerramientasN.Location = new System.Drawing.Point(0, 0);
+                        this.uCHerramientasN.Name = "uCHerramientasN";
+                        this.uCHerramientasN.Size = new System.Drawing.Size(250, 776);
+                        this.uCHerramientasN.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCHerramientasN);
+                    }
+                    this.lblTitlePage.Text = "Herramientas - "; /// Titulo en el encabezado
+                    break;
+                case "reportes":
+                    if (this.uCReporteN == null)
+                    {
+                        this.uCReporteN = new UCReporteN(this);
+                        this.panelAsideMain.Controls.Add(uCReporteN);
+                        this.uCReporteN.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCReporteN.Location = new System.Drawing.Point(0, 0);
+                        this.uCReporteN.Name = "uCReporteN";
+                        this.uCReporteN.Size = new System.Drawing.Size(250, 776);
+                        this.uCReporteN.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCReporteN);
+                    }
+                    this.lblTitlePage.Text = "Reportes - "; /// Titulo en el encabezado
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
 
         #region ========================= MENU =========================
