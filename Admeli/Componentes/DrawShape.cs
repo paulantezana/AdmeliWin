@@ -11,7 +11,7 @@ namespace Admeli.Componentes
 {
     public class DrawShape
     {
-        public void lineBorder(Panel panel, int red = 223, int green = 230, int blue = 241, int width = 1)
+        public void lineBorder(Panel panel, int red = 221, int green = 225, int blue = 228, int width = 1)
         {
             Graphics line = panel.CreateGraphics();
 
@@ -23,7 +23,7 @@ namespace Admeli.Componentes
             line.DrawLine(penColor, 0, 0, 0, panel.Height);        // Left Line
             line.DrawLine(penColor, (panel.Width - width), 0, (panel.Width - width), panel.Height);     // Rigth Line
         }
-        public void rightLine(Panel panel, int red = 223, int green = 230, int blue = 241, int width = 1)
+        public void rightLine(Panel panel, int red = 221, int green = 225, int blue = 228, int width = 1)
         {
             Graphics line = panel.CreateGraphics();
 
@@ -32,7 +32,7 @@ namespace Admeli.Componentes
 
             line.DrawLine(penColor, (panel.Width - width), 0, (panel.Width - width), panel.Height);     // Rigth Line
         }
-        public void leftLine(Panel panel, int red = 223, int green = 230, int blue = 241, int width = 1)
+        public void leftLine(Panel panel, int red = 221, int green = 225, int blue = 228, int width = 1)
         {
             Graphics line = panel.CreateGraphics();
 
@@ -41,7 +41,7 @@ namespace Admeli.Componentes
 
             line.DrawLine(penColor, 0, 0, 0, panel.Height);        // Left Line
         }
-        public void topLine(Panel panel, int red = 223, int green = 230, int blue = 241, int width = 1)
+        public void topLine(Panel panel, int red = 221, int green = 225, int blue = 228, int width = 1)
         {
             Graphics line = panel.CreateGraphics();
 
@@ -50,7 +50,7 @@ namespace Admeli.Componentes
 
             line.DrawLine(penColor, 0, 0, panel.Width, 0);         // Top Line
         }
-        public void bottomLine(Panel panel, int red = 223, int green = 230, int blue = 241, int width = 1)
+        public void bottomLine(Panel panel, int red = 221, int green = 225, int blue = 228, int width = 1)
         {
             Graphics line = panel.CreateGraphics();
 

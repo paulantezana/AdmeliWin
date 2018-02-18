@@ -123,19 +123,42 @@ namespace Admeli.Componentes
             return match.Groups[1].Value + domainName;
         }
 
-        internal static void textboxValidateColor(BunifuMetroTextbox textBox, bool isSuccess)
+        /// <summary>
+        /// Colorear BunifuMetroTextbox
+        /// </summary>
+        /// <param name="textBox">BunifuMetroTextbox</param>
+        /// <param name="type"> 0 = error | 1 = success | 2 = warning | 3 = info | 4 = purple </param>
+        internal static void textboxValidateColor(BunifuMetroTextbox textBox, int type = 1)
         {
-            if (isSuccess)
+            switch (type)
             {
-                textBox.BorderColorIdle = Color.FromArgb(23, 203, 34);
-                textBox.BorderColorFocused = Color.FromArgb(23, 203, 34);
-                textBox.BorderColorMouseHover = Color.FromArgb(23, 203, 34);
-            }
-            else
-            {
-                textBox.BorderColorIdle = Color.FromArgb(248, 63, 81);
-                textBox.BorderColorFocused = Color.FromArgb(248, 63, 81);
-                textBox.BorderColorMouseHover = Color.FromArgb(248, 63, 81);
+                case 0: /// error
+                    textBox.BorderColorIdle = Color.FromArgb(248, 63, 81);
+                    textBox.BorderColorFocused = Color.FromArgb(248, 63, 81);
+                    textBox.BorderColorMouseHover = Color.FromArgb(248, 63, 81);
+                    break;
+                case 1: /// success
+                    textBox.BorderColorIdle = Color.FromArgb(23, 203, 34);
+                    textBox.BorderColorFocused = Color.FromArgb(23, 203, 34);
+                    textBox.BorderColorMouseHover = Color.FromArgb(23, 203, 34);
+                    break;
+                case 2: /// warning
+                    textBox.BorderColorIdle = Color.FromArgb(255, 202, 40);
+                    textBox.BorderColorFocused = Color.FromArgb(255, 202, 40);
+                    textBox.BorderColorMouseHover = Color.FromArgb(255, 202, 40);
+                    break;
+                case 3: /// info 
+                    textBox.BorderColorIdle = Color.FromArgb(24, 156, 225);
+                    textBox.BorderColorFocused = Color.FromArgb(24, 156, 225);
+                    textBox.BorderColorMouseHover = Color.FromArgb(24, 156, 225);
+                    break;
+                case 4: /// purple 
+                    textBox.BorderColorIdle = Color.FromArgb(255, 20, 198);
+                    textBox.BorderColorFocused = Color.FromArgb(255, 20, 198);
+                    textBox.BorderColorMouseHover = Color.FromArgb(255, 20, 198);
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -151,23 +174,23 @@ namespace Admeli.Componentes
 
             switch (alertType)
             {
-                case 0:
+                case 0: /// error
                     label.ForeColor = Color.FromArgb(250, 5, 73);
                     label.BackColor = Color.FromArgb(255, 224, 224);
                     break;
-                case 1:
+                case 1: /// success
                     label.ForeColor = Color.FromArgb(76, 175, 80);
                     label.BackColor = Color.FromArgb(232, 250, 239);
                     break;
-                case 2:
+                case 2: /// warning
                     label.ForeColor = Color.FromArgb(76, 175, 80);
                     label.BackColor = Color.FromArgb(232, 250, 239);
                     break;
-                case 3:
+                case 3: /// info 
                     label.ForeColor = Color.FromArgb(76, 175, 80);
                     label.BackColor = Color.FromArgb(232, 250, 239);
                     break;
-                case 4:
+                case 4: /// purple 
                     label.ForeColor = Color.FromArgb(76, 175, 80);
                     label.BackColor = Color.FromArgb(232, 250, 239);
                     break;

@@ -330,11 +330,11 @@ namespace Admeli.Configuracion
             if (textNombreEmpresa.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreEmpresa, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreEmpresa, false);
+                Validator.textboxValidateColor(textNombreEmpresa, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreEmpresa, true);
+            Validator.textboxValidateColor(textNombreEmpresa, 1);
         }
 
         private void textEmail_Validated(object sender, EventArgs e)
@@ -344,12 +344,12 @@ namespace Admeli.Configuracion
                 if (!Validator.IsValidEmail(textEmail.Text))
                 {
                     errorProvider1.SetError(textEmail, "Email invválido");
-                    Validator.textboxValidateColor(textEmail, false);
+                    Validator.textboxValidateColor(textEmail, 0);
                     return;
                 }
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textEmail, true);
+            Validator.textboxValidateColor(textEmail, 1);
         }
 
         private void textNumeroIdentificacion_KeyPress(object sender, KeyPressEventArgs e)

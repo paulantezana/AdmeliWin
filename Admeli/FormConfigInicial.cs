@@ -72,21 +72,14 @@ namespace Admeli
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer,150,150,150);
-            drawShape.lineBorder(panel2, 0, 102, 183);
-            drawShape.lineBorder(panel3, 0, 102, 183);
+            drawShape.lineBorder(panel2);
+            drawShape.lineBorder(panel3);
         }
         #endregion
 
         private void btnCLose_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void panelHeder_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelHeder);
         }
     }
 }

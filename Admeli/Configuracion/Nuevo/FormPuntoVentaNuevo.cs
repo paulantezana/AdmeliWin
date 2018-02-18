@@ -74,11 +74,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textPuntoVenta.Text.Trim() == "")
             {
                 errorProvider1.SetError(textPuntoVenta, "Campo obligatorio");
-                Validator.textboxValidateColor(textPuntoVenta, false);
+                Validator.textboxValidateColor(textPuntoVenta, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textPuntoVenta, true);
+            Validator.textboxValidateColor(textPuntoVenta, 1);
 
             if (cbxSucursalPV.SelectedIndex == -1)
             {
@@ -148,11 +148,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textPuntoVenta.Text.Trim() == "")
             {
                 errorProvider1.SetError(textPuntoVenta, "Campo obligatorio");
-                Validator.textboxValidateColor(textPuntoVenta, false);
+                Validator.textboxValidateColor(textPuntoVenta, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textPuntoVenta, true);
+            Validator.textboxValidateColor(textPuntoVenta, 1);
         }
         #endregion
 

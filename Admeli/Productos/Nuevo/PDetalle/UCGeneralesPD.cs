@@ -172,12 +172,12 @@ namespace Admeli.Productos.Nuevo.PDetalle
         {
             if (textPrecioCompra.Text.Trim() == "")
             {
-                Validator.textboxValidateColor(textPrecioCompra, false);
+                Validator.textboxValidateColor(textPrecioCompra, 0);
                 errorProvider1.SetError(textPrecioCompra, "Campo obligatorio");
                 this.isFieldsValid = false;
                 return;
             }
-            Validator.textboxValidateColor(textPrecioCompra, true);
+            Validator.textboxValidateColor(textPrecioCompra, 1);
             errorProvider1.Clear();
             this.isFieldsValid = true;
         }
@@ -187,7 +187,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Validando si el campo esta vacia
             if (textNombreProducto.Text.Trim() == "")
             {
-                Validator.textboxValidateColor(textNombreProducto, false);
+                Validator.textboxValidateColor(textNombreProducto, 0);
                 errorProvider1.SetError(textNombreProducto, "Campo obligatorio");
                 this.isFieldsValid = false;
                 return;
@@ -203,13 +203,13 @@ namespace Admeli.Productos.Nuevo.PDetalle
             if (list.Count > 0)
             {
                 errorProvider1.SetError(textNombreProducto, "Ya existe un producto con el mismo nombre.");
-                Validator.textboxValidateColor(textNombreProducto, false);
+                Validator.textboxValidateColor(textNombreProducto, 0);
                 this.isFieldsValid = false;
                 return;
             }
 
             // Dando el formato adecuado cuando paso toda las validaciones
-            Validator.textboxValidateColor(textNombreProducto, true);
+            Validator.textboxValidateColor(textNombreProducto, 1);
             errorProvider1.Clear();
             this.isFieldsValid = true;
         }
@@ -219,7 +219,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Validando si el campo esta vacia
             if (textNombreProducto.Text.Trim() == "")
             {
-                Validator.textboxValidateColor(textNombreProducto, false);
+                Validator.textboxValidateColor(textNombreProducto, 0);
                 errorProvider1.SetError(textNombreProducto, "Campo obligatorio");
                 this.isFieldsValid = false;
                 return;
@@ -235,13 +235,13 @@ namespace Admeli.Productos.Nuevo.PDetalle
             if (list.Count > 0)
             {
                 errorProvider1.SetError(textNombreProducto, "Ya existe un producto con el mismo nombre.");
-                Validator.textboxValidateColor(textNombreProducto, false);
+                Validator.textboxValidateColor(textNombreProducto, 0);
                 this.isFieldsValid = false;
                 return;
             }
 
             // Dando el formato adecuado cuando paso toda las validaciones
-            Validator.textboxValidateColor(textNombreProducto, true);
+            Validator.textboxValidateColor(textNombreProducto, 1);
             errorProvider1.Clear();
             this.isFieldsValid = true;
         }
@@ -252,7 +252,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Validando si el campo esta vacia
             if (textCodigoProducto.Text.Trim() == "")
             {
-                Validator.textboxValidateColor(textCodigoProducto, false);
+                Validator.textboxValidateColor(textCodigoProducto, 0);
                 errorProvider1.SetError(textCodigoProducto, "Campo obligatorio");
                 this.isFieldsValid = false;
                 return;
@@ -268,13 +268,13 @@ namespace Admeli.Productos.Nuevo.PDetalle
             if (list.Count > 0)
             {
                 errorProvider1.SetError(textCodigoProducto, "Ya existe un producto con el mismo código.");
-                Validator.textboxValidateColor(textCodigoProducto, false);
+                Validator.textboxValidateColor(textCodigoProducto, 0);
                 this.isFieldsValid = false;
                 return;
             }
 
             // Dando el formato adecuado cuando paso toda las validaciones
-            Validator.textboxValidateColor(textCodigoProducto, true);
+            Validator.textboxValidateColor(textCodigoProducto, 1);
             errorProvider1.Clear();
             this.isFieldsValid = true;
         }

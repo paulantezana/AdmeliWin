@@ -98,21 +98,21 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombreLabel.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreLabel, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreLabel, false);
+                Validator.textboxValidateColor(textNombreLabel, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreLabel, true);
+            Validator.textboxValidateColor(textNombreLabel, 1);
 
 
             if (textNombre.Text == "")
             {
                 errorProvider1.SetError(textNombre, "Este campo esta bacía");
-                Validator.textboxValidateColor(textNombre, false);
+                Validator.textboxValidateColor(textNombre, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombre, true);
+            Validator.textboxValidateColor(textNombre, 1);
 
             return true;
         }

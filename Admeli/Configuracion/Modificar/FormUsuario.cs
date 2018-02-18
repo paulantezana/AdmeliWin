@@ -105,21 +105,21 @@ namespace Admeli.Configuracion.Modificar
             if (textUsuario.Text.Trim() == "")
             {
                 errorProvider1.SetError(textUsuario, "Campo obligatorio");
-                Validator.textboxValidateColor(textUsuario, false);
+                Validator.textboxValidateColor(textUsuario, 0);
                 this.isValid = false;
             }
 
             if (textPassword1.Text.Trim() == "")
             {
                 errorProvider1.SetError(textPassword1, "Campo obligatorio");
-                Validator.textboxValidateColor(textPassword1, false);
+                Validator.textboxValidateColor(textPassword1, 1);
                 this.isValid = false;
             }
 
             if (textPassword2.Text.Trim() == "")
             {
                 errorProvider1.SetError(textPassword2, "Campo obligatorio");
-                Validator.textboxValidateColor(textPassword2, false);
+                Validator.textboxValidateColor(textPassword2, 0);
                 this.isValid = false;
             }
 
@@ -129,11 +129,11 @@ namespace Admeli.Configuracion.Modificar
                 if (textPassword1.Text != textPassword2.Text )
                 {
                     errorProvider1.SetError(textPassword1, "Las contraseñas son diferentes");
-                    Validator.textboxValidateColor(textPassword1, false);
+                    Validator.textboxValidateColor(textPassword1, 0);
                     this.isValid = false;
 
                     errorProvider1.SetError(textPassword2, "Las contraseñas son diferentes");
-                    Validator.textboxValidateColor(textPassword2, false);
+                    Validator.textboxValidateColor(textPassword2, 0);
                     this.isValid = false;
                 }
             }

@@ -711,12 +711,6 @@
     <Compile Include="UCHome.Designer.cs">
       <DependentUpon>UCHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCIniciar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCIniciar.Designer.cs">
-      <DependentUpon>UCIniciar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventas\FormVentaTouch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1059,9 +1053,6 @@
     </Compile>
     <EmbeddedResource Include="UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCIniciar.resx">
-      <DependentUpon>UCIniciar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\FormVentaTouch.resx">
       <DependentUpon>FormVentaTouch.cs</DependentUpon>

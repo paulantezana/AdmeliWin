@@ -483,35 +483,35 @@ namespace Admeli.Configuracion.Nuevo
              if (textNombreUsuario.Text.Trim() == "")
              {
                  errorProvider1.SetError(textNombreUsuario, "Campo obligatorio");
-                 Validator.textboxValidateColor(textNombreUsuario, false);
+                 Validator.textboxValidateColor(textNombreUsuario, 0);
                  this.isValid = false;
              }
 
              if (textApellidoUsuario.Text.Trim() == "")
              {
                  errorProvider1.SetError(textApellidoUsuario, "Campo obligatorio");
-                 Validator.textboxValidateColor(textApellidoUsuario, false);
+                 Validator.textboxValidateColor(textApellidoUsuario, 0);
                  this.isValid = false;
              }
 
              if (textNumeroDocumento.Text.Trim() == "")
              {
                  errorProvider1.SetError(textNumeroDocumento, "Campo obligatorio");
-                 Validator.textboxValidateColor(textNumeroDocumento, false);
+                 Validator.textboxValidateColor(textNumeroDocumento, 0);
                  this.isValid = false;
              }
 
              if (textEmail.Text.Trim() == "")
              {
                  errorProvider1.SetError(textEmail, "Campo obligatorio");
-                 Validator.textboxValidateColor(textEmail, false);
+                 Validator.textboxValidateColor(textEmail, 0);
                  this.isValid = false;
              }
 
              if (textDirecionUsuario.Text.Trim() == "")
              {
                  errorProvider1.SetError(textDirecionUsuario, "Campo obligatorio");
-                 Validator.textboxValidateColor(textDirecionUsuario, false);
+                 Validator.textboxValidateColor(textDirecionUsuario, 0);
                  this.isValid = false;
              }
 
@@ -541,11 +541,11 @@ namespace Admeli.Configuracion.Nuevo
              if (textNombreUsuario.Text.Trim() == "")
              {
                  errorProvider1.SetError(textNombreUsuario, "Campo obligatorio");
-                 Validator.textboxValidateColor(textNombreUsuario, false);
+                 Validator.textboxValidateColor(textNombreUsuario, 0);
                  return;
              }
              errorProvider1.Clear();
-             Validator.textboxValidateColor(textNombreUsuario, true);
+             Validator.textboxValidateColor(textNombreUsuario, 1);
          }
 
          private void textApellidoUsuario_Validated(object sender, EventArgs e)
@@ -553,11 +553,11 @@ namespace Admeli.Configuracion.Nuevo
              if (textApellidoUsuario.Text.Trim() == "")
              {
                  errorProvider1.SetError(textApellidoUsuario, "Campo obligatorio");
-                 Validator.textboxValidateColor(textApellidoUsuario, false);
+                 Validator.textboxValidateColor(textApellidoUsuario, 0);
                  return;
              }
              errorProvider1.Clear();
-             Validator.textboxValidateColor(textApellidoUsuario, true);
+             Validator.textboxValidateColor(textApellidoUsuario, 1);
          }
 
          private void textNumeroDocumento_Validated(object sender, EventArgs e)
@@ -565,11 +565,11 @@ namespace Admeli.Configuracion.Nuevo
              if (textNumeroDocumento.Text.Trim() == "")
              {
                  errorProvider1.SetError(textNumeroDocumento, "Campo obligatorio");
-                 Validator.textboxValidateColor(textNumeroDocumento, false);
+                 Validator.textboxValidateColor(textNumeroDocumento, 0);
                  return;
              }
              errorProvider1.Clear();
-             Validator.textboxValidateColor(textNumeroDocumento, true);
+             Validator.textboxValidateColor(textNumeroDocumento, 1);
          }
 
          private void textEmail_Validated(object sender, EventArgs e)
@@ -577,20 +577,20 @@ namespace Admeli.Configuracion.Nuevo
              if (textEmail.Text.Trim() == "")
              {
                  errorProvider1.SetError(textEmail, "Campo obligatorio");
-                 Validator.textboxValidateColor(textEmail, false);
+                 Validator.textboxValidateColor(textEmail, 0);
                  return;
              }
              errorProvider1.Clear();
-             Validator.textboxValidateColor(textEmail, true);
+             Validator.textboxValidateColor(textEmail, 1);
 
              if (!Validator.IsValidEmail(textEmail.Text))
              {
                  errorProvider1.SetError(textEmail, "Email invalido");
-                 Validator.textboxValidateColor(textEmail, false);
+                 Validator.textboxValidateColor(textEmail, 0);
                  return;
              }
              errorProvider1.Clear();
-             Validator.textboxValidateColor(textEmail, true);
+             Validator.textboxValidateColor(textEmail, 1);
          }
 
          private void textTelefono_Validated(object sender, EventArgs e)
@@ -625,11 +625,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textDirecionUsuario.Text.Trim() == "")
             {
                 errorProvider1.SetError(textDirecionUsuario, "Campo obligatorio");
-                Validator.textboxValidateColor(textDirecionUsuario, false);
+                Validator.textboxValidateColor(textDirecionUsuario, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textDirecionUsuario, true);
+            Validator.textboxValidateColor(textDirecionUsuario, 1);
         }
         #endregion
 

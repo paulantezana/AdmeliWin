@@ -170,21 +170,21 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombre.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombre, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombre, false);
+                Validator.textboxValidateColor(textNombre, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombre, true);
+            Validator.textboxValidateColor(textNombre, 1);
 
             // validacion motivo
             if (textValor.Text.Trim() == "")
             {
                 errorProvider1.SetError(textValor, "Campo obligatorio");
-                Validator.textboxValidateColor(textValor, false);
+                Validator.textboxValidateColor(textValor, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textValor, true);
+            Validator.textboxValidateColor(textValor, 1);
 
             // Toda las validaciones correctas
             return true;
@@ -213,11 +213,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (list.Count > 0)
                 {
                     errorProvider1.SetError(textNombre, "Ya existe");
-                    Validator.textboxValidateColor(textNombre, false);
+                    Validator.textboxValidateColor(textNombre, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textNombre, true);
+                Validator.textboxValidateColor(textNombre, 1);
             }
             catch (Exception ex)
             {
@@ -236,11 +236,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (list.Count > 0)
                 {
                     errorProvider1.SetError(textValor, "Ya existe");
-                    Validator.textboxValidateColor(textValor, false);
+                    Validator.textboxValidateColor(textValor, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textValor, true);
+                Validator.textboxValidateColor(textValor, 1);
             }
             catch (Exception ex)
             {

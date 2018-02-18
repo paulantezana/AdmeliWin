@@ -334,11 +334,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (ress.id == 0)
                 {
                     errorProvider1.SetError(textNombreSucursal, ress.msj);
-                    Validator.textboxValidateColor(textNombreSucursal, false);
+                    Validator.textboxValidateColor(textNombreSucursal, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textNombreSucursal, true);
+                Validator.textboxValidateColor(textNombreSucursal, 1);
 
                 // Procediendo con el guardado
                 crearObjetoSucursal();
@@ -396,11 +396,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombreSucursal.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreSucursal, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreSucursal, false);
+                Validator.textboxValidateColor(textNombreSucursal, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreSucursal, true);
+            Validator.textboxValidateColor(textNombreSucursal, 1);
 
             switch (labelUbicaciones.Count)
             {
@@ -438,11 +438,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textDirecionSucursal.Text.Trim() == "")
             {
                 errorProvider1.SetError(textDirecionSucursal, "Campo obligatorio");
-                Validator.textboxValidateColor(textDirecionSucursal, false);
+                Validator.textboxValidateColor(textDirecionSucursal, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textDirecionSucursal, true);
+            Validator.textboxValidateColor(textDirecionSucursal, 1);
 
             return true;
         }
@@ -455,11 +455,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombreSucursal.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreSucursal, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreSucursal, false);
+                Validator.textboxValidateColor(textNombreSucursal, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreSucursal, true);
+            Validator.textboxValidateColor(textNombreSucursal, 1);
 
             try
             {
@@ -468,11 +468,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (response.id == 0)
                 {
                     errorProvider1.SetError(textNombreSucursal, response.msj);
-                    Validator.textboxValidateColor(textNombreSucursal, false);
+                    Validator.textboxValidateColor(textNombreSucursal, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textNombreSucursal, true);
+                Validator.textboxValidateColor(textNombreSucursal, 1);
             }
             catch (Exception ex)
             {
@@ -485,11 +485,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textDirecionSucursal.Text.Trim() == "")
             {
                 errorProvider1.SetError(textDirecionSucursal, "Campo obligatorio");
-                Validator.textboxValidateColor(textDirecionSucursal, false);
+                Validator.textboxValidateColor(textDirecionSucursal, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textDirecionSucursal, true);
+            Validator.textboxValidateColor(textDirecionSucursal, 1);
         }
         #endregion
 

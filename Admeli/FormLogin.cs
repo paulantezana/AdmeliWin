@@ -186,32 +186,30 @@ namespace Admeli
 
         private bool validarCampos()
         {
-            if (textUsuario.Text == "")
+            if (textUsuario.Text.Trim() == "")
             {
-                errorProvider1.SetError(textUsuario, "Debe ingresar un nombre de usuario");
+                errorProvider1.SetError(textUsuario, "Campo obligatorio");
+                Validator.textboxValidateColor(textUsuario, 2);
                 textUsuario.Focus();
                 return false;
             }
             errorProvider1.Clear();
-            if (textPassword.Text == "")
+
+            if (textPassword.Text.Trim() == "")
             {
-                errorProvider1.SetError(textPassword, "Debe ingresar una contraseña");
+                errorProvider1.SetError(textPassword, "Campo obligatorio");
+                Validator.textboxValidateColor(textPassword, 2);
                 textPassword.Focus();
                 return false;
             }
             errorProvider1.Clear();
+
             return true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer,150,150,150);
         }
     }
 }

@@ -31,10 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfigInicial));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panelContainer = new System.Windows.Forms.Panel();
-            this.panelHeder = new System.Windows.Forms.Panel();
             this.btnCLose = new Bunifu.Framework.UI.BunifuImageButton();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbxAlmacenes = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,11 +39,9 @@
             this.cbxPuntosVenta = new System.Windows.Forms.ComboBox();
             this.lblNivel3 = new System.Windows.Forms.Label();
             this.btnContinuar = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panelContainer.SuspendLayout();
-            this.panelHeder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLose)).BeginInit();
-            this.panelContent.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -55,38 +50,13 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // panelContainer
-            // 
-            this.panelContainer.Controls.Add(this.panelHeder);
-            this.panelContainer.Controls.Add(this.panelContent);
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(704, 383);
-            this.panelContainer.TabIndex = 8;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
-            // 
-            // panelHeder
-            // 
-            this.panelHeder.BackColor = System.Drawing.Color.White;
-            this.panelHeder.Controls.Add(this.btnCLose);
-            this.panelHeder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeder.Location = new System.Drawing.Point(1, 1);
-            this.panelHeder.Name = "panelHeder";
-            this.panelHeder.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panelHeder.Size = new System.Drawing.Size(702, 40);
-            this.panelHeder.TabIndex = 9;
-            this.panelHeder.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeder_Paint);
-            // 
             // btnCLose
             // 
             this.btnCLose.BackColor = System.Drawing.Color.White;
             this.btnCLose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCLose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCLose.Image = ((System.Drawing.Image)(resources.GetObject("btnCLose.Image")));
             this.btnCLose.ImageActive = null;
-            this.btnCLose.Location = new System.Drawing.Point(663, 0);
+            this.btnCLose.Location = new System.Drawing.Point(710, 21);
             this.btnCLose.Name = "btnCLose";
             this.btnCLose.Size = new System.Drawing.Size(39, 39);
             this.btnCLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -95,27 +65,15 @@
             this.btnCLose.Zoom = 10;
             this.btnCLose.Click += new System.EventHandler(this.btnCLose_Click);
             // 
-            // panelContent
-            // 
-            this.panelContent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelContent.BackColor = System.Drawing.Color.White;
-            this.panelContent.Controls.Add(this.panel2);
-            this.panelContent.Controls.Add(this.panel3);
-            this.panelContent.Controls.Add(this.btnContinuar);
-            this.panelContent.Location = new System.Drawing.Point(99, 77);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(507, 264);
-            this.panelContent.TabIndex = 8;
-            // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.panel2.Controls.Add(this.cbxAlmacenes);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(146, 58);
+            this.panel2.Location = new System.Drawing.Point(437, 149);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(214, 40);
+            this.panel2.Size = new System.Drawing.Size(254, 40);
             this.panel2.TabIndex = 152;
             // 
             // cbxAlmacenes
@@ -131,7 +89,7 @@
             this.cbxAlmacenes.FormattingEnabled = true;
             this.cbxAlmacenes.Location = new System.Drawing.Point(3, 14);
             this.cbxAlmacenes.Name = "cbxAlmacenes";
-            this.cbxAlmacenes.Size = new System.Drawing.Size(207, 24);
+            this.cbxAlmacenes.Size = new System.Drawing.Size(247, 24);
             this.cbxAlmacenes.TabIndex = 1;
             this.cbxAlmacenes.ValueMember = "idNivel3";
             // 
@@ -149,12 +107,13 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.panel3.Controls.Add(this.cbxPuntosVenta);
             this.panel3.Controls.Add(this.lblNivel3);
-            this.panel3.Location = new System.Drawing.Point(146, 114);
+            this.panel3.Location = new System.Drawing.Point(437, 205);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(214, 40);
+            this.panel3.Size = new System.Drawing.Size(254, 40);
             this.panel3.TabIndex = 151;
             // 
             // cbxPuntosVenta
@@ -170,7 +129,7 @@
             this.cbxPuntosVenta.FormattingEnabled = true;
             this.cbxPuntosVenta.Location = new System.Drawing.Point(3, 14);
             this.cbxPuntosVenta.Name = "cbxPuntosVenta";
-            this.cbxPuntosVenta.Size = new System.Drawing.Size(207, 24);
+            this.cbxPuntosVenta.Size = new System.Drawing.Size(247, 24);
             this.cbxPuntosVenta.TabIndex = 1;
             this.cbxPuntosVenta.ValueMember = "idNivel3";
             // 
@@ -198,32 +157,42 @@
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuar.ForeColor = System.Drawing.Color.White;
             this.btnContinuar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContinuar.Location = new System.Drawing.Point(146, 170);
+            this.btnContinuar.Location = new System.Drawing.Point(437, 259);
             this.btnContinuar.Margin = new System.Windows.Forms.Padding(0);
             this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(214, 36);
+            this.btnContinuar.Size = new System.Drawing.Size(254, 36);
             this.btnContinuar.TabIndex = 5;
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.UseVisualStyleBackColor = false;
             this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // FormConfigInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(704, 383);
-            this.Controls.Add(this.panelContainer);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(765, 414);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnCLose);
+            this.Controls.Add(this.btnContinuar);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConfigInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormConfigInicial";
             this.Shown += new System.EventHandler(this.FormConfigInicial_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.panelContainer.ResumeLayout(false);
-            this.panelHeder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCLose)).EndInit();
-            this.panelContent.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -234,10 +203,7 @@
 
         #endregion
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Button btnContinuar;
-        private System.Windows.Forms.Panel panelHeder;
         private Bunifu.Framework.UI.BunifuImageButton btnCLose;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbxPuntosVenta;
@@ -245,5 +211,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbxAlmacenes;
         private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

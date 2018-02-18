@@ -316,11 +316,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (listAlmacenes.Count > 0)
                 {
                     errorProvider1.SetError(textNombreAlmacen, "Ya existe un almacén con mismo nombre.");
-                    Validator.textboxValidateColor(textNombreAlmacen, false);
+                    Validator.textboxValidateColor(textNombreAlmacen, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textNombreAlmacen, true);
+                Validator.textboxValidateColor(textNombreAlmacen, 1);
 
                 // Procediendo con el guardado
                 crearObjetoSucursal();
@@ -375,11 +375,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombreAlmacen.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreAlmacen, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreAlmacen, false);
+                Validator.textboxValidateColor(textNombreAlmacen, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreAlmacen, true);
+            Validator.textboxValidateColor(textNombreAlmacen, 1);
 
             switch (labelUbicaciones.Count)
             {
@@ -425,11 +425,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textDirecionAlmacen.Text.Trim() == "")
             {
                 errorProvider1.SetError(textDirecionAlmacen, "Campo obligatorio");
-                Validator.textboxValidateColor(textDirecionAlmacen, false);
+                Validator.textboxValidateColor(textDirecionAlmacen, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textDirecionAlmacen, true);
+            Validator.textboxValidateColor(textDirecionAlmacen, 1);
             return true;
         }
 
@@ -445,11 +445,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombreAlmacen.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreAlmacen, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreAlmacen, false);
+                Validator.textboxValidateColor(textNombreAlmacen, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreAlmacen, true);
+            Validator.textboxValidateColor(textNombreAlmacen, 1);
 
             ////
             try
@@ -461,11 +461,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (listAlmacenes.Count > 0)
                 {
                     errorProvider1.SetError(textNombreAlmacen, "Ya existe un almacén con mismo nombre.");
-                    Validator.textboxValidateColor(textNombreAlmacen, false);
+                    Validator.textboxValidateColor(textNombreAlmacen, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textNombreAlmacen, true);
+                Validator.textboxValidateColor(textNombreAlmacen, 1);
             }
             catch (Exception ex)
             {
@@ -478,11 +478,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textDirecionAlmacen.Text.Trim() == "")
             {
                 errorProvider1.SetError(textDirecionAlmacen, "Campo obligatorio");
-                Validator.textboxValidateColor(textDirecionAlmacen, false);
+                Validator.textboxValidateColor(textDirecionAlmacen, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textDirecionAlmacen, true);
+            Validator.textboxValidateColor(textDirecionAlmacen, 1);
         }
         #endregion
 

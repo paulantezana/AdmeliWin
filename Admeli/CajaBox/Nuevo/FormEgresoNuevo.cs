@@ -181,21 +181,21 @@ namespace Admeli.CajaBox.Nuevo
             if (textMonto.Text.Trim() == "")
             {
                 errorProvider1.SetError(textMonto, "Campo obligatorio");
-                Validator.textboxValidateColor(textMonto, false);
+                Validator.textboxValidateColor(textMonto, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textMonto, true);
+            Validator.textboxValidateColor(textMonto, 1);
 
             // validacion motivo
             if (textMotivo.Text.Trim() == "")
             {
                 errorProvider1.SetError(textMotivo, "Campo obligatorio");
-                Validator.textboxValidateColor(textMotivo, false);
+                Validator.textboxValidateColor(textMotivo, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textMotivo, true);
+            Validator.textboxValidateColor(textMotivo, 1);
 
             // Toda las validaciones correctas
             return true;
@@ -225,11 +225,11 @@ namespace Admeli.CajaBox.Nuevo
             if (textMonto.Text.Trim() == "")
             {
                 errorProvider1.SetError(textMonto, "Campo obligatorio");
-                Validator.textboxValidateColor(textMonto, false);
+                Validator.textboxValidateColor(textMonto, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textMonto, true);
+            Validator.textboxValidateColor(textMonto, 1);
         }
 
         private void textMotivo_Validated(object sender, EventArgs e)
@@ -237,11 +237,11 @@ namespace Admeli.CajaBox.Nuevo
             if (textMotivo.Text.Trim() == "")
             {
                 errorProvider1.SetError(textMotivo, "Campo obligatorio");
-                Validator.textboxValidateColor(textMotivo, false);
+                Validator.textboxValidateColor(textMotivo, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textMotivo, true);
+            Validator.textboxValidateColor(textMotivo, 1);
         }
         #endregion
 

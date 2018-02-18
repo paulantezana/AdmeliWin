@@ -94,6 +94,11 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ===================== Paint and Decoration =====================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
         private void decorationDataGridView()
         {
             if (dataGridView.Rows.Count == 0) return;
@@ -119,9 +124,8 @@ namespace Admeli.Configuracion
         }
         #endregion
 
-
         #region ======================= Loads =======================
-        private  void cargarComponentes()
+        private void cargarComponentes()
         {
             // Cargando el combobox de personales
             loadState(true);
@@ -385,8 +389,7 @@ namespace Admeli.Configuracion
                 loadState(false);
             }
         }
+
         #endregion
-
-
     }
 }

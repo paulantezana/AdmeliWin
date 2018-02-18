@@ -95,20 +95,20 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombreDocumentoIdenti.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreDocumentoIdenti, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
+            Validator.textboxValidateColor(textNombreDocumentoIdenti, 1);
 
             if (textDigitosDocumentoIdenti.Text.Trim() == "")
             {
                 errorProvider1.SetError(textDigitosDocumentoIdenti, "Campo obligatorio");
-                Validator.textboxValidateColor(textDigitosDocumentoIdenti, false);
+                Validator.textboxValidateColor(textDigitosDocumentoIdenti, 0);
                 return false;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textDigitosDocumentoIdenti, true);
+            Validator.textboxValidateColor(textDigitosDocumentoIdenti, 1);
 
             if (cbxTipoDocumento.Text == "")
             {
@@ -135,11 +135,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (listAlmacenes.Count > 0)
                 {
                     errorProvider1.SetError(textNombreDocumentoIdenti, "Ya existe");
-                    Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
+                    Validator.textboxValidateColor(textNombreDocumentoIdenti, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, 1);
 
                 // Procediendo con el guardado
                 if (nuevo)
@@ -200,11 +200,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textNombreDocumentoIdenti.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreDocumentoIdenti, "Campo obligatorio");
-                Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
+            Validator.textboxValidateColor(textNombreDocumentoIdenti, 1);
 
             /////// 
             try
@@ -214,11 +214,11 @@ namespace Admeli.Configuracion.Nuevo
                 if (listAlmacenes.Count > 0)
                 {
                     errorProvider1.SetError(textNombreDocumentoIdenti, "Ya existe");
-                    Validator.textboxValidateColor(textNombreDocumentoIdenti, false);
+                    Validator.textboxValidateColor(textNombreDocumentoIdenti, 0);
                     return;
                 }
                 errorProvider1.Clear();
-                Validator.textboxValidateColor(textNombreDocumentoIdenti, true);
+                Validator.textboxValidateColor(textNombreDocumentoIdenti, 1);
             }
             catch (Exception ex)
             {
@@ -231,11 +231,11 @@ namespace Admeli.Configuracion.Nuevo
             if (textDigitosDocumentoIdenti.Text.Trim() == "")
             {
                 errorProvider1.SetError(textDigitosDocumentoIdenti, "Campo obligatorio");
-                Validator.textboxValidateColor(textDigitosDocumentoIdenti, false);
+                Validator.textboxValidateColor(textDigitosDocumentoIdenti, 0);
                 return;
             }
             errorProvider1.Clear();
-            Validator.textboxValidateColor(textDigitosDocumentoIdenti, true);
+            Validator.textboxValidateColor(textDigitosDocumentoIdenti, 1);
         }
 
         #endregion

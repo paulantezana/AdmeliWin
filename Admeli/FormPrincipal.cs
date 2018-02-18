@@ -29,7 +29,6 @@ namespace Admeli
         private UCReporteNav uCReporteNav;
         private UCProductosNav uCProductosNav;
         private UCHome uCHome;
-        private UCIniciar uCIniciar;
         private FormLogin formLogin;
 
         private UCVentas uCVentas;
@@ -59,6 +58,7 @@ namespace Admeli
         {
             DrawShape drawShape = new DrawShape();
             drawShape.bottomLine(panelHeader);
+            drawShape.leftLine(panelMenuRight);
         }
         #endregion
 
@@ -328,23 +328,6 @@ namespace Admeli
                     }
                     this.lblTitlePage.Text = "Home - "; /// Titulo en el encabezado
                     break;
-                case "iniciar":
-                    if (this.uCIniciar == null)
-                    {
-                        this.uCIniciar = new Admeli.UCIniciar(this);
-                        this.panelMain.Controls.Add(uCIniciar);
-                        this.uCIniciar.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCIniciar.Location = new System.Drawing.Point(0, 0);
-                        this.uCIniciar.Name = "uCIniciar";
-                        this.uCIniciar.Size = new System.Drawing.Size(250, 776);
-                        this.uCIniciar.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCIniciar);
-                    }
-                    this.lblTitlePage.Text = "Init - "; /// Titulo en el encabezado
-                    break;
                 case "compras2":
                     if (this.uCCompras == null)
                     {
@@ -375,7 +358,7 @@ namespace Admeli
                     }
                     else
                     {
-                        this.panelMain.Controls.Add(uCIniciar);
+                        this.panelMain.Controls.Add(uCVentas);
                     }
                     this.lblTitlePage.Text = "Ventas - Venta"; /// Titulo en el encabezado
                     break;
@@ -552,6 +535,7 @@ namespace Admeli
             {
                 AutoSize = true,
                 Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                ForeColor = Color.FromArgb(84, 110, 122),
                 Location = new System.Drawing.Point(13, y),
                 Name = "lblEfectivoName",
                 Size = new System.Drawing.Size(44, 16),
@@ -580,5 +564,7 @@ namespace Admeli
             panelMenuRight.Controls.Add(lblEfectivoValue);
         }
         #endregion
+
+
     }
 }
