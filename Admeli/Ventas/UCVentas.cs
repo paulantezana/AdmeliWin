@@ -16,14 +16,6 @@ namespace Admeli.Ventas
 {
     public partial class UCVentas : UserControl
     {
-        /**
-         *  Web services
-         *  http://www.lineatienda.com/services.php/ventas/sucursal/1/puntoventa/0/per/0/estado/todos/1/100
-         * 
-         * 
-         * 
-         * */
-
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;

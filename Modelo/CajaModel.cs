@@ -99,5 +99,20 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<List<Moneda>> cierrecajaiIgresoMenosEgresoEditarEgreso(int mediopago, int cajaSesion, double egreso)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/cierrecajaingresomenosegresoeditaregreso/mediopago/1/cajasesion/7/egreso/0
+                List<Moneda> list = await webService.GET<List<Moneda>>("cierrecajaingresomenosegresoeditaregreso", String.Format("mediopago/{0}/cajasesion/{1}/egreso/{2}", mediopago, cajaSesion, egreso));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

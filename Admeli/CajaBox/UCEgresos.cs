@@ -83,12 +83,12 @@ namespace Admeli.CajaBox
         {
             if (refreshData)
             {
+                verificarCaja(); // Verificando la caja
+
                 cargarComponentes();
                 cargarPersonales();
                 cargarSucursales();
                 cargarRegistros();
-                // Verificando la caja
-                verificarCaja();
             }
             lisenerKeyEvents = true; 
         }

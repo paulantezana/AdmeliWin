@@ -1,5 +1,6 @@
 ﻿using Admeli.Componentes;
 using Entidad;
+using Entidad.Configuracion;
 using Entidad.Util;
 using Modelo;
 using System;
@@ -129,6 +130,11 @@ namespace Admeli.CajaBox.Nuevo
             if (!validarCampos()) return;
             try
             {
+                // Verificacion
+                List<Moneda> monedas = await cajaModel.cierreCajaIngresoMenosEgreso(mediosDePagos[0].idMedioPago, ConfigModel.cajaSesion.idCajaSesion);
+                MessageBox.Show("Falta logica de programacion");
+
+                // Guardar
                 crearObjetoSucursal();
                 if (nuevo)
                 {

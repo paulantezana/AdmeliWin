@@ -317,7 +317,7 @@ namespace Admeli.CajaBox
                 }
 
                 // Mensaje de confirmacion
-                MessageBox.Show("Se inicio caja correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Se inicio caja correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCIngresos));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,6 +67,19 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblPageAllItems = new System.Windows.Forms.Label();
+            this.panelTools = new System.Windows.Forms.Panel();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.cbxEstados = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.cbxPersonales = new System.Windows.Forms.ComboBox();
+            this.personalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.cbxSucursales = new System.Windows.Forms.ComboBox();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbl20 = new System.Windows.Forms.Label();
             this.panelCrud = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -78,32 +91,19 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelTools = new System.Windows.Forms.Panel();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.cbxEstados = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.cbxPersonales = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.cbxSucursales = new System.Windows.Forms.ComboBox();
-            this.lbl20 = new System.Windows.Forms.Label();
-            this.personalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresoBindingSource)).BeginInit();
             this.panelNavigation.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panelCrud.SuspendLayout();
             this.panelTools.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personalBindingSource)).BeginInit();
+            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            this.panelCrud.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -143,14 +143,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idIngresoDataGridViewTextBoxColumn,
@@ -586,6 +586,161 @@
             this.lblPageAllItems.Text = "10 Registros";
             this.lblPageAllItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panelTools
+            // 
+            this.panelTools.Controls.Add(this.btnConsultar);
+            this.panelTools.Controls.Add(this.panel11);
+            this.panelTools.Controls.Add(this.panel13);
+            this.panelTools.Controls.Add(this.panel10);
+            this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTools.Location = new System.Drawing.Point(1, 99);
+            this.panelTools.Name = "panelTools";
+            this.panelTools.Size = new System.Drawing.Size(950, 52);
+            this.panelTools.TabIndex = 27;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.Location = new System.Drawing.Point(525, 6);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnConsultar.Size = new System.Drawing.Size(108, 40);
+            this.btnConsultar.TabIndex = 17;
+            this.btnConsultar.Text = "  Consultar";
+            this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.cbxEstados);
+            this.panel11.Controls.Add(this.label4);
+            this.panel11.Location = new System.Drawing.Point(352, 7);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(165, 40);
+            this.panel11.TabIndex = 16;
+            // 
+            // cbxEstados
+            // 
+            this.cbxEstados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxEstados.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxEstados.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxEstados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxEstados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEstados.FormattingEnabled = true;
+            this.cbxEstados.Location = new System.Drawing.Point(3, 14);
+            this.cbxEstados.Name = "cbxEstados";
+            this.cbxEstados.Size = new System.Drawing.Size(158, 24);
+            this.cbxEstados.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 14);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Estados";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.cbxPersonales);
+            this.panel13.Controls.Add(this.label3);
+            this.panel13.Location = new System.Drawing.Point(181, 7);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(165, 40);
+            this.panel13.TabIndex = 15;
+            // 
+            // cbxPersonales
+            // 
+            this.cbxPersonales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxPersonales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxPersonales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxPersonales.DataSource = this.personalBindingSource;
+            this.cbxPersonales.DisplayMember = "nombres";
+            this.cbxPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPersonales.FormattingEnabled = true;
+            this.cbxPersonales.Location = new System.Drawing.Point(3, 14);
+            this.cbxPersonales.Name = "cbxPersonales";
+            this.cbxPersonales.Size = new System.Drawing.Size(158, 24);
+            this.cbxPersonales.TabIndex = 1;
+            this.cbxPersonales.ValueMember = "idPersonal";
+            // 
+            // personalBindingSource
+            // 
+            this.personalBindingSource.DataSource = typeof(Entidad.Personal);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 14);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Personales";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.cbxSucursales);
+            this.panel10.Controls.Add(this.lbl20);
+            this.panel10.Location = new System.Drawing.Point(10, 7);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(165, 40);
+            this.panel10.TabIndex = 13;
+            // 
+            // cbxSucursales
+            // 
+            this.cbxSucursales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxSucursales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxSucursales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxSucursales.DataSource = this.sucursalBindingSource;
+            this.cbxSucursales.DisplayMember = "nombre";
+            this.cbxSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSucursales.FormattingEnabled = true;
+            this.cbxSucursales.Location = new System.Drawing.Point(3, 14);
+            this.cbxSucursales.Name = "cbxSucursales";
+            this.cbxSucursales.Size = new System.Drawing.Size(158, 24);
+            this.cbxSucursales.TabIndex = 1;
+            this.cbxSucursales.ValueMember = "idSucursal";
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
+            // 
+            // lbl20
+            // 
+            this.lbl20.AutoSize = true;
+            this.lbl20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl20.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl20.Location = new System.Drawing.Point(3, 3);
+            this.lbl20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl20.Name = "lbl20";
+            this.lbl20.Size = new System.Drawing.Size(62, 14);
+            this.lbl20.TabIndex = 0;
+            this.lbl20.Text = "Sucursales";
+            // 
             // panelCrud
             // 
             this.panelCrud.Controls.Add(this.btnNuevo);
@@ -773,160 +928,6 @@
             this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
-            // panelTools
-            // 
-            this.panelTools.Controls.Add(this.btnConsultar);
-            this.panelTools.Controls.Add(this.panel11);
-            this.panelTools.Controls.Add(this.panel13);
-            this.panelTools.Controls.Add(this.panel10);
-            this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTools.Location = new System.Drawing.Point(1, 99);
-            this.panelTools.Name = "panelTools";
-            this.panelTools.Size = new System.Drawing.Size(950, 52);
-            this.panelTools.TabIndex = 27;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnConsultar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.Location = new System.Drawing.Point(525, 6);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnConsultar.Size = new System.Drawing.Size(108, 40);
-            this.btnConsultar.TabIndex = 17;
-            this.btnConsultar.Text = "  Consultar";
-            this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.cbxEstados);
-            this.panel11.Controls.Add(this.label4);
-            this.panel11.Location = new System.Drawing.Point(352, 7);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(165, 40);
-            this.panel11.TabIndex = 16;
-            // 
-            // cbxEstados
-            // 
-            this.cbxEstados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxEstados.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxEstados.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxEstados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxEstados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxEstados.FormattingEnabled = true;
-            this.cbxEstados.Location = new System.Drawing.Point(3, 14);
-            this.cbxEstados.Name = "cbxEstados";
-            this.cbxEstados.Size = new System.Drawing.Size(158, 24);
-            this.cbxEstados.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 14);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Estados";
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.cbxPersonales);
-            this.panel13.Controls.Add(this.label3);
-            this.panel13.Location = new System.Drawing.Point(181, 7);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(165, 40);
-            this.panel13.TabIndex = 15;
-            // 
-            // cbxPersonales
-            // 
-            this.cbxPersonales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxPersonales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxPersonales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxPersonales.DataSource = this.personalBindingSource;
-            this.cbxPersonales.DisplayMember = "nombres";
-            this.cbxPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxPersonales.FormattingEnabled = true;
-            this.cbxPersonales.Location = new System.Drawing.Point(3, 14);
-            this.cbxPersonales.Name = "cbxPersonales";
-            this.cbxPersonales.Size = new System.Drawing.Size(158, 24);
-            this.cbxPersonales.TabIndex = 1;
-            this.cbxPersonales.ValueMember = "idPersonal";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 14);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Personales";
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.cbxSucursales);
-            this.panel10.Controls.Add(this.lbl20);
-            this.panel10.Location = new System.Drawing.Point(10, 7);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(165, 40);
-            this.panel10.TabIndex = 13;
-            // 
-            // cbxSucursales
-            // 
-            this.cbxSucursales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSucursales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxSucursales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxSucursales.DataSource = this.sucursalBindingSource;
-            this.cbxSucursales.DisplayMember = "nombre";
-            this.cbxSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSucursales.FormattingEnabled = true;
-            this.cbxSucursales.Location = new System.Drawing.Point(3, 14);
-            this.cbxSucursales.Name = "cbxSucursales";
-            this.cbxSucursales.Size = new System.Drawing.Size(158, 24);
-            this.cbxSucursales.TabIndex = 1;
-            this.cbxSucursales.ValueMember = "idSucursal";
-            // 
-            // lbl20
-            // 
-            this.lbl20.AutoSize = true;
-            this.lbl20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl20.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl20.Location = new System.Drawing.Point(3, 3);
-            this.lbl20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl20.Name = "lbl20";
-            this.lbl20.Size = new System.Drawing.Size(62, 14);
-            this.lbl20.TabIndex = 0;
-            this.lbl20.Text = "Sucursales";
-            // 
-            // personalBindingSource
-            // 
-            this.personalBindingSource.DataSource = typeof(Entidad.Personal);
-            // 
-            // sucursalBindingSource
-            // 
-            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
-            // 
             // UCIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -944,16 +945,16 @@
             this.panelNavigation.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panelCrud.ResumeLayout(false);
             this.panelTools.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personalBindingSource)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.personalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            this.panelCrud.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
