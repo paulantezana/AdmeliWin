@@ -95,7 +95,7 @@ namespace Admeli.Herramientas
 
 
                 List< TreeNode> listNode = new List<TreeNode>();
-                int i = 0;
+                
                 foreach (Categoria categoria in categoriaList)
                 {
                     TreeNode aux = new TreeNode(categoria.nombreCategoria);
@@ -123,6 +123,7 @@ namespace Admeli.Herramientas
             }
             loadState(false);
         }
+
         private Categoria primerElemento(List<Categoria> categoriaList)
         {
 

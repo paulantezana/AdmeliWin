@@ -424,5 +424,18 @@ namespace Admeli.Compras.Nuevo.Detalle
         {
             Validator.isNumber(e);
         }
+
+        private void textNIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String aux = textNIdentificacion.Text;
+
+            int nroCarateres=aux.Length;
+
+            if(nroCarateres==11 || nroCarateres==8)
+                if ((int)e.KeyChar == (int)Keys.Enter)
+                {
+                    //aqui codigo
+                }
+        }
     }
 }
