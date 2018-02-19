@@ -158,35 +158,22 @@ namespace Admeli.Productos
                 treeViewCategoria.Nodes.Clear(); // limpiando
                 treeViewCategoria.Nodes.Add(lastCategori.idCategoria.ToString(), lastCategori.nombreCategoria); // Cargando categoria raiz
 
+
+                List<TreeNode> listNode = new List<TreeNode>();
+
                 foreach (Categoria categoria in categoriaList)
                 {
-                    if (categoria.padre == null)
-                    {
-                        // Cargando categorias padre
-                        treeViewCategoria.Nodes[0].ImageIndex = 1;
-                        treeViewCategoria.Nodes[0].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
-                    }
-                    else
-                    {
-                        // Cargando subcategorias
-                        int nodeIndex = treeViewCategoria.Nodes[0].Nodes.IndexOfKey(categoria.idPadreCategoria.ToString());
-                       /* string parent = categoria.idPadreCategoria.ToString();
-                        var node = treeViewCategoria.Nodes.Cast<TreeNode>().Where(r => r.Name == parent);*/
-                        treeViewCategoria.Nodes[0].Nodes[nodeIndex].ImageIndex = 1;
-                        treeViewCategoria.Nodes[0].Nodes[nodeIndex].Nodes.Add(categoria.idCategoria.ToString(), categoria.nombreCategoria);
-                    }
+                    TreeNode aux = new TreeNode(categoria.nombreCategoria);
+
+                    listNode.Add(aux);
+
                 }
+                treeviewVista(categoriaList, treeViewCategoria.Nodes[0], listNode);
+
+
 
                 // Estableciendo valores por defecto
-                if (ConfigModel.currentProductoCategory.Count > 0)
-                {
-                    recuperarCatSeleccionado();
-                }
-                else
-                {
-                    treeViewCategoria.Nodes[0].ExpandAll();
-                }
-                treeViewCategoria.Nodes[0].Checked = true;
+                
             }
             catch (Exception ex)
             {
@@ -194,6 +181,106 @@ namespace Admeli.Productos
             }
             loadState(false);
         }
+        #region ======================= metodos para treeview =======================
+        private Categoria primerElemento(List<Categoria> categoriaList)
+        {
+
+            Categoria lastCategori = categoriaList[0];//raiz
+            categoriaList.Remove(lastCategori);
+            return lastCategori;
+        }
+        private bool hijos(List<Categoria> categoriaList, Categoria padre)
+        {
+            bool tieneHijos = false;
+
+            foreach (Categoria categoria in categoriaList)
+            {
+                if (categoria.padre == padre.nombreCategoria)
+                {
+                    tieneHijos = true;
+                    break;
+
+                }
+
+            }
+            return tieneHijos;
+        }
+        private TreeNode buscar(Categoria categoria, List<TreeNode> listNode)
+        {
+            TreeNode aux = new TreeNode();
+
+            foreach (TreeNode node in listNode)
+            {
+                if (categoria.nombreCategoria == node.Text)
+                {
+
+                    aux = node;
+                    break;
+                }
+
+            }
+
+            return aux;
+
+        }
+        private TreeNode buscarPadre(Categoria categoria, List<TreeNode> listNode)
+        {
+            TreeNode aux = new TreeNode();
+
+            foreach (TreeNode node in listNode)
+            {
+                if (categoria.padre == node.Text)
+                {
+
+                    aux = node;
+                    break;
+                }
+
+            }
+
+            return aux;
+
+        }
+        private void treeviewVista(List<Categoria> categoriaList, TreeNode padreNode, List<TreeNode> listNode)
+        {
+            if (categoriaList.Count == 0)
+            {
+                return;
+
+            }
+            else
+            {
+                Categoria aux = primerElemento(categoriaList);
+                TreeNode auxTreeNode = buscar(aux, listNode);
+                TreeNode nodePadre = buscarPadre(aux, listNode);
+                if (hijos(categoriaList, aux))
+                {
+                    auxTreeNode.ImageIndex = 1;
+                }
+
+                if (nodePadre.Text != "")
+                {
+
+                    nodePadre.Nodes.Add(auxTreeNode);
+                    treeviewVista(categoriaList, padreNode, listNode);
+                }
+                else
+                {
+
+                    padreNode.Nodes.Add(auxTreeNode);
+
+                    treeviewVista(categoriaList, padreNode, listNode);
+
+                }
+
+
+
+            }
+
+
+
+        }
+        #endregion =============================
         /*
         private void treeNodeAddRecursive(TreeNode node, Boolean isChecked)
         {
@@ -207,6 +294,7 @@ namespace Admeli.Productos
                 }
             }
         }*/
+
 
         private async void cargarComponentesThird()
         {
