@@ -117,29 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="egresoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 103</value>
-  </metadata>
-  <metadata name="toolStripCrud.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1149, 60</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnConsultar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJWSURBVDhPtZNtSFNRGMcXRUXfIgp6YWtS6wXKIuxTSEUG
-        ZRQilRBRQeSnYNAXoXBRkDadmwoaSjlzRTmLWC8fprXah7GX3Ax1uuuajDmvrr245G737qr/dtepkUgt
-        sh8cDodz/j8eznOO6L+hG+D2qO2svN6WvFpnZYsbPrLb66m5FWT7zxQ9jJTdMU1Henwp2IIp9NI8LGMz
-        MPp4tDuicx393KTGzpofuDi9yZ+qILFfEVf5V8uUgYkTj6ZwpD2GA61hFNwLo6gtjEvPY6jsmUajlcFg
-        aAb++Cx8UzN4OsTtIvEskip6c35TiC7pYnDxZQKXXydwSp9ASVcCJ/UMinUxSKqDONQaAhWdRYszBbUj
-        eZDEs/wQCeEL80TCXNoZhzgt2qai4ZzgobFz/yaSLbboiiEO1btAk2vI+8E0OrqSaP5OZKA4lGoD6B3y
-        8q7hESOAJUSTu0hc6UGzJSJIYOzzDaRZThTfyUW08fowzqpseGW2oeX9Z5x5/OUaiWcRRDvU/q+FbVM4
-        94LJiEqfMT9F+xvGUFbnQK97BAanD4XNNG68ZY+TeJa8GnrdWsU4K5QvvJfdjZM4rI3gdNc0jnbEcP6+
-        JyNpftOPW2YGdy3JhbsmsLWW1ucpggmp0jObuY/02HTTi2PVdjjcXmi7ByGRW9PfJpVpv8aeKiDRBejE
-        UnHV+L485bhOqghE8yssMH+iMpUIki01QfKOkjqFCctI6vcIbe12ekfkT9zRDeVOXpquVlY7wZj9/G1y
-        JDdsbveaPoraS5ai9Yrgqp2Kee1efESib/uqMe27n9jYAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAUpJREFUOE9j
+        oDkIKGgQCMmrigjJryoG4dD86nCQGFSaMIjMrxIPzquaCTTkJxD/R8MgsemBGQ1iUOXYQXBhrTZQ4UMk
+        jbjwg9DcSi2oNlQQWdwgAnTJfSyacOF7oYUNQlDtCACUmI6mEBf+C2MH51ZOhmqHAGjAYgsTdHwS6v27
+        UP6P6NwGPqgxwLDJrw6GSuDEoXlVl0FeiSioUADyHyPEqwOhxgC9BYpiJE1Q/APGBobdnaCCKsmInDIp
+        EBtJzf/g/KpCqDGg8KksQZYMza3aEZpfLheSW3kFyH8SmlOjCIoMIPsqsjoQBrqoCGoMpteAtt4MLayW
+        BqWX4JxKjdC0cn6g4WeR1cAwitdwBPatoNwymdiSEu7Q/KojaHIwjBrYIAAUxIh+UHgAA3kfujgMY0Q/
+        CFAtQYIAVbIIDFAl0yIDiosR8gADAwARxaEHPEblVwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="personalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>185, 13</value>
+  </metadata>
+  <metadata name="sucursalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>362, 13</value>
+  </metadata>
+  <metadata name="egresoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>18, 13</value>
+  </metadata>
   <data name="btnFirst.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAe5JREFUSEvt

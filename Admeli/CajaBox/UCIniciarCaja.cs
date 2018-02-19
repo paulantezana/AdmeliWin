@@ -64,16 +64,17 @@ namespace Admeli.CajaBox
             this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            // verificaciones
-           verificarEstadoCaja();
-
-            // loads
-            cargarCajaSesion();
-            cargarMonedas();
-            cargarMediosPago();
-            cargarFecha();
+            if (refreshData)
+            {
+                cargarCajaSesion();
+                cargarMonedas();
+                cargarMediosPago();
+                cargarFecha();
+                // verificaciones
+                verificarEstadoCaja();
+            }
         }
         #endregion
 

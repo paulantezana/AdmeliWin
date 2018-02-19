@@ -19,6 +19,7 @@ namespace Admeli.Compras
     {
         private OrdenCompraModel ordenCompraModel = new OrdenCompraModel();
         private PersonalModel personalModel = new PersonalModel();
+        private SucursalModel sucursalModel = new SucursalModel();
         private Paginacion paginacion;
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
@@ -49,7 +50,8 @@ namespace Admeli.Compras
 
         private async void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
         {
-            await cargarComponentes();
+            cargarPersonales();
+            cargarSucursales();
             await cargarRegistros();
         }
 
@@ -64,35 +66,37 @@ namespace Admeli.Compras
         private void loadState(bool state)
         {
             panelNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
+            panelCrud.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion
 
         #region ======================= Loads =======================
-        private async Task cargarComponentes()
+
+        private async void cargarSucursales()
         {
-            // Cargando el combobox de personales
-            formPrincipal.appLoadState(true);
-            loadState(true);
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = 0;
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            // Cargando item por pagina a mostra desde las configuraciones generales
-            lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();
-
-            // Estado cargar en falso
-            loadState(false);
         }
+
+        private async void cargarPersonales()
+        {
+            try
+            {
+                personalBindingSource.DataSource = await personalModel.listarPersonalAlmacen(ConfigModel.sucursal.idSucursal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private async Task cargarRegistros()
         {
             formPrincipal.appLoadState(true);
@@ -101,7 +105,7 @@ namespace Admeli.Compras
             {
 
                 RootObject<OrdenCompra> ordenCompra = await ordenCompraModel.ocompras(ConfigModel.sucursal.idSucursal,
-                                                                                      Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue),
+                                                                                      Convert.ToInt32(cbxPersonales.SelectedValue),
                                                                                       paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
@@ -124,10 +128,14 @@ namespace Admeli.Compras
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarComponentes();
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarSucursales();
+                cargarPersonales();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion

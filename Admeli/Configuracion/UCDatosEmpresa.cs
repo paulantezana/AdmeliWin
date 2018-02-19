@@ -61,21 +61,24 @@ namespace Admeli.Configuracion
             cbxPaises.SelectedValue = ubicacionGeografica.idPais;
         }
 
-        internal async void reLoad()
+        internal async void reLoad(bool refreshData = true)
         {
-            loadStateApp(true);
-            await cargarPaises();
-            crearNivelesPais();
-            // Cargando los datos generales
-            datosGenerales = await configModel.getDatosGenerales();
+            if (refreshData)
+            {
+                loadStateApp(true);
+                await cargarPaises();
+                crearNivelesPais();
+                // Cargando los datos generales
+                datosGenerales = await configModel.getDatosGenerales();
 
-            // Cargando la configuracion general
-            configuracionGeneral = await configModel.getConfiGeneral();
+                // Cargando la configuracion general
+                configuracionGeneral = await configModel.getConfiGeneral();
 
-            lisenerKeyEvents = true; // Active lisener key events
+                lisenerKeyEvents = true; // Active lisener key events
 
-            // MOstrando los datos en los campos
-            mostrarDatos();
+                // MOstrando los datos en los campos
+                mostrarDatos();
+            }
         }
 
         private void mostrarDatos()

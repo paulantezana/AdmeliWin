@@ -54,15 +54,17 @@ namespace Admeli.CajaBox
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            this.cargarPersonales();
-            this.cargarSucursales();
-            this.cargarRegistros();
+            if (refreshData)
+            {
+                this.cargarPersonales();
+                this.cargarSucursales();
+                this.cargarRegistros();
 
-            // Verificar caja
-            this.verificarCaja();
-
+                // Verificar caja
+                this.verificarCaja();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
@@ -123,14 +125,9 @@ namespace Admeli.CajaBox
 
         private async void cargarSucursales()
         {
-            // cargando los sucursales activos
             try
             {
-                loadState(true);
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
@@ -138,18 +135,11 @@ namespace Admeli.CajaBox
             }
         }
 
-
         private async void cargarPersonales()
         {
-            // cargando los sucursales activos
             try
             {
-
-                // Cargando el combobox de personales
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+                personalBindingSource.DataSource = await personalModel.listarPersonalAlmacen(ConfigModel.sucursal.idSucursal);
             }
             catch (Exception ex)
             {
@@ -163,8 +153,8 @@ namespace Admeli.CajaBox
             loadState(true);
             try
             {
-                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.SelectedValue);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
                 RootObject<CierreCaja> dataRoot = await cierreCajaModel.cierreCajas(personalId, sucursalId, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
@@ -199,7 +189,7 @@ namespace Admeli.CajaBox
         {
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
+            panelCrud.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

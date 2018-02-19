@@ -83,9 +83,12 @@ namespace Admeli.Compras
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
@@ -194,7 +197,7 @@ namespace Admeli.Compras
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
             panelCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
+            panelTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

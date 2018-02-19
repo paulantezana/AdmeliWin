@@ -23,6 +23,7 @@ namespace Admeli.Compras
          * */
          
         private CompraModel compraModel = new CompraModel();
+        private SucursalModel sucursalModel = new SucursalModel();
         private PersonalModel personalModel = new PersonalModel();
 
         private List<Compra> compras { get; set; }
@@ -83,14 +84,18 @@ namespace Admeli.Compras
         #region ============================= root load =============================
         private void UCCompras_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarComponentes();
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarComponentes();
+                cargarSucursales();
+                cargarPersonales();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
@@ -107,27 +112,34 @@ namespace Admeli.Compras
             table.Rows.Add("0", "Anulados");
             table.Rows.Add("1", "Activos");
 
-            cbxEstados.ComboBox.DataSource = table;
-            cbxEstados.ComboBox.DisplayMember = "estado";
-            cbxEstados.ComboBox.ValueMember = "idEstado";
-            cbxEstados.ComboBox.SelectedIndex = 0;
+            cbxEstados.DataSource = table;
+            cbxEstados.DisplayMember = "estado";
+            cbxEstados.ValueMember = "idEstado";
+            cbxEstados.SelectedIndex = 0;
+        }
 
-            // Cargando el combobox de personales
-            loadState(true);
+        private async void cargarSucursales()
+        {
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
 
-            // Estado cargar en falso
-            loadState(false);
+        private async void cargarPersonales()
+        {
+            try
+            {
+                personalBindingSource.DataSource = await personalModel.listarPersonalAlmacen(ConfigModel.sucursal.idSucursal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void cargarRegistros()
@@ -136,8 +148,8 @@ namespace Admeli.Compras
             try
             {
 
-                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.SelectedValue);
+                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.SelectedValue.ToString();
 
                 RootObject<Compra> compraRoot = await compraModel.getByPersonalEstado(ConfigModel.sucursal.idSucursal, personalId, estado, paginacion.currentPage, paginacion.speed);
 
@@ -172,8 +184,8 @@ namespace Admeli.Compras
         {
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
+            panelCrud.Enabled = !state;
+            panelTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

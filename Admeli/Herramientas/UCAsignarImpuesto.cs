@@ -45,8 +45,12 @@ namespace Admeli.Herramientas
             this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
+            if (refreshData)
+            {
+
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion

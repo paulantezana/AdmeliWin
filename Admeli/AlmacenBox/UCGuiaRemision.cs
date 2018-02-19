@@ -88,13 +88,15 @@ namespace Admeli.AlmacenBox
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarSucursales();
-            cargarAlmacenes();
-            cargarTipo();
-
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarSucursales();
+                cargarAlmacenes();
+                cargarTipo();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion

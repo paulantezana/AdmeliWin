@@ -49,10 +49,13 @@ namespace Admeli.Configuracion
             this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarComponentes();
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarSucursales();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
 
@@ -84,24 +87,16 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
+        private async void cargarSucursales()
         {
-            // Cargando el combobox de personales
-            loadState(true);
             try
             {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            // Estado cargar en falso
-            loadState(false);
         }
 
         private async void cargarRegistros()
@@ -109,7 +104,7 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                int idSucursal = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+                int idSucursal = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
 
                 RootObject<CajaSesion> rootData = await cajaSesionModel.cajaSesionesInicializadas(idSucursal, paginacion.currentPage, paginacion.speed);
                 if (rootData == null) return; /// Verificar si hay datos

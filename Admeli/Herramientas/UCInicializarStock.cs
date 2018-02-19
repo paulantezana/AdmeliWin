@@ -66,13 +66,16 @@ namespace Admeli.Herramientas
             this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
+            if (refreshData)
+            {
+                this.cargarCategorias(); // 
+                this.cargarSucursales();
+                this.cargarAlmacenes();
+                this.cargarRegistros();
+            }
             this.lisenerKeyEvents = true; // Active lisener key events
-            this.cargarCategorias(); // 
-            this.cargarSucursales();
-            this.cargarAlmacenes();
-            this.cargarRegistros();
         }
 
         #region ==================================== Load ====================================

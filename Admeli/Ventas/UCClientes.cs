@@ -63,10 +63,12 @@ namespace Admeli.Ventas
             }*/
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
+            if (refreshData)
+            {
 
-
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
@@ -141,7 +143,7 @@ namespace Admeli.Ventas
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
             panelCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
+            panelTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

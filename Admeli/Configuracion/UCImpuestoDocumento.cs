@@ -30,10 +30,12 @@ namespace Admeli.Configuracion
             lisenerKeyEvents = true; // Active lisener key events
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
+            if (refreshData)
+            {
 
-
+            }
             lisenerKeyEvents = true; // Active lisener key eventss
         }
     }

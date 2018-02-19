@@ -66,17 +66,16 @@ namespace Admeli.Productos
             this.formPrincipal = formPrincipal;
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            // agregando un checkbox en toostriptools
-            addCheckBox();
-
-            // load data
-            cargarComponentes();
-            cargarCategorias();
-            cargarComponentesThird();
-            cargarRegistros();
-
+            if (refreshData)
+            {
+                addCheckBox();
+                cargarComponentes();
+                cargarCategorias();
+                cargarComponentesThird();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
 

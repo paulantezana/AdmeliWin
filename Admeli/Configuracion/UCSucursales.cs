@@ -56,11 +56,13 @@ namespace Admeli.Configuracion
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarRegistros();
-            cargarComponentes();
-
+            if (refreshData)
+            {
+                cargarRegistros();
+                cargarComponentes();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
 

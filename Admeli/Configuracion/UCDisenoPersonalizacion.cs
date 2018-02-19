@@ -36,9 +36,12 @@ namespace Admeli.Configuracion
             this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         } 
         #endregion
@@ -89,8 +92,7 @@ namespace Admeli.Configuracion
         private void loadState(bool state)
         {
             formPrincipal.appLoadState(state);
-            //toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
+            panelCrud.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

@@ -79,18 +79,18 @@ namespace Admeli.CajaBox
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            // load componentes
-            cargarComponentes();
-            cargarComponentesSecond();
-            cargarRegistros();
-
-            // Active lisener key events
+            if (refreshData)
+            {
+                cargarComponentes();
+                cargarPersonales();
+                cargarSucursales();
+                cargarRegistros();
+                // Verificando la caja
+                verificarCaja();
+            }
             lisenerKeyEvents = true; 
-
-            // Verificando la caja
-            verificarCaja();
         }
         #endregion
 
@@ -164,19 +164,17 @@ namespace Admeli.CajaBox
             table.Rows.Add("0", "Anulados");
             table.Rows.Add("1", "Activos");
 
-            cbxEstados.ComboBox.DataSource = table;
-            cbxEstados.ComboBox.DisplayMember = "estado";
-            cbxEstados.ComboBox.ValueMember = "idEstado";
-            cbxEstados.ComboBox.SelectedIndex = 0;
+            cbxEstados.DataSource = table;
+            cbxEstados.DisplayMember = "estado";
+            cbxEstados.ValueMember = "idEstado";
+            cbxEstados.SelectedIndex = 0;
+        }
 
+        private async void cargarSucursales()
+        {
             try
             {
-                // Cargando el combobox de personales
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
-
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
@@ -184,16 +182,11 @@ namespace Admeli.CajaBox
             }
         }
 
-        private async void cargarComponentesSecond()
+        private async void cargarPersonales()
         {
-            // cargando los sucursales activos
             try
             {
-                loadState(true);
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+                personalBindingSource.DataSource = await personalModel.listarPersonalAlmacen(ConfigModel.sucursal.idSucursal);
             }
             catch (Exception ex)
             {
@@ -206,9 +199,9 @@ namespace Admeli.CajaBox
             loadState(true);
             try
             {
-                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
-                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.SelectedValue);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
+                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.SelectedValue.ToString();
                 int idCajaSesion = 0;// ConfigModel.cajaSesion.idCajaSesion;
 
                 RootObject<Egreso> ingresosRoot = await egresoModel.egresos(sucursalId, personalId, idCajaSesion, estado, paginacion.currentPage, paginacion.speed);
@@ -244,7 +237,7 @@ namespace Admeli.CajaBox
         {
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
+            panelCrud.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

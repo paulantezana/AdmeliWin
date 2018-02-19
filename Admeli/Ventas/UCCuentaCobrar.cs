@@ -15,13 +15,10 @@ namespace Admeli.Ventas
 {
     public partial class UCCuentaCobrar : UserControl
     {
-        /**
-         *  Web services
-         * 
-         * 
-         * 
-         * 
-         * */
+        private SucursalModel sucursalModel = new SucursalModel();
+        private AlmacenModel almacenModel = new AlmacenModel();
+        private PersonalModel personalModel = new PersonalModel();
+
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
         private Paginacion paginacion;
@@ -55,9 +52,12 @@ namespace Admeli.Ventas
             cuentaPagarModificar.ShowDialog();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
 
@@ -66,6 +66,45 @@ namespace Admeli.Ventas
         {
             // throw new NotImplementedException();
         }
+
+
+        #region =================================== Loads ==================================
+        private async void cargarSucursales()
+        {
+            try
+            {
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarAlmacenes()
+        {
+            try
+            {
+                almacenBindingSource.DataSource = await almacenModel.almacenesPorSucursales(ConfigModel.sucursal.idSucursal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarPersonales()
+        {
+            try
+            {
+                personalBindingSource.DataSource = await personalModel.listarPersonalAlmacen(ConfigModel.sucursal.idSucursal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
 
         #region ===================== Eventos Páginación =====================
         private void mostrarPaginado()

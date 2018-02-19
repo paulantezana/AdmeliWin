@@ -49,8 +49,8 @@ namespace Admeli.Ventas
 
         private void UCCotizacionCliente_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarComponentesSecond();
+            cargarSucursales();
+            cargarPersonales();
             cargarRegistros();
         }
 
@@ -73,16 +73,11 @@ namespace Admeli.Ventas
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
+        private async void cargarSucursales()
         {
-            // Cargando el combobox de personales
-            loadState(true);
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
@@ -90,29 +85,27 @@ namespace Admeli.Ventas
             }
         }
 
-        internal void reLoad()
+        private async void cargarPersonales()
         {
-            cargarComponentes();
-            cargarComponentesSecond();
-            cargarRegistros();
+            try
+            {
+                personalBindingSource.DataSource = await personalModel.listarPersonalAlmacen(ConfigModel.sucursal.idSucursal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        internal void reLoad(bool refreshData = true)
+        {
+            if (refreshData)
+            {
+                cargarSucursales();
+                cargarPersonales();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
-        }
-
-        private async void cargarComponentesSecond()
-        {
-            // cargando los sucursales activos
-            loadState(true);
-            try
-            {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         private async void cargarRegistros()
@@ -121,8 +114,8 @@ namespace Admeli.Ventas
             try
             {
 
-                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.SelectedValue);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
 
                 RootObject<Cotizacion> cotizaciones = await cotizacionModel.cotizaciones(sucursalId, personalId, paginacion.currentPage, paginacion.speed);
 
@@ -151,7 +144,7 @@ namespace Admeli.Ventas
         {
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
+            panelCrud.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

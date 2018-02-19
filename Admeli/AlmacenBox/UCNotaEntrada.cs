@@ -77,14 +77,16 @@ namespace Admeli.AlmacenBox
         #endregion
 
         #region ============================ Root Load ============================
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarSucursales();
-            cargarAlmacenes();
-            cargarPersonales();
-            cargarTipo();
-
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarSucursales();
+                cargarAlmacenes();
+                cargarPersonales();
+                cargarTipo();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
 

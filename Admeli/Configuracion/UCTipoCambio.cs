@@ -44,9 +44,12 @@ namespace Admeli.Configuracion
             this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarMonedas();
+            if (refreshData)
+            {
+                cargarMonedas();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion

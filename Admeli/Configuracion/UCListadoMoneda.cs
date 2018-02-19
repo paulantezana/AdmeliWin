@@ -56,9 +56,13 @@ namespace Admeli.Configuracion
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarRegistros();
+            if (refreshData)
+            {
+                cargarRegistros();
+            }
+            this.lisenerKeyEvents = true;
         }
         #endregion
 

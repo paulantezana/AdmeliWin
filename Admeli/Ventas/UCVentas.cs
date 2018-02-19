@@ -52,8 +52,8 @@ namespace Admeli.Ventas
         private void UCVentas_Load(object sender, EventArgs e)
         {
             cargarComponentes();
-            cargarComponentesSecond();
-            cargarComponentesThird();
+            cargarSucursales();
+            cargarPersonales();
             cargarRegistros();
         }
 
@@ -77,7 +77,7 @@ namespace Admeli.Ventas
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
+        private void cargarComponentes()
         {
             // Cargando el combobox ce estados
             DataTable table = new DataTable();
@@ -88,19 +88,17 @@ namespace Admeli.Ventas
             table.Rows.Add("0", "Anulados");
             table.Rows.Add("1", "Activos");
 
-            cbxEstados.ComboBox.DataSource = table;
-            cbxEstados.ComboBox.DisplayMember = "estado";
-            cbxEstados.ComboBox.ValueMember = "idEstado";
+            cbxEstados.DataSource = table;
+            cbxEstados.DisplayMember = "estado";
+            cbxEstados.ValueMember = "idEstado";
             //cbxEstados.ComboBox.SelectedIndex = 0;
+        }
 
-            // Cargando el combobox de personales
-            loadState(true);
+        private async void cargarSucursales()
+        {
             try
             {
-                cbxPersonales.ComboBox.DataSource = await personalModel.listarPersonalCompras(ConfigModel.sucursal.idSucursal);
-                cbxPersonales.ComboBox.DisplayMember = "nombres";
-                cbxPersonales.ComboBox.ValueMember = "idPersonal";
-                cbxPersonales.ComboBox.SelectedValue = PersonalModel.personal.idPersonal;
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
@@ -109,16 +107,11 @@ namespace Admeli.Ventas
         }
 
 
-        private async void cargarComponentesSecond()
+        private async void cargarPersonales()
         {
-            // cargando los sucursales activos
-            loadState(true);
             try
             {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+                personalBindingSource.DataSource = await personalModel.listarPersonalAlmacen(ConfigModel.sucursal.idSucursal);
             }
             catch (Exception ex)
             {
@@ -126,30 +119,15 @@ namespace Admeli.Ventas
             }
         }
 
-        
-        private async void cargarComponentesThird()
+        internal void reLoad(bool refreshData = true)
         {
-            // cargando los sucursales activos
-            loadState(true);
-            try
+            if (refreshData)
             {
-                cbxPuntosVenta.ComboBox.DataSource = await puntoVentaModel.puntoVentasyTodos(ConfigModel.sucursal.idSucursal);
-                cbxPuntosVenta.ComboBox.DisplayMember = "nombre";
-                cbxPuntosVenta.ComboBox.ValueMember = "idPuntoVenta";
-                cbxPuntosVenta.ComboBox.SelectedValue = ConfigModel.currentPuntoVenta;
+                cargarComponentes();
+                cargarPersonales();
+                cargarSucursales();
+                cargarRegistros();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        internal void reLoad()
-        {
-            cargarComponentes();
-            cargarComponentesSecond();
-            cargarComponentesThird();
-            cargarRegistros();
             lisenerKeyEvents = true; // Active lisener key events
         }
 
@@ -159,10 +137,10 @@ namespace Admeli.Ventas
             try
             {
 
-                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.ComboBox.SelectedValue);
-                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
-                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
-                int puntoVentaId = (cbxPuntosVenta.SelectedIndex == -1) ? ConfigModel.currentPuntoVenta : Convert.ToInt32(cbxPuntosVenta.ComboBox.SelectedValue);
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.SelectedValue);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
+                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.SelectedValue.ToString();
+                int puntoVentaId = (cbxPuntosVenta.SelectedIndex == -1) ? ConfigModel.currentPuntoVenta : Convert.ToInt32(cbxPuntosVenta.SelectedValue);
 
                 RootObject<Venta> ventas = await ventaModel.ventas(sucursalId, puntoVentaId,  personalId, estado, paginacion.currentPage, paginacion.speed);
 
@@ -191,8 +169,8 @@ namespace Admeli.Ventas
         {
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
-            toolStripCrud.Enabled = !state;
-            toolStripTools.Enabled = !state;
+            panelCrud.Enabled = !state;
+            panelTools.Enabled = !state;
             dataGridView.Enabled = !state;
         }
         #endregion

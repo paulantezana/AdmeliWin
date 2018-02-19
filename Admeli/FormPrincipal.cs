@@ -642,6 +642,9 @@ namespace Admeli
             togglePanelMain("home");
             lblUserName.Text = PersonalModel.personal.usuario.ToUpper();
             lblDocumento.Text = String.Format("{0}", PersonalModel.personal.numeroDocumento);
+            /// Foto Del Usuario
+
+
 
             /// Mostrando el menu por defecto
             btnColor(); /// Color reset

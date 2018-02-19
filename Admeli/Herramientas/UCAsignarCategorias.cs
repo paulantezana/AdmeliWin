@@ -42,12 +42,13 @@ namespace Admeli.Herramientas
             this.reLoad();
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            // Caragr datos
-            cargarCategorias();
-            cargarProductos();
-
+            if (refreshData)
+            {
+                cargarCategorias();
+                cargarProductos();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         } 
         #endregion

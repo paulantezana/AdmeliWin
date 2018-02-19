@@ -65,11 +65,13 @@ namespace Admeli.Configuracion
             }
         }
 
-        internal void reLoad()
+        internal void reLoad(bool refreshData = true)
         {
-            cargarComponentes();
-            cargarRegistros();
-
+            if (refreshData)
+            {
+                cargarComponentes();
+                cargarRegistros();
+            }
             lisenerKeyEvents = true; // Active lisener key events
         } 
         #endregion
@@ -136,27 +138,22 @@ namespace Admeli.Configuracion
             table.Rows.Add("0", "Anulados");
             table.Rows.Add("1", "Activos");
 
-            cbxEstados.ComboBox.DataSource = table;
-            cbxEstados.ComboBox.DisplayMember = "estado";
-            cbxEstados.ComboBox.ValueMember = "idEstado";
-            cbxEstados.ComboBox.SelectedIndex = 0;
+            cbxEstados.DataSource = table;
+            cbxEstados.DisplayMember = "estado";
+            cbxEstados.ValueMember = "idEstado";
+            cbxEstados.SelectedIndex = 0;
+        }
 
-            // Cargando el combobox de personales
-            loadState(true);
+        private async void cargarSucursales()
+        {
             try
             {
-                cbxSucursales.ComboBox.DataSource = await sucursalModel.listarSucursalesActivos();
-                cbxSucursales.ComboBox.DisplayMember = "nombre";
-                cbxSucursales.ComboBox.ValueMember = "idSucursal";
-                cbxSucursales.ComboBox.SelectedValue = ConfigModel.sucursal.idSucursal;
+                sucursalBindingSource.DataSource = await sucursalModel.listarSucursalesActivos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            // Estado cargar en falso
-            loadState(false);
         }
 
         private async void cargarRegistros()
@@ -165,8 +162,8 @@ namespace Admeli.Configuracion
             try
             {
 
-                int sucursaId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.ComboBox.SelectedValue);
-                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.ComboBox.SelectedValue.ToString();
+                int sucursaId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
+                string estado = (cbxEstados.SelectedIndex == -1) ? "todos" : cbxEstados.SelectedValue.ToString();
 
                 RootObject<PuntoDeVenta> puntoVentaRoot = await puntoVentaModel.puntoventas(sucursaId, estado, paginacion.currentPage, paginacion.speed);
 
