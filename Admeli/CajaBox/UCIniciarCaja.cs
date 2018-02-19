@@ -152,12 +152,29 @@ namespace Admeli.CajaBox
             {
                 loadState(true);
                 monedas = await monedaModel.monedas();
-                int y = 255;
-                foreach (Moneda money in monedas)
+
+                // =========================================== Algoritmo para crear una grilla
+                int columnas = 2;
+                int x = 13;
+                int y = 120;
+                int items = monedas.Count % columnas;      // Detectar cuandos elementos hay en la ultima fila de la grilla
+                int rowComplete = Convert.ToInt32(Math.Floor((decimal)(monedas.Count / columnas))) * columnas; // detectar cuantos fila esta lleno de  registros
+                for (int i = 0; i < monedas.Count; i++) // for para las filas
                 {
-                    crearElementosMoneda(money.moneda, money.idMoneda, y);
-                    y += 60;
+                    for (int j = 0; j < columnas; j++) // For para las columnas
+                    {
+                        if (i > rowComplete) // validacion
+                        {
+                            if (items == j) break; // salir de este for
+                        }
+                        this.createElement(panelContainer.Controls, x, y, monedas[i].moneda, "", monedas[i].idMoneda.ToString(),250);
+                        i = (columnas - 1 == j) ? i : i + 1; // indice de registros aumento
+                        x += 270; // cordenada x aumentado
+                    }
+                    y += 50; // cordenada y
+                    x = 13; // cordenada x regresando al valor original
                 }
+                // ==============================================================================
             }
             catch (Exception ex)
             {
@@ -196,56 +213,60 @@ namespace Admeli.CajaBox
         #endregion
 
         #region ============================= Crear Elementos =============================
-        private void crearElementosMoneda(string content, int idMoneda,  int y)
+        /// <summary>
+        /// Crear BuniFuTextBox use este metodo para crear campos dinamicos
+        /// </summary>
+        /// <param name="controls">Control padre al que se agregara los elementos </param>
+        /// <param name="x">posicion en el eje X</param>
+        /// <param name="y">posicion en el eje Y</param>
+        /// <param name="labelValue">titulo del campo</param>
+        /// <param name="textBoxValue">valor del campo</param>
+        /// <param name="key">Clave para identificar el elemento</param>
+        /// <param name="whidt">ancho del elemento</param>
+        /// <param name="height">alto del elemento</param>
+        /// <param name="gap">separacion de los elementos</param>
+        private void createElement(Control.ControlCollection controls, int x, int y, string labelValue, string textBoxValue, string key = "", int whidt = 300, int height = 40, int gap = 10)
         {
-
-            Label lblMonedaLabel = new Label()
+            Label titlefield = new Label()
             {
-                // creando un nuevo label
                 AutoSize = true,
                 BackColor = System.Drawing.Color.White,
                 Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                ForeColor = System.Drawing.Color.DodgerBlue,
+                ForeColor = System.Drawing.Color.DimGray,
+                Location = new System.Drawing.Point(x + 3, y + 3),
                 Margin = new System.Windows.Forms.Padding(2, 0, 2, 0),
-                Size = new System.Drawing.Size(52, 14),
-
-                // Modificar al gusto del cliente
-                Name = "lbl" + idMoneda,
-                Text = String.Format("{0}", content.ToUpper()),
-                Location = new System.Drawing.Point(25, (y + 8)),
-                TabIndex = 93,
+                Name = "label1111",
+                Size = new System.Drawing.Size(59, 14),
+                TabIndex = 8,
+                Text = labelValue
             };
-            BunifuMetroTextbox textMoneda1 = new BunifuMetroTextbox()
+
+            BunifuMetroTextbox textBoxBF1 = new BunifuMetroTextbox()
             {
                 BackColor = System.Drawing.Color.White,
                 BorderColorFocused = System.Drawing.Color.DodgerBlue,
                 BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157))))),
                 BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157))))),
-                
                 BorderThickness = 1,
                 Cursor = System.Windows.Forms.Cursors.IBeam,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64))))),
                 isPassword = false,
+                Location = new System.Drawing.Point(x, y),
                 Margin = new System.Windows.Forms.Padding(4),
-                Padding = new System.Windows.Forms.Padding(5, 18, 5, 0),
-                Size = new System.Drawing.Size(389, 50),
+                Name = key,
+                Padding = new System.Windows.Forms.Padding(2, 18, 5, 2),
+                Size = new System.Drawing.Size(whidt, height),
+                TabIndex = 9,
                 TextAlign = System.Windows.Forms.HorizontalAlignment.Left,
-
-                // al gusto del cliente
-                Location = new System.Drawing.Point(18, y),
-                Name = idMoneda.ToString(),
-                TabIndex = 91,
-                //OnValueChanged += new System.EventHandler(this.bunifuMetroTextbox1_OnValueChanged);
+                Text = textBoxValue
             };
-            textMoneda1.OnValueChanged += new EventHandler(this.textMoneda1_OnValueChanged);
-            textMoneda1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMoneda1_KeyPress);
 
+            textBoxBF1.OnValueChanged += new EventHandler(this.textMoneda1_OnValueChanged);
+            textBoxBF1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMoneda1_KeyPress);
 
-            // Agreganto los dos elementos
-            this.panelContainer.Controls.Add(lblMonedaLabel);
-            this.panelContainer.Controls.Add(textMoneda1);
-
+            controls.Add(titlefield);
+            controls.Add(textBoxBF1);
         }
 
 
@@ -338,7 +359,6 @@ namespace Admeli.CajaBox
             saveCajaSesion.idAsignarCaja = ConfigModel.asignacionPersonal.idAsignarCaja;
             saveCajaSesion.estado = 0;
         }
-
         #endregion
     }
     public class ObjectSaveCajaSesion

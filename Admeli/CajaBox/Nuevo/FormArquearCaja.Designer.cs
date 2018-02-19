@@ -40,22 +40,23 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tabControlMonedas = new System.Windows.Forms.TabControl();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textDescripcion = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textDescripcion = new System.Windows.Forms.TextBox();
-            this.tabControlMonedas = new System.Windows.Forms.TabControl();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCajaEstado
@@ -64,7 +65,7 @@
             this.lblCajaEstado.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblCajaEstado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCajaEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.lblCajaEstado.Location = new System.Drawing.Point(0, 0);
+            this.lblCajaEstado.Location = new System.Drawing.Point(0, 5);
             this.lblCajaEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCajaEstado.Name = "lblCajaEstado";
             this.lblCajaEstado.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
@@ -79,9 +80,9 @@
             this.panel2.Controls.Add(this.panelAside);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 38);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(556, 466);
+            this.panel2.Size = new System.Drawing.Size(556, 461);
             this.panel2.TabIndex = 11;
             // 
             // panelAside
@@ -91,7 +92,7 @@
             this.panelAside.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAside.Location = new System.Drawing.Point(0, 65);
             this.panelAside.Name = "panelAside";
-            this.panelAside.Size = new System.Drawing.Size(556, 401);
+            this.panelAside.Size = new System.Drawing.Size(556, 396);
             this.panelAside.TabIndex = 1;
             // 
             // panel1
@@ -180,9 +181,9 @@
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(556, 38);
+            this.splitter1.Location = new System.Drawing.Point(556, 43);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 466);
+            this.splitter1.Size = new System.Drawing.Size(3, 461);
             this.splitter1.TabIndex = 12;
             this.splitter1.TabStop = false;
             // 
@@ -192,10 +193,103 @@
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(559, 38);
+            this.panel6.Location = new System.Drawing.Point(559, 43);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(558, 466);
+            this.panel6.Size = new System.Drawing.Size(558, 461);
             this.panel6.TabIndex = 15;
+            // 
+            // tabControlMonedas
+            // 
+            this.tabControlMonedas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlMonedas.ItemSize = new System.Drawing.Size(70, 30);
+            this.tabControlMonedas.Location = new System.Drawing.Point(0, 49);
+            this.tabControlMonedas.Margin = new System.Windows.Forms.Padding(10);
+            this.tabControlMonedas.Name = "tabControlMonedas";
+            this.tabControlMonedas.SelectedIndex = 0;
+            this.tabControlMonedas.Size = new System.Drawing.Size(558, 241);
+            this.tabControlMonedas.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.textDescripcion);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 290);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(558, 171);
+            this.panel3.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.label5.Location = new System.Drawing.Point(12, 20);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 16);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Descripción Corta";
+            // 
+            // textDescripcion
+            // 
+            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textDescripcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescripcion.Location = new System.Drawing.Point(15, 38);
+            this.textDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.textDescripcion.Multiline = true;
+            this.textDescripcion.Name = "textDescripcion";
+            this.textDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textDescripcion.Size = new System.Drawing.Size(530, 68);
+            this.textDescripcion.TabIndex = 43;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel5.Controls.Add(this.btnAceptar);
+            this.panel5.Controls.Add(this.btnClose);
+            this.panel5.Location = new System.Drawing.Point(78, 116);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(402, 48);
+            this.panel5.TabIndex = 1;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(5, 6);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(196, 36);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Guardar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnClose.Location = new System.Drawing.Point(216, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(178, 36);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Cerrar";
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -233,97 +327,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Monto inicio caja";
             // 
-            // panel3
+            // progressBarApp
             // 
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.textDescripcion);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 295);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(558, 171);
-            this.panel3.TabIndex = 12;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panel5.Controls.Add(this.btnAceptar);
-            this.panel5.Controls.Add(this.btnClose);
-            this.panel5.Location = new System.Drawing.Point(78, 116);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(402, 48);
-            this.panel5.TabIndex = 1;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(5, 6);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(196, 36);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.Text = "Guardar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnClose.Location = new System.Drawing.Point(216, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(178, 36);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Cerrar";
-            this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label5.Location = new System.Drawing.Point(12, 20);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 16);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Descripción Corta";
-            // 
-            // textDescripcion
-            // 
-            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textDescripcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDescripcion.Location = new System.Drawing.Point(15, 38);
-            this.textDescripcion.Margin = new System.Windows.Forms.Padding(2);
-            this.textDescripcion.Multiline = true;
-            this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textDescripcion.Size = new System.Drawing.Size(530, 68);
-            this.textDescripcion.TabIndex = 43;
-            // 
-            // tabControlMonedas
-            // 
-            this.tabControlMonedas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlMonedas.ItemSize = new System.Drawing.Size(70, 30);
-            this.tabControlMonedas.Location = new System.Drawing.Point(0, 49);
-            this.tabControlMonedas.Margin = new System.Windows.Forms.Padding(10);
-            this.tabControlMonedas.Name = "tabControlMonedas";
-            this.tabControlMonedas.SelectedIndex = 0;
-            this.tabControlMonedas.Size = new System.Drawing.Size(558, 246);
-            this.tabControlMonedas.TabIndex = 14;
+            this.progressBarApp.BackColor = System.Drawing.Color.White;
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
+            this.progressBarApp.Margin = new System.Windows.Forms.Padding(2);
+            this.progressBarApp.MarqueeAnimationSpeed = 10;
+            this.progressBarApp.Maximum = 200;
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.RightToLeftLayout = true;
+            this.progressBarApp.Size = new System.Drawing.Size(1117, 5);
+            this.progressBarApp.TabIndex = 16;
             // 
             // FormArquearCaja
             // 
@@ -335,6 +350,7 @@
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblCajaEstado);
+            this.Controls.Add(this.progressBarApp);
             this.Name = "FormArquearCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormArquearCaja";
@@ -343,11 +359,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +391,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textDescripcion;
         private System.Windows.Forms.TabControl tabControlMonedas;
+        protected System.Windows.Forms.ProgressBar progressBarApp;
     }
 }

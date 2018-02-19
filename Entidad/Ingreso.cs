@@ -28,5 +28,8 @@ namespace Entidad
         public int idAsignarCaja { get; set; }
         public string montoCierre { get; set; }
         public object fechaCierre { get; set; }
+
+        public string[] valores { get; set; }
+
     }
 }

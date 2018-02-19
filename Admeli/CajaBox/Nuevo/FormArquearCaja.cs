@@ -26,9 +26,15 @@ namespace Admeli.CajaBox.Nuevo
         private MonedaModel monedaModel = new MonedaModel();
         private CierreCajaModel cierreCajaModel = new CierreCajaModel();
         private DenominacionModel denominacionModel = new DenominacionModel();
+        private CajaModel cajaModel = new CajaModel();
 
         private List<MedioPago> medioPagos { get; set; }
         private List<Moneda> ingresoMenosEgreso { get; set; }
+        private List<Ingreso> ingresos { get; set; }
+
+        private bool nuevo { get; set; }
+
+        private saveObject currentSaveObject { get; set; }
 
         // variables de los elementos en el aside
         private int x = 13, y = 10;
@@ -38,18 +44,24 @@ namespace Admeli.CajaBox.Nuevo
         {
             InitializeComponent();
             currentCierreCaja = new CierreCaja() { idCierreCaja = 0 };
+
+            this.nuevo = true;
         }
 
         public FormArquearCaja(CierreCaja currentCierreCaja)
         {
             InitializeComponent();
             this.currentCierreCaja = currentCierreCaja;
+
+            this.nuevo = false;
         }
 
         public FormArquearCaja(CajaSesion currentCajaSesion)
         {
             InitializeComponent();
             this.currentCajaSesion = currentCajaSesion;
+
+            this.nuevo = false;
         }
         #endregion
 
@@ -88,7 +100,7 @@ namespace Admeli.CajaBox.Nuevo
         {
             try
             {
-                List<Ingreso> ingresos = await ingresoModel.ingresos(ConfigModel.cajaSesion.idCajaSesion); // Listas
+                ingresos = await ingresoModel.ingresos(ConfigModel.cajaSesion.idCajaSesion); // Listas
                 int columnas = 3; // Indicar numero de columnas de la grilla
 
                 this.createLabel(x - 5, this.y, "Monto inicio caja");
@@ -310,15 +322,91 @@ namespace Admeli.CajaBox.Nuevo
         }
 
         #region ================================ SAVE AND UPDATE ================================
-        private void executeGuardar()
+        private async void executeGuardar()
         {
             if (!validarCampos()) return;
+            try
+            {
+                loadStateApp(true);
+                List<Moneda> listResponse = await cajaModel.verificarActividad(ConfigModel.cajaSesion.idCajaSesion);
+                createObject();
+                if (nuevo)
+                {
+                    Response saveResponse = await cierreCajaModel.cierreCaja(currentSaveObject);
+                    int counter = 1;
+                    foreach (Ingreso ingre in ingresos)
+                    {
+                        Response saveResponseDetalle = await cierreCajaModel.cierreCajaDetalle(ingre);
+                        counter++;
+                    }
+                    MessageBox.Show(saveResponse.msj + counter + "Registros guardado", "Cerrar Caja ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadStateApp(false);
+            }
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            executeGuardar();
+        }
+
+        private void createObject()
+        {
+            if (nuevo)
+            {
+                // creando objecto cierrecaja
+                currentSaveObject = new saveObject();
+                currentSaveObject.estado = 1;
+                currentSaveObject.fechaInicio = lblFechInicio.Text;
+                currentSaveObject.idCajaSesion = ConfigModel.cajaSesion.idCajaSesion;
+                currentSaveObject.nombre = ConfigModel.sucursal.nombre;
+                currentSaveObject.nombres = PersonalModel.personal.nombres;
+                currentSaveObject.observacion = textDescripcion.Text;
+
+                // creando objeto cierre caja detalle
+            }
+        }
+
         private bool validarCampos()
         {
             return true;
         }
         #endregion
+
+        #region ==================== Estados =====================
+        private void loadStateApp(bool state)
+        {
+            if (state)
+            {
+                progressBarApp.Style = ProgressBarStyle.Marquee;
+                Cursor.Current = Cursors.WaitCursor;
+            }
+            else
+            {
+                progressBarApp.Style = ProgressBarStyle.Blocks;
+                Cursor.Current = Cursors.Default;
+            }
+            btnAceptar.Enabled = !state;
+        }
+        #endregion
+
+    }
+
+    public class saveObject
+    {
+        public int estado { get; set; }
+        public string fechaInicio { get; set; }
+        public int idCajaSesion { get; set; }
+        public string nombre { get; set; }
+        public string nombres { get; set; }
+        public string observacion { get; set; }
     }
 }

@@ -26,11 +26,6 @@ namespace Modelo
             }
         }
 
-        public void modificar()
-        {
-
-        }
-
         public async Task<Response> eliminar(CajaSesion param)
         {
             try
@@ -106,6 +101,21 @@ namespace Modelo
             {
                 // localhost:8080/admeli/xcore/services.php/cierrecajaingresomenosegresoeditaregreso/mediopago/1/cajasesion/7/egreso/0
                 List<Moneda> list = await webService.GET<List<Moneda>>("cierrecajaingresomenosegresoeditaregreso", String.Format("mediopago/{0}/cajasesion/{1}/egreso/{2}", mediopago, cajaSesion, egreso));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Moneda>> verificarActividad(int idSesion)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/cajasesion/verificaractividad/sesion/9
+                List<Moneda> list = await webService.GET<List<Moneda>>("cajasesion", String.Format("verificaractividad/sesion/{0}", idSesion));
+                if (list.Count == 0) throw new Exception("Usted no registro ninguna actividad.");
                 return list;
             }
             catch (Exception ex)

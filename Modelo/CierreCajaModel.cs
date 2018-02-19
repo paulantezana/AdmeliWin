@@ -70,6 +70,33 @@ namespace Modelo
             }
         }
         */
+
+        public async Task<Response> cierreCaja<T>(T param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/cierrecaja/guardar
+                return await webService.POST<T, Response>("cierrecaja", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> cierreCajaDetalle(Ingreso param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/detallecierrecaja/guardar
+                return await webService.POST<Ingreso, Response>("detallecierrecaja", "guardar", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<RootObject<CierreCaja>> cierreCajas(int idPersonal, int idSucursal, int page, int items)
         {
             try
