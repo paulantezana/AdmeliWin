@@ -1,6 +1,6 @@
 ﻿namespace Admeli.AlmacenBox.Nuevo
 {
-    partial class FormGuiaSalidaNuevo
+    partial class FormGuiaRemisionNuevo
     {
         /// <summary>
         /// Required designer variable.

@@ -43,8 +43,17 @@
             this.panelAsideContainer = new System.Windows.Forms.Panel();
             this.panelAsideMain = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.borderLeftActive = new System.Windows.Forms.Panel();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
+            this.imageListMenuPrimary = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReporte = new System.Windows.Forms.Button();
+            this.btnHerramienta = new System.Windows.Forms.Button();
+            this.btnCompra = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
+            this.btnAlmacen = new System.Windows.Forms.Button();
+            this.btnCaja = new System.Windows.Forms.Button();
             this.panelRoot = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelMenuRight = new System.Windows.Forms.Panel();
@@ -75,15 +84,6 @@
             this.btnToggleMenuRigth = new Bunifu.Framework.UI.BunifuFlatButton();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.imageListMenuPrimary = new System.Windows.Forms.ImageList(this.components);
-            this.btnCompra = new System.Windows.Forms.Button();
-            this.btnVenta = new System.Windows.Forms.Button();
-            this.btnCaja = new System.Windows.Forms.Button();
-            this.btnAlmacen = new System.Windows.Forms.Button();
-            this.btnProducto = new System.Windows.Forms.Button();
-            this.btnHerramienta = new System.Windows.Forms.Button();
-            this.btnReporte = new System.Windows.Forms.Button();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -342,6 +342,53 @@
             this.panel4.Size = new System.Drawing.Size(50, 555);
             this.panel4.TabIndex = 1;
             // 
+            // borderLeftActive
+            // 
+            this.borderLeftActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.borderLeftActive.Location = new System.Drawing.Point(-6, 391);
+            this.borderLeftActive.Name = "borderLeftActive";
+            this.borderLeftActive.Size = new System.Drawing.Size(3, 47);
+            this.borderLeftActive.TabIndex = 17;
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfiguracion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.ImageIndex = 14;
+            this.btnConfiguracion.ImageList = this.imageListMenuPrimary;
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 336);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(51, 48);
+            this.btnConfiguracion.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.btnConfiguracion, "Configuración");
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            // 
+            // imageListMenuPrimary
+            // 
+            this.imageListMenuPrimary.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListMenuPrimary.ImageStream")));
+            this.imageListMenuPrimary.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListMenuPrimary.Images.SetKeyName(0, "purchase_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(1, "purchase_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(2, "sale_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(3, "sale_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(4, "box_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(5, "box_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(6, "warehouse_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(7, "warehouse_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(8, "product_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(9, "product_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(10, "tools_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(11, "tools_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(12, "report_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(13, "report_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(14, "settings_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(15, "settings_white_icon.png");
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnToggleMenu);
@@ -351,13 +398,131 @@
             this.panel1.Size = new System.Drawing.Size(50, 72);
             this.panel1.TabIndex = 18;
             // 
-            // borderLeftActive
+            // btnReporte
             // 
-            this.borderLeftActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
-            this.borderLeftActive.Location = new System.Drawing.Point(-6, 391);
-            this.borderLeftActive.Name = "borderLeftActive";
-            this.borderLeftActive.Size = new System.Drawing.Size(3, 47);
-            this.borderLeftActive.TabIndex = 17;
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.ImageIndex = 12;
+            this.btnReporte.ImageList = this.imageListMenuPrimary;
+            this.btnReporte.Location = new System.Drawing.Point(0, 288);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(51, 48);
+            this.btnReporte.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.btnReporte, "Reportes");
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
+            // btnHerramienta
+            // 
+            this.btnHerramienta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHerramienta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnHerramienta.FlatAppearance.BorderSize = 0;
+            this.btnHerramienta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnHerramienta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnHerramienta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHerramienta.ImageIndex = 10;
+            this.btnHerramienta.ImageList = this.imageListMenuPrimary;
+            this.btnHerramienta.Location = new System.Drawing.Point(0, 240);
+            this.btnHerramienta.Name = "btnHerramienta";
+            this.btnHerramienta.Size = new System.Drawing.Size(51, 48);
+            this.btnHerramienta.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.btnHerramienta, "Herramientas");
+            this.btnHerramienta.UseVisualStyleBackColor = true;
+            this.btnHerramienta.Click += new System.EventHandler(this.btnHerramienta_Click);
+            // 
+            // btnCompra
+            // 
+            this.btnCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnCompra.FlatAppearance.BorderSize = 0;
+            this.btnCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompra.ImageIndex = 0;
+            this.btnCompra.ImageList = this.imageListMenuPrimary;
+            this.btnCompra.Location = new System.Drawing.Point(0, 0);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(51, 48);
+            this.btnCompra.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.btnCompra, "Compras");
+            this.btnCompra.UseVisualStyleBackColor = true;
+            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnProducto.FlatAppearance.BorderSize = 0;
+            this.btnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducto.ImageIndex = 8;
+            this.btnProducto.ImageList = this.imageListMenuPrimary;
+            this.btnProducto.Location = new System.Drawing.Point(0, 192);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(51, 48);
+            this.btnProducto.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.btnProducto, "Productos");
+            this.btnProducto.UseVisualStyleBackColor = true;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            // 
+            // btnVenta
+            // 
+            this.btnVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnVenta.FlatAppearance.BorderSize = 0;
+            this.btnVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVenta.ImageIndex = 2;
+            this.btnVenta.ImageList = this.imageListMenuPrimary;
+            this.btnVenta.Location = new System.Drawing.Point(0, 48);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(51, 48);
+            this.btnVenta.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.btnVenta, "Ventas");
+            this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
+            // 
+            // btnAlmacen
+            // 
+            this.btnAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlmacen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnAlmacen.FlatAppearance.BorderSize = 0;
+            this.btnAlmacen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnAlmacen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlmacen.ImageIndex = 6;
+            this.btnAlmacen.ImageList = this.imageListMenuPrimary;
+            this.btnAlmacen.Location = new System.Drawing.Point(0, 144);
+            this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.Size = new System.Drawing.Size(51, 48);
+            this.btnAlmacen.TabIndex = 22;
+            this.toolTip1.SetToolTip(this.btnAlmacen, "Almacenes");
+            this.btnAlmacen.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnCaja.FlatAppearance.BorderSize = 0;
+            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaja.ImageIndex = 4;
+            this.btnCaja.ImageList = this.imageListMenuPrimary;
+            this.btnCaja.Location = new System.Drawing.Point(0, 97);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(51, 48);
+            this.btnCaja.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.btnCaja, "Caja");
+            this.btnCaja.UseVisualStyleBackColor = true;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
             // 
             // panelRoot
             // 
@@ -831,171 +996,6 @@
             this.toolTip1.UseAnimation = false;
             this.toolTip1.UseFading = false;
             // 
-            // imageListMenuPrimary
-            // 
-            this.imageListMenuPrimary.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListMenuPrimary.ImageStream")));
-            this.imageListMenuPrimary.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListMenuPrimary.Images.SetKeyName(0, "purchase_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(1, "purchase_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(2, "sale_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(3, "sale_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(4, "box_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(5, "box_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(6, "warehouse_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(7, "warehouse_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(8, "product_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(9, "product_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(10, "tools_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(11, "tools_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(12, "report_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(13, "report_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(14, "settings_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(15, "settings_white_icon.png");
-            // 
-            // btnCompra
-            // 
-            this.btnCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCompra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnCompra.FlatAppearance.BorderSize = 0;
-            this.btnCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompra.ImageIndex = 0;
-            this.btnCompra.ImageList = this.imageListMenuPrimary;
-            this.btnCompra.Location = new System.Drawing.Point(0, 0);
-            this.btnCompra.Name = "btnCompra";
-            this.btnCompra.Size = new System.Drawing.Size(51, 48);
-            this.btnCompra.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btnCompra, "Compras");
-            this.btnCompra.UseVisualStyleBackColor = true;
-            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
-            // 
-            // btnVenta
-            // 
-            this.btnVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnVenta.FlatAppearance.BorderSize = 0;
-            this.btnVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVenta.ImageIndex = 2;
-            this.btnVenta.ImageList = this.imageListMenuPrimary;
-            this.btnVenta.Location = new System.Drawing.Point(0, 48);
-            this.btnVenta.Name = "btnVenta";
-            this.btnVenta.Size = new System.Drawing.Size(51, 48);
-            this.btnVenta.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.btnVenta, "Ventas");
-            this.btnVenta.UseVisualStyleBackColor = true;
-            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
-            // 
-            // btnCaja
-            // 
-            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnCaja.FlatAppearance.BorderSize = 0;
-            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaja.ImageIndex = 4;
-            this.btnCaja.ImageList = this.imageListMenuPrimary;
-            this.btnCaja.Location = new System.Drawing.Point(0, 97);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(51, 48);
-            this.btnCaja.TabIndex = 21;
-            this.toolTip1.SetToolTip(this.btnCaja, "Caja");
-            this.btnCaja.UseVisualStyleBackColor = true;
-            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
-            // 
-            // btnAlmacen
-            // 
-            this.btnAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAlmacen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnAlmacen.FlatAppearance.BorderSize = 0;
-            this.btnAlmacen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnAlmacen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlmacen.ImageIndex = 6;
-            this.btnAlmacen.ImageList = this.imageListMenuPrimary;
-            this.btnAlmacen.Location = new System.Drawing.Point(0, 144);
-            this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(51, 48);
-            this.btnAlmacen.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btnAlmacen, "Almacenes");
-            this.btnAlmacen.UseVisualStyleBackColor = true;
-            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnProducto.FlatAppearance.BorderSize = 0;
-            this.btnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.ImageIndex = 8;
-            this.btnProducto.ImageList = this.imageListMenuPrimary;
-            this.btnProducto.Location = new System.Drawing.Point(0, 192);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(51, 48);
-            this.btnProducto.TabIndex = 23;
-            this.toolTip1.SetToolTip(this.btnProducto, "Productos");
-            this.btnProducto.UseVisualStyleBackColor = true;
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
-            // btnHerramienta
-            // 
-            this.btnHerramienta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHerramienta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnHerramienta.FlatAppearance.BorderSize = 0;
-            this.btnHerramienta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnHerramienta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnHerramienta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHerramienta.ImageIndex = 10;
-            this.btnHerramienta.ImageList = this.imageListMenuPrimary;
-            this.btnHerramienta.Location = new System.Drawing.Point(0, 240);
-            this.btnHerramienta.Name = "btnHerramienta";
-            this.btnHerramienta.Size = new System.Drawing.Size(51, 48);
-            this.btnHerramienta.TabIndex = 24;
-            this.toolTip1.SetToolTip(this.btnHerramienta, "Herramientas");
-            this.btnHerramienta.UseVisualStyleBackColor = true;
-            this.btnHerramienta.Click += new System.EventHandler(this.btnHerramienta_Click);
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnReporte.FlatAppearance.BorderSize = 0;
-            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte.ImageIndex = 12;
-            this.btnReporte.ImageList = this.imageListMenuPrimary;
-            this.btnReporte.Location = new System.Drawing.Point(0, 288);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(51, 48);
-            this.btnReporte.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.btnReporte, "Reportes");
-            this.btnReporte.UseVisualStyleBackColor = true;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfiguracion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.ImageIndex = 14;
-            this.btnConfiguracion.ImageList = this.imageListMenuPrimary;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 336);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(51, 48);
-            this.btnConfiguracion.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.btnConfiguracion, "Configuración");
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
-            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1004,6 +1004,7 @@
             this.ClientSize = new System.Drawing.Size(1157, 680);
             this.Controls.Add(this.panelRoot);
             this.Controls.Add(this.panelAsideContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1030,7 +1031,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panelAsideContainer;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1042,8 +1042,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnDashboard;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel panelRoot;
-        private System.Windows.Forms.Panel panelMenuRight;
-        private System.Windows.Forms.Panel panelHeader;
         private Bunifu.Framework.UI.BunifuFlatButton btnToggleMenuRigth;
         private System.Windows.Forms.Button btnVentaTocuh;
         private System.Windows.Forms.Button btnCompra2;
@@ -1083,5 +1081,8 @@
         private System.Windows.Forms.Button btnAlmacen;
         private System.Windows.Forms.Button btnCaja;
         private System.Windows.Forms.Button btnVenta;
+        public System.Windows.Forms.Panel panelAsideContainer;
+        public System.Windows.Forms.Panel panelMenuRight;
+        public System.Windows.Forms.Panel panelHeader;
     }
 }

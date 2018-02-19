@@ -56,7 +56,7 @@
             this.btnNotaEntrada.IconVisible = true;
             this.btnNotaEntrada.IconZoom = 80D;
             this.btnNotaEntrada.IsTab = true;
-            this.btnNotaEntrada.Location = new System.Drawing.Point(0, 55);
+            this.btnNotaEntrada.Location = new System.Drawing.Point(0, 0);
             this.btnNotaEntrada.Margin = new System.Windows.Forms.Padding(0);
             this.btnNotaEntrada.Name = "btnNotaEntrada";
             this.btnNotaEntrada.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -93,7 +93,7 @@
             this.btnNotaSalida.IconVisible = true;
             this.btnNotaSalida.IconZoom = 80D;
             this.btnNotaSalida.IsTab = true;
-            this.btnNotaSalida.Location = new System.Drawing.Point(0, 103);
+            this.btnNotaSalida.Location = new System.Drawing.Point(0, 48);
             this.btnNotaSalida.Margin = new System.Windows.Forms.Padding(0);
             this.btnNotaSalida.Name = "btnNotaSalida";
             this.btnNotaSalida.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -130,7 +130,7 @@
             this.btnGuiaRemision.IconVisible = true;
             this.btnGuiaRemision.IconZoom = 80D;
             this.btnGuiaRemision.IsTab = true;
-            this.btnGuiaRemision.Location = new System.Drawing.Point(0, 151);
+            this.btnGuiaRemision.Location = new System.Drawing.Point(0, 96);
             this.btnGuiaRemision.Margin = new System.Windows.Forms.Padding(0);
             this.btnGuiaRemision.Name = "btnGuiaRemision";
             this.btnGuiaRemision.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));

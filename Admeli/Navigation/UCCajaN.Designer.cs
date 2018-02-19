@@ -59,7 +59,7 @@
             this.btnEgreso.IconVisible = true;
             this.btnEgreso.IconZoom = 80D;
             this.btnEgreso.IsTab = true;
-            this.btnEgreso.Location = new System.Drawing.Point(0, 79);
+            this.btnEgreso.Location = new System.Drawing.Point(0, 0);
             this.btnEgreso.Margin = new System.Windows.Forms.Padding(0);
             this.btnEgreso.Name = "btnEgreso";
             this.btnEgreso.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -96,7 +96,7 @@
             this.btnIngreso.IconVisible = true;
             this.btnIngreso.IconZoom = 80D;
             this.btnIngreso.IsTab = true;
-            this.btnIngreso.Location = new System.Drawing.Point(0, 127);
+            this.btnIngreso.Location = new System.Drawing.Point(0, 48);
             this.btnIngreso.Margin = new System.Windows.Forms.Padding(0);
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -133,7 +133,7 @@
             this.btnPorCobrar.IconVisible = true;
             this.btnPorCobrar.IconZoom = 80D;
             this.btnPorCobrar.IsTab = true;
-            this.btnPorCobrar.Location = new System.Drawing.Point(0, 175);
+            this.btnPorCobrar.Location = new System.Drawing.Point(0, 96);
             this.btnPorCobrar.Margin = new System.Windows.Forms.Padding(0);
             this.btnPorCobrar.Name = "btnPorCobrar";
             this.btnPorCobrar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -170,7 +170,7 @@
             this.btnCuentaPagar.IconVisible = true;
             this.btnCuentaPagar.IconZoom = 80D;
             this.btnCuentaPagar.IsTab = true;
-            this.btnCuentaPagar.Location = new System.Drawing.Point(0, 223);
+            this.btnCuentaPagar.Location = new System.Drawing.Point(0, 144);
             this.btnCuentaPagar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCuentaPagar.Name = "btnCuentaPagar";
             this.btnCuentaPagar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -207,7 +207,7 @@
             this.btnIniciarCaja.IconVisible = true;
             this.btnIniciarCaja.IconZoom = 80D;
             this.btnIniciarCaja.IsTab = true;
-            this.btnIniciarCaja.Location = new System.Drawing.Point(0, 271);
+            this.btnIniciarCaja.Location = new System.Drawing.Point(0, 192);
             this.btnIniciarCaja.Margin = new System.Windows.Forms.Padding(0);
             this.btnIniciarCaja.Name = "btnIniciarCaja";
             this.btnIniciarCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -244,7 +244,7 @@
             this.btnCierreCaja.IconVisible = true;
             this.btnCierreCaja.IconZoom = 80D;
             this.btnCierreCaja.IsTab = true;
-            this.btnCierreCaja.Location = new System.Drawing.Point(0, 319);
+            this.btnCierreCaja.Location = new System.Drawing.Point(0, 240);
             this.btnCierreCaja.Margin = new System.Windows.Forms.Padding(0);
             this.btnCierreCaja.Name = "btnCierreCaja";
             this.btnCierreCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));

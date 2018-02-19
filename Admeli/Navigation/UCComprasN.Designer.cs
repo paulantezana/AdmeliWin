@@ -56,7 +56,7 @@
             this.btnOrdenCompra.IconVisible = true;
             this.btnOrdenCompra.IconZoom = 80D;
             this.btnOrdenCompra.IsTab = true;
-            this.btnOrdenCompra.Location = new System.Drawing.Point(0, 114);
+            this.btnOrdenCompra.Location = new System.Drawing.Point(0, 0);
             this.btnOrdenCompra.Margin = new System.Windows.Forms.Padding(0);
             this.btnOrdenCompra.Name = "btnOrdenCompra";
             this.btnOrdenCompra.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -93,7 +93,7 @@
             this.btnCompra.IconVisible = true;
             this.btnCompra.IconZoom = 80D;
             this.btnCompra.IsTab = true;
-            this.btnCompra.Location = new System.Drawing.Point(0, 162);
+            this.btnCompra.Location = new System.Drawing.Point(0, 48);
             this.btnCompra.Margin = new System.Windows.Forms.Padding(0);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -130,7 +130,7 @@
             this.btnProveedor.IconVisible = true;
             this.btnProveedor.IconZoom = 80D;
             this.btnProveedor.IsTab = true;
-            this.btnProveedor.Location = new System.Drawing.Point(0, 210);
+            this.btnProveedor.Location = new System.Drawing.Point(0, 96);
             this.btnProveedor.Margin = new System.Windows.Forms.Padding(0);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));

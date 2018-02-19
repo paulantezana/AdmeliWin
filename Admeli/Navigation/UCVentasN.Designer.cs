@@ -57,7 +57,7 @@
             this.btnCotizacionCliente.IconVisible = true;
             this.btnCotizacionCliente.IconZoom = 80D;
             this.btnCotizacionCliente.IsTab = true;
-            this.btnCotizacionCliente.Location = new System.Drawing.Point(0, 100);
+            this.btnCotizacionCliente.Location = new System.Drawing.Point(0, 0);
             this.btnCotizacionCliente.Margin = new System.Windows.Forms.Padding(0);
             this.btnCotizacionCliente.Name = "btnCotizacionCliente";
             this.btnCotizacionCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -94,7 +94,7 @@
             this.btnVentas.IconVisible = true;
             this.btnVentas.IconZoom = 80D;
             this.btnVentas.IsTab = true;
-            this.btnVentas.Location = new System.Drawing.Point(0, 148);
+            this.btnVentas.Location = new System.Drawing.Point(0, 48);
             this.btnVentas.Margin = new System.Windows.Forms.Padding(0);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -131,7 +131,7 @@
             this.btnClientes.IconVisible = true;
             this.btnClientes.IconZoom = 80D;
             this.btnClientes.IsTab = true;
-            this.btnClientes.Location = new System.Drawing.Point(0, 196);
+            this.btnClientes.Location = new System.Drawing.Point(0, 96);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(0);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -168,7 +168,7 @@
             this.btnDescuentoOferta.IconVisible = true;
             this.btnDescuentoOferta.IconZoom = 80D;
             this.btnDescuentoOferta.IsTab = true;
-            this.btnDescuentoOferta.Location = new System.Drawing.Point(0, 244);
+            this.btnDescuentoOferta.Location = new System.Drawing.Point(0, 144);
             this.btnDescuentoOferta.Margin = new System.Windows.Forms.Padding(0);
             this.btnDescuentoOferta.Name = "btnDescuentoOferta";
             this.btnDescuentoOferta.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));

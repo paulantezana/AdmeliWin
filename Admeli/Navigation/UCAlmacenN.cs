@@ -58,7 +58,7 @@ namespace Admeli.Navigation
                         this.formPrincipal.panelMain.Controls.Add(uCNotaSalida);
                         this.uCNotaSalida.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.uCNotaSalida.Location = new System.Drawing.Point(0, 0);
-                        this.uCNotaSalida.Name = "uCVentasNav";
+                        this.uCNotaSalida.Name = "uCNotaSalida";
                         this.uCNotaSalida.Size = new System.Drawing.Size(250, 776);
                         this.uCNotaSalida.TabIndex = 0;
                     }
@@ -94,24 +94,39 @@ namespace Admeli.Navigation
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.panelMenuRight.Size = new Size(0, this.formPrincipal.panelMenuRight.Size.Height);
             if (uCGuiaRemision != null) uCGuiaRemision.lisenerKeyEvents = false;
             if (uCNotaEntrada != null) uCNotaEntrada.lisenerKeyEvents = false;
             if (uCNotaEntrada != null) uCNotaEntrada.lisenerKeyEvents = false;
         }
 
+        private void btnColor()
+        {
+            /// Reset Color buttons
+            btnNotaEntrada.Textcolor = Color.FromArgb(139, 138, 141);
+            btnNotaSalida.Textcolor = Color.FromArgb(139, 138, 141);
+            btnGuiaRemision.Textcolor = Color.FromArgb(139, 138, 141);
+        }
+
         private void btnNotaSalida_Click(object sender, EventArgs e)
         {
+            btnColor(); // Color reset
             togglePanelMain("notaSalida");
+            btnNotaSalida.Textcolor = Color.FromArgb(23, 203, 34); /// Color
         }
 
         private void btnNotaEntrada_Click(object sender, EventArgs e)
         {
+            btnColor(); // Color reset
             togglePanelMain("notaEntrada");
+            btnNotaEntrada.Textcolor = Color.FromArgb(23, 203, 34); /// Color
         }
 
         private void btnGuiaRemision_Click(object sender, EventArgs e)
         {
+            btnColor(); // Color reset
             togglePanelMain("guiaRemision");
+            btnGuiaRemision.Textcolor = Color.FromArgb(23, 203, 34); /// Color
         }
     }
 }

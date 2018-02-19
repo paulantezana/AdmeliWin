@@ -63,6 +63,7 @@
     <Compile Include="EgresoModel.cs" />
     <Compile Include="FechaModel.cs" />
     <Compile Include="GrupoClienteModel.cs" />
+    <Compile Include="GuiaRemisionModel.cs" />
     <Compile Include="ImpuestoModel.cs" />
     <Compile Include="IngresoModel.cs" />
     <Compile Include="LocationModel.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="MedioPagoModel.cs" />
     <Compile Include="MonedaModel.cs" />
     <Compile Include="NotaEntradaModel.cs" />
+    <Compile Include="NotaSalidaModel.cs" />
     <Compile Include="OfertaModel.cs" />
     <Compile Include="OrdenCompraModel.cs" />
     <Compile Include="PagoModel.cs" />

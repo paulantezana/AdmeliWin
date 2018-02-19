@@ -57,7 +57,7 @@
             this.btnProductos.IconVisible = true;
             this.btnProductos.IconZoom = 80D;
             this.btnProductos.IsTab = true;
-            this.btnProductos.Location = new System.Drawing.Point(0, 104);
+            this.btnProductos.Location = new System.Drawing.Point(0, 0);
             this.btnProductos.Margin = new System.Windows.Forms.Padding(0);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -94,7 +94,7 @@
             this.btnMarcas.IconVisible = true;
             this.btnMarcas.IconZoom = 80D;
             this.btnMarcas.IsTab = true;
-            this.btnMarcas.Location = new System.Drawing.Point(0, 152);
+            this.btnMarcas.Location = new System.Drawing.Point(0, 48);
             this.btnMarcas.Margin = new System.Windows.Forms.Padding(0);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -131,7 +131,7 @@
             this.btnUnidadMedida.IconVisible = true;
             this.btnUnidadMedida.IconZoom = 80D;
             this.btnUnidadMedida.IsTab = true;
-            this.btnUnidadMedida.Location = new System.Drawing.Point(0, 200);
+            this.btnUnidadMedida.Location = new System.Drawing.Point(0, 96);
             this.btnUnidadMedida.Margin = new System.Windows.Forms.Padding(0);
             this.btnUnidadMedida.Name = "btnUnidadMedida";
             this.btnUnidadMedida.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -168,7 +168,7 @@
             this.btnCategorias.IconVisible = true;
             this.btnCategorias.IconZoom = 80D;
             this.btnCategorias.IsTab = true;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 248);
+            this.btnCategorias.Location = new System.Drawing.Point(0, 144);
             this.btnCategorias.Margin = new System.Windows.Forms.Padding(0);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));

@@ -72,6 +72,7 @@
     <Compile Include="Egreso.cs" />
     <Compile Include="FechaSistema.cs" />
     <Compile Include="GrupoCliente.cs" />
+    <Compile Include="GuiaRemision.cs" />
     <Compile Include="Impuesto.cs" />
     <Compile Include="Ingreso.cs" />
     <Compile Include="Location\LabelUbicacion.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Marca.cs" />
     <Compile Include="MedioPago.cs" />
     <Compile Include="NotaEntrada.cs" />
+    <Compile Include="NotaSalida.cs" />
     <Compile Include="Oferta.cs" />
     <Compile Include="OrdenCompra.cs" />
     <Compile Include="Pago.cs" />

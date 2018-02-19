@@ -57,7 +57,7 @@
             this.btnPrecioStock.IconVisible = true;
             this.btnPrecioStock.IconZoom = 80D;
             this.btnPrecioStock.IsTab = true;
-            this.btnPrecioStock.Location = new System.Drawing.Point(0, 98);
+            this.btnPrecioStock.Location = new System.Drawing.Point(0, 0);
             this.btnPrecioStock.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrecioStock.Name = "btnPrecioStock";
             this.btnPrecioStock.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -94,7 +94,7 @@
             this.btnAsignarCategoria.IconVisible = true;
             this.btnAsignarCategoria.IconZoom = 80D;
             this.btnAsignarCategoria.IsTab = true;
-            this.btnAsignarCategoria.Location = new System.Drawing.Point(0, 146);
+            this.btnAsignarCategoria.Location = new System.Drawing.Point(0, 48);
             this.btnAsignarCategoria.Margin = new System.Windows.Forms.Padding(0);
             this.btnAsignarCategoria.Name = "btnAsignarCategoria";
             this.btnAsignarCategoria.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -131,7 +131,7 @@
             this.btnAsignarImpuesto.IconVisible = true;
             this.btnAsignarImpuesto.IconZoom = 80D;
             this.btnAsignarImpuesto.IsTab = true;
-            this.btnAsignarImpuesto.Location = new System.Drawing.Point(0, 194);
+            this.btnAsignarImpuesto.Location = new System.Drawing.Point(0, 96);
             this.btnAsignarImpuesto.Margin = new System.Windows.Forms.Padding(0);
             this.btnAsignarImpuesto.Name = "btnAsignarImpuesto";
             this.btnAsignarImpuesto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -168,7 +168,7 @@
             this.btnGenerarCodigoDeBarra.IconVisible = true;
             this.btnGenerarCodigoDeBarra.IconZoom = 80D;
             this.btnGenerarCodigoDeBarra.IsTab = true;
-            this.btnGenerarCodigoDeBarra.Location = new System.Drawing.Point(0, 242);
+            this.btnGenerarCodigoDeBarra.Location = new System.Drawing.Point(0, 144);
             this.btnGenerarCodigoDeBarra.Margin = new System.Windows.Forms.Padding(0);
             this.btnGenerarCodigoDeBarra.Name = "btnGenerarCodigoDeBarra";
             this.btnGenerarCodigoDeBarra.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));

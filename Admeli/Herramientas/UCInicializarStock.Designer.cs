@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCInicializarStock));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelMainContainer = new System.Windows.Forms.Panel();
@@ -76,32 +76,32 @@
             this.cbxSucursales = new System.Windows.Forms.ComboBox();
             this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.toolStripNavigation = new System.Windows.Forms.ToolStrip();
-            this.lblPageAllItems = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripLabel();
-            this.btnFirst = new System.Windows.Forms.ToolStripButton();
-            this.btnPrevious = new System.Windows.Forms.ToolStripButton();
-            this.lblCurrentPage = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripLabel();
-            this.lblPageCount = new System.Windows.Forms.ToolStripLabel();
-            this.btnNext = new System.Windows.Forms.ToolStripButton();
-            this.btnLast = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripLabel();
-            this.lblSpeedPages = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripLabel();
+            this.panelNavigation = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSpeedPages = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblPageCount = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.lblCurrentPage = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblPageAllItems = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelCategoriaContainer = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.treeViewCategoria = new System.Windows.Forms.TreeView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnNuevoCategoria = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizarCategoria = new System.Windows.Forms.ToolStripButton();
+            this.panelCrud = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.panelMainContainer.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -112,11 +112,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
             this.panelSucursal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.toolStripNavigation.SuspendLayout();
+            this.panelNavigation.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panelCategoriaContainer.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.panelCrud.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -126,11 +127,11 @@
             this.panelContainer.Controls.Add(this.splitter1);
             this.panelContainer.Controls.Add(this.panelCategoriaContainer);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(11, 10);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContainer.Location = new System.Drawing.Point(8, 8);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(1451, 673);
+            this.panelContainer.Size = new System.Drawing.Size(1089, 547);
             this.panelContainer.TabIndex = 8;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -138,24 +139,23 @@
             // 
             this.panelMainContainer.Controls.Add(this.panel3);
             this.panelMainContainer.Controls.Add(this.panel1);
-            this.panelMainContainer.Controls.Add(this.panel2);
-            this.panelMainContainer.Controls.Add(this.toolStripNavigation);
+            this.panelMainContainer.Controls.Add(this.panelNavigation);
+            this.panelMainContainer.Controls.Add(this.panelCrud);
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainContainer.Location = new System.Drawing.Point(245, 1);
-            this.panelMainContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelMainContainer.Location = new System.Drawing.Point(228, 1);
+            this.panelMainContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Size = new System.Drawing.Size(1205, 671);
+            this.panelMainContainer.Size = new System.Drawing.Size(860, 545);
             this.panelMainContainer.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 102);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(0, 101);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel3.Size = new System.Drawing.Size(1205, 532);
+            this.panel3.Padding = new System.Windows.Forms.Padding(10);
+            this.panel3.Size = new System.Drawing.Size(860, 384);
             this.panel3.TabIndex = 21;
             // 
             // dataGridView1
@@ -168,14 +168,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProductoDataGridViewTextBoxColumn,
@@ -209,13 +209,13 @@
             this.dataGridView1.DateWithTime = false;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1179, 508);
+            this.dataGridView1.Size = new System.Drawing.Size(840, 364);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.TimeFilter = false;
             // 
@@ -226,7 +226,7 @@
             this.idProductoDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
             this.idProductoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idProductoDataGridViewTextBoxColumn.Width = 105;
+            this.idProductoDataGridViewTextBoxColumn.Width = 83;
             // 
             // cantidadFraccionDataGridViewCheckBoxColumn
             // 
@@ -235,7 +235,7 @@
             this.cantidadFraccionDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.cantidadFraccionDataGridViewCheckBoxColumn.Name = "cantidadFraccionDataGridViewCheckBoxColumn";
             this.cantidadFraccionDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cantidadFraccionDataGridViewCheckBoxColumn.Width = 145;
+            this.cantidadFraccionDataGridViewCheckBoxColumn.Width = 114;
             // 
             // codigoBarrasDataGridViewTextBoxColumn
             // 
@@ -244,7 +244,7 @@
             this.codigoBarrasDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.codigoBarrasDataGridViewTextBoxColumn.Name = "codigoBarrasDataGridViewTextBoxColumn";
             this.codigoBarrasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.codigoBarrasDataGridViewTextBoxColumn.Width = 121;
+            this.codigoBarrasDataGridViewTextBoxColumn.Width = 94;
             // 
             // codigoProductoDataGridViewTextBoxColumn
             // 
@@ -253,7 +253,7 @@
             this.codigoProductoDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
             this.codigoProductoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.codigoProductoDataGridViewTextBoxColumn.Width = 136;
+            this.codigoProductoDataGridViewTextBoxColumn.Width = 107;
             // 
             // controlSinStockDataGridViewTextBoxColumn
             // 
@@ -262,7 +262,7 @@
             this.controlSinStockDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.controlSinStockDataGridViewTextBoxColumn.Name = "controlSinStockDataGridViewTextBoxColumn";
             this.controlSinStockDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.controlSinStockDataGridViewTextBoxColumn.Width = 135;
+            this.controlSinStockDataGridViewTextBoxColumn.Width = 107;
             // 
             // descripcionCortaDataGridViewTextBoxColumn
             // 
@@ -271,7 +271,7 @@
             this.descripcionCortaDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.descripcionCortaDataGridViewTextBoxColumn.Name = "descripcionCortaDataGridViewTextBoxColumn";
             this.descripcionCortaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descripcionCortaDataGridViewTextBoxColumn.Width = 143;
+            this.descripcionCortaDataGridViewTextBoxColumn.Width = 111;
             // 
             // descripcionLargaDataGridViewTextBoxColumn
             // 
@@ -280,7 +280,7 @@
             this.descripcionLargaDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.descripcionLargaDataGridViewTextBoxColumn.Name = "descripcionLargaDataGridViewTextBoxColumn";
             this.descripcionLargaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descripcionLargaDataGridViewTextBoxColumn.Width = 146;
+            this.descripcionLargaDataGridViewTextBoxColumn.Width = 113;
             // 
             // enCategoriaEstrellaDataGridViewCheckBoxColumn
             // 
@@ -289,7 +289,7 @@
             this.enCategoriaEstrellaDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.enCategoriaEstrellaDataGridViewCheckBoxColumn.Name = "enCategoriaEstrellaDataGridViewCheckBoxColumn";
             this.enCategoriaEstrellaDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.enCategoriaEstrellaDataGridViewCheckBoxColumn.Width = 161;
+            this.enCategoriaEstrellaDataGridViewCheckBoxColumn.Width = 123;
             // 
             // enPortadaDataGridViewCheckBoxColumn
             // 
@@ -298,7 +298,7 @@
             this.enPortadaDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.enPortadaDataGridViewCheckBoxColumn.Name = "enPortadaDataGridViewCheckBoxColumn";
             this.enPortadaDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.enPortadaDataGridViewCheckBoxColumn.Width = 103;
+            this.enPortadaDataGridViewCheckBoxColumn.Width = 81;
             // 
             // enUsoDataGridViewCheckBoxColumn
             // 
@@ -307,7 +307,7 @@
             this.enUsoDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.enUsoDataGridViewCheckBoxColumn.Name = "enUsoDataGridViewCheckBoxColumn";
             this.enUsoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.enUsoDataGridViewCheckBoxColumn.Width = 78;
+            this.enUsoDataGridViewCheckBoxColumn.Width = 63;
             // 
             // estadoDataGridViewCheckBoxColumn
             // 
@@ -316,7 +316,7 @@
             this.estadoDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.estadoDataGridViewCheckBoxColumn.Name = "estadoDataGridViewCheckBoxColumn";
             this.estadoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewCheckBoxColumn.Width = 80;
+            this.estadoDataGridViewCheckBoxColumn.Width = 64;
             // 
             // idMarcaDataGridViewTextBoxColumn
             // 
@@ -325,7 +325,7 @@
             this.idMarcaDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.idMarcaDataGridViewTextBoxColumn.Name = "idMarcaDataGridViewTextBoxColumn";
             this.idMarcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idMarcaDataGridViewTextBoxColumn.Width = 87;
+            this.idMarcaDataGridViewTextBoxColumn.Width = 70;
             // 
             // idUnidadMedidaDataGridViewTextBoxColumn
             // 
@@ -334,7 +334,7 @@
             this.idUnidadMedidaDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.idUnidadMedidaDataGridViewTextBoxColumn.Name = "idUnidadMedidaDataGridViewTextBoxColumn";
             this.idUnidadMedidaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idUnidadMedidaDataGridViewTextBoxColumn.Width = 139;
+            this.idUnidadMedidaDataGridViewTextBoxColumn.Width = 109;
             // 
             // keywordsDataGridViewTextBoxColumn
             // 
@@ -343,7 +343,7 @@
             this.keywordsDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.keywordsDataGridViewTextBoxColumn.Name = "keywordsDataGridViewTextBoxColumn";
             this.keywordsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.keywordsDataGridViewTextBoxColumn.Width = 96;
+            this.keywordsDataGridViewTextBoxColumn.Width = 77;
             // 
             // limiteMaximoDataGridViewTextBoxColumn
             // 
@@ -352,7 +352,7 @@
             this.limiteMaximoDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.limiteMaximoDataGridViewTextBoxColumn.Name = "limiteMaximoDataGridViewTextBoxColumn";
             this.limiteMaximoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.limiteMaximoDataGridViewTextBoxColumn.Width = 116;
+            this.limiteMaximoDataGridViewTextBoxColumn.Width = 91;
             // 
             // limiteMinimoDataGridViewTextBoxColumn
             // 
@@ -361,7 +361,7 @@
             this.limiteMinimoDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.limiteMinimoDataGridViewTextBoxColumn.Name = "limiteMinimoDataGridViewTextBoxColumn";
             this.limiteMinimoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.limiteMinimoDataGridViewTextBoxColumn.Width = 113;
+            this.limiteMinimoDataGridViewTextBoxColumn.Width = 88;
             // 
             // mostrarPrecioWebDataGridViewCheckBoxColumn
             // 
@@ -370,7 +370,7 @@
             this.mostrarPrecioWebDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.mostrarPrecioWebDataGridViewCheckBoxColumn.Name = "mostrarPrecioWebDataGridViewCheckBoxColumn";
             this.mostrarPrecioWebDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.mostrarPrecioWebDataGridViewCheckBoxColumn.Width = 154;
+            this.mostrarPrecioWebDataGridViewCheckBoxColumn.Width = 119;
             // 
             // mostrarVideoDataGridViewCheckBoxColumn
             // 
@@ -379,7 +379,7 @@
             this.mostrarVideoDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.mostrarVideoDataGridViewCheckBoxColumn.Name = "mostrarVideoDataGridViewCheckBoxColumn";
             this.mostrarVideoDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.mostrarVideoDataGridViewCheckBoxColumn.Width = 121;
+            this.mostrarVideoDataGridViewCheckBoxColumn.Width = 93;
             // 
             // mostrarWebDataGridViewCheckBoxColumn
             // 
@@ -388,7 +388,7 @@
             this.mostrarWebDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.mostrarWebDataGridViewCheckBoxColumn.Name = "mostrarWebDataGridViewCheckBoxColumn";
             this.mostrarWebDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.mostrarWebDataGridViewCheckBoxColumn.Width = 114;
+            this.mostrarWebDataGridViewCheckBoxColumn.Width = 89;
             // 
             // nombreMarcaDataGridViewTextBoxColumn
             // 
@@ -397,7 +397,7 @@
             this.nombreMarcaDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.nombreMarcaDataGridViewTextBoxColumn.Name = "nombreMarcaDataGridViewTextBoxColumn";
             this.nombreMarcaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreMarcaDataGridViewTextBoxColumn.Width = 124;
+            this.nombreMarcaDataGridViewTextBoxColumn.Width = 97;
             // 
             // nombreProductoDataGridViewTextBoxColumn
             // 
@@ -406,7 +406,7 @@
             this.nombreProductoDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.nombreProductoDataGridViewTextBoxColumn.Name = "nombreProductoDataGridViewTextBoxColumn";
             this.nombreProductoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreProductoDataGridViewTextBoxColumn.Width = 142;
+            this.nombreProductoDataGridViewTextBoxColumn.Width = 110;
             // 
             // nombreUnidadDataGridViewTextBoxColumn
             // 
@@ -415,7 +415,7 @@
             this.nombreUnidadDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.nombreUnidadDataGridViewTextBoxColumn.Name = "nombreUnidadDataGridViewTextBoxColumn";
             this.nombreUnidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreUnidadDataGridViewTextBoxColumn.Width = 130;
+            this.nombreUnidadDataGridViewTextBoxColumn.Width = 101;
             // 
             // precioCompraDataGridViewTextBoxColumn
             // 
@@ -424,7 +424,7 @@
             this.precioCompraDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.precioCompraDataGridViewTextBoxColumn.Name = "precioCompraDataGridViewTextBoxColumn";
             this.precioCompraDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.precioCompraDataGridViewTextBoxColumn.Width = 125;
+            this.precioCompraDataGridViewTextBoxColumn.Width = 97;
             // 
             // urlVideoDataGridViewTextBoxColumn
             // 
@@ -433,7 +433,7 @@
             this.urlVideoDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.urlVideoDataGridViewTextBoxColumn.Name = "urlVideoDataGridViewTextBoxColumn";
             this.urlVideoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.urlVideoDataGridViewTextBoxColumn.Width = 89;
+            this.urlVideoDataGridViewTextBoxColumn.Width = 70;
             // 
             // ventaVarianteSinStockDataGridViewCheckBoxColumn
             // 
@@ -442,7 +442,7 @@
             this.ventaVarianteSinStockDataGridViewCheckBoxColumn.MinimumWidth = 22;
             this.ventaVarianteSinStockDataGridViewCheckBoxColumn.Name = "ventaVarianteSinStockDataGridViewCheckBoxColumn";
             this.ventaVarianteSinStockDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ventaVarianteSinStockDataGridViewCheckBoxColumn.Width = 180;
+            this.ventaVarianteSinStockDataGridViewCheckBoxColumn.Width = 141;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -451,7 +451,7 @@
             this.nombreDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreDataGridViewTextBoxColumn.Width = 85;
+            this.nombreDataGridViewTextBoxColumn.Width = 67;
             // 
             // codigoDataGridViewTextBoxColumn
             // 
@@ -460,7 +460,7 @@
             this.codigoDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             this.codigoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.codigoDataGridViewTextBoxColumn.Width = 79;
+            this.codigoDataGridViewTextBoxColumn.Width = 64;
             // 
             // productoBindingSource
             // 
@@ -475,10 +475,9 @@
             this.panel1.Controls.Add(this.textBuscar);
             this.panel1.Controls.Add(this.panelSucursal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 52);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(0, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1205, 50);
+            this.panel1.Size = new System.Drawing.Size(860, 41);
             this.panel1.TabIndex = 20;
             // 
             // button1
@@ -492,10 +491,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(381, 7);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.button1.Location = new System.Drawing.Point(286, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 36);
+            this.button1.Size = new System.Drawing.Size(38, 29);
             this.button1.TabIndex = 19;
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -505,10 +504,9 @@
             // 
             this.panelAlmacen.Controls.Add(this.cbxAlmacenes);
             this.panelAlmacen.Controls.Add(this.label2);
-            this.panelAlmacen.Location = new System.Drawing.Point(757, 6);
-            this.panelAlmacen.Margin = new System.Windows.Forms.Padding(4);
+            this.panelAlmacen.Location = new System.Drawing.Point(568, 5);
             this.panelAlmacen.Name = "panelAlmacen";
-            this.panelAlmacen.Size = new System.Drawing.Size(299, 37);
+            this.panelAlmacen.Size = new System.Drawing.Size(224, 30);
             this.panelAlmacen.TabIndex = 18;
             // 
             // cbxAlmacenes
@@ -522,10 +520,9 @@
             this.cbxAlmacenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxAlmacenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxAlmacenes.FormattingEnabled = true;
-            this.cbxAlmacenes.Location = new System.Drawing.Point(93, 5);
-            this.cbxAlmacenes.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxAlmacenes.Location = new System.Drawing.Point(70, 4);
             this.cbxAlmacenes.Name = "cbxAlmacenes";
-            this.cbxAlmacenes.Size = new System.Drawing.Size(199, 28);
+            this.cbxAlmacenes.Size = new System.Drawing.Size(150, 24);
             this.cbxAlmacenes.TabIndex = 1;
             this.cbxAlmacenes.ValueMember = "idAlmacen";
             this.cbxAlmacenes.SelectedIndexChanged += new System.EventHandler(this.cbxAlmacenes_SelectedIndexChanged);
@@ -539,9 +536,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(5, 10);
+            this.label2.Location = new System.Drawing.Point(4, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 16);
+            this.label2.Size = new System.Drawing.Size(61, 14);
             this.label2.TabIndex = 0;
             this.label2.Text = "Almacenes";
             // 
@@ -556,10 +554,10 @@
             this.btnIngresos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnIngresos.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresos.Image")));
-            this.btnIngresos.Location = new System.Drawing.Point(324, 7);
-            this.btnIngresos.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnIngresos.Location = new System.Drawing.Point(243, 6);
+            this.btnIngresos.Margin = new System.Windows.Forms.Padding(5);
             this.btnIngresos.Name = "btnIngresos";
-            this.btnIngresos.Size = new System.Drawing.Size(51, 36);
+            this.btnIngresos.Size = new System.Drawing.Size(38, 29);
             this.btnIngresos.TabIndex = 17;
             this.btnIngresos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIngresos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -572,9 +570,10 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(17, 17);
+            this.label5.Location = new System.Drawing.Point(13, 14);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 16);
+            this.label5.Size = new System.Drawing.Size(50, 14);
             this.label5.TabIndex = 14;
             this.label5.Text = "Buscar: |";
             // 
@@ -589,11 +588,11 @@
             this.textBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBuscar.isPassword = false;
-            this.textBuscar.Location = new System.Drawing.Point(11, 6);
-            this.textBuscar.Margin = new System.Windows.Forms.Padding(5);
+            this.textBuscar.Location = new System.Drawing.Point(8, 5);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Padding = new System.Windows.Forms.Padding(67, 2, 3, 2);
-            this.textBuscar.Size = new System.Drawing.Size(304, 37);
+            this.textBuscar.Padding = new System.Windows.Forms.Padding(50, 2, 2, 2);
+            this.textBuscar.Size = new System.Drawing.Size(228, 30);
             this.textBuscar.TabIndex = 15;
             this.textBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBuscar_KeyUp);
@@ -602,10 +601,9 @@
             // 
             this.panelSucursal.Controls.Add(this.cbxSucursales);
             this.panelSucursal.Controls.Add(this.lblNivel1);
-            this.panelSucursal.Location = new System.Drawing.Point(443, 7);
-            this.panelSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.panelSucursal.Location = new System.Drawing.Point(332, 6);
             this.panelSucursal.Name = "panelSucursal";
-            this.panelSucursal.Size = new System.Drawing.Size(301, 36);
+            this.panelSucursal.Size = new System.Drawing.Size(226, 29);
             this.panelSucursal.TabIndex = 16;
             // 
             // cbxSucursales
@@ -619,10 +617,9 @@
             this.cbxSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSucursales.FormattingEnabled = true;
-            this.cbxSucursales.Location = new System.Drawing.Point(100, 4);
-            this.cbxSucursales.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxSucursales.Location = new System.Drawing.Point(75, 3);
             this.cbxSucursales.Name = "cbxSucursales";
-            this.cbxSucursales.Size = new System.Drawing.Size(195, 28);
+            this.cbxSucursales.Size = new System.Drawing.Size(147, 24);
             this.cbxSucursales.TabIndex = 1;
             this.cbxSucursales.ValueMember = "idSucursal";
             this.cbxSucursales.SelectedIndexChanged += new System.EventHandler(this.cbxSucursales_SelectedIndexChanged);
@@ -636,277 +633,255 @@
             this.lblNivel1.AutoSize = true;
             this.lblNivel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNivel1.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNivel1.Location = new System.Drawing.Point(11, 9);
+            this.lblNivel1.Location = new System.Drawing.Point(8, 7);
+            this.lblNivel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNivel1.Name = "lblNivel1";
-            this.lblNivel1.Size = new System.Drawing.Size(78, 16);
+            this.lblNivel1.Size = new System.Drawing.Size(62, 14);
             this.lblNivel1.TabIndex = 0;
             this.lblNivel1.Text = "Sucursales";
             // 
-            // panel2
+            // panelNavigation
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.panel2.Controls.Add(this.btnGuardar);
-            this.panel2.Controls.Add(this.btnActualizar);
-            this.panel2.Controls.Add(this.btnModificar);
-            this.panel2.Controls.Add(this.btnNuevo);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1205, 52);
-            this.panel2.TabIndex = 9;
+            this.panelNavigation.Controls.Add(this.label1);
+            this.panelNavigation.Controls.Add(this.lblSpeedPages);
+            this.panelNavigation.Controls.Add(this.panel5);
+            this.panelNavigation.Controls.Add(this.lblPageAllItems);
+            this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelNavigation.Location = new System.Drawing.Point(0, 485);
+            this.panelNavigation.Name = "panelNavigation";
+            this.panelNavigation.Size = new System.Drawing.Size(860, 60);
+            this.panelNavigation.TabIndex = 23;
             // 
-            // btnGuardar
+            // label1
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.White;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnGuardar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(205, 6);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(51, 41);
-            this.btnGuardar.TabIndex = 21;
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.White;
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnActualizar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.Location = new System.Drawing.Point(141, 6);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(51, 41);
-            this.btnActualizar.TabIndex = 20;
-            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(77, 6);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(51, 41);
-            this.btnModificar.TabIndex = 19;
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.White;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(13, 6);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(51, 41);
-            this.btnNuevo.TabIndex = 18;
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // toolStripNavigation
-            // 
-            this.toolStripNavigation.AutoSize = false;
-            this.toolStripNavigation.BackColor = System.Drawing.Color.White;
-            this.toolStripNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStripNavigation.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStripNavigation.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripNavigation.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStripNavigation.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblPageAllItems,
-            this.toolStripButton5,
-            this.btnFirst,
-            this.btnPrevious,
-            this.lblCurrentPage,
-            this.toolStripButton2,
-            this.lblPageCount,
-            this.btnNext,
-            this.btnLast,
-            this.toolStripButton1,
-            this.lblSpeedPages,
-            this.toolStripButton3});
-            this.toolStripNavigation.Location = new System.Drawing.Point(0, 634);
-            this.toolStripNavigation.Name = "toolStripNavigation";
-            this.toolStripNavigation.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
-            this.toolStripNavigation.Size = new System.Drawing.Size(1205, 37);
-            this.toolStripNavigation.TabIndex = 19;
-            this.toolStripNavigation.Text = "toolStrip3";
-            // 
-            // lblPageAllItems
-            // 
-            this.lblPageAllItems.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblPageAllItems.Image = ((System.Drawing.Image)(resources.GetObject("lblPageAllItems.Image")));
-            this.lblPageAllItems.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lblPageAllItems.Name = "lblPageAllItems";
-            this.lblPageAllItems.Size = new System.Drawing.Size(17, 34);
-            this.lblPageAllItems.Text = "0";
-            this.lblPageAllItems.ToolTipText = "Total de registros en el sistema";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(70, 34);
-            this.toolStripButton5.Text = "Registros";
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
-            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(24, 34);
-            this.btnFirst.Text = "Primera página";
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
-            this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(24, 34);
-            this.btnPrevious.Text = "Anterior página";
-            // 
-            // lblCurrentPage
-            // 
-            this.lblCurrentPage.AutoSize = false;
-            this.lblCurrentPage.Name = "lblCurrentPage";
-            this.lblCurrentPage.Size = new System.Drawing.Size(60, 28);
-            this.lblCurrentPage.Text = "1";
-            this.lblCurrentPage.ToolTipText = "Página actual (enter)";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(15, 34);
-            this.toolStripButton2.Text = "/";
-            // 
-            // lblPageCount
-            // 
-            this.lblPageCount.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblPageCount.Image = ((System.Drawing.Image)(resources.GetObject("lblPageCount.Image")));
-            this.lblPageCount.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lblPageCount.Name = "lblPageCount";
-            this.lblPageCount.Size = new System.Drawing.Size(17, 34);
-            this.lblPageCount.Text = "1";
-            this.lblPageCount.ToolTipText = "Número total de páginas";
-            // 
-            // btnNext
-            // 
-            this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(24, 34);
-            this.btnNext.Text = "Siguiente página";
-            // 
-            // btnLast
-            // 
-            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
-            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(24, 34);
-            this.btnLast.Text = "Ultimo página";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(96, 34);
-            this.toolStripButton1.Text = "Mostrar cada";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.label1.Location = new System.Drawing.Point(746, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 35);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Mostrar cada";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblSpeedPages
             // 
-            this.lblSpeedPages.AutoSize = false;
+            this.lblSpeedPages.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblSpeedPages.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lblSpeedPages.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(211)))), ((int)(((byte)(215)))));
+            this.lblSpeedPages.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(158)))), ((int)(((byte)(166)))));
+            this.lblSpeedPages.BorderThickness = 1;
+            this.lblSpeedPages.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblSpeedPages.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeedPages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.lblSpeedPages.isPassword = false;
+            this.lblSpeedPages.Location = new System.Drawing.Point(805, 13);
+            this.lblSpeedPages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblSpeedPages.Name = "lblSpeedPages";
-            this.lblSpeedPages.Size = new System.Drawing.Size(49, 27);
-            this.lblSpeedPages.Text = "50";
-            this.lblSpeedPages.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lblSpeedPages.ToolTipText = "Cantidad de registros a mostrar (enter)";
+            this.lblSpeedPages.Size = new System.Drawing.Size(45, 35);
+            this.lblSpeedPages.TabIndex = 10;
+            this.lblSpeedPages.Text = "10";
+            this.lblSpeedPages.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblSpeedPages.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lblSpeedPages_KeyPress);
+            this.lblSpeedPages.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblSpeedPages_KeyUp);
             // 
-            // toolStripButton3
+            // panel5
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(70, 34);
-            this.toolStripButton3.Text = "Registros";
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.lblPageCount);
+            this.panel5.Controls.Add(this.lblCurrentPage);
+            this.panel5.Controls.Add(this.btnFirst);
+            this.panel5.Controls.Add(this.btnLast);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.btnPrevious);
+            this.panel5.Controls.Add(this.btnNext);
+            this.panel5.Location = new System.Drawing.Point(258, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(344, 55);
+            this.panel5.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.label3.Location = new System.Drawing.Point(146, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 12);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Página";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblPageCount
+            // 
+            this.lblPageCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPageCount.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lblPageCount.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(211)))), ((int)(((byte)(215)))));
+            this.lblPageCount.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(158)))), ((int)(((byte)(166)))));
+            this.lblPageCount.BorderThickness = 1;
+            this.lblPageCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblPageCount.Enabled = false;
+            this.lblPageCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.lblPageCount.isPassword = false;
+            this.lblPageCount.Location = new System.Drawing.Point(186, 15);
+            this.lblPageCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblPageCount.Name = "lblPageCount";
+            this.lblPageCount.Size = new System.Drawing.Size(45, 35);
+            this.lblPageCount.TabIndex = 1;
+            this.lblPageCount.Text = "1";
+            this.lblPageCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblCurrentPage
+            // 
+            this.lblCurrentPage.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCurrentPage.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.lblCurrentPage.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(211)))), ((int)(((byte)(215)))));
+            this.lblCurrentPage.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(158)))), ((int)(((byte)(166)))));
+            this.lblCurrentPage.BorderThickness = 1;
+            this.lblCurrentPage.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblCurrentPage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.lblCurrentPage.isPassword = false;
+            this.lblCurrentPage.Location = new System.Drawing.Point(114, 15);
+            this.lblCurrentPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblCurrentPage.Name = "lblCurrentPage";
+            this.lblCurrentPage.Size = new System.Drawing.Size(45, 35);
+            this.lblCurrentPage.TabIndex = 0;
+            this.lblCurrentPage.Text = "1";
+            this.lblCurrentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblCurrentPage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lblCurrentPage_KeyPress);
+            this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnFirst.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
+            this.btnFirst.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFirst.Location = new System.Drawing.Point(8, 15);
+            this.btnFirst.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(45, 35);
+            this.btnFirst.TabIndex = 11;
+            this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLast.BackColor = System.Drawing.Color.White;
+            this.btnLast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
+            this.btnLast.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLast.Location = new System.Drawing.Point(292, 15);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(45, 35);
+            this.btnLast.TabIndex = 10;
+            this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(162, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(22, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "DE";
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+            this.btnPrevious.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrevious.Location = new System.Drawing.Point(61, 15);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(45, 35);
+            this.btnPrevious.TabIndex = 7;
+            this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNext.Location = new System.Drawing.Point(239, 15);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(45, 35);
+            this.btnNext.TabIndex = 6;
+            this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lblPageAllItems
+            // 
+            this.lblPageAllItems.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPageAllItems.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageAllItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.lblPageAllItems.Location = new System.Drawing.Point(7, 13);
+            this.lblPageAllItems.Name = "lblPageAllItems";
+            this.lblPageAllItems.Size = new System.Drawing.Size(70, 35);
+            this.lblPageAllItems.TabIndex = 1;
+            this.lblPageAllItems.Text = "10 Registros";
+            this.lblPageAllItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.Color.LightGray;
-            this.splitter1.Location = new System.Drawing.Point(241, 1);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitter1.Location = new System.Drawing.Point(225, 1);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(4, 671);
+            this.splitter1.Size = new System.Drawing.Size(3, 545);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
             // panelCategoriaContainer
             // 
             this.panelCategoriaContainer.Controls.Add(this.panel4);
-            this.panelCategoriaContainer.Controls.Add(this.toolStrip1);
+            this.panelCategoriaContainer.Controls.Add(this.flowLayoutPanel1);
             this.panelCategoriaContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelCategoriaContainer.Location = new System.Drawing.Point(1, 1);
-            this.panelCategoriaContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelCategoriaContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelCategoriaContainer.Name = "panelCategoriaContainer";
-            this.panelCategoriaContainer.Size = new System.Drawing.Size(240, 671);
+            this.panelCategoriaContainer.Size = new System.Drawing.Size(224, 545);
             this.panelCategoriaContainer.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.treeViewCategoria);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 55);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(0, 60);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.panel4.Size = new System.Drawing.Size(240, 616);
+            this.panel4.Padding = new System.Windows.Forms.Padding(8);
+            this.panel4.Size = new System.Drawing.Size(224, 485);
             this.panel4.TabIndex = 1;
             // 
             // treeViewCategoria
@@ -917,12 +892,12 @@
             this.treeViewCategoria.ImageIndex = 0;
             this.treeViewCategoria.ImageList = this.imageList;
             this.treeViewCategoria.ItemHeight = 25;
-            this.treeViewCategoria.Location = new System.Drawing.Point(11, 10);
-            this.treeViewCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.treeViewCategoria.Location = new System.Drawing.Point(8, 8);
+            this.treeViewCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.treeViewCategoria.Name = "treeViewCategoria";
             this.treeViewCategoria.SelectedImageIndex = 0;
             this.treeViewCategoria.ShowNodeToolTips = true;
-            this.treeViewCategoria.Size = new System.Drawing.Size(218, 596);
+            this.treeViewCategoria.Size = new System.Drawing.Size(208, 469);
             this.treeViewCategoria.TabIndex = 0;
             // 
             // imageList
@@ -932,58 +907,182 @@
             this.imageList.Images.SetKeyName(0, "label_icon.png");
             this.imageList.Images.SetKeyName(1, "open_icon.png");
             // 
-            // toolStrip1
+            // panelCrud
             // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.White;
-            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevoCategoria,
-            this.btnActualizarCategoria});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(11, 0, 11, 10);
-            this.toolStrip1.Size = new System.Drawing.Size(240, 55);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.panelCrud.Controls.Add(this.btnNuevo);
+            this.panelCrud.Controls.Add(this.btnModificar);
+            this.panelCrud.Controls.Add(this.btnActualizar);
+            this.panelCrud.Controls.Add(this.btnAnular);
+            this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCrud.Location = new System.Drawing.Point(0, 0);
+            this.panelCrud.Name = "panelCrud";
+            this.panelCrud.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
+            this.panelCrud.Size = new System.Drawing.Size(860, 60);
+            this.panelCrud.TabIndex = 24;
             // 
-            // btnNuevoCategoria
+            // btnNuevo
             // 
-            this.btnNuevoCategoria.AutoSize = false;
-            this.btnNuevoCategoria.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCategoria.Image")));
-            this.btnNuevoCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevoCategoria.Name = "btnNuevoCategoria";
-            this.btnNuevoCategoria.Size = new System.Drawing.Size(62, 37);
-            this.btnNuevoCategoria.Text = "Nuevo";
-            this.btnNuevoCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevoCategoria.ToolTipText = "Agregar un nuevo registro (F3)";
-            this.btnNuevoCategoria.Click += new System.EventHandler(this.btnNuevoCategoria_Click);
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(10, 15);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnNuevo.Size = new System.Drawing.Size(126, 40);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "  Nuevo (F3)";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btnActualizarCategoria
+            // btnModificar
             // 
-            this.btnActualizarCategoria.AutoSize = false;
-            this.btnActualizarCategoria.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarCategoria.Image")));
-            this.btnActualizarCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizarCategoria.Name = "btnActualizarCategoria";
-            this.btnActualizarCategoria.Size = new System.Drawing.Size(79, 37);
-            this.btnActualizarCategoria.Text = "Actualizar";
-            this.btnActualizarCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnActualizarCategoria.ToolTipText = "Actualizar registros (F5)\r\n";
-            this.btnActualizarCategoria.Click += new System.EventHandler(this.btnActualizarCategoria_Click);
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(146, 15);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnModificar.Size = new System.Drawing.Size(126, 40);
+            this.btnModificar.TabIndex = 3;
+            this.btnModificar.Text = "  Modificar (F4)";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnActualizar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(282, 15);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnActualizar.Size = new System.Drawing.Size(126, 40);
+            this.btnActualizar.TabIndex = 5;
+            this.btnActualizar.Text = "  Actualizar (F5)";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnAnular.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnAnular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnAnular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.Location = new System.Drawing.Point(418, 15);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAnular.Size = new System.Drawing.Size(126, 40);
+            this.btnAnular.TabIndex = 6;
+            this.btnAnular.Text = "  Anular (F7)";
+            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(224, 60);
+            this.flowLayoutPanel1.TabIndex = 22;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(10, 15);
+            this.button2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(90, 40);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "  Nuevo";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnNuevoCategoria_Click);
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(110, 15);
+            this.button4.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(100, 40);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "  Actualizar";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnActualizarCategoria_Click);
             // 
             // UCInicializarStock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCInicializarStock";
-            this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.Size = new System.Drawing.Size(1473, 693);
+            this.Padding = new System.Windows.Forms.Padding(8);
+            this.Size = new System.Drawing.Size(1105, 563);
             this.Load += new System.EventHandler(this.UCInicializarStock_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UCInicializarStock_Paint);
             this.panelContainer.ResumeLayout(false);
@@ -999,13 +1098,13 @@
             this.panelSucursal.ResumeLayout(false);
             this.panelSucursal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.toolStripNavigation.ResumeLayout(false);
-            this.toolStripNavigation.PerformLayout();
+            this.panelNavigation.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panelCategoriaContainer.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.panelCrud.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1014,26 +1113,10 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panelMainContainer;
-        private System.Windows.Forms.ToolStrip toolStripNavigation;
-        private System.Windows.Forms.ToolStripLabel lblPageAllItems;
-        private System.Windows.Forms.ToolStripLabel toolStripButton5;
-        private System.Windows.Forms.ToolStripButton btnFirst;
-        private System.Windows.Forms.ToolStripButton btnPrevious;
-        private System.Windows.Forms.ToolStripComboBox lblCurrentPage;
-        private System.Windows.Forms.ToolStripLabel toolStripButton2;
-        private System.Windows.Forms.ToolStripLabel lblPageCount;
-        private System.Windows.Forms.ToolStripButton btnNext;
-        private System.Windows.Forms.ToolStripButton btnLast;
-        private System.Windows.Forms.ToolStripLabel toolStripButton1;
-        private System.Windows.Forms.ToolStripTextBox lblSpeedPages;
-        private System.Windows.Forms.ToolStripLabel toolStripButton3;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panelCategoriaContainer;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TreeView treeViewCategoria;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnNuevoCategoria;
-        private System.Windows.Forms.ToolStripButton btnActualizarCategoria;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.BindingSource productoBindingSource;
         private System.Windows.Forms.Panel panel3;
@@ -1078,10 +1161,26 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource almacenBindingSource;
         private System.Windows.Forms.BindingSource sucursalBindingSource;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Panel panelNavigation;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox lblSpeedPages;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox lblPageCount;
+        private Bunifu.Framework.UI.BunifuMetroTextbox lblCurrentPage;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblPageAllItems;
+        private System.Windows.Forms.FlowLayoutPanel panelCrud;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

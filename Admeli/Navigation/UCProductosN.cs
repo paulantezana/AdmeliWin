@@ -112,6 +112,7 @@ namespace Admeli.Navigation
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.panelMenuRight.Size = new Size(0, this.formPrincipal.panelMenuRight.Size.Height);
             if (uCListadoProducto != null) uCListadoProducto.lisenerKeyEvents = false;
             if (uCMarcas != null) uCMarcas.lisenerKeyEvents = false;
             if (uCUnidadesMedida != null) uCUnidadesMedida.lisenerKeyEvents = false;

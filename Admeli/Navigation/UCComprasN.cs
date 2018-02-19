@@ -112,25 +112,40 @@ namespace Admeli.Navigation
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.panelMenuRight.Size = new Size(0, this.formPrincipal.panelMenuRight.Size.Height);
             if (uCProveedores != null) uCProveedores.lisenerKeyEvents = false;
             if (uCOrdenCompraProveedor != null) uCOrdenCompraProveedor.lisenerKeyEvents = false;
             if (uCCompras != null) uCCompras.lisenerKeyEvents = false;
             if (uCCuentaPagar != null) uCCuentaPagar.lisenerKeyEvents = false;
         }
 
+        private void btnColor()
+        {
+            /// Reset Color buttons
+            btnOrdenCompra.Textcolor = Color.FromArgb(139, 138, 141);
+            btnCompra.Textcolor = Color.FromArgb(139, 138, 141);
+            btnProveedor.Textcolor = Color.FromArgb(139, 138, 141);
+        }
+
         private void btnOrdenCompra_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Color reset
             togglePanelMain("ordenCompraProveedor");
+            btnOrdenCompra.Textcolor = Color.FromArgb(23, 203, 34); /// Color
         }
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Color reset
             togglePanelMain("compras");
+            btnCompra.Textcolor = Color.FromArgb(23, 203, 34); /// Color
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Color reset
             togglePanelMain("proveedores");
+            btnProveedor.Textcolor = Color.FromArgb(23, 203, 34); /// Color
         }
 
     }

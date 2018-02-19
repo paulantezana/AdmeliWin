@@ -56,7 +56,7 @@
             this.btnExistenciaProducto.IconVisible = true;
             this.btnExistenciaProducto.IconZoom = 80D;
             this.btnExistenciaProducto.IsTab = true;
-            this.btnExistenciaProducto.Location = new System.Drawing.Point(0, 90);
+            this.btnExistenciaProducto.Location = new System.Drawing.Point(0, 0);
             this.btnExistenciaProducto.Margin = new System.Windows.Forms.Padding(0);
             this.btnExistenciaProducto.Name = "btnExistenciaProducto";
             this.btnExistenciaProducto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -92,7 +92,7 @@
             this.btnIngresoVentas.IconVisible = true;
             this.btnIngresoVentas.IconZoom = 80D;
             this.btnIngresoVentas.IsTab = true;
-            this.btnIngresoVentas.Location = new System.Drawing.Point(0, 138);
+            this.btnIngresoVentas.Location = new System.Drawing.Point(0, 48);
             this.btnIngresoVentas.Margin = new System.Windows.Forms.Padding(0);
             this.btnIngresoVentas.Name = "btnIngresoVentas";
             this.btnIngresoVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
@@ -128,7 +128,7 @@
             this.btnImpuestos.IconVisible = true;
             this.btnImpuestos.IconZoom = 80D;
             this.btnImpuestos.IsTab = true;
-            this.btnImpuestos.Location = new System.Drawing.Point(0, 186);
+            this.btnImpuestos.Location = new System.Drawing.Point(0, 96);
             this.btnImpuestos.Margin = new System.Windows.Forms.Padding(0);
             this.btnImpuestos.Name = "btnImpuestos";
             this.btnImpuestos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
