@@ -78,9 +78,9 @@ namespace Admeli.Productos.Nuevo.PDetalle.sub
         private void recargarNuevosDatos()
         {
             int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
-            int idCombinacionAlternativa = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+            int idCombinacionAlternativa = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
 
-            AlternativaCombinacion currentAlternativaCombinacion = alternativaCombinaciones.Find(x => x.idCombinacionAlternativa == idCombinacionAlternativa); // Buscando la registro especifico en la lista de registros
+            AlternativaCombinacion searchCombinacion = alternativaCombinaciones.Find(x => x.idCombinacionAlternativa == idCombinacionAlternativa); // Buscando la categoria en las lista de categorias
 
             currentAlternativaCombinacion.codigoSku = textCodigo.Text;
             currentAlternativaCombinacion.nombreCombinacion = textNombreCombinacion.Text;
