@@ -17,10 +17,10 @@ namespace Admeli.Configuracion
     {
         private FormPrincipal formPrincipal;
         private FormDiseñoComprobantes comprobates;
-
+        
         public bool lisenerKeyEvents { get; set; }
         TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
-
+        List<DiseñoDocumento> listData;
         public UCDisenoPersonalizacion()
         {
             InitializeComponent();
@@ -43,6 +43,7 @@ namespace Admeli.Configuracion
             if (refreshData)
             {
                 cargarRegistros();
+               
             }
             lisenerKeyEvents = true; // Active lisener key events
         } 
@@ -72,7 +73,7 @@ namespace Admeli.Configuracion
             loadState(true);
             try
             {
-                List<TipoDocumento> listData = await tipoDocumentoModel.tipodoc(1);
+                listData = await tipoDocumentoModel.tipodoc(1);
                 if (listData == null) return; /// Verificar si hay datos
 
                 // Ingresando
@@ -110,8 +111,17 @@ namespace Admeli.Configuracion
 
         private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            comprobates = new FormDiseñoComprobantes();
-          
+           
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DiseñoDocumento diseño=  (DiseñoDocumento)tipoDocumentoBindingSource.List[e.RowIndex];
+            comprobates = new FormDiseñoComprobantes(diseño);
+            //tipodoc=
+
+            comprobates.ShowDialog();
 
         }
     }
