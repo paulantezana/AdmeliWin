@@ -410,9 +410,9 @@
             this.btnGuardarSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarSalir.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarSalir.Location = new System.Drawing.Point(192, 6);
+            this.btnGuardarSalir.Location = new System.Drawing.Point(173, 9);
             this.btnGuardarSalir.Name = "btnGuardarSalir";
-            this.btnGuardarSalir.Size = new System.Drawing.Size(152, 36);
+            this.btnGuardarSalir.Size = new System.Drawing.Size(152, 30);
             this.btnGuardarSalir.TabIndex = 6;
             this.btnGuardarSalir.Text = "Guardar y Cerrar";
             this.btnGuardarSalir.UseVisualStyleBackColor = false;
@@ -428,9 +428,9 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(22, 6);
+            this.btnAceptar.Location = new System.Drawing.Point(37, 9);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(152, 36);
+            this.btnAceptar.Size = new System.Drawing.Size(116, 30);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -447,12 +447,13 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnClose.Location = new System.Drawing.Point(357, 6);
+            this.btnClose.Location = new System.Drawing.Point(342, 9);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(114, 36);
+            this.btnClose.Size = new System.Drawing.Size(114, 30);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // errorProvider1
             // 

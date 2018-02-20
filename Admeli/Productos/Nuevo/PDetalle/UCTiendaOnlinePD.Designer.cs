@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCTiendaOnlinePD));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardarSalir = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -172,12 +173,31 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.btnGuardarSalir);
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(339, 0);
+            this.panel1.Location = new System.Drawing.Point(313, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 49);
+            this.panel1.Size = new System.Drawing.Size(455, 49);
             this.panel1.TabIndex = 6;
+            // 
+            // btnGuardarSalir
+            // 
+            this.btnGuardarSalir.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnGuardarSalir.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnGuardarSalir.FlatAppearance.BorderSize = 0;
+            this.btnGuardarSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGuardarSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGuardarSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarSalir.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarSalir.Location = new System.Drawing.Point(154, 9);
+            this.btnGuardarSalir.Name = "btnGuardarSalir";
+            this.btnGuardarSalir.Size = new System.Drawing.Size(152, 30);
+            this.btnGuardarSalir.TabIndex = 9;
+            this.btnGuardarSalir.Text = "Guardar y Cerrar";
+            this.btnGuardarSalir.UseVisualStyleBackColor = false;
+            this.btnGuardarSalir.Click += new System.EventHandler(this.btnGuardarSalir_Click);
             // 
             // btnAceptar
             // 
@@ -189,10 +209,10 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(58, 6);
+            this.btnAceptar.Location = new System.Drawing.Point(18, 9);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(152, 36);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.Size = new System.Drawing.Size(116, 30);
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -208,12 +228,13 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnClose.Location = new System.Drawing.Point(230, 6);
+            this.btnClose.Location = new System.Drawing.Point(323, 9);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(114, 36);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.Size = new System.Drawing.Size(114, 30);
+            this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tabControl1
             // 
@@ -729,14 +750,14 @@
             this.dataGridViewRelaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewRelaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewRelaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRelaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRelaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewRelaciones.ColumnHeadersHeight = 40;
             this.dataGridViewRelaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProductoRelacionDataGridViewTextBoxColumn,
@@ -958,14 +979,14 @@
             this.dataGridViewComentarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewComentarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewComentarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComentarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewComentarios.ColumnHeadersHeight = 40;
             this.dataGridViewComentarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idComentarioDataGridViewTextBoxColumn,
@@ -1271,8 +1292,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabDatosWebs;
         private System.Windows.Forms.TabPage tabRelaciones;
@@ -1353,5 +1372,8 @@
         private System.Windows.Forms.Label label25;
         private Bunifu.Framework.UI.BunifuCheckbox chkMostrarPrecio;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnGuardarSalir;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -320,5 +320,10 @@ namespace Admeli.Productos.Nuevo.PDetalle
             // Ejecutando el gurdado
             formProductoNuevo.executeGuardarSalir();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeCerrar();
+        }
     }
 }

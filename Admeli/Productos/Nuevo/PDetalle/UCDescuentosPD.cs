@@ -334,5 +334,19 @@ namespace Admeli.Productos.Nuevo.PDetalle
         }
         #endregion
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeGuardar();
+        }
+
+        private void btnGuardarSalir_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeGuardarSalir();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeCerrar();
+        }
     }
 }

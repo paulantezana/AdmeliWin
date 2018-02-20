@@ -40,6 +40,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
         {
             InitializeComponent();
             this.formProductoNuevo = formProductoNuevo;
+            this.chkVenderSinStock.Checked = formProductoNuevo.currentProducto.ventaVarianteSinStock;
         }
 
         #region ================================== Root Load ==================================
@@ -513,6 +514,22 @@ namespace Admeli.Productos.Nuevo.PDetalle
         {
             FormgGenerar formgGenerar = new FormgGenerar(formProductoNuevo);
             formgGenerar.ShowDialog();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.currentProducto.ventaVarianteSinStock = chkVenderSinStock.Checked;
+            formProductoNuevo.executeGuardar();
+        }
+
+        private void btnGuardarSalir_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeGuardarSalir();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeCerrar();
         }
     }
 }

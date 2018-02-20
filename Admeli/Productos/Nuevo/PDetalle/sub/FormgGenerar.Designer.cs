@@ -66,6 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.progressBarApp = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.alternativaCombinacionBindingSource)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -555,12 +556,26 @@
             this.label11.TabIndex = 25;
             this.label11.Text = "Stock de alerta.";
             // 
+            // progressBarApp
+            // 
+            this.progressBarApp.BackColor = System.Drawing.Color.White;
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
+            this.progressBarApp.Margin = new System.Windows.Forms.Padding(2);
+            this.progressBarApp.MarqueeAnimationSpeed = 10;
+            this.progressBarApp.Maximum = 200;
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.RightToLeftLayout = true;
+            this.progressBarApp.Size = new System.Drawing.Size(697, 5);
+            this.progressBarApp.TabIndex = 26;
+            // 
             // FormgGenerar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(697, 522);
+            this.Controls.Add(this.progressBarApp);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -582,6 +597,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textCodigo);
             this.Name = "FormgGenerar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormgGenerar";
             this.Load += new System.EventHandler(this.FormgGenerar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.alternativaCombinacionBindingSource)).EndInit();
@@ -635,5 +651,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        protected System.Windows.Forms.ProgressBar progressBarApp;
     }
 }

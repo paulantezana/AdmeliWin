@@ -10,6 +10,8 @@ namespace Entidad
     {
         public int idCombinacionAlternativa { get; set; }
         public int idCombinacionAlternativaStockAlmacen { get; set; }
+        public int idProducto { get; set; }
+        public int idAlmacen { get; set; }
         public string alertaStock { get; set; }
         public string alternativas { get; set; }
         public string codigoSku { get; set; }

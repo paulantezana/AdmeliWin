@@ -349,7 +349,12 @@ namespace Admeli.Productos.Nuevo
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        } 
+        }
+
+        internal void executeCerrar()
+        {
+            this.Close();
+        }
         #endregion
     }
 }

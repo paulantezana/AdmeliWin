@@ -45,5 +45,20 @@ namespace Admeli.Productos.Nuevo.PDetalle
             int itemWidth = containerWidth / 2;
             panelItem1.Size = new Size(itemWidth, 100);
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeGuardar();
+        }
+
+        private void btnGuardarSalir_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeGuardarSalir();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeCerrar();
+        }
     }
 }

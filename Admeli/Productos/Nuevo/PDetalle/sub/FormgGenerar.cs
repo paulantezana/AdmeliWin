@@ -65,13 +65,20 @@ namespace Admeli.Productos.Nuevo.PDetalle.sub
         {
             try
             {
+                loadState(true);
                 recargarNuevosDatos();
                 Response response1 = await alternativaModel.modificarAlternativa(currentAlternativaCombinacion);
                 Response response2 = await alternativaModel.modificarCombinacionAlternativa(currentAlternativaCombinacion);
+                MessageBox.Show(String.Format("{0}\n{1}", response1.msj, response2.msj), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cargarAlmacenes();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
             }
         }
 
@@ -80,15 +87,37 @@ namespace Admeli.Productos.Nuevo.PDetalle.sub
             int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
             int idCombinacionAlternativa = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
 
-            AlternativaCombinacion searchCombinacion = alternativaCombinaciones.Find(x => x.idCombinacionAlternativa == idCombinacionAlternativa); // Buscando la categoria en las lista de categorias
+            currentAlternativaCombinacion = alternativaCombinaciones.Find(x => x.idCombinacionAlternativa == idCombinacionAlternativa); // Buscando la categoria en las lista de categorias
+            int almacenId = (cbxAlmacenes.SelectedIndex == -1) ? ConfigModel.currentIdAlmacen : Convert.ToInt32(cbxAlmacenes.SelectedValue);
 
+            currentAlternativaCombinacion.idAlmacen = almacenId;
             currentAlternativaCombinacion.codigoSku = textCodigo.Text;
             currentAlternativaCombinacion.nombreCombinacion = textNombreCombinacion.Text;
             currentAlternativaCombinacion.precio = textPrecio.Text;
             currentAlternativaCombinacion.stock = textStock.Text;
             currentAlternativaCombinacion.stockIdeal = textStockIdeal.Text;
             currentAlternativaCombinacion.stockMinimo = textStockMinimo.Text;
-            currentAlternativaCombinacion.codigoSku = textAlertaStock.Text;
+            currentAlternativaCombinacion.alertaStock = textAlertaStock.Text;
+            currentAlternativaCombinacion.idProducto = formProductoNuevo.currentIDProducto;
         }
+
+        #region =========================== Estados ===========================
+        private void loadState(bool state)
+        {
+            btnAceptar.Enabled = !state;
+            dataGridView.Enabled = !state;
+            if (state)
+            {
+                progressBarApp.Style = ProgressBarStyle.Marquee;
+                Cursor.Current = Cursors.WaitCursor;
+            }
+            else
+            {
+                progressBarApp.Style = ProgressBarStyle.Blocks;
+                Cursor.Current = Cursors.Default;
+            }
+        }
+        #endregion
+
     }
 }

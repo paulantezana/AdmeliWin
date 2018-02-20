@@ -348,7 +348,31 @@ namespace Admeli.Productos.Nuevo.PDetalle
             formProductoNuevo.currentProducto.controlSinStock = cbxVentaProducto.SelectedValue.ToString();
 
             formProductoNuevo.executeGuardar();
-        } 
+        }
         #endregion
+
+
+        private void btnGuardarSalir_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.currentProducto.descripcionLarga = textDescripcionLarga.Text;
+            formProductoNuevo.currentProducto.keywords = textKeyWords.Text;
+            formProductoNuevo.currentProducto.enCategoriaEstrella = chkEnCategoria.Checked;
+            formProductoNuevo.currentProducto.enPortada = chkEnPortada.Checked;
+            formProductoNuevo.currentProducto.limiteMaximo = textLimiteMaximo.Text;
+            formProductoNuevo.currentProducto.limiteMinimo = textLimiteMinimo.Text;
+            formProductoNuevo.currentProducto.cantidadFraccion = chkCantidadFraccion.Checked;
+            formProductoNuevo.currentProducto.urlVideo = textURLVideo.Text;
+            formProductoNuevo.currentProducto.mostrarVideo = chkMostrarVideo.Checked;
+            formProductoNuevo.currentProducto.mostrarWeb = chkMostrarWeb.Checked;
+            formProductoNuevo.currentProducto.mostrarPrecioWeb = chkMostrarPrecio.Checked;
+            formProductoNuevo.currentProducto.controlSinStock = cbxVentaProducto.SelectedValue.ToString();
+
+            formProductoNuevo.executeGuardarSalir();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            formProductoNuevo.executeCerrar();
+        }
     }
 }
