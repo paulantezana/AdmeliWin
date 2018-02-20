@@ -23,11 +23,12 @@ namespace Admeli.Compras.Nuevo
         private MonedaModel monedaModel = new MonedaModel();
         private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
         private ProductoModel productoModel = new ProductoModel();
-        private VarianteModel varianteModel = new VarianteModel();
+        private AlternativaModel alternativaModel = new AlternativaModel(); 
         private PresentacionModel presentacionModel = new PresentacionModel();
         private FechaModel fechaModel = new FechaModel();
 
         private List<DetalleCompra> carrito = new List<DetalleCompra>();
+        private List<Producto> productos { get; set; }
 
         private bool nuevo { get; set; }
 
@@ -43,29 +44,17 @@ namespace Admeli.Compras.Nuevo
         {
             InitializeComponent();
             this.currentCompra = currentCompra;
+
             this.nuevo = false;
-        } 
+        }
         #endregion
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDesactivar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region ============================== CRUDS ==============================
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
             executeBuscarProveedor();
-        }
+        } 
+        #endregion
 
         #region ================================ Root Load ================================
         private void FormComprarNuevo_Load(object sender, EventArgs e)
@@ -110,11 +99,10 @@ namespace Admeli.Compras.Nuevo
         {
             try
             {
-                if (!nuevo) return;
-                dynamic response = await fechaModel.fechaSistema();
-                DateTime currentDateTime = (response.fecha != nuevo) ? response.fecha : DateTime.Now;
-                dtpEmision.Value = currentDateTime;
-                dtpPago.Value = currentDateTime;
+               if (!nuevo) return;
+                FechaSistema fechaSistema = await fechaModel.fechaSistema();
+                dtpEmision.Value = fechaSistema.fecha;
+                dtpPago.Value = fechaSistema.fecha;
             }
             catch (Exception ex)
             {
@@ -126,35 +114,10 @@ namespace Admeli.Compras.Nuevo
         {
             try
             {
-                productoBindingSource.DataSource = await productoModel.productos();
+                productos = await productoModel.productos();
+                productoBindingSource.DataSource = productos;
                 cbxCodigoProducto.SelectedIndex = -1;
                 cbxDescripcion.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private async void cargarVariantes()
-        {
-            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return;
-            try
-            {
-               // varianteBindingSource.DataSource = await varianteModel.productos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private async void cargarPrecentaciones()
-        {
-            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return;
-            try
-            {
-                presentacionBindingSource.DataSource = await presentacionModel.presentacionVentas(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
             }
             catch (Exception ex)
             {
@@ -169,6 +132,43 @@ namespace Admeli.Compras.Nuevo
         }
 
         #endregion
+
+        #region ============================  Agrgar Producto Al Carro ============================
+        private void cbxCodigoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarProductoDetalle();
+        }
+
+        private void cbxDescripcion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarProductoDetalle();
+        }
+
+        private async void cargarProductoDetalle()
+        {
+            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return;
+            try
+            {
+                // Cargar las precentaciones
+                presentacionBindingSource.DataSource = await presentacionModel.presentacionVentas(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
+
+                // Cargar Los variantes del producto
+                AlternativaCombinacion alternativaCombinacion = await alternativaModel.cAlternativa31(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
+                varianteBindingSource.DataSource = alternativaCombinacion;
+
+                // Llenar los campos del producto escogido
+                int idProducto = Convert.ToInt32(cbxCodigoProducto.SelectedValue) | Convert.ToInt32(cbxDescripcion.SelectedValue);
+                Producto currentProducto = productos.Find(x => x.idProducto == idProducto);
+                textCantidad.Text = "1";
+                textPrecioUnidario.Text = currentProducto.precioCompra;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
+
 
         private void executeBuscarProveedor()
         {
@@ -206,19 +206,6 @@ namespace Admeli.Compras.Nuevo
         private void cargarProductoSeleccionado()
         {
             if (currentProducto == null) return;
-            
-
-
-        }
-
-        private void cbxCodigoProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarPrecentaciones();
-        }
-
-        private void cbxDescripcion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarPrecentaciones();
         }
     }
 }
