@@ -43,6 +43,7 @@
     <Compile Include="Almacen.cs" />
     <Compile Include="Alternativa.cs" />
     <Compile Include="AlternativaCombinacion.cs" />
+    <Compile Include="CarroCompra.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaProducto.cs" />
     <Compile Include="CierreCaja.cs" />
@@ -68,7 +69,6 @@
     <Compile Include="Denominacion.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Descuento.cs" />
-    <Compile Include="DetalleCompra.cs" />
     <Compile Include="DocCorrelativo.cs" />
     <Compile Include="DocumentoIdentificacion.cs" />
     <Compile Include="Egreso.cs" />

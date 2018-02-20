@@ -135,12 +135,12 @@ namespace Modelo
             }
         }
 
-        public async Task<AlternativaCombinacion> cAlternativa31(int idProducto)
+        public async Task<List<AlternativaCombinacion>> cAlternativa31(int idProducto)
         {
             try
             {
                 // localhost:8080/admeli/xcore/services.php/calternativa31/prod/1
-                AlternativaCombinacion response = await webService.GET<AlternativaCombinacion>("calternativa31", String.Format("prod/{0}", idProducto));
+                List<AlternativaCombinacion> response = await webService.GET<List<AlternativaCombinacion>>("calternativa31", String.Format("prod/{0}", idProducto));
                 return response;
             }
             catch (Exception ex)

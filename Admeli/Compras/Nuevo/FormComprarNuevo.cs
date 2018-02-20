@@ -18,7 +18,6 @@ namespace Admeli.Compras.Nuevo
         private Compra currentCompra;
 
         private Proveedor currentProveedor { get; set; }
-        private Producto currentProducto { get; set; }
 
         private MonedaModel monedaModel = new MonedaModel();
         private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
@@ -27,8 +26,12 @@ namespace Admeli.Compras.Nuevo
         private PresentacionModel presentacionModel = new PresentacionModel();
         private FechaModel fechaModel = new FechaModel();
 
-        private List<DetalleCompra> carrito = new List<DetalleCompra>();
+        private List<Presentacion> presentaciones { get; set; }
         private List<Producto> productos { get; set; }
+        private Producto currentProducto { get; set; }
+
+        /// Send
+        private List<CarroCompra> carroCompras { get; set; }
 
         private bool nuevo { get; set; }
 
@@ -144,31 +147,121 @@ namespace Admeli.Compras.Nuevo
             cargarProductoDetalle();
         }
 
-        private async void cargarProductoDetalle()
+        private void textCantidad_OnValueChanged(object sender, EventArgs e)
+        {
+            calcularTotal();
+        }
+
+        private void textDescuento_OnValueChanged(object sender, EventArgs e)
+        {
+            calcularTotal();
+        }
+
+        private void cbxUnidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            calcularPrecioUnitario();
+            calcularTotal();
+        }
+
+        private void btnAddCard_Click(object sender, EventArgs e)
+        {
+            if (carroCompras == null) carroCompras = new List<CarroCompra>();
+            CarroCompra carroCompra = new CarroCompra();
+            carroCompras.Add(carroCompra);
+        }
+
+
+        private void cargarProductoDetalle()
         {
             if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return;
             try
             {
-                // Cargar las precentaciones
-                presentacionBindingSource.DataSource = await presentacionModel.presentacionVentas(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
-
-                // Cargar Los variantes del producto
-                AlternativaCombinacion alternativaCombinacion = await alternativaModel.cAlternativa31(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
-                varianteBindingSource.DataSource = alternativaCombinacion;
+                /// Buscando el producto seleccionado
+                int idProducto = Convert.ToInt32(cbxCodigoProducto.SelectedValue) | Convert.ToInt32(cbxDescripcion.SelectedValue);
+                currentProducto = productos.Find(x => x.idProducto == idProducto);
 
                 // Llenar los campos del producto escogido
-                int idProducto = Convert.ToInt32(cbxCodigoProducto.SelectedValue) | Convert.ToInt32(cbxDescripcion.SelectedValue);
-                Producto currentProducto = productos.Find(x => x.idProducto == idProducto);
                 textCantidad.Text = "1";
-                textPrecioUnidario.Text = currentProducto.precioCompra;
+                textDescuento.Text = "0";
+
+                /// Cargando presentaciones
+                cargarPresentaciones();
+
+                // Cargando alternativas del producto
+                cargarAlternativas();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        #endregion
 
+        private async void cargarPresentaciones()
+        {
+            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return; /// validacion
+            /// Cargar las precentaciones
+            presentaciones = await presentacionModel.presentacionVentas(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
+            presentacionBindingSource.DataSource = presentaciones;
+            cbxUnidad.SelectedIndex = -1;
+
+            /// calculos
+            calcularPrecioUnitario();
+            calcularTotal();
+        }
+
+        private async void cargarAlternativas()
+        {
+            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return; /// validacion
+            /// cargando las alternativas del producto
+            List<AlternativaCombinacion> alternativaCombinacion = await alternativaModel.cAlternativa31(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
+            alternativaCombinacionBindingSource.DataSource = alternativaCombinacion;
+
+            /// calculos
+            calcularPrecioUnitario();
+            calcularTotal();
+        }
+
+        /// <summary>
+        /// Calcular Total
+        /// </summary>
+        private void calcularTotal()
+        {
+            try
+            {
+                if (textCantidad.Text.Trim() == "") textTotal.Text = "0";
+                if (textPrecioUnidario.Text.Trim() == "" || textCantidad.Text.Trim() == "" || textDescuento.Text.Trim() == "") return; /// Validación
+                textTotal.Text = ((Convert.ToDouble(textPrecioUnidario.Text) * Convert.ToDouble(textCantidad.Text)) - Convert.ToDouble(textDescuento.Text)).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calcular total", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Calcular Precio Unitario
+        /// </summary>
+        private void calcularPrecioUnitario() {
+            if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return; /// Validación
+            try
+            {
+                if (cbxUnidad.SelectedIndex == -1)
+                {
+                    textPrecioUnidario.Text = currentProducto.precioCompra;
+                }
+                else
+                {
+                    int idPresentacion = Convert.ToInt32(cbxUnidad.SelectedValue);
+                    Presentacion findPresentacion = presentaciones.Find(x => x.idPresentacion == idPresentacion);
+                    textPrecioUnidario.Text = Convert.ToString(Convert.ToDouble(currentProducto.precioCompra) * Convert.ToInt32(findPresentacion.cantidadUnitaria)) ;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Calcular total", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
 
         private void executeBuscarProveedor()
         {
@@ -191,10 +284,6 @@ namespace Admeli.Compras.Nuevo
             executeBuscarProveedor();
         }
 
-        private void btnAddCard_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
