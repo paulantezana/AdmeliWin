@@ -301,6 +301,12 @@
     <Compile Include="Configuracion\Modificar\FormAsignarCorrelativoModificar.Designer.cs">
       <DependentUpon>FormAsignarCorrelativoModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Modificar\FormDiseñoComprobantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Modificar\FormDiseñoComprobantes.Designer.cs">
+      <DependentUpon>FormDiseñoComprobantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Modificar\FormUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -887,6 +893,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Modificar\FormAsignarCorrelativoModificar.resx">
       <DependentUpon>FormAsignarCorrelativoModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Modificar\FormDiseñoComprobantes.resx">
+      <DependentUpon>FormDiseñoComprobantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Modificar\FormUsuario.resx">
       <DependentUpon>FormUsuario.cs</DependentUpon>

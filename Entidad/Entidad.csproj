@@ -64,6 +64,7 @@
     <Compile Include="Configuracion\TipoDocumento.cs" />
     <Compile Include="Contacto.cs" />
     <Compile Include="Cotizacion.cs" />
+    <Compile Include="DataSunat.cs" />
     <Compile Include="Denominacion.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Descuento.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="RespuestaSunat.cs" />
     <Compile Include="RootObject.cs" />
     <Compile Include="Stock.cs" />
     <Compile Include="Sucursal.cs" />

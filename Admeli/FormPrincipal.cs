@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad;
 
 namespace Admeli
 {
@@ -48,11 +49,11 @@ namespace Admeli
         private UCVentas uCVentas;
         private UCListadoProducto uCListadoProducto;
         private UCCompras uCCompras;
-
+        private DataSunat d;
         // Modelos
         private SucursalModel sucursalModel = new SucursalModel();
         private ConfigModel configModel = new ConfigModel();
-
+        private SunatModel sunatModel = new SunatModel();
         // Metodos
         private bool notCloseApp { get; set; }
 
@@ -64,9 +65,15 @@ namespace Admeli
 
         public FormPrincipal(FormLogin formLogin)
         {
+            
             InitializeComponent();
             this.formLogin = formLogin;
+            
+            
+
         }
+
+       
         #endregion
 
         #region =============================== PAINT ===============================
@@ -737,8 +744,12 @@ namespace Admeli
             panelMenuRight.Controls.Add(lblEfectivoName);
             panelMenuRight.Controls.Add(lblEfectivoValue);
         }
+
         #endregion
 
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
