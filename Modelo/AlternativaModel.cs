@@ -78,5 +78,47 @@ namespace Modelo
             }
         }
 
+        public async Task<List<AlternativaCombinacion>> alternativaCombinacion(int idProducto, int idAlmacen)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/malterna/1/1
+                List<AlternativaCombinacion> list = await webService.GET<List<AlternativaCombinacion>>("malterna", String.Format("{0}/{1}", idProducto, idAlmacen));
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> modificarAlternativa(AlternativaCombinacion param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/calternativa/modificar
+                Response response = await webService.POST<AlternativaCombinacion,Response>("calternativa", "modificar", param);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> modificarCombinacionAlternativa(AlternativaCombinacion param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/casalmacen/modificar
+                Response response = await webService.POST<AlternativaCombinacion, Response>("casalmacen", "modificar", param);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

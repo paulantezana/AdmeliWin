@@ -673,6 +673,12 @@
     <Compile Include="Productos\Nuevo\PDetalle\FormVarianteNuevo.Designer.cs">
       <DependentUpon>FormVarianteNuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\sub\FormgGenerar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Nuevo\PDetalle\sub\FormgGenerar.Designer.cs">
+      <DependentUpon>FormgGenerar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Nuevo\PDetalle\UCAdicionalPD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1068,6 +1074,9 @@
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\FormVarianteNuevo.resx">
       <DependentUpon>FormVarianteNuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Nuevo\PDetalle\sub\FormgGenerar.resx">
+      <DependentUpon>FormgGenerar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Nuevo\PDetalle\UCAdicionalPD.resx">
       <DependentUpon>UCAdicionalPD.cs</DependentUpon>
     </EmbeddedResource>
@@ -1148,6 +1157,7 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\Entidad.Almacen.datasource" />
     <None Include="Properties\DataSources\Entidad.Alternativa.datasource" />
+    <None Include="Properties\DataSources\Entidad.AlternativaCombinacion.datasource" />
     <None Include="Properties\DataSources\Entidad.Categoria.datasource" />
     <None Include="Properties\DataSources\Entidad.CierreCaja.datasource" />
     <None Include="Properties\DataSources\Entidad.Cliente.datasource" />

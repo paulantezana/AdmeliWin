@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Admeli.Componentes;
 using Entidad;
 using Modelo;
+using Admeli.Productos.Nuevo.PDetalle.sub;
 
 namespace Admeli.Productos.Nuevo.PDetalle
 {
@@ -506,6 +507,12 @@ namespace Admeli.Productos.Nuevo.PDetalle
         private void dataGridViewVariante_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             cargarAlternativas();
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            FormgGenerar formgGenerar = new FormgGenerar(formProductoNuevo);
+            formgGenerar.ShowDialog();
         }
     }
 }

@@ -75,12 +75,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbxTipoDocumento = new System.Windows.Forms.ComboBox();
             this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textCodigoProducto = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.textNombreEmpresa = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.dtpPago = new System.Windows.Forms.DateTimePicker();
@@ -369,12 +367,10 @@
             this.panel1.Controls.Add(this.btnAddMarca);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbxTipoDocumento);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.textCodigoProducto);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnBuscarProveedor);
-            this.panel1.Controls.Add(this.bunifuMetroTextbox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textNombreEmpresa);
             this.panel1.Controls.Add(this.dtpPago);
@@ -679,20 +675,6 @@
             // 
             this.tipoDocumentoBindingSource.DataSource = typeof(Entidad.Configuracion.TipoDocumento);
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(229, 174);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 14);
-            this.label4.TabIndex = 82;
-            this.label4.Text = "Producto:   |";
-            // 
             // label19
             // 
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -754,26 +736,6 @@
             this.btnBuscarProveedor.UseVisualStyleBackColor = false;
             this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
             // 
-            // bunifuMetroTextbox1
-            // 
-            this.bunifuMetroTextbox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuMetroTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.bunifuMetroTextbox1.BorderThickness = 1;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(219, 167);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Padding = new System.Windows.Forms.Padding(70, 0, 6, 0);
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(655, 26);
-            this.bunifuMetroTextbox1.TabIndex = 12;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -826,7 +788,7 @@
             this.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarProducto.Image")));
-            this.btnBuscarProducto.Location = new System.Drawing.Point(873, 168);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(978, 166);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(31, 25);
             this.btnBuscarProducto.TabIndex = 65;
@@ -856,7 +818,7 @@
             this.removeCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeCard.ForeColor = System.Drawing.Color.White;
             this.removeCard.Image = ((System.Drawing.Image)(resources.GetObject("removeCard.Image")));
-            this.removeCard.Location = new System.Drawing.Point(912, 200);
+            this.removeCard.Location = new System.Drawing.Point(1015, 200);
             this.removeCard.Name = "removeCard";
             this.removeCard.Size = new System.Drawing.Size(53, 26);
             this.removeCard.TabIndex = 21;
@@ -918,7 +880,7 @@
             this.btnAddCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCard.ForeColor = System.Drawing.Color.White;
             this.btnAddCard.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCard.Image")));
-            this.btnAddCard.Location = new System.Drawing.Point(912, 167);
+            this.btnAddCard.Location = new System.Drawing.Point(1015, 167);
             this.btnAddCard.Name = "btnAddCard";
             this.btnAddCard.Size = new System.Drawing.Size(53, 26);
             this.btnAddCard.TabIndex = 20;
@@ -1108,9 +1070,9 @@
             this.label21.Location = new System.Drawing.Point(701, 200);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(59, 14);
+            this.label21.Size = new System.Drawing.Size(80, 14);
             this.label21.TabIndex = 77;
-            this.label21.Text = "Descuento";
+            this.label21.Text = "Descuento (%)";
             // 
             // FormComprarNuevo
             // 
@@ -1159,7 +1121,6 @@
         private System.Windows.Forms.DateTimePicker dtpEmision;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
         private System.Windows.Forms.Button btnBuscarProducto;
         private System.Windows.Forms.ComboBox cbxDescripcion;
         private System.Windows.Forms.Label label5;
@@ -1177,7 +1138,6 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox textTotal;
         private System.Windows.Forms.Button btnAddCard;
         private System.Windows.Forms.Button removeCard;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxMoneda;
         private System.Windows.Forms.Label label10;
