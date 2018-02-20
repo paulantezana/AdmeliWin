@@ -167,7 +167,18 @@ namespace Admeli.Compras.Nuevo
         {
             if (carroCompras == null) carroCompras = new List<CarroCompra>();
             CarroCompra carroCompra = new CarroCompra();
+
+            carroCompra.cantidad = Convert.ToDouble(textCantidad.Text.Trim());
+            carroCompra.cantidadUnitaria = Convert.ToDouble(textPrecioUnidario.Text.Trim());
+            carroCompra.codigoProducto = cbxCodigoProducto.Text.Trim();
+            carroCompra.descripcion = cbxDescripcion.Text.Trim();
+            carroCompra.descuento = Convert.ToDouble(textDescuento.Text.Trim());
+            carroCompra.estado = 1;
+
             carroCompras.Add(carroCompra);
+            //carroCompraBindingSource.Clear();
+            //carroCompraBindingSource.DataSource = carroCompras;
+            //dataGridView1.Refresh();
         }
 
 

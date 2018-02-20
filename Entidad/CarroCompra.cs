@@ -8,15 +8,15 @@ namespace Entidad
 {
     public class CarroCompra
     {
-        public int cantidad { get; set; }
-        public int cantidadUnitaria { get; set; }
+        public int idDetalleCompra { get; set; }
+        public double cantidad { get; set; }
+        public double cantidadUnitaria { get; set; }
         public string codigoProducto { get; set; }
         public string descripcion { get; set; }
-        public int descuento { get; set; }
+        public double descuento { get; set; }
         public int estado { get; set; }
         public int idCombinacionAlternativa { get; set; }
         public int idCompra { get; set; }
-        public int idDetalleCompra { get; set; }
         public int idPresentacion { get; set; }
         public int idProducto { get; set; }
         public int idSucursal { get; set; }
@@ -25,6 +25,6 @@ namespace Entidad
         public string nombrePresentacion { get; set; }
         public int nro { get; set; }
         public int precioUnitario { get; set; }
-        public int total { get; set; }
+        public double total { get; set; }
     }
 }
