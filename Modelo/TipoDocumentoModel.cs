@@ -79,12 +79,12 @@ namespace Modelo
                 throw ex;
             }
         }
-        public async Task<List<TipoDocumento>> tipodoc(int estado = 1)
+        public async Task<List<DiseñoDocumento>> tipodoc(int estado = 1)
         {
             try
             {
                 // www.lineatienda.com/services.php/tipodoc/estado/1
-                List<TipoDocumento> tipoDocumentos = await webService.GET<List<TipoDocumento>>("tipodoc", String.Format("estado/{0}", estado));
+                List<DiseñoDocumento> tipoDocumentos = await webService.GET<List<DiseñoDocumento>>("tipodoc", String.Format("estado/{0}", estado));
                 return tipoDocumentos;
             }
             catch (Exception ex)

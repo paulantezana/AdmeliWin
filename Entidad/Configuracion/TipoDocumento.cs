@@ -20,5 +20,7 @@ namespace Entidad.Configuracion
         public string formatoDocumento { get; set; }
         public bool redimensionarModelo { get; set; }
         public bool bordeDetalle { get; set; }
+        
+
     }
 }
