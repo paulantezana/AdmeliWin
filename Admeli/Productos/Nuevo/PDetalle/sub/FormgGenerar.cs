@@ -80,15 +80,15 @@ namespace Admeli.Productos.Nuevo.PDetalle.sub
             int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
             int idCombinacionAlternativa = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
 
-            AlternativaCombinacion alternativaCombinacion = alternativaCombinaciones.Find(x => x.idCombinacionAlternativa == idCombinacionAlternativa); // Buscando la registro especifico en la lista de registros
+            AlternativaCombinacion currentAlternativaCombinacion = alternativaCombinaciones.Find(x => x.idCombinacionAlternativa == idCombinacionAlternativa); // Buscando la registro especifico en la lista de registros
 
-            alternativaCombinacion.codigoSku = textCodigo.Text;
-            alternativaCombinacion.nombreCombinacion = textNombreCombinacion.Text;
-            alternativaCombinacion.precio = textPrecio.Text;
-            alternativaCombinacion.stock = textStock.Text;
-            alternativaCombinacion.stockIdeal = textStockIdeal.Text;
-            alternativaCombinacion.stockMinimo = textStockMinimo.Text;
-            alternativaCombinacion.codigoSku = textAlertaStock.Text;
+            currentAlternativaCombinacion.codigoSku = textCodigo.Text;
+            currentAlternativaCombinacion.nombreCombinacion = textNombreCombinacion.Text;
+            currentAlternativaCombinacion.precio = textPrecio.Text;
+            currentAlternativaCombinacion.stock = textStock.Text;
+            currentAlternativaCombinacion.stockIdeal = textStockIdeal.Text;
+            currentAlternativaCombinacion.stockMinimo = textStockMinimo.Text;
+            currentAlternativaCombinacion.codigoSku = textAlertaStock.Text;
         }
     }
 }
