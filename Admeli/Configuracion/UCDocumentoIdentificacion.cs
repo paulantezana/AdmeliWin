@@ -12,11 +12,13 @@ using Entidad;
 using Modelo;
 using Admeli.Configuracion.Nuevo;
 
+
 namespace Admeli.Configuracion
 {
     public partial class UCDocumentoIdentificacion : UserControl
     {
         private FormPrincipal formPrincipal;
+       
         public bool lisenerKeyEvents { get; set; }
 
         List<DocumentoIdentificacion> documentos { get; set; }

@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using Modelo;
 using Entidad.Configuracion;
 using Admeli.Componentes;
-
+using Admeli.Configuracion.Modificar;
 namespace Admeli.Configuracion
 {
     public partial class UCDisenoPersonalizacion : UserControl
     {
         private FormPrincipal formPrincipal;
+        private FormDiseñoComprobantes comprobates;
+
         public bool lisenerKeyEvents { get; set; }
         TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
 
@@ -106,5 +108,11 @@ namespace Admeli.Configuracion
         }
         #endregion
 
+        private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            comprobates = new FormDiseñoComprobantes();
+            comprobates.ShowDialog();
+
+        }
     }
 }

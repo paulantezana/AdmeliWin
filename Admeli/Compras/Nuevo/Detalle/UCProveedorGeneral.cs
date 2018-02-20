@@ -23,6 +23,9 @@ namespace Admeli.Compras.Nuevo.Detalle
 
         private List<LabelUbicacion> labelUbicaciones { get; set; }
         private UbicacionGeografica ubicacionGeografica { get; set; }
+        private SunatModel sunatModel=new SunatModel();
+        private DataSunat dataSunat;
+        private RespuestaSunat respuestaSunat;
 
         public UCProveedorGeneral()
         {
@@ -425,7 +428,8 @@ namespace Admeli.Compras.Nuevo.Detalle
             Validator.isNumber(e);
         }
 
-        private void textNIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        // TAREA hacer los cambios en todos los formularios de clientes y proveedores ver lo de paises 
+        private async void textNIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
             String aux = textNIdentificacion.Text;
 
@@ -434,8 +438,43 @@ namespace Admeli.Compras.Nuevo.Detalle
             if(nroCarateres==11 || nroCarateres==8)
                 if ((int)e.KeyChar == (int)Keys.Enter)
                 {
-                    //aqui codigo
+
+                    try
+                    {
+                        respuestaSunat = await sunatModel.obtenerDatos(aux);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "consulta sunat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    
+                   // Ver(aux);
+                    int i = 0;
                 }
+            if (respuestaSunat != null)
+            {
+                dataSunat = respuestaSunat.result;
+                textNIdentificacion.Text = dataSunat.RUC;
+                textTelefono.Text = dataSunat.Telefono;
+                textNombreEmpresa.Text = dataSunat.RazonSocial;
+                textActividadPrincipal.Text = dataSunat.Tipo;
+                
+            }
+
+        }
+        public async void Ver(string aux)
+        {
+            try
+            {
+                respuestaSunat = await sunatModel.obtenerDatos(aux);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "consulta sunat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
         }
     }
 }
