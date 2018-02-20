@@ -92,6 +92,21 @@ namespace Modelo
             }
         }
 
+        //verificarcodigosku
+        public async Task<List<AlternativaCombinacion>> verificarCodigoSKU(string  codigo, int idCombinacionAlternativa)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore/services.php/verificarcodigosku/codigo/VHSJHBBUHB/combinacionalternativa/1
+                List<AlternativaCombinacion> responseData = await webService.GET<List<AlternativaCombinacion>>("verificarcodigosku", String.Format("codigo/{0}/combinacionalternativa/{1}", codigo, idCombinacionAlternativa));
+                return responseData;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<Response> modificarAlternativa(AlternativaCombinacion param)
         {
             try

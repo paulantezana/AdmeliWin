@@ -67,12 +67,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.alternativaCombinacionBindingSource)).BeginInit();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -107,6 +109,7 @@
             this.textCodigo.Size = new System.Drawing.Size(249, 40);
             this.textCodigo.TabIndex = 7;
             this.textCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textCodigo.Validated += new System.EventHandler(this.textCodigo_Validated);
             // 
             // alternativaCombinacionBindingSource
             // 
@@ -317,7 +320,7 @@
             this.panelFooter.Location = new System.Drawing.Point(0, 473);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.panelFooter.Size = new System.Drawing.Size(697, 49);
+            this.panelFooter.Size = new System.Drawing.Size(650, 49);
             this.panelFooter.TabIndex = 20;
             // 
             // panel1
@@ -325,7 +328,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(189, 1);
+            this.panel1.Location = new System.Drawing.Point(166, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(319, 48);
             this.panel1.TabIndex = 0;
@@ -566,15 +569,19 @@
             this.progressBarApp.Maximum = 200;
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
-            this.progressBarApp.Size = new System.Drawing.Size(697, 5);
+            this.progressBarApp.Size = new System.Drawing.Size(650, 5);
             this.progressBarApp.TabIndex = 26;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormgGenerar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(697, 522);
+            this.ClientSize = new System.Drawing.Size(650, 522);
             this.Controls.Add(this.progressBarApp);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -607,6 +614,7 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,5 +660,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         protected System.Windows.Forms.ProgressBar progressBarApp;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
