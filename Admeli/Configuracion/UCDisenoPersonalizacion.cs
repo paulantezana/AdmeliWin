@@ -111,7 +111,7 @@ namespace Admeli.Configuracion
         private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             comprobates = new FormDiseñoComprobantes();
-            comprobates.ShowDialog();
+          
 
         }
     }
