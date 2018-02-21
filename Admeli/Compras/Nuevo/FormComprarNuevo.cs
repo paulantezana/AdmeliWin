@@ -198,6 +198,9 @@ namespace Admeli.Compras.Nuevo
             detalleCompraBindingSource.DataSource = null;
             detalleCompraBindingSource.DataSource = detalleCompras;
             dataGridView.Refresh();
+
+            // Calculo de totales y subtotales
+            calculoSubtotal();
         }
 
         private void cargarProductoDetalle()
@@ -211,12 +214,12 @@ namespace Admeli.Compras.Nuevo
 
                 // Llenar los campos del producto escogido
                 textCantidad.Text = "1";
-                textDescuento.Text = "0.00";
+                textDescuento.Text = "0";
 
                 /// Cargando presentaciones
                 cargarPresentaciones();
 
-                // Cargando alternativas del producto
+                /// Cargando alternativas del producto
                 cargarAlternativas();
             }
             catch (Exception ex)
@@ -250,6 +253,19 @@ namespace Admeli.Compras.Nuevo
             calcularTotal();
         }
 
+        private void calculoSubtotal()
+        {
+            double subtotal = 0;
+            foreach (DetalleCompra item in detalleCompras)
+            {
+                subtotal += item.total;
+            }
+
+            textSubTotal.Text = subtotal.ToString();
+            double impuesto = double.Parse(textImpuesto.Text, CultureInfo.GetCultureInfo("en-US"));
+            textTotalNeto.Text = (subtotal + impuesto).ToString(); 
+        }
+
         /// <summary>
         /// Calcular Total
         /// </summary>
@@ -265,7 +281,7 @@ namespace Admeli.Compras.Nuevo
                 double descuento = double.Parse(textDescuento.Text, CultureInfo.GetCultureInfo("en-US"));
                 double total = (precioUnidario * cantidad) - descuento;
 
-                textTotal.Text = string.Format(CultureInfo.GetCultureInfo("en-US"), "{0:0.00}", total);
+                textTotal.Text = string.Format(CultureInfo.GetCultureInfo("en-US"), "{0}", total);
             }
             catch (Exception ex)
             {
@@ -296,7 +312,7 @@ namespace Admeli.Compras.Nuevo
                     double precioUnidatio = precioCompra * cantidadUnitario;
 
                     // Imprimiendo valor
-                    textPrecioUnidario.Text = String.Format(CultureInfo.GetCultureInfo("en-US"), "{0:0.00}", precioUnidatio);
+                    textPrecioUnidario.Text = String.Format(CultureInfo.GetCultureInfo("en-US"), "{0}", precioUnidatio);
                 }
             }
             catch (Exception ex)

@@ -120,31 +120,6 @@
   <metadata name="detalleCompraBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>480, 59</value>
   </metadata>
-  <metadata name="detalleCompraBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>480, 59</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAS5JREFUOE9j
-        oBmYdOKbTP/x7wr4MEgNVDlu0H/y54MJp37+x4dBaqDKcQOqGOTs7BzQdeDtB2yakTFIDUgtVBsqSEpK
-        svT3919UMn3L08qFB1/hwyA1ILUgPVDtEJCYmOgPxP9JwdGZSWCckJDgCzWGgQHIqcemGB8OLk75H1KS
-        AjKoHmoM2FsN2BQTg0F6ocYwMAD9O8Xb2/sFORikF2oMA4OTk1MDEP93dHT8b2dnRxQGqYdihItgBhkb
-        G/83r1z737r1IF4MUgNSi2EQME2UQQX/t+18DE4rRVs/YMUth76B1cDUA31RCjWGgcHBwUECKLgPiO+2
-        7372G2RQ6IKnWHHVrk//QWpAaoF4L9AR4lBjUAEsi5h330HBjpPvw1M2/fIaCFCtGCEPMDAAAA/8/96t
-        irv7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAPVJREFUOE9j
-        GLzAZMatmfrdJ55pN+/7GjL1wI9pm47+RcYztx7/OXv7ya+tG8+8Nplx+6TZjLsmUK2oACi5X6/z6H/N
-        hp3/Y2bs/b9h31E47pu96L+akQWYnrjl9H+gWhD+YjL9tgNUOwKQYRAI74NqRwAyDdoP1Y4AIEGDiRf/
-        67Qf+u/Qf/h/17oj/3vXI3DfppP/+7ec+p+6/BJhg5AUEItpbNDqKx/+EwtWAdXiNGjzjY//f/3+8//2
-        o6d4MUgNSC1eg/7+/fv/7YdPeDFIDf0MoorX1lwlPrBXA9ViNch0+u0ek+l3dpOCQXqg2gcdYGAAAGWA
-        UFEd7FneAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="productoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>618, 17</value>
   </metadata>
@@ -154,6 +129,7 @@
   <metadata name="tipoDocumentoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnBuscarProveedor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAXNJREFUOE9j
@@ -201,18 +177,6 @@
   </data>
   <metadata name="alternativaCombinacionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>221, 59</value>
-  </metadata>
-  <metadata name="presentacionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>20, 59</value>
-  </metadata>
-  <metadata name="productoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>618, 17</value>
-  </metadata>
-  <metadata name="monedaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>233, 17</value>
-  </metadata>
-  <metadata name="tipoDocumentoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <metadata name="presentacionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>20, 59</value>
