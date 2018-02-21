@@ -32,6 +32,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComprarNuevo));
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.idDetalleCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCombinacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadUnitariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreMarcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrePresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -74,17 +93,18 @@
             this.textCantidad = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label22 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbxVariante = new System.Windows.Forms.ComboBox();
+            this.cbxCombinacion = new System.Windows.Forms.ComboBox();
             this.alternativaCombinacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.textTotal = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.textDescuento = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbxUnidad = new System.Windows.Forms.ComboBox();
+            this.cbxPresentacion = new System.Windows.Forms.ComboBox();
             this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label21 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
@@ -110,13 +130,196 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView.ColumnHeadersHeight = 35;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDetalleCompraDataGridViewTextBoxColumn,
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn,
+            this.idCompraDataGridViewTextBoxColumn,
+            this.idPresentacionDataGridViewTextBoxColumn,
+            this.idProductoDataGridViewTextBoxColumn,
+            this.idSucursalDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.codigoProductoDataGridViewTextBoxColumn,
+            this.nombreCombinacionDataGridViewTextBoxColumn,
+            this.cantidadUnitariaDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.nombreMarcaDataGridViewTextBoxColumn,
+            this.precioUnitarioDataGridViewTextBoxColumn,
+            this.descuentoDataGridViewTextBoxColumn,
+            this.nombrePresentacionDataGridViewTextBoxColumn,
+            this.nroDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.detalleCompraBindingSource;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridView.Location = new System.Drawing.Point(8, 8);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.Size = new System.Drawing.Size(1064, 270);
             this.dataGridView.TabIndex = 0;
+            // 
+            // idDetalleCompraDataGridViewTextBoxColumn
+            // 
+            this.idDetalleCompraDataGridViewTextBoxColumn.DataPropertyName = "idDetalleCompra";
+            this.idDetalleCompraDataGridViewTextBoxColumn.HeaderText = "idDetalleCompra";
+            this.idDetalleCompraDataGridViewTextBoxColumn.Name = "idDetalleCompraDataGridViewTextBoxColumn";
+            this.idDetalleCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDetalleCompraDataGridViewTextBoxColumn.Visible = false;
+            this.idDetalleCompraDataGridViewTextBoxColumn.Width = 109;
+            // 
+            // idCombinacionAlternativaDataGridViewTextBoxColumn
+            // 
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.DataPropertyName = "idCombinacionAlternativa";
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.HeaderText = "idCombinacionAlternativa";
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.Name = "idCombinacionAlternativaDataGridViewTextBoxColumn";
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.Visible = false;
+            this.idCombinacionAlternativaDataGridViewTextBoxColumn.Width = 151;
+            // 
+            // idCompraDataGridViewTextBoxColumn
+            // 
+            this.idCompraDataGridViewTextBoxColumn.DataPropertyName = "idCompra";
+            this.idCompraDataGridViewTextBoxColumn.HeaderText = "idCompra";
+            this.idCompraDataGridViewTextBoxColumn.Name = "idCompraDataGridViewTextBoxColumn";
+            this.idCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCompraDataGridViewTextBoxColumn.Visible = false;
+            this.idCompraDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // idPresentacionDataGridViewTextBoxColumn
+            // 
+            this.idPresentacionDataGridViewTextBoxColumn.DataPropertyName = "idPresentacion";
+            this.idPresentacionDataGridViewTextBoxColumn.HeaderText = "idPresentacion";
+            this.idPresentacionDataGridViewTextBoxColumn.Name = "idPresentacionDataGridViewTextBoxColumn";
+            this.idPresentacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPresentacionDataGridViewTextBoxColumn.Visible = false;
+            this.idPresentacionDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // idProductoDataGridViewTextBoxColumn
+            // 
+            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.HeaderText = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
+            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProductoDataGridViewTextBoxColumn.Visible = false;
+            this.idProductoDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // idSucursalDataGridViewTextBoxColumn
+            // 
+            this.idSucursalDataGridViewTextBoxColumn.DataPropertyName = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.HeaderText = "idSucursal";
+            this.idSucursalDataGridViewTextBoxColumn.Name = "idSucursalDataGridViewTextBoxColumn";
+            this.idSucursalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSucursalDataGridViewTextBoxColumn.Visible = false;
+            this.idSucursalDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // codigoProductoDataGridViewTextBoxColumn
+            // 
+            this.codigoProductoDataGridViewTextBoxColumn.DataPropertyName = "codigoProducto";
+            this.codigoProductoDataGridViewTextBoxColumn.HeaderText = "Codigo Producto";
+            this.codigoProductoDataGridViewTextBoxColumn.Name = "codigoProductoDataGridViewTextBoxColumn";
+            this.codigoProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoProductoDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // nombreCombinacionDataGridViewTextBoxColumn
+            // 
+            this.nombreCombinacionDataGridViewTextBoxColumn.DataPropertyName = "nombreCombinacion";
+            this.nombreCombinacionDataGridViewTextBoxColumn.HeaderText = "Nombre Combinacion";
+            this.nombreCombinacionDataGridViewTextBoxColumn.Name = "nombreCombinacionDataGridViewTextBoxColumn";
+            this.nombreCombinacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreCombinacionDataGridViewTextBoxColumn.Width = 122;
+            // 
+            // cantidadUnitariaDataGridViewTextBoxColumn
+            // 
+            this.cantidadUnitariaDataGridViewTextBoxColumn.DataPropertyName = "cantidadUnitaria";
+            this.cantidadUnitariaDataGridViewTextBoxColumn.HeaderText = "Cantidad Unitaria";
+            this.cantidadUnitariaDataGridViewTextBoxColumn.Name = "cantidadUnitariaDataGridViewTextBoxColumn";
+            this.cantidadUnitariaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadUnitariaDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // nombreMarcaDataGridViewTextBoxColumn
+            // 
+            this.nombreMarcaDataGridViewTextBoxColumn.DataPropertyName = "nombreMarca";
+            this.nombreMarcaDataGridViewTextBoxColumn.HeaderText = "Nombre Marca";
+            this.nombreMarcaDataGridViewTextBoxColumn.Name = "nombreMarcaDataGridViewTextBoxColumn";
+            this.nombreMarcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreMarcaDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // precioUnitarioDataGridViewTextBoxColumn
+            // 
+            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "precioUnitario";
+            this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio Unitario";
+            this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
+            this.precioUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioUnitarioDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // descuentoDataGridViewTextBoxColumn
+            // 
+            this.descuentoDataGridViewTextBoxColumn.DataPropertyName = "descuento";
+            this.descuentoDataGridViewTextBoxColumn.HeaderText = "Descuento";
+            this.descuentoDataGridViewTextBoxColumn.Name = "descuentoDataGridViewTextBoxColumn";
+            this.descuentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descuentoDataGridViewTextBoxColumn.Width = 84;
+            // 
+            // nombrePresentacionDataGridViewTextBoxColumn
+            // 
+            this.nombrePresentacionDataGridViewTextBoxColumn.DataPropertyName = "nombrePresentacion";
+            this.nombrePresentacionDataGridViewTextBoxColumn.HeaderText = "Nombre Presentacion";
+            this.nombrePresentacionDataGridViewTextBoxColumn.Name = "nombrePresentacionDataGridViewTextBoxColumn";
+            this.nombrePresentacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombrePresentacionDataGridViewTextBoxColumn.Visible = false;
+            this.nombrePresentacionDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // nroDataGridViewTextBoxColumn
+            // 
+            this.nroDataGridViewTextBoxColumn.DataPropertyName = "nro";
+            this.nroDataGridViewTextBoxColumn.HeaderText = "nro";
+            this.nroDataGridViewTextBoxColumn.Name = "nroDataGridViewTextBoxColumn";
+            this.nroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroDataGridViewTextBoxColumn.Visible = false;
+            this.nroDataGridViewTextBoxColumn.Width = 47;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // detalleCompraBindingSource
+            // 
+            this.detalleCompraBindingSource.DataSource = typeof(Entidad.DetalleCompra);
             // 
             // panel4
             // 
@@ -196,12 +399,12 @@
             this.panel1.Controls.Add(this.textCantidad);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.cbxVariante);
+            this.panel1.Controls.Add(this.cbxCombinacion);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.textTotal);
             this.panel1.Controls.Add(this.textDescuento);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.cbxUnidad);
+            this.panel1.Controls.Add(this.cbxPresentacion);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -765,22 +968,22 @@
             this.label9.TabIndex = 75;
             this.label9.Text = "PrecioUnidario";
             // 
-            // cbxVariante
+            // cbxCombinacion
             // 
-            this.cbxVariante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbxVariante.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxVariante.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxVariante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.cbxVariante.DataSource = this.alternativaCombinacionBindingSource;
-            this.cbxVariante.DisplayMember = "nombreCombinacion";
-            this.cbxVariante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxVariante.FormattingEnabled = true;
-            this.cbxVariante.Location = new System.Drawing.Point(219, 218);
-            this.cbxVariante.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxVariante.Name = "cbxVariante";
-            this.cbxVariante.Size = new System.Drawing.Size(134, 23);
-            this.cbxVariante.TabIndex = 14;
-            this.cbxVariante.ValueMember = "idCombinacionAlternativa";
+            this.cbxCombinacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxCombinacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxCombinacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxCombinacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.cbxCombinacion.DataSource = this.alternativaCombinacionBindingSource;
+            this.cbxCombinacion.DisplayMember = "nombreCombinacion";
+            this.cbxCombinacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCombinacion.FormattingEnabled = true;
+            this.cbxCombinacion.Location = new System.Drawing.Point(219, 218);
+            this.cbxCombinacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxCombinacion.Name = "cbxCombinacion";
+            this.cbxCombinacion.Size = new System.Drawing.Size(134, 23);
+            this.cbxCombinacion.TabIndex = 14;
+            this.cbxCombinacion.ValueMember = "idCombinacionAlternativa";
             // 
             // alternativaCombinacionBindingSource
             // 
@@ -853,23 +1056,23 @@
             this.label6.TabIndex = 69;
             this.label6.Text = "Variante:";
             // 
-            // cbxUnidad
+            // cbxPresentacion
             // 
-            this.cbxUnidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbxUnidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbxUnidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxUnidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.cbxUnidad.DataSource = this.presentacionBindingSource;
-            this.cbxUnidad.DisplayMember = "nombrePresentacion";
-            this.cbxUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxUnidad.FormattingEnabled = true;
-            this.cbxUnidad.Location = new System.Drawing.Point(368, 218);
-            this.cbxUnidad.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxUnidad.Name = "cbxUnidad";
-            this.cbxUnidad.Size = new System.Drawing.Size(134, 23);
-            this.cbxUnidad.TabIndex = 15;
-            this.cbxUnidad.ValueMember = "idPresentacion";
-            this.cbxUnidad.SelectedIndexChanged += new System.EventHandler(this.cbxUnidad_SelectedIndexChanged);
+            this.cbxPresentacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbxPresentacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxPresentacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.cbxPresentacion.DataSource = this.presentacionBindingSource;
+            this.cbxPresentacion.DisplayMember = "nombrePresentacion";
+            this.cbxPresentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPresentacion.FormattingEnabled = true;
+            this.cbxPresentacion.Location = new System.Drawing.Point(368, 218);
+            this.cbxPresentacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxPresentacion.Name = "cbxPresentacion";
+            this.cbxPresentacion.Size = new System.Drawing.Size(134, 23);
+            this.cbxPresentacion.TabIndex = 15;
+            this.cbxPresentacion.ValueMember = "idPresentacion";
+            this.cbxPresentacion.SelectedIndexChanged += new System.EventHandler(this.cbxUnidad_SelectedIndexChanged);
             // 
             // presentacionBindingSource
             // 
@@ -904,6 +1107,7 @@
             this.Load += new System.EventHandler(this.FormComprarNuevo_Load);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleCompraBindingSource)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -937,9 +1141,9 @@
         private System.Windows.Forms.ComboBox cbxDescripcion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbxVariante;
+        private System.Windows.Forms.ComboBox cbxCombinacion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbxUnidad;
+        private System.Windows.Forms.ComboBox cbxPresentacion;
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuMetroTextbox textCantidad;
         private System.Windows.Forms.Label label21;
@@ -971,5 +1175,24 @@
         private System.Windows.Forms.BindingSource presentacionBindingSource;
         private System.Windows.Forms.BindingSource alternativaCombinacionBindingSource;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDetalleCompraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCombinacionAlternativaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCompraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPresentacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCombinacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadUnitariaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreMarcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descuentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombrePresentacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource detalleCompraBindingSource;
     }
 }

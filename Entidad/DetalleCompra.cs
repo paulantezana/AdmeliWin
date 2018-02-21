@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +16,16 @@ namespace Entidad
         public int idProducto { get; set; }
         public int idSucursal { get; set; }
         public double cantidad { get; set; }
-        public double cantidadUnitaria { get; set; }
         public string codigoProducto { get; set; }
+        public double cantidadUnitaria { get; set; }
         public string descripcion { get; set; }
         public double descuento { get; set; }
-        public int estado { get; set; }
         public string nombreCombinacion { get; set; }
         public string nombreMarca { get; set; }
         public string nombrePresentacion { get; set; }
         public int nro { get; set; }
-        public int precioUnitario { get; set; }
+        public double precioUnitario { get; set; }
         public double total { get; set; }
+        public int estado { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace Admeli.Compras.Nuevo
         private Producto currentProducto { get; set; }
 
         /// Send
-        private List<DetalleCompra> carroCompras { get; set; }
+        private List<DetalleCompra> detalleCompras { get; set; }
 
         private bool nuevo { get; set; }
 
@@ -166,23 +166,37 @@ namespace Admeli.Compras.Nuevo
 
         private void btnAddCard_Click(object sender, EventArgs e)
         {
-            if(carroCompras == null) carroCompras = new List<DetalleCompra>();
-            DetalleCompra carroCompra = new DetalleCompra();
+            if(detalleCompras == null) detalleCompras = new List<DetalleCompra>();
+            DetalleCompra detalleCompra = new DetalleCompra();
 
             // Creando la lista
-            carroCompra.cantidad = Convert.ToDouble(textCantidad.Text.Trim());
-            carroCompra.cantidadUnitaria = Convert.ToDouble(textPrecioUnidario.Text.Trim());
-            carroCompra.codigoProducto = cbxCodigoProducto.Text.Trim();
-            carroCompra.descripcion = cbxDescripcion.Text.Trim();
-            carroCompra.descuento = Convert.ToDouble(textDescuento.Text.Trim());
-            carroCompra.estado = 1;
+            detalleCompra.cantidad = double.Parse(textCantidad.Text.Trim(), CultureInfo.GetCultureInfo("en-US"));
+            // detalleCompra.cantidadUnitaria = double.Parse(textCantidad.Text.Trim(), CultureInfo.GetCultureInfo("en-US"));
+            detalleCompra.codigoProducto = cbxCodigoProducto.Text.Trim();
+            detalleCompra.descripcion = cbxDescripcion.Text.Trim();
+            detalleCompra.descuento = Convert.ToDouble(textDescuento.Text.Trim());
+            detalleCompra.estado = 1;
+            detalleCompra.idCombinacionAlternativa = Convert.ToInt32(cbxCombinacion.SelectedValue);
+
+            detalleCompra.idCompra = 0;
+            detalleCompra.idDetalleCompra = 0;
+            detalleCompra.idPresentacion = Convert.ToInt32(cbxPresentacion.SelectedValue);
+
+            detalleCompra.idProducto = Convert.ToInt32(cbxCodigoProducto.SelectedValue);
+            detalleCompra.idSucursal = ConfigModel.sucursal.idSucursal;
+            detalleCompra.nombreCombinacion = cbxCombinacion.Text;
+            detalleCompra.nombreMarca = currentProducto.nombreMarca;
+            detalleCompra.nombrePresentacion = cbxPresentacion.Text;
+            detalleCompra.nro = 1;
+            detalleCompra.precioUnitario = double.Parse(textPrecioUnidario.Text.Trim(), CultureInfo.GetCultureInfo("en-US"));
+            detalleCompra.total = double.Parse(textTotal.Text.Trim(), CultureInfo.GetCultureInfo("en-US"));
 
             // agrgando un nuevo item a la lista
-            carroCompras.Add(carroCompra);
+            detalleCompras.Add(detalleCompra);
 
             // Refrescando la tabla
-            //carroCompraBindingSource.DataSource = null;
-            //carroCompraBindingSource.DataSource = carroCompras;
+            detalleCompraBindingSource.DataSource = null;
+            detalleCompraBindingSource.DataSource = detalleCompras;
             dataGridView.Refresh();
         }
 
@@ -217,7 +231,7 @@ namespace Admeli.Compras.Nuevo
             /// Cargar las precentaciones
             presentaciones = await presentacionModel.presentacionVentas(Convert.ToInt32(cbxCodigoProducto.SelectedValue));
             presentacionBindingSource.DataSource = presentaciones;
-            cbxUnidad.SelectedIndex = -1;
+            cbxPresentacion.SelectedIndex = -1;
 
             /// calculos
             calcularPrecioUnitario();
@@ -266,14 +280,14 @@ namespace Admeli.Compras.Nuevo
             if (cbxCodigoProducto.SelectedIndex == -1 || cbxDescripcion.SelectedIndex == -1) return; /// Validación
             try
             {
-                if (cbxUnidad.SelectedIndex == -1)
+                if (cbxPresentacion.SelectedIndex == -1)
                 {
                     textPrecioUnidario.Text = currentProducto.precioCompra;
                 }
                 else
                 {
                     // Buscar presentacion elegida
-                    int idPresentacion = Convert.ToInt32(cbxUnidad.SelectedValue);
+                    int idPresentacion = Convert.ToInt32(cbxPresentacion.SelectedValue);
                     Presentacion findPresentacion = presentaciones.Find(x => x.idPresentacion == idPresentacion);
 
                     // Realizando el calculo
