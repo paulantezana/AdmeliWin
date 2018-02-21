@@ -165,7 +165,7 @@ namespace Admeli.Compras.Nuevo
 
         private void btnAddCard_Click(object sender, EventArgs e)
         {
-            if (carroCompras == null) carroCompras = new List<CarroCompra>();
+            carroCompras = new List<CarroCompra>();
             CarroCompra carroCompra = new CarroCompra();
 
             carroCompra.cantidad = Convert.ToDouble(textCantidad.Text.Trim());
@@ -176,11 +176,10 @@ namespace Admeli.Compras.Nuevo
             carroCompra.estado = 1;
 
             carroCompras.Add(carroCompra);
-            //carroCompraBindingSource.Clear();
-            //carroCompraBindingSource.DataSource = carroCompras;
-            //dataGridView1.Refresh();
-        }
 
+            carroCompraBindingSource.DataSource = carroCompras;
+            dataGridView.Refresh();
+        }
 
         private void cargarProductoDetalle()
         {
