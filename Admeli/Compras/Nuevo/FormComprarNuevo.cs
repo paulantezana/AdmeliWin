@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace Admeli.Compras.Nuevo
         private Producto currentProducto { get; set; }
 
         /// Send
-        private List<CarroCompra> carroCompras { get; set; }
+        private List<DetalleCompra> carroCompras { get; set; }
 
         private bool nuevo { get; set; }
 
@@ -165,9 +166,10 @@ namespace Admeli.Compras.Nuevo
 
         private void btnAddCard_Click(object sender, EventArgs e)
         {
-            carroCompras = new List<CarroCompra>();
-            CarroCompra carroCompra = new CarroCompra();
+            if(carroCompras == null) carroCompras = new List<DetalleCompra>();
+            DetalleCompra carroCompra = new DetalleCompra();
 
+            // Creando la lista
             carroCompra.cantidad = Convert.ToDouble(textCantidad.Text.Trim());
             carroCompra.cantidadUnitaria = Convert.ToDouble(textPrecioUnidario.Text.Trim());
             carroCompra.codigoProducto = cbxCodigoProducto.Text.Trim();
@@ -175,9 +177,12 @@ namespace Admeli.Compras.Nuevo
             carroCompra.descuento = Convert.ToDouble(textDescuento.Text.Trim());
             carroCompra.estado = 1;
 
+            // agrgando un nuevo item a la lista
             carroCompras.Add(carroCompra);
 
-            carroCompraBindingSource.DataSource = carroCompras;
+            // Refrescando la tabla
+            //carroCompraBindingSource.DataSource = null;
+            //carroCompraBindingSource.DataSource = carroCompras;
             dataGridView.Refresh();
         }
 
@@ -192,7 +197,7 @@ namespace Admeli.Compras.Nuevo
 
                 // Llenar los campos del producto escogido
                 textCantidad.Text = "1";
-                textDescuento.Text = "0";
+                textDescuento.Text = "0.00";
 
                 /// Cargando presentaciones
                 cargarPresentaciones();
@@ -240,7 +245,13 @@ namespace Admeli.Compras.Nuevo
             {
                 if (textCantidad.Text.Trim() == "") textTotal.Text = "0";
                 if (textPrecioUnidario.Text.Trim() == "" || textCantidad.Text.Trim() == "" || textDescuento.Text.Trim() == "") return; /// Validación
-                textTotal.Text = ((Convert.ToDouble(textPrecioUnidario.Text) * Convert.ToDouble(textCantidad.Text)) - Convert.ToDouble(textDescuento.Text)).ToString();
+
+                double precioUnidario = double.Parse(textPrecioUnidario.Text, CultureInfo.GetCultureInfo("en-US"));
+                double cantidad = double.Parse(textCantidad.Text, CultureInfo.GetCultureInfo("en-US"));
+                double descuento = double.Parse(textDescuento.Text, CultureInfo.GetCultureInfo("en-US"));
+                double total = (precioUnidario * cantidad) - descuento;
+
+                textTotal.Text = string.Format(CultureInfo.GetCultureInfo("en-US"), "{0:0.00}", total);
             }
             catch (Exception ex)
             {
@@ -261,9 +272,17 @@ namespace Admeli.Compras.Nuevo
                 }
                 else
                 {
+                    // Buscar presentacion elegida
                     int idPresentacion = Convert.ToInt32(cbxUnidad.SelectedValue);
                     Presentacion findPresentacion = presentaciones.Find(x => x.idPresentacion == idPresentacion);
-                    textPrecioUnidario.Text = Convert.ToString(Convert.ToDouble(currentProducto.precioCompra) * Convert.ToInt32(findPresentacion.cantidadUnitaria)) ;
+
+                    // Realizando el calculo
+                    double precioCompra = double.Parse(currentProducto.precioCompra, CultureInfo.GetCultureInfo("en-US"));
+                    double cantidadUnitario = double.Parse(findPresentacion.cantidadUnitaria, CultureInfo.GetCultureInfo("en-US"));
+                    double precioUnidatio = precioCompra * cantidadUnitario;
+
+                    // Imprimiendo valor
+                    textPrecioUnidario.Text = String.Format(CultureInfo.GetCultureInfo("en-US"), "{0:0.00}", precioUnidatio);
                 }
             }
             catch (Exception ex)
