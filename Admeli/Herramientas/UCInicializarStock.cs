@@ -99,7 +99,7 @@ namespace Admeli.Herramientas
                 foreach (Categoria categoria in categoriaList)
                 {
                     TreeNode aux = new TreeNode(categoria.nombreCategoria);
-                   
+                    aux.Name = categoria.idCategoria.ToString();
                     listNode.Add(aux);
                     
                 }
