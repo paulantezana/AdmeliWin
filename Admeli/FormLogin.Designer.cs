@@ -33,7 +33,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.textPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.textUsuario = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnCLose = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblProgress = new System.Windows.Forms.Label();
             this.progressbar = new Bunifu.Framework.UI.BunifuProgressBar();
@@ -93,17 +92,6 @@
             this.textUsuario.TabIndex = 37;
             this.textUsuario.Text = "admin";
             this.textUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(29, 282);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 20);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "0.1";
             // 
             // btnCLose
             // 
@@ -202,7 +190,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.progressbar);
             this.Controls.Add(this.btnCLose);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.textUsuario);
@@ -218,13 +205,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuImageButton btnCLose;
         private System.Windows.Forms.Label lblProgress;
         private Bunifu.Framework.UI.BunifuProgressBar progressbar;
