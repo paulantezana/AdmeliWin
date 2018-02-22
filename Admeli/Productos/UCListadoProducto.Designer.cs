@@ -55,7 +55,7 @@
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelTools = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.chkActivoAlmacen = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkVerStock = new Bunifu.Framework.UI.BunifuCheckbox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbxAlmacenes = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -91,6 +91,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnImportar = new System.Windows.Forms.Button();
             this.panelContainer.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -106,6 +109,8 @@
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -362,7 +367,7 @@
             // panelTools
             // 
             this.panelTools.Controls.Add(this.label3);
-            this.panelTools.Controls.Add(this.chkActivoAlmacen);
+            this.panelTools.Controls.Add(this.chkVerStock);
             this.panelTools.Controls.Add(this.panel6);
             this.panelTools.Controls.Add(this.panelLevelPais);
             this.panelTools.Controls.Add(this.label4);
@@ -385,17 +390,18 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Ver Stock";
             // 
-            // chkActivoAlmacen
+            // chkVerStock
             // 
-            this.chkActivoAlmacen.BackColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoAlmacen.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.chkActivoAlmacen.Checked = true;
-            this.chkActivoAlmacen.CheckedOnColor = System.Drawing.Color.DodgerBlue;
-            this.chkActivoAlmacen.ForeColor = System.Drawing.Color.White;
-            this.chkActivoAlmacen.Location = new System.Drawing.Point(232, 25);
-            this.chkActivoAlmacen.Name = "chkActivoAlmacen";
-            this.chkActivoAlmacen.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoAlmacen.TabIndex = 15;
+            this.chkVerStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkVerStock.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkVerStock.Checked = false;
+            this.chkVerStock.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.chkVerStock.ForeColor = System.Drawing.Color.White;
+            this.chkVerStock.Location = new System.Drawing.Point(232, 25);
+            this.chkVerStock.Name = "chkVerStock";
+            this.chkVerStock.Size = new System.Drawing.Size(20, 20);
+            this.chkVerStock.TabIndex = 15;
+            this.chkVerStock.OnChange += new System.EventHandler(this.chkActivoAlmacen_OnChange);
             // 
             // panel6
             // 
@@ -412,6 +418,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxAlmacenes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxAlmacenes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxAlmacenes.DataSource = this.almacenBindingSource;
+            this.cbxAlmacenes.DisplayMember = "nombre";
+            this.cbxAlmacenes.Enabled = false;
             this.cbxAlmacenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxAlmacenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxAlmacenes.FormattingEnabled = true;
@@ -419,6 +428,8 @@
             this.cbxAlmacenes.Name = "cbxAlmacenes";
             this.cbxAlmacenes.Size = new System.Drawing.Size(158, 24);
             this.cbxAlmacenes.TabIndex = 1;
+            this.cbxAlmacenes.ValueMember = "idAlmacen";
+            this.cbxAlmacenes.SelectedIndexChanged += new System.EventHandler(this.cbxAlmacenes_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -447,6 +458,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxSucursales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxSucursales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxSucursales.DataSource = this.sucursalBindingSource;
+            this.cbxSucursales.DisplayMember = "nombre";
+            this.cbxSucursales.Enabled = false;
             this.cbxSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSucursales.FormattingEnabled = true;
@@ -454,6 +468,8 @@
             this.cbxSucursales.Name = "cbxSucursales";
             this.cbxSucursales.Size = new System.Drawing.Size(158, 24);
             this.cbxSucursales.TabIndex = 1;
+            this.cbxSucursales.ValueMember = "idSucursal";
+            this.cbxSucursales.SelectedIndexChanged += new System.EventHandler(this.cbxSucursales_SelectedIndexChanged);
             // 
             // lbl20
             // 
@@ -506,6 +522,7 @@
             this.panelCrud.Controls.Add(this.btnModificar);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
+            this.panelCrud.Controls.Add(this.btnImportar);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(0, 0);
             this.panelCrud.Name = "panelCrud";
@@ -946,6 +963,38 @@
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.dataGridViewTextBoxColumn1.Width = 97;
             // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
+            // 
+            // almacenBindingSource
+            // 
+            this.almacenBindingSource.DataSource = typeof(Entidad.Almacen);
+            // 
+            // btnImportar
+            // 
+            this.btnImportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnImportar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnImportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnImportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnImportar.Image = ((System.Drawing.Image)(resources.GetObject("btnImportar.Image")));
+            this.btnImportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImportar.Location = new System.Drawing.Point(554, 15);
+            this.btnImportar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnImportar.Size = new System.Drawing.Size(122, 40);
+            this.btnImportar.TabIndex = 6;
+            this.btnImportar.Text = "  Importar";
+            this.btnImportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
+            // 
             // UCListadoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -975,6 +1024,8 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1024,7 +1075,7 @@
         private System.Windows.Forms.ComboBox cbxSucursales;
         private System.Windows.Forms.Label lbl20;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuCheckbox chkActivoAlmacen;
+        private Bunifu.Framework.UI.BunifuCheckbox chkVerStock;
         private System.Windows.Forms.Panel panelNavigation;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuMetroTextbox lblSpeedPages;
@@ -1041,5 +1092,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.BindingSource almacenBindingSource;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
+        private System.Windows.Forms.Button btnImportar;
     }
 }

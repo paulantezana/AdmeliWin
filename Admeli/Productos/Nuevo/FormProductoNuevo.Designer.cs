@@ -192,7 +192,7 @@
             this.progressBarApp.Maximum = 200;
             this.progressBarApp.Name = "progressBarApp";
             this.progressBarApp.RightToLeftLayout = true;
-            this.progressBarApp.Size = new System.Drawing.Size(1036, 3);
+            this.progressBarApp.Size = new System.Drawing.Size(1036, 5);
             this.progressBarApp.TabIndex = 8;
             // 
             // FormProductoNuevo

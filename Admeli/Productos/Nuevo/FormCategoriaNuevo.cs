@@ -46,16 +46,27 @@ namespace Admeli.Productos.Nuevo
             cargarCategoriaPadre();
             cargarOrdenVisualizacion();
             cargarMostrarProductoEn();
-            cargarRegistrosModificar();
         }
         #endregion
 
+        #region =============================== PAINT ===============================
+        private void FormCategoriaNuevo_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelCateGoriaPagre, 157, 157, 157);
+            drawShape.lineBorder(panelOrdenVisualizacion, 157, 157, 157);
+            drawShape.lineBorder(panelMostrarEn, 157, 157, 157);
+        }
+        #endregion
+
+
+
+        #region ========================================== LOAD ==========================================
         private void cargarRegistrosModificar()
         {
             if (nuevo) return;
             textNombreCat.Text = categoria.nombreCategoria;
             cbxCatPadre.SelectedValue = categoria.idPadreCategoria;
-            cbxCatPadre.SelectedText = categoria.padre;
             cbxOrdenVisual.SelectedValue = categoria.ordenVisualizacionProductos;
             cbxMostrarEn.SelectedValue = categoria.mostrarProductosEn;
             textNumeroColumna.Text = categoria.numeroColumnas.ToString();
@@ -69,13 +80,13 @@ namespace Admeli.Productos.Nuevo
             chkMostrarWeb.Checked = Convert.ToBoolean(categoria.mostrarWeb);
         }
 
-        #region ========================================== LOAD ==========================================
         private async void cargarCategoriaPadre()
         {
             cbxCatPadre.DataSource = await categoriaModel.categorias21();
             cbxCatPadre.DisplayMember = "nombreCategoria";
             cbxCatPadre.ValueMember = "idCategoria";
             cbxCatPadre.SelectedValue = 0;
+            cargarRegistrosModificar();
         } 
 
         private void cargarOrdenVisualizacion()

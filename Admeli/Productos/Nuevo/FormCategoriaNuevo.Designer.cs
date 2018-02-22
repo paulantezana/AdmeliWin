@@ -42,7 +42,7 @@
             this.textTagCat = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.textPieCat = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelLevelPais = new System.Windows.Forms.Panel();
+            this.panelCateGoriaPagre = new System.Windows.Forms.Panel();
             this.cbxCatPadre = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,11 +55,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelMostrarEn = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.cbxMostrarEn = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelOrdenVisualizacion = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.cbxOrdenVisual = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -82,10 +82,10 @@
             this.categoriaProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panelLevelPais.SuspendLayout();
+            this.panelCateGoriaPagre.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelMostrarEn.SuspendLayout();
+            this.panelOrdenVisualizacion.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaProductoBindingSource)).BeginInit();
@@ -279,7 +279,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panelLevelPais);
+            this.panel1.Controls.Add(this.panelCateGoriaPagre);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textNombreCat);
             this.panel1.Controls.Add(this.label3);
@@ -290,14 +290,14 @@
             this.panel1.Size = new System.Drawing.Size(704, 107);
             this.panel1.TabIndex = 2;
             // 
-            // panelLevelPais
+            // panelCateGoriaPagre
             // 
-            this.panelLevelPais.Controls.Add(this.cbxCatPadre);
-            this.panelLevelPais.Controls.Add(this.label2);
-            this.panelLevelPais.Location = new System.Drawing.Point(357, 13);
-            this.panelLevelPais.Name = "panelLevelPais";
-            this.panelLevelPais.Size = new System.Drawing.Size(328, 40);
-            this.panelLevelPais.TabIndex = 24;
+            this.panelCateGoriaPagre.Controls.Add(this.cbxCatPadre);
+            this.panelCateGoriaPagre.Controls.Add(this.label2);
+            this.panelCateGoriaPagre.Location = new System.Drawing.Point(357, 13);
+            this.panelCateGoriaPagre.Name = "panelCateGoriaPagre";
+            this.panelCateGoriaPagre.Size = new System.Drawing.Size(328, 40);
+            this.panelCateGoriaPagre.TabIndex = 24;
             // 
             // cbxCatPadre
             // 
@@ -361,8 +361,8 @@
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panelMostrarEn);
+            this.panel3.Controls.Add(this.panelOrdenVisualizacion);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.textPieCat);
             this.panel3.Controls.Add(this.label17);
@@ -477,15 +477,15 @@
             this.label9.Text = "Opcional";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel6
+            // panelMostrarEn
             // 
-            this.panel6.Controls.Add(this.label23);
-            this.panel6.Controls.Add(this.cbxMostrarEn);
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.Location = new System.Drawing.Point(357, 262);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(328, 40);
-            this.panel6.TabIndex = 39;
+            this.panelMostrarEn.Controls.Add(this.label23);
+            this.panelMostrarEn.Controls.Add(this.cbxMostrarEn);
+            this.panelMostrarEn.Controls.Add(this.label7);
+            this.panelMostrarEn.Location = new System.Drawing.Point(357, 262);
+            this.panelMostrarEn.Name = "panelMostrarEn";
+            this.panelMostrarEn.Size = new System.Drawing.Size(328, 40);
+            this.panelMostrarEn.TabIndex = 39;
             // 
             // label23
             // 
@@ -526,15 +526,15 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Mostrar Productos En:";
             // 
-            // panel5
+            // panelOrdenVisualizacion
             // 
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Controls.Add(this.cbxOrdenVisual);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(14, 261);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(328, 40);
-            this.panel5.TabIndex = 38;
+            this.panelOrdenVisualizacion.Controls.Add(this.label22);
+            this.panelOrdenVisualizacion.Controls.Add(this.cbxOrdenVisual);
+            this.panelOrdenVisualizacion.Controls.Add(this.label5);
+            this.panelOrdenVisualizacion.Location = new System.Drawing.Point(14, 261);
+            this.panelOrdenVisualizacion.Name = "panelOrdenVisualizacion";
+            this.panelOrdenVisualizacion.Size = new System.Drawing.Size(328, 40);
+            this.panelOrdenVisualizacion.TabIndex = 38;
             // 
             // label22
             // 
@@ -681,7 +681,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.btnAceptar);
             this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Location = new System.Drawing.Point(151, 1);
+            this.panel2.Location = new System.Drawing.Point(193, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(319, 48);
             this.panel2.TabIndex = 0;
@@ -804,17 +804,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCategoriaNuevo";
             this.Load += new System.EventHandler(this.FormCategoriaNuevo_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormCategoriaNuevo_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelLevelPais.ResumeLayout(false);
-            this.panelLevelPais.PerformLayout();
+            this.panelCateGoriaPagre.ResumeLayout(false);
+            this.panelCateGoriaPagre.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelMostrarEn.ResumeLayout(false);
+            this.panelMostrarEn.PerformLayout();
+            this.panelOrdenVisualizacion.ResumeLayout(false);
+            this.panelOrdenVisualizacion.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.categoriaProductoBindingSource)).EndInit();
@@ -833,7 +834,7 @@
         private Bunifu.Framework.UI.BunifuCheckbox chkMostrarWeb;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuMetroTextbox textNombreCat;
-        private System.Windows.Forms.Panel panelLevelPais;
+        private System.Windows.Forms.Panel panelCateGoriaPagre;
         private System.Windows.Forms.ComboBox cbxCatPadre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource categoriaProductoBindingSource;
@@ -855,10 +856,10 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox textUrlCat;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuMetroTextbox textNumeroColumna;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelMostrarEn;
         private System.Windows.Forms.ComboBox cbxMostrarEn;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelOrdenVisualizacion;
         private System.Windows.Forms.ComboBox cbxOrdenVisual;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuProgressBar progressBar;

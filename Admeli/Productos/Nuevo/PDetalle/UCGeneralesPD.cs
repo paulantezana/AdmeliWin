@@ -48,6 +48,17 @@ namespace Admeli.Productos.Nuevo.PDetalle
         }
         #endregion
 
+        #region ========================================== PAINT ==========================================
+        private void UCGeneralesPD_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.bottomLine(panelHeader);
+            drawShape.lineBorder(panel12, 157, 157, 157);
+            drawShape.lineBorder(panel2, 157, 157, 157);
+        }
+        #endregion
+
+        #region ============================= Loads =============================
         private void cargarDatosModificar()
         {
             if (formProductoNuevo.nuevo) return;
@@ -59,8 +70,6 @@ namespace Admeli.Productos.Nuevo.PDetalle
             isFieldsValid = true;
         }
 
-
-        #region ============================= Loads =============================
         internal async void cargarMarcas()
         {
             formProductoNuevo.appLoadState(true);
@@ -76,12 +85,6 @@ namespace Admeli.Productos.Nuevo.PDetalle
             formProductoNuevo.appLoadState(false);
         }
         #endregion
-
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.bottomLine(panelHeader);
-        }
 
         private void btnAddMarca_Click(object sender, EventArgs e)
         {

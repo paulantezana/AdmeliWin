@@ -30,8 +30,6 @@ namespace Admeli.Productos
         private List<Producto> productos { get; set; }
         private Producto currentProducto { get; set; }
 
-        private bool verStock { get; set; }
-
         #region ============================== Constructor ==============================
         public UCListadoProducto()
         {
@@ -68,10 +66,9 @@ namespace Admeli.Productos
         {
             if (refreshData)
             {
-                addCheckBox();
-                cargarComponentes();
                 cargarCategorias();
-                cargarComponentesThird();
+                cargarSucursales();
+                cargarAlmacenes();
                 cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
@@ -123,16 +120,29 @@ namespace Admeli.Productos
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
+        private async void cargarSucursales()
         {
             // Cargando el combobox de personales
             loadState(true);
             try
             {
-                cbxSucursales.DataSource = await sucursalModel.sucursales();
-                cbxSucursales.DisplayMember = "nombre";
-                cbxSucursales.ValueMember = "idSucursal";
+                sucursalBindingSource.DataSource = await sucursalModel.sucursales();
                 cbxSucursales.SelectedValue = ConfigModel.sucursal.idSucursal;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async void cargarAlmacenes()
+        {
+            // Cargando el combobox de personales
+            loadState(true);
+            try
+            {
+                almacenBindingSource.DataSource = await almacenModel.almacenes();
+                cbxAlmacenes.SelectedValue = ConfigModel.currentIdAlmacen;
             }
             catch (Exception ex)
             {
@@ -277,24 +287,6 @@ namespace Admeli.Productos
 
         }
         #endregion =============================
-
-
-        private async void cargarComponentesThird()
-        {
-            // Cargando el combobox de personales
-            loadState(true);
-            try
-            {
-                cbxAlmacenes.DataSource = await almacenModel.almacenes();
-                cbxAlmacenes.DisplayMember = "nombre";
-                cbxAlmacenes.ValueMember = "idAlmacen";
-                cbxAlmacenes.SelectedValue = ConfigModel.currentIdAlmacen;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
 
         private async void cargarRegistros()
         {
@@ -554,9 +546,9 @@ namespace Admeli.Productos
 
         private void textBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && textBuscar.Text != "")
+            if (e.KeyCode == Keys.Enter && textBuscar.Text.Trim() != "")
             {
-                if (verStock)
+                if (chkVerStock.Checked)
                 {
                     cargarRegistrosStockLike();
                 }
@@ -598,7 +590,6 @@ namespace Admeli.Productos
             // Mostrando el formulario de modificacion
             FormProductoNuevo formProducto = new FormProductoNuevo(currentProducto);
             formProducto.ShowDialog();
-            cargarRegistros(); // recargando loas registros en el datagridview
         }
 
         private async void executeEliminar()
@@ -746,33 +737,34 @@ namespace Admeli.Productos
         }
         #endregion
 
-        #region ======= Agregando un nuevo checkbox a las herramientas en toolstrip =========
-        private void addCheckBox()
-        {
-            CheckBox cb = new CheckBox();
-            cb.Text = "Ver Stock";
-            //cb.CheckStateChanged += (s, ex) =&gt; this.Text = cb.CheckState.ToString();
-            cb.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            ToolStripControlHost host = new ToolStripControlHost(cb);
-            //toolStripTools.Items.Insert(3,host);
 
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chkActivoAlmacen_OnChange(object sender, EventArgs e)
         {
-            verStock = ((CheckBox)sender).Checked;
-            if (verStock)
+            cbxAlmacenes.Enabled = chkVerStock.Checked;
+            cbxSucursales.Enabled = chkVerStock.Checked;
+            if (chkVerStock.Checked)
             {
                 cargarRegistrosStock();
             }
-            else
             {
                 cargarRegistros();
             }
-            stateCombobox(verStock);
         }
-        #endregion
 
+        private void cbxSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (chkVerStock.Checked)
+            {
+                cargarRegistrosStock();
+            }
+        }
 
+        private void cbxAlmacenes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (chkVerStock.Checked)
+            {
+                cargarRegistrosStock();
+            }
+        }
     }
 }
