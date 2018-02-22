@@ -77,7 +77,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label9.Location = new System.Drawing.Point(39, 229);
+            this.label9.Location = new System.Drawing.Point(44, 232);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 16);
@@ -91,7 +91,7 @@
             this.chkActivoProducto.Checked = true;
             this.chkActivoProducto.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.chkActivoProducto.ForeColor = System.Drawing.Color.White;
-            this.chkActivoProducto.Location = new System.Drawing.Point(14, 227);
+            this.chkActivoProducto.Location = new System.Drawing.Point(19, 230);
             this.chkActivoProducto.Name = "chkActivoProducto";
             this.chkActivoProducto.Size = new System.Drawing.Size(20, 20);
             this.chkActivoProducto.TabIndex = 51;
@@ -99,6 +99,7 @@
             // btnAddUnidadMedida
             // 
             this.btnAddUnidadMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddUnidadMedida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddUnidadMedida.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
             this.btnAddUnidadMedida.FlatAppearance.BorderSize = 0;
             this.btnAddUnidadMedida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
@@ -117,6 +118,7 @@
             // btnAddMarca
             // 
             this.btnAddMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.btnAddMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddMarca.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
             this.btnAddMarca.FlatAppearance.BorderSize = 0;
             this.btnAddMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
@@ -135,6 +137,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(59)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
@@ -159,7 +162,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label5.Location = new System.Drawing.Point(11, 271);
+            this.label5.Location = new System.Drawing.Point(13, 269);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 16);
@@ -173,12 +176,12 @@
             // textDescripcion
             // 
             this.textDescripcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDescripcion.Location = new System.Drawing.Point(14, 289);
+            this.textDescripcion.Location = new System.Drawing.Point(16, 287);
             this.textDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
             this.textDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textDescripcion.Size = new System.Drawing.Size(732, 109);
+            this.textDescripcion.Size = new System.Drawing.Size(730, 109);
             this.textDescripcion.TabIndex = 34;
             // 
             // panelHeader

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Admeli.Componentes;
 using Modelo;
 using Entidad;
+using System.Globalization;
 
 namespace Admeli.Productos.Nuevo.PDetalle
 {
@@ -161,16 +162,10 @@ namespace Admeli.Productos.Nuevo.PDetalle
             formProductoNuevo.currentProducto.nombreProducto = textNombreProducto.Text;
             formProductoNuevo.currentProducto.nombreUnidad = cbxUnidadMedida.Text;
 
-            formProductoNuevo.currentProducto.precioCompra = Convert.ToDouble(textPrecioCompra.Text);
+            formProductoNuevo.currentProducto.precioCompra = double.Parse(textPrecioCompra.Text, CultureInfo.GetCultureInfo("en-US"));
         }
 
         #region ================================ Validation ===============================
-        /**
-         * ======================================================================
-         *  ---- Funciones de las validacion por cada campo
-         * 
-         * */
-
         private void validarPrecio()
         {
             if (textPrecioCompra.Text.Trim() == "")

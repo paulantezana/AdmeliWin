@@ -48,6 +48,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -77,8 +79,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.chkMostrarWeb = new Bunifu.Framework.UI.BunifuCheckbox();
             this.progressBar = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.label24 = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.categoriaProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -298,6 +298,7 @@
             this.panelCateGoriaPagre.Name = "panelCateGoriaPagre";
             this.panelCateGoriaPagre.Size = new System.Drawing.Size(328, 40);
             this.panelCateGoriaPagre.TabIndex = 24;
+            this.panelCateGoriaPagre.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCateGoriaPagre_Paint);
             // 
             // cbxCatPadre
             // 
@@ -385,6 +386,29 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(704, 372);
             this.panel3.TabIndex = 3;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
+            this.label24.Location = new System.Drawing.Point(10, 18);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(252, 16);
+            this.label24.TabIndex = 47;
+            this.label24.Text = "Mantenimiento Categoría (Opcionales)";
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(202)))), ((int)(((byte)(59)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(12, 13);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(673, 28);
+            this.bunifuSeparator1.TabIndex = 48;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
             // 
             // label21
             // 
@@ -486,6 +510,7 @@
             this.panelMostrarEn.Name = "panelMostrarEn";
             this.panelMostrarEn.Size = new System.Drawing.Size(328, 40);
             this.panelMostrarEn.TabIndex = 39;
+            this.panelMostrarEn.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrarEn_Paint);
             // 
             // label23
             // 
@@ -535,6 +560,7 @@
             this.panelOrdenVisualizacion.Name = "panelOrdenVisualizacion";
             this.panelOrdenVisualizacion.Size = new System.Drawing.Size(328, 40);
             this.panelOrdenVisualizacion.TabIndex = 38;
+            this.panelOrdenVisualizacion.Paint += new System.Windows.Forms.PaintEventHandler(this.panelOrdenVisualizacion_Paint);
             // 
             // label22
             // 
@@ -761,29 +787,6 @@
             this.progressBar.TabIndex = 4;
             this.progressBar.Value = 0;
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(183)))));
-            this.label24.Location = new System.Drawing.Point(10, 18);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(252, 16);
-            this.label24.TabIndex = 47;
-            this.label24.Text = "Mantenimiento Categoría (Opcionales)";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(202)))), ((int)(((byte)(59)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(12, 13);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(673, 28);
-            this.bunifuSeparator1.TabIndex = 48;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
             // categoriaProductoBindingSource
             // 
             this.categoriaProductoBindingSource.DataSource = typeof(Entidad.CategoriaProducto);
@@ -804,7 +807,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCategoriaNuevo";
             this.Load += new System.EventHandler(this.FormCategoriaNuevo_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormCategoriaNuevo_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

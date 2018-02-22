@@ -224,6 +224,11 @@ namespace Admeli.Productos.Nuevo.PDetalle
 
 
         #region ================================== CRUD Precentacion ==================================
+        private void dataGridViewPresentacion_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarPrecentacion();
+        }
+
         private void btnNuevoPrecentacion_Click(object sender, EventArgs e)
         {
             this.executeNuevoPresentacion();
@@ -314,6 +319,10 @@ namespace Admeli.Productos.Nuevo.PDetalle
         #endregion
 
         #region ====================================== CRUD Variante ======================================
+        private void dataGridViewVariante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarVariante();
+        }
 
         private void btnNuevoVariante_Click(object sender, EventArgs e)
         {
@@ -405,6 +414,11 @@ namespace Admeli.Productos.Nuevo.PDetalle
         #endregion
 
         #region ====================================== CRUD Alternativa ======================================
+        private void dataGridViewAlternativa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarAlternativa();
+        }
+
         private void btnNuevoAlternativa_Click(object sender, EventArgs e)
         {
             this.executeNuevoAlternativa();

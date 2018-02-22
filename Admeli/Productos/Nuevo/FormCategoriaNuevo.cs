@@ -50,11 +50,21 @@ namespace Admeli.Productos.Nuevo
         #endregion
 
         #region =============================== PAINT ===============================
-        private void FormCategoriaNuevo_Paint(object sender, PaintEventArgs e)
+        private void panelCateGoriaPagre_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelCateGoriaPagre, 157, 157, 157);
+        }
+
+        private void panelOrdenVisualizacion_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelOrdenVisualizacion, 157, 157, 157);
+        }
+
+        private void panelMostrarEn_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelMostrarEn, 157, 157, 157);
         }
         #endregion

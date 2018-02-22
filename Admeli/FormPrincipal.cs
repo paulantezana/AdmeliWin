@@ -22,23 +22,12 @@ namespace Admeli
 {
     public partial class FormPrincipal : Form
     {
-        // User Control preparado para el aside menu
-        private UCComprasN uCComprasN;
-        private UCVentasN uCVentasN;
-        private UCCajaN uCCajaN;
-        private UCAlmacenN UCAlmacenN;
-        private UCHerramientasN uCHerramientasN;
-        private UCReporteN uCReporteN;
-        private UCProductosN uCProductosN;
+        private UCTiendaRoot uCTiendaRoot { get; set; }
+        private UCMessageRoot uCMessageRoot { get; set; }
+        private UCConfigRoot uCConfigRoot { get; set; }
+        // private UCOTro uCTiendaRoot { get; set; }
 
-        // User control preparado para main = contenedor principal
-        private UCComprasNav uCComprasNav;
-        private UCVentasNav uCVentasNav;
-        private UCCajaNav uCCajaNav;
-        private UCAlmacenNav UCAlmacenNav;
-        private UCHerramientasNav uCHerramientasNav;
-        private UCReporteNav uCReporteNav;
-        private UCProductosNav uCProductosNav;
+
         private UCConfigNav uCConfigNav;
         private UCHome uCHome;
 
@@ -85,125 +74,82 @@ namespace Admeli
         }
         #endregion
 
-        #region ========================= ASIDE LEFT MENU =========================
-        private void btnColor()
+
+        private void btnTienda_Click(object sender, EventArgs e)
         {
-            /// Reset Color Text
-            btnCompra.ForeColor = Color.FromArgb(139, 138, 141);
-            btnHerramienta.ForeColor = Color.FromArgb(139, 138, 141);
-            btnVenta.ForeColor = Color.FromArgb(139, 138, 141);
-            btnProducto.ForeColor = Color.FromArgb(139, 138, 141);
-            btnCaja.ForeColor = Color.FromArgb(139, 138, 141);
-            btnAlmacen.ForeColor = Color.FromArgb(139, 138, 141);
-            btnReporte.ForeColor = Color.FromArgb(139, 138, 141);
-            btnConfiguracion.ForeColor = Color.FromArgb(139, 138, 141);
-
-            // Reset Back Color
-            btnCompra.BackColor = Color.FromArgb(52, 49, 58);
-            btnHerramienta.BackColor = Color.FromArgb(52, 49, 58);
-            btnVenta.BackColor = Color.FromArgb(52, 49, 58);
-            btnProducto.BackColor = Color.FromArgb(52, 49, 58);
-            btnCaja.BackColor = Color.FromArgb(52, 49, 58);
-            btnAlmacen.BackColor = Color.FromArgb(52, 49, 58);
-            btnReporte.BackColor = Color.FromArgb(52, 49, 58);
-            btnConfiguracion.BackColor = Color.FromArgb(52, 49, 58);
-
-            // ICONS cambiar el indice
-            btnVenta.ImageIndex = 0;
-            btnCompra.ImageIndex = 2;
-            btnProducto.ImageIndex = 4;
-            btnAlmacen.ImageIndex = 6;
-            btnCaja.ImageIndex = 8;
-            btnHerramienta.ImageIndex = 10;
-            btnReporte.ImageIndex = 12;
-            btnConfiguracion.ImageIndex = 14;
+            toggleRootMenu("tienda");
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
+        private void btnMessage_Click(object sender, EventArgs e)
         {
-            togglePanelMain("home"); /// Navegar
+            toggleRootMenu("message");
         }
 
-        private void btnVenta_Click(object sender, EventArgs e)
+        private void btnConfig_Click(object sender, EventArgs e)
         {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnVenta.Location; /// Decoracion
-            btnVenta.ForeColor = Color.White; /// Color
-            btnVenta.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("ventas"); /// Navegar
-            btnVenta.ImageIndex = 1; /// Indice imagen
+            toggleRootMenu("config");
         }
 
-        private void btnCompra_Click(object sender, EventArgs e)
+        internal void toggleRootMenu(string panelName)
         {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnCompra.Location; /// Decoracion
-            btnCompra.ForeColor = Color.White; /// Color
-            btnCompra.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("compras"); /// Navegar
-            btnCompra.ImageIndex = 3; /// Indice imagen
+            this.panelAsideMain.Controls.Clear();
+            switch (panelName)
+            {
+                case "tienda":
+                    if (this.uCTiendaRoot == null)
+                    {
+                        this.uCTiendaRoot = new UCTiendaRoot(this);
+                        this.panelAsideMain.Controls.Add(uCTiendaRoot);
+                        this.uCTiendaRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCTiendaRoot.Location = new System.Drawing.Point(0, 0);
+                        this.uCTiendaRoot.Name = "uCTiendaRoot";
+                        this.uCTiendaRoot.Size = new System.Drawing.Size(250, 776);
+                        this.uCTiendaRoot.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCTiendaRoot);
+                    }
+                    this.lblTitlePage.Text = "Tienda - "; /// Titulo en el encabezado
+                    break;
+                case "config":
+                    if (this.uCConfigRoot == null)
+                    {
+                        this.uCConfigRoot = new UCConfigRoot(this);
+                        this.panelAsideMain.Controls.Add(uCConfigRoot);
+                        this.uCConfigRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCConfigRoot.Location = new System.Drawing.Point(0, 0);
+                        this.uCConfigRoot.Name = "uCConfigRoot";
+                        this.uCConfigRoot.Size = new System.Drawing.Size(250, 776);
+                        this.uCConfigRoot.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCConfigRoot);
+                    }
+                    this.lblTitlePage.Text = "Configuracion - "; /// Titulo en el encabezado
+                    break;
+                case "message":
+                    if (this.uCMessageRoot == null)
+                    {
+                        this.uCMessageRoot = new UCMessageRoot(this);
+                        this.panelAsideMain.Controls.Add(uCMessageRoot);
+                        this.uCMessageRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCMessageRoot.Location = new System.Drawing.Point(0, 0);
+                        this.uCMessageRoot.Name = "uCMessageRoot";
+                        this.uCMessageRoot.Size = new System.Drawing.Size(250, 776);
+                        this.uCMessageRoot.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelAsideMain.Controls.Add(uCMessageRoot);
+                    }
+                    this.lblTitlePage.Text = "Mensageria - "; /// Titulo en el encabezado
+                    break;
+                default:
+                    break;
+            }
         }
-
-        private void btnProducto_Click(object sender, EventArgs e)
-        {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnProducto.Location; /// Decoracion
-            btnProducto.ForeColor = Color.White; /// Color
-            btnProducto.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("productos"); /// Navegar
-            btnProducto.ImageIndex = 5; /// Indice imagen
-        }
-
-        private void btnAlmacen_Click(object sender, EventArgs e)
-        {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnAlmacen.Location; /// Decoracion
-            btnAlmacen.ForeColor = Color.White; /// Color
-            btnAlmacen.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("almacen"); /// Navegar
-            btnAlmacen.ImageIndex = 7; /// Indice imagen
-        }
-
-        private void btnCaja_Click(object sender, EventArgs e)
-        {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnCaja.Location; /// Decoracion
-            btnCaja.ForeColor = Color.White; /// Color
-            btnCaja.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("caja"); /// Navegar
-            btnCaja.ImageIndex = 9; /// Indice imagen
-        }
-
-        private void btnHerramienta_Click(object sender, EventArgs e)
-        {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnHerramienta.Location; /// Decoracion
-            btnHerramienta.ForeColor = Color.White; /// Color
-            btnHerramienta.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("herramientas"); /// Navegar
-            btnHerramienta.ImageIndex = 11; /// Indice imagen
-        }
-
-        private void btnReporte_Click(object sender, EventArgs e)
-        {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnReporte.Location; /// Decoracion
-            btnReporte.ForeColor = Color.White; /// Color
-            btnReporte.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("reportes"); /// Navegar
-            btnReporte.ImageIndex = 13; /// Indice imagen
-        }
-
-        private void btnConfiguracion_Click(object sender, EventArgs e)
-        {
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnConfiguracion.Location; /// Decoracion
-            btnConfiguracion.ForeColor = Color.White; /// Color
-            btnConfiguracion.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelMain("configuracion"); /// Navegar
-            btnConfiguracion.ImageIndex = 15; /// Indice imagen
-        }
-        #endregion
 
         #region ===================== TOGGLE PANEL ASIDE LEFT =====================
         internal void togglePanelMain(string panelName)
@@ -211,165 +157,6 @@ namespace Admeli
             this.panelMain.Controls.Clear();
             switch (panelName)
             {
-                case "compras":
-                    if (this.uCComprasNav == null)
-                    {
-                        this.uCComprasNav = new UCComprasNav(this);
-                        this.panelMain.Controls.Add(uCComprasNav);
-                        this.uCComprasNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCComprasNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCComprasNav.Name = "uCComprasNav";
-                        this.uCComprasNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCComprasNav.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCComprasNav);
-                    }
-                    this.lblTitlePage.Text = "Compras - "; /// Titulo en el encabezado
-                    break;
-                case "ventas":
-                    if (this.uCVentasNav == null)
-                    {
-                        this.uCVentasNav = new UCVentasNav(this);
-                        this.panelMain.Controls.Add(uCVentasNav);
-                        this.uCVentasNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCVentasNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCVentasNav.Name = "uCVentasNav";
-                        this.uCVentasNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCVentasNav.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCVentasNav);
-                    }
-                    this.lblTitlePage.Text = "Ventas - "; /// Titulo en el encabezado
-                    break;
-                case "caja":
-                    if (this.uCCajaNav == null)
-                    {
-                        this.uCCajaNav = new UCCajaNav(this);
-                        this.panelMain.Controls.Add(uCCajaNav);
-                        this.uCCajaNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCCajaNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCCajaNav.Name = "uCCajaNav";
-                        this.uCCajaNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCCajaNav.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCCajaNav);
-                    }
-                    this.lblTitlePage.Text = "Caja - "; /// Titulo en el encabezado
-                    break;
-                case "almacen":
-                    if (this.UCAlmacenNav == null)
-                    {
-                        this.UCAlmacenNav = new UCAlmacenNav(this);
-                        this.panelMain.Controls.Add(UCAlmacenNav);
-                        this.UCAlmacenNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.UCAlmacenNav.Location = new System.Drawing.Point(0, 0);
-                        this.UCAlmacenNav.Name = "UCAlmacenNav";
-                        this.UCAlmacenNav.Size = new System.Drawing.Size(250, 776);
-                        this.UCAlmacenNav.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(UCAlmacenNav);
-                    }
-                    this.lblTitlePage.Text = "Almacen - "; /// Titulo en el encabezado
-                    break;
-                case "productos":
-                    if (this.uCProductosNav == null)
-                    {
-                        this.uCProductosNav = new UCProductosNav(this);
-                        this.panelMain.Controls.Add(uCProductosNav);
-                        this.uCProductosNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCProductosNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCProductosNav.Name = "uCProductosNav";
-                        this.uCProductosNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCProductosNav.TabIndex = 0;
-                    }
-                    else
-                    {
-
-                        //cargar el opcion previa de listado de productos
-                        int lugar = uCProductosNav.lugar;
-                        switch (lugar)
-                        {
-
-                            case 1:
-                                this.panelMain.Controls.Add(uCProductosNav.uCListadoProducto);
-                                break;
-                            case 2:
-                               this.panelMain.Controls.Add(uCProductosNav.uCMarcas);
-                                break;
-                            case 3:
-                                this.panelMain.Controls.Add(uCProductosNav.uCUnidadesMedida);
-                                break;
-                            case 4:
-                                this.Controls.Add(uCProductosNav.uCCategorias);
-                                break;
-                            default:
-                                break;
-
-                        }
-
-                        this.panelMain.Controls.Add(uCProductosNav);
-                    }
-                    this.lblTitlePage.Text = "Productos - "; /// Titulo en el encabezado
-                    break;
-                case "configuracion":
-                    if (this.uCConfigNav == null)
-                    {
-                        this.uCConfigNav = new UCConfigNav(this);
-                        this.panelMain.Controls.Add(uCConfigNav);
-                        this.uCConfigNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCConfigNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCConfigNav.Name = "uCConfigNav";
-                        this.uCConfigNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCConfigNav.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCConfigNav);
-                    }
-                    this.lblTitlePage.Text = "Configuracion - "; /// Titulo en el encabezado
-                    break;
-                case "herramientas":
-                    if (this.uCHerramientasNav == null)
-                    {
-                        this.uCHerramientasNav = new UCHerramientasNav(this);
-                        this.panelMain.Controls.Add(uCHerramientasNav);
-                        this.uCHerramientasNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCHerramientasNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCHerramientasNav.Name = "uCHerramientasNav";
-                        this.uCHerramientasNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCHerramientasNav.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCHerramientasNav);
-                    }
-                    this.lblTitlePage.Text = "Herramientas - "; /// Titulo en el encabezado
-                    break;
-                case "reportes":
-                    if (this.uCReporteNav == null)
-                    {
-                        this.uCReporteNav = new UCReporteNav(this);
-                        this.panelMain.Controls.Add(uCReporteNav);
-                        this.uCReporteNav.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCReporteNav.Location = new System.Drawing.Point(0, 0);
-                        this.uCReporteNav.Name = "uCReporteNav";
-                        this.uCReporteNav.Size = new System.Drawing.Size(250, 776);
-                        this.uCReporteNav.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelMain.Controls.Add(uCReporteNav);
-                    }
-                    this.lblTitlePage.Text = "Reportes - "; /// Titulo en el encabezado
-                    break;
                 case "home":
                     if (this.uCHome == null)
                     {
@@ -445,133 +232,7 @@ namespace Admeli
         internal void togglePanelAsideMain(string panelName)
         {
             this.panelAsideMain.Controls.Clear();
-            switch (panelName)
-            {
-                case "compras":
-                    if (this.uCComprasN == null)
-                    {
-                        this.uCComprasN = new UCComprasN(this);
-                        this.panelAsideMain.Controls.Add(uCComprasN);
-                        this.uCComprasN.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCComprasN.Location = new System.Drawing.Point(0, 0);
-                        this.uCComprasN.Name = "uCComprasN";
-                        this.uCComprasN.Size = new System.Drawing.Size(250, 776);
-                        this.uCComprasN.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelAsideMain.Controls.Add(uCComprasN);
-                    }
-                    this.lblTitlePage.Text = "Compras - "; /// Titulo en el encabezado
-                    break;
-                case "ventas":
-                    if (this.uCVentasN == null)
-                    {
-                        this.uCVentasN = new UCVentasN(this);
-                        this.panelAsideMain.Controls.Add(uCVentasN);
-                        this.uCVentasN.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCVentasN.Location = new System.Drawing.Point(0, 0);
-                        this.uCVentasN.Name = "uCVentasN";
-                        this.uCVentasN.Size = new System.Drawing.Size(250, 776);
-                        this.uCVentasN.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelAsideMain.Controls.Add(uCVentasN);
-                    }
-                    this.lblTitlePage.Text = "Ventas - "; /// Titulo en el encabezado
-                    break;
-                case "caja":
-                    if (this.uCCajaN == null)
-                    {
-                        this.uCCajaN = new UCCajaN(this);
-                        this.panelAsideMain.Controls.Add(uCCajaN);
-                        this.uCCajaN.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCCajaN.Location = new System.Drawing.Point(0, 0);
-                        this.uCCajaN.Name = "uCCajaN";
-                        this.uCCajaN.Size = new System.Drawing.Size(250, 776);
-                        this.uCCajaN.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelAsideMain.Controls.Add(uCCajaN);
-                    }
-                    this.lblTitlePage.Text = "Caja - "; /// Titulo en el encabezado
-                    break;
-                case "almacen":
-                    if (this.UCAlmacenN == null)
-                    {
-                        this.UCAlmacenN = new UCAlmacenN(this);
-                        this.panelAsideMain.Controls.Add(UCAlmacenN);
-                        this.UCAlmacenN.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.UCAlmacenN.Location = new System.Drawing.Point(0, 0);
-                        this.UCAlmacenN.Name = "UCAlmacenN";
-                        this.UCAlmacenN.Size = new System.Drawing.Size(250, 776);
-                        this.UCAlmacenN.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelAsideMain.Controls.Add(UCAlmacenN);
-                    }
-                    this.lblTitlePage.Text = "Almacen - "; /// Titulo en el encabezado
-                    break;
-                case "productos":
-                    if (this.uCProductosN == null)
-                    {
-                        this.uCProductosN = new UCProductosN(this);
-                        this.panelAsideMain.Controls.Add(uCProductosN);
-                        this.uCProductosN.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCProductosN.Location = new System.Drawing.Point(0, 0);
-                        this.uCProductosN.Name = "uCProductosN";
-                        this.uCProductosN.Size = new System.Drawing.Size(250, 776);
-                        this.uCProductosN.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelAsideMain.Controls.Add(uCProductosN);
-                    }
-                    this.lblTitlePage.Text = "Productos - "; /// Titulo en el encabezado
-                    break;
-                case "configuracion":
-                    this.lblTitlePage.Text = "Configuracion - "; /// Titulo en el encabezado
-                    break;
-                case "herramientas":
-                    if (this.uCHerramientasN == null)
-                    {
-                        this.uCHerramientasN = new UCHerramientasN(this);
-                        this.panelAsideMain.Controls.Add(uCHerramientasN);
-                        this.uCHerramientasN.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCHerramientasN.Location = new System.Drawing.Point(0, 0);
-                        this.uCHerramientasN.Name = "uCHerramientasN";
-                        this.uCHerramientasN.Size = new System.Drawing.Size(250, 776);
-                        this.uCHerramientasN.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelAsideMain.Controls.Add(uCHerramientasN);
-                    }
-                    this.lblTitlePage.Text = "Herramientas - "; /// Titulo en el encabezado
-                    break;
-                case "reportes":
-                    if (this.uCReporteN == null)
-                    {
-                        this.uCReporteN = new UCReporteN(this);
-                        this.panelAsideMain.Controls.Add(uCReporteN);
-                        this.uCReporteN.Dock = System.Windows.Forms.DockStyle.Fill;
-                        this.uCReporteN.Location = new System.Drawing.Point(0, 0);
-                        this.uCReporteN.Name = "uCReporteN";
-                        this.uCReporteN.Size = new System.Drawing.Size(250, 776);
-                        this.uCReporteN.TabIndex = 0;
-                    }
-                    else
-                    {
-                        this.panelAsideMain.Controls.Add(uCReporteN);
-                    }
-                    this.lblTitlePage.Text = "Reportes - "; /// Titulo en el encabezado
-                    break;
-                default:
-                    break;
-            }
+            showMenuLeft(); /// Mostrar el menu izquierdo si esta oculto
         }
         #endregion
 
@@ -592,9 +253,17 @@ namespace Admeli
         {
             if (panelAsideContainer.Size.Width > 60)
             {
-                panelAsideContainer.Size = new Size(50, 700);
+                panelAsideContainer.Size = new Size(58, 700);
             }
             else
+            {
+                panelAsideContainer.Size = new Size(250, 700);
+            }
+        }
+
+        private void showMenuLeft()
+        {
+            if (panelAsideContainer.Size.Width < 100)
             {
                 panelAsideContainer.Size = new Size(250, 700);
             }
@@ -625,21 +294,6 @@ namespace Admeli
                 Application.Exit();
             }
         }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            // mostrar nuevamente el login del usuario
-            this.formLogin.Show();
-
-            // limpiar loas campos de login usuario
-            this.formLogin.textUsuario.Text = "";
-            this.formLogin.textPassword.Text = "";
-            this.formLogin.textUsuario.Focus();
-
-            // Cerrando el formulario actual
-            this.notCloseApp = true;
-            this.Close();
-        }
         #endregion
 
         #region =============================== SATATES ===============================
@@ -669,16 +323,6 @@ namespace Admeli
             lblUserName.Text = PersonalModel.personal.usuario.ToUpper();
             lblDocumento.Text = String.Format("{0}", PersonalModel.personal.numeroDocumento);
             /// Foto Del Usuario
-
-
-
-            /// Mostrando el menu por defecto
-            btnColor(); /// Color reset
-            borderLeftActive.Location = btnVenta.Location; /// Decoracion
-            btnVenta.ForeColor = Color.White; /// Color
-            btnVenta.BackColor = Color.FromArgb(36, 35, 40); /// Color
-            togglePanelAsideMain("ventas"); /// Navegar
-            btnVenta.ImageIndex = 1; /// Indice imagen
 
             // Cargando datos en el panel derecho
             cargarDatosAsideRight();
@@ -766,11 +410,7 @@ namespace Admeli
             panelMenuRight.Controls.Add(lblEfectivoValue);
         }
 
+
         #endregion
-
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
