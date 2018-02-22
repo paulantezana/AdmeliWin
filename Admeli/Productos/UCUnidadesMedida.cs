@@ -250,6 +250,11 @@ namespace Admeli.Productos
         #endregion
 
         #region ==================== CRUD ====================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
@@ -342,6 +347,11 @@ namespace Admeli.Productos
                 return;
             }
 
+            // Pregunta de seguridad de anular
+            DialogResult dialog = MessageBox.Show("¿Está seguro de anular este registro?", "Anular",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
             try
             {
                 int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
@@ -367,6 +377,5 @@ namespace Admeli.Productos
         }
 
         #endregion
-
     }
 }

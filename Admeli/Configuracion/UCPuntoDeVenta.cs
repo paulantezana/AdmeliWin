@@ -70,6 +70,7 @@ namespace Admeli.Configuracion
             if (refreshData)
             {
                 cargarComponentes();
+                cargarSucursales();
                 cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
@@ -380,6 +381,11 @@ namespace Admeli.Configuracion
                 MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            // Pregunta de seguridad de anular
+            DialogResult dialog = MessageBox.Show("¿Está seguro de anular este registro?", "Anular",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
 
             try
             {

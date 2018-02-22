@@ -222,6 +222,11 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             executeModificar();

@@ -45,7 +45,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblSpeedPages = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -79,7 +78,7 @@
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(880, 536);
+            this.panelContainer.Size = new System.Drawing.Size(814, 324);
             this.panelContainer.TabIndex = 7;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -90,7 +89,7 @@
             this.panel1.Location = new System.Drawing.Point(1, 61);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 5);
-            this.panel1.Size = new System.Drawing.Size(878, 414);
+            this.panel1.Size = new System.Drawing.Size(812, 202);
             this.panel1.TabIndex = 20;
             // 
             // dataGridView
@@ -129,7 +128,7 @@
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.Size = new System.Drawing.Size(858, 399);
+            this.dataGridView.Size = new System.Drawing.Size(792, 187);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
@@ -189,14 +188,13 @@
             // 
             this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
-            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
             this.panelCrud.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
-            this.panelCrud.Size = new System.Drawing.Size(878, 60);
+            this.panelCrud.Size = new System.Drawing.Size(812, 60);
             this.panelCrud.TabIndex = 8;
             // 
             // btnNuevo
@@ -259,7 +257,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(418, 15);
+            this.btnEliminar.Location = new System.Drawing.Point(282, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -283,7 +281,7 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(554, 15);
+            this.btnActualizar.Location = new System.Drawing.Point(418, 15);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -295,29 +293,6 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnAnular
-            // 
-            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnAnular.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnular.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
-            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(282, 15);
-            this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAnular.Size = new System.Drawing.Size(126, 40);
-            this.btnAnular.TabIndex = 6;
-            this.btnAnular.Text = "  Anular (F7)";
-            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAnular.UseVisualStyleBackColor = true;
-            // 
             // panelNavigation
             // 
             this.panelNavigation.Controls.Add(this.label4);
@@ -325,9 +300,9 @@
             this.panelNavigation.Controls.Add(this.panel3);
             this.panelNavigation.Controls.Add(this.lblPageAllItems);
             this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNavigation.Location = new System.Drawing.Point(1, 475);
+            this.panelNavigation.Location = new System.Drawing.Point(1, 263);
             this.panelNavigation.Name = "panelNavigation";
-            this.panelNavigation.Size = new System.Drawing.Size(878, 60);
+            this.panelNavigation.Size = new System.Drawing.Size(812, 60);
             this.panelNavigation.TabIndex = 8;
             // 
             // label4
@@ -335,7 +310,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.label4.Location = new System.Drawing.Point(764, 13);
+            this.label4.Location = new System.Drawing.Point(698, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 35);
             this.label4.TabIndex = 11;
@@ -353,7 +328,7 @@
             this.lblSpeedPages.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSpeedPages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.lblSpeedPages.isPassword = false;
-            this.lblSpeedPages.Location = new System.Drawing.Point(823, 13);
+            this.lblSpeedPages.Location = new System.Drawing.Point(757, 13);
             this.lblSpeedPages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblSpeedPages.Name = "lblSpeedPages";
             this.lblSpeedPages.Size = new System.Drawing.Size(45, 35);
@@ -374,7 +349,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnPrevious);
             this.panel3.Controls.Add(this.btnNext);
-            this.panel3.Location = new System.Drawing.Point(267, 3);
+            this.panel3.Location = new System.Drawing.Point(234, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(344, 55);
             this.panel3.TabIndex = 0;
@@ -538,7 +513,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCSucursales";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(896, 552);
+            this.Size = new System.Drawing.Size(830, 340);
             this.Load += new System.EventHandler(this.UCSucursales_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -581,6 +556,5 @@
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAnular;
     }
 }

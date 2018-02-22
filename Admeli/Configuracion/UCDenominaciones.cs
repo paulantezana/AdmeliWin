@@ -344,7 +344,7 @@ namespace Admeli.Configuracion
                 return;
             }
 
-            // Pregunta de seguridad de eliminacion
+            // Pregunta de seguridad de anular
             DialogResult dialog = MessageBox.Show("¿Está seguro de anular este registro?", "Anular",
                  MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (dialog == DialogResult.No) return;

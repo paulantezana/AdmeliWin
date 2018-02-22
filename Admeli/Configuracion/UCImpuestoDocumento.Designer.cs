@@ -37,7 +37,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCImpuestoDocumento";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(882, 555);
+            this.Size = new System.Drawing.Size(830, 340);
             this.ResumeLayout(false);
 
         }

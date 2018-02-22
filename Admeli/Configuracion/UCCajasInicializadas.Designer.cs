@@ -91,7 +91,7 @@
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(880, 550);
+            this.panelContainer.Size = new System.Drawing.Size(814, 324);
             this.panelContainer.TabIndex = 7;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
@@ -102,7 +102,7 @@
             this.panel1.Location = new System.Drawing.Point(1, 113);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 5);
-            this.panel1.Size = new System.Drawing.Size(878, 376);
+            this.panel1.Size = new System.Drawing.Size(812, 150);
             this.panel1.TabIndex = 20;
             // 
             // dataGridView
@@ -145,7 +145,7 @@
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.Size = new System.Drawing.Size(858, 361);
+            this.dataGridView.Size = new System.Drawing.Size(792, 135);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
             // 
@@ -244,9 +244,9 @@
             this.panelNavigation.Controls.Add(this.panel3);
             this.panelNavigation.Controls.Add(this.lblPageAllItems);
             this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNavigation.Location = new System.Drawing.Point(1, 489);
+            this.panelNavigation.Location = new System.Drawing.Point(1, 263);
             this.panelNavigation.Name = "panelNavigation";
-            this.panelNavigation.Size = new System.Drawing.Size(878, 60);
+            this.panelNavigation.Size = new System.Drawing.Size(812, 60);
             this.panelNavigation.TabIndex = 21;
             // 
             // label4
@@ -254,7 +254,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.label4.Location = new System.Drawing.Point(764, 13);
+            this.label4.Location = new System.Drawing.Point(698, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 35);
             this.label4.TabIndex = 11;
@@ -272,13 +272,15 @@
             this.lblSpeedPages.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSpeedPages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.lblSpeedPages.isPassword = false;
-            this.lblSpeedPages.Location = new System.Drawing.Point(823, 13);
+            this.lblSpeedPages.Location = new System.Drawing.Point(757, 13);
             this.lblSpeedPages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblSpeedPages.Name = "lblSpeedPages";
             this.lblSpeedPages.Size = new System.Drawing.Size(45, 35);
             this.lblSpeedPages.TabIndex = 10;
             this.lblSpeedPages.Text = "10";
             this.lblSpeedPages.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblSpeedPages.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lblSpeedPages_KeyUp);
+            this.lblSpeedPages.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lblSpeedPages_KeyPress);
             // 
             // panel3
             // 
@@ -291,7 +293,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnPrevious);
             this.panel3.Controls.Add(this.btnNext);
-            this.panel3.Location = new System.Drawing.Point(267, 3);
+            this.panel3.Location = new System.Drawing.Point(234, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(344, 55);
             this.panel3.TabIndex = 0;
@@ -346,6 +348,8 @@
             this.lblCurrentPage.TabIndex = 0;
             this.lblCurrentPage.Text = "1";
             this.lblCurrentPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblCurrentPage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lblSpeedPages_KeyPress);
+            this.lblCurrentPage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblCurrentPage_KeyUp);
             // 
             // btnFirst
             // 
@@ -363,6 +367,7 @@
             this.btnFirst.TabIndex = 11;
             this.btnFirst.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnLast
             // 
@@ -381,6 +386,7 @@
             this.btnLast.TabIndex = 10;
             this.btnLast.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // label3
             // 
@@ -410,6 +416,7 @@
             this.btnPrevious.TabIndex = 7;
             this.btnPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -428,6 +435,7 @@
             this.btnNext.TabIndex = 6;
             this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lblPageAllItems
             // 
@@ -448,7 +456,7 @@
             this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTools.Location = new System.Drawing.Point(1, 61);
             this.panelTools.Name = "panelTools";
-            this.panelTools.Size = new System.Drawing.Size(878, 52);
+            this.panelTools.Size = new System.Drawing.Size(812, 52);
             this.panelTools.TabIndex = 27;
             // 
             // btnConsultar
@@ -473,6 +481,7 @@
             this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // panel10
             // 
@@ -525,7 +534,7 @@
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
             this.panelCrud.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
-            this.panelCrud.Size = new System.Drawing.Size(878, 60);
+            this.panelCrud.Size = new System.Drawing.Size(812, 60);
             this.panelCrud.TabIndex = 28;
             // 
             // btnModificar
@@ -550,6 +559,7 @@
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -573,6 +583,7 @@
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -596,6 +607,7 @@
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // UCCajasInicializadas
             // 
@@ -605,7 +617,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCCajasInicializadas";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(896, 566);
+            this.Size = new System.Drawing.Size(830, 340);
             this.Load += new System.EventHandler(this.UCCajasInicializadas_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

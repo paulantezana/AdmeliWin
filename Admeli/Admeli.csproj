@@ -1170,6 +1170,7 @@
     <None Include="Properties\DataSources\Entidad.AlternativaCombinacion.datasource" />
     <None Include="Properties\DataSources\Entidad.CarroCompra.datasource" />
     <None Include="Properties\DataSources\Entidad.Categoria.datasource" />
+    <None Include="Properties\DataSources\Entidad.CategoriaProducto.datasource" />
     <None Include="Properties\DataSources\Entidad.CierreCaja.datasource" />
     <None Include="Properties\DataSources\Entidad.Cliente.datasource" />
     <None Include="Properties\DataSources\Entidad.Cobro.datasource" />

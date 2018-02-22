@@ -125,6 +125,46 @@ namespace Admeli.Configuracion
                 loadState(false);
             }
         }
+
+        private async void buscarPersonal()
+        {
+            loadState(true);
+            try
+            {
+                // Validacion
+                if (textBuscar.Text.Trim() == "")
+                {
+                    cargarRegistros();
+                    return;
+                }
+
+                // webservice
+                RootObject<Personal> personalRoot = await personalModel.buscarLike(textBuscar.Text, paginacion.currentPage, paginacion.speed);
+
+                // actualizando datos de páginacón
+                paginacion.itemsCount = personalRoot.nro_registros;
+                paginacion.reload();
+
+                // Ingresando
+                personales = personalRoot.datos;
+                personalBindingSource.DataSource = personales;
+                dataGridView.Refresh();
+
+                // Páginacion
+                mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false);
+            }
+        }
         #endregion
 
         #region ======================== KEYBOARD ========================
@@ -241,6 +281,14 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ==================== CRUD ====================
+        private void textBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buscarPersonal();
+            }
+        }
+
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             executeModificar();
@@ -366,6 +414,11 @@ namespace Admeli.Configuracion
                 MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            // Pregunta de seguridad de anular
+            DialogResult dialog = MessageBox.Show("¿Está seguro de anular este registro?", "Anular",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
 
             try
             {

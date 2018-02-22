@@ -54,7 +54,7 @@
             this.panelContainer.Location = new System.Drawing.Point(8, 8);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(855, 530);
+            this.panelContainer.Size = new System.Drawing.Size(814, 324);
             this.panelContainer.TabIndex = 1;
             // 
             // lblMonedaPorDefecto
@@ -135,9 +135,9 @@
             // 
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(1, 467);
+            this.panel1.Location = new System.Drawing.Point(1, 261);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(853, 62);
+            this.panel1.Size = new System.Drawing.Size(812, 62);
             this.panel1.TabIndex = 101;
             // 
             // btnAceptar
@@ -166,7 +166,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCTipoCambio";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(871, 546);
+            this.Size = new System.Drawing.Size(830, 340);
             this.Load += new System.EventHandler(this.UCTipoCambio_Load);
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();

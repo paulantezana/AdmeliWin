@@ -114,7 +114,7 @@
             this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Padding = new System.Windows.Forms.Padding(1);
-            this.panelContainer.Size = new System.Drawing.Size(1175, 601);
+            this.panelContainer.Size = new System.Drawing.Size(965, 531);
             this.panelContainer.TabIndex = 7;
             // 
             // panel1
@@ -127,24 +127,24 @@
             this.panel1.Location = new System.Drawing.Point(1, 42);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1173, 558);
+            this.panel1.Size = new System.Drawing.Size(963, 488);
             this.panel1.TabIndex = 1;
             // 
             // panelFooter
             // 
             this.panelFooter.Controls.Add(this.panel13);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFooter.Location = new System.Drawing.Point(240, 425);
+            this.panelFooter.Location = new System.Drawing.Point(179, 425);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.panelFooter.Size = new System.Drawing.Size(923, 49);
+            this.panelFooter.Size = new System.Drawing.Size(774, 49);
             this.panelFooter.TabIndex = 0;
             // 
             // panel13
             // 
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel13.Controls.Add(this.btnAceptar);
-            this.panel13.Location = new System.Drawing.Point(367, 1);
+            this.panel13.Location = new System.Drawing.Point(293, 1);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(188, 48);
             this.panel13.TabIndex = 0;
@@ -173,10 +173,10 @@
             this.tabControl1.Controls.Add(this.tabConfiguraciones);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.ItemSize = new System.Drawing.Size(58, 30);
-            this.tabControl1.Location = new System.Drawing.Point(240, 10);
+            this.tabControl1.Location = new System.Drawing.Point(179, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(923, 415);
+            this.tabControl1.Size = new System.Drawing.Size(774, 415);
             this.tabControl1.TabIndex = 2;
             // 
             // tabDatosEmpresa
@@ -199,7 +199,7 @@
             this.tabDatosEmpresa.Location = new System.Drawing.Point(4, 34);
             this.tabDatosEmpresa.Name = "tabDatosEmpresa";
             this.tabDatosEmpresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDatosEmpresa.Size = new System.Drawing.Size(915, 377);
+            this.tabDatosEmpresa.Size = new System.Drawing.Size(766, 377);
             this.tabDatosEmpresa.TabIndex = 0;
             this.tabDatosEmpresa.Text = "Datos Empresa";
             // 
@@ -735,14 +735,14 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 538);
+            this.panel2.Size = new System.Drawing.Size(169, 468);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(77, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(46, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(77, 66);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -760,7 +760,7 @@
             this.btnSuburFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuburFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuburFoto.ForeColor = System.Drawing.Color.White;
-            this.btnSuburFoto.Location = new System.Drawing.Point(49, 134);
+            this.btnSuburFoto.Location = new System.Drawing.Point(18, 134);
             this.btnSuburFoto.Name = "btnSuburFoto";
             this.btnSuburFoto.Size = new System.Drawing.Size(132, 33);
             this.btnSuburFoto.TabIndex = 1;
@@ -771,7 +771,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label3.Location = new System.Drawing.Point(35, 20);
+            this.label3.Location = new System.Drawing.Point(4, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 33);
             this.label3.TabIndex = 0;
@@ -785,7 +785,7 @@
             this.panelHeaderItem1.Location = new System.Drawing.Point(1, 1);
             this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(1173, 41);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(963, 41);
             this.panelHeaderItem1.TabIndex = 0;
             // 
             // label1
@@ -814,7 +814,7 @@
             this.Controls.Add(this.panelContainer);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCDatosEmpresa";
-            this.Size = new System.Drawing.Size(1175, 601);
+            this.Size = new System.Drawing.Size(965, 531);
             this.Load += new System.EventHandler(this.UCDatosEmpresa_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

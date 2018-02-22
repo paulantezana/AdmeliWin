@@ -110,6 +110,7 @@ namespace Modelo
         {
 
         }
+
         public async Task<RootObject<Personal>> listar(int page, int items)
         {
             try
@@ -122,6 +123,21 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public async Task<RootObject<Personal>> buscarLike(string like, int page, int items)
+        {
+            try
+            {
+                /// localhost:8080/admeli/xcore/services.php/buscarpersonales/nombre/perezd/1/30
+                RootObject<Personal> personales = await webService.GET<RootObject<Personal>>("buscarpersonales", String.Format("nombre/{0}/{1}/{2}", like, page, items));
+                return personales;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<Personal>> listarPersonalCompras(int idSucursal)
         {
             try
