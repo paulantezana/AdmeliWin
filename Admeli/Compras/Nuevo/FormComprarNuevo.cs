@@ -10,15 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Admeli.Compras.Buscar;
 using Entidad;
+using Entidad.Configuracion;
 using Modelo;
 
 namespace Admeli.Compras.Nuevo
 {
     public partial class FormComprarNuevo : Form
     {
-        private Compra currentCompra;
-
-        private Proveedor currentProveedor { get; set; }
 
         private MonedaModel monedaModel = new MonedaModel();
         private TipoDocumentoModel tipoDocumentoModel = new TipoDocumentoModel();
@@ -26,13 +24,28 @@ namespace Admeli.Compras.Nuevo
         private AlternativaModel alternativaModel = new AlternativaModel(); 
         private PresentacionModel presentacionModel = new PresentacionModel();
         private FechaModel fechaModel = new FechaModel();
+        private CompraModel compraModel = new CompraModel();
+        private MedioPagoModel medioPagoModel = new MedioPagoModel();
 
-        private List<Presentacion> presentaciones { get; set; }
+        /// Sus datos se cargan al abrir el formulario
+        private List<Moneda> monedas { get; set; }
+        private List<TipoDocumento> tipoDocumentos { get; set; }
+        private FechaSistema fechaSistema { get; set; }
         private List<Producto> productos { get; set; }
-        private Producto currentProducto { get; set; }
+        private List<MedioPago> medioPagos { get; set; }
 
-        /// Send
+        /// Llenan los datos en las interacciones en el formulario 
+        private List<Presentacion> presentaciones { get; set; }
+        private Producto currentProducto { get; set; }
+        private Proveedor currentProveedor { get; set; }
+
+        /// Se preparan para realizar la compra de productos
         private List<DetalleCompra> detalleCompras { get; set; }
+        private Compra currentCompra { get; set; } // notaEntrada,pago,pagoCompra
+        private NotaEntrada currentNotaEntrada { get; set; }
+        private Pago currentPago { get; set; }
+        private PagoCompra currentPagoCompra { get; set; }
+
 
         private bool nuevo { get; set; }
 
@@ -70,7 +83,9 @@ namespace Admeli.Compras.Nuevo
         {
             cargarMonedas();
             cargarTipoDocumento();
+            cargarFechaSistema();
             cargarProductos();
+            cargarMedioPago();
         }
         #endregion
 
@@ -79,7 +94,8 @@ namespace Admeli.Compras.Nuevo
         {
             try
             {
-                cbxMoneda.DataSource = await monedaModel.monedas();
+                monedas = await monedaModel.monedas();
+                cbxMoneda.DataSource = monedas;
             }
             catch (Exception ex)
             {
@@ -91,7 +107,8 @@ namespace Admeli.Compras.Nuevo
         {
             try
             {
-                cbxTipoDocumento.DataSource = await tipoDocumentoModel.tipoDocumentoVentas();
+                tipoDocumentos = await tipoDocumentoModel.tipoDocumentoVentas();
+                cbxTipoDocumento.DataSource = tipoDocumentos;
             }
             catch (Exception ex)
             {
@@ -103,8 +120,8 @@ namespace Admeli.Compras.Nuevo
         {
             try
             {
-               if (!nuevo) return;
-                FechaSistema fechaSistema = await fechaModel.fechaSistema();
+                if (!nuevo) return;
+                fechaSistema = await fechaModel.fechaSistema();
                 dtpEmision.Value = fechaSistema.fecha;
                 dtpPago.Value = fechaSistema.fecha;
             }
@@ -129,15 +146,20 @@ namespace Admeli.Compras.Nuevo
             }
         }
 
-        private void cargarPrepararCarro()
+        private async void cargarMedioPago()
         {
-            textCantidad.Text = "1";
-            //textPrecioUnidario.Text = 
+            try
+            {
+                medioPagos = await medioPagoModel.medioPagos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Listar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-
         #endregion
 
-        #region ============================  Agrgar Producto Al Carro ============================
+        #region ============================  Agregar Producto Al Carro ============================
         private void cbxCodigoProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarProductoDetalle();
@@ -171,7 +193,11 @@ namespace Admeli.Compras.Nuevo
 
             // Creando la lista
             detalleCompra.cantidad = double.Parse(textCantidad.Text.Trim(), CultureInfo.GetCultureInfo("en-US"));
-            // detalleCompra.cantidadUnitaria = double.Parse(textCantidad.Text.Trim(), CultureInfo.GetCultureInfo("en-US"));
+
+            /// Busqueda presentacion
+            Presentacion findPresentacion = presentaciones.Find(x => x.idPresentacion == Convert.ToInt32(cbxPresentacion.SelectedValue));
+            detalleCompra.cantidadUnitaria = double.Parse(findPresentacion.cantidadUnitaria, CultureInfo.GetCultureInfo("en-US"));
+
             detalleCompra.codigoProducto = cbxCodigoProducto.Text.Trim();
             detalleCompra.descripcion = cbxDescripcion.Text.Trim();
             detalleCompra.descuento = Convert.ToDouble(textDescuento.Text.Trim());
@@ -355,5 +381,26 @@ namespace Admeli.Compras.Nuevo
         {
             if (currentProducto == null) return;
         }
+
+        #region =============================== Realizar La Compra ===============================
+        private void btnRealizarCompra_Click(object sender, EventArgs e)
+        {
+            //compraModel.ralizarCompra(compra,detalleCompras,notaEntrada,pago,pagoCompra);
+        } 
+
+        private void crearObjetoCompra()
+        {
+            Compra compra = new Compra();
+            compra.descuento = textDescuentoCompra.Text;
+            compra.direccion = textDireccion.Text;
+            compra.estado = 1;
+            // compra.fechaFacturacion = dtpEmision.Value.ToString("yyyy-MMM-dd  hh:mm:ss");
+            //compra.fechaPago = "";
+            compra.formaPago = "";
+
+        }
+
+
+        #endregion
     }
 }

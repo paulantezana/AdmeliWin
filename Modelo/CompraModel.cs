@@ -14,7 +14,7 @@ namespace Modelo
         private WebService webService = new WebService();
 
 
-        public async Task<Response> guardar(Compra compra, List<DetalleCompra> detalleCompra, NotaEntrada notaEntrada, Pago pago, PagoCompra pagoCompra)
+        public async Task<Response> ralizarCompra(Compra compra, List<DetalleCompra> detalleCompra, NotaEntrada notaEntrada, Pago pago, PagoCompra pagoCompra)
         {
             try
             {

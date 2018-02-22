@@ -32,6 +32,7 @@ namespace Admeli.Productos
 
         private bool verStock { get; set; }
 
+        #region ============================== Constructor ==============================
         public UCListadoProducto()
         {
             InitializeComponent();
@@ -48,7 +49,9 @@ namespace Admeli.Productos
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
+        #endregion
 
+        #region ============================== Root Load ==============================
         private void UCListadoProducto_Load(object sender, EventArgs e)
         {
             this.reLoad();
@@ -61,10 +64,7 @@ namespace Admeli.Productos
             }
         }
 
-        internal void reLoad(FormPrincipal formPrincipal)
-        {
-            this.formPrincipal = formPrincipal;
-        }
+        #endregion
 
         internal void reLoad(bool refreshData = true)
         {
@@ -276,19 +276,6 @@ namespace Admeli.Productos
 
         }
         #endregion =============================
-        /*
-        private void treeNodeAddRecursive(TreeNode node, Boolean isChecked)
-        {
-            foreach (TreeNode item in node.Nodes)
-            {
-                item.Checked = isChecked;
-
-                if (item.Nodes.Count > 0)
-                {
-                    this.CheckTreeViewNode(item, isChecked);
-                }
-            }
-        }*/
 
 
         private async void cargarComponentesThird()
@@ -693,8 +680,6 @@ namespace Admeli.Productos
         }
 
         #endregion
-
-
 
         #region ======================== Treeview control checked ========================
 
