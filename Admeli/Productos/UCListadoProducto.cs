@@ -64,8 +64,6 @@ namespace Admeli.Productos
             }
         }
 
-        #endregion
-
         internal void reLoad(bool refreshData = true)
         {
             if (refreshData)
@@ -78,6 +76,9 @@ namespace Admeli.Productos
             }
             lisenerKeyEvents = true; // Active lisener key events
         }
+        #endregion
+
+
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {

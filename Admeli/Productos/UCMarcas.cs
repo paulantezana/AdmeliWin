@@ -42,8 +42,7 @@ namespace Admeli.Productos
 
         private void UCMarcas_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            this.reLoad();
 
             // Escuchando los eventos del formulario padre
             if (TopLevelControl is Form)
@@ -51,6 +50,16 @@ namespace Admeli.Productos
                 (TopLevelControl as Form).KeyPreview = true;
                 TopLevelControl.KeyUp += TopLevelControl_KeyUp;
             }
+        }
+
+
+        internal void reLoad(bool refreshData = true)
+        {
+            if (refreshData)
+            {
+                cargarRegistros();
+            }
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -102,29 +111,9 @@ namespace Admeli.Productos
                 }
             }
         }
-
-        internal void reLoad(bool refreshData = true)
-        {
-            if (refreshData)
-            {
-                cargarComponentes();
-                cargarRegistros();
-            }
-            lisenerKeyEvents = true; // Active lisener key events
-        }
         #endregion
 
         #region ======================= Loads =======================
-        private void cargarComponentes()
-        {
-            // Cargando el combobox ce estados
-           
-            // Cargando el combobox de personales
-            // loadState(true);
-            // Estado cargar en falso
-            // loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);

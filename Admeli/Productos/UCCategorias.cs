@@ -72,7 +72,7 @@ namespace Admeli.Productos
         #region ============================== Load Root ==============================
         private void UCCategorias_Load(object sender, EventArgs e)
         {
-            cargarRegistros();
+            this.reLoad();
 
             // Escuchando los eventos del formulario padre
             if (TopLevelControl is Form)

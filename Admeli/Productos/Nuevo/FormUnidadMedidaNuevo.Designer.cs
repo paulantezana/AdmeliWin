@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.progressBar = new Bunifu.Framework.UI.BunifuProgressBar();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -73,13 +74,14 @@
             this.textNombreUM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.errorProvider1.SetIconPadding(this.textNombreUM, -30);
             this.textNombreUM.isPassword = false;
-            this.textNombreUM.Location = new System.Drawing.Point(12, 15);
+            this.textNombreUM.Location = new System.Drawing.Point(12, 23);
             this.textNombreUM.Margin = new System.Windows.Forms.Padding(4);
             this.textNombreUM.Name = "textNombreUM";
             this.textNombreUM.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textNombreUM.Size = new System.Drawing.Size(329, 40);
-            this.textNombreUM.TabIndex = 21;
+            this.textNombreUM.TabIndex = 2;
             this.textNombreUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textNombreUM.Validated += new System.EventHandler(this.textNombreUM_Validated);
             // 
             // textSimboloUM
             // 
@@ -93,37 +95,39 @@
             this.textSimboloUM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.errorProvider1.SetIconPadding(this.textSimboloUM, -30);
             this.textSimboloUM.isPassword = false;
-            this.textSimboloUM.Location = new System.Drawing.Point(12, 67);
+            this.textSimboloUM.Location = new System.Drawing.Point(12, 75);
             this.textSimboloUM.Margin = new System.Windows.Forms.Padding(4);
             this.textSimboloUM.Name = "textSimboloUM";
             this.textSimboloUM.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
             this.textSimboloUM.Size = new System.Drawing.Size(329, 40);
-            this.textSimboloUM.TabIndex = 23;
+            this.textSimboloUM.TabIndex = 4;
             this.textSimboloUM.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textSimboloUM.Validated += new System.EventHandler(this.textSimboloUM_Validated);
             // 
             // label4
             // 
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(16, 171);
+            this.label4.Location = new System.Drawing.Point(16, 179);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(325, 45);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Si está desmarcado, no se podrá hacer operaciones con esta Unidad de Medida.";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(16, 111);
+            this.label1.Location = new System.Drawing.Point(16, 119);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 13);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Siglas únicas de la Unidad.";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.progressBar);
             this.panel3.Controls.Add(this.panelFooter);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.textSimboloUM);
@@ -137,7 +141,20 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(354, 411);
-            this.panel3.TabIndex = 9;
+            this.panel3.TabIndex = 0;
+            // 
+            // progressBar
+            // 
+            this.progressBar.BackColor = System.Drawing.Color.White;
+            this.progressBar.BorderRadius = 0;
+            this.progressBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBar.Location = new System.Drawing.Point(0, 0);
+            this.progressBar.MaximumValue = 100;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(202)))), ((int)(((byte)(34)))));
+            this.progressBar.Size = new System.Drawing.Size(354, 10);
+            this.progressBar.TabIndex = 0;
+            this.progressBar.Value = 0;
             // 
             // panelFooter
             // 
@@ -147,7 +164,7 @@
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panelFooter.Size = new System.Drawing.Size(354, 49);
-            this.panelFooter.TabIndex = 24;
+            this.panelFooter.TabIndex = 9;
             // 
             // panel1
             // 
@@ -176,6 +193,7 @@
             this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnClose
             // 
@@ -202,11 +220,11 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(16, 73);
+            this.label3.Location = new System.Drawing.Point(16, 81);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 14);
-            this.label3.TabIndex = 22;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Símbolo:";
             // 
             // label2
@@ -215,11 +233,11 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(16, 21);
+            this.label2.Location = new System.Drawing.Point(16, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 14);
-            this.label2.TabIndex = 20;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Nombre Unidad:";
             // 
             // label11
@@ -227,11 +245,11 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label11.Location = new System.Drawing.Point(44, 150);
+            this.label11.Location = new System.Drawing.Point(44, 158);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 16);
-            this.label11.TabIndex = 16;
+            this.label11.TabIndex = 7;
             this.label11.Text = "Activo";
             // 
             // chkActivoUM
@@ -241,10 +259,10 @@
             this.chkActivoUM.Checked = true;
             this.chkActivoUM.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.chkActivoUM.ForeColor = System.Drawing.Color.White;
-            this.chkActivoUM.Location = new System.Drawing.Point(19, 148);
+            this.chkActivoUM.Location = new System.Drawing.Point(19, 156);
             this.chkActivoUM.Name = "chkActivoUM";
             this.chkActivoUM.Size = new System.Drawing.Size(20, 20);
-            this.chkActivoUM.TabIndex = 2;
+            this.chkActivoUM.TabIndex = 6;
             // 
             // FormUnidadMedidaNuevo
             // 
@@ -259,8 +277,7 @@
             this.Name = "FormUnidadMedidaNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUnidadMedidaNuevo";
-            this.Load += new System.EventHandler(this.FormUnidadMedidaNuevo_Load);
-            this.Click += new System.EventHandler(this.FormUnidadMedidaNuevo_Load);
+            this.Shown += new System.EventHandler(this.FormUnidadMedidaNuevo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -287,5 +304,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnClose;
+        private Bunifu.Framework.UI.BunifuProgressBar progressBar;
     }
 }

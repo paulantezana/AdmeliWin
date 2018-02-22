@@ -49,10 +49,11 @@ namespace Admeli.Productos
             drawShape.lineBorder(panelContainer);
         }
 
+        #region =================================== ROOT LOAD ===================================
         private void UCUnidadesMedida_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+
+            this.reLoad();
 
             // Escuchando los eventos del formulario padre
             if (TopLevelControl is Form)
@@ -62,6 +63,15 @@ namespace Admeli.Productos
             }
         }
 
+        internal void reLoad(bool refreshData = true)
+        {
+            if (refreshData)
+            {
+                cargarRegistros();
+            }
+            lisenerKeyEvents = true; // Active lisener key events
+        } 
+        #endregion
 
         #region ======================== KEYBOARD ========================
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
@@ -109,17 +119,6 @@ namespace Admeli.Productos
         #endregion
 
         #region ======================= Loads =======================
-        private void cargarComponentes()
-        {
-            // Cargando el combobox ce estados
-
-            // Cargando el combobox de personales
-            loadState(true);
-
-            // Estado cargar en falso
-            loadState(false);
-        }
-
         private async void cargarRegistros()
         {
             loadState(true);
@@ -150,16 +149,6 @@ namespace Admeli.Productos
             {
                 loadState(false);
             }
-        }
-
-        internal void reLoad(bool refreshData = true)
-        {
-            if (refreshData)
-            {
-                cargarComponentes();
-                cargarRegistros();
-            }
-            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

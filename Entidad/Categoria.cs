@@ -30,7 +30,7 @@ namespace Entidad
 
 
         public bool relacionPrincipal { get; set; }
-
+        public bool afecta { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Admeli.Componentes;
+using Entidad;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Admeli.Productos.Nuevo
         private int currentIdUnidadMedida { get; set; }
         private bool nuevo { get; set; }
 
+        #region ===================================== CONSTRUCTOR =====================================
         public FormUnidadMedidaNuevo()
         {
             InitializeComponent();
@@ -35,57 +37,73 @@ namespace Admeli.Productos.Nuevo
             btnAceptar.Text = "Guardar cambios";
             this.cargarRegistrosModificar();
         }
+        #endregion
 
+        #region =============================== ROOT LOAD ===============================
+        private void FormUnidadMedidaNuevo_Shown(object sender, EventArgs e)
+        {
+            textNombreUM.Focus();
+        } 
+        #endregion
+
+        #region ========================================= LOAD =========================================
         private void cargarRegistrosModificar()
         {
             currentIdUnidadMedida = unidad.idUnidadMedida;
             textNombreUM.Text = unidad.nombreUnidad;
             textSimboloUM.Text = unidad.simbolo;
             chkActivoUM.Checked = Convert.ToBoolean(unidad.estado);
+        } 
+        #endregion
+
+        #region ==================================== SAVE AND UPDATE ====================================
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-        private void FormUnidadMedidaNuevo_Load(object sender, EventArgs e)
-        {
-            
-        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cargarObjeto();
-            if (validarCampos())
-            {
-                guardar();
-            }
+            guardar();
         }
+
         private bool validarCampos()
         {
-            if (textNombreUM.Text == "")
+            bool isValid = true;        // IS Valid ============ TRUE
+
+            if (textNombreUM.Text.Trim() == "")
             {
-                errorProvider1.SetError(textNombreUM, "Rellene este campo");
-                textNombreUM.Focus();
-                return false;
+                errorProvider1.SetError(textNombreUM, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreUM, 0);
+                isValid = false;
             }
-            if (textSimboloUM.Text == "")
+            if (textSimboloUM.Text.Trim() == "")
             {
-                errorProvider1.SetError(textSimboloUM, "Rellene este campo");
-                textSimboloUM.Focus();
-                return false;
+                errorProvider1.SetError(textSimboloUM, "Campo obligatorio");
+                Validator.textboxValidateColor(textSimboloUM, 0);
+                isValid = false;
             }
-            errorProvider1.Clear();
-            return true;
+
+            return (!isValid) ? false : true;
         }
 
         private async void guardar()
         {
+            if (!validarCampos()) return; // Validacion del los campos
             try
             {
+                cargarObjeto(); // cargando el objeto para guardar
+                appLoadding(true, 25);
                 if (nuevo)
                 {
                     Response response = await unidadMedidaModel.guardar(unidadMedida);
+                    appLoadding(false, 100);
                     MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     Response response = await unidadMedidaModel.modificar(unidadMedida);
+                    appLoadding(false, 100);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Close();
@@ -93,6 +111,10 @@ namespace Admeli.Productos.Nuevo
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                appLoadding(false, 0);
             }
         }
 
@@ -106,10 +128,40 @@ namespace Admeli.Productos.Nuevo
             unidadMedida.estado = Convert.ToInt32(chkActivoUM.Checked);
             unidadMedida.tieneRegistros = "";
         }
+        #endregion
 
-        private void btnClose_Click(object sender, EventArgs e)
+        #region ==================================== LOADING ====================================
+        public void appLoadding(bool state, int progress = 100, bool increment = false)
         {
-            this.Close();
+            btnAceptar.Enabled = !state;
+            progressBar.Value = (increment) ? progressBar.Value + progress : progress;
         }
+        #endregion
+
+        #region ================================ VALIDATE REAL TIME ================================
+        private void textNombreUM_Validated(object sender, EventArgs e)
+        {
+            if (textNombreUM.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textNombreUM, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreUM, 0);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textNombreUM, 1);
+        }
+
+        private void textSimboloUM_Validated(object sender, EventArgs e)
+        {
+            if (textSimboloUM.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textSimboloUM, "Campo obligatorio");
+                Validator.textboxValidateColor(textSimboloUM, 0);
+                return;
+            }
+            errorProvider1.Clear();
+            Validator.textboxValidateColor(textSimboloUM, 1);
+        } 
+        #endregion
     }
 }

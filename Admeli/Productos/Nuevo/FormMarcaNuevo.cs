@@ -1,4 +1,5 @@
-﻿using Entidad;
+﻿using Admeli.Componentes;
+using Entidad;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Admeli.Productos.Nuevo
         private int currentIdMarca { get; set; }
         private bool nuevo { get; set; }
 
+        #region =================================== CONSTRUCTOR ===================================
         public FormMarcaNuevo()
         {
             InitializeComponent();
@@ -35,36 +37,50 @@ namespace Admeli.Productos.Nuevo
             this.btnAceptar.Text = "Guardar cambios";
             this.cargarRegistrosModificar();
         }
+        #endregion
 
+        #region ============================== ROOT LOAD ==============================
+        private void FormMarcaNuevo_Shown(object sender, EventArgs e)
+        {
+            textNombreMarca.Focus();
+        } 
+        #endregion
+
+        #region =================================== LOAD ===================================
         private void cargarRegistrosModificar()
         {
             textNombreMarca.Text = marca.nombreMarca;
             textWebMarca.Text = marca.sitioWeb;
             textDescripcionMarca.Text = marca.descripcion;
             chkActivoMarca.Checked = Convert.ToBoolean(marca.estado);
-        }
+        } 
+        #endregion
 
-        private void FormMarcaNuevo_Load(object sender, EventArgs e)
-        {
-            
-        }
-
+        #region =================================== SAVE AND UPDATE ===================================
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cargarObjeto();
             if (validarCampos())
             {
+                cargarObjeto();
                 guardar();
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private bool validarCampos()
         {
-            if (textNombreMarca.Text == "")
+            if (textNombreMarca.Text.Trim() == "")
             {
                 errorProvider1.SetError(textNombreMarca, "Rellene este campo");
+                Validator.textboxValidateColor(textNombreMarca, 0);
                 textNombreMarca.Focus();
                 return false;
             }
+            Validator.textboxValidateColor(textNombreMarca, 1);
             errorProvider1.Clear();
             return true;
         }
@@ -73,14 +89,17 @@ namespace Admeli.Productos.Nuevo
         {
             try
             {
+                appLoadding(true, 25);
                 if (nuevo)
                 {
                     Response response = await marcaModel.guardar(marca);
+                    appLoadding(false, 100);
                     MessageBox.Show(response.msj, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     Response response = await marcaModel.modificar(marca);
+                    appLoadding(false, 100);
                     MessageBox.Show(response.msj, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Close();
@@ -88,6 +107,10 @@ namespace Admeli.Productos.Nuevo
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                appLoadding(false, 0);
             }
         }
 
@@ -104,10 +127,32 @@ namespace Admeli.Productos.Nuevo
             marca.ubicacionLogo = "";
             marca.tieneRegistros = "";
         }
+        #endregion
 
-        private void btnClose_Click(object sender, EventArgs e)
+        #region ==================================== LOADING ====================================
+        public void appLoadding(bool state, int progress = 100, bool increment = false)
         {
-            this.Close();
+            btnAceptar.Enabled = !state;
+            progressBar.Value = (increment) ? progressBar.Value + progress : progress;
         }
+        #endregion
+
+        #region ================================ VALIDATE REAL TIME ================================
+        private void textWebMarca_Validating(object sender, CancelEventArgs e)
+        {
+            Validator.textboxValidateColor(textWebMarca, 1);
+        }
+
+        private void textNombreMarca_Validated(object sender, EventArgs e)
+        {
+            if (textNombreMarca.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textNombreMarca, "Campo obligatorio");
+                Validator.textboxValidateColor(textNombreMarca, 0);
+                return;
+            }
+            Validator.textboxValidateColor(textNombreMarca, 1);
+        }
+        #endregion
     }
 }
