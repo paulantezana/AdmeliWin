@@ -61,14 +61,12 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.cbxSucursales = new System.Windows.Forms.ComboBox();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl20 = new System.Windows.Forms.Label();
             this.panelCrud = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -77,8 +75,8 @@
             this.panel3.SuspendLayout();
             this.panelTools.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panelCrud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            this.panelCrud.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -502,6 +500,10 @@
             this.cbxSucursales.TabIndex = 1;
             this.cbxSucursales.ValueMember = "idSucursal";
             // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
+            // 
             // lbl20
             // 
             this.lbl20.AutoSize = true;
@@ -516,40 +518,15 @@
             // 
             // panelCrud
             // 
-            this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
-            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
             this.panelCrud.Padding = new System.Windows.Forms.Padding(10, 15, 0, 0);
             this.panelCrud.Size = new System.Drawing.Size(878, 60);
             this.panelCrud.TabIndex = 28;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(10, 15);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnNuevo.Size = new System.Drawing.Size(126, 40);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "  Nuevo (F3)";
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
@@ -563,7 +540,7 @@
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(146, 15);
+            this.btnModificar.Location = new System.Drawing.Point(10, 15);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -586,7 +563,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(282, 15);
+            this.btnEliminar.Location = new System.Drawing.Point(146, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -609,7 +586,7 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(418, 15);
+            this.btnActualizar.Location = new System.Drawing.Point(282, 15);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -619,33 +596,6 @@
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizar.UseVisualStyleBackColor = true;
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnAnular.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnular.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
-            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(554, 15);
-            this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAnular.Size = new System.Drawing.Size(126, 40);
-            this.btnAnular.TabIndex = 6;
-            this.btnAnular.Text = "  Anular (F7)";
-            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAnular.UseVisualStyleBackColor = true;
-            // 
-            // sucursalBindingSource
-            // 
-            this.sucursalBindingSource.DataSource = typeof(Entidad.Sucursal);
             // 
             // UCCajasInicializadas
             // 
@@ -667,8 +617,8 @@
             this.panelTools.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panelCrud.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            this.panelCrud.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -707,11 +657,9 @@
         private System.Windows.Forms.ComboBox cbxSucursales;
         private System.Windows.Forms.Label lbl20;
         private System.Windows.Forms.FlowLayoutPanel panelCrud;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.BindingSource sucursalBindingSource;
     }
 }

@@ -221,7 +221,7 @@ namespace Admeli.Configuracion
             // Verificando la existencia de datos en el datagridview
             if (dataGridView.Rows.Count == 0)
             {
-                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 

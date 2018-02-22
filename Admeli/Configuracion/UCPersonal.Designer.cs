@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCPersonal));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,23 +64,23 @@
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblPageAllItems = new System.Windows.Forms.Label();
+            this.panelTools = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panelCrud = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
-            this.panelTools = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalBindingSource)).BeginInit();
             this.panelNavigation.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panelCrud.SuspendLayout();
             this.panelTools.SuspendLayout();
+            this.panelCrud.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -119,14 +119,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 35;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPersonalDataGridViewTextBoxColumn,
@@ -533,13 +533,55 @@
             this.lblPageAllItems.Text = "10 Registros";
             this.lblPageAllItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panelTools
+            // 
+            this.panelTools.Controls.Add(this.label2);
+            this.panelTools.Controls.Add(this.textBuscar);
+            this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTools.Location = new System.Drawing.Point(1, 61);
+            this.panelTools.Name = "panelTools";
+            this.panelTools.Size = new System.Drawing.Size(873, 52);
+            this.panelTools.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(14, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 14);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Buscar:";
+            // 
+            // textBuscar
+            // 
+            this.textBuscar.BackColor = System.Drawing.Color.White;
+            this.textBuscar.BorderColorFocused = System.Drawing.Color.DodgerBlue;
+            this.textBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.textBuscar.BorderThickness = 1;
+            this.textBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBuscar.isPassword = false;
+            this.textBuscar.Location = new System.Drawing.Point(10, 6);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
+            this.textBuscar.Size = new System.Drawing.Size(206, 40);
+            this.textBuscar.TabIndex = 9;
+            this.textBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // panelCrud
             // 
             this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
+            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
-            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
@@ -605,7 +647,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(282, 15);
+            this.btnEliminar.Location = new System.Drawing.Point(418, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -628,7 +670,7 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(418, 15);
+            this.btnActualizar.Location = new System.Drawing.Point(554, 15);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -651,7 +693,7 @@
             this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(554, 15);
+            this.btnAnular.Location = new System.Drawing.Point(282, 15);
             this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -661,48 +703,6 @@
             this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAnular.UseVisualStyleBackColor = true;
-            // 
-            // panelTools
-            // 
-            this.panelTools.Controls.Add(this.label2);
-            this.panelTools.Controls.Add(this.textBuscar);
-            this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTools.Location = new System.Drawing.Point(1, 61);
-            this.panelTools.Name = "panelTools";
-            this.panelTools.Size = new System.Drawing.Size(873, 52);
-            this.panelTools.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(14, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 14);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Buscar:";
-            // 
-            // textBuscar
-            // 
-            this.textBuscar.BackColor = System.Drawing.Color.White;
-            this.textBuscar.BorderColorFocused = System.Drawing.Color.DodgerBlue;
-            this.textBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.textBuscar.BorderThickness = 1;
-            this.textBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBuscar.isPassword = false;
-            this.textBuscar.Location = new System.Drawing.Point(10, 6);
-            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Padding = new System.Windows.Forms.Padding(2, 18, 5, 2);
-            this.textBuscar.Size = new System.Drawing.Size(206, 40);
-            this.textBuscar.TabIndex = 9;
-            this.textBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // UCPersonal
             // 
@@ -721,9 +721,9 @@
             this.panelNavigation.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panelCrud.ResumeLayout(false);
             this.panelTools.ResumeLayout(false);
             this.panelTools.PerformLayout();
+            this.panelCrud.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
