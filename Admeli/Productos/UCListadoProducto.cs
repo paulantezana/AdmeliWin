@@ -75,8 +75,6 @@ namespace Admeli.Productos
         }
         #endregion
 
-
-
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
@@ -187,6 +185,7 @@ namespace Admeli.Productos
             }
             loadState(false);
         }
+
         #region ======================= metodos para treeview =======================
         private Categoria primerElemento(List<Categoria> categoriaList)
         {
