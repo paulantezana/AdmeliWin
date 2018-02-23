@@ -15,6 +15,9 @@ namespace Admeli.Configuracion.Modificar
         public int posicionX { get; set; }
         public int posicionY { get; set; }
         public bool mover { get; set; }
+        public int inicialX { get; set; }
+        public int inicialY { get; set; }
+
         public vineta()
         {
             this.usado = 0;// 0  no utilizado, 2 usadada en comprobante ,-1 no usadado esta abajo arriba,1usado arriba
