@@ -55,9 +55,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -69,7 +66,6 @@
             this.panel2.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,9 +82,9 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.textSerie);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 49);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(414, 398);
+            this.panel3.Size = new System.Drawing.Size(414, 430);
             this.panel3.TabIndex = 10;
             // 
             // label8
@@ -96,7 +92,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label8.Location = new System.Drawing.Point(42, 366);
+            this.label8.Location = new System.Drawing.Point(42, 385);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
@@ -110,7 +106,7 @@
             this.chkActivoSucursal.Checked = true;
             this.chkActivoSucursal.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.chkActivoSucursal.ForeColor = System.Drawing.Color.White;
-            this.chkActivoSucursal.Location = new System.Drawing.Point(17, 364);
+            this.chkActivoSucursal.Location = new System.Drawing.Point(17, 383);
             this.chkActivoSucursal.Name = "chkActivoSucursal";
             this.chkActivoSucursal.Size = new System.Drawing.Size(20, 20);
             this.chkActivoSucursal.TabIndex = 53;
@@ -122,7 +118,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(18, 311);
+            this.label1.Location = new System.Drawing.Point(18, 330);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 16);
@@ -141,7 +137,7 @@
             this.textCorrelativoSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCorrelativoSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textCorrelativoSiguiente.isPassword = false;
-            this.textCorrelativoSiguiente.Location = new System.Drawing.Point(13, 305);
+            this.textCorrelativoSiguiente.Location = new System.Drawing.Point(13, 324);
             this.textCorrelativoSiguiente.Margin = new System.Windows.Forms.Padding(4);
             this.textCorrelativoSiguiente.Name = "textCorrelativoSiguiente";
             this.textCorrelativoSiguiente.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
@@ -155,7 +151,7 @@
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.cbxTipoDocumento);
-            this.panel6.Location = new System.Drawing.Point(13, 190);
+            this.panel6.Location = new System.Drawing.Point(13, 209);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(1);
             this.panel6.Size = new System.Drawing.Size(389, 50);
@@ -204,7 +200,7 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.cbxPuntoVenta);
-            this.panel5.Location = new System.Drawing.Point(13, 129);
+            this.panel5.Location = new System.Drawing.Point(13, 148);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(1);
             this.panel5.Size = new System.Drawing.Size(389, 50);
@@ -253,7 +249,7 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.cbxSucursal);
-            this.panel4.Location = new System.Drawing.Point(13, 69);
+            this.panel4.Location = new System.Drawing.Point(13, 88);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(1);
             this.panel4.Size = new System.Drawing.Size(389, 50);
@@ -302,7 +298,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.cbxArea);
-            this.panel2.Location = new System.Drawing.Point(13, 9);
+            this.panel2.Location = new System.Drawing.Point(13, 28);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(1);
             this.panel2.Size = new System.Drawing.Size(389, 50);
@@ -345,7 +341,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(18, 253);
+            this.label2.Location = new System.Drawing.Point(18, 272);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 16);
@@ -364,7 +360,7 @@
             this.textSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textSerie.isPassword = false;
-            this.textSerie.Location = new System.Drawing.Point(13, 247);
+            this.textSerie.Location = new System.Drawing.Point(13, 266);
             this.textSerie.Margin = new System.Windows.Forms.Padding(4);
             this.textSerie.Name = "textSerie";
             this.textSerie.Padding = new System.Windows.Forms.Padding(5, 18, 5, 0);
@@ -429,42 +425,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panelHeader
-            // 
-            this.panelHeader.BackColor = System.Drawing.Color.White;
-            this.panelHeader.Controls.Add(this.bunifuSeparator1);
-            this.panelHeader.Controls.Add(this.label4);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(414, 49);
-            this.panelHeader.TabIndex = 9;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 37);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(414, 12);
-            this.bunifuSeparator1.TabIndex = 1;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(19, 13);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "EGRESOS";
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -479,7 +439,6 @@
             this.ClientSize = new System.Drawing.Size(414, 521);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelFooter);
-            this.Controls.Add(this.panelHeader);
             this.Name = "FormAsignarCorrelativoModificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAsignarCorrelativoModificar";
@@ -500,8 +459,6 @@
             this.panel2.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -519,9 +476,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panelHeader;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxPuntoVenta;
