@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCTiendaRoot));
-            this.imageListMenuPrimary = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnHerramienta = new System.Windows.Forms.Button();
@@ -42,27 +41,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.borderLeftActive = new System.Windows.Forms.Panel();
             this.panelMulos = new System.Windows.Forms.Panel();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
+            this.imageListMenuPrimary = new System.Windows.Forms.ImageList(this.components);
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // imageListMenuPrimary
-            // 
-            this.imageListMenuPrimary.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListMenuPrimary.ImageStream")));
-            this.imageListMenuPrimary.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListMenuPrimary.Images.SetKeyName(0, "compra_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(1, "compra_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(2, "venta_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(3, "venta_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(4, "producto_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(5, "producto_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(6, "almacen_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(7, "almacen_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(8, "caja_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(9, "caja_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(10, "tools_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(11, "tools_white_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(12, "reporte_gray_icon.png");
-            this.imageListMenuPrimary.Images.SetKeyName(13, "reporte_white_icon.png");
             // 
             // toolTip1
             // 
@@ -238,6 +220,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.panel4.Controls.Add(this.btnConfiguracion);
             this.panel4.Controls.Add(this.borderLeftActive);
             this.panel4.Controls.Add(this.btnReporte);
             this.panel4.Controls.Add(this.btnHerramienta);
@@ -268,6 +251,50 @@
             this.panelMulos.Size = new System.Drawing.Size(192, 600);
             this.panelMulos.TabIndex = 3;
             // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConfiguracion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracion.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnConfiguracion.ImageIndex = 14;
+            this.btnConfiguracion.ImageList = this.imageListMenuPrimary;
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 385);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(58, 55);
+            this.btnConfiguracion.TabIndex = 27;
+            this.btnConfiguracion.Text = "config";
+            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.btnConfiguracion, "Configuración");
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            // 
+            // imageListMenuPrimary
+            // 
+            this.imageListMenuPrimary.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListMenuPrimary.ImageStream")));
+            this.imageListMenuPrimary.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListMenuPrimary.Images.SetKeyName(0, "compra_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(1, "compra_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(2, "venta_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(3, "venta_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(4, "producto_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(5, "producto_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(6, "almacen_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(7, "almacen_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(8, "caja_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(9, "caja_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(10, "tools_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(11, "tools_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(12, "reporte_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(13, "reporte_white_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(14, "config_gray_icon.png");
+            this.imageListMenuPrimary.Images.SetKeyName(15, "config_white_icon.png");
+            // 
             // UCTiendaRoot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,8 +311,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ImageList imageListMenuPrimary;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel borderLeftActive;
@@ -297,5 +322,7 @@
         private System.Windows.Forms.Button btnCompra;
         private System.Windows.Forms.Button btnVenta;
         public System.Windows.Forms.Panel panelMulos;
+        private System.Windows.Forms.ImageList imageListMenuPrimary;
+        private System.Windows.Forms.Button btnConfiguracion;
     }
 }

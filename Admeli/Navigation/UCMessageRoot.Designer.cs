@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMessageRoot));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.imageListMenuPrimary = new System.Windows.Forms.ImageList(this.components);
             this.btnReporte = new System.Windows.Forms.Button();
-            this.btnHerramienta = new System.Windows.Forms.Button();
-            this.btnCaja = new System.Windows.Forms.Button();
-            this.btnAlmacen = new System.Windows.Forms.Button();
-            this.btnProducto = new System.Windows.Forms.Button();
-            this.btnCompra = new System.Windows.Forms.Button();
-            this.btnVenta = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.borderLeftActive = new System.Windows.Forms.Panel();
             this.panelMulos = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,28 +55,6 @@
             this.toolTip1.ToolTipTitle = "admeli";
             this.toolTip1.UseAnimation = false;
             this.toolTip1.UseFading = false;
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfiguracion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnConfiguracion.ImageIndex = 14;
-            this.btnConfiguracion.ImageList = this.imageListMenuPrimary;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 385);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(58, 55);
-            this.btnConfiguracion.TabIndex = 26;
-            this.btnConfiguracion.Text = "config";
-            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnConfiguracion, "Configuración");
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
             // 
             // imageListMenuPrimary
             // 
@@ -111,7 +89,7 @@
             this.btnReporte.ForeColor = System.Drawing.Color.Gray;
             this.btnReporte.ImageIndex = 12;
             this.btnReporte.ImageList = this.imageListMenuPrimary;
-            this.btnReporte.Location = new System.Drawing.Point(0, 330);
+            this.btnReporte.Location = new System.Drawing.Point(0, 0);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(58, 55);
             this.btnReporte.TabIndex = 25;
@@ -121,150 +99,18 @@
             this.toolTip1.SetToolTip(this.btnReporte, "Reportes");
             this.btnReporte.UseVisualStyleBackColor = true;
             // 
-            // btnHerramienta
-            // 
-            this.btnHerramienta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHerramienta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHerramienta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnHerramienta.FlatAppearance.BorderSize = 0;
-            this.btnHerramienta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnHerramienta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnHerramienta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHerramienta.ForeColor = System.Drawing.Color.Gray;
-            this.btnHerramienta.ImageIndex = 10;
-            this.btnHerramienta.ImageList = this.imageListMenuPrimary;
-            this.btnHerramienta.Location = new System.Drawing.Point(0, 275);
-            this.btnHerramienta.Name = "btnHerramienta";
-            this.btnHerramienta.Size = new System.Drawing.Size(58, 55);
-            this.btnHerramienta.TabIndex = 24;
-            this.btnHerramienta.Text = "tools";
-            this.btnHerramienta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHerramienta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnHerramienta, "Herramientas");
-            this.btnHerramienta.UseVisualStyleBackColor = true;
-            // 
-            // btnCaja
-            // 
-            this.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaja.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCaja.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnCaja.FlatAppearance.BorderSize = 0;
-            this.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaja.ForeColor = System.Drawing.Color.Gray;
-            this.btnCaja.ImageIndex = 8;
-            this.btnCaja.ImageList = this.imageListMenuPrimary;
-            this.btnCaja.Location = new System.Drawing.Point(0, 220);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(58, 55);
-            this.btnCaja.TabIndex = 21;
-            this.btnCaja.Text = "Caja";
-            this.btnCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnCaja, "Caja");
-            this.btnCaja.UseVisualStyleBackColor = true;
-            // 
-            // btnAlmacen
-            // 
-            this.btnAlmacen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAlmacen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAlmacen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnAlmacen.FlatAppearance.BorderSize = 0;
-            this.btnAlmacen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnAlmacen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlmacen.ForeColor = System.Drawing.Color.Gray;
-            this.btnAlmacen.ImageIndex = 6;
-            this.btnAlmacen.ImageList = this.imageListMenuPrimary;
-            this.btnAlmacen.Location = new System.Drawing.Point(0, 165);
-            this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(58, 55);
-            this.btnAlmacen.TabIndex = 22;
-            this.btnAlmacen.Text = "almacen";
-            this.btnAlmacen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnAlmacen, "Almacenes");
-            this.btnAlmacen.UseVisualStyleBackColor = true;
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProducto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnProducto.FlatAppearance.BorderSize = 0;
-            this.btnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.ForeColor = System.Drawing.Color.Gray;
-            this.btnProducto.ImageIndex = 4;
-            this.btnProducto.ImageList = this.imageListMenuPrimary;
-            this.btnProducto.Location = new System.Drawing.Point(0, 110);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(58, 55);
-            this.btnProducto.TabIndex = 23;
-            this.btnProducto.Text = "product";
-            this.btnProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnProducto, "Productos");
-            this.btnProducto.UseVisualStyleBackColor = true;
-            // 
-            // btnCompra
-            // 
-            this.btnCompra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCompra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCompra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnCompra.FlatAppearance.BorderSize = 0;
-            this.btnCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompra.ForeColor = System.Drawing.Color.Gray;
-            this.btnCompra.ImageIndex = 2;
-            this.btnCompra.ImageList = this.imageListMenuPrimary;
-            this.btnCompra.Location = new System.Drawing.Point(0, 55);
-            this.btnCompra.Name = "btnCompra";
-            this.btnCompra.Size = new System.Drawing.Size(58, 55);
-            this.btnCompra.TabIndex = 19;
-            this.btnCompra.Text = "compra";
-            this.btnCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnCompra, "Compras");
-            this.btnCompra.UseVisualStyleBackColor = true;
-            // 
-            // btnVenta
-            // 
-            this.btnVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnVenta.FlatAppearance.BorderSize = 0;
-            this.btnVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.btnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVenta.ForeColor = System.Drawing.Color.Gray;
-            this.btnVenta.ImageIndex = 0;
-            this.btnVenta.ImageList = this.imageListMenuPrimary;
-            this.btnVenta.Location = new System.Drawing.Point(0, 0);
-            this.btnVenta.Name = "btnVenta";
-            this.btnVenta.Size = new System.Drawing.Size(58, 55);
-            this.btnVenta.TabIndex = 20;
-            this.btnVenta.Text = "venta";
-            this.btnVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.btnVenta, "Ventas");
-            this.btnVenta.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.panel4.Controls.Add(this.button7);
+            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.button5);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.borderLeftActive);
-            this.panel4.Controls.Add(this.btnConfiguracion);
             this.panel4.Controls.Add(this.btnReporte);
-            this.panel4.Controls.Add(this.btnHerramienta);
-            this.panel4.Controls.Add(this.btnCaja);
-            this.panel4.Controls.Add(this.btnAlmacen);
-            this.panel4.Controls.Add(this.btnProducto);
-            this.panel4.Controls.Add(this.btnCompra);
-            this.panel4.Controls.Add(this.btnVenta);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -287,6 +133,160 @@
             this.panelMulos.Size = new System.Drawing.Size(192, 600);
             this.panelMulos.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gray;
+            this.button1.ImageIndex = 12;
+            this.button1.ImageList = this.imageListMenuPrimary;
+            this.button1.Location = new System.Drawing.Point(0, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 55);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "report";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button1, "Reportes");
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Gray;
+            this.button2.ImageIndex = 12;
+            this.button2.ImageList = this.imageListMenuPrimary;
+            this.button2.Location = new System.Drawing.Point(0, 110);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(58, 55);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "report";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button2, "Reportes");
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Gray;
+            this.button3.ImageIndex = 12;
+            this.button3.ImageList = this.imageListMenuPrimary;
+            this.button3.Location = new System.Drawing.Point(0, 165);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(58, 55);
+            this.button3.TabIndex = 28;
+            this.button3.Text = "report";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button3, "Reportes");
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Gray;
+            this.button4.ImageIndex = 12;
+            this.button4.ImageList = this.imageListMenuPrimary;
+            this.button4.Location = new System.Drawing.Point(0, 220);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(58, 55);
+            this.button4.TabIndex = 29;
+            this.button4.Text = "report";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button4, "Reportes");
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Gray;
+            this.button5.ImageIndex = 12;
+            this.button5.ImageList = this.imageListMenuPrimary;
+            this.button5.Location = new System.Drawing.Point(0, 275);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(58, 55);
+            this.button5.TabIndex = 30;
+            this.button5.Text = "report";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button5, "Reportes");
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.Gray;
+            this.button6.ImageIndex = 12;
+            this.button6.ImageList = this.imageListMenuPrimary;
+            this.button6.Location = new System.Drawing.Point(0, 330);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(58, 55);
+            this.button6.TabIndex = 31;
+            this.button6.Text = "report";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button6, "Reportes");
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.Color.Gray;
+            this.button7.ImageIndex = 12;
+            this.button7.ImageList = this.imageListMenuPrimary;
+            this.button7.Location = new System.Drawing.Point(0, 385);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(58, 55);
+            this.button7.TabIndex = 32;
+            this.button7.Text = "report";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button7, "Reportes");
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // UCMessageRoot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,14 +307,14 @@
         private System.Windows.Forms.ImageList imageListMenuPrimary;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel borderLeftActive;
-        private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Button btnReporte;
-        private System.Windows.Forms.Button btnHerramienta;
-        private System.Windows.Forms.Button btnCaja;
-        private System.Windows.Forms.Button btnAlmacen;
-        private System.Windows.Forms.Button btnProducto;
-        private System.Windows.Forms.Button btnCompra;
-        private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Panel panelMulos;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

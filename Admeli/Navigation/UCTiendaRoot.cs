@@ -192,6 +192,7 @@ namespace Admeli.Navigation
             btnCaja.ForeColor = Color.FromArgb(139, 138, 141);
             btnAlmacen.ForeColor = Color.FromArgb(139, 138, 141);
             btnReporte.ForeColor = Color.FromArgb(139, 138, 141);
+            btnConfiguracion.ForeColor = Color.FromArgb(139, 138, 141);
 
             // Reset Back Color
             btnCompra.BackColor = Color.FromArgb(52, 49, 58);
@@ -201,6 +202,7 @@ namespace Admeli.Navigation
             btnCaja.BackColor = Color.FromArgb(52, 49, 58);
             btnAlmacen.BackColor = Color.FromArgb(52, 49, 58);
             btnReporte.BackColor = Color.FromArgb(52, 49, 58);
+            btnConfiguracion.BackColor = Color.FromArgb(52, 49, 58);
 
             // ICONS cambiar el indice
             btnVenta.ImageIndex = 0;
@@ -210,6 +212,7 @@ namespace Admeli.Navigation
             btnCaja.ImageIndex = 8;
             btnHerramienta.ImageIndex = 10;
             btnReporte.ImageIndex = 12;
+            btnConfiguracion.ImageIndex = 14;
         }
 
         private void btnVenta_Click(object sender, EventArgs e)
@@ -295,6 +298,16 @@ namespace Admeli.Navigation
             btnVenta.BackColor = Color.FromArgb(36, 35, 40); /// Color
             togglePanelAsideMain("ventas"); /// Navegar
             btnVenta.ImageIndex = 1; /// Indice imagen
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnConfiguracion.Location; /// Decoracion
+            btnConfiguracion.ForeColor = Color.White; /// Color
+            btnConfiguracion.BackColor = Color.FromArgb(36, 35, 40); /// Color
+            togglePanelAsideMain("config"); /// Navegar
+            btnConfiguracion.ImageIndex = 15; /// Indice imagen
         }
     }
 }

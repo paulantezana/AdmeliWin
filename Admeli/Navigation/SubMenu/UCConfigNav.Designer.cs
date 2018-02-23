@@ -37,7 +37,7 @@
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton7 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton8 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnDiseñoPersonalizacion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton9 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton10 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -344,42 +344,43 @@
             this.bunifuFlatButton7.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.bunifuFlatButton7.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuFlatButton8
+            // btnDiseñoPersonalizacion
             // 
-            this.bunifuFlatButton8.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.bunifuFlatButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.bunifuFlatButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton8.BorderRadius = 0;
-            this.bunifuFlatButton8.ButtonText = "   Guías de remisión";
-            this.bunifuFlatButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton8.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton8.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton8.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton8.Iconimage")));
-            this.bunifuFlatButton8.Iconimage_right = null;
-            this.bunifuFlatButton8.Iconimage_right_Selected = null;
-            this.bunifuFlatButton8.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton8.Iconimage_Selected")));
-            this.bunifuFlatButton8.IconMarginLeft = 0;
-            this.bunifuFlatButton8.IconMarginRight = 0;
-            this.bunifuFlatButton8.IconRightVisible = true;
-            this.bunifuFlatButton8.IconRightZoom = 0D;
-            this.bunifuFlatButton8.IconVisible = true;
-            this.bunifuFlatButton8.IconZoom = 80D;
-            this.bunifuFlatButton8.IsTab = true;
-            this.bunifuFlatButton8.Location = new System.Drawing.Point(0, 384);
-            this.bunifuFlatButton8.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuFlatButton8.Name = "bunifuFlatButton8";
-            this.bunifuFlatButton8.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.bunifuFlatButton8.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.bunifuFlatButton8.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
-            this.bunifuFlatButton8.selected = false;
-            this.bunifuFlatButton8.Size = new System.Drawing.Size(200, 48);
-            this.bunifuFlatButton8.TabIndex = 15;
-            this.bunifuFlatButton8.Text = "   Guías de remisión";
-            this.bunifuFlatButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton8.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.bunifuFlatButton8.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiseñoPersonalizacion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.btnDiseñoPersonalizacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btnDiseñoPersonalizacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDiseñoPersonalizacion.BorderRadius = 0;
+            this.btnDiseñoPersonalizacion.ButtonText = "Diseño y Personalización";
+            this.btnDiseñoPersonalizacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiseñoPersonalizacion.DisabledColor = System.Drawing.Color.Gray;
+            this.btnDiseñoPersonalizacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDiseñoPersonalizacion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiseñoPersonalizacion.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnDiseñoPersonalizacion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDiseñoPersonalizacion.Iconimage")));
+            this.btnDiseñoPersonalizacion.Iconimage_right = null;
+            this.btnDiseñoPersonalizacion.Iconimage_right_Selected = null;
+            this.btnDiseñoPersonalizacion.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnDiseñoPersonalizacion.Iconimage_Selected")));
+            this.btnDiseñoPersonalizacion.IconMarginLeft = 0;
+            this.btnDiseñoPersonalizacion.IconMarginRight = 0;
+            this.btnDiseñoPersonalizacion.IconRightVisible = true;
+            this.btnDiseñoPersonalizacion.IconRightZoom = 0D;
+            this.btnDiseñoPersonalizacion.IconVisible = true;
+            this.btnDiseñoPersonalizacion.IconZoom = 80D;
+            this.btnDiseñoPersonalizacion.IsTab = true;
+            this.btnDiseñoPersonalizacion.Location = new System.Drawing.Point(0, 384);
+            this.btnDiseñoPersonalizacion.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDiseñoPersonalizacion.Name = "btnDiseñoPersonalizacion";
+            this.btnDiseñoPersonalizacion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btnDiseñoPersonalizacion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
+            this.btnDiseñoPersonalizacion.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnDiseñoPersonalizacion.selected = false;
+            this.btnDiseñoPersonalizacion.Size = new System.Drawing.Size(200, 48);
+            this.btnDiseñoPersonalizacion.TabIndex = 15;
+            this.btnDiseñoPersonalizacion.Text = "Diseño y Personalización";
+            this.btnDiseñoPersonalizacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiseñoPersonalizacion.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnDiseñoPersonalizacion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiseñoPersonalizacion.Click += new System.EventHandler(this.btnDiseñoPersonalizacion_Click);
             // 
             // bunifuFlatButton9
             // 
@@ -677,10 +678,11 @@
             this.bunifuFlatButton16.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
             this.bunifuFlatButton16.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // UCConfig
+            // UCConfigNav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.Controls.Add(this.bunifuFlatButton16);
             this.Controls.Add(this.bunifuFlatButton15);
@@ -690,7 +692,7 @@
             this.Controls.Add(this.bunifuFlatButton11);
             this.Controls.Add(this.bunifuFlatButton10);
             this.Controls.Add(this.bunifuFlatButton9);
-            this.Controls.Add(this.bunifuFlatButton8);
+            this.Controls.Add(this.btnDiseñoPersonalizacion);
             this.Controls.Add(this.bunifuFlatButton7);
             this.Controls.Add(this.bunifuFlatButton6);
             this.Controls.Add(this.bunifuFlatButton5);
@@ -699,7 +701,7 @@
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.btnGuiaRemision);
-            this.Name = "UCConfig";
+            this.Name = "UCConfigNav";
             this.Size = new System.Drawing.Size(200, 849);
             this.ResumeLayout(false);
 
@@ -715,7 +717,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton7;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton8;
+        private Bunifu.Framework.UI.BunifuFlatButton btnDiseñoPersonalizacion;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton9;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton10;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton11;
