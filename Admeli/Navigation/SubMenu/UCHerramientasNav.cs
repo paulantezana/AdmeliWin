@@ -53,7 +53,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCAsignarCategorias);
                         this.uCAsignarCategorias.reLoad();
                     }
-
+                    formPrincipal.lblTitlePage.Text = "Herramientas - Asignar categoria"; /// Titulo en el encabezado
                     break;
                 case "asignarImpuesto":
                     if (uCAsignarImpuesto == null)
@@ -71,7 +71,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCAsignarImpuesto);
                         this.uCAsignarImpuesto.reLoad();
                     }
-
+                    formPrincipal.lblTitlePage.Text = "Herramientas - Asignar impuesto"; /// Titulo en el encabezado
                     break;
                 case "inicializarStock":
                     if (uCInicializarStock == null)
@@ -89,6 +89,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCInicializarStock);
                         this.uCInicializarStock.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text = "Herramientas - Inicializar stock"; /// Titulo en el encabezado
                     break;
                 default:
                     break;
@@ -98,6 +99,7 @@ namespace Admeli.Navigation.SubMenu
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
             if (uCAsignarCategorias != null) uCAsignarCategorias.lisenerKeyEvents = false;
             if (uCAsignarImpuesto != null) uCAsignarImpuesto.lisenerKeyEvents = false;
             if (uCInicializarStock != null) uCInicializarStock.lisenerKeyEvents = false;

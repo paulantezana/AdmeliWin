@@ -31,18 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnTienda = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMessage = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnOtro = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnConfig = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lblDocumento = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHome = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panelAsideContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnToggleMenu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelAsideMain = new System.Windows.Forms.Panel();
             this.imageListMenuPrimary = new System.Windows.Forms.ImageList(this.components);
             this.panelRoot = new System.Windows.Forms.Panel();
@@ -75,13 +70,13 @@
             this.btnToggleMenuRigth = new Bunifu.Framework.UI.BunifuFlatButton();
             this.progressBarApp = new System.Windows.Forms.ProgressBar();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnTienda = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMessage = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnConfig = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panelAsideContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelRoot.SuspendLayout();
             this.panelMenuRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -91,10 +86,12 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Controls.Add(this.btnTienda);
+            this.panel3.Controls.Add(this.btnMessage);
+            this.panel3.Controls.Add(this.btnConfig);
             this.panel3.Controls.Add(this.lblDocumento);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.btnHome);
             this.panel3.Controls.Add(this.lblUserName);
             this.panel3.Controls.Add(this.bunifuSeparator1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -102,157 +99,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 125);
             this.panel3.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnTienda);
-            this.flowLayoutPanel1.Controls.Add(this.btnMessage);
-            this.flowLayoutPanel1.Controls.Add(this.btnOtro);
-            this.flowLayoutPanel1.Controls.Add(this.btnConfig);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 75);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 50);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // btnTienda
-            // 
-            this.btnTienda.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnTienda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnTienda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTienda.BorderRadius = 0;
-            this.btnTienda.ButtonText = "";
-            this.btnTienda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTienda.DisabledColor = System.Drawing.Color.Gray;
-            this.btnTienda.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTienda.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTienda.Iconimage")));
-            this.btnTienda.Iconimage_right = null;
-            this.btnTienda.Iconimage_right_Selected = null;
-            this.btnTienda.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnTienda.Iconimage_Selected")));
-            this.btnTienda.IconMarginLeft = 0;
-            this.btnTienda.IconMarginRight = 0;
-            this.btnTienda.IconRightVisible = true;
-            this.btnTienda.IconRightZoom = 0D;
-            this.btnTienda.IconVisible = true;
-            this.btnTienda.IconZoom = 50D;
-            this.btnTienda.IsTab = true;
-            this.btnTienda.Location = new System.Drawing.Point(0, 0);
-            this.btnTienda.Margin = new System.Windows.Forms.Padding(0);
-            this.btnTienda.Name = "btnTienda";
-            this.btnTienda.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnTienda.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
-            this.btnTienda.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnTienda.selected = false;
-            this.btnTienda.Size = new System.Drawing.Size(59, 50);
-            this.btnTienda.TabIndex = 2;
-            this.btnTienda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTienda.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.btnTienda.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTienda.Click += new System.EventHandler(this.btnTienda_Click);
-            // 
-            // btnMessage
-            // 
-            this.btnMessage.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMessage.BorderRadius = 0;
-            this.btnMessage.ButtonText = "";
-            this.btnMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMessage.DisabledColor = System.Drawing.Color.Gray;
-            this.btnMessage.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnMessage.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMessage.Iconimage")));
-            this.btnMessage.Iconimage_right = null;
-            this.btnMessage.Iconimage_right_Selected = null;
-            this.btnMessage.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnMessage.Iconimage_Selected")));
-            this.btnMessage.IconMarginLeft = 0;
-            this.btnMessage.IconMarginRight = 0;
-            this.btnMessage.IconRightVisible = true;
-            this.btnMessage.IconRightZoom = 0D;
-            this.btnMessage.IconVisible = true;
-            this.btnMessage.IconZoom = 50D;
-            this.btnMessage.IsTab = true;
-            this.btnMessage.Location = new System.Drawing.Point(59, 0);
-            this.btnMessage.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMessage.Name = "btnMessage";
-            this.btnMessage.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnMessage.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
-            this.btnMessage.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnMessage.selected = false;
-            this.btnMessage.Size = new System.Drawing.Size(59, 50);
-            this.btnMessage.TabIndex = 3;
-            this.btnMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMessage.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.btnMessage.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
-            // 
-            // btnOtro
-            // 
-            this.btnOtro.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnOtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnOtro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOtro.BorderRadius = 0;
-            this.btnOtro.ButtonText = "";
-            this.btnOtro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOtro.DisabledColor = System.Drawing.Color.Gray;
-            this.btnOtro.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnOtro.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnOtro.Iconimage")));
-            this.btnOtro.Iconimage_right = null;
-            this.btnOtro.Iconimage_right_Selected = null;
-            this.btnOtro.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnOtro.Iconimage_Selected")));
-            this.btnOtro.IconMarginLeft = 0;
-            this.btnOtro.IconMarginRight = 0;
-            this.btnOtro.IconRightVisible = true;
-            this.btnOtro.IconRightZoom = 0D;
-            this.btnOtro.IconVisible = true;
-            this.btnOtro.IconZoom = 100D;
-            this.btnOtro.IsTab = true;
-            this.btnOtro.Location = new System.Drawing.Point(118, 0);
-            this.btnOtro.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOtro.Name = "btnOtro";
-            this.btnOtro.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnOtro.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
-            this.btnOtro.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnOtro.selected = false;
-            this.btnOtro.Size = new System.Drawing.Size(59, 50);
-            this.btnOtro.TabIndex = 4;
-            this.btnOtro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOtro.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.btnOtro.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.BorderRadius = 0;
-            this.btnConfig.ButtonText = "";
-            this.btnConfig.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfig.DisabledColor = System.Drawing.Color.Gray;
-            this.btnConfig.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnConfig.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnConfig.Iconimage")));
-            this.btnConfig.Iconimage_right = null;
-            this.btnConfig.Iconimage_right_Selected = null;
-            this.btnConfig.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnConfig.Iconimage_Selected")));
-            this.btnConfig.IconMarginLeft = 0;
-            this.btnConfig.IconMarginRight = 0;
-            this.btnConfig.IconRightVisible = true;
-            this.btnConfig.IconRightZoom = 0D;
-            this.btnConfig.IconVisible = true;
-            this.btnConfig.IconZoom = 50D;
-            this.btnConfig.IsTab = true;
-            this.btnConfig.Location = new System.Drawing.Point(177, 0);
-            this.btnConfig.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.btnConfig.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
-            this.btnConfig.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnConfig.selected = false;
-            this.btnConfig.Size = new System.Drawing.Size(59, 50);
-            this.btnConfig.TabIndex = 5;
-            this.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.btnConfig.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // lblDocumento
             // 
@@ -275,16 +121,18 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // btnHome
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnHome.InitialImage")));
+            this.btnHome.Location = new System.Drawing.Point(2, 12);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(58, 50);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHome.TabIndex = 5;
+            this.btnHome.TabStop = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // lblUserName
             // 
@@ -313,7 +161,7 @@
             // panelAsideContainer
             // 
             this.panelAsideContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.panelAsideContainer.Controls.Add(this.panel1);
+            this.panelAsideContainer.Controls.Add(this.btnToggleMenu);
             this.panelAsideContainer.Controls.Add(this.panelAsideMain);
             this.panelAsideContainer.Controls.Add(this.panel3);
             this.panelAsideContainer.Dock = System.Windows.Forms.DockStyle.Left;
@@ -322,15 +170,41 @@
             this.panelAsideContainer.Size = new System.Drawing.Size(250, 661);
             this.panelAsideContainer.TabIndex = 0;
             // 
-            // panel1
+            // btnToggleMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.bunifuFlatButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 615);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 46);
-            this.panel1.TabIndex = 4;
+            this.btnToggleMenu.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnToggleMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnToggleMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnToggleMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnToggleMenu.BorderRadius = 0;
+            this.btnToggleMenu.ButtonText = "";
+            this.btnToggleMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToggleMenu.DisabledColor = System.Drawing.Color.Gray;
+            this.btnToggleMenu.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnToggleMenu.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnToggleMenu.Iconimage")));
+            this.btnToggleMenu.Iconimage_right = null;
+            this.btnToggleMenu.Iconimage_right_Selected = null;
+            this.btnToggleMenu.Iconimage_Selected = null;
+            this.btnToggleMenu.IconMarginLeft = 0;
+            this.btnToggleMenu.IconMarginRight = 0;
+            this.btnToggleMenu.IconRightVisible = true;
+            this.btnToggleMenu.IconRightZoom = 0D;
+            this.btnToggleMenu.IconVisible = true;
+            this.btnToggleMenu.IconZoom = 80D;
+            this.btnToggleMenu.IsTab = true;
+            this.btnToggleMenu.Location = new System.Drawing.Point(0, 614);
+            this.btnToggleMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.btnToggleMenu.Name = "btnToggleMenu";
+            this.btnToggleMenu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnToggleMenu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
+            this.btnToggleMenu.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnToggleMenu.selected = false;
+            this.btnToggleMenu.Size = new System.Drawing.Size(59, 46);
+            this.btnToggleMenu.TabIndex = 4;
+            this.btnToggleMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnToggleMenu.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnToggleMenu.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToggleMenu.Click += new System.EventHandler(this.btnToggleMenu_Click);
             // 
             // panelAsideMain
             // 
@@ -837,40 +711,110 @@
             this.toolTip1.UseAnimation = false;
             this.toolTip1.UseFading = false;
             // 
-            // bunifuFlatButton1
+            // btnTienda
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 80D;
-            this.bunifuFlatButton1.IsTab = true;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(59, 46);
-            this.bunifuFlatButton1.TabIndex = 4;
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTienda.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnTienda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnTienda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTienda.BorderRadius = 0;
+            this.btnTienda.ButtonText = "";
+            this.btnTienda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTienda.DisabledColor = System.Drawing.Color.Gray;
+            this.btnTienda.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnTienda.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTienda.Iconimage")));
+            this.btnTienda.Iconimage_right = null;
+            this.btnTienda.Iconimage_right_Selected = null;
+            this.btnTienda.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnTienda.Iconimage_Selected")));
+            this.btnTienda.IconMarginLeft = 0;
+            this.btnTienda.IconMarginRight = 0;
+            this.btnTienda.IconRightVisible = true;
+            this.btnTienda.IconRightZoom = 0D;
+            this.btnTienda.IconVisible = true;
+            this.btnTienda.IconZoom = 50D;
+            this.btnTienda.IsTab = true;
+            this.btnTienda.Location = new System.Drawing.Point(0, 76);
+            this.btnTienda.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTienda.Name = "btnTienda";
+            this.btnTienda.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnTienda.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
+            this.btnTienda.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnTienda.selected = false;
+            this.btnTienda.Size = new System.Drawing.Size(59, 50);
+            this.btnTienda.TabIndex = 8;
+            this.btnTienda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTienda.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnTienda.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTienda.Click += new System.EventHandler(this.btnTienda_Click);
+            // 
+            // btnMessage
+            // 
+            this.btnMessage.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMessage.BorderRadius = 0;
+            this.btnMessage.ButtonText = "";
+            this.btnMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMessage.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMessage.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMessage.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMessage.Iconimage")));
+            this.btnMessage.Iconimage_right = null;
+            this.btnMessage.Iconimage_right_Selected = null;
+            this.btnMessage.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnMessage.Iconimage_Selected")));
+            this.btnMessage.IconMarginLeft = 0;
+            this.btnMessage.IconMarginRight = 0;
+            this.btnMessage.IconRightVisible = true;
+            this.btnMessage.IconRightZoom = 0D;
+            this.btnMessage.IconVisible = true;
+            this.btnMessage.IconZoom = 50D;
+            this.btnMessage.IsTab = true;
+            this.btnMessage.Location = new System.Drawing.Point(59, 76);
+            this.btnMessage.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnMessage.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
+            this.btnMessage.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMessage.selected = false;
+            this.btnMessage.Size = new System.Drawing.Size(59, 50);
+            this.btnMessage.TabIndex = 9;
+            this.btnMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMessage.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnMessage.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfig.BorderRadius = 0;
+            this.btnConfig.ButtonText = "";
+            this.btnConfig.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfig.DisabledColor = System.Drawing.Color.Gray;
+            this.btnConfig.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnConfig.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnConfig.Iconimage")));
+            this.btnConfig.Iconimage_right = null;
+            this.btnConfig.Iconimage_right_Selected = null;
+            this.btnConfig.Iconimage_Selected = ((System.Drawing.Image)(resources.GetObject("btnConfig.Iconimage_Selected")));
+            this.btnConfig.IconMarginLeft = 0;
+            this.btnConfig.IconMarginRight = 0;
+            this.btnConfig.IconRightVisible = true;
+            this.btnConfig.IconRightZoom = 0D;
+            this.btnConfig.IconVisible = true;
+            this.btnConfig.IconZoom = 50D;
+            this.btnConfig.IsTab = true;
+            this.btnConfig.Location = new System.Drawing.Point(118, 76);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(0);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(49)))), ((int)(((byte)(58)))));
+            this.btnConfig.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(63)))), ((int)(((byte)(71)))));
+            this.btnConfig.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnConfig.selected = false;
+            this.btnConfig.Size = new System.Drawing.Size(59, 50);
+            this.btnConfig.TabIndex = 10;
+            this.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfig.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(138)))), ((int)(((byte)(141)))));
+            this.btnConfig.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // FormPrincipal
             // 
@@ -890,11 +834,9 @@
             this.Shown += new System.EventHandler(this.FormHomeDarck_Shown);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPrincipal_Paint);
             this.panel3.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panelAsideContainer.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panelRoot.ResumeLayout(false);
             this.panelMenuRight.ResumeLayout(false);
             this.panelMenuRight.PerformLayout();
@@ -908,11 +850,8 @@
         #endregion
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnHome;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.Framework.UI.BunifuFlatButton btnOtro;
-        private Bunifu.Framework.UI.BunifuFlatButton btnMessage;
-        private Bunifu.Framework.UI.BunifuFlatButton btnTienda;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel panelRoot;
         private Bunifu.Framework.UI.BunifuFlatButton btnToggleMenuRigth;
@@ -948,9 +887,9 @@
         public System.Windows.Forms.Panel panelAsideContainer;
         public System.Windows.Forms.Panel panelMenuRight;
         public System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnToggleMenu;
+        private Bunifu.Framework.UI.BunifuFlatButton btnTienda;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMessage;
         private Bunifu.Framework.UI.BunifuFlatButton btnConfig;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }

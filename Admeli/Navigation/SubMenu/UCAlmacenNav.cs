@@ -53,6 +53,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCGuiaRemision);
                         this.uCGuiaRemision.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Almacen - Guia de remision"; 
                     break;
                 case "notaSalida":
                     if (uCNotaSalida == null)
@@ -70,6 +71,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCNotaSalida);
                         this.uCNotaSalida.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Almacen - Nota de salida";
                     break;
                 case "notaEntrada":
                     if (uCNotaEntrada == null)
@@ -88,6 +90,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCNotaEntrada);
                         this.uCNotaEntrada.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Almacen - Nota de entrada";
                     break;
                 default:
                     break;
@@ -97,6 +100,7 @@ namespace Admeli.Navigation.SubMenu
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
             if (uCGuiaRemision != null) uCGuiaRemision.lisenerKeyEvents = false;
             if (uCNotaEntrada != null) uCNotaEntrada.lisenerKeyEvents = false;
             if (uCNotaEntrada != null) uCNotaEntrada.lisenerKeyEvents = false;

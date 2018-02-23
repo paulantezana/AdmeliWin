@@ -54,6 +54,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCCompras);
                         this.uCCompras.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Compra - Compras";
                     break;
                 case "cuentaPagar":
                     if (uCCuentaPagar == null)
@@ -71,6 +72,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCCuentaPagar);
                         this.uCCuentaPagar.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Compra - Cuentas a pagar";
                     break;
                 case "ordenCompraProveedor":
                     if (uCOrdenCompraProveedor == null)
@@ -88,6 +90,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCOrdenCompraProveedor);
                         this.uCOrdenCompraProveedor.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Compra - Orden de compra proveedor";
                     break;
                 case "proveedores":
                     if (uCProveedores == null)
@@ -105,6 +108,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCProveedores);
                         this.uCProveedores.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Compra - Proveedores";
                     break;
                 default:
                     break;
@@ -114,6 +118,7 @@ namespace Admeli.Navigation.SubMenu
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
             if (uCProveedores != null) uCProveedores.lisenerKeyEvents = false;
             if (uCOrdenCompraProveedor != null) uCOrdenCompraProveedor.lisenerKeyEvents = false;
             if (uCCompras != null) uCCompras.lisenerKeyEvents = false;

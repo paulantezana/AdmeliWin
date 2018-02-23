@@ -54,6 +54,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCCierreCaja);
                         this.uCCierreCaja.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Caja - Cierre de caja";
                     break;
                 case "egresos":
                     if (uCEgresos == null)
@@ -71,6 +72,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCEgresos);
                         this.uCEgresos.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Caja - Egreso";
                     break;
                 case "ingresos":
                     if (uCIngresos == null)
@@ -88,6 +90,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCIngresos);
                         this.uCIngresos.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Caja - Ingreso";
                     break;
                 case "iniciarCaja":
                     if (uCIniciarCaja == null)
@@ -105,6 +108,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCIniciarCaja);
                         this.uCIniciarCaja.reLoad();
                     }
+                    this.formPrincipal.lblTitlePage.Text = "Caja - Iniciar caja";
                     break;
                 default:
                     break;
@@ -114,6 +118,7 @@ namespace Admeli.Navigation.SubMenu
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
             if (uCCierreCaja != null) uCCierreCaja.lisenerKeyEvents = false;
             if (uCEgresos != null) uCEgresos.lisenerKeyEvents = false;
             if (uCIngresos != null) uCIngresos.lisenerKeyEvents = false;

@@ -39,6 +39,7 @@ namespace Admeli.Navigation
         internal void togglePanelAsideMain(string panelName)
         {
             this.panelMulos.Controls.Clear();
+            this.formPrincipal.showMenuLeft(); /// Muestra el panel izquierdo si esta oculto
             switch (panelName)
             {
                 case "compras":

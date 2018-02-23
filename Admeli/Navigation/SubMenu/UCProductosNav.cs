@@ -54,6 +54,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCListadoProducto);
                         this.uCListadoProducto.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text = "Producto - Listar Productos"; /// Titulo en el encabezado
                     break;
                 case "marcas":
                     if (uCMarcas == null)
@@ -71,6 +72,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCMarcas);
                         this.uCMarcas.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text = "Producto - Marcas"; /// Titulo en el encabezado
                     break;
                 case "unidadesMedida":
                     if (uCUnidadesMedida == null)
@@ -88,6 +90,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCUnidadesMedida);
                         this.uCUnidadesMedida.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text = "Producto - Unidad Medida"; /// Titulo en el encabezado
                     break;
                 case "categorias":
                     if (uCCategorias == null)
@@ -105,6 +108,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCCategorias);
                         this.uCCategorias.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text = "Producto - Categorias"; /// Titulo en el encabezado
                     break;
                 default:
                     break;
@@ -114,6 +118,7 @@ namespace Admeli.Navigation.SubMenu
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
             if (uCListadoProducto != null) uCListadoProducto.lisenerKeyEvents = false;
             if (uCMarcas != null) uCMarcas.lisenerKeyEvents = false;
             if (uCUnidadesMedida != null) uCUnidadesMedida.lisenerKeyEvents = false;

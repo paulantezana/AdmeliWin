@@ -54,7 +54,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCClientes);
                         this.uCClientes.reLoad();
                     }
-
+                    formPrincipal.lblTitlePage.Text = "Venta - Clientes"; /// Titulo en el encabezado
                     break;
                 case "contizacionCliente":
                     if (uCCotizacionCliente == null)
@@ -72,7 +72,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCCotizacionCliente);
                         this.uCCotizacionCliente.reLoad();
                     }
-
+                    formPrincipal.lblTitlePage.Text = "Venta - Contizaciones cliente"; /// Titulo en el encabezado
                     break;
                 case "cuentaCobrar":
                     if (uCCuentaCobrar == null)
@@ -90,7 +90,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCCuentaCobrar);
                         this.uCCuentaCobrar.reLoad();
                     }
-
+                    formPrincipal.lblTitlePage.Text = "Venta - Cuenta Cobrar"; /// Titulo en el encabezado
                     break;
                 case "ventas":
                     if (uCVentas == null)
@@ -108,6 +108,7 @@ namespace Admeli.Navigation.SubMenu
                         this.formPrincipal.panelMain.Controls.Add(uCVentas);
                         this.uCVentas.reLoad();
                     }
+                    formPrincipal.lblTitlePage.Text = "Venta - Ventas"; /// Titulo en el encabezado
                     break;
                 case "ventaTouch":
                     FormVentaTouch ventaTouch = new FormVentaTouch();
@@ -121,6 +122,7 @@ namespace Admeli.Navigation.SubMenu
         private void limpiarControles()
         {
             this.formPrincipal.panelMain.Controls.Clear();
+            this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
             if (uCClientes != null) uCClientes.lisenerKeyEvents = false;
             if (uCCotizacionCliente != null) uCCotizacionCliente.lisenerKeyEvents = false;
             if (uCCuentaCobrar != null) uCCuentaCobrar.lisenerKeyEvents = false;

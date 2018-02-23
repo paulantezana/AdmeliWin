@@ -262,11 +262,18 @@ namespace Admeli
             }
         }
 
-        private void showMenuLeft()
+        public void showMenuLeft()
         {
             if (panelAsideContainer.Size.Width < 100)
             {
                 panelAsideContainer.Size = new Size(250, 700);
+            }
+        }
+        public void hideMenuRight()
+        {
+            if (panelMenuRight.Size.Width > 1)
+            {
+                panelMenuRight.Size = new Size(0, 700);
             }
         }
         #endregion
@@ -416,5 +423,10 @@ namespace Admeli
 
 
         #endregion
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            togglePanelMain("home");
+        }
     }
 }
