@@ -21,6 +21,7 @@ namespace Admeli.Navigation
         private UCHerramientasNav uCHerramientasNav;
         private UCReporteNav uCReporteNav;
         private UCProductosNav uCProductosNav;
+        private UCConfigNav uCConfigNav;
 
         private FormPrincipal formPrincipal;
 
@@ -159,6 +160,23 @@ namespace Admeli.Navigation
                     }
                     this.formPrincipal.lblTitlePage.Text = "Reportes - "; /// Titulo en el encabezado
                     break;
+                case "config":
+                    if (this.uCConfigNav == null)
+                    {
+                        this.uCConfigNav = new UCConfigNav(formPrincipal, this);
+                        this.panelMulos.Controls.Add(uCConfigNav);
+                        this.uCConfigNav.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.uCConfigNav.Location = new System.Drawing.Point(0, 0);
+                        this.uCConfigNav.Name = "uCConfigNav";
+                        this.uCConfigNav.Size = new System.Drawing.Size(250, 776);
+                        this.uCConfigNav.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.panelMulos.Controls.Add(uCConfigNav);
+                    }
+                    this.formPrincipal.lblTitlePage.Text = "Configuracion - "; /// Titulo en el encabezado
+                    break;
                 default:
                     break;
             }
@@ -264,5 +282,19 @@ namespace Admeli.Navigation
             btnReporte.ImageIndex = 13; /// Indice imagen
         }
 
+        // ================================================================================
+        //      -- Mostrar Panel por defecto
+        //      ----------------------------
+        //
+
+        private void UCTiendaRoot_Load(object sender, EventArgs e)
+        {
+            btnColor(); /// Color reset
+            borderLeftActive.Location = btnVenta.Location; /// Decoracion
+            btnVenta.ForeColor = Color.White; /// Color
+            btnVenta.BackColor = Color.FromArgb(36, 35, 40); /// Color
+            togglePanelAsideMain("ventas"); /// Navegar
+            btnVenta.ImageIndex = 1; /// Indice imagen
+        }
     }
 }

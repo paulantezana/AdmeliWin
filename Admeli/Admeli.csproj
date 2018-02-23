@@ -512,6 +512,12 @@
     <Compile Include="Herramientas\UCInicializarStock.Designer.cs">
       <DependentUpon>UCInicializarStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Navigation\SubMenu\UCConfigNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Navigation\SubMenu\UCConfigNav.Designer.cs">
+      <DependentUpon>UCConfigNav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Navigation\UCConfigNavOLD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -975,6 +981,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Herramientas\UCInicializarStock.resx">
       <DependentUpon>UCInicializarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation\SubMenu\UCConfigNav.resx">
+      <DependentUpon>UCConfigNav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Navigation\UCConfigNavOLD.resx">
       <DependentUpon>UCConfigNavOLD.cs</DependentUpon>

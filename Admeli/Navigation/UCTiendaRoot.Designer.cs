@@ -277,6 +277,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "UCTiendaRoot";
             this.Size = new System.Drawing.Size(250, 600);
+            this.Load += new System.EventHandler(this.UCTiendaRoot_Load);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 

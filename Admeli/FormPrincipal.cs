@@ -75,6 +75,7 @@ namespace Admeli
         #endregion
 
 
+
         private void btnTienda_Click(object sender, EventArgs e)
         {
             toggleRootMenu("tienda");
@@ -323,6 +324,9 @@ namespace Admeli
             lblUserName.Text = PersonalModel.personal.usuario.ToUpper();
             lblDocumento.Text = String.Format("{0}", PersonalModel.personal.numeroDocumento);
             /// Foto Del Usuario
+            
+            /// Panel Aside por defecto
+            toggleRootMenu("tienda");
 
             // Cargando datos en el panel derecho
             cargarDatosAsideRight();
