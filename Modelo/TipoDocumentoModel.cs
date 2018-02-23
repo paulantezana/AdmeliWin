@@ -26,12 +26,38 @@ namespace Modelo
             }
         }
 
+
         public async Task<Response> modificar(TipoDocumento param)
         {
             try
             {
-                // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/modificar
-                return await webService.POST<TipoDocumento,Response>("tipodoc", "modificar", param);
+                // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/modificar/
+                return await webService.POST<TipoDocumento, Response>("tipodoc", "modificar/{0}", param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Response> modificarFormato(FormatoDoc param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/modificar/formato
+                return await webService.POST<FormatoDoc, Response>("tipodoc", String.Format("modificar/{0}","formato") , param);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<Response> redimensionar(Redimensionar param)
+        {
+            try
+            {
+                // localhost:8080/admeli/xcore2/xcore/services.php/tipodoc/modificar/redimensionar
+                return await webService.POST<Redimensionar, Response>("tipodoc", String.Format("modificar/{0}", "redimensionar"), param);
             }
             catch (Exception ex)
             {
