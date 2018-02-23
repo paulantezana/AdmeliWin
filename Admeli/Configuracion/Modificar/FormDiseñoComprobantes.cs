@@ -18,6 +18,7 @@ namespace Admeli.Configuracion.Modificar
 {
     public partial class FormDiseñoComprobantes : Form
     {
+        
         DiseñoDocumento diseño;
         List<FormatoDocumento>  formato;
         String json;
@@ -34,15 +35,14 @@ namespace Admeli.Configuracion.Modificar
         public FormDiseñoComprobantes()
         {
             InitializeComponent();
-            detalle.ColumnCount = 8;
+            
         }
         public FormDiseñoComprobantes(DiseñoDocumento diseño)
         {
 
             InitializeComponent();
             detalle = new DataGridView();
-            detalle.ColumnHeadersHeightSizeMode =
-        DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+           
             detalle.RowHeadersVisible = false;
             this.diseño = diseño;
             cuadro = new PictureBox();
@@ -219,9 +219,7 @@ namespace Admeli.Configuracion.Modificar
         }
         private void agregarElementos()
         {
-            //dataGridView2.Columns.Add(“Nombre_columna”, “Texto_a_mostrar_en_el_Grid”);
-
-
+          
 
             foreach ( FormatoDocumento doc in formato)
             {
@@ -242,8 +240,8 @@ namespace Admeli.Configuracion.Modificar
                         aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
                         aux.label.MouseMove += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseMove);
                         aux.label.MouseUp += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseUp);
-
-
+                     //   aux.label.
+                       
 
 
                         aux.label.TabIndex = 5;
@@ -253,8 +251,6 @@ namespace Admeli.Configuracion.Modificar
                         
                      break;
                     case "ListGrid":
-
-
                         detalle.Location = new Point(doc.x, doc.y);
                         detalle.Size = new Size((int)doc.w, (int)doc.h);
                         detalle.Name = doc.formato;
@@ -394,6 +390,13 @@ namespace Admeli.Configuracion.Modificar
 
         }
 
+        private void reload()
+        {
+            panel1.Controls.Clear();
+            cargarNoSeleccionados();
+            designarEventos();
+
+        }
         private vineta buscarVineta(string buscar,List<vineta> listVineta)
         {
 
@@ -437,11 +440,12 @@ namespace Admeli.Configuracion.Modificar
                             c.MouseUp += new System.Windows.Forms.MouseEventHandler(this.labels_MouseUp);
                         }
                     else {
+                        if (aux.usado == 2) { 
                             c.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGrid_MouseDown);
                             c.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGrid_MouseMove);
                             c.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGrid_MouseUp);
 
-
+                        }
                 }
 
 
@@ -459,10 +463,23 @@ namespace Admeli.Configuracion.Modificar
         private void vineta_MouseDown(object sender, MouseEventArgs e)
         {
 
+           
+
+        
             Label label = sender as Label;
+
+            
             vineta aux=buscarVineta(label.Text,vinetas);
             aux.posicionX = e.X;
             aux.posicionY = e.Y;
+            int x = label.Width;
+            int y = label.Height;
+            bool uno = esta1(0, x, 0,y,e.X, e.Y);
+
+            if(uno)
+            {
+                label.Cursor = Cursors.Cross;
+            }
             aux.mover = true;
 
 
@@ -471,6 +488,8 @@ namespace Admeli.Configuracion.Modificar
         }
         private void vineta_MouseMove(object sender, MouseEventArgs e)
         {
+
+
             Label label = sender as Label;
             vineta aux = buscarVineta(label.Text, vinetas);
             if (aux.mover)
@@ -488,7 +507,8 @@ namespace Admeli.Configuracion.Modificar
         {
             Label label = sender as Label;
             vineta aux = buscarVineta(label.Text, vinetas);
-
+             label.Cursor = Cursors.Default;
+            
             aux.mover = false;
         }
 
@@ -566,7 +586,7 @@ namespace Admeli.Configuracion.Modificar
             c1.Location = new Point(aux.inicialX, aux.inicialY);
 
             aux.mover = false;
-
+            reload();
         }
 
         private void field_MouseDown(object sender, MouseEventArgs e)
@@ -601,7 +621,8 @@ namespace Admeli.Configuracion.Modificar
         {
             Button c1 = sender as Button;
             vineta aux = buscarVineta(c1.Text, listGridField);
-           
+            bool uno = esta1(detalle.Location.X, detalle.Width, detalle.Location.Y, detalle.Height, c1.Location.X - (panel3.Location.X + panel4.Location.X), c1.Location.Y - panel4.Location.Y);
+            
                 if (esta(detalle.Location.X, detalle.Width, detalle.Location.Y, detalle.Height, c1.Location.X - (panel3.Location.X + panel4.Location.X), c1.Location.Y - panel4.Location.Y))
                 { if (!buscarColumna(c1.Text))
                     {
@@ -609,9 +630,12 @@ namespace Admeli.Configuracion.Modificar
                     aux.usado = 3;
                     }
                 }
+                if(uno)
+                    detalle.Cursor = Cursors.Default;
             c1.Location = new Point(aux.inicialX,aux.inicialY);
    
             aux.mover = false;
+            reload();
 
         }
         
@@ -653,7 +677,7 @@ namespace Admeli.Configuracion.Modificar
             //c1.Location = new Point(detalleBtn.inicialX, detalleBtn.inicialY);
             detalleBtn.mover = false;
             //actualizar estado de 
-
+            reload();
         }
         private void dataGridView_MouseDown(object sender, MouseEventArgs e)
         {
@@ -676,6 +700,7 @@ namespace Admeli.Configuracion.Modificar
         private void dataGridView_MouseUp(object sender, MouseEventArgs e)
         {
             detalleBtn.mover = false;
+            reload();
 
         }
 
@@ -792,6 +817,34 @@ namespace Admeli.Configuracion.Modificar
             if (posicionX>= x1 && posicionX<= finalX)
                 if(posicionY>=y1 && posicionY<=finalY)
                 return true;
+            return false;
+        }
+        private bool esta1(int x1, int x2, int y1, int y2, int posicionX, int posicionY)
+        {
+            int finalX = x1 + x2;
+            int finalY = y1 + y2;
+            if (posicionY == y1)
+                if (posicionX + x1 <= finalX)
+                    return true;
+
+            if (posicionX == finalX)
+            {
+                if (posicionY + y1 <= finalY)
+                    return true;
+            }
+            if(posicionY==finalY)
+                if (posicionX+x1<=finalX)
+                {
+                    return true;
+                }
+
+            if (posicionX == x1)
+            {
+                if (posicionY + y1 <= finalY)
+                   return true;
+            }
+
+           
             return false;
         }
 
