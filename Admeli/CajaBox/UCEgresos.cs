@@ -28,6 +28,7 @@ namespace Admeli.CajaBox
         private PersonalModel personalModel = new PersonalModel();
         private SucursalModel sucursalModel = new SucursalModel();
 
+        #region =============================== CONSTRUCTOR ===============================
         public UCEgresos()
         {
             InitializeComponent();
@@ -43,7 +44,8 @@ namespace Admeli.CajaBox
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-        }
+        } 
+        #endregion
 
         #region ============================ Verificar Caja ============================
         private async void verificarCaja()
@@ -71,8 +73,9 @@ namespace Admeli.CajaBox
         {
             this.reLoad();
 
-            // Escuchando los eventos del formulario padre
-            if (TopLevelControl is Form)
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
             {
                 (TopLevelControl as Form).KeyPreview = true;
                 TopLevelControl.KeyUp += TopLevelControl_KeyUp;
@@ -121,6 +124,14 @@ namespace Admeli.CajaBox
         #endregion
 
         #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
             if (!lisenerKeyEvents) return;
@@ -152,7 +163,7 @@ namespace Admeli.CajaBox
         #endregion
 
         #region ======================= Loads =======================
-        private async void cargarComponentes()
+        private void cargarComponentes()
         {
             loadState(true);
             // Cargando el combobox ce estados

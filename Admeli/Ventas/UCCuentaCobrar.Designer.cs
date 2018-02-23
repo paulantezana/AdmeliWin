@@ -687,6 +687,7 @@
             this.Name = "UCCuentaCobrar";
             this.Padding = new System.Windows.Forms.Padding(8);
             this.Size = new System.Drawing.Size(867, 466);
+            this.Load += new System.EventHandler(this.UCCuentaCobrar_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

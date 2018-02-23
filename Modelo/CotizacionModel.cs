@@ -40,5 +40,15 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public Task<Response> eliminar(Cotizacion currentCotizacion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response> desactivar(Cotizacion currentCotizacion)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

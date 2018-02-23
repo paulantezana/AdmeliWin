@@ -18,10 +18,12 @@ namespace Admeli.Productos
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
-        private Paginacion paginacion;
-        private MarcaModel marcaModel = new MarcaModel();
+
         private Marca currentMarca { get; set; }
         private List<Marca> marcas { get; set; }
+
+        private Paginacion paginacion;
+        private MarcaModel marcaModel = new MarcaModel();
 
         public UCMarcas()
         {
@@ -38,20 +40,22 @@ namespace Admeli.Productos
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
+
         }
 
+        #region ================================== ROOT LOAD ==================================
         private void UCMarcas_Load(object sender, EventArgs e)
         {
             this.reLoad();
 
-            // Escuchando los eventos del formulario padre
-            if (TopLevelControl is Form)
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
             {
                 (TopLevelControl as Form).KeyPreview = true;
                 TopLevelControl.KeyUp += TopLevelControl_KeyUp;
             }
         }
-
 
         internal void reLoad(bool refreshData = true)
         {
@@ -60,15 +64,18 @@ namespace Admeli.Productos
                 cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
-        }
-
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer);
-        }
+        } 
+        #endregion
 
         #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
             if (!lisenerKeyEvents) return;
@@ -92,7 +99,13 @@ namespace Admeli.Productos
         }
         #endregion
 
-        #region =========================== Decoration ===========================
+        #region =========================== PAITN AND Decoration ===========================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+
         private void decorationDataGridView()
         {
             // Verificando la existencia de datos en el datagridview

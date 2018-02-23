@@ -40,6 +40,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCLose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -63,7 +65,7 @@
             this.textPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.errorProvider1.SetIconPadding(this.textPassword, -30);
             this.textPassword.isPassword = true;
-            this.textPassword.Location = new System.Drawing.Point(443, 194);
+            this.textPassword.Location = new System.Drawing.Point(494, 190);
             this.textPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textPassword.Name = "textPassword";
             this.textPassword.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
@@ -84,7 +86,7 @@
             this.textUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.errorProvider1.SetIconPadding(this.textUsuario, -30);
             this.textUsuario.isPassword = false;
-            this.textUsuario.Location = new System.Drawing.Point(443, 141);
+            this.textUsuario.Location = new System.Drawing.Point(494, 137);
             this.textUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
@@ -100,9 +102,9 @@
             this.btnCLose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCLose.Image = ((System.Drawing.Image)(resources.GetObject("btnCLose.Image")));
             this.btnCLose.ImageActive = null;
-            this.btnCLose.Location = new System.Drawing.Point(714, 12);
+            this.btnCLose.Location = new System.Drawing.Point(702, 12);
             this.btnCLose.Name = "btnCLose";
-            this.btnCLose.Size = new System.Drawing.Size(39, 38);
+            this.btnCLose.Size = new System.Drawing.Size(46, 55);
             this.btnCLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnCLose.TabIndex = 48;
             this.btnCLose.TabStop = false;
@@ -133,7 +135,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(447, 198);
+            this.pictureBox3.Location = new System.Drawing.Point(498, 194);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(28, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -144,7 +146,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(447, 145);
+            this.pictureBox2.Location = new System.Drawing.Point(498, 141);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -162,7 +164,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(443, 247);
+            this.btnLogin.Location = new System.Drawing.Point(494, 243);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(239, 37);
             this.btnLogin.TabIndex = 39;
@@ -177,6 +179,26 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(661, 373);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 16);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "admeli.com";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(662, 351);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 22);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "0.01.05";
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -186,6 +208,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(765, 414);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.progressbar);
@@ -205,6 +229,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -219,5 +244,7 @@
         public Bunifu.Framework.UI.BunifuMetroTextbox textUsuario;
         private System.Windows.Forms.Button btnLogin;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

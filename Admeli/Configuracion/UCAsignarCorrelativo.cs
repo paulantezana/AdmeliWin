@@ -26,6 +26,7 @@ namespace Admeli.Configuracion
         public DocCorrelativoModel docCorrelativoModel = new DocCorrelativoModel();
 
 
+        #region ================================ CONSTRUCTOR ================================
         public UCAsignarCorrelativo()
         {
             InitializeComponent();
@@ -41,11 +42,21 @@ namespace Admeli.Configuracion
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-        }
+        } 
+        #endregion
 
+        #region =============================== ROOT LOAD ===============================
         private void UCAsignarCorrelativo_Load(object sender, EventArgs e)
         {
             this.reLoad();
+
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         internal void reLoad(bool refreshData = true)
@@ -55,7 +66,35 @@ namespace Admeli.Configuracion
                 cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
+        } 
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
         }
+
+        // Escuchando los Eventos de teclado
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
 
         #region =========================== Decoration ===========================
         private void panelContainer_Paint(object sender, PaintEventArgs e)

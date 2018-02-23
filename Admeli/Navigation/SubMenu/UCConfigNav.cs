@@ -348,22 +348,6 @@ namespace Admeli.Navigation.SubMenu
         {
             this.formPrincipal.panelMain.Controls.Clear();
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
-            if (uCAlmacenes != null) uCAlmacenes.lisenerKeyEvents = false;
-            if (uCAsignarCorrelativo != null) uCAsignarCorrelativo.lisenerKeyEvents = false;
-            if (uCCajasInicializadas != null) uCCajasInicializadas.lisenerKeyEvents = false;
-            if (uCDatosEmpresa != null) uCDatosEmpresa.lisenerKeyEvents = false;
-            if (uCDenominaciones != null) uCDenominaciones.lisenerKeyEvents = false;
-            if (uCDisenoPersonalizacion != null) uCDisenoPersonalizacion.lisenerKeyEvents = false;
-            if (uCDocumentoIdentificacion != null) uCDocumentoIdentificacion.lisenerKeyEvents = false;
-            if (uCGrupoClientes != null) uCGrupoClientes.lisenerKeyEvents = false;
-            if (uCImpuestoDocumento != null) uCImpuestoDocumento.lisenerKeyEvents = false;
-            if (uCImpuestos != null) uCImpuestos.lisenerKeyEvents = false;
-            if (uCListadoDocumentos != null) uCListadoDocumentos.lisenerKeyEvents = false;
-            if (uCListadoMoneda != null) uCListadoMoneda.lisenerKeyEvents = false;
-            if (uCPersonal != null) uCPersonal.lisenerKeyEvents = false;
-            if (uCSucursales != null) uCSucursales.lisenerKeyEvents = false;
-            if (uCPuntoDeVenta != null) uCPuntoDeVenta.lisenerKeyEvents = false;
-            if (uCTipoCambio != null) uCTipoCambio.lisenerKeyEvents = false;
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)

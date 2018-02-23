@@ -28,7 +28,8 @@ namespace Admeli.Herramientas
         private Paginacion paginacion;
         private List<ProductoData> productos { get; set; }
         private ProductoData currentProdcuto { get; set; }
-        
+
+        #region ================================ CONSTRUCTOR ================================
         public UCInicializarStock()
         {
             InitializeComponent();
@@ -44,7 +45,8 @@ namespace Admeli.Herramientas
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-        }
+        } 
+        #endregion
 
         #region ================================= Paint =================================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -58,12 +60,21 @@ namespace Admeli.Herramientas
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelSucursal);
             drawShape.lineBorder(panelAlmacen);
-        } 
+        }
         #endregion
 
+        #region ============================= ROOT LOAD =============================
         private void UCInicializarStock_Load(object sender, EventArgs e)
         {
             this.reLoad();
+
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         internal void reLoad(bool refreshData = true)
@@ -77,6 +88,39 @@ namespace Admeli.Herramientas
             }
             this.lisenerKeyEvents = true; // Active lisener key events
         }
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    //executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F7:
+                    //executeAnular();
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
 
         #region ==================================== Load ====================================
         private async void cargarCategorias()

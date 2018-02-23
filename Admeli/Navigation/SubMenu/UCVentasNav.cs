@@ -123,10 +123,6 @@ namespace Admeli.Navigation.SubMenu
         {
             this.formPrincipal.panelMain.Controls.Clear();
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
-            if (uCClientes != null) uCClientes.lisenerKeyEvents = false;
-            if (uCCotizacionCliente != null) uCCotizacionCliente.lisenerKeyEvents = false;
-            if (uCCuentaCobrar != null) uCCuentaCobrar.lisenerKeyEvents = false;
-            if (uCVentas != null) uCVentas.lisenerKeyEvents = false;
         }
 
         private void btnCotizacionCliente_Click(object sender, EventArgs e)

@@ -100,9 +100,6 @@ namespace Admeli.Navigation.SubMenu
         {
             this.formPrincipal.panelMain.Controls.Clear();
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
-            if (uCAsignarCategorias != null) uCAsignarCategorias.lisenerKeyEvents = false;
-            if (uCAsignarImpuesto != null) uCAsignarImpuesto.lisenerKeyEvents = false;
-            if (uCInicializarStock != null) uCInicializarStock.lisenerKeyEvents = false;
         }
 
         private void btnPrecioStock_Click(object sender, EventArgs e)

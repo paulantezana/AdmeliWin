@@ -24,7 +24,6 @@ namespace Admeli.Compras
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
 
-        #region ==================== Constructor and methods windows form ====================
         public UCOrdenCompraProveedor()
         {
             InitializeComponent();
@@ -48,11 +47,28 @@ namespace Admeli.Compras
             drawShape.lineBorder(panelContainer);
         }
 
-        private async void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
+        private void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
         {
-            cargarPersonales();
-            cargarSucursales();
-            await cargarRegistros();
+            this.reLoad();
+
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
+        }
+
+        internal void reLoad(bool refreshData = true)
+        {
+            if (refreshData)
+            {
+                cargarPersonales();
+                cargarSucursales();
+                cargarRegistros();
+            }
+            lisenerKeyEvents = true; // Active lisener key events
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -60,7 +76,6 @@ namespace Admeli.Compras
             FormCompraProveedorNuevo compraProveedorNuevo = new FormCompraProveedorNuevo();
             compraProveedorNuevo.ShowDialog();
         }
-        #endregion
 
         #region =========================== Estados ===========================
         private void loadState(bool state)
@@ -127,16 +142,40 @@ namespace Admeli.Compras
                 formPrincipal.appLoadState(false);
             }
         }
+        #endregion
 
-        internal void reLoad(bool refreshData = true)
+        #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
         {
-            if (refreshData)
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
             {
-                cargarSucursales();
-                cargarPersonales();
-                cargarRegistros();
+                /*case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F6:
+                    executeEliminar();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;*/
+                default:
+                    break;
             }
-            lisenerKeyEvents = true; // Active lisener key events
         }
         #endregion
 

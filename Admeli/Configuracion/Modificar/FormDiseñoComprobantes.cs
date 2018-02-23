@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad.Configuracion;
 using Newtonsoft.Json;
-using Entidad.Configuracion;
 using Entidad;
 using System.Globalization;
 using Bunifu.Framework.UI;

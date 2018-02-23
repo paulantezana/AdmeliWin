@@ -69,5 +69,14 @@ namespace Modelo
             }
         }
 
+        public Task<Response> eliminar(Venta currentVenta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response> desactivar(Venta currentVenta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

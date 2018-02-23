@@ -17,12 +17,13 @@ namespace Admeli.Productos
     public partial class UCUnidadesMedida : UserControl
     {
         private FormPrincipal formPrincipal;
-        private Paginacion paginacion;
-        private UnidadMedidaModel unidadMedidaModel = new UnidadMedidaModel();
+        public bool lisenerKeyEvents { get; set; }
+
         private UnidadMedida currentUnidadMedida { get; set; }
         private List<UnidadMedida> unidadesDeMedida { get; set; }
 
-        public bool lisenerKeyEvents { get; set; }
+        private Paginacion paginacion;
+        private UnidadMedidaModel unidadMedidaModel = new UnidadMedidaModel();
 
         public UCUnidadesMedida()
         {
@@ -52,11 +53,11 @@ namespace Admeli.Productos
         #region =================================== ROOT LOAD ===================================
         private void UCUnidadesMedida_Load(object sender, EventArgs e)
         {
-
             this.reLoad();
 
-            // Escuchando los eventos del formulario padre
-            if (TopLevelControl is Form)
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
             {
                 (TopLevelControl as Form).KeyPreview = true;
                 TopLevelControl.KeyUp += TopLevelControl_KeyUp;
@@ -70,10 +71,18 @@ namespace Admeli.Productos
                 cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
-        } 
+        }
         #endregion
 
         #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
             if (!lisenerKeyEvents) return;

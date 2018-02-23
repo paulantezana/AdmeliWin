@@ -52,5 +52,15 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public Task<Response> eliminar(Cliente currentCliente)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response> desactivar(Cliente currentCliente)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

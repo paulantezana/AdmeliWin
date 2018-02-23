@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad;
 
 namespace Admeli.Ventas.Nuevo
 {
     public partial class FormVentaNuevo : Form
     {
+        private Venta currentVenta;
+
         public FormVentaNuevo()
         {
             InitializeComponent();
+        }
+
+        public FormVentaNuevo(Venta currentVenta)
+        {
+            this.currentVenta = currentVenta;
         }
 
         private void FormVentaNuevo_Load(object sender, EventArgs e)

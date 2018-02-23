@@ -42,7 +42,7 @@ namespace Admeli.Productos.Nuevo.PDetalle
         #endregion
 
         #region ================================== CARGAR CATEGORIA ==================================
-        private async void cargarCategorias()
+        private void cargarCategorias()
         {
             // loadState(true);
             try

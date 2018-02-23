@@ -18,10 +18,15 @@ namespace Admeli.Ventas
     {
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
+
+        private Cliente currentCliente { get; set; }
+        private List<Cliente> clientes { get; set; }
+
         private Paginacion paginacion;
         private PersonalModel personalModel = new PersonalModel();
         private ClienteModel clienteModel = new ClienteModel();
 
+        #region ===================================== CONSTRUCTOR =====================================
         public UCClientes()
         {
             InitializeComponent();
@@ -37,39 +42,89 @@ namespace Admeli.Ventas
 
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
-        }
+        } 
+        #endregion
 
-
+        #region ===================================== ROOT LOAD =====================================
         private void UCClientes_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
-        }
+            this.reLoad();
 
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
-        {
-            DrawShape drawShape = new DrawShape();
-            drawShape.lineBorder(panelContainer);
-        }
-
-        #region =========================== Decoration ===========================
-        private void decorationDataGridView()
-        {
-            /*
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
             {
-                var estado = dataGridView.Rows[i].Cells.get.Value.ToString();
-                dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.DeepPink;
-            }*/
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         internal void reLoad(bool refreshData = true)
         {
             if (refreshData)
             {
-
+                cargarComponentes();
+                cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
+        }
+        #endregion
+
+        #region ================================ PAINT AND DECORATION ================================
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panelContainer);
+        }
+        private void decorationDataGridView()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                int idCliente = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                Cliente cliente = clientes.Find(x => x.idCliente == idCliente); // Buscando la categoria en las lista de categorias
+                if (cliente.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        }
+        #endregion
+
+        #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;
+                default:
+                    break;
+            }
         }
         #endregion
 
@@ -88,17 +143,22 @@ namespace Admeli.Ventas
             loadState(true);
             try
             {
-
-                RootObject<Cliente> clientes = await clienteModel.clientes(paginacion.currentPage, paginacion.speed);
+                RootObject<Cliente> rootData = await clienteModel.clientes(paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = clientes.nro_registros;
+                paginacion.itemsCount = rootData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                clienteBindingSource.DataSource = clientes.datos;
+                clientes = rootData.datos;
+                clienteBindingSource.DataSource = clientes;
                 dataGridView.Refresh();
+
+                // Mostrando la paginacion
                 mostrarPaginado();
+
+                // formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -225,25 +285,9 @@ namespace Admeli.Ventas
         #endregion
 
         #region ==================== CRUD ====================
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            cargarRegistros();
-        }
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            FormClienteNuevo clienteNuevo = new FormClienteNuevo();
-            clienteNuevo.ShowDialog();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            FormClienteNuevo clienteNuevo = new FormClienteNuevo();
-            clienteNuevo.ShowDialog();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
+            executeModificar();
         }
 
         private void textBuscar_KeyUp(object sender, KeyEventArgs e)
@@ -261,6 +305,133 @@ namespace Admeli.Ventas
                 cargarRegistrosBuscar();
             }
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            executeNuevo();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            executeEliminar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormClienteNuevo formClienteNuevo = new FormClienteNuevo();
+            formClienteNuevo.ShowDialog();
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idCliente = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+            currentCliente = clientes.Find(x => x.idCliente == idCliente); // Buscando la categoria en las lista de categorias
+
+            // Mostrando el formulario de modificacion
+            FormClienteNuevo formClienteNuevo = new FormClienteNuevo(currentCliente);
+            formClienteNuevo.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentCliente = new Cliente(); //creando una instancia del objeto categoria
+                currentCliente.idCliente = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await clienteModel.eliminar(currentCliente); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de anular
+            DialogResult dialog = MessageBox.Show("¿Está seguro de anular este registro?", "Anular",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentCliente = new Cliente(); //creando una instancia del objeto categoria
+                currentCliente.idCliente = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                // Comprobando si la categoria ya esta desactivado
+                if (clientes.Find(x => x.idCliente == currentCliente.idCliente).estado == 0)
+                {
+                    MessageBox.Show("Este registro ya esta desactivado", "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Procediendo con las desactivacion
+                Response response = await clienteModel.desactivar(currentCliente);
+                MessageBox.Show(response.msj, "Desactivar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         #endregion
     }
 }

@@ -119,10 +119,6 @@ namespace Admeli.Navigation.SubMenu
         {
             this.formPrincipal.panelMain.Controls.Clear();
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
-            if (uCCierreCaja != null) uCCierreCaja.lisenerKeyEvents = false;
-            if (uCEgresos != null) uCEgresos.lisenerKeyEvents = false;
-            if (uCIngresos != null) uCIngresos.lisenerKeyEvents = false;
-            if (uCIniciarCaja != null) uCIniciarCaja.lisenerKeyEvents = false;
         }
 
         private void btnColor()

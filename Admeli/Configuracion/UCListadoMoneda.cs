@@ -48,8 +48,9 @@ namespace Admeli.Configuracion
         {
             this.reLoad();
 
-            // Escuchando los eventos del formulario padre
-            if (TopLevelControl is Form)
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
             {
                 (TopLevelControl as Form).KeyPreview = true;
                 TopLevelControl.KeyUp += TopLevelControl_KeyUp;
@@ -67,6 +68,14 @@ namespace Admeli.Configuracion
         #endregion
 
         #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
         private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
         {
             if (!lisenerKeyEvents) return;

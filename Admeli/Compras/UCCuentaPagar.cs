@@ -67,6 +67,41 @@ namespace Admeli.Compras
             // throw new NotImplementedException();
         }
 
+        #region ======================== KEYBOARD ========================
+        // Evento que se dispara cuando el padre cambia
+        private void ParentChange(object sender, EventArgs e)
+        {
+            // cambiar la propiedad de lisenerKeyEvents de este modulo
+            if (lisenerKeyEvents) lisenerKeyEvents = false;
+        }
+
+        // Escuchando los Eventos de teclado
+        private void TopLevelControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!lisenerKeyEvents) return;
+            switch (e.KeyCode)
+            {
+                /*case Keys.F3:
+                    executeNuevo();
+                    break;
+                case Keys.F4:
+                    executeModificar();
+                    break;
+                case Keys.F5:
+                    cargarRegistros();
+                    break;
+                case Keys.F6:
+                    executeEliminar();
+                    break;
+                case Keys.F7:
+                    executeAnular();
+                    break;*/
+                default:
+                    break;
+            }
+        }
+        #endregion
+
         #region ==================================== Loads =======================================
         private async void cargarSucursales()
         {
