@@ -119,6 +119,9 @@ namespace Admeli.Ventas
                 case Keys.F5:
                     cargarRegistros();
                     break;
+                case Keys.F6:
+                    executeEliminar();
+                    break;
                 case Keys.F7:
                     executeAnular();
                     break;

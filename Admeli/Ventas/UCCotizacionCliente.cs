@@ -77,7 +77,19 @@ namespace Admeli.Ventas
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
-        } 
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panel10);
+        }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+            DrawShape drawShape = new DrawShape();
+            drawShape.lineBorder(panel13);
+        }
         #endregion
 
         #region ======================== KEYBOARD ========================
@@ -102,6 +114,9 @@ namespace Admeli.Ventas
                     break;
                 case Keys.F5:
                     cargarRegistros();
+                    break;
+                case Keys.F6:
+                    executeEliminar();
                     break;
                 case Keys.F7:
                     executeAnular();

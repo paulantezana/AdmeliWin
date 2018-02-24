@@ -541,9 +541,9 @@
             // 
             this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
+            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
-            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
@@ -609,7 +609,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(296, 15);
+            this.btnEliminar.Location = new System.Drawing.Point(432, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -632,7 +632,7 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(444, 15);
+            this.btnActualizar.Location = new System.Drawing.Point(580, 15);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -655,7 +655,7 @@
             this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(596, 15);
+            this.btnAnular.Location = new System.Drawing.Point(296, 15);
             this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);

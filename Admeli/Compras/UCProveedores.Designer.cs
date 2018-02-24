@@ -148,6 +148,7 @@
             this.dataGridView.Size = new System.Drawing.Size(863, 351);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // idProveedorDataGridViewTextBoxColumn
             // 
@@ -653,7 +654,6 @@
             this.Padding = new System.Windows.Forms.Padding(8);
             this.Size = new System.Drawing.Size(901, 561);
             this.Load += new System.EventHandler(this.UCProveedores_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UCProveedores_Paint);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

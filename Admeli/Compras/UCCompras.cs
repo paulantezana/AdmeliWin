@@ -79,6 +79,14 @@ namespace Admeli.Compras
         private void UCCompras_Load(object sender, EventArgs e)
         {
             this.reLoad();
+
+            // Preparando para los eventos de teclado
+            this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
+            if (TopLevelControl is Form) // Escuchando los eventos del formulario padre
+            {
+                (TopLevelControl as Form).KeyPreview = true;
+                TopLevelControl.KeyUp += TopLevelControl_KeyUp;
+            }
         }
 
         internal void reLoad(bool refreshData = true)
@@ -295,7 +303,12 @@ namespace Admeli.Compras
         }
         #endregion
 
-        #region ==================== CRUD ====================
+        #region ===================================== CRUD =====================================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             cargarRegistros();

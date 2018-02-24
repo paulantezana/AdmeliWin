@@ -195,6 +195,16 @@
         sfpIVreTJJnglNFwp+I6O7kLx4/nfQLzyLyRR1iDCQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnAnular.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAARtJREFUOE+1
+        VEtOwzAUzAkoomrvAKdplFhddI+QkOOkH9rndJErACqcDkSvwKpsSt84jnAsiyKajjSKNTPPyXuJE50d
+        o7y6FKocp0rPQKyhWfs44rtqmGb6lfnF/Pa4S5R+EZIGNh4GB244vPWKQ/wY5+trW9ZGfE99Drx7Bb/x
+        TRTVlS3/ARsbJ/TJfGLuHW2fKnrkKzyjJZKebXkNcbvsseHOZGP0rJw2Gs+mgIYZObndRFYX0A0SVSaO
+        WVOWObw0owch9aLO6cLP8c1ieAYcnvsBS7IRtE6eZ4intpE/bqRIB/z2RuHW9BKe25pQtPJzrdb8YWOg
+        Rg8Mm9f4WJuN2sMGWDz99QOdfZBAJ0ekQSeH1sXJv5H/IYoOu3iI2/kQ9HUAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAARFJREFUOE/V
@@ -216,16 +226,6 @@
         Tz0O3SnGh+x8UH4Tawa6w+eGVlNJpKXav0s8sUl8cYK9bHmkN5C8jDtqaMn2pwbyC/yAS4eKdTmMsgFq
         KCm/0j6KPwMp7V9+IpE57tEkyr/LCEpTJwdHEzos2wqFcEC+t3ROBUvQSRZIH+3en/X/x2ZZv/258VKh
         dAE1AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnAnular.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAARtJREFUOE+1
-        VEtOwzAUzAkoomrvAKdplFhddI+QkOOkH9rndJErACqcDkSvwKpsSt84jnAsiyKajjSKNTPPyXuJE50d
-        o7y6FKocp0rPQKyhWfs44rtqmGb6lfnF/Pa4S5R+EZIGNh4GB244vPWKQ/wY5+trW9ZGfE99Drx7Bb/x
-        TRTVlS3/ARsbJ/TJfGLuHW2fKnrkKzyjJZKebXkNcbvsseHOZGP0rJw2Gs+mgIYZObndRFYX0A0SVSaO
-        WVOWObw0owch9aLO6cLP8c1ieAYcnvsBS7IRtE6eZ4intpE/bqRIB/z2RuHW9BKe25pQtPJzrdb8YWOg
-        Rg8Mm9f4WJuN2sMGWDz99QOdfZBAJ0ekQSeH1sXJv5H/IYoOu3iI2/kQ9HUAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="personalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

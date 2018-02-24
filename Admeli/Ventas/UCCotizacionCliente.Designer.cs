@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCotizacionCliente));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -135,14 +135,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCotizacionDataGridViewTextBoxColumn,
@@ -179,6 +179,7 @@
             this.dataGridView.Size = new System.Drawing.Size(825, 260);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.TimeFilter = false;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // idCotizacionDataGridViewTextBoxColumn
             // 
@@ -649,6 +650,7 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(165, 40);
             this.panel13.TabIndex = 15;
+            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
             // 
             // cbxPersonales
             // 
@@ -656,6 +658,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxPersonales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxPersonales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxPersonales.DataSource = this.personalBindingSource;
             this.cbxPersonales.DisplayMember = "nombres";
             this.cbxPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -686,6 +689,7 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(165, 40);
             this.panel10.TabIndex = 13;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // cbxSucursales
             // 
@@ -693,6 +697,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxSucursales.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbxSucursales.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxSucursales.DataSource = this.sucursalBindingSource;
             this.cbxSucursales.DisplayMember = "nombre";
             this.cbxSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxSucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -719,9 +724,9 @@
             // 
             this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
+            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
-            this.panelCrud.Controls.Add(this.btnAnular);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
@@ -789,7 +794,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(296, 15);
+            this.btnEliminar.Location = new System.Drawing.Point(432, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -813,7 +818,7 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(444, 15);
+            this.btnActualizar.Location = new System.Drawing.Point(580, 15);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -837,7 +842,7 @@
             this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(596, 15);
+            this.btnAnular.Location = new System.Drawing.Point(296, 15);
             this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);

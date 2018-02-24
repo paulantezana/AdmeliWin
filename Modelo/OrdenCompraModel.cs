@@ -40,5 +40,15 @@ namespace Modelo
                 throw ex;
             }
         }
+
+        public Task<Response> anular(OrdenCompra currentOrdenCompra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response> eliminar(OrdenCompra currentOrdenCompra)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

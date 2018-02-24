@@ -72,8 +72,7 @@ namespace Admeli.Compras
         #region ====================== root load ======================
         private void UCProveedores_Load(object sender, EventArgs e)
         {
-            cargarComponentes();
-            cargarRegistros();
+            this.reLoad();
 
             // Preparando para los eventos de teclado
             this.ParentChanged += ParentChange; // Evetno que se dispara cuando el padre cambia // Este eveto se usa para desactivar lisener key events de este modulo
@@ -88,6 +87,7 @@ namespace Admeli.Compras
         {
             if (refreshData)
             {
+                cargarComponentes();
                 cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
@@ -300,7 +300,12 @@ namespace Admeli.Compras
             }
         }
 
-        #region ==================== CRUD ====================
+        #region ================================ CRUD ================================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
@@ -424,10 +429,5 @@ namespace Admeli.Compras
         }
 
         #endregion
-
-        private void UCProveedores_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
     }
 }

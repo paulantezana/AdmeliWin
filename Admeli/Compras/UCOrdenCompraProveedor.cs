@@ -17,13 +17,18 @@ namespace Admeli.Compras
 {
     public partial class UCOrdenCompraProveedor : UserControl
     {
-        private OrdenCompraModel ordenCompraModel = new OrdenCompraModel();
-        private PersonalModel personalModel = new PersonalModel();
-        private SucursalModel sucursalModel = new SucursalModel();
-        private Paginacion paginacion;
         private FormPrincipal formPrincipal;
         public bool lisenerKeyEvents { get; set; }
 
+        private List<OrdenCompra> ordenCompras { get; set; }
+        private OrdenCompra currentOrdenCompra { get; set; }
+
+        private Paginacion paginacion;
+        private OrdenCompraModel ordenCompraModel = new OrdenCompraModel();
+        private PersonalModel personalModel = new PersonalModel();
+        private SucursalModel sucursalModel = new SucursalModel();
+
+        #region ============================= CONSTRUCTOR =============================
         public UCOrdenCompraProveedor()
         {
             InitializeComponent();
@@ -40,13 +45,35 @@ namespace Admeli.Compras
             lblSpeedPages.Text = ConfigModel.configuracionGeneral.itemPorPagina.ToString();     // carganto los items por página
             paginacion = new Paginacion(Convert.ToInt32(lblCurrentPage.Text), Convert.ToInt32(lblSpeedPages.Text));
         }
+        #endregion
 
+        #region ==================================== PAINT AND DECORATION ====================================
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
 
+        private void decorationDataGridView()
+        {
+            if (dataGridView.Rows.Count == 0) return;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                int idOrdenCompra = Convert.ToInt32(row.Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                currentOrdenCompra = ordenCompras.Find(x => x.idOrdenCompra == idOrdenCompra); // Buscando la categoria en las lista de categorias
+                if (currentOrdenCompra.estado == 0)
+                {
+                    dataGridView.ClearSelection();
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 224, 224);
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(250, 5, 73);
+                }
+            }
+        } 
+        #endregion
+
+        #region ======================================= ROOT LOAD =======================================
         private void UCOrdenCompraProveedor_Load(object sender, EventArgs e)
         {
             this.reLoad();
@@ -69,13 +96,8 @@ namespace Admeli.Compras
                 cargarRegistros();
             }
             lisenerKeyEvents = true; // Active lisener key events
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            FormCompraProveedorNuevo compraProveedorNuevo = new FormCompraProveedorNuevo();
-            compraProveedorNuevo.ShowDialog();
-        }
+        } 
+        #endregion
 
         #region =========================== Estados ===========================
         private void loadState(bool state)
@@ -87,7 +109,6 @@ namespace Admeli.Compras
         #endregion
 
         #region ======================= Loads =======================
-
         private async void cargarSucursales()
         {
             try
@@ -112,25 +133,31 @@ namespace Admeli.Compras
             }
         }
 
-        private async Task cargarRegistros()
+        private async void cargarRegistros()
         {
             formPrincipal.appLoadState(true);
             loadState(true);
             try
             {
+                int personalId = (cbxPersonales.SelectedIndex == -1) ? PersonalModel.personal.idPersonal : Convert.ToInt32(cbxPersonales.SelectedValue);
+                int sucursalId = (cbxSucursales.SelectedIndex == -1) ? ConfigModel.sucursal.idSucursal : Convert.ToInt32(cbxSucursales.SelectedValue);
 
-                RootObject<OrdenCompra> ordenCompra = await ordenCompraModel.ocompras(ConfigModel.sucursal.idSucursal,
-                                                                                      Convert.ToInt32(cbxPersonales.SelectedValue),
-                                                                                      paginacion.currentPage, paginacion.speed);
+                RootObject<OrdenCompra> rootData  = await ordenCompraModel.ocompras(sucursalId, personalId, paginacion.currentPage, paginacion.speed);
 
                 // actualizando datos de páginacón
-                paginacion.itemsCount = ordenCompra.nro_registros;
+                paginacion.itemsCount = rootData.nro_registros;
                 paginacion.reload();
 
                 // Ingresando
-                ordenCompraBindingSource.DataSource = ordenCompra.datos;
+                ordenCompras = rootData.datos;
+                ordenCompraBindingSource.DataSource = rootData.datos;
                 dataGridView.Refresh();
+
+                // Mostrando la paginacion
                 mostrarPaginado();
+
+                // Formato de celdas
+                decorationDataGridView();
             }
             catch (Exception ex)
             {
@@ -158,7 +185,7 @@ namespace Admeli.Compras
             if (!lisenerKeyEvents) return;
             switch (e.KeyCode)
             {
-                /*case Keys.F3:
+                case Keys.F3:
                     executeNuevo();
                     break;
                 case Keys.F4:
@@ -172,7 +199,7 @@ namespace Admeli.Compras
                     break;
                 case Keys.F7:
                     executeAnular();
-                    break;*/
+                    break;
                 default:
                     break;
             }
@@ -255,14 +282,133 @@ namespace Admeli.Compras
         }
         #endregion
 
-        private async void btnConsultar_Click(object sender, EventArgs e)
+        #region ============================= CRUD =============================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            await cargarRegistros();
+            executeModificar();
         }
 
-        private async void btnActualizar_Click(object sender, EventArgs e)
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
-            await cargarRegistros();
+            cargarRegistros();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarRegistros();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            executeNuevo();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            executeEliminar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            executeModificar();
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            executeAnular();
+        }
+
+        private void executeNuevo()
+        {
+            FormCompraProveedorNuevo formCompraProveedor = new FormCompraProveedorNuevo();
+            formCompraProveedor.ShowDialog();
+            cargarRegistros();
+        }
+
+        private void executeModificar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idOrdenCompra = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+            currentOrdenCompra = ordenCompras.Find(x => x.idOrdenCompra == idOrdenCompra); // Buscando la registro especifico en la lista de registros
+
+            // Mostrando el formulario de modificacion
+            FormCompraProveedorNuevo formCompraProveedor = new FormCompraProveedorNuevo(currentOrdenCompra);
+            formCompraProveedor.ShowDialog();
+            cargarRegistros(); // recargando loas registros en el datagridview
+        }
+
+        private async void executeEliminar()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Pregunta de seguridad de eliminacion
+            DialogResult dialog = MessageBox.Show("¿Está seguro de eliminar este registro?", "Eliminar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.No) return;
+
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                currentOrdenCompra = new OrdenCompra(); //creando una instancia del objeto categoria
+                currentOrdenCompra.idOrdenCompra = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idCategoria del datagridview
+
+                loadState(true); // cambiando el estado
+                Response response = await ordenCompraModel.eliminar(currentOrdenCompra); // Eliminando con el webservice correspondiente
+                MessageBox.Show(response.msj, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                loadState(false); // cambiando el estado
+            }
+        }
+
+        private async void executeAnular()
+        {
+            // Verificando la existencia de datos en el datagridview
+            if (dataGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay un registro seleccionado", "Desactivar o anular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+                int idOrdenCompra = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+
+                currentOrdenCompra = ordenCompras.Find(x => x.idOrdenCompra == idOrdenCompra); // Buscando la registro especifico en la lista de registros
+                //currentOrdenCompra.estado = 0;
+                //currentOrdenCompra.idCajaSesion = ConfigModel.cajaSesion.idCajaSesion;
+
+                // Procediendo con las desactivacion
+                Response response = await ordenCompraModel.anular(currentOrdenCompra);
+                MessageBox.Show(response.msj, "Anular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarRegistros(); // recargando los registros en el datagridview
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Anular", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
     }
 }
