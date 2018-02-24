@@ -62,7 +62,7 @@
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnCategorias.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnCategorias.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnCategorias.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCategorias.selected = false;
             this.btnCategorias.Size = new System.Drawing.Size(200, 48);
             this.btnCategorias.TabIndex = 9;
@@ -99,7 +99,7 @@
             this.btnUnidadMedida.Name = "btnUnidadMedida";
             this.btnUnidadMedida.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnUnidadMedida.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnUnidadMedida.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnUnidadMedida.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUnidadMedida.selected = false;
             this.btnUnidadMedida.Size = new System.Drawing.Size(200, 48);
             this.btnUnidadMedida.TabIndex = 8;
@@ -136,7 +136,7 @@
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnMarcas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnMarcas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnMarcas.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMarcas.selected = false;
             this.btnMarcas.Size = new System.Drawing.Size(200, 48);
             this.btnMarcas.TabIndex = 7;
@@ -173,7 +173,7 @@
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnProductos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnProductos.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnProductos.OnHoverTextColor = System.Drawing.Color.White;
             this.btnProductos.selected = false;
             this.btnProductos.Size = new System.Drawing.Size(200, 48);
             this.btnProductos.TabIndex = 6;

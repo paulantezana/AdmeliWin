@@ -64,7 +64,7 @@
             this.btnCierreCaja.Name = "btnCierreCaja";
             this.btnCierreCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnCierreCaja.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnCierreCaja.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnCierreCaja.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCierreCaja.selected = false;
             this.btnCierreCaja.Size = new System.Drawing.Size(200, 48);
             this.btnCierreCaja.TabIndex = 13;
@@ -101,7 +101,7 @@
             this.btnIniciarCaja.Name = "btnIniciarCaja";
             this.btnIniciarCaja.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnIniciarCaja.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnIniciarCaja.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnIniciarCaja.OnHoverTextColor = System.Drawing.Color.White;
             this.btnIniciarCaja.selected = false;
             this.btnIniciarCaja.Size = new System.Drawing.Size(200, 48);
             this.btnIniciarCaja.TabIndex = 12;
@@ -138,7 +138,7 @@
             this.btnCuentaPagar.Name = "btnCuentaPagar";
             this.btnCuentaPagar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnCuentaPagar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnCuentaPagar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnCuentaPagar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCuentaPagar.selected = false;
             this.btnCuentaPagar.Size = new System.Drawing.Size(200, 48);
             this.btnCuentaPagar.TabIndex = 11;
@@ -175,7 +175,7 @@
             this.btnPorCobrar.Name = "btnPorCobrar";
             this.btnPorCobrar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnPorCobrar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnPorCobrar.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnPorCobrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPorCobrar.selected = false;
             this.btnPorCobrar.Size = new System.Drawing.Size(200, 48);
             this.btnPorCobrar.TabIndex = 10;
@@ -212,7 +212,7 @@
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnIngreso.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnIngreso.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnIngreso.OnHoverTextColor = System.Drawing.Color.White;
             this.btnIngreso.selected = false;
             this.btnIngreso.Size = new System.Drawing.Size(200, 48);
             this.btnIngreso.TabIndex = 9;
@@ -249,7 +249,7 @@
             this.btnEgreso.Name = "btnEgreso";
             this.btnEgreso.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnEgreso.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnEgreso.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnEgreso.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEgreso.selected = false;
             this.btnEgreso.Size = new System.Drawing.Size(200, 48);
             this.btnEgreso.TabIndex = 8;

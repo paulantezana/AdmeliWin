@@ -62,7 +62,7 @@
             this.btnGenerarCodigoDeBarra.Name = "btnGenerarCodigoDeBarra";
             this.btnGenerarCodigoDeBarra.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnGenerarCodigoDeBarra.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnGenerarCodigoDeBarra.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnGenerarCodigoDeBarra.OnHoverTextColor = System.Drawing.Color.White;
             this.btnGenerarCodigoDeBarra.selected = false;
             this.btnGenerarCodigoDeBarra.Size = new System.Drawing.Size(200, 48);
             this.btnGenerarCodigoDeBarra.TabIndex = 9;
@@ -99,7 +99,7 @@
             this.btnAsignarImpuesto.Name = "btnAsignarImpuesto";
             this.btnAsignarImpuesto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnAsignarImpuesto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnAsignarImpuesto.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnAsignarImpuesto.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAsignarImpuesto.selected = false;
             this.btnAsignarImpuesto.Size = new System.Drawing.Size(200, 48);
             this.btnAsignarImpuesto.TabIndex = 8;
@@ -136,7 +136,7 @@
             this.btnAsignarCategoria.Name = "btnAsignarCategoria";
             this.btnAsignarCategoria.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnAsignarCategoria.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnAsignarCategoria.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnAsignarCategoria.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAsignarCategoria.selected = false;
             this.btnAsignarCategoria.Size = new System.Drawing.Size(200, 48);
             this.btnAsignarCategoria.TabIndex = 7;
@@ -173,7 +173,7 @@
             this.btnPrecioStock.Name = "btnPrecioStock";
             this.btnPrecioStock.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnPrecioStock.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnPrecioStock.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnPrecioStock.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPrecioStock.selected = false;
             this.btnPrecioStock.Size = new System.Drawing.Size(200, 48);
             this.btnPrecioStock.TabIndex = 6;

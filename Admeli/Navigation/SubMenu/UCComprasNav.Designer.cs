@@ -61,7 +61,7 @@
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnProveedor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnProveedor.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnProveedor.OnHoverTextColor = System.Drawing.Color.White;
             this.btnProveedor.selected = false;
             this.btnProveedor.Size = new System.Drawing.Size(200, 48);
             this.btnProveedor.TabIndex = 7;
@@ -98,7 +98,7 @@
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnCompra.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnCompra.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnCompra.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCompra.selected = false;
             this.btnCompra.Size = new System.Drawing.Size(200, 48);
             this.btnCompra.TabIndex = 6;
@@ -135,7 +135,7 @@
             this.btnOrdenCompra.Name = "btnOrdenCompra";
             this.btnOrdenCompra.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnOrdenCompra.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnOrdenCompra.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnOrdenCompra.OnHoverTextColor = System.Drawing.Color.White;
             this.btnOrdenCompra.selected = false;
             this.btnOrdenCompra.Size = new System.Drawing.Size(200, 48);
             this.btnOrdenCompra.TabIndex = 5;

@@ -61,7 +61,7 @@
             this.btnImpuestos.Name = "btnImpuestos";
             this.btnImpuestos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnImpuestos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnImpuestos.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnImpuestos.OnHoverTextColor = System.Drawing.Color.White;
             this.btnImpuestos.selected = false;
             this.btnImpuestos.Size = new System.Drawing.Size(200, 48);
             this.btnImpuestos.TabIndex = 7;
@@ -97,7 +97,7 @@
             this.btnIngresoVentas.Name = "btnIngresoVentas";
             this.btnIngresoVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnIngresoVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnIngresoVentas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnIngresoVentas.OnHoverTextColor = System.Drawing.Color.White;
             this.btnIngresoVentas.selected = false;
             this.btnIngresoVentas.Size = new System.Drawing.Size(200, 48);
             this.btnIngresoVentas.TabIndex = 6;
@@ -133,7 +133,7 @@
             this.btnExistenciaProducto.Name = "btnExistenciaProducto";
             this.btnExistenciaProducto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnExistenciaProducto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnExistenciaProducto.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnExistenciaProducto.OnHoverTextColor = System.Drawing.Color.White;
             this.btnExistenciaProducto.selected = false;
             this.btnExistenciaProducto.Size = new System.Drawing.Size(200, 48);
             this.btnExistenciaProducto.TabIndex = 5;

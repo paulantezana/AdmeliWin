@@ -61,7 +61,7 @@
             this.btnGuiaRemision.Name = "btnGuiaRemision";
             this.btnGuiaRemision.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnGuiaRemision.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnGuiaRemision.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnGuiaRemision.OnHoverTextColor = System.Drawing.Color.White;
             this.btnGuiaRemision.selected = false;
             this.btnGuiaRemision.Size = new System.Drawing.Size(200, 48);
             this.btnGuiaRemision.TabIndex = 6;
@@ -98,7 +98,7 @@
             this.btnNotaSalida.Name = "btnNotaSalida";
             this.btnNotaSalida.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnNotaSalida.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnNotaSalida.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnNotaSalida.OnHoverTextColor = System.Drawing.Color.White;
             this.btnNotaSalida.selected = false;
             this.btnNotaSalida.Size = new System.Drawing.Size(200, 48);
             this.btnNotaSalida.TabIndex = 5;
@@ -135,7 +135,7 @@
             this.btnNotaEntrada.Name = "btnNotaEntrada";
             this.btnNotaEntrada.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnNotaEntrada.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnNotaEntrada.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnNotaEntrada.OnHoverTextColor = System.Drawing.Color.White;
             this.btnNotaEntrada.selected = false;
             this.btnNotaEntrada.Size = new System.Drawing.Size(200, 48);
             this.btnNotaEntrada.TabIndex = 4;

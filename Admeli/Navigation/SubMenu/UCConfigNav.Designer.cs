@@ -76,7 +76,7 @@
             this.btnEmpresa.Name = "btnEmpresa";
             this.btnEmpresa.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnEmpresa.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnEmpresa.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnEmpresa.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEmpresa.selected = false;
             this.btnEmpresa.Size = new System.Drawing.Size(200, 48);
             this.btnEmpresa.TabIndex = 7;
@@ -114,7 +114,7 @@
             this.btnSucursal.Name = "btnSucursal";
             this.btnSucursal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnSucursal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnSucursal.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnSucursal.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSucursal.selected = false;
             this.btnSucursal.Size = new System.Drawing.Size(200, 48);
             this.btnSucursal.TabIndex = 8;
@@ -152,7 +152,7 @@
             this.btnPuntoVenta.Name = "btnPuntoVenta";
             this.btnPuntoVenta.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnPuntoVenta.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnPuntoVenta.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnPuntoVenta.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPuntoVenta.selected = false;
             this.btnPuntoVenta.Size = new System.Drawing.Size(200, 48);
             this.btnPuntoVenta.TabIndex = 9;
@@ -190,7 +190,7 @@
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnAlmacen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnAlmacen.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnAlmacen.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAlmacen.selected = false;
             this.btnAlmacen.Size = new System.Drawing.Size(200, 48);
             this.btnAlmacen.TabIndex = 10;
@@ -228,7 +228,7 @@
             this.btnDocIdentificacion.Name = "btnDocIdentificacion";
             this.btnDocIdentificacion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnDocIdentificacion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnDocIdentificacion.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnDocIdentificacion.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDocIdentificacion.selected = false;
             this.btnDocIdentificacion.Size = new System.Drawing.Size(200, 48);
             this.btnDocIdentificacion.TabIndex = 11;
@@ -266,7 +266,7 @@
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnPersonal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnPersonal.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnPersonal.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPersonal.selected = false;
             this.btnPersonal.Size = new System.Drawing.Size(200, 48);
             this.btnPersonal.TabIndex = 12;
@@ -304,7 +304,7 @@
             this.btnListadoDocumento.Name = "btnListadoDocumento";
             this.btnListadoDocumento.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnListadoDocumento.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnListadoDocumento.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnListadoDocumento.OnHoverTextColor = System.Drawing.Color.White;
             this.btnListadoDocumento.selected = false;
             this.btnListadoDocumento.Size = new System.Drawing.Size(200, 48);
             this.btnListadoDocumento.TabIndex = 13;
@@ -342,7 +342,7 @@
             this.btnAsignarCorrelativo.Name = "btnAsignarCorrelativo";
             this.btnAsignarCorrelativo.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnAsignarCorrelativo.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnAsignarCorrelativo.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnAsignarCorrelativo.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAsignarCorrelativo.selected = false;
             this.btnAsignarCorrelativo.Size = new System.Drawing.Size(200, 48);
             this.btnAsignarCorrelativo.TabIndex = 14;
@@ -380,7 +380,7 @@
             this.btnDiseñoPersonalizacion.Name = "btnDiseñoPersonalizacion";
             this.btnDiseñoPersonalizacion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnDiseñoPersonalizacion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnDiseñoPersonalizacion.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnDiseñoPersonalizacion.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDiseñoPersonalizacion.selected = false;
             this.btnDiseñoPersonalizacion.Size = new System.Drawing.Size(200, 48);
             this.btnDiseñoPersonalizacion.TabIndex = 15;
@@ -418,7 +418,7 @@
             this.btnMonedas.Name = "btnMonedas";
             this.btnMonedas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnMonedas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnMonedas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnMonedas.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMonedas.selected = false;
             this.btnMonedas.Size = new System.Drawing.Size(200, 48);
             this.btnMonedas.TabIndex = 16;
@@ -456,7 +456,7 @@
             this.btnTipoCambio.Name = "btnTipoCambio";
             this.btnTipoCambio.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnTipoCambio.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnTipoCambio.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnTipoCambio.OnHoverTextColor = System.Drawing.Color.White;
             this.btnTipoCambio.selected = false;
             this.btnTipoCambio.Size = new System.Drawing.Size(200, 48);
             this.btnTipoCambio.TabIndex = 17;
@@ -494,7 +494,7 @@
             this.btnDenominacion.Name = "btnDenominacion";
             this.btnDenominacion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnDenominacion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnDenominacion.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnDenominacion.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDenominacion.selected = false;
             this.btnDenominacion.Size = new System.Drawing.Size(200, 48);
             this.btnDenominacion.TabIndex = 18;
@@ -532,7 +532,7 @@
             this.btnImpuesto.Name = "btnImpuesto";
             this.btnImpuesto.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnImpuesto.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnImpuesto.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnImpuesto.OnHoverTextColor = System.Drawing.Color.White;
             this.btnImpuesto.selected = false;
             this.btnImpuesto.Size = new System.Drawing.Size(200, 48);
             this.btnImpuesto.TabIndex = 19;
@@ -570,7 +570,7 @@
             this.btnGrupoCliente.Name = "btnGrupoCliente";
             this.btnGrupoCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnGrupoCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnGrupoCliente.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnGrupoCliente.OnHoverTextColor = System.Drawing.Color.White;
             this.btnGrupoCliente.selected = false;
             this.btnGrupoCliente.Size = new System.Drawing.Size(200, 48);
             this.btnGrupoCliente.TabIndex = 20;
@@ -608,7 +608,7 @@
             this.btnCajasInicializadas.Name = "btnCajasInicializadas";
             this.btnCajasInicializadas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnCajasInicializadas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnCajasInicializadas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnCajasInicializadas.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCajasInicializadas.selected = false;
             this.btnCajasInicializadas.Size = new System.Drawing.Size(200, 48);
             this.btnCajasInicializadas.TabIndex = 21;
@@ -646,7 +646,7 @@
             this.btnImpuestoDocs.Name = "btnImpuestoDocs";
             this.btnImpuestoDocs.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnImpuestoDocs.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnImpuestoDocs.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnImpuestoDocs.OnHoverTextColor = System.Drawing.Color.White;
             this.btnImpuestoDocs.selected = false;
             this.btnImpuestoDocs.Size = new System.Drawing.Size(200, 48);
             this.btnImpuestoDocs.TabIndex = 22;
@@ -684,7 +684,7 @@
             this.btnBarCode.Name = "btnBarCode";
             this.btnBarCode.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnBarCode.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnBarCode.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnBarCode.OnHoverTextColor = System.Drawing.Color.White;
             this.btnBarCode.selected = false;
             this.btnBarCode.Size = new System.Drawing.Size(200, 48);
             this.btnBarCode.TabIndex = 23;

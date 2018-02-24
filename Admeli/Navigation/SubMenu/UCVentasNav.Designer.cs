@@ -62,7 +62,7 @@
             this.btnDescuentoOferta.Name = "btnDescuentoOferta";
             this.btnDescuentoOferta.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnDescuentoOferta.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnDescuentoOferta.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnDescuentoOferta.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDescuentoOferta.selected = false;
             this.btnDescuentoOferta.Size = new System.Drawing.Size(200, 48);
             this.btnDescuentoOferta.TabIndex = 9;
@@ -99,7 +99,7 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnClientes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnClientes.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnClientes.OnHoverTextColor = System.Drawing.Color.White;
             this.btnClientes.selected = false;
             this.btnClientes.Size = new System.Drawing.Size(200, 48);
             this.btnClientes.TabIndex = 8;
@@ -136,7 +136,7 @@
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnVentas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnVentas.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnVentas.OnHoverTextColor = System.Drawing.Color.White;
             this.btnVentas.selected = false;
             this.btnVentas.Size = new System.Drawing.Size(200, 48);
             this.btnVentas.TabIndex = 7;
@@ -173,7 +173,7 @@
             this.btnCotizacionCliente.Name = "btnCotizacionCliente";
             this.btnCotizacionCliente.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btnCotizacionCliente.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(37)))));
-            this.btnCotizacionCliente.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(203)))), ((int)(((byte)(34)))));
+            this.btnCotizacionCliente.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCotizacionCliente.selected = false;
             this.btnCotizacionCliente.Size = new System.Drawing.Size(200, 48);
             this.btnCotizacionCliente.TabIndex = 6;
