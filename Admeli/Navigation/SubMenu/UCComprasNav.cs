@@ -133,21 +133,21 @@ namespace Admeli.Navigation.SubMenu
         {
             btnColor(); /// Color reset
             togglePanelMain("ordenCompraProveedor");
-            btnOrdenCompra.Textcolor = Color.FromArgb(23, 203, 34); /// Color
+            btnOrdenCompra.Textcolor = Color.White; /// Color
         }
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
             btnColor(); /// Color reset
             togglePanelMain("compras");
-            btnCompra.Textcolor = Color.FromArgb(23, 203, 34); /// Color
+            btnCompra.Textcolor = Color.White; /// Color
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             btnColor(); /// Color reset
             togglePanelMain("proveedores");
-            btnProveedor.Textcolor = Color.FromArgb(23, 203, 34); /// Color
+            btnProveedor.Textcolor = Color.White; /// Color
         }
 
 

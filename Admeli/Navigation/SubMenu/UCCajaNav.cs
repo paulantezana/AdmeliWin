@@ -136,42 +136,42 @@ namespace Admeli.Navigation.SubMenu
         {
             btnColor(); /// Reset
             togglePanelMain("egresos");
-            btnEgreso.Textcolor = Color.FromArgb(23, 203, 34); // Color
+            btnEgreso.Textcolor = Color.White; /// Color
         }
 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
             btnColor(); /// Reset
             togglePanelMain("ingresos");
-            btnIngreso.Textcolor = Color.FromArgb(23, 203, 34); // Color
+            btnIngreso.Textcolor = Color.White; /// Color
         }
 
         private void btnPorCobrar_Click(object sender, EventArgs e)
         {
             btnColor(); /// Reset
             togglePanelMain("cuentaPorCobrar");
-            btnPorCobrar.Textcolor = Color.FromArgb(23, 203, 34); // Color
+            btnPorCobrar.Textcolor = Color.White; /// Color
         }
 
         private void btnCuentaPagar_Click(object sender, EventArgs e)
         {
             btnColor(); /// Reset
             togglePanelMain("cuentaPorPagar");
-            btnCuentaPagar.Textcolor = Color.FromArgb(23, 203, 34); // Color
+            btnCuentaPagar.Textcolor = Color.White; /// Color
         }
 
         private void btnIniciarCaja_Click(object sender, EventArgs e)
         {
             btnColor(); /// Reset
             togglePanelMain("iniciarCaja");
-            btnIniciarCaja.Textcolor = Color.FromArgb(23, 203, 34); // Color
+            btnIniciarCaja.Textcolor = Color.White; /// Color
         }
 
         private void btnCierreCaja_Click(object sender, EventArgs e)
         {
             btnColor(); /// Reset
             togglePanelMain("cierreCaja");
-            btnCierreCaja.Textcolor = Color.FromArgb(23, 203, 34); // Color
+            btnCierreCaja.Textcolor = Color.White; /// Color
         }
 
     }

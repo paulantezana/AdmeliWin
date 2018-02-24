@@ -350,89 +350,145 @@ namespace Admeli.Navigation.SubMenu
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
         }
 
+        private void btnColor()
+        {
+            /// Reset Color buttons
+            btnEmpresa.Textcolor = Color.FromArgb(139, 138, 141);
+            btnSucursal.Textcolor = Color.FromArgb(139, 138, 141);
+            btnPuntoVenta.Textcolor = Color.FromArgb(139, 138, 141);
+            btnAlmacen.Textcolor = Color.FromArgb(139, 138, 141);
+            btnDocIdentificacion.Textcolor = Color.FromArgb(139, 138, 141);
+            btnPersonal.Textcolor = Color.FromArgb(139, 138, 141);
+            btnListadoDocumento.Textcolor = Color.FromArgb(139, 138, 141);
+            btnAsignarCorrelativo.Textcolor = Color.FromArgb(139, 138, 141);
+            btnDiseñoPersonalizacion.Textcolor = Color.FromArgb(139, 138, 141);
+            btnMonedas.Textcolor = Color.FromArgb(139, 138, 141);
+            btnTipoCambio.Textcolor = Color.FromArgb(139, 138, 141);
+            btnDenominacion.Textcolor = Color.FromArgb(139, 138, 141);
+            btnImpuesto.Textcolor = Color.FromArgb(139, 138, 141);
+            btnImpuestoDocs.Textcolor = Color.FromArgb(139, 138, 141);
+            btnGrupoCliente.Textcolor = Color.FromArgb(139, 138, 141);
+            btnCajasInicializadas.Textcolor = Color.FromArgb(139, 138, 141);
+            btnBarCode.Textcolor = Color.FromArgb(139, 138, 141);
+        }
+
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("datosEmpresa");
+            btnEmpresa.Textcolor = Color.White; /// Color active
         }
 
         private void btnSucursal_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("sucursales");
+            btnSucursal.Textcolor = Color.White; /// Color active
         }
 
         private void btnPuntoVenta_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("puntodeventa");
+            btnPuntoVenta.Textcolor = Color.White; /// Color active
         }
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("alamacenes");
+            btnAlmacen.Textcolor = Color.White; /// Color active
         }
 
         private void btnDocIdentificacion_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("documentoIdentificacion");
+            btnDocIdentificacion.Textcolor = Color.White; /// Color active
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("personal");
+            btnPersonal.Textcolor = Color.White; /// Color active
         }
 
         private void btnListadoDocumento_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("listadoDocumento");
+            btnListadoDocumento.Textcolor = Color.White; /// Color active
         }
 
         private void btnAsignarCorrelativo_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("asignarCorrelativo");
+            btnAsignarCorrelativo.Textcolor = Color.White; /// Color active
         }
 
         private void btnDiseñoPersonalizacion_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("disenoPersonalizacion");
+            btnDiseñoPersonalizacion.Textcolor = Color.White; /// Color active
         }
 
         private void btnMonedas_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("listadoMoneda");
+            btnMonedas.Textcolor = Color.White; /// Color active
         }
 
         private void btnTipoCambio_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("tipoCambio");
+            btnTipoCambio.Textcolor = Color.White; /// Color active
         }
 
         private void btnDenominacion_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("denominaciones");
+            btnDenominacion.Textcolor = Color.White; /// Color active
         }
 
         private void btnImpuesto_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("impuestos");
+            btnImpuesto.Textcolor = Color.White; /// Color active
         }
 
         private void btnImpuestoDocs_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("impuestoDocumento");
+            btnImpuestoDocs.Textcolor = Color.White; /// Color active
         }
 
         private void btnGrupoCliente_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("grupoClientes");
+            btnGrupoCliente.Textcolor = Color.White; /// Color active
         }
 
         private void btnCajasInicializadas_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("cajasInicializadas");
+            btnCajasInicializadas.Textcolor = Color.White; /// Color active
         }
 
         private void btnBarCode_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("codigoBarra");
+            btnBarCode.Textcolor = Color.White; /// Color active
         }
 
     }

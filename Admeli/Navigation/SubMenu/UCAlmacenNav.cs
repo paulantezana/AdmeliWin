@@ -115,21 +115,21 @@ namespace Admeli.Navigation.SubMenu
         {
             btnColor(); // Color reset
             togglePanelMain("notaSalida");
-            btnNotaSalida.Textcolor = Color.FromArgb(23, 203, 34); /// Color
+            btnNotaSalida.Textcolor = Color.White; /// Color
         }
 
         private void btnNotaEntrada_Click(object sender, EventArgs e)
         {
             btnColor(); // Color reset
             togglePanelMain("notaEntrada");
-            btnNotaEntrada.Textcolor = Color.FromArgb(23, 203, 34); /// Color
+            btnNotaEntrada.Textcolor = Color.White; /// Color
         }
 
         private void btnGuiaRemision_Click(object sender, EventArgs e)
         {
             btnColor(); // Color reset
             togglePanelMain("guiaRemision");
-            btnGuiaRemision.Textcolor = Color.FromArgb(23, 203, 34); /// Color
+            btnGuiaRemision.Textcolor = Color.White; /// Color
         }
     }
 }

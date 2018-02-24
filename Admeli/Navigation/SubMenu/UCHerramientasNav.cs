@@ -102,24 +102,41 @@ namespace Admeli.Navigation.SubMenu
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
         }
 
+        private void btnColor()
+        {
+            /// Reset Color buttons
+            btnPrecioStock.Textcolor = Color.FromArgb(139, 138, 141);
+            btnAsignarCategoria.Textcolor = Color.FromArgb(139, 138, 141);
+            btnAsignarImpuesto.Textcolor = Color.FromArgb(139, 138, 141);
+            btnGenerarCodigoDeBarra.Textcolor = Color.FromArgb(139, 138, 141);
+        }
+
         private void btnPrecioStock_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("inicializarStock");
+            btnPrecioStock.Textcolor = Color.White; /// Color active
         }
 
         private void btnAsignarCategoria_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("asignarCategoria");
+            btnAsignarCategoria.Textcolor = Color.White; /// Color active
         }
 
         private void btnAsignarImpuesto_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("asignarImpuesto");
+            btnAsignarImpuesto.Textcolor = Color.White; /// Color active
         }
 
         private void btnGenerarCodigoDeBarra_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("codigoDeBarra");
+            btnGenerarCodigoDeBarra.Textcolor = Color.White; /// Color active
         }
 
     }

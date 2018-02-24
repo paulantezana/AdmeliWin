@@ -121,24 +121,41 @@ namespace Admeli.Navigation.SubMenu
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
         }
 
+        private void btnColor()
+        {
+            /// Reset Color buttons
+            btnProductos.Textcolor = Color.FromArgb(139, 138, 141);
+            btnMarcas.Textcolor = Color.FromArgb(139, 138, 141);
+            btnUnidadMedida.Textcolor = Color.FromArgb(139, 138, 141);
+            btnCategorias.Textcolor = Color.FromArgb(139, 138, 141);
+        }
+
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("listadoProducto");
+            btnProductos.Textcolor = Color.White; /// Color active 
         }
 
         private void btnMarcas_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("marcas");
+            btnMarcas.Textcolor = Color.White; /// Color active
         }
 
         private void btnUnidadMedida_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("unidadesMedida");
+            btnUnidadMedida.Textcolor = Color.White; /// Color active
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset color
             togglePanelMain("categorias");
+            btnCategorias.Textcolor = Color.White; /// Color active
         }
 
     }

@@ -125,28 +125,46 @@ namespace Admeli.Navigation.SubMenu
             this.formPrincipal.hideMenuRight(); /// Ocultar el menu derecho del formulario principal
         }
 
+        private void btnColor()
+        {
+            /// Reset Color buttons
+            btnCotizacionCliente.Textcolor = Color.FromArgb(139, 138, 141);
+            btnVentas.Textcolor = Color.FromArgb(139, 138, 141);
+            btnClientes.Textcolor = Color.FromArgb(139, 138, 141);
+            btnDescuentoOferta.Textcolor = Color.FromArgb(139, 138, 141);
+        }
+
         private void btnCotizacionCliente_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("contizacionCliente");
+            btnCotizacionCliente.Textcolor = Color.White; /// COlor Active
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("ventas");
+            btnVentas.Textcolor = Color.White; /// COlor Active
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("clientes");
+            btnClientes.Textcolor = Color.White; /// COlor Active
         }
 
         private void btnDescuentoOferta_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("descuentoOferta");
+            btnDescuentoOferta.Textcolor = Color.White; /// COlor Active
         }
 
         private void btnVentaTocuh_Click(object sender, EventArgs e)
         {
+            btnColor(); /// Reset Color
             togglePanelMain("ventaTouch");
         }
 
