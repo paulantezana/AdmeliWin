@@ -17,6 +17,9 @@ namespace Admeli.Configuracion.Modificar
         public bool mover { get; set; }
         public int inicialX { get; set; }
         public int inicialY { get; set; }
+        public bool redimensionar { get; set; }
+        public int w { get; set; }
+        public int h { get; set; }
 
         public vineta()
         {
