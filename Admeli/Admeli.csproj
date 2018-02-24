@@ -313,6 +313,7 @@
     <Compile Include="Configuracion\Modificar\FormUsuario.Designer.cs">
       <DependentUpon>FormUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Modificar\ResizeableControl.cs" />
     <Compile Include="Configuracion\Modificar\vineta.cs" />
     <Compile Include="Configuracion\Nuevo\FormAlmacenNuevo.cs">
       <SubType>Form</SubType>
