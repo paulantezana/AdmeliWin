@@ -318,7 +318,7 @@ namespace Admeli.Herramientas
                 // Ingresando
                 productos = rootObjectData.productos;
                 productoBindingSource.DataSource = productos;
-                dataGridView1.Refresh();
+                dataGridView.Refresh();
 
                 // Mostrando la paginacion
                 mostrarPaginado();
@@ -364,7 +364,7 @@ namespace Admeli.Herramientas
                 // Ingresando
                 productos = rootObjectData.productos;
                 productoBindingSource.DataSource = productos;
-                dataGridView1.Refresh();
+                dataGridView.Refresh();
 
                 // Mostrando la paginacion
                 mostrarPaginado();
@@ -464,7 +464,7 @@ namespace Admeli.Herramientas
         {
             formPrincipal.appLoadState(state);
             panelNavigation.Enabled = !state;
-            dataGridView1.Enabled = !state;
+            dataGridView.Enabled = !state;
         }
         #endregion
 
@@ -492,6 +492,12 @@ namespace Admeli.Herramientas
             cargarRegistros();
         }
         #endregion
+
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
 
         private void btnNuevoCategoria_Click(object sender, EventArgs e)
         {
@@ -527,14 +533,14 @@ namespace Admeli.Herramientas
         private void executeModificar()
         {
             // Verificando la existencia de datos en el datagridview
-            if (dataGridView1.Rows.Count == 0)
+            if (dataGridView.Rows.Count == 0)
             {
                 MessageBox.Show("No hay un registro seleccionado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            int index = dataGridView1.CurrentRow.Index; // Identificando la fila actual del datagridview
-            int idProducto = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
+            int index = dataGridView.CurrentRow.Index; // Identificando la fila actual del datagridview
+            int idProducto = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value); // obteniedo el idRegistro del datagridview
 
             currentProdcuto = productos.Find(x => x.idProducto == idProducto); // Buscando la registro especifico en la lista de registros
 

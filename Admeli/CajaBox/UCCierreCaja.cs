@@ -279,6 +279,11 @@ namespace Admeli.CajaBox
         #endregion
 
         #region ==================== CRUD ====================
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificar();
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             cargarRegistros();
@@ -331,7 +336,5 @@ namespace Admeli.CajaBox
             DrawShape drawShape = new DrawShape();
             drawShape.lineBorder(panelContainer);
         }
-
-
     }
 }

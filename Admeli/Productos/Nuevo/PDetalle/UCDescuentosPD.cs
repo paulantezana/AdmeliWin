@@ -155,6 +155,11 @@ namespace Admeli.Productos.Nuevo.PDetalle
         #endregion
 
         #region ================================ CRUD Descuento ================================
+        private void dataGridViewDescuento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarDescuento();
+        }
+
         private void btnNuevoDescuento_Click(object sender, EventArgs e)
         {
             executeNuevoDescuento();
@@ -245,6 +250,11 @@ namespace Admeli.Productos.Nuevo.PDetalle
         #endregion
 
         #region ============================= CRUD Oferta =============================
+        private void dataGridViewOferta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarOferta();
+        }
+
         private void btnNuevoOferta_Click(object sender, EventArgs e)
         {
             executeNuevoOferta();

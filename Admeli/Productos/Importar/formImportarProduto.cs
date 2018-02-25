@@ -22,7 +22,7 @@ namespace Admeli.Productos.Importar
         {
             try
             {
-                dataGridView1.DataSource = ExternalFiles.ImporExcel();
+                dataGridView.DataSource = ExternalFiles.ImporExcel();
             }
             catch (Exception ex)
             {

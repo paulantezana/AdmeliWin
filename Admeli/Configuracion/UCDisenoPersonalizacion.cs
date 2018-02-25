@@ -143,20 +143,11 @@ namespace Admeli.Configuracion
         }
         #endregion
 
-        private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
             DiseñoDocumento diseño=  (DiseñoDocumento)tipoDocumentoBindingSource.List[e.RowIndex];
             comprobates = new FormDiseñoComprobantes(diseño);
-            //tipodoc=
-
             comprobates.ShowDialog();
-
         }
     }
 }

@@ -153,6 +153,11 @@ namespace Admeli.Productos.Nuevo.PDetalle
         }
 
         #region ============================ CRUD RELACION ============================
+        private void dataGridViewComentarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarComentario();
+        }
+
         private void btnNuevoRelacion_Click(object sender, EventArgs e)
         {
             executeNuevoRelacion();
@@ -242,6 +247,11 @@ namespace Admeli.Productos.Nuevo.PDetalle
         #endregion
 
         #region ========================== CRUD Comentario ==========================
+        private void dataGridViewRelaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            executeModificarRelacion();
+        }
+
         private void btnNuevoComentario_Click(object sender, EventArgs e)
         {
             executeNuevoComentario();
