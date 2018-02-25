@@ -73,9 +73,7 @@ namespace Admeli.Configuracion.Modificar
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            if (!formDiseño.Controls.Contains(formDiseño.panel4))
-                formDiseño.Controls.Add(formDiseño.panel4);
-
+            
             formDiseño.panel4.Width =(int)( Convert.ToDouble(txtAltura.Text)/ 0.0264583333333334D);
             formDiseño.panel4.Height = (int)(Convert.ToDouble(txtAncho.Text) / 0.0264583333333334D);
            

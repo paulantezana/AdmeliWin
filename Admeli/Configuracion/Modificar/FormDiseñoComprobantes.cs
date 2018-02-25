@@ -782,7 +782,6 @@ namespace Admeli.Configuracion.Modificar
                 aux = buscarVineta("", listLabel);
                 if (name != "")
                 {
-
                     aux.label.BackColor = colorFondo("#FFE6C5");
                     aux.label.Location = new Point(c1.Location.X - (panel3.Location.X + panel4.Location.X), c1.Location.Y - panel4.Location.Y);
 
