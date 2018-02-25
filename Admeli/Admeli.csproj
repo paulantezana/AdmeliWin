@@ -313,6 +313,12 @@
     <Compile Include="Configuracion\Modificar\FormUsuario.Designer.cs">
       <DependentUpon>FormUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Modificar\redimensionarPagina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Modificar\redimensionarPagina.Designer.cs">
+      <DependentUpon>redimensionarPagina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Modificar\ResizeableControl.cs" />
     <Compile Include="Configuracion\Modificar\vineta.cs" />
     <Compile Include="Configuracion\Nuevo\FormAlmacenNuevo.cs">
@@ -883,6 +889,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Modificar\FormUsuario.resx">
       <DependentUpon>FormUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Modificar\redimensionarPagina.resx">
+      <DependentUpon>redimensionarPagina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\Nuevo\FormAlmacenNuevo.resx">
       <DependentUpon>FormAlmacenNuevo.cs</DependentUpon>

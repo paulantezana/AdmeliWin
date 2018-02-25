@@ -14,13 +14,17 @@ using System.Globalization;
 using Bunifu.Framework.UI;
 using Modelo;
 using System.Threading;
+using System.Drawing.Printing;
 
 namespace Admeli.Configuracion.Modificar
 {
+
+
     public partial class FormDiseñoComprobantes : Form
     {
 
-
+        public Panel panel4;
+        Panel centrado;
         List<ResizeableControl> listaElemtos;
         ResizeableControl rc;
         DiseñoDocumento diseño;
@@ -44,12 +48,32 @@ namespace Admeli.Configuracion.Modificar
             InitializeComponent();
             
         }
+
+        protected System.Drawing.Color colorFondo(string color)
+        {
+            System.Drawing.Color resultado = new System.Drawing.Color();
+            if (color.IndexOf("#") == -1)
+                return Color.AliceBlue;
+            if (color.IndexOf("#") != -1)
+                color = color.Replace("#", "");
+
+            int R = int.Parse(color.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+            int G = int.Parse(color.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+            int B = int.Parse(color.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+
+            return resultado = System.Drawing.Color.FromArgb(R, G, B);
+        }
         public FormDiseñoComprobantes(DiseñoDocumento diseño)
         {
 
             InitializeComponent();
-
+           
+            //
+            //centrado.Location = new Point(centrado.Location.X + panel3.Location.X, centrado.Location.Y + panel3.Location.Y);
+            
+            panel4 = new Panel();
             panel4.AutoSize = false;
+            
             listaElemtos = new List<ResizeableControl>();
             detalle = new DataGridView();
            
@@ -66,7 +90,7 @@ namespace Admeli.Configuracion.Modificar
             
             if (formato!=null && exitePagina())
                 agregarElementos();
-            
+          
             cargarNoSeleccionados();
             designarEventos();
         }
@@ -76,28 +100,29 @@ namespace Admeli.Configuracion.Modificar
             
             // verde
 
-            vineta aux = new vineta();
-            aux.label.Text = "Descripción Empresa";
-            aux.nombre= "Descripción Empresa";
-            vinetas.Add(aux);
+            
 
-            aux = new vineta();
+            vineta aux = new vineta();
             aux.label.Text = "Nombre/Razón Cliente";
             aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
             vinetas.Add(aux);
 
             aux = new vineta();
             aux.label.Text = "Fecha Emision";
             aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
             vinetas.Add(aux);
 
             aux = new vineta();
             aux.label.Text = "Dirección Cliente";
             aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
             vinetas.Add(aux);
             aux = new vineta();
             aux.label.Text = "Documento Cliente";
             aux.nombre = "Documento Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
             vinetas.Add(aux);
 
             /*
@@ -117,23 +142,28 @@ namespace Admeli.Configuracion.Modificar
             aux = new vineta();
             aux.label.Text = "Serie-Correlativo";
             aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
             vinetas.Add(aux);
             aux = new vineta();
             aux.label.Text = "Nombre Empresa";
             aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
             vinetas.Add(aux);
             aux = new vineta();
             aux.label.Text = "Dirección Empresa";
             aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
             vinetas.Add(aux);
            
             aux = new vineta();
             aux.label.Text = "Documento Empresa";
             aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
             vinetas.Add(aux);
             aux = new vineta();
             aux.label.Text = "Nombre Documento";
             aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
             vinetas.Add(aux);
 
 
@@ -150,23 +180,27 @@ namespace Admeli.Configuracion.Modificar
             */
 
             //celeste
+
             aux = new vineta();
             aux.label.Text = "Impuesto";
-
+            aux.label.BackColor = colorFondo("#0AEDD6");
             //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
             aux.nombre = "Impuesto";
             vinetas.Add(aux);
             aux = new vineta();
             aux.label.Text = "Sub Total";
             aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
             vinetas.Add(aux);
             aux = new vineta();
             aux.label.Text = "Texto Total";
             aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
             vinetas.Add(aux);
             aux = new vineta();
             aux.label.Text = "Total";
             aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
             vinetas.Add(aux);
             /*
             impuesto = new Label();
@@ -234,9 +268,10 @@ namespace Admeli.Configuracion.Modificar
 
 
         }
-        private void agregarElementos()
+        public void agregarElementos()
         {
-          
+            panel4.Controls.Clear();
+
 
             foreach ( FormatoDocumento doc in formato)
             {
@@ -258,7 +293,7 @@ namespace Admeli.Configuracion.Modificar
                         aux.label.AutoSize = false;
                         // string colorcode = form.color;
                         //int argb = Int32.Parse(colorcode.Replace("#", ""), NumberStyles.HexNumber);
-                        aux.label.BackColor = System.Drawing.Color.Fuchsia;
+                        aux.label.BackColor = colorFondo(doc.color);
                         aux.label.Location = new System.Drawing.Point(doc.x, doc.y);
                         aux.label.Size = new System.Drawing.Size((int)doc.w, (int)doc.h);
                        
@@ -324,9 +359,12 @@ namespace Admeli.Configuracion.Modificar
                     panel4.BackColor = Color.White;
                     panel4.Width = (int)formato[i].w;
                     panel4.Height = (int)formato[i].h;
-                    panel4.Location = new Point(formato[i].x, formato[i].y);
+                    panel4.Location = new Point(formato[i].x+panel3.Location.X, formato[i].y+panel3.Location.Y);
                     panel4.Name = formato[i].value;
+
                     
+                    //panel4.Anchor = AnchorStyles.Bottom;
+                    panel3.Controls.Add(panel4);
                     return true;
                 }
                 
@@ -684,7 +722,7 @@ namespace Admeli.Configuracion.Modificar
             
            
            
-            aux.label.BackColor = Color.Black;
+           // aux.label.BackColor = Color.Black;
             aux.label.Location = new Point(c1.Location.X - (panel3.Location.X + panel4.Location.X), c1.Location.Y - panel4.Location.Y);
 
     
@@ -744,11 +782,13 @@ namespace Admeli.Configuracion.Modificar
                 aux = buscarVineta("", listLabel);
                 if (name != "")
                 {
-                    aux.label.BackColor = Color.Black;
+
+                    aux.label.BackColor = colorFondo("#FFE6C5");
                     aux.label.Location = new Point(c1.Location.X - (panel3.Location.X + panel4.Location.X), c1.Location.Y - panel4.Location.Y);
 
                     aux.nombre = name;
                     aux.label.AutoSize = false;
+                    aux.label.Text = name;
                     c1.Location = new Point(aux.inicialX, aux.inicialY);
                     panel4.Controls.Add(aux.label);
                     vineta aux1 = new vineta();
@@ -997,6 +1037,21 @@ namespace Admeli.Configuracion.Modificar
                 return true;
             return false;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            redimensionarPagina myForm = new redimensionarPagina(this);
+            myForm.Show(this);
+
+            // Determine if the form is modal.
+            
+        }
+
+        private void PrintPage(object o, PrintPageEventArgs e)
+        {
+            // Printng logic
+        }
+
         private bool esta1(int x1, int x2, int y1, int y2, int posicionX, int posicionY)
         {
             int finalX = x1 + x2;
