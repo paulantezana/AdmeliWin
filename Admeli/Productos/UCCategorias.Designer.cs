@@ -29,11 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCategorias));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView = new ADGV.AdvancedDataGridView();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelCrud = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.panelNavigation = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSpeedPages = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblPageCount = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.lblCurrentPage = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblPageAllItems = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.idCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPadreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,33 +74,15 @@
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.mostrarWebDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tieneRegistrosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelCrud = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.panelNavigation = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblSpeedPages = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblPageCount = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.lblCurrentPage = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.lblPageAllItems = new System.Windows.Forms.Label();
+            this.relacionPrincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.afectaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.panelCrud.SuspendLayout();
             this.panelNavigation.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -104,218 +110,6 @@
             this.panel1.Size = new System.Drawing.Size(1096, 417);
             this.panel1.TabIndex = 20;
             // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.AutoGenerateContextFilters = true;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView.ColumnHeadersHeight = 40;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCategoriaDataGridViewTextBoxColumn,
-            this.nombreCategoriaDataGridViewTextBoxColumn,
-            this.idPadreCategoriaDataGridViewTextBoxColumn,
-            this.padreDataGridViewTextBoxColumn,
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn,
-            this.mostrarProductosEnDataGridViewTextBoxColumn,
-            this.numeroColumnasDataGridViewTextBoxColumn,
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn,
-            this.urlCategoriaSeoDataGridViewTextBoxColumn,
-            this.metaTagsSeoDataGridViewTextBoxColumn,
-            this.cabeceraPaginaDataGridViewTextBoxColumn,
-            this.piePaginaDataGridViewTextBoxColumn,
-            this.ordenDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
-            this.mostrarWebDataGridViewTextBoxColumn,
-            this.tieneRegistrosDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.categoriaBindingSource;
-            this.dataGridView.DateWithTime = false;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView.RowTemplate.Height = 27;
-            this.dataGridView.Size = new System.Drawing.Size(1076, 397);
-            this.dataGridView.TabIndex = 0;
-            this.dataGridView.TimeFilter = false;
-            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
-            // 
-            // idCategoriaDataGridViewTextBoxColumn
-            // 
-            this.idCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idCategoria";
-            this.idCategoriaDataGridViewTextBoxColumn.HeaderText = "idCategoria";
-            this.idCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idCategoriaDataGridViewTextBoxColumn.Name = "idCategoriaDataGridViewTextBoxColumn";
-            this.idCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idCategoriaDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // nombreCategoriaDataGridViewTextBoxColumn
-            // 
-            this.nombreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "nombreCategoria";
-            this.nombreCategoriaDataGridViewTextBoxColumn.HeaderText = "nombreCategoria";
-            this.nombreCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.nombreCategoriaDataGridViewTextBoxColumn.Name = "nombreCategoriaDataGridViewTextBoxColumn";
-            this.nombreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.nombreCategoriaDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // idPadreCategoriaDataGridViewTextBoxColumn
-            // 
-            this.idPadreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idPadreCategoria";
-            this.idPadreCategoriaDataGridViewTextBoxColumn.HeaderText = "idPadreCategoria";
-            this.idPadreCategoriaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.idPadreCategoriaDataGridViewTextBoxColumn.Name = "idPadreCategoriaDataGridViewTextBoxColumn";
-            this.idPadreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPadreCategoriaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.idPadreCategoriaDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // padreDataGridViewTextBoxColumn
-            // 
-            this.padreDataGridViewTextBoxColumn.DataPropertyName = "padre";
-            this.padreDataGridViewTextBoxColumn.HeaderText = "padre";
-            this.padreDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.padreDataGridViewTextBoxColumn.Name = "padreDataGridViewTextBoxColumn";
-            this.padreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.padreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.padreDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // ordenVisualizacionProductosDataGridViewTextBoxColumn
-            // 
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.DataPropertyName = "ordenVisualizacionProductos";
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.HeaderText = "ordenVisualizacionProductos";
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Name = "ordenVisualizacionProductosDataGridViewTextBoxColumn";
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Width = 168;
-            // 
-            // mostrarProductosEnDataGridViewTextBoxColumn
-            // 
-            this.mostrarProductosEnDataGridViewTextBoxColumn.DataPropertyName = "mostrarProductosEn";
-            this.mostrarProductosEnDataGridViewTextBoxColumn.HeaderText = "mostrarProductosEn";
-            this.mostrarProductosEnDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.mostrarProductosEnDataGridViewTextBoxColumn.Name = "mostrarProductosEnDataGridViewTextBoxColumn";
-            this.mostrarProductosEnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mostrarProductosEnDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.mostrarProductosEnDataGridViewTextBoxColumn.Width = 127;
-            // 
-            // numeroColumnasDataGridViewTextBoxColumn
-            // 
-            this.numeroColumnasDataGridViewTextBoxColumn.DataPropertyName = "numeroColumnas";
-            this.numeroColumnasDataGridViewTextBoxColumn.HeaderText = "numeroColumnas";
-            this.numeroColumnasDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.numeroColumnasDataGridViewTextBoxColumn.Name = "numeroColumnasDataGridViewTextBoxColumn";
-            this.numeroColumnasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroColumnasDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.numeroColumnasDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // tituloCategoriaSeoDataGridViewTextBoxColumn
-            // 
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "tituloCategoriaSeo";
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "tituloCategoriaSeo";
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Name = "tituloCategoriaSeoDataGridViewTextBoxColumn";
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // urlCategoriaSeoDataGridViewTextBoxColumn
-            // 
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "urlCategoriaSeo";
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "urlCategoriaSeo";
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.Name = "urlCategoriaSeoDataGridViewTextBoxColumn";
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.urlCategoriaSeoDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // metaTagsSeoDataGridViewTextBoxColumn
-            // 
-            this.metaTagsSeoDataGridViewTextBoxColumn.DataPropertyName = "metaTagsSeo";
-            this.metaTagsSeoDataGridViewTextBoxColumn.HeaderText = "metaTagsSeo";
-            this.metaTagsSeoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.metaTagsSeoDataGridViewTextBoxColumn.Name = "metaTagsSeoDataGridViewTextBoxColumn";
-            this.metaTagsSeoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.metaTagsSeoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.metaTagsSeoDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // cabeceraPaginaDataGridViewTextBoxColumn
-            // 
-            this.cabeceraPaginaDataGridViewTextBoxColumn.DataPropertyName = "cabeceraPagina";
-            this.cabeceraPaginaDataGridViewTextBoxColumn.HeaderText = "cabeceraPagina";
-            this.cabeceraPaginaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.cabeceraPaginaDataGridViewTextBoxColumn.Name = "cabeceraPaginaDataGridViewTextBoxColumn";
-            this.cabeceraPaginaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cabeceraPaginaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.cabeceraPaginaDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // piePaginaDataGridViewTextBoxColumn
-            // 
-            this.piePaginaDataGridViewTextBoxColumn.DataPropertyName = "piePagina";
-            this.piePaginaDataGridViewTextBoxColumn.HeaderText = "piePagina";
-            this.piePaginaDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.piePaginaDataGridViewTextBoxColumn.Name = "piePaginaDataGridViewTextBoxColumn";
-            this.piePaginaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.piePaginaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.piePaginaDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // ordenDataGridViewTextBoxColumn
-            // 
-            this.ordenDataGridViewTextBoxColumn.DataPropertyName = "orden";
-            this.ordenDataGridViewTextBoxColumn.HeaderText = "orden";
-            this.ordenDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.ordenDataGridViewTextBoxColumn.Name = "ordenDataGridViewTextBoxColumn";
-            this.ordenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ordenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ordenDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.estadoDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // mostrarWebDataGridViewTextBoxColumn
-            // 
-            this.mostrarWebDataGridViewTextBoxColumn.DataPropertyName = "mostrarWeb";
-            this.mostrarWebDataGridViewTextBoxColumn.HeaderText = "mostrarWeb";
-            this.mostrarWebDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.mostrarWebDataGridViewTextBoxColumn.Name = "mostrarWebDataGridViewTextBoxColumn";
-            this.mostrarWebDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mostrarWebDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.mostrarWebDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // tieneRegistrosDataGridViewTextBoxColumn
-            // 
-            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "tieneRegistros";
-            this.tieneRegistrosDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
-            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tieneRegistrosDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 99;
-            // 
             // categoriaBindingSource
             // 
             this.categoriaBindingSource.DataSource = typeof(Entidad.Categoria);
@@ -325,8 +119,8 @@
             this.panelCrud.Controls.Add(this.btnNuevo);
             this.panelCrud.Controls.Add(this.btnModificar);
             this.panelCrud.Controls.Add(this.btnAnular);
-            this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Controls.Add(this.btnActualizar);
+            this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
             this.panelCrud.Name = "panelCrud";
@@ -334,91 +128,19 @@
             this.panelCrud.Size = new System.Drawing.Size(1096, 60);
             this.panelCrud.TabIndex = 21;
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(10, 15);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnNuevo.Size = new System.Drawing.Size(126, 40);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "  Nuevo (F3)";
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(146, 15);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnModificar.Size = new System.Drawing.Size(140, 40);
-            this.btnModificar.TabIndex = 3;
-            this.btnModificar.Text = "  Modificar (F4)";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnAnular.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnular.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
-            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(296, 15);
-            this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAnular.Size = new System.Drawing.Size(126, 40);
-            this.btnAnular.TabIndex = 6;
-            this.btnAnular.Text = "  Anular (F7)";
-            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAnular.UseVisualStyleBackColor = true;
-            this.btnAnular.Click += new System.EventHandler(this.btnDesactivar_Click);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(67)))));
             this.btnEliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(47)))), ((int)(((byte)(67)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(432, 15);
+            this.btnEliminar.Location = new System.Drawing.Point(584, 15);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -429,30 +151,6 @@
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(225)))), ((int)(((byte)(228)))));
-            this.btnActualizar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(580, 15);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnActualizar.Size = new System.Drawing.Size(142, 40);
-            this.btnActualizar.TabIndex = 5;
-            this.btnActualizar.Text = "  Actualizar (F5)";
-            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // panelNavigation
             // 
@@ -666,6 +364,318 @@
             this.lblPageAllItems.Text = "10 Registros";
             this.lblPageAllItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.ColumnHeadersHeight = 40;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCategoriaDataGridViewTextBoxColumn,
+            this.nombreCategoriaDataGridViewTextBoxColumn,
+            this.idPadreCategoriaDataGridViewTextBoxColumn,
+            this.padreDataGridViewTextBoxColumn,
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn,
+            this.mostrarProductosEnDataGridViewTextBoxColumn,
+            this.numeroColumnasDataGridViewTextBoxColumn,
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn,
+            this.urlCategoriaSeoDataGridViewTextBoxColumn,
+            this.metaTagsSeoDataGridViewTextBoxColumn,
+            this.cabeceraPaginaDataGridViewTextBoxColumn,
+            this.piePaginaDataGridViewTextBoxColumn,
+            this.ordenDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.mostrarWebDataGridViewTextBoxColumn,
+            this.tieneRegistrosDataGridViewTextBoxColumn,
+            this.relacionPrincipalDataGridViewCheckBoxColumn,
+            this.afectaDataGridViewCheckBoxColumn});
+            this.dataGridView.DataSource = this.categoriaBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView.RowHeadersWidth = 40;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView.RowTemplate.Height = 30;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(1076, 397);
+            this.dataGridView.TabIndex = 1;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(209)))), ((int)(((byte)(96)))));
+            this.btnNuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(209)))), ((int)(((byte)(96)))));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(10, 15);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnNuevo.Size = new System.Drawing.Size(126, 40);
+            this.btnNuevo.TabIndex = 7;
+            this.btnNuevo.Text = "  Nuevo (F3)";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
+            this.btnModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(115)))), ((int)(((byte)(220)))));
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(146, 15);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnModificar.Size = new System.Drawing.Size(140, 40);
+            this.btnModificar.TabIndex = 8;
+            this.btnModificar.Text = "  Modificar (F4)";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(56)))), ((int)(((byte)(96)))));
+            this.btnAnular.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnAnular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAnular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(56)))), ((int)(((byte)(96)))));
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.Location = new System.Drawing.Point(296, 15);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAnular.Size = new System.Drawing.Size(126, 40);
+            this.btnAnular.TabIndex = 10;
+            this.btnAnular.Text = "  Anular (F7)";
+            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnDesactivar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(156)))), ((int)(((byte)(238)))));
+            this.btnActualizar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(243)))), ((int)(((byte)(236)))));
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(156)))), ((int)(((byte)(238)))));
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(432, 15);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnActualizar.Size = new System.Drawing.Size(142, 40);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "  Actualizar (F5)";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // idCategoriaDataGridViewTextBoxColumn
+            // 
+            this.idCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.HeaderText = "idCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.Name = "idCategoriaDataGridViewTextBoxColumn";
+            this.idCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCategoriaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreCategoriaDataGridViewTextBoxColumn
+            // 
+            this.nombreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "nombreCategoria";
+            this.nombreCategoriaDataGridViewTextBoxColumn.HeaderText = "Nombre Categoria";
+            this.nombreCategoriaDataGridViewTextBoxColumn.Name = "nombreCategoriaDataGridViewTextBoxColumn";
+            this.nombreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreCategoriaDataGridViewTextBoxColumn.Width = 136;
+            // 
+            // idPadreCategoriaDataGridViewTextBoxColumn
+            // 
+            this.idPadreCategoriaDataGridViewTextBoxColumn.DataPropertyName = "idPadreCategoria";
+            this.idPadreCategoriaDataGridViewTextBoxColumn.HeaderText = "idPadreCategoria";
+            this.idPadreCategoriaDataGridViewTextBoxColumn.Name = "idPadreCategoriaDataGridViewTextBoxColumn";
+            this.idPadreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPadreCategoriaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // padreDataGridViewTextBoxColumn
+            // 
+            this.padreDataGridViewTextBoxColumn.DataPropertyName = "padre";
+            this.padreDataGridViewTextBoxColumn.HeaderText = "Ppadre";
+            this.padreDataGridViewTextBoxColumn.Name = "padreDataGridViewTextBoxColumn";
+            this.padreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.padreDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // ordenVisualizacionProductosDataGridViewTextBoxColumn
+            // 
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.DataPropertyName = "ordenVisualizacionProductos";
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.HeaderText = "Orden Visualizacion Productos";
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Name = "ordenVisualizacionProductosDataGridViewTextBoxColumn";
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Width = 207;
+            // 
+            // mostrarProductosEnDataGridViewTextBoxColumn
+            // 
+            this.mostrarProductosEnDataGridViewTextBoxColumn.DataPropertyName = "mostrarProductosEn";
+            this.mostrarProductosEnDataGridViewTextBoxColumn.HeaderText = "Mostrar Productos En";
+            this.mostrarProductosEnDataGridViewTextBoxColumn.Name = "mostrarProductosEnDataGridViewTextBoxColumn";
+            this.mostrarProductosEnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mostrarProductosEnDataGridViewTextBoxColumn.Width = 138;
+            // 
+            // numeroColumnasDataGridViewTextBoxColumn
+            // 
+            this.numeroColumnasDataGridViewTextBoxColumn.DataPropertyName = "numeroColumnas";
+            this.numeroColumnasDataGridViewTextBoxColumn.HeaderText = "Numero Columnas";
+            this.numeroColumnasDataGridViewTextBoxColumn.Name = "numeroColumnasDataGridViewTextBoxColumn";
+            this.numeroColumnasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroColumnasDataGridViewTextBoxColumn.Width = 137;
+            // 
+            // tituloCategoriaSeoDataGridViewTextBoxColumn
+            // 
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "tituloCategoriaSeo";
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "Titulo Categoria Seo";
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Name = "tituloCategoriaSeoDataGridViewTextBoxColumn";
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.Width = 127;
+            // 
+            // urlCategoriaSeoDataGridViewTextBoxColumn
+            // 
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "urlCategoriaSeo";
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "URL Categoria Seo";
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.Name = "urlCategoriaSeoDataGridViewTextBoxColumn";
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.urlCategoriaSeoDataGridViewTextBoxColumn.Width = 141;
+            // 
+            // metaTagsSeoDataGridViewTextBoxColumn
+            // 
+            this.metaTagsSeoDataGridViewTextBoxColumn.DataPropertyName = "metaTagsSeo";
+            this.metaTagsSeoDataGridViewTextBoxColumn.HeaderText = "Meta Tags Seo";
+            this.metaTagsSeoDataGridViewTextBoxColumn.Name = "metaTagsSeoDataGridViewTextBoxColumn";
+            this.metaTagsSeoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.metaTagsSeoDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // cabeceraPaginaDataGridViewTextBoxColumn
+            // 
+            this.cabeceraPaginaDataGridViewTextBoxColumn.DataPropertyName = "cabeceraPagina";
+            this.cabeceraPaginaDataGridViewTextBoxColumn.HeaderText = "Cabecera Pagina";
+            this.cabeceraPaginaDataGridViewTextBoxColumn.Name = "cabeceraPaginaDataGridViewTextBoxColumn";
+            this.cabeceraPaginaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cabeceraPaginaDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // piePaginaDataGridViewTextBoxColumn
+            // 
+            this.piePaginaDataGridViewTextBoxColumn.DataPropertyName = "piePagina";
+            this.piePaginaDataGridViewTextBoxColumn.HeaderText = "Pie Pagina";
+            this.piePaginaDataGridViewTextBoxColumn.Name = "piePaginaDataGridViewTextBoxColumn";
+            this.piePaginaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.piePaginaDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // ordenDataGridViewTextBoxColumn
+            // 
+            this.ordenDataGridViewTextBoxColumn.DataPropertyName = "orden";
+            this.ordenDataGridViewTextBoxColumn.HeaderText = "Orden";
+            this.ordenDataGridViewTextBoxColumn.Name = "ordenDataGridViewTextBoxColumn";
+            this.ordenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ordenDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estadoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.estadoDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // mostrarWebDataGridViewTextBoxColumn
+            // 
+            this.mostrarWebDataGridViewTextBoxColumn.DataPropertyName = "mostrarWeb";
+            this.mostrarWebDataGridViewTextBoxColumn.HeaderText = "Mostrar Web";
+            this.mostrarWebDataGridViewTextBoxColumn.Name = "mostrarWebDataGridViewTextBoxColumn";
+            this.mostrarWebDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mostrarWebDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // tieneRegistrosDataGridViewTextBoxColumn
+            // 
+            this.tieneRegistrosDataGridViewTextBoxColumn.DataPropertyName = "tieneRegistros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.HeaderText = "Tiene Registros";
+            this.tieneRegistrosDataGridViewTextBoxColumn.Name = "tieneRegistrosDataGridViewTextBoxColumn";
+            this.tieneRegistrosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tieneRegistrosDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // relacionPrincipalDataGridViewCheckBoxColumn
+            // 
+            this.relacionPrincipalDataGridViewCheckBoxColumn.DataPropertyName = "relacionPrincipal";
+            this.relacionPrincipalDataGridViewCheckBoxColumn.HeaderText = "relacionPrincipal";
+            this.relacionPrincipalDataGridViewCheckBoxColumn.Name = "relacionPrincipalDataGridViewCheckBoxColumn";
+            this.relacionPrincipalDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.relacionPrincipalDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // afectaDataGridViewCheckBoxColumn
+            // 
+            this.afectaDataGridViewCheckBoxColumn.DataPropertyName = "afecta";
+            this.afectaDataGridViewCheckBoxColumn.HeaderText = "afecta";
+            this.afectaDataGridViewCheckBoxColumn.Name = "afectaDataGridViewCheckBoxColumn";
+            this.afectaDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.afectaDataGridViewCheckBoxColumn.Visible = false;
+            // 
             // UCCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,12 +688,12 @@
             this.Load += new System.EventHandler(this.UCCategorias_Load);
             this.panelContainer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.panelCrud.ResumeLayout(false);
             this.panelNavigation.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -692,7 +702,27 @@
 
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panel1;
-        private ADGV.AdvancedDataGridView dataGridView;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private System.Windows.Forms.FlowLayoutPanel panelCrud;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Panel panelNavigation;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuMetroTextbox lblSpeedPages;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox lblPageCount;
+        private Bunifu.Framework.UI.BunifuMetroTextbox lblCurrentPage;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblPageAllItems;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPadreCategoriaDataGridViewTextBoxColumn;
@@ -709,25 +739,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mostrarWebDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tieneRegistrosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private System.Windows.Forms.FlowLayoutPanel panelCrud;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.Panel panelNavigation;
-        private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuMetroTextbox lblSpeedPages;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox lblPageCount;
-        private Bunifu.Framework.UI.BunifuMetroTextbox lblCurrentPage;
-        private System.Windows.Forms.Button btnFirst;
-        private System.Windows.Forms.Button btnLast;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label lblPageAllItems;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn relacionPrincipalDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn afectaDataGridViewCheckBoxColumn;
     }
 }
