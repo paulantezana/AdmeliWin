@@ -23,6 +23,8 @@ namespace Admeli.Configuracion.Modificar
     public partial class FormDiseñoComprobantes : Form
     {
 
+
+        List<DiseñoDocumento> listData;
         public Panel panel4;
         Panel centrado;
         List<ResizeableControl> listaElemtos;
@@ -95,36 +97,175 @@ namespace Admeli.Configuracion.Modificar
             designarEventos();
         }
 
+        public FormDiseñoComprobantes(DiseñoDocumento diseño, List<DiseñoDocumento> listData)
+        {
+
+            InitializeComponent();
+            this.listData = listData;
+
+            //
+
+            cargarMenuModelos();
+            //centrado.Location = new Point(centrado.Location.X + panel3.Location.X, centrado.Location.Y + panel3.Location.Y);
+
+            panel4 = new Panel();
+            panel4.AutoSize = false;
+
+            listaElemtos = new List<ResizeableControl>();
+            detalle = new DataGridView();
+
+            detalle.RowHeadersVisible = false;
+            this.diseño = diseño;
+            cuadro = new PictureBox();
+            detalleBtn = new vineta();
+            detalleBtn.nombre = "Detalle";
+            crearLabels();
+            crearListGrid();
+
+
+            formato = JsonConvert.DeserializeObject<List<FormatoDocumento>>(this.diseño.formatoDocumento);
+
+            if (formato != null && exitePagina())
+                agregarElementos();
+
+            cargarNoSeleccionados();
+            designarEventos();
+        }
+
+
+
+        private void cargarMenuModelos()
+        {
+            ToolStripMenuItem menu = new ToolStripMenuItem();
+
+            menu.Text = "Clonar Modelos";
+            menu.Size = new Size(48, 24);
+            this.menuStrip1.Items.Add(menu);
+
+            foreach (DiseñoDocumento v in listData)
+            {
+                ToolStripMenuItem aux=new ToolStripMenuItem();
+                aux.Text = v.nombre;
+                aux.Name = v.nombre;
+                aux.Click += new System.EventHandler(this.modelosMenuItem_Click);
+
+                menu.DropDownItems.Add(aux );
+            } 
+
+
+            
+
+            
+        }
+
+        public void modelosMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem aux = sender as ToolStripMenuItem;
+            foreach(DiseñoDocumento v in listData)
+            {
+                if (v.nombre == aux.Name)
+                {
+                    diseño = v;
+                }
+            }
+
+            // eliminamos todo 
+            panel4.Controls.Clear();
+            panel3.Controls.Clear();
+
+            vinetas.Clear();
+
+            listLabel.Clear();// label adiciolanes "texto"
+            listGridField.Clear();
+            panel1.Controls.Clear();
+            panel4 = new Panel();
+            panel4.AutoSize = false;
+
+            listaElemtos = new List<ResizeableControl>();
+            detalle = new DataGridView();
+
+            detalle.RowHeadersVisible = false;
+            this.diseño = diseño;
+            cuadro = new PictureBox();
+            detalleBtn = new vineta();
+            detalleBtn.nombre = "Detalle";
+            crearLabels();
+            crearListGrid();
+
+
+            formato = JsonConvert.DeserializeObject<List<FormatoDocumento>>(this.diseño.formatoDocumento);
+
+            if (formato != null && exitePagina())
+                agregarElementos();
+
+            cargarNoSeleccionados();
+            designarEventos();
+            // reload();
+
+            //agregarElementos();
+        }
         private void  crearLabels()
         {
+
+            switch(diseño.idTipoDocumento)
+            {
+                case 1:
+                    crearLabels1();
+                    break;
+                case 2:
+                    crearLabels2();
+                    break;
+                case 3:
+                    crearLabels3();
+                    break;
+                case 4:
+                    crearLabels4();
+                    break;
+                case 5:
+                    crearLabels5();
+                    break;
+                case 6:
+                    crearLabels6();
+                    break;
+                case 7:
+                    crearLabels7();
+                    break;
+                case 8:
+                    crearLabels8();
+                    break;
+                case 9:
+                    crearLabels9();
+                    break;
+                case 10:
+                    crearLabels10();
+                    break;
+            }
             
-            // verde
+        }
+        #region================
+        private void crearLabels1()
+        {
 
-            
-
-            vineta aux = new vineta();
-            aux.label.Text = "Nombre/Razón Cliente";
-            aux.nombre = "Nombre/Razón Cliente";
-            aux.label.BackColor = colorFondo("#0AED24");
-            vinetas.Add(aux);
-
+            vineta aux = new vineta();//
             aux = new vineta();
             aux.label.Text = "Fecha Emision";
             aux.nombre = "Fecha Emision";
             aux.label.BackColor = colorFondo("#0AED24");
             vinetas.Add(aux);
-
             aux = new vineta();
+            aux.label.Text = "Nombre/Razón Cliente";
+            aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
             aux.label.Text = "Dirección Cliente";
             aux.nombre = "Dirección Cliente";
             aux.label.BackColor = colorFondo("#0AED24");
             vinetas.Add(aux);
-            aux = new vineta();
-            aux.label.Text = "Documento Cliente";
-            aux.nombre = "Documento Cliente";
-            aux.label.BackColor = colorFondo("#0AED24");
-            vinetas.Add(aux);
 
+       
+
+            
             /*
             nombre = new Label();
             nombre.Text = "Nombre/Razón Cliente";
@@ -154,7 +295,7 @@ namespace Admeli.Configuracion.Modificar
             aux.nombre = "Dirección Empresa";
             aux.label.BackColor = colorFondo("#EDA50A");
             vinetas.Add(aux);
-           
+
             aux = new vineta();
             aux.label.Text = "Documento Empresa";
             aux.nombre = "Documento Empresa";
@@ -213,10 +354,1236 @@ namespace Admeli.Configuracion.Modificar
             total.Text = "Total";
 
             */
+        }
+        private void crearLabels2()
+        {
 
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.Text = "Fecha Vencimiento";
+            aux.nombre = "Fecha Vencimiento";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre/Razón Cliente";
+            aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Dirección Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Documento Cliente";
+            aux.nombre = "Documento Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Moneda";
+            aux.nombre = "Moneda";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+
+
+
+            /*
+            nombre = new Label();
+            nombre.Text = "Nombre/Razón Cliente";
+
+
+            fechaEmision = new Label();
+            fechaEmision.Text = "Fecha Emision";
+
+            direccionCliente = new Label();
+            direccionCliente.Text = "Direccion Cliente";*/
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Moneda";
+            aux.nombre = "Moneda";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+
+            /*
+            serieCorrelativo = new Label();
+            serieCorrelativo.Text = "Serie Correlativo";
+            nombreEmpresa = new Label();
+            nombreEmpresa.Text = "nombre Empresa";
+            direccionEmpresa = new Label();
+            direccionEmpresa.Text = "Direccion Empresa";
+            nombreDocumento = new Label();
+            nombreEmpresa.Text = "Nombre Empresa";
+            */
+
+            //celeste
+
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+        private void crearLabels3()
+        {
+
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Fecha pago";
+            aux.nombre = "Fecha pago";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Nombre/Razón Cliente";
+            aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Dirección Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Documento Cliente";
+            aux.nombre = "Documento Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Moneda";
+            aux.nombre = "Moneda";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+
+
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+            /*
+            serieCorrelativo = new Label();
+            serieCorrelativo.Text = "Serie Correlativo";
+            nombreEmpresa = new Label();
+            nombreEmpresa.Text = "nombre Empresa";
+            direccionEmpresa = new Label();
+            direccionEmpresa.Text = "Direccion Empresa";
+            nombreDocumento = new Label();
+            nombreEmpresa.Text = "Nombre Empresa";
+            */
+
+            //celeste
+
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
         }
 
+        private void crearLabels4()
+        {
+
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Moneda";
+            aux.nombre = "Moneda";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre/Razón Cliente";
+            aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Dirección Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+
+
+
+            /*
+            nombre = new Label();
+            nombre.Text = "Nombre/Razón Cliente";
+
+
+            fechaEmision = new Label();
+            fechaEmision.Text = "Fecha Emision";
+
+            direccionCliente = new Label();
+            direccionCliente.Text = "Direccion Cliente";*/
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+            /*
+            serieCorrelativo = new Label();
+            serieCorrelativo.Text = "Serie Correlativo";
+            nombreEmpresa = new Label();
+            nombreEmpresa.Text = "nombre Empresa";
+            direccionEmpresa = new Label();
+            direccionEmpresa.Text = "Direccion Empresa";
+            nombreDocumento = new Label();
+            nombreEmpresa.Text = "Nombre Empresa";
+            */
+
+            //celeste
+
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+
+        private void crearLabels5()
+        {
+
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre/Razón Cliente";
+            aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Dirección Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Documento Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            /*
+            nombre = new Label();
+            nombre.Text = "Nombre/Razón Cliente";
+
+
+            fechaEmision = new Label();
+            fechaEmision.Text = "Fecha Emision";
+
+            direccionCliente = new Label();
+            direccionCliente.Text = "Direccion Cliente";*/
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+            /*
+            serieCorrelativo = new Label();
+            serieCorrelativo.Text = "Serie Correlativo";
+            nombreEmpresa = new Label();
+            nombreEmpresa.Text = "nombre Empresa";
+            direccionEmpresa = new Label();
+            direccionEmpresa.Text = "Direccion Empresa";
+            nombreDocumento = new Label();
+            nombreEmpresa.Text = "Nombre Empresa";
+            */
+
+            //celeste
+
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+        private void crearLabels6()
+        {
+
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre/Razón Cliente";
+            aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Dirección Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Documento Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            /*
+            nombre = new Label();
+            nombre.Text = "Nombre/Razón Cliente";
+
+
+            fechaEmision = new Label();
+            fechaEmision.Text = "Fecha Emision";
+
+            direccionCliente = new Label();
+            direccionCliente.Text = "Direccion Cliente";*/
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+            /*
+            serieCorrelativo = new Label();
+            serieCorrelativo.Text = "Serie Correlativo";
+            nombreEmpresa = new Label();
+            nombreEmpresa.Text = "nombre Empresa";
+            direccionEmpresa = new Label();
+            direccionEmpresa.Text = "Direccion Empresa";
+            nombreDocumento = new Label();
+            nombreEmpresa.Text = "Nombre Empresa";
+            */
+
+            //celeste
+
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+        private void crearLabels7()
+        {
+
+
+  
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Nro documento compra";
+            aux.nombre = "Nro documento compra";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Proveedor";
+            aux.nombre = "Proveedor";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Nro documento proveedor";
+            aux.nombre = "Nro documento proveedor";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+
+            aux = new vineta();//
+            aux.label.Text = "Fecha entrada";
+            aux.nombre = "Fecha entrada";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();//
+            aux.label.Text = "Almacén";
+            aux.nombre = "Almacén";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();//
+            aux.label.Text = "observación";
+            aux.nombre = "observación";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+           
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+            
+            //celeste
+            /*
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+        private void crearLabels8()
+        {
+
+
+
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Nro documento venta";
+            aux.nombre = "Nro documento venta";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre/Razon Cliente";
+            aux.nombre = "Nombre/Razon Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Documento Cliente";
+            aux.nombre = "Documento Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Dirección destino";
+            aux.nombre = "Dirección destino";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();//
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Fecha Salida";
+            aux.nombre = "Fecha Salida";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Motivo salida";
+            aux.nombre = "Motivo salida";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "descripción";
+            aux.nombre = "descripción";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Descripción Empresa";
+            aux.nombre = "Descripción Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+
+            //celeste
+            /*
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+        private void crearLabels9()
+        {
+
+
+
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Origen";
+            aux.nombre = "Origen";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nro documento nota salida";
+            aux.nombre = "Nro documento nota salida";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Empresa de transporte";
+            aux.nombre = "Empresa de transporte";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Motivo de traslado";
+            aux.nombre = "Motivo de traslado";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();//
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Marca y placa";
+            aux.nombre = "Marca y placa";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Observación";
+            aux.nombre = "Observación";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Licencia de conducir";
+            aux.nombre = "Licencia de conducir";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();//
+            aux.label.Text = "Dirección de origen";
+            aux.nombre = "Dirección de origen";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();//
+            aux.label.Text = "Destino";
+            aux.nombre = "Destino";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+            aux = new vineta();//
+            aux.label.Text = "Direccón destino";
+            aux.nombre = "Direccón destino";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Descripción Empresa";
+            aux.nombre = "Descripción Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+
+            //celeste
+            /*
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+        private void crearLabels10()
+        {
+
+            vineta aux = new vineta();//
+            aux = new vineta();
+            aux.label.Text = "Fecha Emision";
+            aux.nombre = "Fecha Emision";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre/Razón Cliente";
+            aux.nombre = "Nombre/Razón Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Dirección Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            aux = new vineta();//
+            aux.label.Text = "Documento Cliente";
+            aux.nombre = "Dirección Cliente";
+            aux.label.BackColor = colorFondo("#0AED24");
+            vinetas.Add(aux);
+            /*
+            nombre = new Label();
+            nombre.Text = "Nombre/Razón Cliente";
+
+
+            fechaEmision = new Label();
+            fechaEmision.Text = "Fecha Emision";
+
+            direccionCliente = new Label();
+            direccionCliente.Text = "Direccion Cliente";*/
+
+
+            // anaranjado
+
+            aux = new vineta();
+            aux.label.Text = "Serie-Correlativo";
+            aux.nombre = "Serie-Correlativo";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Empresa";
+            aux.nombre = "Nombre Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Dirección Empresa";
+            aux.nombre = "Dirección Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "Documento Empresa";
+            aux.nombre = "Documento Empresa";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Nombre Documento";
+            aux.nombre = "Nombre Documento";
+            aux.label.BackColor = colorFondo("#EDA50A");
+            vinetas.Add(aux);
+
+
+
+            /*
+            serieCorrelativo = new Label();
+            serieCorrelativo.Text = "Serie Correlativo";
+            nombreEmpresa = new Label();
+            nombreEmpresa.Text = "nombre Empresa";
+            direccionEmpresa = new Label();
+            direccionEmpresa.Text = "Direccion Empresa";
+            nombreDocumento = new Label();
+            nombreEmpresa.Text = "Nombre Empresa";
+            */
+
+            //celeste
+
+            aux = new vineta();
+            aux.label.Text = "Impuesto";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            //aux.label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.vineta_MouseDown);
+            aux.nombre = "Impuesto";
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Sub Total";
+            aux.nombre = "Sub Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Texto Total";
+            aux.nombre = "Texto Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "Total";
+            aux.nombre = "Total";
+            aux.label.BackColor = colorFondo("#0AEDD6");
+            vinetas.Add(aux);
+            /*
+            impuesto = new Label();
+            impuesto.Text = "Impuesto";
+            subTotal = new Label();
+            subTotal.Text = "Sub Total";
+            textoTotal = new Label();
+            textoTotal.Text = "Texto Total";
+            total = new Label();
+            total.Text = "Total";
+
+            */
+        }
+
+        #endregion================
+
         private void crearListGrid()
+        {
+
+            switch (diseño.idTipoDocumento)
+            {
+                case 1:
+                    crearListGrid1();
+                    break;
+                case 2:
+                    crearListGrid2();
+                    break;
+                case 3:
+                    crearListGrid3();
+                    break;
+                case 4:
+                    crearListGrid4();
+                    break;
+                case 5:
+                    crearListGrid5();
+                    break;
+                case 6:
+                    crearListGrid6();
+                    break;
+                case 7:
+                    crearListGrid7();
+                    break;
+                case 8:
+                    crearListGrid8();
+                    break;
+                case 9:
+                    crearListGrid9();
+                    break;
+                case 10:
+                    crearListGrid10();
+                    break;
+            }
+        }
+
+        #region==================
+        private void crearListGrid1()
+        {
+
+
+
+            //para el texto
+            vineta aux1 = new vineta();
+            aux1.label.Text = "";
+            aux1.nombre = "";
+            listLabel.Add(aux1);
+            //
+
+            vineta aux = new vineta();
+            aux.label.Text = "codigoProducto";
+            aux.nombre = "codigoProducto";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "nombreCombinacion";
+            aux.nombre = "nombreCombinacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "cantidad";
+            aux.nombre = "cantidad";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombrePresentacion";
+            aux.nombre = "nombrePresentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "descripcion";
+            aux.nombre = "descripcion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombreMarca";
+            aux.nombre = "nombreMarca";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "precioUnitario";
+            aux.nombre = "precioUnitario";
+            listGridField.Add(aux);
+           
+            aux = new vineta();
+            aux.label.Text = "descuento";
+            aux.nombre = "descuento";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "total";
+            aux.nombre = "total";
+            listGridField.Add(aux);
+        }
+        private void crearListGrid2()
+        {
+
+
+
+            //para el texto
+            vineta aux1 = new vineta();
+            aux1.label.Text = "";
+            aux1.nombre = "";
+            listLabel.Add(aux1);
+            //
+
+            vineta aux = new vineta();
+            aux.label.Text = "codigoProducto";
+            aux.nombre = "codigoProducto";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "nombreCombinacion";
+            aux.nombre = "nombreCombinacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "cantidad";
+            aux.nombre = "cantidad";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombrePresentacion";
+            aux.nombre = "nombrePresentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "descripcion";
+            aux.nombre = "descripcion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombreMarca";
+            aux.nombre = "nombreMarca";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "precioUnitario";
+            aux.nombre = "precioUnitario";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "descuento";
+            aux.nombre = "descuento";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "precioVenta";
+            aux.nombre = "precioVenta";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "total";
+            aux.nombre = "total";
+            listGridField.Add(aux);
+        }
+        private void crearListGrid3()
         {
             //para el texto
             vineta aux1 = new vineta();
@@ -255,22 +1622,228 @@ namespace Admeli.Configuracion.Modificar
             aux.label.Text = "precioUnitario";
             aux.nombre = "precioUnitario";
             listGridField.Add(aux);
-
             aux = new vineta();
             aux.label.Text = "descuento";
             aux.nombre = "descuento";
             listGridField.Add(aux);
             aux = new vineta();
+            aux.label.Text = "precioVenta";
+            aux.nombre = "precioVenta";
+            listGridField.Add(aux);
+            aux = new vineta();
             aux.label.Text = "total";
             aux.nombre = "total";
             listGridField.Add(aux);
-
-
-
         }
+        private void crearListGrid4()
+        {
+            //para el texto
+            vineta aux1 = new vineta();
+            aux1.label.Text = "";
+            aux1.nombre = "";
+            listLabel.Add(aux1);
+            //
+
+            vineta aux = new vineta();
+            aux.label.Text = "codigoProducto";
+            aux.nombre = "codigoProducto";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "nombreCombinacion";
+            aux.nombre = "nombreCombinacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "cantidad";
+            aux.nombre = "cantidad";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombrePresentacion";
+            aux.nombre = "nombrePresentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "descripcion";
+            aux.nombre = "descripcion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombreMarca";
+            aux.nombre = "nombreMarca";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "precioUnitario";
+            aux.nombre = "precioUnitario";
+            listGridField.Add(aux);
+           
+            aux = new vineta();
+            aux.label.Text = "precioVenta";
+            aux.nombre = "precioVenta";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "total";
+            aux.nombre = "total";
+            listGridField.Add(aux);
+        }
+        //nota credito
+        private void crearListGrid5() { }
+        //nota debito
+        private void crearListGrid6() { }
+
+
+        private void crearListGrid7()
+        {
+            //para el texto
+            vineta aux1 = new vineta();
+            aux1.label.Text = "";
+            aux1.nombre = "";
+            listLabel.Add(aux1);
+            //
+
+            vineta aux = new vineta();
+            aux.label.Text = "codigoProducto";
+            aux.nombre = "codigoProducto";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "nombreCombinacion";
+            aux.nombre = "nombreCombinacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "cantidad";
+            aux.nombre = "cantidad";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombrePresentacion";
+            aux.nombre = "nombrePresentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "descripcion";
+            aux.nombre = "descripcion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombreMarca";
+            aux.nombre = "nombreMarca";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "cantidadUnitario";
+            aux.nombre = "cantidadUnitario";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "cantidadRecibida";
+            aux.nombre = "cantidadRecibida";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "presentacion";
+            aux.nombre = "presentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "variante";
+            aux.nombre = "variante";
+            listGridField.Add(aux);
+        }
+        private void crearListGrid8()
+        {
+            //para el texto
+            vineta aux1 = new vineta();
+            aux1.label.Text = "";
+            aux1.nombre = "";
+            listLabel.Add(aux1);
+            //
+
+            vineta aux = new vineta();
+            aux.label.Text = "codigoProducto";
+            aux.nombre = "codigoProducto";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "nombreCombinacion";
+            aux.nombre = "nombreCombinacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "cantidad";
+            aux.nombre = "cantidad";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombrePresentacion";
+            aux.nombre = "nombrePresentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "descripcion";
+            aux.nombre = "descripcion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombreMarca";
+            aux.nombre = "nombreMarca";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "cantidadUnitario";
+            aux.nombre = "cantidadUnitario";
+            listGridField.Add(aux);
+            aux = new vineta();
+         
+
+            aux = new vineta();
+            aux.label.Text = "presentacion";
+            aux.nombre = "presentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "variante";
+            aux.nombre = "variante";
+            listGridField.Add(aux);
+        }
+        private void crearListGrid9()
+        {
+            //para el texto
+            vineta aux1 = new vineta();
+            aux1.label.Text = "";
+            aux1.nombre = "";
+            listLabel.Add(aux1);
+            //
+
+            vineta aux = new vineta();
+            aux.label.Text = "codigoProducto";
+            aux.nombre = "codigoProducto";
+            listGridField.Add(aux);
+
+           
+            aux = new vineta();
+            aux.label.Text = "cantidad";
+            aux.nombre = "cantidad";
+            listGridField.Add(aux);
+           
+            aux = new vineta();
+            aux.label.Text = "descripcion";
+            aux.nombre = "descripcion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "nombreMarca";
+            aux.nombre = "nombreMarca";
+            listGridField.Add(aux);
+
+            aux = new vineta();
+            aux.label.Text = "cantidadUnitario";
+            aux.nombre = "cantidadUnitario";
+            listGridField.Add(aux);
+            aux = new vineta();
+
+
+            aux = new vineta();
+            aux.label.Text = "presentacion";
+            aux.nombre = "presentacion";
+            listGridField.Add(aux);
+            aux = new vineta();
+            aux.label.Text = "variante";
+            aux.nombre = "variante";
+            listGridField.Add(aux);
+        }
+        private void crearListGrid10() { }
+        #endregion==================
         public void agregarElementos()
         {
-            panel4.Controls.Clear();
+            
 
 
             foreach ( FormatoDocumento doc in formato)
@@ -552,18 +2125,7 @@ namespace Admeli.Configuracion.Modificar
             
         }
 
-        private void vineta_MouseHover(object sender, EventArgs e)
-        {
-            
-            Label c1 = sender as Label;
-            vineta aux = buscarVineta(c1.Text, vinetas);
-            panel1.Cursor = Cursors.SizeAll;
-            redi=true;
-            aux.w = c1.Width;
-            aux.h = c1.Height;
-            aux.label.BackColor = Color.Aqua;
-            aux.label.FlatStyle = FlatStyle.Flat;
-        }
+      
         /*obsoleto
         private void vineta_MouseDown(object sender, MouseEventArgs e)
         {
@@ -1052,6 +2614,21 @@ namespace Admeli.Configuracion.Modificar
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel4.Controls.Clear();
+            vinetas.Clear();
+            crearLabels();
+
+            reload();
+
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

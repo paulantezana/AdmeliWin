@@ -25,6 +25,7 @@ namespace Admeli.Configuracion.Modificar
         {
             this.usado = 0;// 0  no utilizado, 2 usadada en comprobante ,-1 no usadado esta abajo arriba,1usado arriba
             label = new Label();
+            label.AutoSize = false;
             mover = false;
 
         }
