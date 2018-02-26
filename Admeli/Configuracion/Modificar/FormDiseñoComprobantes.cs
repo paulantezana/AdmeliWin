@@ -1051,6 +1051,11 @@ namespace Admeli.Configuracion.Modificar
             // Printng logic
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private bool esta1(int x1, int x2, int y1, int y2, int posicionX, int posicionY)
         {
             int finalX = x1 + x2;
