@@ -38,9 +38,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.button6 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,8 +67,8 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnNuevo);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.menuStrip1);
@@ -116,16 +116,17 @@
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(194, 12);
+            this.button1.Location = new System.Drawing.Point(375, 12);
             this.button1.Margin = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(168, 49);
             this.button1.TabIndex = 4;
-            this.button1.Text = "  Nuevo (F3)";
+            this.button1.Text = "deshacer cambios";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -139,7 +140,7 @@
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(375, 12);
+            this.button2.Location = new System.Drawing.Point(194, 12);
             this.button2.Margin = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -199,6 +200,15 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(889, 12);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -221,21 +231,13 @@
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(889, 12);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // FormDiseñoComprobantes
             // 

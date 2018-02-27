@@ -30,6 +30,7 @@ namespace Admeli.Configuracion.Modificar
         List<ResizeableControl> listaElemtos;
         ResizeableControl rc;
         DiseñoDocumento diseño;
+        DiseñoDocumento original;
         List<FormatoDocumento>  formato;
         String json;
         bool redi = false;
@@ -104,7 +105,7 @@ namespace Admeli.Configuracion.Modificar
             this.listData = listData;
 
             //
-
+            original = diseño;
             cargarMenuModelos();
             //centrado.Location = new Point(centrado.Location.X + panel3.Location.X, centrado.Location.Y + panel3.Location.Y);
 
@@ -2631,6 +2632,48 @@ namespace Admeli.Configuracion.Modificar
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // eliminamos todo 
+            panel4.Controls.Clear();
+            panel3.Controls.Clear();
+
+            vinetas.Clear();
+
+            listLabel.Clear();// label adiciolanes "texto"
+            listGridField.Clear();
+            panel1.Controls.Clear();
+            diseño = original;
+
+            panel4 = new Panel();
+            panel4.AutoSize = false;
+
+            listaElemtos = new List<ResizeableControl>();
+            detalle = new DataGridView();
+
+            detalle.RowHeadersVisible = false;
+            this.diseño = diseño;
+            cuadro = new PictureBox();
+            detalleBtn = new vineta();
+            detalleBtn.nombre = "Detalle";
+            crearLabels();
+            crearListGrid();
+
+
+            formato = JsonConvert.DeserializeObject<List<FormatoDocumento>>(this.diseño.formatoDocumento);
+
+            if (formato != null && exitePagina())
+                agregarElementos();
+
+            cargarNoSeleccionados();
+            designarEventos();
         }
 
         private bool esta1(int x1, int x2, int y1, int y2, int posicionX, int posicionY)
