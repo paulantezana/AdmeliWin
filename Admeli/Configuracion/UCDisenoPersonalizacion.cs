@@ -146,7 +146,7 @@ namespace Admeli.Configuracion
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DiseñoDocumento diseño=  (DiseñoDocumento)tipoDocumentoBindingSource.List[e.RowIndex];
-            comprobates = new FormDiseñoComprobantes(diseño);
+            comprobates = new FormDiseñoComprobantes(diseño, listData);
             comprobates.ShowDialog();
         }
     }

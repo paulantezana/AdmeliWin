@@ -41,7 +41,7 @@ namespace Admeli.Configuracion.Modificar
             switch (i)
             {
                 case 0:// a4
-                    txtAltura.Text = "29.7";
+                    txtAltura.Text = "29,7";
                     txtAncho.Text = "21";
                     altura = 1754;//842;
                     ancho = 1240;//595;
@@ -50,15 +50,15 @@ namespace Admeli.Configuracion.Modificar
                     break;
                 case 1://a5
                     txtAltura.Text = "21";
-                    txtAncho.Text = "14.8";
+                    txtAncho.Text = "14,8";
                     altura = 1240; //595;
                     ancho = 874;// 420;
 
                     //  1.748
                     break;
                 case 2://a6
-                    txtAltura.Text = "14.8";
-                    txtAncho.Text = "10.5";
+                    txtAltura.Text = "14,8";
+                    txtAncho.Text = "10,5";
                     altura = 874;// 420;
                     ancho = 591;// 298;
                     //1.748  1.240
@@ -73,10 +73,17 @@ namespace Admeli.Configuracion.Modificar
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            
+
+            Double d1 = Convert.ToDouble(txtAltura.Text);
+            Double d2 = Convert.ToDouble(txtAncho.Text);
+            int w= (int)( d1/ 0.0264583333333334D);
+            int h= (int)(d2 / 0.0264583333333334D);
             formDiseño.panel4.Width =(int)( Convert.ToDouble(txtAltura.Text)/ 0.0264583333333334D);
             formDiseño.panel4.Height = (int)(Convert.ToDouble(txtAncho.Text) / 0.0264583333333334D);
-           
+            txtAltura.Text = "";
+            txtAncho.Text = "";
+
+            this.Close();
         }
     }
 }
