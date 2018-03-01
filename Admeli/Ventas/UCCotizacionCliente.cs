@@ -419,5 +419,10 @@ namespace Admeli.Ventas
             }
         }
         #endregion
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
