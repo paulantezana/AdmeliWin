@@ -467,5 +467,10 @@ namespace Admeli.Ventas
         {
 
         }
+
+        private void panelNavigation_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -56,6 +56,7 @@
             this.tabPresentaciones = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewPresentacion = new System.Windows.Forms.DataGridView();
+            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripCrud = new System.Windows.Forms.ToolStrip();
             this.btnNuevoPrecentacion = new System.Windows.Forms.ToolStripButton();
             this.btnModificarPrecentacion = new System.Windows.Forms.ToolStripButton();
@@ -67,6 +68,13 @@
             this.panelItem2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridViewAlternativa = new System.Windows.Forms.DataGridView();
+            this.idAlternativaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idVarianteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionAlternativaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seleccionadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ordenPosicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alternativaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnNuevoAlternativa = new System.Windows.Forms.ToolStripButton();
             this.btnModificarAlternativa = new System.Windows.Forms.ToolStripButton();
@@ -77,6 +85,14 @@
             this.panelItem1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridViewVariante = new System.Windows.Forms.DataGridView();
+            this.idVarianteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProductoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreVarianteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esComboDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fechaCreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaModificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevoVariante = new System.Windows.Forms.ToolStripButton();
             this.btnModificarVariante = new System.Windows.Forms.ToolStripButton();
@@ -88,9 +104,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.chkVenderSinStock = new System.Windows.Forms.CheckBox();
-            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.alternativaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.varianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idPresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrePresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,19 +111,6 @@
             this.presentacionPorDefectoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.simboloPresentacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idVarianteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProductoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreVarianteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esComboDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fechaCreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaModificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAlternativaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idVarianteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionAlternativaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seleccionadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ordenPosicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelHeader.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -118,23 +118,23 @@
             this.tabPresentaciones.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresentacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
             this.toolStripCrud.SuspendLayout();
             this.panelHeaderItem1.SuspendLayout();
             this.tabVariantes.SuspendLayout();
             this.panelItem2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlternativa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alternativaBindingSource)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panelItem1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVariante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varianteBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelIHeader2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alternativaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.varianteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -143,9 +143,10 @@
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.panelHeader.Size = new System.Drawing.Size(805, 49);
+            this.panelHeader.Size = new System.Drawing.Size(1073, 60);
             this.panelHeader.TabIndex = 0;
             this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
@@ -153,9 +154,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Location = new System.Drawing.Point(21, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(98, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adicionales";
             // 
@@ -163,10 +165,11 @@
             // 
             this.panelFooter.Controls.Add(this.panel1);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 563);
+            this.panelFooter.Location = new System.Drawing.Point(0, 693);
+            this.panelFooter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.panelFooter.Size = new System.Drawing.Size(805, 49);
+            this.panelFooter.Size = new System.Drawing.Size(1073, 60);
             this.panelFooter.TabIndex = 1;
             this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
@@ -176,9 +179,10 @@
             this.panel1.Controls.Add(this.btnGuardarSalir);
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(164, 0);
+            this.panel1.Location = new System.Drawing.Point(219, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(476, 49);
+            this.panel1.Size = new System.Drawing.Size(635, 60);
             this.panel1.TabIndex = 6;
             // 
             // btnGuardarSalir
@@ -191,9 +195,10 @@
             this.btnGuardarSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarSalir.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarSalir.Location = new System.Drawing.Point(165, 9);
+            this.btnGuardarSalir.Location = new System.Drawing.Point(220, 11);
+            this.btnGuardarSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardarSalir.Name = "btnGuardarSalir";
-            this.btnGuardarSalir.Size = new System.Drawing.Size(152, 30);
+            this.btnGuardarSalir.Size = new System.Drawing.Size(203, 37);
             this.btnGuardarSalir.TabIndex = 9;
             this.btnGuardarSalir.Text = "Guardar y Cerrar";
             this.btnGuardarSalir.UseVisualStyleBackColor = false;
@@ -209,9 +214,10 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(29, 9);
+            this.btnAceptar.Location = new System.Drawing.Point(39, 11);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(116, 30);
+            this.btnAceptar.Size = new System.Drawing.Size(155, 37);
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Guardar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -228,9 +234,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnClose.Location = new System.Drawing.Point(334, 9);
+            this.btnClose.Location = new System.Drawing.Point(445, 11);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(114, 30);
+            this.btnClose.Size = new System.Drawing.Size(152, 37);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -242,10 +249,11 @@
             this.tabControl1.Controls.Add(this.tabVariantes);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(58, 35);
-            this.tabControl1.Location = new System.Drawing.Point(0, 49);
+            this.tabControl1.Location = new System.Drawing.Point(0, 60);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(805, 514);
+            this.tabControl1.Size = new System.Drawing.Size(1073, 633);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPresentaciones
@@ -255,9 +263,10 @@
             this.tabPresentaciones.Controls.Add(this.toolStripCrud);
             this.tabPresentaciones.Controls.Add(this.panelHeaderItem1);
             this.tabPresentaciones.Location = new System.Drawing.Point(4, 39);
+            this.tabPresentaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPresentaciones.Name = "tabPresentaciones";
-            this.tabPresentaciones.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPresentaciones.Size = new System.Drawing.Size(797, 471);
+            this.tabPresentaciones.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPresentaciones.Size = new System.Drawing.Size(1065, 590);
             this.tabPresentaciones.TabIndex = 0;
             this.tabPresentaciones.Text = "Presentaciones";
             // 
@@ -265,10 +274,11 @@
             // 
             this.panel2.Controls.Add(this.dataGridViewPresentacion);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 89);
+            this.panel2.Location = new System.Drawing.Point(4, 109);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(791, 379);
+            this.panel2.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.panel2.Size = new System.Drawing.Size(1057, 477);
             this.panel2.TabIndex = 23;
             // 
             // dataGridViewPresentacion
@@ -309,7 +319,8 @@
             this.dataGridViewPresentacion.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewPresentacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewPresentacion.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridViewPresentacion.Location = new System.Drawing.Point(10, 10);
+            this.dataGridViewPresentacion.Location = new System.Drawing.Point(13, 12);
+            this.dataGridViewPresentacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewPresentacion.Name = "dataGridViewPresentacion";
             this.dataGridViewPresentacion.ReadOnly = true;
             this.dataGridViewPresentacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -326,9 +337,13 @@
             this.dataGridViewPresentacion.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewPresentacion.RowTemplate.Height = 30;
             this.dataGridViewPresentacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPresentacion.Size = new System.Drawing.Size(771, 359);
+            this.dataGridViewPresentacion.Size = new System.Drawing.Size(1031, 453);
             this.dataGridViewPresentacion.TabIndex = 2;
             this.dataGridViewPresentacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPresentacion_CellDoubleClick);
+            // 
+            // presentacionBindingSource
+            // 
+            this.presentacionBindingSource.DataSource = typeof(Entidad.Presentacion);
             // 
             // toolStripCrud
             // 
@@ -342,10 +357,10 @@
             this.btnModificarPrecentacion,
             this.btnEliminarPrecentacion,
             this.btnActualizarPrcentacion});
-            this.toolStripCrud.Location = new System.Drawing.Point(3, 44);
+            this.toolStripCrud.Location = new System.Drawing.Point(4, 54);
             this.toolStripCrud.Name = "toolStripCrud";
-            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.toolStripCrud.Size = new System.Drawing.Size(791, 45);
+            this.toolStripCrud.Padding = new System.Windows.Forms.Padding(11, 0, 11, 10);
+            this.toolStripCrud.Size = new System.Drawing.Size(1057, 55);
             this.toolStripCrud.TabIndex = 22;
             this.toolStripCrud.Text = "toolStrip1";
             // 
@@ -405,20 +420,19 @@
             // 
             this.panelHeaderItem1.Controls.Add(this.label2);
             this.panelHeaderItem1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeaderItem1.Location = new System.Drawing.Point(3, 3);
-            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(2);
+            this.panelHeaderItem1.Location = new System.Drawing.Point(4, 4);
+            this.panelHeaderItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHeaderItem1.Name = "panelHeaderItem1";
-            this.panelHeaderItem1.Size = new System.Drawing.Size(791, 41);
+            this.panelHeaderItem1.Size = new System.Drawing.Size(1057, 50);
             this.panelHeaderItem1.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(12, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(362, 17);
+            this.label2.Size = new System.Drawing.Size(434, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "MANTENIMIENTO PRESENTACION (Unidades creadas)";
             // 
@@ -429,9 +443,10 @@
             this.tabVariantes.Controls.Add(this.panelItem1);
             this.tabVariantes.Controls.Add(this.panelIHeader2);
             this.tabVariantes.Location = new System.Drawing.Point(4, 39);
+            this.tabVariantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabVariantes.Name = "tabVariantes";
-            this.tabVariantes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVariantes.Size = new System.Drawing.Size(797, 471);
+            this.tabVariantes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabVariantes.Size = new System.Drawing.Size(1065, 590);
             this.tabVariantes.TabIndex = 1;
             this.tabVariantes.Text = "Variantes";
             // 
@@ -441,19 +456,21 @@
             this.panelItem2.Controls.Add(this.toolStrip2);
             this.panelItem2.Controls.Add(this.panel8);
             this.panelItem2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelItem2.Location = new System.Drawing.Point(414, 44);
+            this.panelItem2.Location = new System.Drawing.Point(552, 54);
+            this.panelItem2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelItem2.Name = "panelItem2";
-            this.panelItem2.Size = new System.Drawing.Size(380, 424);
+            this.panelItem2.Size = new System.Drawing.Size(509, 532);
             this.panelItem2.TabIndex = 3;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.dataGridViewAlternativa);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 86);
+            this.panel7.Location = new System.Drawing.Point(0, 105);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(10);
-            this.panel7.Size = new System.Drawing.Size(380, 338);
+            this.panel7.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.panel7.Size = new System.Drawing.Size(509, 427);
             this.panel7.TabIndex = 23;
             // 
             // dataGridViewAlternativa
@@ -493,7 +510,8 @@
             this.dataGridViewAlternativa.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewAlternativa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewAlternativa.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridViewAlternativa.Location = new System.Drawing.Point(10, 10);
+            this.dataGridViewAlternativa.Location = new System.Drawing.Point(13, 12);
+            this.dataGridViewAlternativa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewAlternativa.Name = "dataGridViewAlternativa";
             this.dataGridViewAlternativa.ReadOnly = true;
             this.dataGridViewAlternativa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -510,9 +528,61 @@
             this.dataGridViewAlternativa.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewAlternativa.RowTemplate.Height = 30;
             this.dataGridViewAlternativa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAlternativa.Size = new System.Drawing.Size(360, 318);
+            this.dataGridViewAlternativa.Size = new System.Drawing.Size(483, 403);
             this.dataGridViewAlternativa.TabIndex = 2;
             this.dataGridViewAlternativa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlternativa_CellDoubleClick);
+            // 
+            // idAlternativaDataGridViewTextBoxColumn
+            // 
+            this.idAlternativaDataGridViewTextBoxColumn.DataPropertyName = "idAlternativa";
+            this.idAlternativaDataGridViewTextBoxColumn.HeaderText = "idAlternativa";
+            this.idAlternativaDataGridViewTextBoxColumn.Name = "idAlternativaDataGridViewTextBoxColumn";
+            this.idAlternativaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAlternativaDataGridViewTextBoxColumn.Width = 136;
+            // 
+            // idVarianteDataGridViewTextBoxColumn1
+            // 
+            this.idVarianteDataGridViewTextBoxColumn1.DataPropertyName = "idVariante";
+            this.idVarianteDataGridViewTextBoxColumn1.HeaderText = "idVariante";
+            this.idVarianteDataGridViewTextBoxColumn1.Name = "idVarianteDataGridViewTextBoxColumn1";
+            this.idVarianteDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idVarianteDataGridViewTextBoxColumn1.Width = 116;
+            // 
+            // descripcionAlternativaDataGridViewTextBoxColumn
+            // 
+            this.descripcionAlternativaDataGridViewTextBoxColumn.DataPropertyName = "descripcionAlternativa";
+            this.descripcionAlternativaDataGridViewTextBoxColumn.HeaderText = "descripcionAlternativa";
+            this.descripcionAlternativaDataGridViewTextBoxColumn.Name = "descripcionAlternativaDataGridViewTextBoxColumn";
+            this.descripcionAlternativaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionAlternativaDataGridViewTextBoxColumn.Width = 213;
+            // 
+            // seleccionadoDataGridViewCheckBoxColumn
+            // 
+            this.seleccionadoDataGridViewCheckBoxColumn.DataPropertyName = "seleccionado";
+            this.seleccionadoDataGridViewCheckBoxColumn.HeaderText = "seleccionado";
+            this.seleccionadoDataGridViewCheckBoxColumn.Name = "seleccionadoDataGridViewCheckBoxColumn";
+            this.seleccionadoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.seleccionadoDataGridViewCheckBoxColumn.Width = 117;
+            // 
+            // ordenPosicionDataGridViewTextBoxColumn
+            // 
+            this.ordenPosicionDataGridViewTextBoxColumn.DataPropertyName = "ordenPosicion";
+            this.ordenPosicionDataGridViewTextBoxColumn.HeaderText = "ordenPosicion";
+            this.ordenPosicionDataGridViewTextBoxColumn.Name = "ordenPosicionDataGridViewTextBoxColumn";
+            this.ordenPosicionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ordenPosicionDataGridViewTextBoxColumn.Width = 151;
+            // 
+            // estadoDataGridViewTextBoxColumn2
+            // 
+            this.estadoDataGridViewTextBoxColumn2.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn2.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn2.Name = "estadoDataGridViewTextBoxColumn2";
+            this.estadoDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn2.Width = 91;
+            // 
+            // alternativaBindingSource
+            // 
+            this.alternativaBindingSource.DataSource = typeof(Entidad.Alternativa);
             // 
             // toolStrip2
             // 
@@ -526,10 +596,10 @@
             this.btnModificarAlternativa,
             this.btnEliminarAlternativa,
             this.btnActualizarAlternativa});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 41);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 50);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.toolStrip2.Size = new System.Drawing.Size(380, 45);
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(11, 0, 11, 10);
+            this.toolStrip2.Size = new System.Drawing.Size(509, 55);
             this.toolStrip2.TabIndex = 22;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -590,19 +660,18 @@
             this.panel8.Controls.Add(this.label4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(380, 41);
+            this.panel8.Size = new System.Drawing.Size(509, 50);
             this.panel8.TabIndex = 21;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(12, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 17);
+            this.label4.Size = new System.Drawing.Size(213, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "LISTA DE ALTERNATIVAS";
             // 
@@ -612,19 +681,21 @@
             this.panelItem1.Controls.Add(this.toolStrip1);
             this.panelItem1.Controls.Add(this.panel4);
             this.panelItem1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelItem1.Location = new System.Drawing.Point(3, 44);
+            this.panelItem1.Location = new System.Drawing.Point(4, 54);
+            this.panelItem1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelItem1.Name = "panelItem1";
-            this.panelItem1.Size = new System.Drawing.Size(411, 424);
+            this.panelItem1.Size = new System.Drawing.Size(548, 532);
             this.panelItem1.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridViewVariante);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 86);
+            this.panel3.Location = new System.Drawing.Point(0, 105);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(411, 338);
+            this.panel3.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.panel3.Size = new System.Drawing.Size(548, 427);
             this.panel3.TabIndex = 23;
             // 
             // dataGridViewVariante
@@ -665,7 +736,8 @@
             this.dataGridViewVariante.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewVariante.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewVariante.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridViewVariante.Location = new System.Drawing.Point(10, 10);
+            this.dataGridViewVariante.Location = new System.Drawing.Point(13, 12);
+            this.dataGridViewVariante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewVariante.Name = "dataGridViewVariante";
             this.dataGridViewVariante.ReadOnly = true;
             this.dataGridViewVariante.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -682,10 +754,70 @@
             this.dataGridViewVariante.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewVariante.RowTemplate.Height = 30;
             this.dataGridViewVariante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewVariante.Size = new System.Drawing.Size(391, 318);
+            this.dataGridViewVariante.Size = new System.Drawing.Size(522, 403);
             this.dataGridViewVariante.TabIndex = 2;
             this.dataGridViewVariante.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVariante_CellDoubleClick);
             this.dataGridViewVariante.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVariante_CellEnter);
+            // 
+            // idVarianteDataGridViewTextBoxColumn
+            // 
+            this.idVarianteDataGridViewTextBoxColumn.DataPropertyName = "idVariante";
+            this.idVarianteDataGridViewTextBoxColumn.HeaderText = "idVariante";
+            this.idVarianteDataGridViewTextBoxColumn.Name = "idVarianteDataGridViewTextBoxColumn";
+            this.idVarianteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idVarianteDataGridViewTextBoxColumn.Width = 116;
+            // 
+            // idProductoDataGridViewTextBoxColumn1
+            // 
+            this.idProductoDataGridViewTextBoxColumn1.DataPropertyName = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn1.HeaderText = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn1.Name = "idProductoDataGridViewTextBoxColumn1";
+            this.idProductoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idProductoDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // nombreVarianteDataGridViewTextBoxColumn
+            // 
+            this.nombreVarianteDataGridViewTextBoxColumn.DataPropertyName = "nombreVariante";
+            this.nombreVarianteDataGridViewTextBoxColumn.HeaderText = "nombreVariante";
+            this.nombreVarianteDataGridViewTextBoxColumn.Name = "nombreVarianteDataGridViewTextBoxColumn";
+            this.nombreVarianteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreVarianteDataGridViewTextBoxColumn.Width = 162;
+            // 
+            // esComboDataGridViewCheckBoxColumn
+            // 
+            this.esComboDataGridViewCheckBoxColumn.DataPropertyName = "esCombo";
+            this.esComboDataGridViewCheckBoxColumn.HeaderText = "esCombo";
+            this.esComboDataGridViewCheckBoxColumn.Name = "esComboDataGridViewCheckBoxColumn";
+            this.esComboDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.esComboDataGridViewCheckBoxColumn.Width = 89;
+            // 
+            // fechaCreacionDataGridViewTextBoxColumn
+            // 
+            this.fechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "fechaCreacion";
+            this.fechaCreacionDataGridViewTextBoxColumn.HeaderText = "fechaCreacion";
+            this.fechaCreacionDataGridViewTextBoxColumn.Name = "fechaCreacionDataGridViewTextBoxColumn";
+            this.fechaCreacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaCreacionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fechaModificacionDataGridViewTextBoxColumn
+            // 
+            this.fechaModificacionDataGridViewTextBoxColumn.DataPropertyName = "fechaModificacion";
+            this.fechaModificacionDataGridViewTextBoxColumn.HeaderText = "fechaModificacion";
+            this.fechaModificacionDataGridViewTextBoxColumn.Name = "fechaModificacionDataGridViewTextBoxColumn";
+            this.fechaModificacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaModificacionDataGridViewTextBoxColumn.Width = 177;
+            // 
+            // estadoDataGridViewTextBoxColumn1
+            // 
+            this.estadoDataGridViewTextBoxColumn1.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn1.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn1.Name = "estadoDataGridViewTextBoxColumn1";
+            this.estadoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn1.Width = 91;
+            // 
+            // varianteBindingSource
+            // 
+            this.varianteBindingSource.DataSource = typeof(Entidad.Variante);
             // 
             // toolStrip1
             // 
@@ -699,10 +831,10 @@
             this.btnModificarVariante,
             this.btnEliminarVariante,
             this.btnActualizarVariante});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 41);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 50);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.toolStrip1.Size = new System.Drawing.Size(411, 45);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(11, 0, 11, 10);
+            this.toolStrip1.Size = new System.Drawing.Size(548, 55);
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -763,19 +895,18 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(411, 41);
+            this.panel4.Size = new System.Drawing.Size(548, 50);
             this.panel4.TabIndex = 21;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 12);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(12, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 17);
+            this.label3.Size = new System.Drawing.Size(182, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "LISTA DE VARIANTES";
             // 
@@ -785,9 +916,10 @@
             this.panelIHeader2.Controls.Add(this.btnGenerar);
             this.panelIHeader2.Controls.Add(this.chkVenderSinStock);
             this.panelIHeader2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelIHeader2.Location = new System.Drawing.Point(3, 3);
+            this.panelIHeader2.Location = new System.Drawing.Point(4, 4);
+            this.panelIHeader2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelIHeader2.Name = "panelIHeader2";
-            this.panelIHeader2.Size = new System.Drawing.Size(791, 41);
+            this.panelIHeader2.Size = new System.Drawing.Size(1057, 50);
             this.panelIHeader2.TabIndex = 1;
             // 
             // label5
@@ -795,9 +927,10 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(102)))));
-            this.label5.Location = new System.Drawing.Point(265, 4);
+            this.label5.Location = new System.Drawing.Point(355, 5);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(398, 32);
+            this.label5.Size = new System.Drawing.Size(531, 39);
             this.label5.TabIndex = 7;
             this.label5.Text = "Al realizar cualquier cambio en la lista de variantes o alternativas presionar ge" +
     "nerar.";
@@ -817,11 +950,11 @@
             this.btnGenerar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerar.Location = new System.Drawing.Point(665, 2);
-            this.btnGenerar.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnGenerar.Location = new System.Drawing.Point(889, 2);
+            this.btnGenerar.Margin = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnGenerar.Size = new System.Drawing.Size(122, 35);
+            this.btnGenerar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnGenerar.Size = new System.Drawing.Size(163, 43);
             this.btnGenerar.TabIndex = 6;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -831,56 +964,45 @@
             // chkVenderSinStock
             // 
             this.chkVenderSinStock.AutoSize = true;
-            this.chkVenderSinStock.Location = new System.Drawing.Point(11, 12);
+            this.chkVenderSinStock.Location = new System.Drawing.Point(15, 15);
+            this.chkVenderSinStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkVenderSinStock.Name = "chkVenderSinStock";
-            this.chkVenderSinStock.Size = new System.Drawing.Size(154, 17);
+            this.chkVenderSinStock.Size = new System.Drawing.Size(201, 21);
             this.chkVenderSinStock.TabIndex = 0;
             this.chkVenderSinStock.Text = "Vender variantes sin stock.";
             this.chkVenderSinStock.UseVisualStyleBackColor = true;
             // 
-            // presentacionBindingSource
-            // 
-            this.presentacionBindingSource.DataSource = typeof(Entidad.Presentacion);
-            // 
-            // alternativaBindingSource
-            // 
-            this.alternativaBindingSource.DataSource = typeof(Entidad.Alternativa);
-            // 
-            // varianteBindingSource
-            // 
-            this.varianteBindingSource.DataSource = typeof(Entidad.Variante);
-            // 
             // idPresentacionDataGridViewTextBoxColumn
             // 
             this.idPresentacionDataGridViewTextBoxColumn.DataPropertyName = "idPresentacion";
-            this.idPresentacionDataGridViewTextBoxColumn.HeaderText = "idPresentacion";
+            this.idPresentacionDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idPresentacionDataGridViewTextBoxColumn.Name = "idPresentacionDataGridViewTextBoxColumn";
             this.idPresentacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPresentacionDataGridViewTextBoxColumn.Width = 128;
+            this.idPresentacionDataGridViewTextBoxColumn.Width = 54;
             // 
             // idProductoDataGridViewTextBoxColumn
             // 
             this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn.HeaderText = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.HeaderText = "ID Producto";
             this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
             this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idProductoDataGridViewTextBoxColumn.Width = 102;
+            this.idProductoDataGridViewTextBoxColumn.Width = 132;
             // 
             // nombrePresentacionDataGridViewTextBoxColumn
             // 
             this.nombrePresentacionDataGridViewTextBoxColumn.DataPropertyName = "nombrePresentacion";
-            this.nombrePresentacionDataGridViewTextBoxColumn.HeaderText = "nombrePresentacion";
+            this.nombrePresentacionDataGridViewTextBoxColumn.HeaderText = "Nombre Presentación";
             this.nombrePresentacionDataGridViewTextBoxColumn.Name = "nombrePresentacionDataGridViewTextBoxColumn";
             this.nombrePresentacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombrePresentacionDataGridViewTextBoxColumn.Width = 165;
+            this.nombrePresentacionDataGridViewTextBoxColumn.Width = 208;
             // 
             // cantidadUnitariaDataGridViewTextBoxColumn
             // 
             this.cantidadUnitariaDataGridViewTextBoxColumn.DataPropertyName = "cantidadUnitaria";
-            this.cantidadUnitariaDataGridViewTextBoxColumn.HeaderText = "cantidadUnitaria";
+            this.cantidadUnitariaDataGridViewTextBoxColumn.HeaderText = "Cantidad Unitaria";
             this.cantidadUnitariaDataGridViewTextBoxColumn.Name = "cantidadUnitariaDataGridViewTextBoxColumn";
             this.cantidadUnitariaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadUnitariaDataGridViewTextBoxColumn.Width = 138;
+            this.cantidadUnitariaDataGridViewTextBoxColumn.Width = 174;
             // 
             // presentacionPorDefectoDataGridViewCheckBoxColumn
             // 
@@ -888,137 +1010,35 @@
             this.presentacionPorDefectoDataGridViewCheckBoxColumn.HeaderText = "presentacionPorDefecto";
             this.presentacionPorDefectoDataGridViewCheckBoxColumn.Name = "presentacionPorDefectoDataGridViewCheckBoxColumn";
             this.presentacionPorDefectoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.presentacionPorDefectoDataGridViewCheckBoxColumn.Width = 166;
+            this.presentacionPorDefectoDataGridViewCheckBoxColumn.Visible = false;
+            this.presentacionPorDefectoDataGridViewCheckBoxColumn.Width = 205;
             // 
             // simboloPresentacionDataGridViewTextBoxColumn
             // 
             this.simboloPresentacionDataGridViewTextBoxColumn.DataPropertyName = "simboloPresentacion";
-            this.simboloPresentacionDataGridViewTextBoxColumn.HeaderText = "simboloPresentacion";
+            this.simboloPresentacionDataGridViewTextBoxColumn.HeaderText = "Simbolo Presentación";
             this.simboloPresentacionDataGridViewTextBoxColumn.Name = "simboloPresentacionDataGridViewTextBoxColumn";
             this.simboloPresentacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.simboloPresentacionDataGridViewTextBoxColumn.Width = 166;
+            this.simboloPresentacionDataGridViewTextBoxColumn.Width = 209;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
             this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // idVarianteDataGridViewTextBoxColumn
-            // 
-            this.idVarianteDataGridViewTextBoxColumn.DataPropertyName = "idVariante";
-            this.idVarianteDataGridViewTextBoxColumn.HeaderText = "idVariante";
-            this.idVarianteDataGridViewTextBoxColumn.Name = "idVarianteDataGridViewTextBoxColumn";
-            this.idVarianteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idVarianteDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // idProductoDataGridViewTextBoxColumn1
-            // 
-            this.idProductoDataGridViewTextBoxColumn1.DataPropertyName = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn1.HeaderText = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn1.Name = "idProductoDataGridViewTextBoxColumn1";
-            this.idProductoDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idProductoDataGridViewTextBoxColumn1.Width = 102;
-            // 
-            // nombreVarianteDataGridViewTextBoxColumn
-            // 
-            this.nombreVarianteDataGridViewTextBoxColumn.DataPropertyName = "nombreVariante";
-            this.nombreVarianteDataGridViewTextBoxColumn.HeaderText = "nombreVariante";
-            this.nombreVarianteDataGridViewTextBoxColumn.Name = "nombreVarianteDataGridViewTextBoxColumn";
-            this.nombreVarianteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreVarianteDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // esComboDataGridViewCheckBoxColumn
-            // 
-            this.esComboDataGridViewCheckBoxColumn.DataPropertyName = "esCombo";
-            this.esComboDataGridViewCheckBoxColumn.HeaderText = "esCombo";
-            this.esComboDataGridViewCheckBoxColumn.Name = "esComboDataGridViewCheckBoxColumn";
-            this.esComboDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.esComboDataGridViewCheckBoxColumn.Width = 73;
-            // 
-            // fechaCreacionDataGridViewTextBoxColumn
-            // 
-            this.fechaCreacionDataGridViewTextBoxColumn.DataPropertyName = "fechaCreacion";
-            this.fechaCreacionDataGridViewTextBoxColumn.HeaderText = "fechaCreacion";
-            this.fechaCreacionDataGridViewTextBoxColumn.Name = "fechaCreacionDataGridViewTextBoxColumn";
-            this.fechaCreacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaCreacionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechaModificacionDataGridViewTextBoxColumn
-            // 
-            this.fechaModificacionDataGridViewTextBoxColumn.DataPropertyName = "fechaModificacion";
-            this.fechaModificacionDataGridViewTextBoxColumn.HeaderText = "fechaModificacion";
-            this.fechaModificacionDataGridViewTextBoxColumn.Name = "fechaModificacionDataGridViewTextBoxColumn";
-            this.fechaModificacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaModificacionDataGridViewTextBoxColumn.Width = 149;
-            // 
-            // estadoDataGridViewTextBoxColumn1
-            // 
-            this.estadoDataGridViewTextBoxColumn1.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn1.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn1.Name = "estadoDataGridViewTextBoxColumn1";
-            this.estadoDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // idAlternativaDataGridViewTextBoxColumn
-            // 
-            this.idAlternativaDataGridViewTextBoxColumn.DataPropertyName = "idAlternativa";
-            this.idAlternativaDataGridViewTextBoxColumn.HeaderText = "idAlternativa";
-            this.idAlternativaDataGridViewTextBoxColumn.Name = "idAlternativaDataGridViewTextBoxColumn";
-            this.idAlternativaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idAlternativaDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // idVarianteDataGridViewTextBoxColumn1
-            // 
-            this.idVarianteDataGridViewTextBoxColumn1.DataPropertyName = "idVariante";
-            this.idVarianteDataGridViewTextBoxColumn1.HeaderText = "idVariante";
-            this.idVarianteDataGridViewTextBoxColumn1.Name = "idVarianteDataGridViewTextBoxColumn1";
-            this.idVarianteDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idVarianteDataGridViewTextBoxColumn1.Width = 98;
-            // 
-            // descripcionAlternativaDataGridViewTextBoxColumn
-            // 
-            this.descripcionAlternativaDataGridViewTextBoxColumn.DataPropertyName = "descripcionAlternativa";
-            this.descripcionAlternativaDataGridViewTextBoxColumn.HeaderText = "descripcionAlternativa";
-            this.descripcionAlternativaDataGridViewTextBoxColumn.Name = "descripcionAlternativaDataGridViewTextBoxColumn";
-            this.descripcionAlternativaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionAlternativaDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // seleccionadoDataGridViewCheckBoxColumn
-            // 
-            this.seleccionadoDataGridViewCheckBoxColumn.DataPropertyName = "seleccionado";
-            this.seleccionadoDataGridViewCheckBoxColumn.HeaderText = "seleccionado";
-            this.seleccionadoDataGridViewCheckBoxColumn.Name = "seleccionadoDataGridViewCheckBoxColumn";
-            this.seleccionadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.seleccionadoDataGridViewCheckBoxColumn.Width = 98;
-            // 
-            // ordenPosicionDataGridViewTextBoxColumn
-            // 
-            this.ordenPosicionDataGridViewTextBoxColumn.DataPropertyName = "ordenPosicion";
-            this.ordenPosicionDataGridViewTextBoxColumn.HeaderText = "ordenPosicion";
-            this.ordenPosicionDataGridViewTextBoxColumn.Name = "ordenPosicionDataGridViewTextBoxColumn";
-            this.ordenPosicionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ordenPosicionDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // estadoDataGridViewTextBoxColumn2
-            // 
-            this.estadoDataGridViewTextBoxColumn2.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn2.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn2.Name = "estadoDataGridViewTextBoxColumn2";
-            this.estadoDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn2.Width = 75;
+            this.estadoDataGridViewTextBoxColumn.Width = 93;
             // 
             // UCAdicionalPD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCAdicionalPD";
-            this.Size = new System.Drawing.Size(805, 612);
+            this.Size = new System.Drawing.Size(1073, 753);
             this.Load += new System.EventHandler(this.UCAdicionalPD_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UCAdicionalPD_Paint);
             this.panelHeader.ResumeLayout(false);
@@ -1029,6 +1049,7 @@
             this.tabPresentaciones.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresentacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
             this.toolStripCrud.ResumeLayout(false);
             this.toolStripCrud.PerformLayout();
             this.panelHeaderItem1.ResumeLayout(false);
@@ -1037,6 +1058,7 @@
             this.panelItem2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlternativa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alternativaBindingSource)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -1044,15 +1066,13 @@
             this.panelItem1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVariante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.varianteBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panelIHeader2.ResumeLayout(false);
             this.panelIHeader2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alternativaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.varianteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1105,13 +1125,6 @@
         private System.Windows.Forms.DataGridView dataGridViewPresentacion;
         private System.Windows.Forms.DataGridView dataGridViewAlternativa;
         private System.Windows.Forms.DataGridView dataGridViewVariante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPresentacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombrePresentacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadUnitariaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn presentacionPorDefectoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn simboloPresentacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idAlternativaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVarianteDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionAlternativaDataGridViewTextBoxColumn;
@@ -1125,5 +1138,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCreacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaModificacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPresentacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombrePresentacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadUnitariaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn presentacionPorDefectoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn simboloPresentacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
     }
 }
