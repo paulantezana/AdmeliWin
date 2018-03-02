@@ -63,6 +63,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +80,6 @@
             this.nroVentasCotizacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -110,7 +110,7 @@
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 139);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panel1.Size = new System.Drawing.Size(1159, 331);
@@ -138,6 +138,7 @@
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idClienteDataGridViewTextBoxColumn,
             this.nombreClienteDataGridViewTextBoxColumn,
+            this.tipoDocumentoDataGridViewTextBoxColumn,
             this.numeroDocumentoDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.telefonoDataGridViewTextBoxColumn,
@@ -153,8 +154,7 @@
             this.nombreGrupoDataGridViewTextBoxColumn,
             this.nroVentasCotizacionesDataGridViewTextBoxColumn,
             this.idDocumentoDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.tipoDocumentoDataGridViewTextBoxColumn});
+            this.nombreDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.clienteBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -167,7 +167,7 @@
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridView.Location = new System.Drawing.Point(13, 12);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -200,7 +200,7 @@
             this.panelNavigation.Controls.Add(this.lblPageAllItems);
             this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelNavigation.Location = new System.Drawing.Point(1, 470);
-            this.panelNavigation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNavigation.Margin = new System.Windows.Forms.Padding(4);
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(1159, 74);
             this.panelNavigation.TabIndex = 22;
@@ -251,7 +251,7 @@
             this.panel5.Controls.Add(this.btnPrevious);
             this.panel5.Controls.Add(this.btnNext);
             this.panel5.Location = new System.Drawing.Point(349, 4);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(459, 68);
             this.panel5.TabIndex = 0;
@@ -416,7 +416,7 @@
             this.panelTools.Controls.Add(this.textBuscar);
             this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTools.Location = new System.Drawing.Point(1, 75);
-            this.panelTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTools.Margin = new System.Windows.Forms.Padding(4);
             this.panelTools.Name = "panelTools";
             this.panelTools.Size = new System.Drawing.Size(1159, 64);
             this.panelTools.TabIndex = 26;
@@ -445,7 +445,7 @@
             this.textBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBuscar.isPassword = false;
             this.textBuscar.Location = new System.Drawing.Point(13, 7);
-            this.textBuscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(5);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Padding = new System.Windows.Forms.Padding(3, 22, 7, 2);
             this.textBuscar.Size = new System.Drawing.Size(275, 49);
@@ -461,7 +461,7 @@
             this.panelCrud.Controls.Add(this.btnActualizar);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
-            this.panelCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelCrud.Margin = new System.Windows.Forms.Padding(4);
             this.panelCrud.Name = "panelCrud";
             this.panelCrud.Padding = new System.Windows.Forms.Padding(13, 18, 0, 0);
             this.panelCrud.Size = new System.Drawing.Size(1159, 74);
@@ -603,13 +603,21 @@
             this.nombreClienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreClienteDataGridViewTextBoxColumn.Width = 109;
             // 
+            // tipoDocumentoDataGridViewTextBoxColumn
+            // 
+            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "tipoDocumento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "Tipo Documento";
+            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
+            this.tipoDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDocumentoDataGridViewTextBoxColumn.Width = 167;
+            // 
             // numeroDocumentoDataGridViewTextBoxColumn
             // 
             this.numeroDocumentoDataGridViewTextBoxColumn.DataPropertyName = "numeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn.HeaderText = "Numero Documento";
+            this.numeroDocumentoDataGridViewTextBoxColumn.HeaderText = "Nro Documento";
             this.numeroDocumentoDataGridViewTextBoxColumn.Name = "numeroDocumentoDataGridViewTextBoxColumn";
             this.numeroDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroDocumentoDataGridViewTextBoxColumn.Width = 195;
+            this.numeroDocumentoDataGridViewTextBoxColumn.Width = 162;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -622,7 +630,7 @@
             // telefonoDataGridViewTextBoxColumn
             // 
             this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             this.telefonoDataGridViewTextBoxColumn.Width = 104;
@@ -646,7 +654,7 @@
             // direccionDataGridViewTextBoxColumn
             // 
             this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
             this.direccionDataGridViewTextBoxColumn.Width = 112;
@@ -665,12 +673,14 @@
             this.esEventualDataGridViewCheckBoxColumn.HeaderText = "esEventual";
             this.esEventualDataGridViewCheckBoxColumn.Name = "esEventualDataGridViewCheckBoxColumn";
             this.esEventualDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.esEventualDataGridViewCheckBoxColumn.ThreeState = true;
+            this.esEventualDataGridViewCheckBoxColumn.Visible = false;
             this.esEventualDataGridViewCheckBoxColumn.Width = 101;
             // 
             // observacionDataGridViewTextBoxColumn
             // 
             this.observacionDataGridViewTextBoxColumn.DataPropertyName = "observacion";
-            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observacion";
+            this.observacionDataGridViewTextBoxColumn.HeaderText = "Observación";
             this.observacionDataGridViewTextBoxColumn.Name = "observacionDataGridViewTextBoxColumn";
             this.observacionDataGridViewTextBoxColumn.ReadOnly = true;
             this.observacionDataGridViewTextBoxColumn.Visible = false;
@@ -690,6 +700,7 @@
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.HeaderText = "IDUbicacionGeografica";
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.Name = "idUbicacionGeograficaDataGridViewTextBoxColumn";
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUbicacionGeograficaDataGridViewTextBoxColumn.Visible = false;
             this.idUbicacionGeograficaDataGridViewTextBoxColumn.Width = 216;
             // 
             // idGrupoClienteDataGridViewTextBoxColumn
@@ -698,6 +709,7 @@
             this.idGrupoClienteDataGridViewTextBoxColumn.HeaderText = "IDGrupoCliente";
             this.idGrupoClienteDataGridViewTextBoxColumn.Name = "idGrupoClienteDataGridViewTextBoxColumn";
             this.idGrupoClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idGrupoClienteDataGridViewTextBoxColumn.Visible = false;
             this.idGrupoClienteDataGridViewTextBoxColumn.Width = 158;
             // 
             // nombreGrupoDataGridViewTextBoxColumn
@@ -706,6 +718,7 @@
             this.nombreGrupoDataGridViewTextBoxColumn.HeaderText = "Nombre Grupo";
             this.nombreGrupoDataGridViewTextBoxColumn.Name = "nombreGrupoDataGridViewTextBoxColumn";
             this.nombreGrupoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreGrupoDataGridViewTextBoxColumn.Visible = false;
             this.nombreGrupoDataGridViewTextBoxColumn.Width = 155;
             // 
             // nroVentasCotizacionesDataGridViewTextBoxColumn
@@ -714,6 +727,7 @@
             this.nroVentasCotizacionesDataGridViewTextBoxColumn.HeaderText = "Nro Ventas Cotizaciones";
             this.nroVentasCotizacionesDataGridViewTextBoxColumn.Name = "nroVentasCotizacionesDataGridViewTextBoxColumn";
             this.nroVentasCotizacionesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroVentasCotizacionesDataGridViewTextBoxColumn.Visible = false;
             this.nroVentasCotizacionesDataGridViewTextBoxColumn.Width = 231;
             // 
             // idDocumentoDataGridViewTextBoxColumn
@@ -722,6 +736,7 @@
             this.idDocumentoDataGridViewTextBoxColumn.HeaderText = "IDDoc";
             this.idDocumentoDataGridViewTextBoxColumn.Name = "idDocumentoDataGridViewTextBoxColumn";
             this.idDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDocumentoDataGridViewTextBoxColumn.Visible = false;
             this.idDocumentoDataGridViewTextBoxColumn.Width = 85;
             // 
             // nombreDataGridViewTextBoxColumn
@@ -730,15 +745,8 @@
             this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Visible = false;
             this.nombreDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // tipoDocumentoDataGridViewTextBoxColumn
-            // 
-            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "tipoDocumento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "Tipo Documento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
-            this.tipoDocumentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDocumentoDataGridViewTextBoxColumn.Width = 167;
             // 
             // UCClientes
             // 
@@ -794,6 +802,7 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
@@ -810,6 +819,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nroVentasCotizacionesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumentoDataGridViewTextBoxColumn;
     }
 }

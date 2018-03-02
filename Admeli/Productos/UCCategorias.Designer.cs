@@ -62,9 +62,9 @@
             this.nombreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPadreCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.padreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroColumnasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordenVisualizacionProductosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mostrarProductosEnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroColumnasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloCategoriaSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urlCategoriaSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metaTagsSeoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +105,7 @@
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 75);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panel1.Size = new System.Drawing.Size(1461, 513);
@@ -135,9 +135,9 @@
             this.nombreCategoriaDataGridViewTextBoxColumn,
             this.idPadreCategoriaDataGridViewTextBoxColumn,
             this.padreDataGridViewTextBoxColumn,
+            this.numeroColumnasDataGridViewTextBoxColumn,
             this.ordenVisualizacionProductosDataGridViewTextBoxColumn,
             this.mostrarProductosEnDataGridViewTextBoxColumn,
-            this.numeroColumnasDataGridViewTextBoxColumn,
             this.tituloCategoriaSeoDataGridViewTextBoxColumn,
             this.urlCategoriaSeoDataGridViewTextBoxColumn,
             this.metaTagsSeoDataGridViewTextBoxColumn,
@@ -161,7 +161,7 @@
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.Gainsboro;
             this.dataGridView.Location = new System.Drawing.Point(13, 12);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -195,7 +195,7 @@
             this.panelCrud.Controls.Add(this.btnEliminar);
             this.panelCrud.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCrud.Location = new System.Drawing.Point(1, 1);
-            this.panelCrud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelCrud.Margin = new System.Windows.Forms.Padding(4);
             this.panelCrud.Name = "panelCrud";
             this.panelCrud.Padding = new System.Windows.Forms.Padding(13, 18, 0, 0);
             this.panelCrud.Size = new System.Drawing.Size(1461, 74);
@@ -329,7 +329,7 @@
             this.panelNavigation.Controls.Add(this.lblPageAllItems);
             this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelNavigation.Location = new System.Drawing.Point(1, 588);
-            this.panelNavigation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNavigation.Margin = new System.Windows.Forms.Padding(4);
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(1461, 74);
             this.panelNavigation.TabIndex = 22;
@@ -380,7 +380,7 @@
             this.panel3.Controls.Add(this.btnPrevious);
             this.panel3.Controls.Add(this.btnNext);
             this.panel3.Location = new System.Drawing.Point(501, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(459, 68);
             this.panel3.TabIndex = 0;
@@ -570,12 +570,21 @@
             this.padreDataGridViewTextBoxColumn.HeaderText = "Ppadre";
             this.padreDataGridViewTextBoxColumn.Name = "padreDataGridViewTextBoxColumn";
             this.padreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.padreDataGridViewTextBoxColumn.Visible = false;
             this.padreDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // numeroColumnasDataGridViewTextBoxColumn
+            // 
+            this.numeroColumnasDataGridViewTextBoxColumn.DataPropertyName = "numeroColumnas";
+            this.numeroColumnasDataGridViewTextBoxColumn.HeaderText = "Nro Columnas";
+            this.numeroColumnasDataGridViewTextBoxColumn.Name = "numeroColumnasDataGridViewTextBoxColumn";
+            this.numeroColumnasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroColumnasDataGridViewTextBoxColumn.Width = 150;
             // 
             // ordenVisualizacionProductosDataGridViewTextBoxColumn
             // 
             this.ordenVisualizacionProductosDataGridViewTextBoxColumn.DataPropertyName = "ordenVisualizacionProductos";
-            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.HeaderText = "Orden Visualizacion Productos";
+            this.ordenVisualizacionProductosDataGridViewTextBoxColumn.HeaderText = "Orden Visualización Productos";
             this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Name = "ordenVisualizacionProductosDataGridViewTextBoxColumn";
             this.ordenVisualizacionProductosDataGridViewTextBoxColumn.ReadOnly = true;
             this.ordenVisualizacionProductosDataGridViewTextBoxColumn.Width = 281;
@@ -588,18 +597,10 @@
             this.mostrarProductosEnDataGridViewTextBoxColumn.ReadOnly = true;
             this.mostrarProductosEnDataGridViewTextBoxColumn.Width = 212;
             // 
-            // numeroColumnasDataGridViewTextBoxColumn
-            // 
-            this.numeroColumnasDataGridViewTextBoxColumn.DataPropertyName = "numeroColumnas";
-            this.numeroColumnasDataGridViewTextBoxColumn.HeaderText = "Numero Columnas";
-            this.numeroColumnasDataGridViewTextBoxColumn.Name = "numeroColumnasDataGridViewTextBoxColumn";
-            this.numeroColumnasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroColumnasDataGridViewTextBoxColumn.Width = 183;
-            // 
             // tituloCategoriaSeoDataGridViewTextBoxColumn
             // 
             this.tituloCategoriaSeoDataGridViewTextBoxColumn.DataPropertyName = "tituloCategoriaSeo";
-            this.tituloCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "Titulo Categoria Seo";
+            this.tituloCategoriaSeoDataGridViewTextBoxColumn.HeaderText = "Título Categoria Seo";
             this.tituloCategoriaSeoDataGridViewTextBoxColumn.Name = "tituloCategoriaSeoDataGridViewTextBoxColumn";
             this.tituloCategoriaSeoDataGridViewTextBoxColumn.ReadOnly = true;
             this.tituloCategoriaSeoDataGridViewTextBoxColumn.Width = 198;
@@ -739,9 +740,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPadreCategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn padreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroColumnasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ordenVisualizacionProductosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mostrarProductosEnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroColumnasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloCategoriaSeoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn urlCategoriaSeoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn metaTagsSeoDataGridViewTextBoxColumn;

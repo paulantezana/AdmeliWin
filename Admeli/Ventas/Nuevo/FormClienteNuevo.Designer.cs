@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClienteNuevo));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,18 +47,39 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panelLevel3 = new System.Windows.Forms.Panel();
+            this.cbxNivel3 = new System.Windows.Forms.ComboBox();
+            this.lblNivel3 = new System.Windows.Forms.Label();
+            this.panelLevel2 = new System.Windows.Forms.Panel();
+            this.cbxNivel2 = new System.Windows.Forms.ComboBox();
+            this.lblNivel2 = new System.Windows.Forms.Label();
+            this.panelLevel1 = new System.Windows.Forms.Panel();
+            this.cbxNivel1 = new System.Windows.Forms.ComboBox();
+            this.nivel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblNivel1 = new System.Windows.Forms.Label();
+            this.panelLevelPais = new System.Windows.Forms.Panel();
+            this.cbxPaises = new System.Windows.Forms.ComboBox();
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.nivel4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nivel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.progressBarApp = new System.Windows.Forms.ProgressBar();
+            this.panelLevel3.SuspendLayout();
+            this.panelLevel2.SuspendLayout();
+            this.panelLevel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).BeginInit();
+            this.panelLevelPais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -194,6 +216,8 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Documento"});
             this.comboBox1.Location = new System.Drawing.Point(143, 62);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(235, 26);
@@ -203,81 +227,13 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
             this.comboBox2.Location = new System.Drawing.Point(143, 143);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(235, 26);
             this.comboBox2.TabIndex = 21;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(800, 23);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(191, 26);
-            this.comboBox3.TabIndex = 23;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(759, 29);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 17);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Pais:";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(800, 62);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(191, 26);
-            this.comboBox4.TabIndex = 25;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(742, 68);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 17);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Estado:";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(800, 102);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(191, 26);
-            this.comboBox5.TabIndex = 27;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(742, 108);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 17);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Ciudad:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(727, 149);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 17);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Dirección:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(800, 144);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 24);
-            this.textBox2.TabIndex = 28;
             // 
             // comboBox6
             // 
@@ -319,24 +275,218 @@
             this.button2.TabIndex = 33;
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // panelLevel3
+            // 
+            this.panelLevel3.Controls.Add(this.cbxNivel3);
+            this.panelLevel3.Controls.Add(this.lblNivel3);
+            this.panelLevel3.Location = new System.Drawing.Point(711, 201);
+            this.panelLevel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLevel3.Name = "panelLevel3";
+            this.panelLevel3.Size = new System.Drawing.Size(437, 49);
+            this.panelLevel3.TabIndex = 37;
+            this.panelLevel3.Visible = false;
+            // 
+            // cbxNivel3
+            // 
+            this.cbxNivel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxNivel3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxNivel3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxNivel3.DisplayMember = "nombre";
+            this.cbxNivel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxNivel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxNivel3.FormattingEnabled = true;
+            this.cbxNivel3.Location = new System.Drawing.Point(4, 17);
+            this.cbxNivel3.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxNivel3.Name = "cbxNivel3";
+            this.cbxNivel3.Size = new System.Drawing.Size(427, 28);
+            this.cbxNivel3.TabIndex = 1;
+            this.cbxNivel3.ValueMember = "idNivel3";
+            // 
+            // lblNivel3
+            // 
+            this.lblNivel3.AutoSize = true;
+            this.lblNivel3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel3.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNivel3.Location = new System.Drawing.Point(3, 1);
+            this.lblNivel3.Name = "lblNivel3";
+            this.lblNivel3.Size = new System.Drawing.Size(45, 16);
+            this.lblNivel3.TabIndex = 0;
+            this.lblNivel3.Text = "nivel3";
+            // 
+            // panelLevel2
+            // 
+            this.panelLevel2.Controls.Add(this.cbxNivel2);
+            this.panelLevel2.Controls.Add(this.lblNivel2);
+            this.panelLevel2.Location = new System.Drawing.Point(711, 140);
+            this.panelLevel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLevel2.Name = "panelLevel2";
+            this.panelLevel2.Size = new System.Drawing.Size(437, 49);
+            this.panelLevel2.TabIndex = 36;
+            this.panelLevel2.Visible = false;
+            // 
+            // cbxNivel2
+            // 
+            this.cbxNivel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxNivel2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxNivel2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxNivel2.DisplayMember = "idNivel2";
+            this.cbxNivel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxNivel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxNivel2.FormattingEnabled = true;
+            this.cbxNivel2.Location = new System.Drawing.Point(4, 17);
+            this.cbxNivel2.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxNivel2.Name = "cbxNivel2";
+            this.cbxNivel2.Size = new System.Drawing.Size(427, 28);
+            this.cbxNivel2.TabIndex = 1;
+            this.cbxNivel2.ValueMember = "idNivel2";
+            this.cbxNivel2.SelectedIndexChanged += new System.EventHandler(this.cbxNivel2_SelectedIndexChanged);
+            // 
+            // lblNivel2
+            // 
+            this.lblNivel2.AutoSize = true;
+            this.lblNivel2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel2.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNivel2.Location = new System.Drawing.Point(3, 1);
+            this.lblNivel2.Name = "lblNivel2";
+            this.lblNivel2.Size = new System.Drawing.Size(45, 16);
+            this.lblNivel2.TabIndex = 0;
+            this.lblNivel2.Text = "nivel2";
+            // 
+            // panelLevel1
+            // 
+            this.panelLevel1.Controls.Add(this.cbxNivel1);
+            this.panelLevel1.Controls.Add(this.lblNivel1);
+            this.panelLevel1.Location = new System.Drawing.Point(711, 81);
+            this.panelLevel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLevel1.Name = "panelLevel1";
+            this.panelLevel1.Size = new System.Drawing.Size(437, 49);
+            this.panelLevel1.TabIndex = 35;
+            this.panelLevel1.Visible = false;
+            // 
+            // cbxNivel1
+            // 
+            this.cbxNivel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxNivel1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxNivel1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxNivel1.DataSource = this.nivel1BindingSource;
+            this.cbxNivel1.DisplayMember = "nombre";
+            this.cbxNivel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxNivel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxNivel1.FormattingEnabled = true;
+            this.cbxNivel1.Location = new System.Drawing.Point(4, 17);
+            this.cbxNivel1.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxNivel1.Name = "cbxNivel1";
+            this.cbxNivel1.Size = new System.Drawing.Size(427, 28);
+            this.cbxNivel1.TabIndex = 1;
+            this.cbxNivel1.ValueMember = "idNivel1";
+            this.cbxNivel1.SelectedIndexChanged += new System.EventHandler(this.cbxNivel1_SelectedIndexChanged);
+            // 
+            // nivel1BindingSource
+            // 
+            this.nivel1BindingSource.DataSource = typeof(Entidad.Location.Nivel1);
+            // 
+            // lblNivel1
+            // 
+            this.lblNivel1.AutoSize = true;
+            this.lblNivel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNivel1.Location = new System.Drawing.Point(3, 1);
+            this.lblNivel1.Name = "lblNivel1";
+            this.lblNivel1.Size = new System.Drawing.Size(45, 16);
+            this.lblNivel1.TabIndex = 0;
+            this.lblNivel1.Text = "nivel1";
+            // 
+            // panelLevelPais
+            // 
+            this.panelLevelPais.Controls.Add(this.cbxPaises);
+            this.panelLevelPais.Controls.Add(this.label11);
+            this.panelLevelPais.Location = new System.Drawing.Point(711, 22);
+            this.panelLevelPais.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLevelPais.Name = "panelLevelPais";
+            this.panelLevelPais.Size = new System.Drawing.Size(437, 49);
+            this.panelLevelPais.TabIndex = 34;
+            // 
+            // cbxPaises
+            // 
+            this.cbxPaises.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxPaises.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbxPaises.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxPaises.DataSource = this.paisBindingSource;
+            this.cbxPaises.DisplayMember = "nombre";
+            this.cbxPaises.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxPaises.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPaises.FormattingEnabled = true;
+            this.cbxPaises.Location = new System.Drawing.Point(4, 17);
+            this.cbxPaises.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxPaises.Name = "cbxPaises";
+            this.cbxPaises.Size = new System.Drawing.Size(427, 28);
+            this.cbxPaises.TabIndex = 1;
+            this.cbxPaises.ValueMember = "idPais";
+            this.cbxPaises.SelectedIndexChanged += new System.EventHandler(this.cbxPaises_SelectedIndexChanged);
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataSource = typeof(Entidad.Location.Pais);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(3, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "País";
+            // 
+            // nivel4BindingSource
+            // 
+            this.nivel4BindingSource.DataSource = typeof(Entidad.Location.Nivel4);
+            // 
+            // nivel3BindingSource
+            // 
+            this.nivel3BindingSource.DataSource = typeof(Entidad.Location.Nivel3);
+            // 
+            // nivel2BindingSource
+            // 
+            this.nivel2BindingSource.DataSource = typeof(Entidad.Location.Nivel2);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // progressBarApp
+            // 
+            this.progressBarApp.BackColor = System.Drawing.Color.White;
+            this.progressBarApp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.progressBarApp.Location = new System.Drawing.Point(0, 0);
+            this.progressBarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.progressBarApp.MarqueeAnimationSpeed = 10;
+            this.progressBarApp.Maximum = 200;
+            this.progressBarApp.Name = "progressBarApp";
+            this.progressBarApp.RightToLeftLayout = true;
+            this.progressBarApp.Size = new System.Drawing.Size(1173, 6);
+            this.progressBarApp.TabIndex = 38;
+            // 
             // FormClienteNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1013, 360);
+            this.ClientSize = new System.Drawing.Size(1173, 406);
+            this.Controls.Add(this.progressBarApp);
+            this.Controls.Add(this.panelLevel3);
+            this.Controls.Add(this.panelLevel2);
+            this.Controls.Add(this.panelLevel1);
+            this.Controls.Add(this.panelLevelPais);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox6);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkBox1);
@@ -357,6 +507,21 @@
             this.Name = "FormClienteNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormClienteNuevo";
+            this.Load += new System.EventHandler(this.FormClienteNuevo_Load);
+            this.panelLevel3.ResumeLayout(false);
+            this.panelLevel3.PerformLayout();
+            this.panelLevel2.ResumeLayout(false);
+            this.panelLevel2.PerformLayout();
+            this.panelLevel1.ResumeLayout(false);
+            this.panelLevel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel1BindingSource)).EndInit();
+            this.panelLevelPais.ResumeLayout(false);
+            this.panelLevelPais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivel2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,17 +545,28 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelLevel3;
+        private System.Windows.Forms.ComboBox cbxNivel3;
+        private System.Windows.Forms.Label lblNivel3;
+        private System.Windows.Forms.Panel panelLevel2;
+        private System.Windows.Forms.ComboBox cbxNivel2;
+        private System.Windows.Forms.Label lblNivel2;
+        private System.Windows.Forms.Panel panelLevel1;
+        private System.Windows.Forms.ComboBox cbxNivel1;
+        private System.Windows.Forms.Label lblNivel1;
+        private System.Windows.Forms.Panel panelLevelPais;
+        private System.Windows.Forms.ComboBox cbxPaises;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource nivel4BindingSource;
+        private System.Windows.Forms.BindingSource nivel3BindingSource;
+        private System.Windows.Forms.BindingSource nivel2BindingSource;
+        private System.Windows.Forms.BindingSource nivel1BindingSource;
+        private System.Windows.Forms.BindingSource paisBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        protected System.Windows.Forms.ProgressBar progressBarApp;
     }
 }
